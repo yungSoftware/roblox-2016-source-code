@@ -357,8 +357,8 @@ App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
 
-# Ignore all the libraries since its external
-Library/*
+# Ignore all the libraries since its excluded from this repository
+Contribs/*
 
 # C++ objects and libs
 *.slo
