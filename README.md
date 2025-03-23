@@ -4,9 +4,9 @@
 3. Extract **roblox-2016-source-code-main.zip** to your C: drive
 4. Create a environment variable in system variables named **CONTRIB_PATH** and set the path to: C:\Trunk2016\Contribs
 5. Now you need Contribs(Libraries), You can get them from my discord server, just ask me about it and i'll give you the access
-   * After you get the **Librariezz.7z** file, do these steps:
+   * After you get the **Librariezz.7z** file(s), do these steps:
       1. Create a new folder named **Contribs** inside **Trunk2016**
-      2. Extract the **Librariezz.7z** to that new folder
+      2. Extract the **Librariezz.7z.001** to that new folder
       3. Copy all the files inside: **C:\Trunk2016\Contribs\boost_1_56_0\stage\lib**
       4. Copy the **zlib.lib** file inside: **C:\Trunk2016\zlib\win\bin\Release**
       5. Copy the **VMProtectSDK32.lib** file inside: **C:\Trunk2016\Contribs\VMProtectWin_2.13\lib**
