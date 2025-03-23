@@ -1,6 +1,7 @@
 # Cookbook:
 1. First of all, Download this repository by pressing **<> Code --> Download ZIP**, Or just clone the repository
 2. You need to install [Visual Studio 2012](https://files.dog/MSDN/Visual%20Studio%202012/en_visual_studio_ultimate_2012_x86_dvd_2262106.iso), [Visual Studio 2012 Update 5](https://files.dog/MSDN/Visual%20Studio%202012%20Update%205/mu_visual_studio_2012_update_5_x86_dvd_6967467.iso) and [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for viewing the solution. pretty self-explanatory right?
+   - Uncheck all optional components in the Visual Studio 2012 installer **except "Microsoft Foundation Classes for C++"** to save space due to none of them are needed for the build
 3. Extract **roblox-2016-source-code-master.zip** to your C: drive, If you cloned the repo just move the folder to C:\
 4. Rename the folder to **Trunk2016**
 5. Create a environment variable in system variables named **CONTRIB_PATH** and set the path to: C:\Trunk2016\Contribs
