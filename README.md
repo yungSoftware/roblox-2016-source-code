@@ -20,7 +20,7 @@
    - Fix: Right Click to the project and press **Open the Folder in File Explorer** and go into properties of **blabla.vcxproj.filters**, untick **Read-only** and Press **OK**.
 - Error: The build tools for v140 (Platform Toolset = 'v140') cannot be found.
    - Fix: Enter the Properties of the project and change the **Platform Toolset** to **Visual Studio 2012 - Windows XP (v110_xp)** or **Visual Studio 2012 (v110)** depending on which are needed.
-- Error: **LNK1136** invalid or corrupt file (thanks to @_rdtsc for reporting the issue)
+- Error: **LNK1136** invalid or corrupt file
    - Fix: Its most likely your symlinks are broken, however theres a way fix it:
      1. Copy all the files inside: **C:\Trunk2016\Contribs\boost_1_56_0\stage\lib**
      2. Copy the **zlib.lib** file inside: **C:\Trunk2016\zlib\win\bin\Release**
