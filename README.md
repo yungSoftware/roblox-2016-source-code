@@ -22,7 +22,7 @@
 11. Right click to "RobloxStudio" project and press **Build**
 12. Hoping that everything is fine, the compilation should complete.
 
-# Common Errors:
+## Common Errors:
 - Error: error C2220: warning treated as error - no 'object' file generated
    - Fix: Enter the Properties of Project that gives error and head over to **C/C++ > General > Treat Warnings As Errors** and set it to **No (/WX-)**
 - Error: 'C:\Trunk2016\blabla\blabla.vcxproj.filters' Access Denied in path.
