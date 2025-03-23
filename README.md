@@ -1,7 +1,7 @@
 # Cookbook:
 1. First of all, Download this repository as .zip
 2. You need to install [Visual Studio 2012](https://files.dog/MSDN/Visual%20Studio%202012/en_visual_studio_ultimate_2012_x86_dvd_2262106.iso), [Visual Studio 2012 Update 5](https://files.dog/MSDN/Visual%20Studio%202012%20Update%205/mu_visual_studio_2012_update_5_x86_dvd_6967467.iso) and [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for viewing the solution. pretty self-explanatory right?
-3. Extract **roblox-2016-source-code-main.zip** to your C: drive, that way the symbol links will not break
+3. Extract **roblox-2016-source-code-main.zip** to your C: drive
 4. Rename the folder to **Truck2016**
 5. Create a environment variable in system variables named **CONTRIB_PATH** and set the path to: C:\Trunk2016\Contribs
 6. Enter the **Client_2012.sln** Solution inside Trunk2016 Folder
