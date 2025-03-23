@@ -14,6 +14,7 @@
       5. Copy the **VMProtectSDK32.lib** file inside: **C:\Trunk2016\Contribs\VMProtectWin_2.13\lib**
       6. Copy **libcurl_a** file inside: **C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL**
       7. Paste all of them to these folders: **RobloxStudio**, **RCCService** and **WindowsClient**
+      - If this sounds hard, i will release a batch file that will help this situation so stay tuned!
 7. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder
 8. Change the solution configuration to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
