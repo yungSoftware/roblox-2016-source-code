@@ -1,7 +1,7 @@
 # Cookbook:
 1. First of all, Download this repository by pressing **<> Code --> Download ZIP**, Or just clone the repository
 2. You need to install [Visual Studio 2012](https://files.dog/MSDN/Visual%20Studio%202012/en_visual_studio_ultimate_2012_x86_dvd_2262106.iso), [Visual Studio 2012 Update 5](https://files.dog/MSDN/Visual%20Studio%202012%20Update%205/mu_visual_studio_2012_update_5_x86_dvd_6967467.iso) and [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for viewing the solution. pretty self-explanatory right?
-3. Extract **roblox-2016-source-code-main.zip** to your C: drive, If you cloned the repo just move the folder to C:\
+3. Extract **roblox-2016-source-code-master.zip** to your C: drive, If you cloned the repo just move the folder to C:\
 4. Rename the folder to **Trunk2016**
 5. Create a environment variable in system variables named **CONTRIB_PATH** and set the path to: C:\Trunk2016\Contribs
 6. Now you need Contribs(Libraries), You can get them from my discord server, just ask me about it and i'll give you the access
@@ -12,7 +12,7 @@
       4. Copy the **zlib.lib** file inside: **C:\Trunk2016\zlib\win\bin\Release**
       5. Copy the **VMProtectSDK32.lib** file inside: **C:\Trunk2016\Contribs\VMProtectWin_2.13\lib**
       6. Copy **libcurl_a** file inside: **C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL**
-      7. Paste all of them to these folders: **RobloxStudio**, **RCCService**, **WindowsClient**
+      7. Paste all of them to these folders: **RobloxStudio**, **RCCService** and **WindowsClient**
 7. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder
 8. Change the solution configuration to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
