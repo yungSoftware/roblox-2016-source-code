@@ -6,12 +6,11 @@
 3. Extract **roblox-2016-source-code-master.zip** to your C: drive, If you cloned the repo just move the folder to C:\
 4. Rename the folder to **Trunk2016**
 5. Create an environment variable in system variables named **CONTRIB_PATH** and set the path to: ``C:\Trunk2016\Contribs``
-6. Now you need **Libraries aka. Contribs**, You can get it from my discord server, just ask to any admins about it and we'll give you the access
-   * **The Contribs should be in a channel named #roblox-2016-source-code**
-      * After you get the **Dependencies.7z** file, do these steps:
-         1. Create a new folder named **Contribs** inside **Trunk2016**
-         2. Extract the **Dependencies.7z** contents to that new folder
-         3. Open **setfolders.bat** and choose which folder you want to get set the files
+6. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
+   * After you get the **Dependencies.7z** file, do these steps:
+       1. Create a new folder named **Contribs** inside **Trunk2016**
+       2. Extract the **Dependencies.7z** contents to that new folder
+       3. Open **setfolders.bat** and choose which folder you want to get set the files
 8. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
 9. Change the solution configuration to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
