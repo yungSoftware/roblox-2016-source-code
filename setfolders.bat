@@ -2,7 +2,6 @@ REM Change C:\ to any drive letter you want
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
-
 @ECHO OFF
 CLS
 ECHO 1. RobloxStudio
