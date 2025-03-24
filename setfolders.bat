@@ -6,7 +6,7 @@ CLS
 ECHO 1. RobloxStudio
 ECHO 2. RCCService
 ECHO 3. WindowsClient
-Echo 4. Custom Path
+Echo 4. Custom Location
 Echo 5. Exit
 ECHO.
 
