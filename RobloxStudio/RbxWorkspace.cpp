@@ -266,7 +266,7 @@ bool RbxWorkspace::StartGame(const QString &ticket, const QString &url, const QS
 		errorCount++;
 		QMessageBox::critical(
 			NULL, 
-			tr("ROBLOX Studio"), 
+			tr("ROBLOX Studio Playground"), 
 			errorCount <= 2 ? 
 				tr("There was a problem opening your place.  Please try again.")
 				: tr("Oh no!  It seems we're still unable to open this place.  Please restart your application and try again.  If you continue to encounter this error, please contact customer service.")

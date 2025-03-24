@@ -156,8 +156,8 @@ LOGGROUP(Network)
 FASTFLAGVARIABLE(Dep, true)
 
 static const int MaxLengthFilenameMRU   = 64;                    //!< maximum length of a filename in the MRU list
-static const char* sWindow_Title        = "ROBLOX Studio";  //!< default main window title when no place selected
-static const char* sDialog_Title        = "ROBLOX Studio";       //!< default child dialog title
+static const char* sWindow_Title        = "ROBLOX Studio Playground";  //!< default main window title when no place selected
+static const char* sDialog_Title        = "ROBLOX Studio Playground";       //!< default child dialog title
 static const int SplashTotalTime        = 3505;                  //!< minimum time to display splashscreen
 
 bool RobloxMainWindow::sIsAppRunning = false;
@@ -1514,7 +1514,7 @@ void RobloxMainWindow::about()
 {
 	QString aboutMsg(tr("<div style=\"text-align: center\">"));
 	aboutMsg.append(tr("<p style=\"font-weight: bold\">"));
-    aboutMsg.append(tr("ROBLOX Studio "));
+    aboutMsg.append(tr("ROBLOX Studio Playground "));
 	aboutMsg.append(tr("Version %1</p>"));
 
 #if defined(_NOOPT) || defined(_DEBUG) 
