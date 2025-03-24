@@ -443,8 +443,7 @@ RCCService/libraries/*
 RobloxStudio/libraries/*
 XboxClient/libraries/*
 
-# Dont ignore needed deps
-# :)
+# Dont ignore these because without them the whole source is gonna freak out......
 
 !fmod/*
 !Rendering/ShaderCompiler/*
@@ -456,3 +455,4 @@ XboxClient/libraries/*
 !sgCore/*
 !QTitanRibbon/roblox_build/*
 !CSG/sgCore/*
+!CoreScriptConverter2/tool/*
