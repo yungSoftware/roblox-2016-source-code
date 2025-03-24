@@ -1,4 +1,4 @@
-REM Change C:\ to any drive you letter you want
+REM Change C:\ to any drive letter you want
 REM Written by yungDoom
 
 @ECHO OFF
