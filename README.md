@@ -9,18 +9,18 @@
 6. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
    * You should ask to any admin in the server for the access since the file link is private,
    * the **Contribs** should be in a channel named: #roblox-2016-source-code
-   * After you get the **Dependencies.7z** file, do these steps:
-       1. Create a new folder named **Contribs** inside **Trunk2016**
-       2. Extract the **Dependencies.7z** contents to that new folder
-       3. Open **setfolders.bat** and choose which folder you want to get set the files.
-8. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
-9. Change the solution configuration to **ReleaseStudio**
+8. After you get the **Dependencies.7z** file, do these steps:
+   1. Create a new folder named **Contribs** inside **Trunk2016**
+   2. Extract the **Dependencies.7z** contents to that new folder
+   3. Open **setfolders.bat** and choose which folder you want to get set the files.
+9. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
+10. Change the solution configuration to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
    * **Release** if you want to build **WindowsClient**
-10. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-11. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
-12. Right click to project and press **Build**
-13. Thats it, you have been builded from the source!
+11. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
+12. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
+13. Right click to project and press **Build**
+14. Thats it, you have been builded from the source!
 
 The guide is straight forward so there should be no issues on your side<br>
 Since I've already configured everything, you won't have to do much.
