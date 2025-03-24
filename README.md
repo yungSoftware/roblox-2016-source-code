@@ -19,10 +19,5 @@
 11. Right click to project and press **Build**
 12. Thats it, you have been builded from the source!
 
-## Common Error(s):
-- Error: warning treated as error - no 'object' file generated
-   - Fix: Enter the Properties of Project that gives error and head over to **C/C++ > General > Treat Warnings As Errors** and set it to **No (/WX-)**
-
-
 The guide is straight forward so there should be no issues on your side<br>
 Since I've already configured everything, you won't have to do much.
