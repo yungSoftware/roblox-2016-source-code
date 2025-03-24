@@ -34,7 +34,8 @@ if exist "%in%" (
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib %in%
     color 02
     ECHO All the folders has been copied, have a good luck!
-    TIMEOUT /T 3 ) else ( 
+    TIMEOUT /T 3 
+) else ( 
   color 04
   ECHO Failed to copy the files, check if your folders are intact.
   ECHO Make sure you've extracted the Source and Contribs correctly.
