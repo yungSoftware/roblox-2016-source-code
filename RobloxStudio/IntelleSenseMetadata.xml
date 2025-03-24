@@ -173,7 +173,7 @@
   </ItemStruct>
   <ItemStruct name="Color3">
     <StaticFunction name="new" tooltip="Color3 Color3.new(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.roblox.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
-	<StaticFunction name="new" tooltip="Color3 Color3.fromRGB(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.roblox.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
+	<StaticFunction name="fromRGB" tooltip="Color3 Color3.fromRGB(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.roblox.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
     <Property name="r" tooltip="Number Color3.r%1The red value of the color"/>
     <Property name="g" tooltip="Number Color3.g%1The green value of the color"/>
     <Property name="b" tooltip="Number Color3.b%1The blue value of the color"/>
