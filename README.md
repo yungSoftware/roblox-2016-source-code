@@ -7,7 +7,7 @@
 4. Rename the folder to **Trunk2016**
 5. Create an environment variable in system variables named **CONTRIB_PATH** and set the path to: ``C:\Trunk2016\Contribs``
 6. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
-   * You should ask any admins in the server for the access since the file link is private,
+   * You should ask to any admin in the server for the access since the file link is private,
    * the **Contribs** should be in a channel named: #roblox-2016-source-code
    * After you get the **Dependencies.7z** file, do these steps:
        1. Create a new folder named **Contribs** inside **Trunk2016**
