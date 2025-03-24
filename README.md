@@ -17,7 +17,7 @@
 9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
 10. Before building anything, you should build **boost.static** and **zlib** first
 11. Right click to project and press **Build**
-12. Thats it' you have been builded from the source!
+12. Thats it, you have been builded from the source!
 
 ## Common Errors:
 - Error: error C2220: warning treated as error - no 'object' file generated
