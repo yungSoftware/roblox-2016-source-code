@@ -13,7 +13,7 @@ Echo 7. Help
 Echo 8. Exit
 ECHO.
 
-CHOICE /C 12345678 /M "Enter your choice:"
+CHOICE /C 12345678 /M "Enter your choice 1-8:"
 
 :: This is where it gets your input
 IF ERRORLEVEL 8 GOTO Exit
