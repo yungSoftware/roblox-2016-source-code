@@ -455,3 +455,7 @@ XboxClient/libraries/*
 !Rendering/LibOVR/*
 !sgCore/*
 !QTitanRibbon/roblox_build/*
+!CSG/sgCore/libsgCore.dylib
+!CSG/sgCore/sgCore.dll
+!CSG/sgCore/sgCore.pdb
+!CSG/sgCore/sgCore.suo
