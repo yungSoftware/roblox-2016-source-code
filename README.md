@@ -18,7 +18,7 @@
    * **Release** if you want to build **WindowsClient**
 11. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
 12. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
-13. Open **setfolders.bat** and choose which folder you want to get prepared and set.
+13. Open **setfolders.bat** and choose which folder you want to get prepared.
 14. Right click to project and press **Build**
 15. Thats it, you have been builded from the source!
 
