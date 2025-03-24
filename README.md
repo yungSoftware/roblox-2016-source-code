@@ -9,7 +9,7 @@
    * After you get the **Dependencies.7z** file, do these steps:
       1. Create a new folder named **Contribs** inside **Trunk2016**
       2. Extract the **Dependencies.7z** contents to that new folder
-      3. Open **setfolders.bat** and choose which project you want to get set the files
+      3. Open **setfolders.bat** and choose which folder you want to get set the files
 7. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
 8. Change the solution configuration to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
