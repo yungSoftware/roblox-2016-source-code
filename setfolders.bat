@@ -8,14 +8,16 @@ ECHO 2. RCCService
 ECHO 3. WindowsClient
 Echo 4. Custom Location
 Echo 5. Clear all the libraries
-Echo 6. Clear all the libraries from custom location
-Echo 7. Exit
+Echo 6. Clear all the libraries *from Custom Location*
+Echo 7. Help
+Echo 8. Exit
 ECHO.
 
-CHOICE /C 123456 /M "Enter your choice:"
+CHOICE /C 12345678 /M "Enter your choice:"
 
 :: This is where it gets your input
-IF ERRORLEVEL 7 GOTO Exit
+IF ERRORLEVEL 8 GOTO Exit
+IF ERRORLEVEL 7 GOTO Help
 IF ERRORLEVEL 6 GOTO ClearLocation
 IF ERRORLEVEL 5 GOTO Clear
 IF ERRORLEVEL 4 GOTO CustomPath
@@ -25,6 +27,15 @@ IF ERRORLEVEL 1 GOTO RobloxStudio
 
 :Exit :: the command line closes.
 exit
+GOTO End
+
+:Help
+ECHO ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ECHO This batch file helps you copying the libraries
+ECHO Its an important process to build the game so make sure you do it
+ECHO Open this bat file again to start selecting.
+ECHO ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+TIMEOUT /T 10
 GOTO End
 
 :ClearLocation
