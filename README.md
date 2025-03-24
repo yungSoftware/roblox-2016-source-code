@@ -29,4 +29,4 @@
 
 
 The guide is straight forward so there should be no issues on your side<br>
-Since I've already configured everything, you won't have to do much<br>
+Since I've already configured everything, you won't have to do much.
