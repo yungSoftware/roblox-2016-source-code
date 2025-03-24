@@ -16,6 +16,12 @@
 # Mono auto generated files
 mono_crash.*
 
+# Needed to do this XDDD
+RobloxStudio\*.lib
+RCCService\*.lib
+WindowsClient\*.lib
+git.txt
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -29,7 +35,6 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
-[Ll]og/bin/*
 [Ll]ogs/
 
 # Visual Studio cache/options directory
