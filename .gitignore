@@ -443,3 +443,14 @@ RCCService/libraries/*
 RobloxStudio/libraries/*
 XboxClient/libraries/*
 
+# Dont ignore needed deps
+# :)
+
+!fmod/*
+!Rendering/ShaderCompiler/*
+!Rendering/OpenVR/bin/*
+!SDL2/Win/2.0.4/*
+!VMProtect/*
+!openssl/*
+!Rendering/LibOVR/*
+!sgCore/*
