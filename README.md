@@ -16,7 +16,7 @@
    * **Release** if you want to build **WindowsClient**
 9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
 10. Before building anything, you should build **boost.static** and **zlib** first
-11.Right click to project and press **Build**
+11. Right click to project and press **Build**
 12. Hoping that everything is fine, the compilation should complete.
 
 ## Common Errors:
