@@ -360,6 +360,24 @@ App/tmp.h
 # Ignore all the libraries since its excluded from this repository
 Contribs/*
 
+# Ignore boost stuff
+Contribs/boost/bjam.exe
+Contribs/boost/b2.exe
+Contribs/boost/bin.v2/
+Contribs/boost/bin.v2/*
+Contribs/boost/project-config.jam
+Contribs/boost/stage/lib/*
+
+# Ignore Qt build output
+Contribs/Qt/bin
+Contribs/Qt/lib
+Contribs/Qt/bin/*
+Contribs/Qt/lib/*
+Contribs/Qt/demos
+Contribs/Qt/projects.sln
+*.conf
+*.pri
+
 # C++ objects and libs
 *.slo
 *.lo
