@@ -25,8 +25,8 @@ exit
 GOTO End
 
 :CustomPath
-set /p in=Enter the path where you want the files to go: 
 ECHO WARNING: Your input should start with: C:\Trunk2016
+set /p in=Enter the path where you want the files to go: 
 if exist "%in%" (
     xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* %in%
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib %in%
