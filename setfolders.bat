@@ -25,13 +25,21 @@ exit
 GOTO End
 
 :CustomPath
-ECHO WARNING: Your input should start with: C:\Trunk2016
+ECHO WARNING: Your input should start with: C:\Trunk2012
 set /p in=Enter the path where you want the files to go: 
 if exist "%in%" (
-    xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* %in%
-    xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib %in%
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" %in%
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib %in%
+    if not exist "%in%\libboost_locale-vc110-mt-1_56.lib" (
+    xcopy C:\Trunk2012\Contribs\boost_1_56_0\stage\lib\*.* %in%
+    )
+    if not exist "%in%\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\Contribs\VMProtectWin_2.13\lib\*.lib %in%
+    )
+    if not exist "%in%\libcurl_a.lib" (
+    xcopy "C:\Trunk2012\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" %in%
+    )
+    if not exist "%in%\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\zlib\win\bin\Release\*.lib %in%
+    )
     color 02
     ECHO All the folders has been copied, have a good luck!
     TIMEOUT /T 3 
@@ -44,11 +52,19 @@ if exist "%in%" (
 GOTO End
 
 :WindowsClient
-if exist "C:\Trunk2016\WindowsClient" (
-    xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\trunk2016\WindowsClient\
-    xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\trunk2016\WindowsClient\
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\trunk2016\WindowsClient\
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\trunk2016\WindowsClient\
+if exist "C:\Trunk2012\WindowsClient" (
+    if not exist "C:\Trunk2012\WindowsClient\libboost_locale-vc110-mt-1_56.lib" (
+    xcopy C:\Trunk2012\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2012\WindowsClient\
+    )
+    if not exist "C:\Trunk2012\WindowsClient\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2012\WindowsClient\
+    )
+    if not exist "C:\Trunk2012\WindowsClient\libcurl_a.lib" (
+    xcopy "C:\Trunk2012\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2012\WindowsClient\
+    )
+    if not exist "C:\Trunk2012\WindowsClient\zlib.lib" (
+    xcopy C:\Trunk2012\zlib\win\bin\Release\*.lib C:\Trunk2012\WindowsClient\
+    )
     color 02
     ECHO All the folders has been copied, have a good luck!
     TIMEOUT /T 3
@@ -62,15 +78,22 @@ GOTO End
 
 
 :RCCService
-if exist "C:\Trunk2016\RCCService" (
-    xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\trunk2016\RCCService\
-    xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\trunk2016\RCCService\
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\trunk2016\RCCService\
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\trunk2016\RCCService\
+if exist "C:\Trunk2012\RCCService" (
+    if not exist "C:\Trunk2012\RCCService\libboost_locale-vc110-mt-1_56.lib" (
+    xcopy C:\Trunk2012\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2012\RCCService\
+    )
+    if not exist "C:\Trunk2012\RCCService\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2012\RCCService\
+    )
+    if not exist "C:\Trunk2012\RCCService\libcurl_a.lib" (
+    xcopy "C:\Trunk2012\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2012\RCCService\
+    )
+    if not exist "C:\Trunk2012\RCCService\zlib.lib" (
+    xcopy C:\Trunk2012\zlib\win\bin\Release\*.lib C:\Trunk2012\RCCService\
+    )
     color 02
     ECHO All the folders has been copied, have a good luck!
     TIMEOUT /T 3
-
 ) else ( 
   color 04
   ECHO Failed to copy the files, check if your folders are intact.
@@ -80,15 +103,22 @@ if exist "C:\Trunk2016\RCCService" (
 GOTO End
 
 :RobloxStudio
-if exist "C:\Trunk2016\RobloxStudio" (
-    xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\trunk2016\RobloxStudio\
-    xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\trunk2016\RobloxStudio\
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\trunk2016\RobloxStudio\
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\trunk2016\RobloxStudio\
+if exist "C:\Trunk2012\RobloxStudio" (
+    if not exist "C:\Trunk2012\RobloxStudio\libboost_locale-vc110-mt-1_56.lib" (
+    xcopy C:\Trunk2012\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2012\RobloxStudio\
+    )
+    if not exist "C:\Trunk2012\RobloxStudio\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2012\RobloxStudio\
+    )
+    if not exist "C:\Trunk2012\RobloxStudio\libcurl_a.lib" (
+    xcopy "C:\Trunk2012\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2012\RobloxStudio\
+    )
+    if not exist "C:\Trunk2012\RobloxStudio\VMProtectSDK32.lib" (
+    xcopy C:\Trunk2012\zlib\win\bin\Release\*.lib C:\Trunk2012\RobloxStudio\
+    )
     color 02
     ECHO All the folders has been copied, have a good luck!
     TIMEOUT /T 3
-
 ) else ( 
   color 04
   ECHO Failed to copy the files, check if your folders are intact.
