@@ -8,13 +8,15 @@ ECHO 2. RCCService
 ECHO 3. WindowsClient
 Echo 4. Custom Location
 Echo 5. Clear all the libraries
-Echo 6. Exit
+Echo 6. Clear all the libraries from custom location
+Echo 7. Exit
 ECHO.
 
 CHOICE /C 123456 /M "Enter your choice:"
 
 :: This is where it gets your input
-IF ERRORLEVEL 6 GOTO Exit
+IF ERRORLEVEL 7 GOTO Exit
+IF ERRORLEVEL 6 GOTO ClearLocation
 IF ERRORLEVEL 5 GOTO Clear
 IF ERRORLEVEL 4 GOTO CustomPath
 IF ERRORLEVEL 3 GOTO WindowsClient
@@ -23,6 +25,22 @@ IF ERRORLEVEL 1 GOTO RobloxStudio
 
 :Exit :: the command line closes.
 exit
+GOTO End
+
+:ClearLocation
+ECHO WARNING: Your input should start with: C:\Trunk2016
+set /p loco=Enter the path where you want the files to go: 
+if exist "%loco%" (
+    cd /d %loco%
+    del *.lib
+    color 02
+    ECHO All the necessary folders have been cleared.
+    TIMEOUT /T 3 ) else ( 
+  color 04
+  ECHO Failed to do the task
+  ECHO Make sure you've extracted the Source and Contribs correctly.
+  TIMEOUT /T 5
+)
 GOTO End
 
 :Clear
