@@ -358,6 +358,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Roblox
+App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
 
@@ -411,7 +412,6 @@ qrc_*.cpp
 ui_*.h
 *.qmlc
 *.jsc
-Makefile*
 *build-*
 *.qm
 *.prl
@@ -456,3 +456,5 @@ XboxClient/libraries/*
 !QTitanRibbon/roblox_build/*
 !CSG/sgCore/*
 !CoreScriptConverter2/tool/*
+!SettingsComparisonTool/*
+!RCCService/Mesa-7.8.1/lib/*

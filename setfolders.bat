@@ -7,13 +7,15 @@ ECHO 1. RobloxStudio
 ECHO 2. RCCService
 ECHO 3. WindowsClient
 Echo 4. Custom Location
-Echo 5. Exit
+Echo 5. Clear all the libraries
+Echo 6. Exit
 ECHO.
 
-CHOICE /C 12345 /M "Enter your choice:"
+CHOICE /C 123456 /M "Enter your choice:"
 
 :: This is where it gets your input
-IF ERRORLEVEL 5 GOTO Exit
+IF ERRORLEVEL 6 GOTO Exit
+IF ERRORLEVEL 5 GOTO Clear
 IF ERRORLEVEL 4 GOTO CustomPath
 IF ERRORLEVEL 3 GOTO WindowsClient
 IF ERRORLEVEL 2 GOTO RCCService
@@ -21,6 +23,27 @@ IF ERRORLEVEL 1 GOTO RobloxStudio
 
 :Exit :: the command line closes.
 exit
+GOTO End
+
+:Clear
+if exist "C:\Trunk2016\" (
+  if exist C:\Trunk2016\WindowsClient (
+    cd /d C:\Trunk2016\WindowsClient
+    del *.lib )
+  if exist C:\Trunk2016\RCCService (
+    cd /d C:\Trunk2016\RCCService
+    del *.lib )
+ if exist C:\Trunk2016\RobloxStudio (
+    cd /d C:\Trunk2016\RobloxStudio
+    del *.lib )
+    color 02
+    ECHO All the necessary folders have been cleared.
+    TIMEOUT /T 3 ) else ( 
+  color 04
+  ECHO Failed to do the task
+  ECHO Make sure you've extracted the Source and Contribs correctly.
+  TIMEOUT /T 5
+)
 GOTO End
 
 :CustomPath
