@@ -20,20 +20,26 @@ IF ERRORLEVEL 3 GOTO WindowsClient
 IF ERRORLEVEL 2 GOTO RCCService
 IF ERRORLEVEL 1 GOTO RobloxStudio
 
-:Exit
+:Exit :: the command line closes.
 exit
 GOTO End
 
 :CustomPath
 set /p in=Enter the path where you want the files to go: 
 ECHO WARNING: Your input should start with: C:\Trunk2016
-xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* %in%
+if exist "%in%" (
+    xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* %in%
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib %in%
     xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" %in%
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib %in%
     color 02
     ECHO All the folders has been copied, have a good luck!
-    TIMEOUT /T 3
+    TIMEOUT /T 3 ) else ( 
+  color 04
+  ECHO Failed to copy the files, check if your folders are intact.
+  ECHO Make sure you've extracted the Source and Contribs correctly.
+  TIMEOUT /T 5
+)
 GOTO End
 
 :WindowsClient
@@ -47,12 +53,10 @@ if exist "C:\Trunk2016\WindowsClient" (
     TIMEOUT /T 3
 ) else ( 
   color 04
-  mkdir "C:\Trunk2016\Contribs"
   ECHO Failed to copy the files, check if your folders are intact.
   ECHO Make sure you've extracted the Source and Contribs correctly.
   TIMEOUT /T 5
 )
-
 GOTO End
 
 
@@ -68,12 +72,10 @@ if exist "C:\Trunk2016\RCCService" (
 
 ) else ( 
   color 04
-  mkdir "C:\Trunk2016\Contribs"
   ECHO Failed to copy the files, check if your folders are intact.
   ECHO Make sure you've extracted the Source and Contribs correctly.
   TIMEOUT /T 5
 )
-
 GOTO End
 
 :RobloxStudio
@@ -88,12 +90,10 @@ if exist "C:\Trunk2016\RobloxStudio" (
 
 ) else ( 
   color 04
-  mkdir "C:\Trunk2016\Contribs"
   ECHO Failed to copy the files, check if your folders are intact.
   ECHO Make sure you've extracted the Source and Contribs correctly.
   TIMEOUT /T 5
 )
-
 GOTO End
 
 :End
