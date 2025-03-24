@@ -16,11 +16,56 @@
 # Mono auto generated files
 mono_crash.*
 
-# Needed to do this XDDD
+
+### YUNGDOOM WAS HERE ###
+
+# Roblox
+App/include/security/RandomConstant.h
+App/AlreadyBuiltRandomConstant.h
+App/tmp.h
 RobloxStudio/*.lib
 RCCService/*.lib
 WindowsClient/*.lib
 git.txt
+
+# Ignore all the libraries since its excluded from this repository
+Contribs/*
+
+# Ignore boost stuff
+Contribs/boost/bjam.exe
+Contribs/boost/b2.exe
+Contribs/boost/bin.v2/
+Contribs/boost/bin.v2/*
+Contribs/boost/project-config.jam
+Contribs/boost/stage/lib/*
+
+# Ignore Qt build output
+Contribs/Qt/bin
+Contribs/Qt/lib
+Contribs/Qt/bin/*
+Contribs/Qt/lib/*
+Contribs/Qt/demos
+Contribs/Qt/projects.sln
+*.conf
+*.pri
+
+# Dont ignore these because without them the whole source is gonna freak out......
+
+!fmod/*
+!Rendering/ShaderCompiler/*
+!Rendering/OpenVR/bin/*
+!SDL2/Win/2.0.4/*
+!VMProtect/*
+!openssl/*
+!Rendering/LibOVR/*
+!sgCore/*
+!QTitanRibbon/roblox_build/*
+!CSG/sgCore/*
+!CoreScriptConverter2/tool/*
+!SettingsComparisonTool/*
+!RCCService/Mesa-7.8.1/lib/*
+
+### YUNGDOOM WAS HERE ###
 
 # Build results
 [Dd]ebug/
@@ -357,32 +402,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Roblox
-App/include/security/RandomConstant.h
-App/AlreadyBuiltRandomConstant.h
-App/tmp.h
-
-# Ignore all the libraries since its excluded from this repository
-Contribs/*
-
-# Ignore boost stuff
-Contribs/boost/bjam.exe
-Contribs/boost/b2.exe
-Contribs/boost/bin.v2/
-Contribs/boost/bin.v2/*
-Contribs/boost/project-config.jam
-Contribs/boost/stage/lib/*
-
-# Ignore Qt build output
-Contribs/Qt/bin
-Contribs/Qt/lib
-Contribs/Qt/bin/*
-Contribs/Qt/lib/*
-Contribs/Qt/demos
-Contribs/Qt/projects.sln
-*.conf
-*.pri
-
 # C++ objects and libs
 *.slo
 *.lo
@@ -436,25 +455,3 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
-
-# Ignore project-specific libraries
-WindowsClient/libraries/*
-RCCService/libraries/*
-RobloxStudio/libraries/*
-XboxClient/libraries/*
-
-# Dont ignore these because without them the whole source is gonna freak out......
-
-!fmod/*
-!Rendering/ShaderCompiler/*
-!Rendering/OpenVR/bin/*
-!SDL2/Win/2.0.4/*
-!VMProtect/*
-!openssl/*
-!Rendering/LibOVR/*
-!sgCore/*
-!QTitanRibbon/roblox_build/*
-!CSG/sgCore/*
-!CoreScriptConverter2/tool/*
-!SettingsComparisonTool/*
-!RCCService/Mesa-7.8.1/lib/*
