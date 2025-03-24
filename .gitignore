@@ -17,9 +17,9 @@
 mono_crash.*
 
 # Needed to do this XDDD
-RobloxStudio\*.lib
-RCCService\*.lib
-WindowsClient\*.lib
+RobloxStudio/*.lib
+RCCService/*.lib
+WindowsClient/*.lib
 git.txt
 
 # Build results
