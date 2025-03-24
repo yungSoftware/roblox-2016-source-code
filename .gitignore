@@ -358,7 +358,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Roblox
-App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
 
