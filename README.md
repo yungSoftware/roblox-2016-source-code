@@ -5,7 +5,7 @@
 3. Extract **roblox-2016-source-code-master.zip** to your C: drive, If you cloned the repo just move the folder to C:\
 4. Rename the folder to **Trunk2016**
 5. Create a environment variable in system variables named **CONTRIB_PATH** and set the path to: C:\Trunk2016\Contribs
-6. Now you need Contribs(Libraries), You can get them from my discord server, just ask me about it and i'll give you the access
+6. Now you need Contribs(Libraries), You can get them from my discord server, just ask about it and we'll give you the access
    * After you get the **Dependencies.7z** file, do these steps:
       1. Create a new folder named **Contribs** inside **Trunk2016**
       2. Extract the **Dependencies.7z** contents to that new folder
