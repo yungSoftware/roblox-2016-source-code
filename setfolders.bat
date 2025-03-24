@@ -1,4 +1,3 @@
-REM Replace C:\ to any drive letter if you want
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
