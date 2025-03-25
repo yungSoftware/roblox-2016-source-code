@@ -112,7 +112,9 @@ public:
         // preprocess shader
 		IncludeHandler handler(folder);
 
-        const MOJOSHADER_preprocessData* pp = NULL;
+        const MOJOSHADER_preprocessData* pp = MOJOSHADER_preprocess(
+            path.c_str(), source.c_str(), source.size(), macros.empty() ? NULL : &macros[0], macros.size(),
+			IncludeHandler::open, IncludeHandler::close, NULL, NULL, &handler);
         
         if (pp->error_count)
         {

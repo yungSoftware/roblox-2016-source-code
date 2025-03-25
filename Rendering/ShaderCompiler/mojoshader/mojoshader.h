@@ -430,14 +430,6 @@ typedef struct MOJOSHADER_preshaderOperand
     unsigned int index;
 } MOJOSHADER_preshaderOperand;
 
-/*
- * Preprocessing flags
- */
-typedef enum
-{
-    MOJOSHADER_PREPROCESS_EMITLINE = (1 << 0), /* emit #line directives */
-} MOJOSHADER_preprocessFlags;
-
 typedef struct MOJOSHADER_preshaderInstruction
 {
     MOJOSHADER_preshaderOpcode opcode;
