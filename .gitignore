@@ -30,6 +30,8 @@ WindowsClient/*.lib
 git.txt
 
 # Ignore shaders so you wanna build yourself, since i've fixed it you should absolutely do it!
+# Launch buildshaders.bat to see the magic, 
+# Also it automatically builds the shaders if you builded any of this projects: WindowsClient, RCCService or RobloxStudio.
 shaders/shaders_*.pack
 
 # Ignore all the libraries since its excluded from this repository
