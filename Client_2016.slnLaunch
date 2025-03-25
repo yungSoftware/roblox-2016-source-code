@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "RCCService",
+    "Projects": [
+      {
+        "Path": "RCCService\\RCCService.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
