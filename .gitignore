@@ -72,6 +72,50 @@ Contribs/Qt/projects.sln
 !RCCService/Mesa-7.8.1/lib/*
 !SimulationTestUtility/RegressionTestSuite/*
 
+# Stinky Files
+
+/.vs/Client_2016/v17/fileList.bin
+/App/bin/ReleaseRcc/App.lib
+/App/bin/ReleaseStudio/App.lib
+/Network/bin/ReleaseRcc/Network.lib
+/Network/bin/ReleaseStudio/Network.lib
+/Rendering/ShaderCompiler/ShaderCompiler.exe
+/App/bin/Release/App.lib
+/App.BulletPhysics/Release/App.BulletPhysics.lib
+/Base/bin/Release/Base.lib
+/boostlibs/bin/Release/boost.static/boost.static.lib
+/CSG/bin/Release/CSG.lib
+/Log/bin/Release/Log.lib
+/Network/bin/Release/Network.lib
+/Rendering/AppDraw/bin/Release/AppDraw.lib
+/Rendering/g3d/bin/graphics3D/Release/graphics3D.lib
+/Rendering/GfxBase/bin/Release/RenderLibBase.lib
+/Rendering/GfxCore/bin/Release/GfxCore.lib
+/Rendering/GfxRender/bin/Release/GfxRender.lib
+/Rendering/RbxG3D/bin/Release/RenderLib.lib
+/RobloxStudio/bin/Release/imageformats/imageformats/qgif4.dll
+/RobloxStudio/bin/Release/imageformats/imageformats/qjpeg4.dll
+/RobloxStudio/bin/Release/Log.dll
+/RobloxStudio/bin/Release/QtCore4.dll
+/RobloxStudio/bin/Release/QtGui4.dll
+/RobloxStudio/bin/Release/QtNetwork4.dll
+/RobloxStudio/bin/Release/QtWebKit4.dll
+/RobloxStudio/bin/Release/QtXml4.dll
+/RobloxStudio/bin/Release/ReflectionMetadata.xml
+/RobloxStudio/bin/Release/RobloxStudioBeta.exe
+/RobloxStudio/bin/Release/RobloxStudioBeta.lib
+/RobloxStudio/bin/Release/RobloxStudioBeta.exp
+/RobloxStudio/bin/Release/RobloxStudioRibbon.xml
+/RobloxStudio/bin/Release/RobloxStudioRibbonRelease.xml
+/RobloxStudio/bin/Release/copyrights.txt
+/RobloxStudio/bin/Release/AppSettings.xml
+/RobloxStudio/bin/Release/BuiltInPlugins
+/RobloxStudio/bin/Release/.vs/RobloxStudioBeta/v17
+/WindowsClient/Win32/Release/boost.dll
+/RobloxStudio/bin/Release/boost.dll
+/WindowsClient/Win32/Release/Log.dll
+/zlib/win/bin/Release/zlib.lib
+
 ### YUNGDOOM WAS HERE ###
 
 # Build results
@@ -456,46 +500,4 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
-
 *_qmlcache.qrc
-/.vs/Client_2016/v17/fileList.bin
-/App/bin/ReleaseRcc/App.lib
-/App/bin/ReleaseStudio/App.lib
-/Network/bin/ReleaseRcc/Network.lib
-/Network/bin/ReleaseStudio/Network.lib
-/Rendering/ShaderCompiler/ShaderCompiler.exe
-/App/bin/Release/App.lib
-/App.BulletPhysics/Release/App.BulletPhysics.lib
-/Base/bin/Release/Base.lib
-/boostlibs/bin/Release/boost.static/boost.static.lib
-/CSG/bin/Release/CSG.lib
-/Log/bin/Release/Log.lib
-/Network/bin/Release/Network.lib
-/Rendering/AppDraw/bin/Release/AppDraw.lib
-/Rendering/g3d/bin/graphics3D/Release/graphics3D.lib
-/Rendering/GfxBase/bin/Release/RenderLibBase.lib
-/Rendering/GfxCore/bin/Release/GfxCore.lib
-/Rendering/GfxRender/bin/Release/GfxRender.lib
-/Rendering/RbxG3D/bin/Release/RenderLib.lib
-/RobloxStudio/bin/Release/imageformats/imageformats/qgif4.dll
-/RobloxStudio/bin/Release/imageformats/imageformats/qjpeg4.dll
-/RobloxStudio/bin/Release/Log.dll
-/RobloxStudio/bin/Release/QtCore4.dll
-/RobloxStudio/bin/Release/QtGui4.dll
-/RobloxStudio/bin/Release/QtNetwork4.dll
-/RobloxStudio/bin/Release/QtWebKit4.dll
-/RobloxStudio/bin/Release/QtXml4.dll
-/RobloxStudio/bin/Release/ReflectionMetadata.xml
-/RobloxStudio/bin/Release/RobloxStudioBeta.exe
-/RobloxStudio/bin/Release/RobloxStudioBeta.lib
-/RobloxStudio/bin/Release/RobloxStudioBeta.exp
-/RobloxStudio/bin/Release/RobloxStudioRibbon.xml
-/RobloxStudio/bin/Release/RobloxStudioRibbonRelease.xml
-/RobloxStudio/bin/Release/copyrights.txt
-/RobloxStudio/bin/Release/AppSettings.xml
-/RobloxStudio/bin/Release/BuiltInPlugins
-/RobloxStudio/bin/Release/.vs/RobloxStudioBeta/v17
-/WindowsClient/Win32/Release/boost.dll
-/RobloxStudio/bin/Release/boost.dll
-/WindowsClient/Win32/Release/Log.dll
-/zlib/win/bin/Release/zlib.lib
