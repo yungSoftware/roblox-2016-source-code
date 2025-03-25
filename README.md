@@ -14,8 +14,8 @@
    2. Extract the **Dependencies.7z** contents to that new folder
 9. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
 11. Change the Solution Configurations to **ReleaseStudio**
-   * **ReleaseRCC** if you want to build **RCCService**
-   * **Release** if you want to build **WindowsClient**
+    - **ReleaseRCC** if you want to build **RCCService**
+    - **Release** if you want to build **WindowsClient**
 12. Change the Solution Platforms to **Win32**
 13. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
 14. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and ShaderCompiler first
