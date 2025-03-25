@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Studio",
+    "Projects": [
+      {
+        "Path": "RobloxStudio\\RobloxStudio.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "WindowsClient",
+    "Projects": [
+      {
+        "Path": "WindowsClient\\WindowsClient.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
