@@ -79,8 +79,6 @@ Contribs/Qt/projects.sln
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-x64/
-x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
@@ -463,3 +461,4 @@ compile_commands.json
 /App/bin/ReleaseStudio/App.lib
 /Network/bin/ReleaseRcc/Network.lib
 /Network/bin/ReleaseStudio/Network.lib
+/Rendering/ShaderCompiler/ShaderCompiler.exe
