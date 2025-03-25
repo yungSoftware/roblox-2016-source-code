@@ -163,7 +163,7 @@ if not exist "$(ProjectDir)$(OutDir)boost.dll" (
 echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.dll"
 )
 
-"..\buildshaders.bat"</Command>
+"$(SolutionDir)buildshaders.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseTest|Win32'">
