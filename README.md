@@ -20,7 +20,8 @@
 12. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
 13. Open **setfolders.bat** and choose which folder you want to get prepared.
 14. Right click to project and press **Build**
-15. Thats it, you have been builded from the source!
+15. Ignore all the warnings since it doesn't affect the compilation
+16. Thats it, you have been builded from the source!
 
 ## Common Error(s):
  - Error: warning treated as error - no 'object' file generated
