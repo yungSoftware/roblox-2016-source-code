@@ -19,6 +19,7 @@ mono_crash.*
 
 # Visual Studio cache/options directory
 .vs/
+.vs/Client2016/
 
 # Roblox
 App/include/security/RandomConstant.h
