@@ -85,7 +85,6 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
-[Bb]in/
 [Oo]bj/
 [Ll]ogs/
 
@@ -460,3 +459,7 @@ compile_commands.json
 
 *_qmlcache.qrc
 /.vs/Client_2016/v17/fileList.bin
+/App/bin/ReleaseRcc/App.lib
+/App/bin/ReleaseStudio/App.lib
+/Network/bin/ReleaseRcc/Network.lib
+/Network/bin/ReleaseStudio/Network.lib
