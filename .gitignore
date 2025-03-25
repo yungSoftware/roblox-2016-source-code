@@ -18,6 +18,10 @@ mono_crash.*
 
 ### YUNGDOOM WAS HERE ###
 
+# Visual Studio cache/options directory
+# We need it!
+#.vs/
+
 # Roblox
 App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
@@ -80,9 +84,6 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]ogs/
-
-# Visual Studio cache/options directory
-.vs/
 
 Generated\ Files/
 
