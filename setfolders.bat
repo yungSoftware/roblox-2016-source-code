@@ -1,6 +1,12 @@
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
+REM Removing unnecessary folders
+if exist "C:\Trunk2016\Contribs\hlsl2glslfork" (
+rmdir C:\Trunk2016\Contribs\hlsl2glslfork
+rmdir C:\Trunk2016\Contribs\glsl-optimizer
+)
+
 @ECHO OFF
 CLS
 ECHO 1. RobloxStudio
