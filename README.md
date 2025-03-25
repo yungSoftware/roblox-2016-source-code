@@ -13,15 +13,16 @@
    1. Create a new folder named **Contribs** inside **Trunk2016**
    2. Extract the **Dependencies.7z** contents to that new folder
 9. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
-10. Change the solution configuration to **ReleaseStudio**
+11. Change the Solution Configurations to **ReleaseStudio**
    * **ReleaseRCC** if you want to build **RCCService**
    * **Release** if you want to build **WindowsClient**
-11. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-12. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
-13. Open **setfolders.bat** and choose which folder you want to get prepared.
-14. Right click to project and press **Build**
-15. Ignore all the warnings since it doesn't affect the compilation
-16. Thats it, you have been builded from the source!
+12. Change the Solution Platforms to **Win32**
+13. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
+14. Before building anything, you should build **boost.static**, **zlib** and **qtnribbon** first
+15. Open **setfolders.bat** and choose which folder you want to get prepared.
+16. Right click to project and press **Build**
+17. Ignore all the warnings since it doesn't affect the compilation
+18. Thats it, you have been builded from the source!
 
 ## Common Error(s):
  - Error: warning treated as error - no 'object' file generated
