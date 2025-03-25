@@ -415,7 +415,7 @@ FodyWeavers.xsd
 *.lai
 *.so
 *.so.*
-*.dll
+# *.dll
 *.dylib
 
 # Qt-es
