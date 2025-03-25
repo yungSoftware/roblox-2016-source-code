@@ -124,12 +124,12 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>hlsl2glslfork/hlslang/MachineIndependent;hlsl2glslfork/hlslang/OSDependent/Windows;hlsl2glslfork/OGLCompilersDLL;glsl-optimizer/include/c99;glsl-optimizer/include;glsl-optimizer/src;glsl-optimizer/src/mesa;glsl-optimizer/src/glsl;glsl-optimizer/src/mapi;../../ClientShared;$(CONTRIB_PATH)/SDK/Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>hlsl2glslfork/hlslang/MachineIndependent;hlsl2glslfork/hlslang/OSDependent/Windows;hlsl2glslfork/OGLCompilersDLL;glsl-optimizer/include/c99;glsl-optimizer/include;glsl-optimizer/src;glsl-optimizer/src/mesa;glsl-optimizer/src/glsl;glsl-optimizer/src/mapi;../../ClientShared;$(CONTRIB_PATH)/SDK/Include;mojoshader/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;MOJOSHADER_NO_VERSION_INCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level1</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
