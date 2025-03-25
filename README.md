@@ -7,7 +7,7 @@
 4. Rename the folder to **Trunk2016**
 5. Create an environment variable in system variables named **CONTRIB_PATH** and set the path to: ``C:\Trunk2016\Contribs``
 6. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
-   * You should ask to any admin in the server for the access since the file link is private,
+   * You should ask to any admin for the access since the file link is private,
    * the **Contribs** should be in a channel named: #roblox-2016-source-code
 7. After you get the **Dependencies.7z** file, do these steps:
    1. Create a new folder named **Contribs** inside **Trunk2016**
@@ -18,7 +18,7 @@
     - **Release** if you want to build **WindowsClient**
 10. Change the Solution Platforms to **Win32**
 11. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-12. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and ShaderCompiler first
+12. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and **ShaderCompiler** first
 13. Open **setfolders.bat** and choose which folder you want to get prepared.
 14. Right click to project and press **Build**
 15. Ignore all the warnings since it doesn't affect the compilation
