@@ -2,7 +2,7 @@ REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
 REM Removing unnecessary folders
-if exist "C:\Trunk2016\Contribs\hlsl2glslfork" (
+if exist "C:\Trunk2016\Contribs\hlsl2glslfork" if exist ":\Trunk2016\Contribs\glsl-optimizer" (
 rmdir C:\Trunk2016\Contribs\hlsl2glslfork
 rmdir C:\Trunk2016\Contribs\glsl-optimizer
 )
@@ -17,6 +17,13 @@ Echo 5. Clear all the libraries
 Echo 6. Clear all the libraries *from Custom Location*
 Echo 7. Help
 Echo 8. Exit
+Echo.
+if exist ".git\" (
+cecho {0A}You're using Git Version of the source, cool!{#}
+) else (
+cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
+)
+ECHO.
 ECHO.
 
 CHOICE /C 12345678 /M "Enter your choice 1-8:"
@@ -36,26 +43,41 @@ exit
 GOTO End
 
 :Help
-ECHO ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+ECHO.
+
 ECHO This batch file helps you copying the libraries
 ECHO Its an important process to build the game so make sure you do it
 ECHO Open this bat file again to start selecting.
-ECHO ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+
+ECHO.
 TIMEOUT /T 10
 GOTO End
 
 :ClearLocation
-ECHO WARNING: Your input should start with: C:\Trunk2016
+ECHO.
+
+cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+
+ECHO.
 set /p loco=Enter the path where you want the files to go: 
 if exist "%loco%" (
     cd /d %loco%
     del *.lib
-    color 02
-    ECHO All the necessary folders have been cleared.
-    TIMEOUT /T 3 ) else ( 
-  color 04
-  ECHO Failed to do the task
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+    cd /d C:\Trunk2016\
+    ECHO.
+
+    cecho {0A}All the necessary files from the folder you've choosed has been cleared.{#}
+
+    ECHO.
+    TIMEOUT /T 3 
+) else (
+  ECHO.
+
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End
@@ -71,18 +93,31 @@ if exist "C:\Trunk2016\" (
  if exist C:\Trunk2016\RobloxStudio (
     cd /d C:\Trunk2016\RobloxStudio
     del *.lib )
-    color 02
-    ECHO All the necessary folders have been cleared.
-    TIMEOUT /T 3 ) else ( 
-  color 04
-  ECHO Failed to do the task
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+    cd /d C:\Trunk2016\
+    ECHO.
+
+    cecho {0A}All the necessary folders have been cleared.{#}
+
+    ECHO.
+    TIMEOUT /T 3 
+) else ( 
+  ECHO.
+
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End
 
 :CustomPath
-ECHO WARNING: Your input should start with: C:\Trunk2016
+ECHO.
+
+cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+
+ECHO.
 set /p in=Enter the path where you want the files to go: 
 if exist "%in%" (
     if not exist "%in%\libboost_locale-vc110-mt-1_56.lib" (
@@ -97,13 +132,20 @@ if exist "%in%" (
     if not exist "%in%\VMProtectSDK32.lib" (
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib %in%
     )
-    color 02
-    ECHO All the folders has been copied, have a good luck!
+    ECHO.
+
+    cecho {0A}All the folders has been copied, have a good luck!{#}
+    
+    ECHO.
     TIMEOUT /T 3 
 ) else ( 
-  color 04
-  ECHO Failed to copy the files, check if your folders are intact.
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+  ECHO.
+   
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End
@@ -122,13 +164,20 @@ if exist "C:\Trunk2016\WindowsClient" (
     if not exist "C:\Trunk2016\WindowsClient\zlib.lib" (
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\WindowsClient\
     )
-    color 02
-    ECHO All the folders has been copied, have a good luck!
+    ECHO.
+    
+    cecho {0A}All the folders has been copied, have a good luck!{#}
+    
+    ECHO.
     TIMEOUT /T 3
 ) else ( 
-  color 04
-  ECHO Failed to copy the files, check if your folders are intact.
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+  ECHO.
+
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End
@@ -148,13 +197,20 @@ if exist "C:\Trunk2016\RCCService" (
     if not exist "C:\Trunk2016\RCCService\zlib.lib" (
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\RCCService\
     )
-    color 02
-    ECHO All the folders has been copied, have a good luck!
+    ECHO.
+ 
+    cecho {0A}All the folders has been copied, have a good luck!{#}
+  
+    ECHO.
     TIMEOUT /T 3
 ) else ( 
-  color 04
-  ECHO Failed to copy the files, check if your folders are intact.
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+  ECHO.
+
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End
@@ -173,13 +229,20 @@ if exist "C:\Trunk2016\RobloxStudio" (
     if not exist "C:\Trunk2016\RobloxStudio\zlib.lib" (
     xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\RobloxStudio\
     )
-    color 02
-    ECHO All the folders has been copied, have a good luck!
+    ECHO.
+    
+    cecho {0A}All the folders has been copied, have a good luck!{#}
+    
+    ECHO.
     TIMEOUT /T 3
 ) else ( 
-  color 04
-  ECHO Failed to copy the files, check if your folders are intact.
-  ECHO Make sure you've extracted the Source and Contribs correctly.
+  ECHO.
+
+  cecho {0C}Failed to do the task{#}
+  ECHO.
+  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+
+  ECHO.
   TIMEOUT /T 5
 )
 GOTO End

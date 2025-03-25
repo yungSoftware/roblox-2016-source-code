@@ -397,7 +397,6 @@ public:
     {
         shaderProfile_DX_9,
         shaderProfile_DX_11,
-        shaderProfile_DX_11_DURANGO,
         shaderProfile_DX_11_9_3,
         shaderProfile_Count
     };
@@ -410,8 +409,6 @@ public:
             return shaderProfile_DX_11;
         if (target == "d3d11_level_9_3")
             return shaderProfile_DX_11_9_3;
-        if (target == "d3d11_durango")
-            return shaderProfile_DX_11_DURANGO;
 
         return shaderProfile_Count;
     }
@@ -430,8 +427,6 @@ public:
 
     static bool isX64Profile(ShaderProfile profile)
     {
-        if (profile == shaderProfile_DX_11_DURANGO)
-            return true;
         return false;
     }
 
@@ -440,9 +435,6 @@ public:
 	{
         HMODULE d3dCompiler = NULL;
         
-        if (shaderProfile == shaderProfile_DX_11_DURANGO)
-            d3dCompiler = loadShaderCompilerDurangoDLL();
-        else
             d3dCompiler = loadShaderCompilerDLL();
 
         compileShader = (TypeD3DCompile)GetProcAddress(d3dCompiler, "D3DCompile");
@@ -525,7 +517,6 @@ public:
                 targetOut = originalTarget;
                 return;
             }
-        case ShaderCompilerD3D::shaderProfile_DX_11_DURANGO:
         case ShaderCompilerD3D::shaderProfile_DX_11:
             {
                 std::string shaderType = originalTarget.substr(0, 2);
@@ -629,21 +620,6 @@ private:
         if (!compiler)
         {
             fprintf(stderr, "Error: can't load D3DCompile DLL\n");
-
-            throw std::runtime_error("Can't load D3DX DLL");
-        }
-
-        return compiler;
-    }
-
-    static HMODULE loadShaderCompilerDurangoDLL()
-    {
-        HMODULE compiler = LoadLibraryA("D3DCompiler_47_xdk.dll");
-        DWORD lastError = GetLastError();
-
-        if (!compiler)
-        {
-            fprintf(stderr, "Error: can't load D3DCompile for xbox DLL\n");
 
             throw std::runtime_error("Can't load D3DX DLL");
         }
@@ -1084,10 +1060,6 @@ int compilePacks(int argc, char** argv)
             case ShaderCompilerD3D::shaderProfile_DX_11:
             if (!compilePack(folder, target, "DX11", &compiler))
                 return 1;
-                break;
-            case ShaderCompilerD3D::shaderProfile_DX_11_DURANGO:
-                if (!compilePack(folder, target, "DX11 DURANGO", &compiler))
-                    return 1;
                 break;
             case ShaderCompilerD3D::shaderProfile_DX_11_9_3:
             if (!compilePack(folder, target, "DX11 WIN_MOBILE", &compiler))
