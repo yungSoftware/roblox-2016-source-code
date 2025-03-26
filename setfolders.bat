@@ -19,7 +19,6 @@ Echo 6. Clear all the libraries *from Custom Location*
 Echo 7. Help
 Echo 8. Exit
 ECHO.
-ECHO.
 
 if exist ".git\" (
 tools\cecho\cecho {0A}You're using Git Version of the source, cool!{#}
@@ -27,6 +26,7 @@ tools\cecho\cecho {0A}You're using Git Version of the source, cool!{#}
 tools\cecho\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 )
 
+ECHO.
 if not exist "Contribs\version.txt" (
 tools\cecho\cecho {0A}Contribs version has been updated to: 1.01{#}
 @echo Contribs Version: 1.01> Contribs\version.txt
