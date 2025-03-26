@@ -144,9 +144,6 @@
     <Filter Include="Header Files\Solver">
       <UniqueIdentifier>{3a51e026-0b49-484b-89a5-1947fa16b4c4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Util Source\Durango">
-      <UniqueIdentifier>{9617055c-25a7-43d0-8c92-55bd0fa1c862}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="V8Kernel\Body.cpp">
@@ -1745,9 +1742,6 @@
     <ClCompile Include="v8world\MaterialProperties.cpp">
       <Filter>Source Files\V8World Source</Filter>
     </ClCompile>
-    <ClCompile Include="util\Durango\ProgramMemoryChecker.cpp">
-      <Filter>Source Files\Util Source\Durango</Filter>
-    </ClCompile>
     <ClCompile Include="v8datamodel\PlatformService.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -1765,12 +1759,6 @@
     </ClCompile>
     <ClCompile Include="v8world\BulletContact.cpp">
       <Filter>Source Files\V8World Source</Filter>
-    </ClCompile>
-    <ClCompile Include="util\XboxHttp2.cpp">
-      <Filter>Source Files\Util Source\Durango</Filter>
-    </ClCompile>
-    <ClCompile Include="util\Durango\FileSystemDurango.cpp">
-      <Filter>Source Files\Util Source\Durango</Filter>
     </ClCompile>
     <ClCompile Include="util\FileSystemIndependent.cpp">
       <Filter>Source Files\Util Source</Filter>

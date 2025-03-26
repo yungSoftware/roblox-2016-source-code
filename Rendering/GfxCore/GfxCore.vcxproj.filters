@@ -148,9 +148,6 @@
     <ClCompile Include="D3D11\TextureD3D11.cpp">
       <Filter>D3D11</Filter>
     </ClCompile>
-    <ClCompile Include="D3D11\DeviceD3D11Durango.cpp">
-      <Filter>D3D11</Filter>
-    </ClCompile>
     <ClCompile Include="D3D11\DeviceD3D11Win32.cpp">
       <Filter>D3D11</Filter>
     </ClCompile>

@@ -334,7 +334,6 @@
   <ItemGroup>
     <ClCompile Include="D3D11\DeviceContextD3D11.cpp" />
     <ClCompile Include="D3D11\DeviceD3D11.cpp" />
-    <ClCompile Include="D3D11\DeviceD3D11Durango.cpp" />
     <ClCompile Include="D3D11\DeviceD3D11Win32.cpp" />
     <ClCompile Include="D3D11\FramebufferD3D11.cpp" />
     <ClCompile Include="D3D11\GeometryD3D11.cpp" />
