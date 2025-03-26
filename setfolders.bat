@@ -1,5 +1,25 @@
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
+REM WARNING: Remove version.txt everytime you open this batch file if you want to get neweer updates.
+SET "version=1.02"
+
+if not exist "Contribs\version.txt" (
+@echo CONTRIBS_VERSION=%version%> Contribs\version.txt
+REM Removing unnecessary folders
+if exist "Contribs\hlsl2glslfork" (
+rmdir /s /q C:\Trunk2016\Contribs\hlsl2glslfork )
+if exist "Contribs\glsl-optimizer" (
+rmdir /s /q C:\Trunk2016\Contribs\glsl-optimizer )
+if exist "Contribs\SDL2.0.4" (
+rmdir /s /q C:\Trunk2016\Contribs\SDL2.0.4 )
+if exist "Contribs\SDL2.0.18" (
+rmdir /s /q C:\Trunk2016\Contribs\SDL2.0.18 )
+if not exist "Contribs\extras" ( mkdir Contribs\extras )
+if exist "Contribs\cabsdk" ( move Contribs\cabsdk Contribs\extras )
+if exist "Contribs\libwebm" ( move Contribs\libwebm Contribs\extras )
+if exist "Contribs\xulrunner" ( move Contribs\xulrunner Contribs\extras )
+cls
+)
 
 @ECHO OFF
 CLS
@@ -8,7 +28,7 @@ ECHO 2. RCCService
 ECHO 3. WindowsClient
 Echo 4. Custom Location
 Echo 5. Clear all the libraries
-Echo 6. Clear all the libraries *from Custom Location*
+Echo 6. Clear all the libraries from Custom Location
 Echo 7. Help
 Echo 8. Exit
 ECHO.
@@ -20,16 +40,6 @@ tools\cecho\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 )
 
 ECHO.
-if not exist "Contribs\version.txt" (
- REM Removing unnecessary folders
- if exist "C:\Trunk2016\Contribs\hlsl2glslfork" (
- if exist "C:\Trunk2016\Contribs\glsl-optimizer" (
- rmdir /s /q C:\Trunk2016\Contribs\hlsl2glslfork
- rmdir /s /q C:\Trunk2016\Contribs\glsl-optimizer
- ) )
- @echo Contribs Version: 1.01> Contribs\version.txt
- tools\cecho\cecho {0A}Contribs version has been updated to: 1.01{#}
-)
 
 CHOICE /C 12345678 /M "Enter your choice 1-8:"
 

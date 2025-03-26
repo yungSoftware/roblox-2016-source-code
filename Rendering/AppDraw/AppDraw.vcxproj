@@ -230,7 +230,7 @@
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <OmitFramePointers>false</OmitFramePointers>
-      <AdditionalIncludeDirectories>$(CONTRIB_PATH)\SDL2.0.4\include;..\..\Base\include;..\..\TBB_4_1\include;..\G3D\png;..\g3d\include;.\include;..\g3d\include\zlib;..\GfxBase\include;..\RbxG3D\include;..\..\app\include;$(CONTRIB_PATH)\boost_1_56_0\include;..\..\Log\include;..\..\App.BulletPhysics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CONTRIB_PATH)\SDL2\include;..\..\Base\include;..\G3D\png;..\g3d\include;.\include;..\g3d\include\zlib;..\GfxBase\include;..\RbxG3D\include;..\..\app\include;$(CONTRIB_PATH)\boost_1_56_0\include;..\..\Log\include;..\..\App.BulletPhysics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_RELEASE;RBX_TEST_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
