@@ -72,8 +72,6 @@ Contribs/Qt/projects.sln
 !RCCService/Mesa-7.8.1/lib/*
 !SimulationTestUtility/RegressionTestSuite/*
 
-### YUNGDOOM WAS HERE ###
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
@@ -88,6 +86,8 @@ bld/
 x86/
 *.lib
 x64/
+
+### YUNGDOOM WAS HERE ###
 
 Generated\ Files/
 
@@ -458,5 +458,3 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 *_qmlcache.qrc
-/.vs/Client_2016/v17/DocumentLayout.json
-/.vs/Client_2016/v17/DocumentLayout.backup.json
