@@ -173,10 +173,12 @@
   </ItemStruct>
   <ItemStruct name="Color3">
     <StaticFunction name="new" tooltip="Color3 Color3.new(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.roblox.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
-	<StaticFunction name="fromRGB" tooltip="Color3 Color3.fromRGB(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.roblox.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
+	<StaticFunction name="fromRGB" tooltip="Color3 Color3.fromRGB(r, g, b)%1Returns a Color3 from given components within the range of 0 to 255.&lt;a href=&#34;http://wiki.roblox.com/index.php/;&gt;More Info&lt;/a&gt;"/>
     <Property name="r" tooltip="Number Color3.r%1The red value of the color"/>
     <Property name="g" tooltip="Number Color3.g%1The green value of the color"/>
     <Property name="b" tooltip="Number Color3.b%1The blue value of the color"/>
+	<StaticFunction name="fromHSV" tooltip="Color3 Color3.fromHSV(h, s, v)%1Creates a Color3 with the given hue, saturation, and value. The parameters should be within the range of 0 to 1.&lt;a href=&#34;http://wiki.roblox.com/index.php/;&gt;More Info&lt;/a&gt;"/>
+	<StaticFunction name="fromHex" tooltip="Color3 Color3.fromHex(#000000)%1Returns a new Color3 from a six- or three-character hexadecimal format, case insensitive.&lt;a href=&#34;http://wiki.roblox.com/index.php/;&gt;More Info&lt;/a&gt;"/>
   </ItemStruct>
   <ItemStruct name="ColorSequence">
     <StaticFunction name="new" tooltip="ColorSequence ColorSequence.new(Color3 c)%1Creates a sequence of two keypoints with `c` for each value"/>

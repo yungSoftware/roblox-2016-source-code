@@ -102,6 +102,50 @@ namespace RBX {
 			pushNewObject(L, color);
 		}
 
+		static G3D::Color3 HSVtoRGB(float h, float s, float v) {
+			float r, g, b;
+			int i = int(h * 6);
+			float f = h * 6 - i;
+			float p = v * (1 - s);
+			float q = v * (1 - f * s);
+			float t = v * (1 - (1 - f) * s);
+			switch (i % 6) {
+			case 0: r = v, g = t, b = p; break;
+			case 1: r = q, g = v, b = p; break;
+			case 2: r = p, g = v, b = t; break;
+			case 3: r = p, g = q, b = v; break;
+			case 4: r = t, g = p, b = v; break;
+			case 5: r = v, g = p, b = q; break;
+			}
+			return G3D::Color3(r, g, b);
+		}
+		int Color3Bridge::newHSVColor3(lua_State* L)
+		{
+			float h = luaL_checknumber(L, 1);
+			float s = luaL_checknumber(L, 2);
+			float v = luaL_checknumber(L, 3);
+			G3D::Color3 color = HSVtoRGB(h, s, v);
+			pushNewObject(L, color);
+			return 1;
+		}
+		int Color3Bridge::newHexColor3(lua_State* L) {
+			const char* hexStr = luaL_checkstring(L, 1);
+			if (hexStr[0] == '#') {
+				hexStr++;
+			}
+			if (strlen(hexStr) != 6) {
+				return luaL_error(L, "Invalid hex length, expected 6 characters.");
+			}
+			unsigned int hexValue;
+			sscanf(hexStr, "%x", &hexValue);
+			float r = ((hexValue >> 16) & 0xFF) / 255.0f;
+			float g = ((hexValue >> 8) & 0xFF) / 255.0f;
+			float b = (hexValue & 0xFF) / 255.0f;
+			G3D::Color3 color(r, g, b);
+			pushNewObject(L, color);
+			return 1;
+		}
+
 		int Color3Bridge::newColor3(lua_State* L)
 		{
 			float color[3];
