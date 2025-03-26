@@ -458,3 +458,4 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 *_qmlcache.qrc
+/RobloxStudio/content/Place.rbxl
