@@ -8,10 +8,10 @@ Everything is open source on this source code, we even reverse engineered some c
 We actively working on this project, So you can help us by just Starting Forking and modifying the source.<br><br>
 </p> 
 
-<div align="center" dir="/BUILDING.md"> To see how you can build from the source, refer to <a href="/BUILDING.md" ">BUILDING.md</a></div>
+<p align="center" dir="/BUILDING.md"><b>To see how you can build from the source, refer to</b> <a href="/BUILDING.md" "><b>BUILDING.md</b></a></p>
 
 <h2 align="center"> ❤️ Credits </h2>
 
 <p align=center>  
-xspyy - fromHSV and fromHex Implementation
+<a href="https://github.com/xspyy"><b>@xspyy</b></a> - fromHSV and fromHex Implementation
 </p> 
