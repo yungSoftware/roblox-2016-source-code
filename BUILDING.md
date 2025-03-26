@@ -1,6 +1,6 @@
 # Cookbook:
 
-1. First of all, Clone the repository with [Git](https://git-scm.com/) like this:
+1. First of all, Open a Command Prompt and clone the repository with [Git](https://git-scm.com/) like this:
 ```
 cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 ```
