@@ -29,11 +29,10 @@ cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 
 ECHO.
 
-if not exist "Contribs\glsl-optimizer" (
 if not exist "Contribs\version.txt" (
 cecho {0A}Contribs version has been updated to: 1.01{#}
 @echo Contribs Version: 1.01> Contribs\version.txt
-) )
+)
 
 ECHO.
 ECHO.
