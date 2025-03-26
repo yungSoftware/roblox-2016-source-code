@@ -2,10 +2,11 @@ REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
 REM Removing unnecessary folders
-if exist "C:\Trunk2016\Contribs\hlsl2glslfork" if exist ":\Trunk2016\Contribs\glsl-optimizer" (
+if exist "C:\Trunk2016\Contribs\hlsl2glslfork" (
+if exist ":\Trunk2016\Contribs\glsl-optimizer" (
 rmdir C:\Trunk2016\Contribs\hlsl2glslfork
 rmdir C:\Trunk2016\Contribs\glsl-optimizer
-)
+) )
 
 @ECHO OFF
 CLS
@@ -17,12 +18,23 @@ Echo 5. Clear all the libraries
 Echo 6. Clear all the libraries *from Custom Location*
 Echo 7. Help
 Echo 8. Exit
-Echo.
+ECHO.
+ECHO.
+
 if exist ".git\" (
 cecho {0A}You're using Git Version of the source, cool!{#}
 ) else (
 cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 )
+
+ECHO.
+
+if not exist "Contribs\glsl-optimizer" (
+if not exist "Contribs\version.txt" (
+cecho {0A}Contribs version has been updated to: 1.01{#}
+@echo Contribs Version: 1.01> Contribs\version.txt
+) )
+
 ECHO.
 ECHO.
 
