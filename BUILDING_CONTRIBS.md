@@ -12,8 +12,10 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
 
 # Curl 7.43.0
-1. Open the solution: `"C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln"`
-2. And just build.
+1. Open the solution: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln`
+2. Change **Solution Configurations** to **LIB Release - LIB OpenSSL**
+3. And just build.
+- To build the dll, Enter Properties of **libcurl** and Change **Target Name** to: **libcurl_a** and Change **Target Extension** to **.dll**
 
 # OpenSSL 1.0.0c
 1. Install [Strawberry Perl](https://strawberryperl.com/)
@@ -22,7 +24,7 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 4. Type this to the command prompt: `ms\32all.bat`.
 
 # SDL 2.0.4
-1. Enter to this project: `"C:\Trunk2016\Contribs\SDL2\VisualC\SDL.sln"`
-2. And just build.
+1. Enter to this project: `C:\Trunk2016\Contribs\SDL2\VisualC\SDL.sln`
+2. Build **SDL2** for DLL and SDL2main for LIB
 
 **That's it, you've compiled all the libraries yourself!**
