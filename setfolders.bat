@@ -22,15 +22,15 @@ ECHO.
 ECHO.
 
 if exist ".git\" (
-tools\cecho {0A}You're using Git Version of the source, cool!{#}
+tools\cecho\cecho {0A}You're using Git Version of the source, cool!{#}
 ) else (
-tools\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
+tools\cecho\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 )
 
 ECHO.
 
 if not exist "Contribs\version.txt" (
-tools\cecho {0A}Contribs version has been updated to: 1.01{#}
+tools\cecho\cecho {0A}Contribs version has been updated to: 1.01{#}
 @echo Contribs Version: 1.01> Contribs\version.txt
 )
 
@@ -69,7 +69,7 @@ GOTO End
 cls
 ECHO.
 
-tools\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+tools\cecho\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
 
 ECHO.
 set /p loco=Enter the path where you want the files to go: 
@@ -79,7 +79,7 @@ if exist "%loco%" (
     cd /d C:\Trunk2016\
     ECHO.
 
-    tools\cecho {0A}All the necessary files from the folder you've choosed has been clear.{#}
+    tools\cecho\cecho {0A}All the necessary files from the folder you've choosed has been clear.{#}
 
     ECHO.
     TIMEOUT /T 3 
@@ -87,9 +87,9 @@ if exist "%loco%" (
   cls
   ECHO.
 
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -111,7 +111,7 @@ if exist "C:\Trunk2016\" (
     cd /d C:\Trunk2016\
     ECHO.
 
-    tools\cecho {0A}All the necessary folders have been clear.{#}
+    tools\cecho\cecho {0A}All the necessary folders have been clear.{#}
 
     ECHO.
     TIMEOUT /T 3 
@@ -119,9 +119,9 @@ if exist "C:\Trunk2016\" (
   cls
   ECHO.
 
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -132,7 +132,7 @@ GOTO End
 cls
 ECHO.
 
-tools\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+tools\cecho\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
 
 ECHO.
 set /p in=Enter the path where you want the files to go: 
@@ -151,7 +151,7 @@ if exist "%in%" (
     )
     ECHO.
 
-    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3 
@@ -159,9 +159,9 @@ if exist "%in%" (
   cls
   ECHO.
    
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -185,7 +185,7 @@ if exist "C:\Trunk2016\WindowsClient" (
     )
     ECHO.
     
-    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3
@@ -193,9 +193,9 @@ if exist "C:\Trunk2016\WindowsClient" (
   cls 
   ECHO.
 
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -220,7 +220,7 @@ if exist "C:\Trunk2016\RCCService" (
     )
     ECHO.
  
-    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
   
     ECHO.
     TIMEOUT /T 3
@@ -228,9 +228,9 @@ if exist "C:\Trunk2016\RCCService" (
   cls
   ECHO.
 
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -254,7 +254,7 @@ if exist "C:\Trunk2016\RobloxStudio" (
     )
     ECHO.
     
-    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3
@@ -262,9 +262,9 @@ if exist "C:\Trunk2016\RobloxStudio" (
   cls
   ECHO.
 
-  tools\cecho {0C}Failed to do the task{#}
+  tools\cecho\cecho {0C}Failed to do the task{#}
   ECHO.
-  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
 
   ECHO.
   TIMEOUT /T 5
