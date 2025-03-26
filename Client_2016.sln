@@ -58,7 +58,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shaders", "Shaders", "{02EA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShaderCompiler", "Rendering\ShaderCompiler\ShaderCompiler.vcxproj", "{F4B21823-2EB7-4D89-B7F5-0E1645ED4F8E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{A60A617A-731C-4AE8-B713-8A35BA7D74AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source Files", "Source Files", "{A60A617A-731C-4AE8-B713-8A35BA7D74AC}"
 	ProjectSection(SolutionItems) = preProject
 		shaders\source\adorn.hlsl = shaders\source\adorn.hlsl
 		shaders\source\aluminum.hlsl = shaders\source\aluminum.hlsl
