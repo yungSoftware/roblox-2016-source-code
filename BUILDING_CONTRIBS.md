@@ -12,7 +12,7 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
 
 # Curl 7.43.0
-1. Open the solution: `"C:\Trunk2016\Contribs\curl-7.50.2\projects\Windows\VC11\curl-all.sln"`
+1. Open the solution: `"C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln"`
 2. And just build.
 
 # OpenSSL 1.0.0c
