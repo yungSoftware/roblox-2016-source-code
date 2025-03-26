@@ -1,9 +1,16 @@
+@ECHO OFF
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 REM WARNING: Remove version.txt everytime you open this batch file if you want to get newer updates.
-SET "version=1.02"
+SET "version=1.03"
 
 if not exist "Contribs\version.txt" (
+cd Contribs
+git clone https://github.com/P0L3NARUBA/roblox-src-contribs-update
+cd ..
+robocopy Contribs\roblox-src-contribs-update\SDL2\VisualC\SDL Contribs\SDL2\VisualC\SDL /E /S
+robocopy Contribs\roblox-src-contribs-update\SDL2\VisualC\SDLmain Contribs\SDL2\VisualC\SDLmain /E /S
+robocopy Contribs\roblox-src-contribs-update\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\lib Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\lib /E /S
 @echo CONTRIBS_VERSION=%version%> Contribs\version.txt
 REM Removing unnecessary folders
 if exist "Contribs\hlsl2glslfork" (
@@ -18,10 +25,9 @@ if not exist "Contribs\extras" ( mkdir Contribs\extras )
 if exist "Contribs\cabsdk" ( move Contribs\cabsdk Contribs\extras )
 if exist "Contribs\libwebm" ( move Contribs\libwebm Contribs\extras )
 if exist "Contribs\xulrunner" ( move Contribs\xulrunner Contribs\extras )
-cls
+rmdir /s /q Contribs\roblox-src-contribs-update
 )
 
-@ECHO OFF
 CLS
 ECHO 1. RobloxStudio
 ECHO 2. RCCService
