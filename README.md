@@ -8,7 +8,7 @@ Everything is open source on this source code, we even reverse engineered some c
 We actively working on this project, So you can help us by just Starting Forking and modifying the source.<br><br>
 </p> 
 
-<div align="center" dir="/BUILDING.md"> To see how you can build, refer to <a href="/BUILDING.md" ">BUILDING.md</a></div>
+<div align="center" dir="/BUILDING.md"> To see how you can build from the source, refer to <a href="/BUILDING.md" ">BUILDING.md</a></div>
 
 <h2 align="center"> ❤️ Credits </h2>
 
