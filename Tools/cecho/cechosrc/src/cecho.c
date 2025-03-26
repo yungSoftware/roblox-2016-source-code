@@ -1,6 +1,6 @@
 // cecho.c
-// by thomas_polaert@yahoo.fr & anzz1
-//
+// by thomas_polaert@yahoo.fr & anzz1 & yungDoom (since i've fixed the file and created a project for it, also this file was hard to find.)
+// 
 // This source code is provided "as-is" under The Code Project Open License (CPOL)
 // http://www.codeproject.com/info/cpol10.aspx
 //
