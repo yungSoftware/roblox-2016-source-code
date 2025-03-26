@@ -14,23 +14,23 @@ ECHO 1. RobloxStudio
 ECHO 2. RCCService
 ECHO 3. WindowsClient
 Echo 4. Custom Location
-Echo 5. Clear all the libraries
-Echo 6. Clear all the libraries *from Custom Location*
+Echo 5. cls all the libraries
+Echo 6. cls all the libraries *from Custom Location*
 Echo 7. Help
 Echo 8. Exit
 ECHO.
 ECHO.
 
 if exist ".git\" (
-cecho {0A}You're using Git Version of the source, cool!{#}
+tools\cecho {0A}You're using Git Version of the source, cool!{#}
 ) else (
-cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
+tools\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 )
 
 ECHO.
 
 if not exist "Contribs\version.txt" (
-cecho {0A}Contribs version has been updated to: 1.01{#}
+tools\cecho {0A}Contribs version has been updated to: 1.01{#}
 @echo Contribs Version: 1.01> Contribs\version.txt
 )
 
@@ -42,8 +42,8 @@ CHOICE /C 12345678 /M "Enter your choice 1-8:"
 :: This is where it gets your input
 IF ERRORLEVEL 8 GOTO Exit
 IF ERRORLEVEL 7 GOTO Help
-IF ERRORLEVEL 6 GOTO ClearLocation
-IF ERRORLEVEL 5 GOTO Clear
+IF ERRORLEVEL 6 GOTO clsLocation
+IF ERRORLEVEL 5 GOTO cls
 IF ERRORLEVEL 4 GOTO CustomPath
 IF ERRORLEVEL 3 GOTO WindowsClient
 IF ERRORLEVEL 2 GOTO RCCService
@@ -54,6 +54,7 @@ exit
 GOTO End
 
 :Help
+cls
 ECHO.
 
 ECHO This batch file helps you copying the libraries
@@ -65,9 +66,10 @@ TIMEOUT /T 10
 GOTO End
 
 :ClearLocation
+cls
 ECHO.
 
-cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+tools\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
 
 ECHO.
 set /p loco=Enter the path where you want the files to go: 
@@ -77,16 +79,17 @@ if exist "%loco%" (
     cd /d C:\Trunk2016\
     ECHO.
 
-    cecho {0A}All the necessary files from the folder you've choosed has been cleared.{#}
+    tools\cecho {0A}All the necessary files from the folder you've choosed has been clear.{#}
 
     ECHO.
     TIMEOUT /T 3 
 ) else (
+  cls
   ECHO.
 
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -94,6 +97,7 @@ if exist "%loco%" (
 GOTO End
 
 :Clear
+cls
 if exist "C:\Trunk2016\" (
   if exist C:\Trunk2016\WindowsClient (
     cd /d C:\Trunk2016\WindowsClient
@@ -107,16 +111,17 @@ if exist "C:\Trunk2016\" (
     cd /d C:\Trunk2016\
     ECHO.
 
-    cecho {0A}All the necessary folders have been cleared.{#}
+    tools\cecho {0A}All the necessary folders have been clear.{#}
 
     ECHO.
     TIMEOUT /T 3 
 ) else ( 
+  cls
   ECHO.
 
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -124,9 +129,10 @@ if exist "C:\Trunk2016\" (
 GOTO End
 
 :CustomPath
+cls
 ECHO.
 
-cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
+tools\cecho {0E}WARNING: Your input should start with: C:\Trunk2016{#}
 
 ECHO.
 set /p in=Enter the path where you want the files to go: 
@@ -145,16 +151,17 @@ if exist "%in%" (
     )
     ECHO.
 
-    cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3 
 ) else ( 
+  cls
   ECHO.
    
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -162,6 +169,7 @@ if exist "%in%" (
 GOTO End
 
 :WindowsClient
+cls
 if exist "C:\Trunk2016\WindowsClient" (
     if not exist "C:\Trunk2016\WindowsClient\libboost_locale-vc110-mt-1_56.lib" (
     xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2016\WindowsClient\
@@ -177,16 +185,17 @@ if exist "C:\Trunk2016\WindowsClient" (
     )
     ECHO.
     
-    cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3
-) else ( 
+) else (
+  cls 
   ECHO.
 
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -195,6 +204,7 @@ GOTO End
 
 
 :RCCService
+cls
 if exist "C:\Trunk2016\RCCService" (
     if not exist "C:\Trunk2016\RCCService\libboost_locale-vc110-mt-1_56.lib" (
     xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2016\RCCService\
@@ -210,16 +220,17 @@ if exist "C:\Trunk2016\RCCService" (
     )
     ECHO.
  
-    cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
   
     ECHO.
     TIMEOUT /T 3
 ) else ( 
+  cls
   ECHO.
 
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
   
   ECHO.
   TIMEOUT /T 5
@@ -227,6 +238,7 @@ if exist "C:\Trunk2016\RCCService" (
 GOTO End
 
 :RobloxStudio
+cls
 if exist "C:\Trunk2016\RobloxStudio" (
     if not exist "C:\Trunk2016\RobloxStudio\libboost_locale-vc110-mt-1_56.lib" (
     xcopy C:\Trunk2016\Contribs\boost_1_56_0\stage\lib\*.* C:\Trunk2016\RobloxStudio\
@@ -242,16 +254,17 @@ if exist "C:\Trunk2016\RobloxStudio" (
     )
     ECHO.
     
-    cecho {0A}All the folders has been copied, have a good luck!{#}
+    tools\cecho {0A}All the folders has been copied, have a good luck!{#}
     
     ECHO.
     TIMEOUT /T 3
 ) else ( 
+  cls
   ECHO.
 
-  cecho {0C}Failed to do the task{#}
+  tools\cecho {0C}Failed to do the task{#}
   ECHO.
-  cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
+  tools\cecho {0C}Make sure you've extracted the Source and Contribs correctly.{#}
 
   ECHO.
   TIMEOUT /T 5
