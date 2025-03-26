@@ -1,6 +1,6 @@
 REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
-REM WARNING: Remove version.txt everytime you open this batch file if you want to get neweer updates.
+REM WARNING: Remove version.txt everytime you open this batch file if you want to get newer updates.
 SET "version=1.02"
 
 if not exist "Contribs\version.txt" (
