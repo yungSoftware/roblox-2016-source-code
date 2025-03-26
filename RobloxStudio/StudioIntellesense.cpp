@@ -325,12 +325,12 @@ namespace Studio {
 
     void Intellesense::loadIntelleSenseMetadata()
     {
-        QResource metaDataResource(":/IntelleSenseMetadata.xml");
+        QResource metaDataResource(":/IntelliSenseMetadata.xml");
         QByteArray metaDataByteArray((const char*)metaDataResource.data(),(int)metaDataResource.size());
 
         metaDataByteArray = qUncompress(metaDataByteArray);
 
-        m_intelleSenseMetadata = QDomDocument("IntelleSenseMetadata");
+        m_intelleSenseMetadata = QDomDocument("IntelliSenseMetadata");
         m_intelleSenseMetadata.setContent(metaDataByteArray, false);
     }
 

@@ -1136,7 +1136,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="IntelleSenseMetadata.xml">
+    <Xml Include="IntelliSenseMetadata.xml">
       <Filter>Content Files</Filter>
     </Xml>
   </ItemGroup>

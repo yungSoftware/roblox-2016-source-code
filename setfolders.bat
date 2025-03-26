@@ -21,8 +21,14 @@ tools\cecho\cecho {0C}You're using LOCAL Git Version of the source, not cool!{#}
 
 ECHO.
 if not exist "Contribs\version.txt" (
-tools\cecho\cecho {0A}Contribs version has been updated to: 1.01{#}
-@echo Contribs Version: 1.01> Contribs\version.txt
+ REM Removing unnecessary folders
+ if exist "C:\Trunk2016\Contribs\hlsl2glslfork" (
+ if exist "C:\Trunk2016\Contribs\glsl-optimizer" (
+ rmdir /s /q C:\Trunk2016\Contribs\hlsl2glslfork
+ rmdir /s /q C:\Trunk2016\Contribs\glsl-optimizer
+ ) )
+ @echo Contribs Version: 1.01> Contribs\version.txt
+ tools\cecho\cecho {0A}Contribs version has been updated to: 1.01{#}
 )
 
 CHOICE /C 12345678 /M "Enter your choice 1-8:"

@@ -957,7 +957,7 @@ xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="IntelleSenseMetadata.xml" />
+    <Xml Include="IntelliSenseMetadata.xml" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\SDL2\Win\2.0.4\SDL2.lib" />
