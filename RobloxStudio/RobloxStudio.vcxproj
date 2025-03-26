@@ -364,8 +364,6 @@ xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins
     <ClCompile Include="DocTabManager.cpp" />
     <ClCompile Include="ExternalHandlers.cpp" />
     <ClCompile Include="filewatcher\FileWatcher.cpp" />
-    <ClCompile Include="filewatcher\FileWatcherLinux.cpp" />
-    <ClCompile Include="filewatcher\FileWatcherOSX.cpp" />
     <ClCompile Include="filewatcher\FileWatcherWin32.cpp" />
     <ClCompile Include="FindDialog.cpp" />
     <ClCompile Include="KeepSavedChangesDialog.cpp" />

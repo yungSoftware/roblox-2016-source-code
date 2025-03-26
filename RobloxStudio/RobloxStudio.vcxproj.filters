@@ -558,12 +558,6 @@
     <ClCompile Include="filewatcher\FileWatcher.cpp">
       <Filter>Source Files\Filewatcher</Filter>
     </ClCompile>
-    <ClCompile Include="filewatcher\FileWatcherLinux.cpp">
-      <Filter>Source Files\Filewatcher</Filter>
-    </ClCompile>
-    <ClCompile Include="filewatcher\FileWatcherOSX.cpp">
-      <Filter>Source Files\Filewatcher</Filter>
-    </ClCompile>
     <ClCompile Include="filewatcher\FileWatcherWin32.cpp">
       <Filter>Source Files\Filewatcher</Filter>
     </ClCompile>
