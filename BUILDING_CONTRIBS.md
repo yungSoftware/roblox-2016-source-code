@@ -8,8 +8,8 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 4. When the configuration complete, type **nmake** and take a long breath.
 
 # Boost 1.56.0
-1. Run `bootstrap.bat` in `Contribs/boost_1_56_0/`.
-2. After the command done, Run `build_boost.bat`.
+1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`
+2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
 
 # Curl 7.43.0
 1. Open the solution: `"C:\Trunk2016\Contribs\curl-7.50.2\projects\Windows\VC11\curl-all.sln"`
