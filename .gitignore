@@ -64,6 +64,8 @@ Contribs/openssl/tmp32
 Contribs/openssl/tmp32.dbg
 Contribs/openssl/tmp32dll
 Contribs/openssl/tmp32dll.dbg
+Contribs/openssl/32.mak
+Contribs/openssl/32dll.mak
 
 # Dont ignore these because without them the whole source is gonna freak out......
 
