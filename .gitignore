@@ -90,7 +90,6 @@ Contribs/openssl/32dll.mak
 !Contribs/VMProtectWin_2.13/bin
 !Contribs/VMProtectWin_2.13/lib
 
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
