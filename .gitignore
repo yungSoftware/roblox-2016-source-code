@@ -32,10 +32,6 @@ shaders/shaders_*.pack
 /App/bin/ReleaseRcc/*.lib
 /Network/bin/ReleaseRcc/*.lib
 /Network/bin/ReleaseStudio/*.lib
-/SDL2/
-/curllib/
-/curl/
-/openssl/
 
 # Files built by Visual Studio
 *.obj
