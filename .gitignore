@@ -8,11 +8,8 @@
 # Build results
 [Dd]ebug/
 [Rr]elease/
-[Dd]ebugPublic/
-[Ww][Ii][Nn]32/
 [Oo]bj/
 [Ll]ogs/
-x64/
 
 # Roblox
 App/include/security/RandomConstant.h
@@ -84,6 +81,15 @@ Contribs/openssl/32dll.mak
 !Contribs/VMProtectWin_2.13/bin/
 !Contribs/VMProtectWin_2.13/lib/*.*
 !Contribs/windows/x86/curl
+
+# Custom ignore files
+/App/bin/ReleaseStudio/App.lib
+/App/bin/ReleaseRcc/App.lib
+/Network/bin/ReleaseRcc/Network.lib
+/Network/bin/ReleaseStudio/Network.lib
+/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/zlibstat.lib
+/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/zlibwapi.lib
+/Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/libeay32.lib
 
 # Files built by Visual Studio
 *_i.c
@@ -170,11 +176,3 @@ ui_*.h
 *build-*
 *.qm
 *.prl
-
-/App/bin/ReleaseStudio/App.lib
-/App/bin/ReleaseRcc/App.lib
-/Network/bin/ReleaseRcc/Network.lib
-/Network/bin/ReleaseStudio/Network.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/zlibstat.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/zlibwapi.lib
-/Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/libeay32.lib
