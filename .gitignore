@@ -23,16 +23,13 @@ mono_crash.*
 # Build results
 [Dd]ebug/
 [Rr]elease/
-[Rr]elease/*1..tlog
 [Dd]ebugPublic/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
-bld/
 [Oo]bj/
 [Ll]ogs/
 [Bb]in/
-x86/
 *.lib
 x64/
 
@@ -82,9 +79,6 @@ Contribs/openssl/tmp32
 Contribs/openssl/tmp32.dbg
 Contribs/openssl/tmp32dll
 Contribs/openssl/tmp32dll.dbg
-Contribs/openssl/32.mak
-Contribs/openssl/32dll.mak
-
 
 # Dont ignore these because without them the whole source is gonna freak out......
 
@@ -102,9 +96,12 @@ Contribs/openssl/32dll.mak
 !SettingsComparisonTool/*
 !RCCService/Mesa-7.8.1/lib/*
 !SimulationTestUtility/RegressionTestSuite/*
-!Contribs/DSBaseClasses/Lib
-!Contribs/VMProtectWin_2.13/bin/*.dll
-!Contribs/VMProtectWin_2.13/lib/*.lib
+!Contribs/DSBaseClasses/Lib/*.lib
+!Contribs/SDK/Lib/*.*
+!Contribs/SDK/Bin
+!Contribs/VMProtectWin_2.13/bin/
+!Contribs/VMProtectWin_2.13/lib/*.*
+!Contribs/windows/x86/curl
 
 ### YUNGDOOM WAS HERE ###
 
@@ -477,4 +474,3 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 *_qmlcache.qrc
-/Rendering/ShaderCompiler/Release/CL.write.1.tlog
