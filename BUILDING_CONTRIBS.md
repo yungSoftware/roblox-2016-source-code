@@ -24,8 +24,8 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 5. When the configuration completed, Type this to the command prompt: `ms\32all.bat`.
 
 # SDL 2.0.4
-1. Build **SDL2** to get **SDL2.dll**
-2. Build **SDL2main** to get **SDL2.lib**
+1. Build **SDL2** to get **SDL2.lib**
+- To get the Dll file, you must go into properties of **SDL2** and Change **Target Extension** to .dll
 - Change the **Platform Toolset** **Visual Studio 2010** to **Visual Studio 2012** if it didn't set that automatically.
 
 **That's it, you've compiled all the libraries yourself!**
