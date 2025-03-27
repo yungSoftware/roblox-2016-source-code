@@ -20,13 +20,8 @@ RCCService/*.lib
 WindowsClient/*.lib
 git.txt
 /RobloxStudio/content/Place.rbxl
-curllib/
-curl/
-openssl/
 
-# Ignore shaders so you wanna build yourself, since i've fixed it you should absolutely do it!
-# Launch buildshaders.bat to see the magic, 
-# Also it automatically builds the shaders if you builded any of this projects: WindowsClient, RCCService or RobloxStudio.
+# Ignore precompiled shaders
 shaders/shaders_*.pack
 
 # Ignore boost stuff
@@ -60,105 +55,33 @@ Contribs/openssl/tmp32dll.dbg
 Contribs/openssl/32.mak
 Contribs/openssl/32dll.mak
 
-# Dont ignore these because without them the whole source is gonna freak out......
-!fmod/*
-!Rendering/ShaderCompiler/*
-!Rendering/OpenVR/bin/*
-!SDL2/Win/2.0.4/*
-!VMProtect/*
-!openssl/*
-!Rendering/LibOVR/*
-!sgCore/*
-!QTitanRibbon/roblox_build/*
-!CSG/sgCore/*
-!CoreScriptConverter2/tool/*
-!SettingsComparisonTool/*
-!RCCService/Mesa-7.8.1/lib/*
-!SimulationTestUtility/RegressionTestSuite/*
-!Contribs/DSBaseClasses/Lib/*.lib
-!Contribs/SDK/Lib/*.*
-!Contribs/SDK/Bin
-!Contribs/VMProtectWin_2.13/bin/
-!Contribs/VMProtectWin_2.13/lib/*.*
-!Contribs/windows/x86/curl
-
 # Custom ignore files
-/App/bin/ReleaseStudio/App.lib
-/App/bin/ReleaseRcc/App.lib
-/Network/bin/ReleaseRcc/Network.lib
-/Network/bin/ReleaseStudio/Network.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/zlibstat.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/zlibwapi.lib
-/Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/libeay32.lib
+/App/bin/ReleaseStudio/*.lib
+/App/bin/ReleaseRcc/*.lib
+/Network/bin/ReleaseRcc/*.lib
+/Network/bin/ReleaseStudio/*.lib
+/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/*.lib
+/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/*.lib
+/Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/*.lib
+SDL2/Win/2.0.4/*.*
+curllib/
+curl/
+openssl/
 
 # Files built by Visual Studio
-*_i.c
-*_p.c
-*_h.h
-*.ilk
-*.meta
 *.obj
-*.iobj
-*.pch
 *.pdb
-*.ipdb
-*.pgc
-*.pgd
-*.rsp
-*.sbr
-*.tlb
-*.tli
-*.tlh
-*.tmp
-*.tmp_proj
-*_wpftmp.csproj
 *.log
 *.vspscc
 *.vssscc
-.builds
-*.pidb
-*.svclog
-*.scc
-
-# Visual C++ cache files
-ipch/
-*.aps
-*.ncb
-*.opendb
-*.opensdf
-*.sdf
-*.cachefile
-*.VC.db
-*.VC.VC.opendb
-
-# Visual Studio cache files
-# files ending in .cache can be ignored
-*.[Cc]ache
-# but keep track of directories ending in .cache
-!?*.[Cc]ache/
 
 # Backup & report files from converting an old project file
 _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
-ServiceFabricBackup/
-*.rptproj.bak
-
-# C++ objects and libs
-*.slo
-*.lo
-*.o
-*.a
-*.la
-*.lai
-*.so
-*.so.*
-*.dylib
 
 # Qt-es
-object_script.*.Release
-object_script.*.Debug
 *_plugin_import.cpp
 /.qmake.cache
 /.qmake.stash
@@ -170,9 +93,5 @@ object_script.*.Debug
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
-ui_*.h
-*.qmlc
-*.jsc
-*build-*
-*.qm
-*.prl
+
+
