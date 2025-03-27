@@ -17,7 +17,6 @@
  1. Open the solution: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln`
  2. Change **Solution Configurations** to **LIB Release - LIB OpenSSL**
  3. And just build.
- - To build the dll, Enter Properties of **libcurl** and Change **Target Name** to: **libcurl** and Change **Target Extension** to **.dll**
  
  # OpenSSL 1.0.0c
  1. Install [Strawberry Perl](https://strawberryperl.com/)
