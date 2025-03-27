@@ -104,10 +104,10 @@ if exist "%in%" (
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib %in%
     )
     if not exist "%in%\libcurl_a.lib" (
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" %in%
+    xcopy "C:\Trunk2016\curl\libcurl_a.lib" %in%
     )
     if not exist "%in%\VMProtectSDK32.lib" (
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib %in%
+    xcopy C:\Trunk2016\zlib\win\bin\Release\zlib.lib %in%
     )
     ECHO.
 
@@ -134,10 +134,10 @@ if exist "C:\Trunk2016\WindowsClient" (
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2016\WindowsClient\
     )
     if not exist "C:\Trunk2016\WindowsClient\libcurl_a.lib" (
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2016\WindowsClient\
+    xcopy "C:\Trunk2016\curl\libcurl_a.lib" C:\Trunk2016\WindowsClient\
     )
     if not exist "C:\Trunk2016\WindowsClient\zlib.lib" (
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\WindowsClient\
+    xcopy C:\Trunk2016\zlib\win\bin\Release\zlib.lib C:\Trunk2016\WindowsClient\
     )
     tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     TIMEOUT /T 3
@@ -161,10 +161,10 @@ if exist "C:\Trunk2016\RCCService" (
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2016\RCCService\
     )
     if not exist "C:\Trunk2016\RCCService\libcurl_a.lib" (
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2016\RCCService\
+    xcopy "C:\Trunk2016\curl\libcurl_a.lib" C:\Trunk2016\RCCService\
     )
     if not exist "C:\Trunk2016\RCCService\zlib.lib" (
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\RCCService\
+    xcopy C:\Trunk2016\zlib\win\bin\Release\zlib.lib C:\Trunk2016\RCCService\
     )
     tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     TIMEOUT /T 3
@@ -188,10 +188,10 @@ if exist "C:\Trunk2016\RobloxStudio" (
     xcopy C:\Trunk2016\Contribs\VMProtectWin_2.13\lib\*.lib C:\Trunk2016\RobloxStudio\
     )
     if not exist "C:\Trunk2016\RobloxStudio\libcurl_a.lib" (
-    xcopy "C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.lib" C:\Trunk2016\RobloxStudio\
+    xcopy "C:\Trunk2016\curl\libcurl_a.lib" C:\Trunk2016\RobloxStudio\
     )
     if not exist "C:\Trunk2016\RobloxStudio\zlib.lib" (
-    xcopy C:\Trunk2016\zlib\win\bin\Release\*.lib C:\Trunk2016\RobloxStudio\
+    xcopy C:\Trunk2016\zlib\win\bin\Release\zlib.lib C:\Trunk2016\RobloxStudio\
     )
     tools\cecho\cecho {0A}All the folders has been copied, have a good luck!{#}
     TIMEOUT /T 3
