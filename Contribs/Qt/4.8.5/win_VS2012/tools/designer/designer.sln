@@ -1,0 +1,79 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtUiTools", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/uitools\QtUiTools.vcxproj", "{E0B9AEB5-F871-38BC-BB0C-1E4EA2458E7E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDesigner", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/lib\QtDesigner.vcxproj", "{458E013E-F6B8-3650-AC4E-A9B9C2B5F936}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "designer", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/designer\designer.vcxproj", "{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtDesignerComponents", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/components/lib\QtDesignerComponents.vcxproj", "{7E653053-695D-37E7-850F-417A292EC1F1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt3supportwidgets", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/widgets\qt3supportwidgets.vcxproj", "{4A43B699-5D31-3F11-BF44-2D47E80092C7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qaxwidget", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/activeqt\qaxwidget.vcxproj", "{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qwebview", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/qwebview\qwebview.vcxproj", "{02537707-DCD4-363F-AB7D-9299DFD93A80}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phononwidgets", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/phononwidgets\phononwidgets.vcxproj", "{44556001-E476-314F-ACE4-8ECECDBC6D23}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qdeclarativeview", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/qdeclarativeview\qdeclarativeview.vcxproj", "{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.0 = {7E653053-695D-37E7-850F-417A292EC1F1}
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.1 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{7E653053-695D-37E7-850F-417A292EC1F1}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{7E653053-695D-37E7-850F-417A292EC1F1}.1 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{4A43B699-5D31-3F11-BF44-2D47E80092C7}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{02537707-DCD4-363F-AB7D-9299DFD93A80}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{44556001-E476-314F-ACE4-8ECECDBC6D23}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+		{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}.0 = {458E013E-F6B8-3650-AC4E-A9B9C2B5F936}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E0B9AEB5-F871-38BC-BB0C-1E4EA2458E7E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E0B9AEB5-F871-38BC-BB0C-1E4EA2458E7E}.Debug|Win32.Build.0 = Debug|Win32
+		{E0B9AEB5-F871-38BC-BB0C-1E4EA2458E7E}.Release|Win32.ActiveCfg = Release|Win32
+		{E0B9AEB5-F871-38BC-BB0C-1E4EA2458E7E}.Release|Win32.Build.0 = Release|Win32
+		{458E013E-F6B8-3650-AC4E-A9B9C2B5F936}.Debug|Win32.ActiveCfg = Debug|Win32
+		{458E013E-F6B8-3650-AC4E-A9B9C2B5F936}.Debug|Win32.Build.0 = Debug|Win32
+		{458E013E-F6B8-3650-AC4E-A9B9C2B5F936}.Release|Win32.ActiveCfg = Release|Win32
+		{458E013E-F6B8-3650-AC4E-A9B9C2B5F936}.Release|Win32.Build.0 = Release|Win32
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.Debug|Win32.Build.0 = Debug|Win32
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.Release|Win32.ActiveCfg = Release|Win32
+		{382282E5-DF5A-336F-A7DD-E6E8F26D9FBD}.Release|Win32.Build.0 = Release|Win32
+		{7E653053-695D-37E7-850F-417A292EC1F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7E653053-695D-37E7-850F-417A292EC1F1}.Debug|Win32.Build.0 = Debug|Win32
+		{7E653053-695D-37E7-850F-417A292EC1F1}.Release|Win32.ActiveCfg = Release|Win32
+		{7E653053-695D-37E7-850F-417A292EC1F1}.Release|Win32.Build.0 = Release|Win32
+		{4A43B699-5D31-3F11-BF44-2D47E80092C7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A43B699-5D31-3F11-BF44-2D47E80092C7}.Debug|Win32.Build.0 = Debug|Win32
+		{4A43B699-5D31-3F11-BF44-2D47E80092C7}.Release|Win32.ActiveCfg = Release|Win32
+		{4A43B699-5D31-3F11-BF44-2D47E80092C7}.Release|Win32.Build.0 = Release|Win32
+		{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}.Debug|Win32.Build.0 = Debug|Win32
+		{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}.Release|Win32.ActiveCfg = Release|Win32
+		{80A4B4C4-830E-3CF4-AFFF-F585A737FFC4}.Release|Win32.Build.0 = Release|Win32
+		{02537707-DCD4-363F-AB7D-9299DFD93A80}.Debug|Win32.ActiveCfg = Debug|Win32
+		{02537707-DCD4-363F-AB7D-9299DFD93A80}.Debug|Win32.Build.0 = Debug|Win32
+		{02537707-DCD4-363F-AB7D-9299DFD93A80}.Release|Win32.ActiveCfg = Release|Win32
+		{02537707-DCD4-363F-AB7D-9299DFD93A80}.Release|Win32.Build.0 = Release|Win32
+		{44556001-E476-314F-ACE4-8ECECDBC6D23}.Debug|Win32.ActiveCfg = Debug|Win32
+		{44556001-E476-314F-ACE4-8ECECDBC6D23}.Debug|Win32.Build.0 = Debug|Win32
+		{44556001-E476-314F-ACE4-8ECECDBC6D23}.Release|Win32.ActiveCfg = Release|Win32
+		{44556001-E476-314F-ACE4-8ECECDBC6D23}.Release|Win32.Build.0 = Release|Win32
+		{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}.Debug|Win32.Build.0 = Debug|Win32
+		{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}.Release|Win32.ActiveCfg = Release|Win32
+		{90F9BA82-8051-38D5-80EE-75CDF7F1ED02}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

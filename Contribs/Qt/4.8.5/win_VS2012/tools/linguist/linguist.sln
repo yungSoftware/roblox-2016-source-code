@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lrelease", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/linguist/lrelease\lrelease.vcxproj", "{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lupdate", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/linguist/lupdate\lupdate.vcxproj", "{34F7F008-2024-3DAF-8588-DB7FDDDF0719}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lconvert", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/linguist/lconvert\lconvert.vcxproj", "{052CFAA4-3FAE-3971-BB48-F23DABED7D8C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "linguist", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/linguist/linguist\linguist.vcxproj", "{E943A10E-608E-3F9C-861C-361087C6740E}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}.Debug|Win32.Build.0 = Debug|Win32
+		{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}.Release|Win32.ActiveCfg = Release|Win32
+		{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}.Release|Win32.Build.0 = Release|Win32
+		{34F7F008-2024-3DAF-8588-DB7FDDDF0719}.Debug|Win32.ActiveCfg = Debug|Win32
+		{34F7F008-2024-3DAF-8588-DB7FDDDF0719}.Debug|Win32.Build.0 = Debug|Win32
+		{34F7F008-2024-3DAF-8588-DB7FDDDF0719}.Release|Win32.ActiveCfg = Release|Win32
+		{34F7F008-2024-3DAF-8588-DB7FDDDF0719}.Release|Win32.Build.0 = Release|Win32
+		{052CFAA4-3FAE-3971-BB48-F23DABED7D8C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{052CFAA4-3FAE-3971-BB48-F23DABED7D8C}.Debug|Win32.Build.0 = Debug|Win32
+		{052CFAA4-3FAE-3971-BB48-F23DABED7D8C}.Release|Win32.ActiveCfg = Release|Win32
+		{052CFAA4-3FAE-3971-BB48-F23DABED7D8C}.Release|Win32.Build.0 = Release|Win32
+		{E943A10E-608E-3F9C-861C-361087C6740E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E943A10E-608E-3F9C-861C-361087C6740E}.Debug|Win32.Build.0 = Debug|Win32
+		{E943A10E-608E-3F9C-861C-361087C6740E}.Release|Win32.ActiveCfg = Release|Win32
+		{E943A10E-608E-3F9C-861C-361087C6740E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

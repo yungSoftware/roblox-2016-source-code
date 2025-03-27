@@ -31,32 +31,41 @@ git.txt
 /RobloxStudio/content/Place.rbxl
 curllib/
 curl/
+openssl/
 
 # Ignore shaders so you wanna build yourself, since i've fixed it you should absolutely do it!
 # Launch buildshaders.bat to see the magic, 
 # Also it automatically builds the shaders if you builded any of this projects: WindowsClient, RCCService or RobloxStudio.
 shaders/shaders_*.pack
 
-# Ignore all the libraries since its excluded from this repository
-Contribs/*
-
 # Ignore boost stuff
-Contribs/boost/bjam.exe
-Contribs/boost/b2.exe
-Contribs/boost/bin.v2/
-Contribs/boost/bin.v2/*
-Contribs/boost/project-config.jam
-Contribs/boost/stage/lib/*
+Contribs/boost_1_56_0/bjam.exe
+Contribs/boost_1_56_0/b2.exe
+Contribs/boost_1_56_0/bin.v2/
+Contribs/boost_1_56_0/bin.v2/*
+Contribs/boost_1_56_0/project-config.jam
+Contribs/boost_1_56_0/stage/lib/*
 
 # Ignore Qt build output
-Contribs/Qt/bin
-Contribs/Qt/lib
-Contribs/Qt/bin/*
-Contribs/Qt/lib/*
-Contribs/Qt/demos
-Contribs/Qt/projects.sln
+Contribs/Qt/4.8.5/win_VS2012/bin
+Contribs/Qt/4.8.5/win_VS2012/lib
+Contribs/Qt/4.8.5/win_VS2012/bin/*
+Contribs/Qt/4.8.5/win_VS2012/lib/*
+Contribs/Qt/4.8.5/win_VS2012/demos
+Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.conf
 *.pri
+
+# Ignore OpenSSL build output
+Contribs/openssl/inc32
+Contribs/openssl/out32
+Contribs/openssl/out32.dbg
+Contribs/openssl/out32dll
+Contribs/openssl/out32dll.dbg
+Contribs/openssl/tmp32
+Contribs/openssl/tmp32.dbg
+Contribs/openssl/tmp32dll
+Contribs/openssl/tmp32dll.dbg
 
 # Dont ignore these because without them the whole source is gonna freak out......
 

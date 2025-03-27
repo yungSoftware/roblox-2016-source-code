@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qjpeg", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/jpeg\qjpeg.vcxproj", "{B31EFC63-54F8-3DC3-AD61-38A6B0E31673}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qgif", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/gif\qgif.vcxproj", "{B7B28C32-2C13-358B-85FF-9D0D7575DEF6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qmng", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/mng\qmng.vcxproj", "{E9452E18-7E95-327E-BCBB-81FD32D1E81D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qsvg", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/svg\qsvg.vcxproj", "{2CE63C49-1D1E-322A-B4B7-BFD8BA3003DD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtiff", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/tiff\qtiff.vcxproj", "{CA440B52-9E89-398C-B1D5-CDA0525DB9B4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qico", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/ico\qico.vcxproj", "{B4BA9D98-1911-3C5C-B75A-C92F3C7E1514}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtga", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/imageformats/tga\qtga.vcxproj", "{6B4F1C63-F065-3EA9-87B0-A3E6692B90C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B31EFC63-54F8-3DC3-AD61-38A6B0E31673}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B31EFC63-54F8-3DC3-AD61-38A6B0E31673}.Debug|Win32.Build.0 = Debug|Win32
+		{B31EFC63-54F8-3DC3-AD61-38A6B0E31673}.Release|Win32.ActiveCfg = Release|Win32
+		{B31EFC63-54F8-3DC3-AD61-38A6B0E31673}.Release|Win32.Build.0 = Release|Win32
+		{B7B28C32-2C13-358B-85FF-9D0D7575DEF6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7B28C32-2C13-358B-85FF-9D0D7575DEF6}.Debug|Win32.Build.0 = Debug|Win32
+		{B7B28C32-2C13-358B-85FF-9D0D7575DEF6}.Release|Win32.ActiveCfg = Release|Win32
+		{B7B28C32-2C13-358B-85FF-9D0D7575DEF6}.Release|Win32.Build.0 = Release|Win32
+		{E9452E18-7E95-327E-BCBB-81FD32D1E81D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9452E18-7E95-327E-BCBB-81FD32D1E81D}.Debug|Win32.Build.0 = Debug|Win32
+		{E9452E18-7E95-327E-BCBB-81FD32D1E81D}.Release|Win32.ActiveCfg = Release|Win32
+		{E9452E18-7E95-327E-BCBB-81FD32D1E81D}.Release|Win32.Build.0 = Release|Win32
+		{2CE63C49-1D1E-322A-B4B7-BFD8BA3003DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2CE63C49-1D1E-322A-B4B7-BFD8BA3003DD}.Debug|Win32.Build.0 = Debug|Win32
+		{2CE63C49-1D1E-322A-B4B7-BFD8BA3003DD}.Release|Win32.ActiveCfg = Release|Win32
+		{2CE63C49-1D1E-322A-B4B7-BFD8BA3003DD}.Release|Win32.Build.0 = Release|Win32
+		{CA440B52-9E89-398C-B1D5-CDA0525DB9B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA440B52-9E89-398C-B1D5-CDA0525DB9B4}.Debug|Win32.Build.0 = Debug|Win32
+		{CA440B52-9E89-398C-B1D5-CDA0525DB9B4}.Release|Win32.ActiveCfg = Release|Win32
+		{CA440B52-9E89-398C-B1D5-CDA0525DB9B4}.Release|Win32.Build.0 = Release|Win32
+		{B4BA9D98-1911-3C5C-B75A-C92F3C7E1514}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B4BA9D98-1911-3C5C-B75A-C92F3C7E1514}.Debug|Win32.Build.0 = Debug|Win32
+		{B4BA9D98-1911-3C5C-B75A-C92F3C7E1514}.Release|Win32.ActiveCfg = Release|Win32
+		{B4BA9D98-1911-3C5C-B75A-C92F3C7E1514}.Release|Win32.Build.0 = Release|Win32
+		{6B4F1C63-F065-3EA9-87B0-A3E6692B90C9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6B4F1C63-F065-3EA9-87B0-A3E6692B90C9}.Debug|Win32.Build.0 = Debug|Win32
+		{6B4F1C63-F065-3EA9-87B0-A3E6692B90C9}.Release|Win32.ActiveCfg = Release|Win32
+		{6B4F1C63-F065-3EA9-87B0-A3E6692B90C9}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

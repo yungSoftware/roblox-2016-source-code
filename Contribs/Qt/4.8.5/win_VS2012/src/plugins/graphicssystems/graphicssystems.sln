@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtracegraphicssystem", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/trace\qtracegraphicssystem.vcxproj", "{7B07EE0D-6134-3CFE-AE78-704990C174DA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qglgraphicssystem", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/opengl\qglgraphicssystem.vcxproj", "{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Debug|Win32.Build.0 = Debug|Win32
+		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Release|Win32.ActiveCfg = Release|Win32
+		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Release|Win32.Build.0 = Release|Win32
+		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Debug|Win32.Build.0 = Debug|Win32
+		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Release|Win32.ActiveCfg = Release|Win32
+		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

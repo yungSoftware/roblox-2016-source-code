@@ -20,7 +20,8 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 1. Install [Strawberry Perl](https://strawberryperl.com/)
 2. Open **Developer Command Prompt for VS2012**
 3. Change Directory to: `C:\Trunk2016\Contribs\openssl`
-4. Type this to the command prompt: `ms\32all.bat`.
+4. Type `perl Configure VC-WIN32`
+5. When the configuration completed, Type this to the command prompt: `ms\32all.bat`.
 
 # SDL 2.0.4
 1. Build **SDL2** to get **SDL2.dll**

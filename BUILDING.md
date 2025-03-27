@@ -8,23 +8,18 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
    - Uncheck all optional components in the Visual Studio 2012 installer except **"Microsoft Foundation Classes for C++"** to save space due to none of them are needed
 3. Rename the folder to **Trunk2016**
 4. Create an environment variable in system variables named **CONTRIB_PATH** and set the path to: ``C:\Trunk2016\Contribs``
-5. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
-   * You should ask to any admin for the access since the file link is private,
-   * the **Contribs** should be in a channel named: #roblox-2016-source-code
-6. After you get the **Dependencies.7z** file, do these steps:
-   1. Create a new folder named **Contribs** inside **Trunk2016**
-   2. Extract the **Dependencies.7z** contents to that new folder
-7. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
-8. Change the Solution Configurations to **ReleaseStudio**
+5. Now you need to build the **Libraries**, To build to Libraries, Head over to [BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)
+6. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
+7. Change the Solution Configurations to **ReleaseStudio**
     - **ReleaseRCC** if you want to build **RCCService**
     - **Release** if you want to build **WindowsClient**
-9. Change the Solution Platforms to **Win32**
-10. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-11. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and **ShaderCompiler** first
-12. Open **setfolders.bat** and choose which folder you want to get prepared.
-13. Right click to project and press **Build**
-14. Ignore all the warnings since it doesn't affect the compilation
-15. Thats it, you have been builded from the source!
+8. Change the **Solution Platforms** to **Win32**
+9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
+10. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and **ShaderCompiler** first
+11. Open **setfolders.bat** and choose which folder you want to get prepared.
+12. Right click to project and press **Build**
+13. Ignore all the warnings since it doesn't affect the compilation
+14. Thats it, you have been builded from the source!
 
 ## Common Error(s):
  - Error: warning treated as error - no 'object' file generated
@@ -36,5 +31,4 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
  - Error: Cannot open include file: 'SDL_scancode.h':
     - Fix: Enter the Project Properties and Change **SDL2.0.4** to **SDL2** in includes.
 
-The guide is straight forward so there should be no issues on your side<br>
-Since I've already configured everything, you won't have to do much.
+The guide is straight forward so there should be no issues on your side.
