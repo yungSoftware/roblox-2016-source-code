@@ -74,9 +74,9 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;strmbasd.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;strmbasd.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies);$(CONTRIB_PATH)\VMProtectWin_2.13\lib\VMProtectSDK32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;..\SDL2\Win\2.0.4\SDL2.lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;..\SDL2\Win\2.0.4\SDL2.lib;%(AdditionalLibraryDirectories);$(CONTRIB_PATH)\boost_1_56_0\stage\lib</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -109,9 +109,9 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies);$(CONTRIB_PATH)\VMProtectWin_2.13\lib\VMProtectSDK32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBeta.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;..\SDL2\Win\2.0.4\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;..\SDL2\Win\2.0.4\;%(AdditionalLibraryDirectories);$(CONTRIB_PATH)\boost_1_56_0\stage\lib</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>

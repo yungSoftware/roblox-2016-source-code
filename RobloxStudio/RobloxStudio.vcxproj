@@ -92,9 +92,9 @@
       <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;qtmain.lib;QtGui4.lib;QtCore4.lib;QtNetwork4.lib;QtXml4.lib;QtWebKit4.lib;gdi32.lib;comdlg32.lib;oleaut32.lib;imm32.lib;winmm.lib;winspool.lib;ws2_32.lib;ole32.lib;user32.lib;advapi32.lib;msimg32.lib;shell32.lib;kernel32.lib;uuid.lib;wmvcore.lib;$(CONTRIB_PATH)\DSBaseClasses\Lib\strmbase.lib;qtnribbon3.lib;..\CSG\sgCore\sgCore.lib;..\zlib\win\bin\Release\zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;qtmain.lib;QtGui4.lib;QtCore4.lib;QtNetwork4.lib;QtXml4.lib;QtWebKit4.lib;gdi32.lib;comdlg32.lib;oleaut32.lib;imm32.lib;winmm.lib;winspool.lib;ws2_32.lib;ole32.lib;user32.lib;advapi32.lib;msimg32.lib;shell32.lib;kernel32.lib;uuid.lib;wmvcore.lib;$(CONTRIB_PATH)\DSBaseClasses\Lib\strmbase.lib;qtnribbon3.lib;..\CSG\sgCore\sgCore.lib;..\zlib\win\bin\Release\zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies);$(CONTRIB_PATH)\VMProtectWin_2.13\lib\VMProtectSDK32.lib</AdditionalDependencies>
       <OutputFile>$(OutDir)$(ProjectName)Beta.exe</OutputFile>
-      <AdditionalLibraryDirectories>$(CONTRIB_PATH)\qt\4.8.5\win_VS2012\lib;..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;..\SDL2\Win\2.0.4\SDL2.lib;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;$(CONTRIB_PATH)\VMProtectWin_2.13;..\QTitanRibbon\roblox_build;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(CONTRIB_PATH)\qt\4.8.5\win_VS2012\lib;..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;..\SDL2\Win\2.0.4\SDL2.lib;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;$(CONTRIB_PATH)\VMProtectWin_2.13;..\QTitanRibbon\roblox_build;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
@@ -153,7 +153,7 @@ echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.dll"
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;qtmaind.lib;QtGuid4.lib;QtCored4.lib;QtNetworkd4.lib;QtXmld4.lib;QtWebKitd4.lib;gdi32.lib;comdlg32.lib;oleaut32.lib;imm32.lib;winmm.lib;winspool.lib;ws2_32.lib;ole32.lib;user32.lib;advapi32.lib;msimg32.lib;shell32.lib;kernel32.lib;uuid.lib;wmvcore.lib;$(CONTRIB_PATH)\DSBaseClasses\Lib\strmbasd.lib;qtnribbond3.lib;..\CSG\sgCore\sgCore.lib;..\zlib\win\bin\Release\zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\SDL2\Win\2.0.4\SDL2.lib;qtmaind.lib;QtGuid4.lib;QtCored4.lib;QtNetworkd4.lib;QtXmld4.lib;QtWebKitd4.lib;gdi32.lib;comdlg32.lib;oleaut32.lib;imm32.lib;winmm.lib;winspool.lib;ws2_32.lib;ole32.lib;user32.lib;advapi32.lib;msimg32.lib;shell32.lib;kernel32.lib;uuid.lib;wmvcore.lib;$(CONTRIB_PATH)\DSBaseClasses\Lib\strmbasd.lib;qtnribbond3.lib;..\CSG\sgCore\sgCore.lib;..\zlib\win\bin\Release\zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies);$(CONTRIB_PATH)\VMProtectWin_2.13\lib\VMProtectSDK32.lib</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
       <OutputFile>$(OutDir)$(ProjectName)Beta.exe</OutputFile>
       <AdditionalLibraryDirectories>$(CONTRIB_PATH)\qt\4.8.5\win_VS2012\lib;..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;..\SDL2\Win\2.0.4\SDL2.lib;C:\Trunk2016\zlib\win\bin\Release;C:\Trunk2016\curl;$(CONTRIB_PATH)\VMProtectWin_2.13;..\QTitanRibbon\roblox_build;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
