@@ -12,7 +12,7 @@
 [Ll]ogs/
 
 # Roblox
-App/include/security/RandomConstant.h
+App/include/security/RandomConstant.h # Needed to ignore this......dont know why......because i dont know too..............
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
 RobloxStudio/*.lib
