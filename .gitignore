@@ -15,9 +15,9 @@
 App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
-RobloxStudio/*.lib
-RCCService/*.lib
-WindowsClient/*.lib
+/RobloxStudio/*.lib
+/RCCService/*.lib
+/WindowsClient/*.lib
 git.txt
 /RobloxStudio/content/Place.rbxl
 
@@ -63,10 +63,10 @@ Contribs/openssl/32dll.mak
 /Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/*.lib
 /Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/*.lib
 /Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/*.lib
-SDL2/
-curllib/
-curl/
-openssl/
+/SDL2/
+/curllib/
+/curl/
+/openssl/
 
 # Files built by Visual Studio
 *.obj
@@ -86,6 +86,3 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
-
-
-/SDL2/Win/2.0.4/SDL2.lib

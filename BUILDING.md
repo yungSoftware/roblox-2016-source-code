@@ -15,7 +15,7 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
     - **Release** if you want to build **WindowsClient**
 8. Change the **Solution Platforms** to **Win32**
 9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-10. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and **ShaderCompiler** first
+10. Before building anything, you should build **boost.static**, **zlib**, **curl**, **qtnribbon** and **ShaderCompiler** first
 11. Open **setfolders.bat** and choose which folder you want to get prepared.
 12. Right click to project and press **Build**
 13. Ignore all the warnings since it doesn't affect the compilation
