@@ -24,45 +24,14 @@ git.txt
 # Ignore precompiled shaders
 shaders/shaders_*.pack
 
-# Ignore boost stuff
-Contribs/boost_1_56_0/bjam.exe
-Contribs/boost_1_56_0/b2.exe
-Contribs/boost_1_56_0/bin.v2/
-Contribs/boost_1_56_0/bin.v2/*
-Contribs/boost_1_56_0/project-config.jam
-Contribs/boost_1_56_0/stage/lib/*
-
-# Ignore Qt build output
-Contribs/Qt/4.8.5/win_VS2012/bin
-Contribs/Qt/4.8.5/win_VS2012/lib
-Contribs/Qt/4.8.5/win_VS2012/bin/*
-Contribs/Qt/4.8.5/win_VS2012/lib/*
-Contribs/Qt/4.8.5/win_VS2012/demos
-Contribs/Qt/4.8.5/win_VS2012/projects.sln
-*.conf
-*.pri
-
-# Ignore OpenSSL build output
-Contribs/openssl/inc32
-Contribs/openssl/out32
-Contribs/openssl/out32.dbg
-Contribs/openssl/out32dll
-Contribs/openssl/out32dll.dbg
-Contribs/openssl/tmp32
-Contribs/openssl/tmp32.dbg
-Contribs/openssl/tmp32dll
-Contribs/openssl/tmp32dll.dbg
-Contribs/openssl/32.mak
-Contribs/openssl/32dll.mak
+# Ignore Contribs
+/Contribs/*
 
 # Custom ignore files
 /App/bin/ReleaseStudio/*.lib
 /App/bin/ReleaseRcc/*.lib
 /Network/bin/ReleaseRcc/*.lib
 /Network/bin/ReleaseStudio/*.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibStatRelease/*.lib
-/Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/*.lib
-/Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/*.lib
 /SDL2/
 /curllib/
 /curl/
