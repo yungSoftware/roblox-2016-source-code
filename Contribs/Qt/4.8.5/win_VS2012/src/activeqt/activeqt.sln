@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QAxContainer", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/activeqt/container\QAxContainer.vcxproj", "{D45D5A4F-497D-3021-99A9-2F96AF99F522}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QAxServer", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/activeqt/control\QAxServer.vcxproj", "{800A0C46-6734-3015-BED4-507C9048B1BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D45D5A4F-497D-3021-99A9-2F96AF99F522}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D45D5A4F-497D-3021-99A9-2F96AF99F522}.Debug|Win32.Build.0 = Debug|Win32
+		{D45D5A4F-497D-3021-99A9-2F96AF99F522}.Release|Win32.ActiveCfg = Release|Win32
+		{D45D5A4F-497D-3021-99A9-2F96AF99F522}.Release|Win32.Build.0 = Release|Win32
+		{800A0C46-6734-3015-BED4-507C9048B1BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{800A0C46-6734-3015-BED4-507C9048B1BA}.Debug|Win32.Build.0 = Debug|Win32
+		{800A0C46-6734-3015-BED4-507C9048B1BA}.Release|Win32.ActiveCfg = Release|Win32
+		{800A0C46-6734-3015-BED4-507C9048B1BA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

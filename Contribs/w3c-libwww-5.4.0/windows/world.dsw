@@ -1,0 +1,1121 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "WinCom"="..\WinCom\WinCom.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "chunk"="..\Library\Examples\windows\chunk\chunk.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "chunkbody"="..\Library\Examples\windows\chunkbody\chunkbody.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "comline"="..\ComLine\src\windows\comline.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "cookie"="..\Library\Examples\windows\cookie\cookie.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "davsample"="..\Library\Examples\windows\davsample\davsample.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdav
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "getheaders"="..\LIBRARY\EXAMPLES\WINDOWS\getheaders\getheaders.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "head"="..\Library\Examples\windows\head\head.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "isredirected"="..\Library\Examples\windows\isredirected\isredirected.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "listen"="..\Library\Examples\windows\listen\listen.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "loadtofile"="..\Library\Examples\windows\loadtofile\loadtofile.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "memput"="..\Library\Examples\windows\memput\memput.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "mget"="..\Library\Examples\windows\mget\mget.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "multichunk"="..\Library\Examples\windows\multichunk\multichunk.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "myext"="..\Library\Examples\windows\myext\myext.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "myext2"="..\Library\Examples\windows\myext2\myext2.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "pics"="..\PICS-client\src\windows\pics.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwapp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwmime
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "post"="..\Library\Examples\windows\post\post.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "postform"="..\Library\Examples\windows\postform\postform.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ptri"="..\Library\Examples\windows\ptri\ptri.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "put"="..\Library\Examples\windows\put\put.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "range"="..\Library\Examples\windows\range\range.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "showlinks"="..\Library\Examples\windows\showlinks\showlinks.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "showtags"="..\Library\Examples\windows\showtags\showtags.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "showtext"="..\Library\Examples\windows\showtext\showtext.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "showxml"="..\Library\Examples\windows\showxml\showxml.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "stri"="..\Library\Examples\windows\stri\stri.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tiny"="..\Library\Examples\windows\tiny\tiny.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "trace"="..\Library\Examples\windows\trace\trace.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "tzcheck"="..\Library\Examples\windows\tzcheck\tzcheck.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "upgrade"="..\Library\Examples\windows\upgrade\upgrade.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "webbot"="..\Robot\src\windows\webbot.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwinit
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwapp"="..\Library\src\windows\wwwapp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwcache"="..\Library\src\windows\wwwcache.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwtrans
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwcore"="..\Library\src\windows\wwwcore.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwdav"="..\Library\src\windows\wwwdav.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwapp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwdir"="..\Library\src\windows\wwwdir.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwdll"="..\Library\src\windows\wwwdll.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "wwwfile"="..\Library\src\windows\wwwfile.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwtrans
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwftp"="..\Library\src\windows\wwwftp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdir
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwgophe"="..\Library\src\windows\wwwgophe.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdir
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwhtml"="..\Library\src\windows\wwwhtml.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwhttp"="..\Library\src\windows\wwwhttp.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwmime
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwinit"="..\Library\src\windows\wwwinit.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwapp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwmime
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwgophe
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhttp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwcache
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwnews
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwtelnt
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwtrans
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdir
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwxml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwzip
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwwais
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwmime"="..\Library\src\windows\wwwmime.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwcache
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwmux"="..\Library\src\windows\wwwmux.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwtrans
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwnews"="..\Library\src\windows\wwwnews.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwmime
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwstream"="..\Library\src\windows\wwwstream.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwfile
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwtelnt"="..\Library\src\windows\wwwtelnt.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwtrans"="..\Library\src\windows\wwwtrans.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwutils"="..\Library\src\windows\wwwutils.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwwais"="..\Library\src\windows\wwwwais.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwapp
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwxml"="..\Library\src\windows\wwwxml.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwstream
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwhtml
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "wwwzip"="..\Library\src\windows\wwwzip.dsp" - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name wwwcore
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwdll
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name wwwutils
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

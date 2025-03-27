@@ -8,12 +8,8 @@
     - Uncheck all optional components in the Visual Studio 2012 installer except **"Microsoft Foundation Classes for C++"** to save space due to none of them are needed
  3. Rename the folder to **Trunk2016**
  4. Create an environment variable in system variables named **CONTRIB_PATH** and set the path to: ``C:\Trunk2016\Contribs``
- 5. Now you need **Libraries aka. Contribs**, You can borrow it from my [Discord Server](discord.gg/rVrYHdrbsp)
-    * You should ask to any admin for the access since the file link is private,
-    * the **Contribs** should be in a channel named: #roblox-2016-source-code
- 6. After you get the **Dependencies.7z** file, do these steps:
-    1. Create a new folder named **Contribs** inside **Trunk2016**
-    2. Extract the **Dependencies.7z** contents to that new folder
+ 5. Now you need to build libraries, to do so head over to : [BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)
+ 6. When you done with libraries, continue reading the tutorial
  7. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
  8. Change the Solution Configurations to **ReleaseStudio**
      - **ReleaseRCC** if you want to build **RCCService**

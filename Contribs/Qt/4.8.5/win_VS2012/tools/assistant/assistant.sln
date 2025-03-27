@@ -1,0 +1,57 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtCLucene", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/lib/fulltextsearch\QtCLucene.vcxproj", "{795535BB-0606-32C3-A09F-EE7E1778BA8C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtHelp", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/lib\QtHelp.vcxproj", "{00E93731-6752-3F26-ABD1-9269DD08EF15}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assistant", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/assistant\assistant.vcxproj", "{E2F4A221-4055-33B5-8697-C2733DF0C796}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qhelpgenerator", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qhelpgenerator\qhelpgenerator.vcxproj", "{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qcollectiongenerator", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qcollectiongenerator\qcollectiongenerator.vcxproj", "{50EBD37C-2B1C-31E5-B090-C75F8398CC10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qhelpconverter", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qhelpconverter\qhelpconverter.vcxproj", "{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+		{00E93731-6752-3F26-ABD1-9269DD08EF15}.0 = {795535BB-0606-32C3-A09F-EE7E1778BA8C}
+		{E2F4A221-4055-33B5-8697-C2733DF0C796}.0 = {00E93731-6752-3F26-ABD1-9269DD08EF15}
+		{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}.0 = {00E93731-6752-3F26-ABD1-9269DD08EF15}
+		{50EBD37C-2B1C-31E5-B090-C75F8398CC10}.0 = {00E93731-6752-3F26-ABD1-9269DD08EF15}
+		{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}.0 = {00E93731-6752-3F26-ABD1-9269DD08EF15}
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{795535BB-0606-32C3-A09F-EE7E1778BA8C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{795535BB-0606-32C3-A09F-EE7E1778BA8C}.Debug|Win32.Build.0 = Debug|Win32
+		{795535BB-0606-32C3-A09F-EE7E1778BA8C}.Release|Win32.ActiveCfg = Release|Win32
+		{795535BB-0606-32C3-A09F-EE7E1778BA8C}.Release|Win32.Build.0 = Release|Win32
+		{00E93731-6752-3F26-ABD1-9269DD08EF15}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00E93731-6752-3F26-ABD1-9269DD08EF15}.Debug|Win32.Build.0 = Debug|Win32
+		{00E93731-6752-3F26-ABD1-9269DD08EF15}.Release|Win32.ActiveCfg = Release|Win32
+		{00E93731-6752-3F26-ABD1-9269DD08EF15}.Release|Win32.Build.0 = Release|Win32
+		{E2F4A221-4055-33B5-8697-C2733DF0C796}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E2F4A221-4055-33B5-8697-C2733DF0C796}.Debug|Win32.Build.0 = Debug|Win32
+		{E2F4A221-4055-33B5-8697-C2733DF0C796}.Release|Win32.ActiveCfg = Release|Win32
+		{E2F4A221-4055-33B5-8697-C2733DF0C796}.Release|Win32.Build.0 = Release|Win32
+		{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}.Debug|Win32.Build.0 = Debug|Win32
+		{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}.Release|Win32.ActiveCfg = Release|Win32
+		{FCCA9442-B43A-3CE4-8F8B-74FE01C1A959}.Release|Win32.Build.0 = Release|Win32
+		{50EBD37C-2B1C-31E5-B090-C75F8398CC10}.Debug|Win32.ActiveCfg = Debug|Win32
+		{50EBD37C-2B1C-31E5-B090-C75F8398CC10}.Debug|Win32.Build.0 = Debug|Win32
+		{50EBD37C-2B1C-31E5-B090-C75F8398CC10}.Release|Win32.ActiveCfg = Release|Win32
+		{50EBD37C-2B1C-31E5-B090-C75F8398CC10}.Release|Win32.Build.0 = Release|Win32
+		{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}.Debug|Win32.Build.0 = Debug|Win32
+		{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}.Release|Win32.ActiveCfg = Release|Win32
+		{F1606881-89F5-3AB0-9B04-8FB1FAEDB89C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

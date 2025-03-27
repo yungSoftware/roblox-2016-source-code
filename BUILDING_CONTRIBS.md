@@ -12,8 +12,7 @@
  2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
  
  # Curl 7.43.0
- 1. Open the solution: `"C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln"`
- 2. And just build.
+
  1. Open the solution: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\projects\Windows\VC11\curl-all.sln`
  2. Change **Solution Configurations** to **LIB Release - LIB OpenSSL**
  3. And just build.
@@ -22,12 +21,13 @@
  1. Install [Strawberry Perl](https://strawberryperl.com/)
  2. Open **Developer Command Prompt for VS2012**
  3. Change Directory to: `C:\Trunk2016\Contribs\openssl`
- 4. Type this to the command prompt: `ms\32all.bat`.
+ 4. Type `perl Configure VC-WIN32`
+ 5. And then type this to the command prompt: `ms\32all.bat`.
  
  # SDL 2.0.4
  1. Enter to this project: `"C:\Trunk2016\Contribs\SDL2\VisualC\SDL.sln"`
- 2. And just build.
- 1. Enter to this project: `C:\Trunk2016\Contribs\SDL2\VisualC\SDL.sln`
- 2. Build **SDL2** for DLL and SDL2main for LIB
- 
+ 2. Change **Solution Configuration** to **Release** and change the **Solution Platform** to **Win32/x86**
+ 3. And just build.
+ - For **.lib** file change the **Target Extension** from **.dll** to **.lib**
+
  **That's it, you've compiled all the libraries yourself!**

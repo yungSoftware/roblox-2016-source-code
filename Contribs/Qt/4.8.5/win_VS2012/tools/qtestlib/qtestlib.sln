@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "updater", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater\updater.vcxproj", "{93AD96A4-C91A-3911-AEF8-2154253FC3EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{93AD96A4-C91A-3911-AEF8-2154253FC3EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{93AD96A4-C91A-3911-AEF8-2154253FC3EA}.Debug|Win32.Build.0 = Debug|Win32
+		{93AD96A4-C91A-3911-AEF8-2154253FC3EA}.Release|Win32.ActiveCfg = Release|Win32
+		{93AD96A4-C91A-3911-AEF8-2154253FC3EA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
