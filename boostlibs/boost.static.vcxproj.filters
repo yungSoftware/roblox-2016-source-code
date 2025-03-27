@@ -85,6 +85,9 @@
     <ClCompile Include="$(CONTRIB_PATH)\boost_1_56_0\libs\thread\src\future.cpp">
       <Filter>Source Files\thread</Filter>
     </ClCompile>
+    <ClCompile Include="$(CONTRIB_PATH)\cpp-netlib-0.11.0-final\libs\network\src\uri\uri.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(CONTRIB_PATH)\boost_1_56_0\libs\filesystem\src\windows_file_codecvt.hpp">

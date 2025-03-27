@@ -3,15 +3,15 @@ REM Written by yungDoom
 REM LOGIC: It copies the necessary files from various place to folder you've selected.
 
 :: Remove useless libraries (still don't know why i even added them)
-if exist "C:\Trunk2016\Contribs\hlsl2glslfork" ( rmdir C:\Trunk2016\Contribs\hlsl2glslfork )
-if exist "C:\Trunk2016\Contribs\glsl-optimizer" ( rmdir C:\Trunk2016\Contribs\glsl-optimizer ) 
-if exist "C:\Trunk2016\Contribs\xulrunner" ( rmdir C:\Trunk2016\Contribs\xulrunner ) 
-if exist "C:\Trunk2016\Contribs\libweb" ( rmdir C:\Trunk2016\Contribs\libwebm ) 
-if exist "C:\Trunk2016\Contribs\cabsdk" ( rmdir C:\Trunk2016\Contribs\cabsdk ) 
-if exist "C:\Trunk2016\Contribs\curl-7.50.2" ( rmdir C:\Trunk2016\Contribs\curl-7.50.2 ) 
-if exist "C:\Trunk2016\Contribs\SDL2.0.18" ( rmdir C:\Trunk2016\Contribs\SDL2.0.18 ) 
+if exist "C:\Trunk2016\Contribs\hlsl2glslfork" ( del /q /s C:\Trunk2016\Contribs\hlsl2glslfork && rd /s /q C:\Trunk2016\Contribs\hlsl2glslfork )
+if exist "C:\Trunk2016\Contribs\glsl-optimizer" ( del /q /s C:\Trunk2016\Contribs\glsl-optimizer && rd /s /q C:\Trunk2016\Contribs\glsl-optimizer ) 
+if exist "C:\Trunk2016\Contribs\xulrunner" ( del /q /s C:\Trunk2016\Contribs\xulrunner && rd /s /q C:\Trunk2016\Contribs\xulrunner ) 
+if exist "C:\Trunk2016\Contribs\libwebm" ( del /q /s C:\Trunk2016\Contribs\libwebm && rd /s /q C:\Trunk2016\Contribs\libwebm ) 
+if exist "C:\Trunk2016\Contribs\cabsdk" ( del /q /s C:\Trunk2016\Contribs\cabsdk && rd /s /q C:\Trunk2016\Contribs\cabsdk ) 
+if exist "C:\Trunk2016\Contribs\curl-7.50.2" ( del /q /s C:\Trunk2016\Contribs\curl-7.50.2 && rd /s /q C:\Trunk2016\Contribs\curl-7.50.2 ) 
+if exist "C:\Trunk2016\Contribs\SDL2.0.18" ( del /q /s C:\Trunk2016\Contribs\SDL2.0.18 && rd /s /q C:\Trunk2016\Contribs\SDL2.0.18 ) 
 
-CLS
+
 ECHO 1. RobloxStudio
 ECHO 2. RCCService
 ECHO 3. WindowsClient
