@@ -9,7 +9,8 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 
 # Boost 1.56.0
 1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`
-2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
+2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`
+3. When the build done, Run these commands: `b2 --toolset=msvc-11.0 variant=release link=static runtime-link=static threading=multi`
 
 # Curl 7.43.0
 1. Compile the **libcurl** Project for **libcurl.dll**
@@ -24,5 +25,6 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 # SDL 2.0.4
 1. Build **SDL2** to get **SDL2.dll**
 2. Build **SDL2main** to get **SDL2.lib**
+- Change the **Platform Toolset** **Visual Studio 2010** to **Visual Studio 2012** if it didn't set that automatically.
 
 **That's it, you've compiled all the libraries yourself!**

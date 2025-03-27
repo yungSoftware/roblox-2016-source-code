@@ -859,13 +859,13 @@ void Bootstrapper::parseCmdLine()
 				std::wstring argName = argList[i].substr(0, separatorPos);
 				std::transform(argName.begin(), argName.end(), argName.begin(), tolower);
 				std::wstring argValue = argList[i].substr(separatorPos + 1, std::wstring::npos);
-				argMap.insert(std::make_pair<std::wstring, std::wstring>(argName, argValue));
+				argMap.insert(std::make_pair(argName, argValue)); // @cetcat
 			}
 			else
 			{
 				std::wstring argName = argList[i];
 				std::transform(argName.begin(), argName.end(), argName.begin(), tolower);
-				argMap.insert(std::make_pair<std::wstring, std::wstring>(argName, _T("")));
+				argMap.insert(std::make_pair(argName, std::wstring(_T("")))); // @cetcat
 			}
 		}
 
