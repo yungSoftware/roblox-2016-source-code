@@ -9,7 +9,6 @@
 [Dd]ebug/
 [Rr]elease/
 [Oo]bj/
-[Oo]bj2/
 [Ll]ogs/
 
 # Roblox
@@ -65,6 +64,7 @@ Contribs/openssl/32dll.mak
 /Contribs/windows/x86/zlib/zlib-1.2.8/contrib/vstudio/vc11/x86/ZlibDllRelease/*.lib
 /Contribs/windows/x86/curl/curl-7.43.0/projects/Windows/VC11/*.lib
 /SDL2/
+/curllib/
 /curl/
 /openssl/
 
