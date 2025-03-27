@@ -20,6 +20,22 @@ mono_crash.*
 # Visual Studio cache/options directory
 .vs/
 
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Rr]elease/*1..tlog
+[Dd]ebugPublic/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Oo]bj/
+[Ll]ogs/
+[Bb]in/
+x86/
+*.lib
+x64/
+
 # Roblox
 App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
@@ -87,23 +103,8 @@ Contribs/openssl/32dll.mak
 !RCCService/Mesa-7.8.1/lib/*
 !SimulationTestUtility/RegressionTestSuite/*
 !Contribs/DSBaseClasses/Lib
-!Contribs/VMProtectWin_2.13/bin
-!Contribs/VMProtectWin_2.13/lib
-
-# Build results
-[Dd]ebug/
-[Rr]elease/
-[Dd]ebugPublic/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Oo]bj/
-[Ll]ogs/
-[Bb]in/
-x86/
-*.lib
-x64/
+!Contribs/VMProtectWin_2.13/bin/*.dll
+!Contribs/VMProtectWin_2.13/lib/*.lib
 
 ### YUNGDOOM WAS HERE ###
 
@@ -476,3 +477,4 @@ compile_commands.json
 # QtCreator local machine specific files for imported projects
 *creator.user*
 *_qmlcache.qrc
+/Rendering/ShaderCompiler/Release/CL.write.1.tlog
