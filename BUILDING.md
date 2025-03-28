@@ -16,7 +16,7 @@
      - **Release** if you want to build **WindowsClient**
  9. Change the Solution Platforms to **Win32**
  10. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
- 11. Before building anything, you should build **boost.static**, **zlib**, **qtnribbon** and **ShaderCompiler** first
+ 11. Before building anything, you should build **boost.static**, **zlib**, curl, **qtnribbon** and **ShaderCompiler** first
  12. Open **setfolders.bat** and choose which folder you want to get prepared.
  13. Right click to project and press **Build**
  14. Ignore all the warnings since it doesn't affect the compilation
