@@ -85,3 +85,4 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
+/CoreScriptConverter2/tool/win32/libcurl.dll
