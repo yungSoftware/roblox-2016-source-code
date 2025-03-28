@@ -79,6 +79,8 @@ Contribs/openssl/32dll.mak
 /SDL2/Win/2.0.4/SDL2.dll
 /RobloxStudio/bin/Release/qtnribbon3.dll
 /Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/LIB Release - LIB OpenSSL/lib
+/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/LIB Release - LIB OpenSSL/libcurl_a.lib
+/SDL2/Win/2.0.4/SDL2.lib
 /SDL2/Win/2.0.4/SDL2.exp
 /SDL2/Win/2.0.4/SDL2.pdb
 
@@ -107,5 +109,3 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
-/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/LIB Release - LIB OpenSSL/libcurl_a.lib
-/SDL2/Win/2.0.4/SDL2.lib
