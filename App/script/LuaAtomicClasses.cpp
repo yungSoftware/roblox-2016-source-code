@@ -86,6 +86,8 @@ namespace RBX {
 		const luaL_reg Color3Bridge::classLibrary[] = {
 			{"new", newColor3},
 			{"fromRGB", newRGBColor3},
+			{"fromHSV", newHSVColor3},
+			{"fromHex", newHexColor3},
 			{NULL, NULL}
 		};
 
