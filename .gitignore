@@ -71,6 +71,11 @@ Contribs/openssl/32dll.mak
 /Contribs/SDL2.0.4/VisualC/SDL/Win32/Release
 /Contribs/SDL2.0.4/VisualC/Win32/Release
 /Log/bin/Release/Log.lib
+/zlib/win/bin/Release
+/QTitanRibbon/src/shared/ribbon/release
+/QTitanRibbon/roblox_build/qtnribbon3.dll
+/QTitanRibbon/roblox_build/qtnribbon3.exp
+/QTitanRibbon/roblox_build/qtnribbon3.lib
 
 # Build results
 [Oo]bj/
@@ -94,8 +99,3 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
-/zlib/win/bin/Release
-/QTitanRibbon/src/shared/ribbon/release
-/QTitanRibbon/roblox_build/qtnribbon3.dll
-/QTitanRibbon/roblox_build/qtnribbon3.exp
-/QTitanRibbon/roblox_build/qtnribbon3.lib
