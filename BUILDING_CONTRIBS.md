@@ -22,6 +22,7 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 3. Change Directory to: `C:\Trunk2016\Contribs\openssl`
 4. Type `perl Configure VC-WIN32`
 5. And then type this to the command prompt: `ms\32all.bat`.
+6. When the build process done, go inside this folder: `out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
  
 # SDL 2.0.4
 1. Its already included in **Client_2016** Solution, so build it.
