@@ -107,6 +107,7 @@ namespace RBX
 // Don't use these except in LuaVM*.cpp!
 // These are defines to make sure they don't end up in an executable by complete accident
 #define LUAVM_INTERNAL_CORE_ENCODE_KEY 641
+#define RBX_SECURE_DOUBLE
 #define LUAVM_INTERNAL_CORE_DECODE_KEY 6700417
 
 // Constants for key values

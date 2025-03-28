@@ -12,6 +12,8 @@
 
 #include "VMProtectSDK.h"
 
+#define RBX_SECURE_DOUBLE
+
 struct lua_State;
 
 // If you are getting to this point in a debugger, you probably added a lua_*

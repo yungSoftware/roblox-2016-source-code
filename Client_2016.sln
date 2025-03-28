@@ -106,6 +106,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcurl", "Contribs\windows
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "Contribs\SDL2\VisualC\SDL\SDL.vcxproj", "{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreScriptConverter2", "CoreScriptConverter2\CoreScriptConverter2.vcxproj", "{BB0AF3CB-A723-4948-BC84-F9960876C5CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -390,6 +392,15 @@ Global
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.ReleaseRcc|Win32.Build.0 = Release|Win32
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.ReleaseStudio|Win32.ActiveCfg = Release|Win32
 		{81CE8DAF-EBB2-4761-8E45-B71ABCCA8C68}.ReleaseStudio|Win32.Build.0 = Release|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.Debug|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.DebugRcc|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.DebugStudio|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.Release|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.Release|Win32.Build.0 = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseRcc|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseRcc|Win32.Build.0 = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseStudio|Win32.ActiveCfg = Main|Win32
+		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseStudio|Win32.Build.0 = Main|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
