@@ -55,7 +55,7 @@
       <AdditionalDependencies>zlib.lib;fmod_vc.lib;libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;C:\Trunk2016\RCCService\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;C:\Trunk2016\zlib\win\bin\Release;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;C:\Trunk2016\RCCService\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;C:\Trunk2016\zlib\win\bin\Release;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PublishDLLDependency />
     <PreBuildEvent>
