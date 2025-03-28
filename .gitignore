@@ -34,17 +34,11 @@ Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.pri
  
 # Ignore OpenSSL configure & build cache/output
-Contribs/openssl/inc32
-Contribs/openssl/out32
-Contribs/openssl/out32.dbg
-Contribs/openssl/out32dll
-Contribs/openssl/out32dll.dbg
-Contribs/openssl/tmp32
-Contribs/openssl/tmp32.dbg
-Contribs/openssl/tmp32dll
-Contribs/openssl/tmp32dll.dbg
-Contribs/openssl/32.mak
-Contribs/openssl/32dll.mak
+Contribs/openssl/*32/
+Contribs/openssl/*32.*/
+Contribs/openssl/*32dll/
+Contribs/openssl/*32dll.*/
+Contribs/openssl/*.mak
 
 # Custom ignore files
 /App/bin/
