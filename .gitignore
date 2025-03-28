@@ -73,8 +73,6 @@ Contribs/openssl/32dll.mak
 /Log/bin/Release/Log.lib
 
 # Build results
-Release/
-Debug/
 [Oo]bj/
 [Ll]ogs/
 
@@ -96,3 +94,8 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
+/zlib/win/bin/Release
+/QTitanRibbon/src/shared/ribbon/release
+/QTitanRibbon/roblox_build/qtnribbon3.dll
+/QTitanRibbon/roblox_build/qtnribbon3.exp
+/QTitanRibbon/roblox_build/qtnribbon3.lib
