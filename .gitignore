@@ -89,3 +89,4 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
+/Rendering/LibOVR/Lib/Windows/Win32/Release/VS2012/LibOVR.lib
