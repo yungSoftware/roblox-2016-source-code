@@ -62,6 +62,7 @@ Contribs/openssl/*.mak
 /Contribs/windows/x86/curl/curl-7.43.0/build/
 /Rendering/LibOVR/Lib/Windows/
 /openssl/
+/CoreScriptConverter2/tool/win32/libcurl.dll
 
 # Build results
 [Rr]elease/
@@ -85,4 +86,3 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
-/CoreScriptConverter2/tool/win32/libcurl.dll
