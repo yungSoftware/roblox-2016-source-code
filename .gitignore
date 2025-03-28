@@ -73,7 +73,8 @@ Contribs/openssl/32dll.mak
 /Log/bin/Release/Log.lib
 
 # Build results
-
+Release/
+Debug/
 [Oo]bj/
 [Ll]ogs/
 
