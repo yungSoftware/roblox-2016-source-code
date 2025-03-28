@@ -13,7 +13,6 @@ App/tmp.h
 /RCCService/*.lib
 /WindowsClient/*.lib
 git.txt
-/RobloxStudio/content/Place.rbxl
 
 # Ignore precompiled shaders
 shaders/shaders_*.pack
@@ -50,12 +49,10 @@ Contribs/openssl/32.mak
 Contribs/openssl/32dll.mak
 
 # Custom ignore files
-/App/bin/ReleaseStudio/*.lib
-/App/bin/ReleaseRcc/*.lib
-/Network/bin/ReleaseRcc/*.lib
-/Network/bin/ReleaseStudio/*.lib
-/boostlibs/bin/Release/boost.static/boost.static.lib
-/Base/bin/Release/Base.lib
+/App/bin/
+/Network/bin/
+/boostlibs/bin/
+/Base/bin/
 /Contribs/DSBaseClasses/Sources/Debug
 /Contribs/DSBaseClasses/Sources/Release
 /Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests
@@ -66,28 +63,18 @@ Contribs/openssl/32dll.mak
 /Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater
 /Contribs/SDL2/VisualC/SDL/Win32/Debug
 /Contribs/SDL2/VisualC/SDL/Win32/Release
-/Contribs/SDL2/VisualC/Win32/Debug
-/Contribs/SDL2/VisualC/Win32/Release
-/Contribs/SDL2.0.4/VisualC/SDL/Win32/Release
-/Contribs/SDL2.0.4/VisualC/Win32/Release
-/Log/bin/Release/Log.lib
-/zlib/win/bin/Release
-/QTitanRibbon/src/shared/ribbon/release
-/QTitanRibbon/roblox_build/qtnribbon3.dll
-/QTitanRibbon/roblox_build/qtnribbon3.exp
-/QTitanRibbon/roblox_build/qtnribbon3.lib
-/SDL2/Win/2.0.4/SDL2.dll
-/RobloxStudio/bin/Release/qtnribbon3.dll
-/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/LIB Release - LIB OpenSSL/lib
-/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/LIB Release - LIB OpenSSL/libcurl_a.lib
-/SDL2/Win/2.0.4/SDL2.lib
-/SDL2/Win/2.0.4/SDL2.exp
-/SDL2/Win/2.0.4/SDL2.pdb
-
+/Contribs/SDL2/VisualC/Win32/
+/Contribs/SDL2.0.4/VisualC/SDL/Win32/
+/Log/bin/
+/zlib/win/bin/
+/QTitanRibbon/roblox_build/
+/SDL2/Win/2.0.4/*.*
+/RobloxStudio/bin/Release/*.*
+/Contribs/windows/x86/curl/curl-7.43.0/build/
 
 # Build results
-Release/
-Debug/
+[Rr]elease/
+[Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
 
