@@ -541,7 +541,6 @@ xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</DeploymentContent>
     </PublishDLLDependency>
     <PublishDLLDependency Include="..\openssl\libeay32.dll" />
-    <PublishDLLDependency Include="..\openssl\libssl32.dll" />
     <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
     <PublishDLLDependency Include="$(CONTRIB_PATH)\Qt\4.8.5\win_VS2012\lib\phonond4.dll">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
