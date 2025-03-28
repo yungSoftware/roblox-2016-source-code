@@ -814,9 +814,6 @@
     <PublishDLLDependency Include="..\openssl\libeay32.dll">
       <Filter>Libraries\openssl</Filter>
     </PublishDLLDependency>
-    <PublishDLLDependency Include="..\openssl\libssl32.dll">
-      <Filter>Libraries\openssl</Filter>
-    </PublishDLLDependency>
     <PublishDLLDependency Include="..\openssl\ssleay32.dll">
       <Filter>Libraries\openssl</Filter>
     </PublishDLLDependency>
