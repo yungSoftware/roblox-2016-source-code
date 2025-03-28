@@ -5,12 +5,6 @@
 # Visual Studio cache/options directory
 .vs/
 
-# Build results
-Debug/
-Release/
-[Oo]bj/
-[Ll]ogs/
-
 # Roblox
 App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
@@ -61,6 +55,11 @@ Contribs/openssl/32dll.mak
 /Network/bin/ReleaseRcc/*.lib
 /Network/bin/ReleaseStudio/*.lib
 
+# Build results
+
+[Oo]bj/
+[Ll]ogs/
+
 # Files built by Visual Studio
 *.obj
 *.pdb
@@ -79,3 +78,20 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
+/boostlibs/bin/Release/boost.static/boost.static.lib
+/Base/bin/Release/Base.lib
+/Contribs/DSBaseClasses/Sources/Debug
+/Contribs/DSBaseClasses/Sources/Release
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore
+/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap
+/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt
+/Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater
+/Contribs/SDL2/VisualC/SDL/Win32/Debug
+/Contribs/SDL2/VisualC/SDL/Win32/Release
+/Contribs/SDL2/VisualC/Win32/Debug
+/Contribs/SDL2/VisualC/Win32/Release
+/Contribs/SDL2.0.4/VisualC/SDL/Win32/Release
+/Contribs/SDL2.0.4/VisualC/Win32/Release
+/Log/bin/Release/Log.lib
