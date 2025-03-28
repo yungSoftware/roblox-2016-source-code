@@ -17,9 +17,9 @@ We actively working on this project, So you can help us by just Starting Forking
 Boost = 1.56.0<br>
 cpp-netlib = 0.11.0<br>
 Curl = 7.43.0<br>
-DSBaseClasses<br>
+DSBaseClasses = 0.1<br>
 SDL2 = 2.0.4<br>
-Roblox SDK<br>
+Roblox SDK = 0.1<br>
 OpenSSL = 1.0.0c<br>
 Qt = 4.8.5<br>
 w3c-libwww = 5.4.0<br>
