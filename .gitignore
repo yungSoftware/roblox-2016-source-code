@@ -66,7 +66,9 @@ Contribs/openssl/32dll.mak
 /SDL2/Win/2.0.4/
 /RobloxStudio/bin/
 /Contribs/windows/x86/curl/curl-7.43.0/build/
-/Rendering/LibOVR/Lib/Windows/Win32/
+/Rendering/LibOVR/Lib/Windows/
+/openssl/*.dll
+
 # Build results
 [Rr]elease/
 [Dd]ebug/
@@ -89,3 +91,7 @@ UpgradeLog*.htm
 moc_*.cpp
 moc_*.h
 qrc_*.cpp
+/openssl/libeay32.dll
+/openssl/ssleay32.dll
+/openssl/libssl32.dll
+/RobloxStudio/bin/Release/libssl32.dll
