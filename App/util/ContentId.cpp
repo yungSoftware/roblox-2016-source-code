@@ -209,7 +209,7 @@ namespace RBX
                         if (baseUrlParsed.isSubdomainOf(testsite_domain)
                             && !parsed.isSubdomainOf(testsite_domain))
                         {
-                            host = "localhost";
+                            host = "assetgame.roblox.com"; // i hate this - yungDoom
                         }
                         else
                         {
@@ -218,7 +218,7 @@ namespace RBX
                             
                             if (boost::starts_with(host, "www."))
                             {
-                                host.replace(0, 3, "assetgame");
+                                host.replace(0, 3, "assetgame"); // fuck, this shit is very janky.
                             }
                         }
 
