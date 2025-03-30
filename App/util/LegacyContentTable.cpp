@@ -761,7 +761,7 @@ namespace RBX
 		std::string url = path;
 		normalizeUrl(url);
 		
-		mMap[url] = format("http://www.roblox.com/Asset?id=%s", contentId.c_str());
+		mMap[url] = format("localhost?id=%s", contentId.c_str());
 	}
 	
 	const std::string& LegacyContentTable::FindEntry(const std::string& path)

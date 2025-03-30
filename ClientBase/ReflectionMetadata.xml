@@ -976,6 +976,7 @@
     <Item class="ReflectionMetadataClass">
       <Properties>
         <string name="Name">BrickColorValue</string>
+        <string name="Name">ColorValue</string>
         <string name="ExplorerOrder">3</string>
         <string name="ExplorerImageIndex">4</string>
         <string name="summary">Stores a BrickColor value in it's Value member. Useful to share BrickColor information across multiple scripts.</string>
@@ -2927,8 +2928,6 @@
         <Item class="ReflectionMetadataMember">
           <Properties>
             <string name="Name">Color</string>
-            <bool name="Deprecated">true</bool>
-            <string name="summary">Deprecated. Use BrickColor instead</string>
           </Properties>
         </Item>
         <Item class="ReflectionMetadataMember">

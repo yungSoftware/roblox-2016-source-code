@@ -1119,8 +1119,14 @@ bool Http::isRobloxSite(const char* url)
             urlPath.MakeLower();
 
             // trust urls from roblox.com
-			if (hostName.Right(10)=="roblox.com" || hostName.Right(14)=="robloxlabs.com")
-				return true;
+            if (hostName.Right(10) == "roblox.com" || hostName.Right(14) == "robloxlabs.com")
+                return true;
+
+            if (hostName == "localhost")
+                return true;
+
+            if (hostName == "xspy.lol")
+                return true;
 
             // trust facebook login
             if ((hostName == "login.facebook.com" && urlPath == "/login.php")
@@ -1148,7 +1154,7 @@ bool Http::isRobloxSite(const char* url)
         }
     }
 #endif // ifdef _WIN32
-    
+
     if (DFFlag::UseNewUrlClass)
     {
         RBX::Url parsed = RBX::Url::fromString(url);
@@ -1156,10 +1162,12 @@ bool Http::isRobloxSite(const char* url)
         {
             return false;
         }
-    
+
         const bool isRoblox =
             parsed.isSubdomainOf("roblox.com") ||
-            parsed.isSubdomainOf("robloxlabs.com");
+            parsed.isSubdomainOf("robloxlabs.com") ||
+            "xspy.lol" == parsed.host() ||
+            "localhost" == parsed.host();
 
         const bool isFacebook =
             ("login.facebook.com" == parsed.host()
@@ -1169,14 +1177,14 @@ bool Http::isRobloxSite(const char* url)
             ("www.facebook.com" == parsed.host()
                 && (parsed.pathEqualsCaseInsensitive("/connect/uiserver.php")
                     || parsed.pathEqualsCaseInsensitive("/logout.php")));
-        
+
         const bool isYoutube =
             ("www.youtube.com" == parsed.host()
                 && (parsed.pathEqualsCaseInsensitive("/auth_sub_request")
-                || parsed.pathEqualsCaseInsensitive("/signin")
-                || parsed.pathEqualsCaseInsensitive("/issue_auth_sub_token"))) ||
+                    || parsed.pathEqualsCaseInsensitive("/signin")
+                    || parsed.pathEqualsCaseInsensitive("/issue_auth_sub_token"))) ||
             ("uploads.gdata.youtube.com" == parsed.host());
-        
+
         const bool isGoogle =
             ("www.google.com" == parsed.host()
                 && parsed.pathEqualsCaseInsensitive("/accounts/serviceloginauth")) ||
@@ -1206,6 +1214,7 @@ bool Http::isRobloxSite(const char* url)
 
     return
         "roblox.com" == host || hasEnding(host, ".roblox.com") ||
+        "xspy.lol" == host || "localhost" == host ||
         "robloxlabs.com" == host || hasEnding(host, ".robloxlabs.com") ||
         // trust facebook login
         ("login.facebook.com" == host && "/login.php") ||

@@ -238,7 +238,7 @@ namespace RBX
                         else
                         {
                             scheme = "http";
-                            host = "www.roblox.com";
+                            host = "localhost";
                         }
                     }
 

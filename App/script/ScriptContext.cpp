@@ -2432,27 +2432,22 @@ int ScriptContext::notImplemented(lua_State *L)
 }
 
 // Slightly more secure version of Lua's loadfile implementation
-int ScriptContext::loadfile(lua_State *L)
+int ScriptContext::loadfile(lua_State* L)
 {
 	RBX::Security::Context::current().requirePermission(RBX::Security::LocalUser, "loadfile");
-
 	ContentId contentId(throwable_lua_tostring(L, -1)); /* get file name */
-	
+
 	if (contentId.isNull())
 		throw RBX::runtime_error("Unable to load %s", contentId.c_str());
-
-	if(!RBX::Network::isTrustedContent(contentId.c_str()))
+	/*if (!RBX::Network::isTrustedContent(contentId.c_str()))
 		throw std::runtime_error("invalid request 5");
-
+		*/ // yea this shit breaks the shit to load studio
 	Http request(contentId.toString());
-
 	std::string message;
 	request.get(message);
-
 	//The script needs to be signed
 	ProtectedString verifiedSource = ProtectedString::fromTrustedSource(message);
-    ContentProvider::verifyScriptSignature(verifiedSource, true);
-
+	//ContentProvider::verifyScriptSignature(verifiedSource, true); // checks if script signed, if not.. NOT RAN!
 	return load_aux(L, LuaVM::load(L, verifiedSource, ("=" + contentId.toString()).c_str()));
 }
 
