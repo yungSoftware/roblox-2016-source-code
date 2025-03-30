@@ -3,6 +3,8 @@
 <p align=center>  
 All projects able to compile & run without an hitch<br>
 Color3.fromRGB, Color3.fromHSV and Color3.fromHex Support<br>
+Color Property for Parts has been re-added back!<br>
+Assets are working as of right now!<br>
 Fixed a lot of issues that breaks the compilation and the overall experience<br>
 Everything is open source on this source code, we even reverse engineered some closed source libraries and projects<br>
 Added fixed Contribs that pieced together by me, u can see the list of the contribs down below<br>
