@@ -78,9 +78,9 @@ AppSettings::AppSettings()
 	}
 
 #ifdef _WIN32
-	m_tempLocation = QDir::homePath() + "/AppData/Local/Roblox";
+	m_tempLocation = QDir::homePath() + "/AppData/Local/Roblox SRC";
 #else
-	m_tempLocation = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + "/Roblox";
+	m_tempLocation = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation) + "/Roblox SRC";
 #endif
 	if(!QFile::exists(m_tempLocation))
 		QDir().mkpath(m_tempLocation);
