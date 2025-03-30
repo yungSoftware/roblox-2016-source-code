@@ -40,6 +40,9 @@ Zlib = 1.2.8
 <h2 align="center"> ❤️ Credits </h2>
 
 <p align=center>  
-<a href="https://github.com/xspyy"><b>@xspyy</b></a> - fromHSV and fromHex Implementation<br>
-<a href="https://github.com/cetcat"><b>@cetcat</b></a> - Bootstrappers Compilation
+<a href="https://github.com/xspyy"><b>@xspyy</b></a><br>
+fromHSV and fromHex Implementation<br>
+Did Made Asset Proxy<br>
+<a href="https://github.com/cetcat"><b>@cetcat</b></a><br> 
+Bootstrappers Compilation
 </p> 
