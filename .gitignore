@@ -1,12 +1,12 @@
 ## Ignore Visual Studio temporary files, build results, and
 ## other file(s) type(s) and unwanted folder(s).
 ## Updated & Refined by yungDoom
+## The Ignore List is also categorized!
 
-# Visual Studio cache/options directory
-.vs/
+## GENERAL ##
 
 # Roblox
-App/include/security/RandomConstant.h
+App/include/security/RandomConstant.h # Feel free to remove this line if you having issues about it.
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
@@ -15,7 +15,7 @@ git.txt
 # Ignore precompiled shaders
 shaders/shaders_*.pack
 
-# Ignore boost stuff
+# Ignore boost builds
 Contribs/boost_1_56_0/bjam.exe
 Contribs/boost_1_56_0/b2.exe
 Contribs/boost_1_56_0/bin.v2/
@@ -23,7 +23,7 @@ Contribs/boost_1_56_0/bin.v2/*
 Contribs/boost_1_56_0/project-config.jam
 Contribs/boost_1_56_0/stage/lib/*
  
-# Ignore Qt build output
+# Ignore Qt builds
 Contribs/Qt/4.8.5/win_VS2012/bin
 Contribs/Qt/4.8.5/win_VS2012/lib
 Contribs/Qt/4.8.5/win_VS2012/bin/*
@@ -32,6 +32,12 @@ Contribs/Qt/4.8.5/win_VS2012/demos
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.conf
 *.pri
+
+# Qt-es
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
  
 # Ignore OpenSSL configure & build cache/output
 Contribs/openssl/*32/
@@ -40,7 +46,7 @@ Contribs/openssl/*32dll/
 Contribs/openssl/*32dll.*/
 Contribs/openssl/*.mak
 
-# Custom ignore files
+# Custom ignore files and folders
 /App/bin/
 /Network/bin/
 /boostlibs/bin/
@@ -64,6 +70,19 @@ Contribs/openssl/*.mak
 /openssl/
 /CoreScriptConverter2/tool/win32/
 
+# Dont ignore these files/folders
+# Add your lines here
+# !/location
+# !
+# !
+
+## END OF GENERAL ##
+
+## VISUAL STUDIO ##
+
+# Visual Studio cache/options directory
+.vs/
+
 # Build results
 [Rr]elease/
 [Dd]ebug/
@@ -81,8 +100,4 @@ _UpgradeReport_Files/
 Backup*/
 UpgradeLog*.htm
 
-# Qt-es
-*.moc
-moc_*.cpp
-moc_*.h
-qrc_*.cpp
+## END OF VISUAL STUDIO ##
