@@ -13,7 +13,8 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
  
 # Curl 7.43.0
 1. Its already included in **Client_2016** Solution, so build it.
-
+- For **.dll** file change the **Configuration Type** to **Dynamic Library (.dll)** and change **Target Name** to **$(ProjectName)** **
+.
 # OpenSSL 1.0.0c
 1. Install [Strawberry Perl](https://strawberryperl.com/)
 2. Open **Developer Command Prompt for VS2012**
@@ -24,7 +25,7 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
  
 # SDL 2.0.4
 1. Its already included in **Client_2016** Solution, so build it.
-- For **.lib** file change the **Target Extension** from **.dll** to **.lib**
+- For **.lib** file change the **Configuration Type** to **Static Library (.lib)** **
 
 # DSBaseClasses
 1. Its already included in **Client_2016** Solution, so build it.
