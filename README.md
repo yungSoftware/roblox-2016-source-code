@@ -2,12 +2,16 @@
 
 This source originates from robloxsrc.zip that was leaked.<br>
 After a long effort, this repository has been brought to you on github!<br>
-Feel at home and start looking at the source code as you want :)
+Feel at home and start messing with the source code as you want :)
+
+**To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
+**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**<br>
+**Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
 ## Table of Contents
 1. [Features](#features)
 2. [Libraries Used](#libraries-used)
-3. [Tools Used](#tools-used),
+3. [Tools Used](#tools-used)
 4. [Contributors](#contributors)
 
 ---
@@ -19,10 +23,6 @@ Feel at home and start looking at the source code as you want :)
 - Reverse Engineered some libraries and executables to make them editable
 - General Project Cleanup to make things easier and not complicated
 - All the necessary libraries are included in the repository.
-
-**To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**<br>
-**Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
 ### 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0

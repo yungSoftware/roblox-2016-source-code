@@ -13,11 +13,12 @@
  7. Change the Solution Configurations to **ReleaseStudio**
      - **ReleaseRCC** if you want to build **RCCService**
      - **Release** if you want to build **WindowsClient**
+     - Did'nt tested out the Debug, DebugRCC and DebugStudio yet since i dont interested in them.
  8. Change the **Solution Platform** to **Win32**
  9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
  10. Before building anything, you should build **boost.static**, **zlib**, **curl**, **SDL2**, **qtnribbon** and **ShaderCompiler** first
  11. Right click to project and press **Build**
- 12. Thats it, you have been builded from the source!
+ 12. Thats it, you successfully builded from the source!
  
  ## Common Error(s):
   - Error: warning treated as error - no 'object' file generated
