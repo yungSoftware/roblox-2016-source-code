@@ -8,7 +8,7 @@ Feel at home and start messing with the source code as you want :)
 **Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**<br>
 **Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
-## Table of Contents
+# Table of Contents
 1. [Features](#features)
 2. [Libraries Used](#-libraries-used)
 3. [Tools Used](#-tools-used)
@@ -16,7 +16,7 @@ Feel at home and start messing with the source code as you want :)
 
 ---
 
-### Features
+## Features
 - Fixed a lot of issues that breaks the compilation, codebase and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
 - A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
@@ -24,7 +24,7 @@ Feel at home and start messing with the source code as you want :)
 - General Project Cleanup to make things easier and not complicated
 - All the necessary libraries are included in the repository.
 
-### 📚 Libraries Used
+## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
 - [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
