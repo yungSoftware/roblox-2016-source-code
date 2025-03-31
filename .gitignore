@@ -56,6 +56,7 @@ Contribs/openssl/*.mak
 /RobloxStudio/bin/
 /Rendering/LibOVR/Lib/Windows/
 /CoreScriptConverter2/tool/win32/
+/Contribs/windows/x86/curl/curl-7.43.0/build
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -112,4 +113,3 @@ Backup*/
 UpgradeLog*.htm
 
 ## END OF VISUAL STUDIO ##
-/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/DLL Release - DLL OpenSSL/libcurl_a.lib

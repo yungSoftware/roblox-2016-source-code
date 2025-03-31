@@ -13,8 +13,6 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
  
 # Curl 7.43.0
 1. Its already included in **Client_2016** Solution, so build it.
-- For **libcurl.dll** file change the **Target Name** from **libcurl_a** to **libcurl**
-- And change the **Target Extension** from **.lib** to **.dll**
 
 # OpenSSL 1.0.0c
 1. Install [Strawberry Perl](https://strawberryperl.com/)
@@ -31,5 +29,4 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 # DSBaseClasses
 1. Its already included in **Client_2016** Solution, so build it.
 
-*I did'nt get into too much detail so figure out yourself if you have a problem.*
 **That's it, you've compiled the libraries!**

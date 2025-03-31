@@ -74,7 +74,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>dxerr9.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>.\libraries;..\fmod\win32\lib;.\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\LIB Release - LIB OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\libraries;..\fmod\win32\lib;.\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Debug - DLL OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <LinkTimeCodeGeneration />
@@ -105,7 +105,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>dxerr9.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>.\libraries;..\fmod\win32\lib;.\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\LIB Release - LIB OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\libraries;..\fmod\win32\lib;.\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>

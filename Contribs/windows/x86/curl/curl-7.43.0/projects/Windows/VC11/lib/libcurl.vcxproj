@@ -80,13 +80,19 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release - DLL OpenSSL|Win32'">
     <TargetName>$(ProjectName)_a</TargetName>
-    <TargetExt>.lib</TargetExt>
+    <TargetExt>
+    </TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LIB Release - LIB OpenSSL|Win32'">
     <TargetName>$(ProjectName)_a</TargetName>
+    <TargetExt />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Debug - DLL OpenSSL|Win32'">
-    <TargetExt>.lib</TargetExt>
+    <TargetExt>
+    </TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LIB Debug - LIB OpenSSL|Win32'">
+    <TargetExt />
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Debug - DLL OpenSSL|Win32'">
     <Midl>
