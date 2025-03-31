@@ -6,8 +6,8 @@
 - General Project Cleanup to make things easier and not complicated
 - All the necessary libraries are included in the repository.
 
-**To see how you can build from the source, refer to** **[BUILDING.md](/BUILDING.md)**
-**If you having any problems, you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**
+**To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**
+**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**
 
 # 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
@@ -31,12 +31,10 @@
 - [ILSpy](/Tools/ILSpy) = 9.0
 - [rbxsigner](/Tools/rbxsigner) = *unknown*
 
-# ❤️ Credits
+# ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
 * Asset Proxy
 
 [@cetcat](https://github.com/cetcat)
 * Bootstrappers
-
-*Contribute to the project to be in the list :)*

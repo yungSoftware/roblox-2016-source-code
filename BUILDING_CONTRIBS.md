@@ -10,11 +10,7 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 # Boost 1.56.0
 1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`
 2. After the command done, Run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
- 
-# Curl 7.43.0
-1. Its already included in **Client_2016** Solution, so build it.
-- For **.dll** file change the **Configuration Type** to **Dynamic Library (.dll)** and change **Target Name** to **$(ProjectName)** **
-.
+
 # OpenSSL 1.0.0c
 1. Install [Strawberry Perl](https://strawberryperl.com/)
 2. Open **Developer Command Prompt for VS2012**
@@ -22,12 +18,5 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 4. Type `perl Configure VC-WIN32`
 5. And then type this to the command prompt: `ms\32all.bat`.
 6. When the build process done, go inside this folder: `out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
- 
-# SDL 2.0.4
-1. Its already included in **Client_2016** Solution, so build it.
-- For **.lib** file change the **Configuration Type** to **Static Library (.lib)** **
-
-# DSBaseClasses
-1. Its already included in **Client_2016** Solution, so build it.
 
 **That's it, you've compiled the libraries!**
