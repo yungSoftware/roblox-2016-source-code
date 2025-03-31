@@ -56,7 +56,6 @@ Contribs/openssl/*.mak
 /RobloxStudio/bin/
 /Rendering/LibOVR/Lib/Windows/
 /CoreScriptConverter2/tool/win32/
-/Contribs/windows/x86/curl/curl-7.43.0/build
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
