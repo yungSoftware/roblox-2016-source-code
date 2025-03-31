@@ -1,49 +1,37 @@
-<h2 align="center"> Features </h2>
+# Features
+- All projects able to compile & run without an hitch
+- Color3.fromRGB, Color3.fromHSV and Color3.fromHex Support
+- Color Property for Parts has been re-added back!
+- Assets are working as of right now!
+- Fixed a lot of issues that breaks the compilation and the overall experience
+- Everything is open source on this source code, we even reverse engineered some closed source libraries and projects
+- Added fixed Contribs that pieced together by me, u can see the list of the contribs down below
 
-<p align=center>  
-All projects able to compile & run without an hitch<br>
-Color3.fromRGB, Color3.fromHSV and Color3.fromHex Support<br>
-Color Property for Parts has been re-added back!<br>
-Assets are working as of right now!<br>
-Fixed a lot of issues that breaks the compilation and the overall experience<br>
-Everything is open source on this source code, we even reverse engineered some closed source libraries and projects<br>
-Added fixed Contribs that pieced together by me, u can see the list of the contribs down below<br>
-We actively working on this project, So you can help us by just Starting Forking and modifying the source.<br>
-</p> 
+**To see how you can build from the source, refer to** **[BUILDING.md](/BUILDING.md)**
 
-<p align="center" dir="/BUILDING.md"><b>To see how you can build from the source, refer to</b> <a href="/BUILDING.md" "><b>BUILDING.md</b></a></p>
+# 📚 Libraries Used
+- Boost = 1.56.0
+- cpp-netlib = 0.11.0
+- curl = 7.43.0
+- DSBaseClasses = *unknown*
+- SDL2 = 2.0.4
+- Roblox SDK = *unknown*
+- OpenSSL = 1.0.0c
+- Qt = 4.8.5
+- w3c-libwww = 5.4.0
+- VMProtect = 2.13
+- zlib = 1.2.8
 
-<h2 align="center"> 📚 Libraries Used </h2>
+# 🔨 Tools Used
+- HxD = 2.5.0.0
+- cecho = *unknown*
+- ILSpy = 9.0
+- rbxSigner = *unknown*
 
-<p align=center>  
-Boost = 1.56.0<br>
-cpp-netlib = 0.11.0<br>
-Curl = 7.43.0<br>
-DSBaseClasses = *unknown*<br>
-SDL2 = 2.0.4<br>
-Roblox SDK = *unknown*<br>
-OpenSSL = 1.0.0c<br>
-Qt = 4.8.5<br>
-w3c-libwww = 5.4.0<br>
-VMProtect = 2.13<br>
-Zlib = 1.2.8
-</p> 
+# ❤️ Credits
+[@xspyy](https://github.com/xspyy)
+* fromHSV and fromHex
+* Asset Proxy
 
-<h2 align="center"> 🔨 Tools Used </h2>
-
-<p align=center>  
-  HxD = 2.5.0.0<br>
-  cecho = *unknown*<br>
-  ILSpy = 9.0<br>
-  rbxSigner = *unknown*
-</p>
-
-<h2 align="center"> ❤️ Credits </h2>
-
-<p align=center>  
-<a href="https://github.com/xspyy"><b>@xspyy</b></a><br>
-fromHSV and fromHex Implementation<br>
-Did Made Asset Proxy<br>
-<a href="https://github.com/cetcat"><b>@cetcat</b></a><br> 
-Bootstrappers Compilation
-</p> 
+[@cetcat](https://github.com/cetcat)
+* Bootstrappers
