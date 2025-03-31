@@ -10,9 +10,9 @@ Feel at home and start messing with the source code as you want :)
 
 ## Table of Contents
 1. [Features](#features)
-2. [Libraries Used](#libraries-used)
-3. [Tools Used](#tools-used)
-4. [Contributors](#contributors)
+2. [Libraries Used](#-libraries-used)
+3. [Tools Used](#-tools-used)
+4. [Contributors](#%EF%B8%8F-contributors)
 
 ---
 
