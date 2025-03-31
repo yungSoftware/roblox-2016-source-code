@@ -1,32 +1,31 @@
 # Features
-- All projects able to compile & run without an hitch
-- Color3.fromRGB, Color3.fromHSV and Color3.fromHex Support
-- Color Property for Parts has been re-added back!
-- Assets are working as of right now!
 - Fixed a lot of issues that breaks the compilation and the overall experience
-- Everything is open source on this source code, we even reverse engineered some closed source libraries and projects
-- Added fixed Contribs that pieced together by me, u can see the list of the contribs down below
+- ColorProperty, from.RGB, from.HSV and from.HSV implementation
+- Reverse Engineered some libraries and executables
 
 **To see how you can build from the source, refer to** **[BUILDING.md](/BUILDING.md)**
 
 # 📚 Libraries Used
-- Boost = 1.56.0
-- cpp-netlib = 0.11.0
-- curl = 7.43.0
-- DSBaseClasses = *unknown*
-- SDL2 = 2.0.4
-- Roblox SDK = *unknown*
-- OpenSSL = 1.0.0c
-- Qt = 4.8.5
-- w3c-libwww = 5.4.0
-- VMProtect = 2.13
-- zlib = 1.2.8
+- [Boost](/Contribs/boost_1_56_0) = 1.56.0
+- [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
+- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
+- [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
+- [SDL2](/Contribs/SDL2) = 2.0.4
+- [Roblox SDK](/Contribs/SDK) = *unknown*
+- [OpenSSL](/Contribs/openssl) = 1.0.0c
+- [Qt](/Contribs/Qt/4.8.5/win_VS2012) = 4.8.5
+- [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
+- [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
+- [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
+- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
+- [VMProtect](/Contribs/VMProtectWin_2.13) = 2.13
+- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 
 # 🔨 Tools Used
-- HxD = 2.5.0.0
-- cecho = *unknown*
-- ILSpy = 9.0
-- rbxSigner = *unknown*
+- [HxD](/Tools/HxD) = 2.5.0.0
+- [cecho](/Tools/cecho) = *unknown*
+- [ILSpy](/Tools/ILSpy) = 9.0
+- [rbxsigner](/Tools/rbxsigner) = *unknown*
 
 # ❤️ Credits
 [@xspyy](https://github.com/xspyy)
@@ -35,3 +34,5 @@
 
 [@cetcat](https://github.com/cetcat)
 * Bootstrappers
+
+*Contribute to this repository to be in the list :)*
