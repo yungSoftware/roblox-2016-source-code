@@ -31,4 +31,5 @@ $ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs
 # DSBaseClasses
 1. Its already included in **Client_2016** Solution, so build it.
 
-**That's it, you've compiled all the libraries yourself!**
+*I did'nt talked about how to build ALL the libraries so figure out yourself.*
+**That's it, you've compiled the libraries!**

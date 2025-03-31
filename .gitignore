@@ -1,16 +1,16 @@
 ## Ignore Visual Studio temporary files, build results, and
-## other file(s) type(s) and unwanted folder(s).
-## Updated & Refined by yungDoom
+## Other file(s) type(s) and unwanted folder(s)
 ## The Ignore List is also categorized!
+## Written by yungDoom respectively.
 
 ## GENERAL ##
 
 # Roblox
-App/include/security/RandomConstant.h # Feel free to remove this line if you having issues about it.
+App/include/security/RandomConstant.h # Feel free to remove this line if you've facing with issues.
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
-git.txt
+git.txt # dont even talk about it.
 
 # Ignore precompiled shaders
 shaders/shaders_*.pack
@@ -51,23 +51,35 @@ Contribs/openssl/*.mak
 /Network/bin/
 /boostlibs/bin/
 /Base/bin/
+/Log/bin/
+/QTitanRibbon/roblox_build/
+/RobloxStudio/bin/
+/Rendering/LibOVR/Lib/Windows/
+/CoreScriptConverter2/tool/win32/
+
+## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
 /Contribs/DSBaseClasses/Sources/Release
+
+## Qt
 /Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests
 /Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore
 /Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore
 /Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap
 /Contribs/Qt/4.8.5/win_VS2012/tools/activeqt
 /Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater
+
+## SDL2
 /Contribs/SDL2/VisualC/SDL/Win32/
-/Log/bin/
-/zlib/win/bin/
-/QTitanRibbon/roblox_build/
 /SDL2/Win/2.0.4/
-/RobloxStudio/bin/
-/Rendering/LibOVR/Lib/Windows/
+
+## zlib
+/zlib/win/bin/
+
+## openssl
 /openssl/
-/CoreScriptConverter2/tool/win32/
+
+## curl
 /Contribs/windows/x86/curl/curl-7.43.0/build/
 
 # Dont ignore these files/folders
@@ -77,7 +89,6 @@ Contribs/openssl/*.mak
 # !
 
 ## END OF GENERAL ##
-
 ## VISUAL STUDIO ##
 
 # Visual Studio cache/options directory
