@@ -101,3 +101,4 @@ Backup*/
 UpgradeLog*.htm
 
 ## END OF VISUAL STUDIO ##
+/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/DLL Release - DLL OpenSSL/lib/CL.read.1.tlog
