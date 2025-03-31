@@ -19,9 +19,9 @@ We actively working on this project, So you can help us by just Starting Forking
 Boost = 1.56.0<br>
 cpp-netlib = 0.11.0<br>
 Curl = 7.43.0<br>
-DSBaseClasses = *unknown* <br>
+DSBaseClasses = *unknown*<br>
 SDL2 = 2.0.4<br>
-Roblox SDK = *unknown* <br>
+Roblox SDK = *unknown*<br>
 OpenSSL = 1.0.0c<br>
 Qt = 4.8.5<br>
 w3c-libwww = 5.4.0<br>
@@ -32,10 +32,10 @@ Zlib = 1.2.8
 <h2 align="center"> 🔨 Tools Used </h2>
 
 <p align=center>  
-  HxD<br>
-  cecho<br>
-  ILSpy<br>
-  rbxSigner
+  HxD = 2.5.0.0<br>
+  cecho = *unknown*<br>
+  ILSpy = 9.0<br>
+  rbxSigner = *unknown*
 </p>
 
 <h2 align="center"> ❤️ Credits </h2>
