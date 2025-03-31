@@ -1,11 +1,13 @@
 # Features
 - Fixed a lot of issues that breaks the compilation and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
-- A fully working Asset Proxy
+- A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
 - Reverse Engineered some libraries and executables to make them editable
-- General Project Cleanup to make things easier and not complicated.
+- General Project Cleanup to make things easier and not complicated
+- All the necessary libraries are included in the repository.
 
 **To see how you can build from the source, refer to** **[BUILDING.md](/BUILDING.md)**
+**If you having any problems, you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**
 
 # 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
@@ -37,4 +39,4 @@
 [@cetcat](https://github.com/cetcat)
 * Bootstrappers
 
-*Contribute to this repository to be in the list :)*
+*Contribute to the project to be in the list :)*
