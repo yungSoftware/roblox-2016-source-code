@@ -12,9 +12,9 @@
 #include "Network/Players.h"
 #include "Util/RobloxGoogleAnalytics.h"
 
-DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacter, false)
-DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacterScripts, false)
-DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerHumanoid, false)
+DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacter, true)
+DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacterScripts, true)
+DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerHumanoid, true)
 
 
 namespace RBX {
