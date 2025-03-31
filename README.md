@@ -1,5 +1,5 @@
 # Features
-- Fixed a lot of issues that breaks the compilation and the overall experience
+- Fixed a lot of issues that breaks the compilation, codebase and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
 - A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
 - Reverse Engineered some libraries and executables to make them editable
