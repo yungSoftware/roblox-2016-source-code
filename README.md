@@ -1,6 +1,6 @@
 # Roblox 2016 Source Code
 
-This source originates from robloxsrc.zip that was leaked.<br>
+This source originates from robloxsrc.zip that was spinning around but its rare to own these days.<br>
 After a long effort, this repository has been brought to you on github!<br>
 Feel at home and start messing with the source code as you want :)
 
