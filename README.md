@@ -1,7 +1,9 @@
 # Features
 - Fixed a lot of issues that breaks the compilation and the overall experience
-- ColorProperty, from.RGB, from.HSV and from.HSV implementation
-- Reverse Engineered some libraries and executables
+- ColorProperty, from.RGB, from.HSV and from.Hex implementation
+- A fully working Asset Proxy
+- Reverse Engineered some libraries and executables to make them editable
+- General Project Cleanup to make things easier and not complicated.
 
 **To see how you can build from the source, refer to** **[BUILDING.md](/BUILDING.md)**
 
