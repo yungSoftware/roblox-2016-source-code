@@ -76,7 +76,7 @@
     <Link>
       <AdditionalDependencies>$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release\SDL2.lib;strmbasd.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;..\TBB_4_1\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;$(CONTRIB_PATH)\windows\x86\zlib\zlib-1.2.8\lib;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\lib;$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\LIB Debug - LIB OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -109,7 +109,7 @@
     <Link>
       <AdditionalDependencies>$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release\SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBeta.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;$(CONTRIB_PATH)\windows\x86\zlib\zlib-1.2.8\lib;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\lib;$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release;$(CONTRIB_PATH)\SDL\SDL2-2.0.3\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\LIB Release - LIB OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>

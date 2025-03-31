@@ -65,10 +65,10 @@ Contribs/openssl/*.mak
 /QTitanRibbon/roblox_build/
 /SDL2/Win/2.0.4/
 /RobloxStudio/bin/
-/Contribs/windows/x86/curl/curl-7.43.0/build/
 /Rendering/LibOVR/Lib/Windows/
 /openssl/
 /CoreScriptConverter2/tool/win32/
+/Contribs/windows/x86/curl/curl-7.43.0/build/
 
 # Dont ignore these files/folders
 # Add your lines here
@@ -101,4 +101,3 @@ Backup*/
 UpgradeLog*.htm
 
 ## END OF VISUAL STUDIO ##
-/Contribs/windows/x86/curl/curl-7.43.0/build/Win32/VC11/DLL Release - DLL OpenSSL/lib/CL.read.1.tlog
