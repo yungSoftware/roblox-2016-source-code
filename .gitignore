@@ -61,6 +61,9 @@ Contribs/openssl/*32*/
 /CoreScriptConverter2/tool/win32/*.exe
 /CoreScriptConverter2/tool/win32/*.lib
 /CoreScriptConverter2/tool/win32/*.exp
+/CoreScriptConverter2/tool/win32/fmod.dll
+/CoreScriptConverter2/tool/win32/VMProtectSDK32.dll
+
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -91,5 +94,3 @@ Contribs/openssl/*32*/
 *.log
 
 ## END OF VISUAL STUDIO ##
-/CoreScriptConverter2/tool/win32/fmod.dll
-/CoreScriptConverter2/tool/win32/VMProtectSDK32.dll

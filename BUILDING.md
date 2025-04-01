@@ -25,9 +25,11 @@
      - Fix: Enter the Properties of Project that gives error and head over to **C/C++ > General > Treat Warnings As Errors** and set it to **No (/WX-)**
   - Error: 'C:\Trunk2016\a\a.vcxproj.filters' Access Denied in path
      - Fix: Right Click to the project and press **Open the Folder in File Explorer** and go into properties of **a.vcxproj.filters**, untick **Read-only** and Press **OK**.
- 
   - Error: cannot open LUAGENCSNEW.INL - No such file or folder
-     - Fix: Go to: `C:\Trunk2016\App\script` and rename the `LuaGenCSNEW - Copy.inl` to `LuaGenCSNEW.inl`
+     - Fix: Go to: `C:\Trunk2016\App\script` and clone the file: `LuaGenCSNEW - Copy`, rename it to `LuaGenCSNEW.inl`
+  - Error: The code execution cannot proceed because libcurl_a.dll was not found. Reinstalling the program may fix this problem. 
+     - Fix: Copy libcurl.dll from: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL` and put it into the folder, and then change the name to `libcurl_a.dll_`
+
 
  The guide is straight forward so there should be no issues on your side<br>
  Since I've already configured everything, you won't have to do much.

@@ -12,8 +12,8 @@ soundFolder.Name = "Sounds"
 soundFolder.Parent = RobloxGui
 
 -- TopBar
-local topbarSuccess, topbarFlagValue = true
-local useTopBar = true
+local topbarSuccess, topbarFlagValue = pcall(function() return settings():GetFFlag("UseInGameTopBar") end)
+local useTopBar = (topbarSuccess and topbarFlagValue == true)
 if useTopBar then
 	scriptContext:AddCoreScriptLocal("CoreScripts/Topbar", RobloxGui)
 end
