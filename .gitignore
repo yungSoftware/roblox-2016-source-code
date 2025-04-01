@@ -59,7 +59,6 @@ Contribs/openssl/*32*/
 /RobloxStudio/bin/
 /Rendering/LibOVR/Lib/Windows/
 /CoreScriptConverter2/tool/win32/*.exe
-/CoreScriptConverter2/tool/win32/*.dll
 /CoreScriptConverter2/tool/win32/*.lib
 /CoreScriptConverter2/tool/win32/*.exp
 
@@ -92,3 +91,5 @@ Contribs/openssl/*32*/
 *.log
 
 ## END OF VISUAL STUDIO ##
+/CoreScriptConverter2/tool/win32/fmod.dll
+/CoreScriptConverter2/tool/win32/VMProtectSDK32.dll
