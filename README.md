@@ -5,7 +5,7 @@ After a long effort, this repository has been brought to you on github!<br>
 Feel at home and start messing with the source code as you want :)
 
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)!**<br>
+**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 **Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
 # Table of Contents
