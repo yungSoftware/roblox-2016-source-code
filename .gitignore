@@ -96,6 +96,3 @@ Contribs/openssl/*32*/
 *.log
 
 ## END OF VISUAL STUDIO ##
-
-/Installer/RobloxProxy/RobloxProxy_i.h
-/Installer/RobloxProxy/RobloxProxy_p.c
