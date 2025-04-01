@@ -41,8 +41,6 @@ Contribs/Qt/4.8.5/win_VS2012/.qmake.cache
 Contribs/Qt/4.8.5/win_VS2012/configure.cache
 Contribs/Qt/4.8.5/win_VS2012/demos
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
-*.conf
-*.pri
 *.moc
 moc_*.*
 qrc_*.*
