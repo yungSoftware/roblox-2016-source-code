@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{065FDD95-C1CA-3E4E-9A5E-7B231AF12BCE}</ProjectGuid>
+    <ProjectGuid>{BB5FA3A3-9D17-3A04-8E85-9EB98F6B76DD}</ProjectGuid>
     <RootNamespace>qtaccessiblewidgets</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -113,8 +113,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -160,10 +160,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\accessible\widgets\qtaccessiblewidgets_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\accessible\widgets\qtaccessiblewidgets_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\accessible\widgets\qtaccessiblewidgetsd_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\accessible\widgets\qtaccessiblewidgetsd_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>

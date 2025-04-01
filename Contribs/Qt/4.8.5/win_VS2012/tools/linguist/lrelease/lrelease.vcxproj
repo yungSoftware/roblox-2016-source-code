@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4FAD11C5-581D-37C8-AC37-2C827B6FB6AD}</ProjectGuid>
+    <ProjectGuid>{F0A1924C-44D9-3C93-AA94-19CD96A169EF}</ProjectGuid>
     <RootNamespace>lrelease</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -73,8 +73,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -114,8 +114,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -150,13 +150,13 @@
     <ClCompile Include="..\shared\xliff.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\ioutils.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\profileevaluator.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\profileparser.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\proitems.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\proparser_global.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\translator.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\translatormessage.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\ioutils.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\profileevaluator.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\profileparser.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\proitems.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\proparser_global.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\translator.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\linguist\shared\translatormessage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

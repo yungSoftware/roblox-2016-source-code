@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0A190D62-A263-3314-A00A-EEFF92AFAAF7}</ProjectGuid>
+    <ProjectGuid>{A69004BD-DE17-302D-A4EE-6BA705A7B2B7}</ProjectGuid>
     <RootNamespace>boxes</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGLd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGLd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,8 +113,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGL4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGL4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -152,12 +152,12 @@
     <ClInclude Include="qtbox.h" />
     <ClInclude Include="roundedbox.h" />
     <CustomBuild Include="scene.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;scene.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 scene.h -o tmp\moc\debug_shared\moc_scene.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;scene.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 scene.h -o tmp\moc\debug_shared\moc_scene.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC scene.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_scene.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;scene.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 scene.h -o tmp\moc\release_shared\moc_scene.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;scene.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 scene.h -o tmp\moc\release_shared\moc_scene.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC scene.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_scene.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -178,17 +178,38 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="basic.fsh" />
+    <None Include="basic.vsh" />
     <CustomBuild Include="boxes.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;boxes.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name boxes boxes.qrc -o tmp\rcc\debug_shared\qrc_boxes.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;basic.fsh;basic.vsh;boxes.qrc;cubemap_negx.jpg;cubemap_negy.jpg;cubemap_negz.jpg;cubemap_posx.jpg;cubemap_posy.jpg;cubemap_posz.jpg;dotted.fsh;fresnel.fsh;glass.fsh;granite.fsh;marble.fsh;parameters.par;qt-logo.jpg;qt-logo.png;reflection.fsh;refraction.fsh;smiley.png;square.jpg;wood.fsh;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name boxes boxes.qrc -o tmp\rcc\debug_shared\qrc_boxes.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC boxes.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_boxes.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;boxes.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name boxes boxes.qrc -o tmp\rcc\release_shared\qrc_boxes.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;basic.fsh;basic.vsh;boxes.qrc;cubemap_negx.jpg;cubemap_negy.jpg;cubemap_negz.jpg;cubemap_posx.jpg;cubemap_posy.jpg;cubemap_posz.jpg;dotted.fsh;fresnel.fsh;glass.fsh;granite.fsh;marble.fsh;parameters.par;qt-logo.jpg;qt-logo.png;reflection.fsh;refraction.fsh;smiley.png;square.jpg;wood.fsh;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name boxes boxes.qrc -o tmp\rcc\release_shared\qrc_boxes.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC boxes.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_boxes.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="cubemap_negx.jpg" />
+    <None Include="cubemap_negy.jpg" />
+    <None Include="cubemap_negz.jpg" />
+    <None Include="cubemap_posx.jpg" />
+    <None Include="cubemap_posy.jpg" />
+    <None Include="cubemap_posz.jpg" />
+    <None Include="dotted.fsh" />
+    <None Include="fresnel.fsh" />
+    <None Include="glass.fsh" />
+    <None Include="granite.fsh" />
+    <None Include="marble.fsh" />
+    <None Include="parameters.par" />
+    <None Include="qt-logo.jpg" />
+    <None Include="qt-logo.png" />
+    <None Include="reflection.fsh" />
+    <None Include="refraction.fsh" />
+    <None Include="smiley.png" />
+    <None Include="square.jpg" />
+    <None Include="wood.fsh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

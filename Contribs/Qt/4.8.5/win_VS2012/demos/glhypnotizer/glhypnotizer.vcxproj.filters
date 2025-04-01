@@ -51,5 +51,11 @@
     <CustomBuild Include="hypnotizer.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt-logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="spiral.svg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

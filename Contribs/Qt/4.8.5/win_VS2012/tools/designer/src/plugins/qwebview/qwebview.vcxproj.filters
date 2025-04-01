@@ -61,6 +61,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\qwebview.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qwebview_plugin.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

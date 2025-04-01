@@ -67,5 +67,14 @@
     <CustomBuild Include="affine.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="bg1.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="xform.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="xform.html">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A9F21CBB-0F9E-361D-B6E0-17EC4A306A04}</ProjectGuid>
+    <ProjectGuid>{45555E38-1002-3429-936C-9433C4815FB6}</ProjectGuid>
     <RootNamespace>uic</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -73,8 +73,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -114,8 +114,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug\bootstrap.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\bootstrap\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -152,23 +152,23 @@
     <ClCompile Include="validator.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppextractimages.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwritedeclaration.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondata.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondeclaration.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteiconinitialization.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteincludes.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteinitialization.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\customwidgetsinfo.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\databaseinfo.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\driver.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\globaldefs.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\option.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\treewalker.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\ui4.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppextractimages.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwritedeclaration.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondata.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondeclaration.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteiconinitialization.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteincludes.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteinitialization.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\customwidgetsinfo.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\databaseinfo.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\driver.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\globaldefs.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\option.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\treewalker.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\ui4.h" />
     <ClInclude Include="uic.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\utils.h" />
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\validator.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\utils.h" />
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

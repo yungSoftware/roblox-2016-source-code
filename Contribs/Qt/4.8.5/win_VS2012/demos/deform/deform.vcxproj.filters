@@ -67,5 +67,11 @@
     <CustomBuild Include="deform.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="pathdeform.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pathdeform.html">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

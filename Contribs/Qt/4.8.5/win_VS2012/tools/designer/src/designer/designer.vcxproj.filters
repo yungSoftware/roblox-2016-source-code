@@ -307,12 +307,33 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\shared\qttoolbardialog\images\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\designer.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="designer.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\qttoolbardialog\images\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qttoolbardialog\images\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qttoolbardialog\images\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qttoolbardialog\images\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\qttoolbardialog\qttoolbardialog.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\qttoolbardialog\images\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="designer.rc" />

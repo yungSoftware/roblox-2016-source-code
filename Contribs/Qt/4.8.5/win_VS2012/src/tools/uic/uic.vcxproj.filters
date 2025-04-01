@@ -66,55 +66,55 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppextractimages.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppextractimages.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwritedeclaration.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwritedeclaration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondata.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondeclaration.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteicondeclaration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteiconinitialization.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteiconinitialization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteincludes.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteincludes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteinitialization.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\cpp\cppwriteinitialization.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\customwidgetsinfo.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\customwidgetsinfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\databaseinfo.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\databaseinfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\driver.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\driver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\globaldefs.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\globaldefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\option.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\option.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\treewalker.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\treewalker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\ui4.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\ui4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\utils.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\validator.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\uic\validator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

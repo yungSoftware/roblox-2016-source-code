@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6DB8B910-27E0-3866-A7C7-76376AD5148B}</ProjectGuid>
+    <ProjectGuid>{254A3C83-7540-3DBC-9163-9BBF373BA380}</ProjectGuid>
     <RootNamespace>glhypnotizer</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -73,8 +73,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtSvg4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGL4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtSvg4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGL4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -114,8 +114,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtSvgd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGLd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtSvgd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtOpenGLd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -140,15 +140,15 @@
   <ItemGroup>
     <CustomBuild Include="tmp\moc\debug_shared\main.moc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;main.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 main.cpp -o tmp\moc\debug_shared\main.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;main.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 main.cpp -o tmp\moc\debug_shared\main.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC main.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\main.moc;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="tmp\moc\release_shared\main.moc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;main.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 main.cpp -o tmp\moc\release_shared\main.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;main.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_SVG_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 main.cpp -o tmp\moc\release_shared\main.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC main.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\main.moc;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
@@ -163,15 +163,17 @@
   <ItemGroup>
     <CustomBuild Include="hypnotizer.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;hypnotizer.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name hypnotizer hypnotizer.qrc -o tmp\rcc\release_shared\qrc_hypnotizer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;hypnotizer.qrc;qt-logo.png;spiral.svg;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name hypnotizer hypnotizer.qrc -o tmp\rcc\release_shared\qrc_hypnotizer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC hypnotizer.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_hypnotizer.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;hypnotizer.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name hypnotizer hypnotizer.qrc -o tmp\rcc\debug_shared\qrc_hypnotizer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;hypnotizer.qrc;qt-logo.png;spiral.svg;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name hypnotizer hypnotizer.qrc -o tmp\rcc\debug_shared\qrc_hypnotizer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC hypnotizer.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_hypnotizer.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="qt-logo.png" />
+    <None Include="spiral.svg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

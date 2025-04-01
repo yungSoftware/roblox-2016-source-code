@@ -94,6 +94,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\interview.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="spreadsheet.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

@@ -187,6 +187,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\record.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\settings.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="spectrum.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

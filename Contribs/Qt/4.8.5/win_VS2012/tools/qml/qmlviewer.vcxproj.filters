@@ -160,11 +160,59 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="browser\Browser.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\Logo.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="browser\browser.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="browser\images\folder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\qt-back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\qt-blue.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\qt-front.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\qt-sketch.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\qt-text.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\quick-blur.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\quick-regular.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\shadow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\startup.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="startup\startup.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="browser\images\titlebar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="browser\images\titlebar.sci">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="browser\images\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="startup\white-star.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

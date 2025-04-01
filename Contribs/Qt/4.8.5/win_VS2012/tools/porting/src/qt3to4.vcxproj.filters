@@ -280,14 +280,26 @@
     <CustomBuild Include="qt3headers0.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt3headers0.resource">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qt3headers1.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt3headers1.resource">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qt3headers2.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt3headers2.resource">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qt3headers3.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt3headers3.resource">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

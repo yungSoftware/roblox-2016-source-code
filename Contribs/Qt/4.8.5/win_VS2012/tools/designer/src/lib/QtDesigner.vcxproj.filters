@@ -1606,39 +1606,252 @@
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.skin\ClamshellPhone.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.skin\ClamshellPhone1-5-closed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.skin\ClamshellPhone1-5-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.skin\ClamshellPhone1-5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\240x320\Dialog_with_Buttons_Bottom.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\320x240\Dialog_with_Buttons_Bottom.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\480x640\Dialog_with_Buttons_Bottom.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\640x480\Dialog_with_Buttons_Bottom.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\Dialog_with_Buttons_Bottom.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\240x320\Dialog_with_Buttons_Right.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\320x240\Dialog_with_Buttons_Right.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\480x640\Dialog_with_Buttons_Right.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\640x480\Dialog_with_Buttons_Right.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\Dialog_with_Buttons_Right.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\Dialog_without_Buttons.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\Main_Window.ui">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\PortableMedia.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\PortableMedia.skin\PortableMedia.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-QVGA-Candybar.skin\S60-QVGA-Candybar-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-QVGA-Candybar.skin\S60-QVGA-Candybar.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\S60-QVGA-Candybar.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-QVGA-Candybar.skin\S60-QVGA-Candybar.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-nHD-Touchscreen.skin\S60-nHD-Touchscreen-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-nHD-Touchscreen.skin\S60-nHD-Touchscreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\S60-nHD-Touchscreen.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-nHD-Touchscreen.skin\S60-nHD-Touchscreen.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone.skin\SmartPhone-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone.skin\SmartPhone.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\SmartPhone.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone.skin\SmartPhone.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone2.skin\SmartPhone2-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone2.skin\SmartPhone2.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\SmartPhone2.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone2.skin\SmartPhone2.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhoneWithButtons.skin\SmartPhoneWithButtons-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhoneWithButtons.skin\SmartPhoneWithButtons.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\SmartPhoneWithButtons.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhoneWithButtons.skin\SmartPhoneWithButtons.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\TouchscreenPhone.skin\TouchscreenPhone-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\TouchscreenPhone.skin\TouchscreenPhone.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\deviceskin\skins\TouchscreenPhone.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\deviceskin\skins\TouchscreenPhone.skin\TouchscreenPhone.skin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\templates\forms\Widget.ui">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\mac\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\win\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\ClamshellPhone.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\PortableMedia.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-QVGA-Candybar.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\S60-nHD-Touchscreen.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhone2.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\SmartPhoneWithButtons.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\TouchscreenPhone.skin\defaultbuttons.conf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="shared\defaultgradients.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\findwidget\findwidget.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\qtgradienteditor\images\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\PortableMedia.skin\portablemedia-pressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\PortableMedia.skin\portablemedia.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\deviceskin\skins\PortableMedia.skin\portablemedia.xcf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\mac\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\win\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\shared\qtgradienteditor\qtgradienteditor.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\findwidget\images\mac\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\win\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="shared\shared.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\..\shared\qtgradienteditor\images\spreadpad.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\spreadreflect.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\spreadrepeat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\typeconical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\typelinear.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\typeradial.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\findwidget\images\wrap.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\shared\qtgradienteditor\images\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\lib\QtDesigner_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\lib\QtDesignerd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\lib\QtDesigner_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\lib\QtDesignerd_resource.rc" />
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dumpdoc", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/dumpdoc\dumpdoc.vcxproj", "{D9C68162-3EF4-3083-8184-84DB4065082E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dumpdoc", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/dumpdoc\dumpdoc.vcxproj", "{406F6DCC-D377-364C-85B1-FE6FA46963E7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dumpcpp", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/dumpcpp\dumpcpp.vcxproj", "{59B8C163-ECB6-3EE3-B3A6-827A1E4CC230}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dumpcpp", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/dumpcpp\dumpcpp.vcxproj", "{C83AC57E-18FE-3885-8B54-160A91B5681E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testcon", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/testcon\testcon.vcxproj", "{778ADB31-7EF6-3497-80E3-E6D4BDA0488E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testcon", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt/testcon\testcon.vcxproj", "{A9DE1813-8414-31D2-BE98-24EC1A285313}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -14,18 +14,18 @@ Global
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{D9C68162-3EF4-3083-8184-84DB4065082E}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D9C68162-3EF4-3083-8184-84DB4065082E}.Debug|Win32.Build.0 = Debug|Win32
-		{D9C68162-3EF4-3083-8184-84DB4065082E}.Release|Win32.ActiveCfg = Release|Win32
-		{D9C68162-3EF4-3083-8184-84DB4065082E}.Release|Win32.Build.0 = Release|Win32
-		{59B8C163-ECB6-3EE3-B3A6-827A1E4CC230}.Debug|Win32.ActiveCfg = Debug|Win32
-		{59B8C163-ECB6-3EE3-B3A6-827A1E4CC230}.Debug|Win32.Build.0 = Debug|Win32
-		{59B8C163-ECB6-3EE3-B3A6-827A1E4CC230}.Release|Win32.ActiveCfg = Release|Win32
-		{59B8C163-ECB6-3EE3-B3A6-827A1E4CC230}.Release|Win32.Build.0 = Release|Win32
-		{778ADB31-7EF6-3497-80E3-E6D4BDA0488E}.Debug|Win32.ActiveCfg = Debug|Win32
-		{778ADB31-7EF6-3497-80E3-E6D4BDA0488E}.Debug|Win32.Build.0 = Debug|Win32
-		{778ADB31-7EF6-3497-80E3-E6D4BDA0488E}.Release|Win32.ActiveCfg = Release|Win32
-		{778ADB31-7EF6-3497-80E3-E6D4BDA0488E}.Release|Win32.Build.0 = Release|Win32
+		{406F6DCC-D377-364C-85B1-FE6FA46963E7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{406F6DCC-D377-364C-85B1-FE6FA46963E7}.Debug|Win32.Build.0 = Debug|Win32
+		{406F6DCC-D377-364C-85B1-FE6FA46963E7}.Release|Win32.ActiveCfg = Release|Win32
+		{406F6DCC-D377-364C-85B1-FE6FA46963E7}.Release|Win32.Build.0 = Release|Win32
+		{C83AC57E-18FE-3885-8B54-160A91B5681E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C83AC57E-18FE-3885-8B54-160A91B5681E}.Debug|Win32.Build.0 = Debug|Win32
+		{C83AC57E-18FE-3885-8B54-160A91B5681E}.Release|Win32.ActiveCfg = Release|Win32
+		{C83AC57E-18FE-3885-8B54-160A91B5681E}.Release|Win32.Build.0 = Release|Win32
+		{A9DE1813-8414-31D2-BE98-24EC1A285313}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A9DE1813-8414-31D2-BE98-24EC1A285313}.Debug|Win32.Build.0 = Debug|Win32
+		{A9DE1813-8414-31D2-BE98-24EC1A285313}.Release|Win32.ActiveCfg = Release|Win32
+		{A9DE1813-8414-31D2-BE98-24EC1A285313}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

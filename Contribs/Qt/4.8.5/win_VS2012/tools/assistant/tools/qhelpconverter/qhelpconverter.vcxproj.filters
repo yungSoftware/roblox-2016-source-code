@@ -244,6 +244,33 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="assistant-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="assistant.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\filespage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\filterpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\generalpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\identifierpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\inputpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\outputpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="doc\pathpage.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qhelpconverter.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

@@ -82,8 +82,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="fileprint.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="images.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt4logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="rotateleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="rotateright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

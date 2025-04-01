@@ -100,6 +100,54 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="icons\background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\blue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\circle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\exit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\fileclose.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\green.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\ok.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\rectangle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\red.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\remove.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\triangle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="icons\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="undo.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

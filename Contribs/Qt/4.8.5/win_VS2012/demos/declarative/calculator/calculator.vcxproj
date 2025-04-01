@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4073F19D-4DA8-3338-B0F7-F75E6D377035}</ProjectGuid>
+    <ProjectGuid>{F2F40108-2291-340B-BB27-8CBEF584F9F6}</ProjectGuid>
     <RootNamespace>calculator</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,8 +113,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -140,12 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\release_shared\moc_qmlapplicationviewer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\release_shared\moc_qmlapplicationviewer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qmlapplicationviewer.cpp;%(Outputs)</Outputs>
     </CustomBuild>

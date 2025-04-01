@@ -382,9 +382,168 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\mac\accelerator.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\accelerator.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\appicon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\book.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\book.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\doneandnext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\doneandnext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="linguist.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\nextunfinished.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\nextunfinished.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\phrase.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\phrase.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\prev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\prev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\prevunfinished.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\prevunfinished.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\print.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\print.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\punctuation.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\punctuation.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_danger.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_empty.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_obsolete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_off.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_on.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\s_check_warning.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\splash.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\validateplacemarkers.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\validateplacemarkers.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="linguist.rc" />

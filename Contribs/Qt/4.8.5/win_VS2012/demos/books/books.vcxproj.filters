@@ -94,5 +94,8 @@
     <CustomBuild Include="books.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\star.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

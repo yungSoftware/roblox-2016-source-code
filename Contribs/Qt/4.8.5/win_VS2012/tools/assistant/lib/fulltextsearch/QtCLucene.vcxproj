@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{795535BB-0606-32C3-A09F-EE7E1778BA8C}</ProjectGuid>
+    <ProjectGuid>{5DE618D8-0AC8-3034-B2C3-626CAA3D4FB4}</ProjectGuid>
     <RootNamespace>QtCLucene</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -58,7 +58,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include&quot;;&quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\include\QtCLucene&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;.&quot;;&quot;..&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis\standard&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\config&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\debug&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\document&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\index&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\queryParser&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\search&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\store&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\util&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include&quot;;&quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\include\QtCLucene&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;.&quot;;&quot;..&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis\standard&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\config&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\debug&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\document&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\index&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\queryParser&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\search&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\store&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\util&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>tmp\obj\debug_shared\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -76,8 +76,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -96,13 +96,13 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QHELP_LIB;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;_BUILD_FOR_QT_;LUCENE_DISABLE_MEMTRACKING;_CRT_SECURE_NO_DEPRECATE;_MT;QT_DLL;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\..\..\bin&quot;</Command>
-      <Message>Copy QtCLucened4.dll to ..\..\..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtCLucened4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include&quot;;&quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\include\QtCLucene&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;.&quot;;&quot;..&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis\standard&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\config&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\debug&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\document&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\index&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\queryParser&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\search&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\store&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\util&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include&quot;;&quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\include\QtCLucene&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;.&quot;;&quot;..&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\analysis\standard&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\config&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\debug&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\document&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\index&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\queryParser&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\search&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\store&quot;;&quot;..\..\..\..\src\3rdparty\clucene\src\CLucene\util&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>tmp\obj\release_shared\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -119,8 +119,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -140,8 +140,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QHELP_LIB;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;_BUILD_FOR_QT_;LUCENE_DISABLE_MEMTRACKING;_CRT_SECURE_NO_DEPRECATE;_MT;QT_DLL;QT_NO_DEBUG;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\..\..\bin&quot;</Command>
-      <Message>Copy QtCLucene4.dll to ..\..\..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtCLucene4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -292,10 +292,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\fulltextsearch\QtCLucene_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\fulltextsearch\QtCLucene_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\fulltextsearch\QtCLucened_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\fulltextsearch\QtCLucened_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>

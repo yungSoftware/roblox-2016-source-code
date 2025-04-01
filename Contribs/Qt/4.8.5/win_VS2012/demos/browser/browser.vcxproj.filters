@@ -370,12 +370,36 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\addtab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\browser.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="data\data.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="data\defaultbookmarks.xbel">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\defaulticon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data\history.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="htmls\htmls.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="data\loading.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="htmls\notfound.html">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="browser.rc" />

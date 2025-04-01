@@ -48,7 +48,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\ico\qico_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\ico\qicod_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\ico\qico_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\ico\qicod_resource.rc" />
   </ItemGroup>
 </Project>

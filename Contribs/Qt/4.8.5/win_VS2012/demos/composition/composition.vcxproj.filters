@@ -64,8 +64,20 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="composition.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="composition.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="composition.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="flower.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="flower_alpha.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

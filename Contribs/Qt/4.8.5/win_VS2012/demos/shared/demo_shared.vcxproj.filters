@@ -79,8 +79,113 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\button_normal_cap_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\button_normal_cap_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\button_normal_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\button_pressed_cap_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\button_pressed_cap_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\button_pressed_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_bottom.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_bottomleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_bottomright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_top.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_topleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\frame_topright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_bottom_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_bottom_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_bottom_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_left_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_right_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_top_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_topleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\groupframe_topright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line_dash_dot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line_dash_dot_dot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line_dashed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line_dotted.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\line_solid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\radiobutton-on.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\radiobutton_off.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\radiobutton_on.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="shared.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\slider_bar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\slider_thumb_on.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\title_cap_left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\title_cap_right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\title_stretch.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

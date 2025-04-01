@@ -48,6 +48,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\image.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\style.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\style2.css">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qwebelement.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

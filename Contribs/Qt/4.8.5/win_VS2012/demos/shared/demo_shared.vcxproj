@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{64DDADDB-9E39-3F51-864F-B2DDD5FEB76F}</ProjectGuid>
+    <ProjectGuid>{EF58F365-C14C-3F5B-AA54-CCA068EEAB9A}</ProjectGuid>
     <RootNamespace>demo_shared</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -124,22 +124,22 @@
   <ItemGroup>
     <ClInclude Include="arthurstyle.h" />
     <CustomBuild Include="arthurwidgets.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;arthurwidgets.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 arthurwidgets.h -o tmp\moc\release_shared\moc_arthurwidgets.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;arthurwidgets.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 arthurwidgets.h -o tmp\moc\release_shared\moc_arthurwidgets.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC arthurwidgets.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_arthurwidgets.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;arthurwidgets.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 arthurwidgets.h -o tmp\moc\debug_shared\moc_arthurwidgets.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;arthurwidgets.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 arthurwidgets.h -o tmp\moc\debug_shared\moc_arthurwidgets.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC arthurwidgets.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_arthurwidgets.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="hoverpoints.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;hoverpoints.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 hoverpoints.h -o tmp\moc\release_shared\moc_hoverpoints.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;hoverpoints.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 hoverpoints.h -o tmp\moc\release_shared\moc_hoverpoints.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC hoverpoints.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_hoverpoints.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;hoverpoints.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 hoverpoints.h -o tmp\moc\debug_shared\moc_hoverpoints.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;hoverpoints.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_SUPPORT -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include\QtOpenGL&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 hoverpoints.h -o tmp\moc\debug_shared\moc_hoverpoints.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC hoverpoints.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_hoverpoints.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -165,17 +165,52 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\button_normal_cap_left.png" />
+    <None Include="images\button_normal_cap_right.png" />
+    <None Include="images\button_normal_stretch.png" />
+    <None Include="images\button_pressed_cap_left.png" />
+    <None Include="images\button_pressed_cap_right.png" />
+    <None Include="images\button_pressed_stretch.png" />
+    <None Include="images\frame_bottom.png" />
+    <None Include="images\frame_bottomleft.png" />
+    <None Include="images\frame_bottomright.png" />
+    <None Include="images\frame_left.png" />
+    <None Include="images\frame_right.png" />
+    <None Include="images\frame_top.png" />
+    <None Include="images\frame_topleft.png" />
+    <None Include="images\frame_topright.png" />
+    <None Include="images\groupframe_bottom_left.png" />
+    <None Include="images\groupframe_bottom_right.png" />
+    <None Include="images\groupframe_bottom_stretch.png" />
+    <None Include="images\groupframe_left_stretch.png" />
+    <None Include="images\groupframe_right_stretch.png" />
+    <None Include="images\groupframe_top_stretch.png" />
+    <None Include="images\groupframe_topleft.png" />
+    <None Include="images\groupframe_topright.png" />
+    <None Include="images\line_dash_dot.png" />
+    <None Include="images\line_dash_dot_dot.png" />
+    <None Include="images\line_dashed.png" />
+    <None Include="images\line_dotted.png" />
+    <None Include="images\line_solid.png" />
+    <None Include="images\radiobutton-on.png" />
+    <None Include="images\radiobutton_off.png" />
+    <None Include="images\radiobutton_on.png" />
     <CustomBuild Include="shared.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;shared.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name shared shared.qrc -o tmp\rcc\release_shared\qrc_shared.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;images\button_normal_cap_left.png;images\button_normal_cap_right.png;images\button_normal_stretch.png;images\button_pressed_cap_left.png;images\button_pressed_cap_right.png;images\button_pressed_stretch.png;images\frame_bottom.png;images\frame_bottomleft.png;images\frame_bottomright.png;images\frame_left.png;images\frame_right.png;images\frame_top.png;images\frame_topleft.png;images\frame_topright.png;images\groupframe_bottom_left.png;images\groupframe_bottom_right.png;images\groupframe_bottom_stretch.png;images\groupframe_left_stretch.png;images\groupframe_right_stretch.png;images\groupframe_top_stretch.png;images\groupframe_topleft.png;images\groupframe_topright.png;images\line_dash_dot.png;images\line_dash_dot_dot.png;images\line_dashed.png;images\line_dotted.png;images\line_solid.png;images\radiobutton-on.png;images\radiobutton_off.png;images\radiobutton_on.png;images\slider_bar.png;images\slider_thumb_on.png;images\title_cap_left.png;images\title_cap_right.png;images\title_stretch.png;shared.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name shared shared.qrc -o tmp\rcc\release_shared\qrc_shared.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC shared.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_shared.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;shared.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name shared shared.qrc -o tmp\rcc\debug_shared\qrc_shared.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;images\button_normal_cap_left.png;images\button_normal_cap_right.png;images\button_normal_stretch.png;images\button_pressed_cap_left.png;images\button_pressed_cap_right.png;images\button_pressed_stretch.png;images\frame_bottom.png;images\frame_bottomleft.png;images\frame_bottomright.png;images\frame_left.png;images\frame_right.png;images\frame_top.png;images\frame_topleft.png;images\frame_topright.png;images\groupframe_bottom_left.png;images\groupframe_bottom_right.png;images\groupframe_bottom_stretch.png;images\groupframe_left_stretch.png;images\groupframe_right_stretch.png;images\groupframe_top_stretch.png;images\groupframe_topleft.png;images\groupframe_topright.png;images\line_dash_dot.png;images\line_dash_dot_dot.png;images\line_dashed.png;images\line_dotted.png;images\line_solid.png;images\radiobutton-on.png;images\radiobutton_off.png;images\radiobutton_on.png;images\slider_bar.png;images\slider_thumb_on.png;images\title_cap_left.png;images\title_cap_right.png;images\title_stretch.png;shared.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name shared shared.qrc -o tmp\rcc\debug_shared\qrc_shared.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC shared.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_shared.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="images\slider_bar.png" />
+    <None Include="images\slider_thumb_on.png" />
+    <None Include="images\title_cap_left.png" />
+    <None Include="images\title_cap_right.png" />
+    <None Include="images\title_stretch.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -76,8 +76,53 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="qml\minehunt\MinehuntCore\Explosion.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\Tile.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\bomb-color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\bomb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\face-sad.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\face-smile-big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\face-smile.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\flag-color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\flag.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\front.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\minehunt.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="minehunt.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qml\minehunt\MinehuntCore\pics\quit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qml\minehunt\MinehuntCore\pics\star.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

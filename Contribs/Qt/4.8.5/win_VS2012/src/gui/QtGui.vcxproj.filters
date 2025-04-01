@@ -3238,6 +3238,288 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="styles\images\cdr-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\cdr-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\cdr-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\closedock-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\closedock-down-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\computer-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\computer-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\desktop-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\desktop-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirclosed-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirclosed-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirclosed-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirlink-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirlink-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dirlink-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\diropen-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\diropen-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\diropen-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dockdock-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dockdock-down-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\down-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\down-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\down-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dvd-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dvd-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\dvd-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\file-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\file-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\file-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filecontents-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filecontents-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filecontents-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\fileinfo-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\fileinfo-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\fileinfo-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filelink-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filelink-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\filelink-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\fit-page-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\fit-page-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\fit-width-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\fit-width-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\floppy-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\floppy-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\floppy-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\fontbitmap-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\fonttruetype-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-first-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-first-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-last-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-last-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-next-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-next-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-previous-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\go-previous-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\harddrive-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\harddrive-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\harddrive-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\layout-landscape-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\layout-landscape-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\layout-portrait-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\layout-portrait-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\left-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\left-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\left-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-pause-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-pause-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-play-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-play-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-seek-backward-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-seek-backward-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-seek-forward-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-seek-forward-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-skip-backward-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-skip-backward-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-skip-forward-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-skip-forward-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-stop-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-stop-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-volume-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\media-volume-muted-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\networkdrive-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\networkdrive-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\networkdrive-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\newdirectory-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\newdirectory-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\newdirectory-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\page-setup-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\page-setup-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\parentdir-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\parentdir-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\parentdir-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\print-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\print-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="dialogs\qmessagebox.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
@@ -3247,9 +3529,213 @@
     <CustomBuild Include="styles\qstyle.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="dialogs\images\qtlogo-64.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\refresh-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\refresh-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\right-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\right-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\right-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-apply-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-apply-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-apply-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-cancel-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-cancel-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-cancel-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-clear-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-clear-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-clear-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-close-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-close-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-close-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-closetab-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-closetab-down-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-closetab-hover-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-delete-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-delete-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-delete-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-help-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-help-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-help-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-no-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-no-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-no-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-ok-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-ok-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-ok-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-open-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-open-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-open-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-save-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-save-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-save-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-yes-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-yes-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\standardbutton-yes-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\status-color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\status-gray-scale.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\stop-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\stop-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\trash-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\trash-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\trash-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\up-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\up-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\up-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-multi-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-multi-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-one-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-one-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-sided-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\view-page-sided-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewdetailed-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewdetailed-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewdetailed-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewlist-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewlist-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="styles\images\viewlist-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\zoom-in-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\zoom-in-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\zoom-out-24.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dialogs\images\zoom-out-32.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\gui\QtGui_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\gui\QtGuid_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\gui\QtGui_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\gui\QtGuid_resource.rc" />
   </ItemGroup>
 </Project>

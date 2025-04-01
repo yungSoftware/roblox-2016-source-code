@@ -64,6 +64,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="gradients.cpp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="gradients.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="gradients.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

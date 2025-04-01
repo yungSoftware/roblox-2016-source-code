@@ -97,5 +97,17 @@
     <CustomBuild Include="mainwindow.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="qt.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="titlebarCenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="titlebarLeft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="titlebarRight.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

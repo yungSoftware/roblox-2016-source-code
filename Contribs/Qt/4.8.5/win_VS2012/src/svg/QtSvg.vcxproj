@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{9E97F3AC-BA44-3F84-B703-158608A00011}</ProjectGuid>
+    <ProjectGuid>{49A833CF-DDBF-308A-A09C-8F0EACD2B6FF}</ProjectGuid>
     <RootNamespace>QtSvg</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -76,8 +76,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <BaseAddress>0x66000000</BaseAddress>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -97,8 +97,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_BUILD_SVG_LIB;QT_NO_USING_NAMESPACE;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
-      <Message>Copy QtSvgd4.dll to ..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtSvgd4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
@@ -120,8 +120,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <BaseAddress>0x66000000</BaseAddress>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -142,8 +142,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_BUILD_SVG_LIB;QT_NO_USING_NAMESPACE;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_NO_DEBUG;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
-      <Message>Copy QtSvg4.dll to ..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtSvg4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -161,12 +161,12 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="qgraphicssvgitem.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qgraphicssvgitem.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qgraphicssvgitem.h -o tmp\moc\debug_shared\moc_qgraphicssvgitem.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qgraphicssvgitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qgraphicssvgitem.h -o tmp\moc\debug_shared\moc_qgraphicssvgitem.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qgraphicssvgitem.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qgraphicssvgitem.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qgraphicssvgitem.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qgraphicssvgitem.h -o tmp\moc\release_shared\moc_qgraphicssvgitem.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qgraphicssvgitem.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qgraphicssvgitem.h -o tmp\moc\release_shared\moc_qgraphicssvgitem.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qgraphicssvgitem.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qgraphicssvgitem.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -176,12 +176,12 @@
     <ClInclude Include="qsvghandler_p.h" />
     <ClInclude Include="qsvgnode_p.h" />
     <CustomBuild Include="qsvgrenderer.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgrenderer.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgrenderer.h -o tmp\moc\debug_shared\moc_qsvgrenderer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgrenderer.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgrenderer.h -o tmp\moc\debug_shared\moc_qsvgrenderer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qsvgrenderer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qsvgrenderer.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgrenderer.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgrenderer.h -o tmp\moc\release_shared\moc_qsvgrenderer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgrenderer.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgrenderer.h -o tmp\moc\release_shared\moc_qsvgrenderer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qsvgrenderer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qsvgrenderer.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -189,12 +189,12 @@
     <ClInclude Include="qsvgstyle_p.h" />
     <ClInclude Include="qsvgtinydocument_p.h" />
     <CustomBuild Include="qsvgwidget.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgwidget.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgwidget.h -o tmp\moc\debug_shared\moc_qsvgwidget.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgwidget.h -o tmp\moc\debug_shared\moc_qsvgwidget.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qsvgwidget.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qsvgwidget.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgwidget.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgwidget.h -o tmp\moc\release_shared\moc_qsvgwidget.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qsvgwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_BUILD_SVG_LIB -DQT_NO_USING_NAMESPACE -DQT_MAKEDLL -DQT_NO_CAST_TO_ASCII -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include\QtGui&quot; -I&quot;..\..\include&quot; -I&quot;..\..\include\QtSvg&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\3rdparty\harfbuzz\src&quot; -I&quot;..\3rdparty\zlib&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qsvgwidget.h -o tmp\moc\release_shared\moc_qsvgwidget.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qsvgwidget.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qsvgwidget.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -214,10 +214,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\svg\QtSvg_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\svg\QtSvg_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\svg\QtSvgd_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\svg\QtSvgd_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>

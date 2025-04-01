@@ -91,5 +91,8 @@
     <CustomBuild Include="resources.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="test.html">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0C666535-2749-3BE1-81BD-AFABCF56E0A2}</ProjectGuid>
+    <ProjectGuid>{C6E2DEB5-1404-3DAD-8EE1-1F0D14238DAB}</ProjectGuid>
     <RootNamespace>qtmain</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -55,7 +55,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>&quot;..\..\include&quot;;&quot;tmp&quot;;&quot;..\..\include\QtCore&quot;;&quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\include\qtmain&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>&quot;..\..\include&quot;;&quot;tmp&quot;;&quot;..\..\include\QtCore&quot;;&quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\include\qtmain&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>tmp\obj\debug_shared\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -87,7 +87,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>&quot;..\..\include&quot;;&quot;tmp&quot;;&quot;..\..\include\QtCore&quot;;&quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\include\qtmain&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>&quot;..\..\include&quot;;&quot;tmp&quot;;&quot;..\..\include\QtCore&quot;;&quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\include\qtmain&quot;;&quot;tmp\rcc\debug_shared&quot;;&quot;tmp&quot;;&quot;..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>tmp\obj\release_shared\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>

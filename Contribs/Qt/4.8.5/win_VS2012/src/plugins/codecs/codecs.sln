@@ -1,12 +1,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qcncodecs", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/cn\qcncodecs.vcxproj", "{230D58C8-2F8B-322C-8434-486BC1BB272A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qcncodecs", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/cn\qcncodecs.vcxproj", "{73BF2256-2C58-331E-9262-C3293DA69876}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qjpcodecs", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/jp\qjpcodecs.vcxproj", "{5030FFAA-E78C-3BDF-A66D-73E08CB9C8E6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qjpcodecs", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/jp\qjpcodecs.vcxproj", "{2B489FDF-C101-3D5A-B2A9-5D0ECAA38BBC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtwcodecs", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/tw\qtwcodecs.vcxproj", "{94D81DD5-1E97-3AE9-9941-E14E8E6D1443}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtwcodecs", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/tw\qtwcodecs.vcxproj", "{74AD6763-5D5D-3710-BD22-F1156E6768E6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qkrcodecs", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/kr\qkrcodecs.vcxproj", "{4F70A49C-E153-32F1-9E65-F4A99107C2ED}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qkrcodecs", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/codecs/kr\qkrcodecs.vcxproj", "{B34EEF93-28D2-312A-8C63-FF19430D29AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -16,22 +16,22 @@ Global
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{230D58C8-2F8B-322C-8434-486BC1BB272A}.Debug|Win32.ActiveCfg = Debug|Win32
-		{230D58C8-2F8B-322C-8434-486BC1BB272A}.Debug|Win32.Build.0 = Debug|Win32
-		{230D58C8-2F8B-322C-8434-486BC1BB272A}.Release|Win32.ActiveCfg = Release|Win32
-		{230D58C8-2F8B-322C-8434-486BC1BB272A}.Release|Win32.Build.0 = Release|Win32
-		{5030FFAA-E78C-3BDF-A66D-73E08CB9C8E6}.Debug|Win32.ActiveCfg = Debug|Win32
-		{5030FFAA-E78C-3BDF-A66D-73E08CB9C8E6}.Debug|Win32.Build.0 = Debug|Win32
-		{5030FFAA-E78C-3BDF-A66D-73E08CB9C8E6}.Release|Win32.ActiveCfg = Release|Win32
-		{5030FFAA-E78C-3BDF-A66D-73E08CB9C8E6}.Release|Win32.Build.0 = Release|Win32
-		{94D81DD5-1E97-3AE9-9941-E14E8E6D1443}.Debug|Win32.ActiveCfg = Debug|Win32
-		{94D81DD5-1E97-3AE9-9941-E14E8E6D1443}.Debug|Win32.Build.0 = Debug|Win32
-		{94D81DD5-1E97-3AE9-9941-E14E8E6D1443}.Release|Win32.ActiveCfg = Release|Win32
-		{94D81DD5-1E97-3AE9-9941-E14E8E6D1443}.Release|Win32.Build.0 = Release|Win32
-		{4F70A49C-E153-32F1-9E65-F4A99107C2ED}.Debug|Win32.ActiveCfg = Debug|Win32
-		{4F70A49C-E153-32F1-9E65-F4A99107C2ED}.Debug|Win32.Build.0 = Debug|Win32
-		{4F70A49C-E153-32F1-9E65-F4A99107C2ED}.Release|Win32.ActiveCfg = Release|Win32
-		{4F70A49C-E153-32F1-9E65-F4A99107C2ED}.Release|Win32.Build.0 = Release|Win32
+		{73BF2256-2C58-331E-9262-C3293DA69876}.Debug|Win32.ActiveCfg = Debug|Win32
+		{73BF2256-2C58-331E-9262-C3293DA69876}.Debug|Win32.Build.0 = Debug|Win32
+		{73BF2256-2C58-331E-9262-C3293DA69876}.Release|Win32.ActiveCfg = Release|Win32
+		{73BF2256-2C58-331E-9262-C3293DA69876}.Release|Win32.Build.0 = Release|Win32
+		{2B489FDF-C101-3D5A-B2A9-5D0ECAA38BBC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B489FDF-C101-3D5A-B2A9-5D0ECAA38BBC}.Debug|Win32.Build.0 = Debug|Win32
+		{2B489FDF-C101-3D5A-B2A9-5D0ECAA38BBC}.Release|Win32.ActiveCfg = Release|Win32
+		{2B489FDF-C101-3D5A-B2A9-5D0ECAA38BBC}.Release|Win32.Build.0 = Release|Win32
+		{74AD6763-5D5D-3710-BD22-F1156E6768E6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{74AD6763-5D5D-3710-BD22-F1156E6768E6}.Debug|Win32.Build.0 = Debug|Win32
+		{74AD6763-5D5D-3710-BD22-F1156E6768E6}.Release|Win32.ActiveCfg = Release|Win32
+		{74AD6763-5D5D-3710-BD22-F1156E6768E6}.Release|Win32.Build.0 = Release|Win32
+		{B34EEF93-28D2-312A-8C63-FF19430D29AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B34EEF93-28D2-312A-8C63-FF19430D29AC}.Debug|Win32.Build.0 = Debug|Win32
+		{B34EEF93-28D2-312A-8C63-FF19430D29AC}.Release|Win32.ActiveCfg = Release|Win32
+		{B34EEF93-28D2-312A-8C63-FF19430D29AC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

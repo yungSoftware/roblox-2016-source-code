@@ -184,8 +184,113 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="pics\big\background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\background.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\boat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\boat.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\scalable\boat.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\bomb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\bomb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="data.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-a.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-a2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-b.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-dash.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-excl.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-q.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-s.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-t.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-t2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\welcome\logo-u.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\boat\step1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\submarine\step1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\boat\step2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\submarine\step2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\boat\step3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\submarine\step3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\boat\step4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\explosion\submarine\step4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\scalable\sub-attaq.svg">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="subattaq.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="pics\big\submarine.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\submarine.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\scalable\submarine.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\surface.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\surface.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\big\torpedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\small\torpedo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="pics\scalable\torpedo.svg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

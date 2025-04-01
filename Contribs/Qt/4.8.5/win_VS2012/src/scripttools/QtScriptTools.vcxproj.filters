@@ -619,12 +619,174 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="debugging\scripts\commands\advance.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\backtrace.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\break.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\breakpoint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\breakpoint.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\clear.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\mac\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\win\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\complete.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\condition.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\continue.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\d_breakpoint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\d_breakpoint.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\d_interrupt.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\d_play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\delete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\delete.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\disable.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\down.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\enable.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\eval.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\find.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\finish.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\frame.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\help.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\ignore.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\info.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\interrupt.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\interrupt.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\list.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\location.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\location.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\new.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\next.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\play.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\mac\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\win\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\mac\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\win\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\print.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\reload.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\return.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\return.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\runtocursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\runtonewscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="debugging\scripttools_debugging.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="debugging\scripts\commands\step.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\stepinto.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\stepout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\stepover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\tbreak.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\scripts\commands\up.qs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="debugging\images\wrap.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\scripttools\QtScriptTools_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\scripttools\QtScriptToolsd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\scripttools\QtScriptTools_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\scripttools\QtScriptToolsd_resource.rc" />
   </ItemGroup>
 </Project>

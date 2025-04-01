@@ -48,6 +48,30 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\content.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\frame_a.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\frame_c.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\framedindex.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\iframe.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\iframe2.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\iframe3.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\index.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qwebpage.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

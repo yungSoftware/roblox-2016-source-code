@@ -103,8 +103,71 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="basic.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="basic.vsh">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="boxes.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="cubemap_negx.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cubemap_negy.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cubemap_negz.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cubemap_posx.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cubemap_posy.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cubemap_posz.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dotted.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="fresnel.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="glass.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="granite.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="marble.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="parameters.par">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qt-logo.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qt-logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="reflection.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="refraction.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="smiley.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="square.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="wood.fsh">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

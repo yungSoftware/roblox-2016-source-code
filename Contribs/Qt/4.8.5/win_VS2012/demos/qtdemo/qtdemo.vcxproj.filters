@@ -196,9 +196,24 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\demobg.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="xml\examples.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="qmlShell.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="qtdemo.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\qtlogo_small.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\trolltech-logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="qtdemo.rc" />

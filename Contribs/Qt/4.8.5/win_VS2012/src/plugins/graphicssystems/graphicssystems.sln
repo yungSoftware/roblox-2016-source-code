@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtracegraphicssystem", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/trace\qtracegraphicssystem.vcxproj", "{7B07EE0D-6134-3CFE-AE78-704990C174DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qtracegraphicssystem", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/trace\qtracegraphicssystem.vcxproj", "{60F39769-A7D5-3827-A9AE-FE7330CB3080}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qglgraphicssystem", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/opengl\qglgraphicssystem.vcxproj", "{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qglgraphicssystem", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/graphicssystems/opengl\qglgraphicssystem.vcxproj", "{4B19F441-2270-388B-B072-BFDEA2DAEFDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -12,14 +12,14 @@ Global
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Debug|Win32.ActiveCfg = Debug|Win32
-		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Debug|Win32.Build.0 = Debug|Win32
-		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Release|Win32.ActiveCfg = Release|Win32
-		{7B07EE0D-6134-3CFE-AE78-704990C174DA}.Release|Win32.Build.0 = Release|Win32
-		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Debug|Win32.Build.0 = Debug|Win32
-		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Release|Win32.ActiveCfg = Release|Win32
-		{C5C5BBCD-69EF-3AF5-879A-0DC9BD6CA368}.Release|Win32.Build.0 = Release|Win32
+		{60F39769-A7D5-3827-A9AE-FE7330CB3080}.Debug|Win32.ActiveCfg = Debug|Win32
+		{60F39769-A7D5-3827-A9AE-FE7330CB3080}.Debug|Win32.Build.0 = Debug|Win32
+		{60F39769-A7D5-3827-A9AE-FE7330CB3080}.Release|Win32.ActiveCfg = Release|Win32
+		{60F39769-A7D5-3827-A9AE-FE7330CB3080}.Release|Win32.Build.0 = Release|Win32
+		{4B19F441-2270-388B-B072-BFDEA2DAEFDC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4B19F441-2270-388B-B072-BFDEA2DAEFDC}.Debug|Win32.Build.0 = Debug|Win32
+		{4B19F441-2270-388B-B072-BFDEA2DAEFDC}.Release|Win32.ActiveCfg = Release|Win32
+		{4B19F441-2270-388B-B072-BFDEA2DAEFDC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

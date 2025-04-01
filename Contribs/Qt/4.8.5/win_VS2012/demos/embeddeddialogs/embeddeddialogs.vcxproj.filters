@@ -94,6 +94,9 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="No-Ones-Laughing-3.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="embeddeddialogs.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8D0936E7-C2E6-3D35-8F92-F05A720D763D}</ProjectGuid>
+    <ProjectGuid>{DC85E386-48A4-36E0-8A62-44965C7493F2}</ProjectGuid>
     <RootNamespace>qmlwebkitplugin</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -75,8 +75,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -114,8 +114,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKit4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKit4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -140,12 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="qdeclarativewebview_p.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qdeclarativewebview_p.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qdeclarativewebview_p.h -o tmp\moc\debug_shared\moc_qdeclarativewebview_p.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qdeclarativewebview_p.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qdeclarativewebview_p.h -o tmp\moc\debug_shared\moc_qdeclarativewebview_p.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qdeclarativewebview_p.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qdeclarativewebview_p.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qdeclarativewebview_p.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qdeclarativewebview_p.h -o tmp\moc\release_shared\moc_qdeclarativewebview_p.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qdeclarativewebview_p.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qdeclarativewebview_p.h -o tmp\moc\release_shared\moc_qdeclarativewebview_p.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qdeclarativewebview_p.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qdeclarativewebview_p.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -159,16 +159,16 @@
     </ClCompile>
     <CustomBuild Include="tmp\moc\debug_shared\plugin.moc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;plugin.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 plugin.cpp -o tmp\moc\debug_shared\plugin.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;plugin.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 plugin.cpp -o tmp\moc\debug_shared\plugin.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC plugin.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\plugin.moc;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="tmp\moc\release_shared\plugin.moc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;plugin.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 plugin.cpp -o tmp\moc\release_shared\plugin.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;plugin.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DQT_ASCII_CAST_WARNINGS -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\include&quot; -I&quot;..\..\..\..\Source&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 plugin.cpp -o tmp\moc\release_shared\plugin.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC plugin.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\plugin.moc;%(Outputs)</Outputs>
     </CustomBuild>
@@ -176,13 +176,13 @@
   <ItemGroup>
     <CustomBuild Include="qmldir">
       <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">copy;qmldir;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">copy /y qmldir c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir</Command>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">copy /y qmldir c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">COPY qmldir</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir;%(Outputs)</Outputs>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir;%(Outputs)</Outputs>
       <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">copy;qmldir;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">copy /y qmldir c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir</Command>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">copy /y qmldir c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">COPY qmldir</Message>
-      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir;%(Outputs)</Outputs>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

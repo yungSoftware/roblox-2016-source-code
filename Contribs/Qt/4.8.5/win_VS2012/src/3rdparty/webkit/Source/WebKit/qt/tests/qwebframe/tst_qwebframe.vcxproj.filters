@@ -48,6 +48,24 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\image.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\style.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\test1.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\test2.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\testiframe.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\testiframe2.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qwebframe.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

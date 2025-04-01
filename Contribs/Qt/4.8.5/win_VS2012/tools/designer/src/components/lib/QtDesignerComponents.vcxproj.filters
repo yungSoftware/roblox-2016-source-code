@@ -1261,24 +1261,618 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\formeditor\images\mac\adjustsize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\adjustsize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\buddytool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\buddytool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\busy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\calendarwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\checkbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cleartext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\closedhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\columnview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\combobox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\commandlinkbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\configure.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-busy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-closedhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-forbidden.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-ibeam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-openhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizef.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-uparrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-vsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-wait.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dateedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\datetimeedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\defaultbrushes.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dial.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dialogbuttonbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dockwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\doublespinbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\downplus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\dropdownbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editbreaklayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editbreaklayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\editdelete-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editform.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editform.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editgrid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editgrid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\edithlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\edithlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\edithlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\edithlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editlower.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editlower.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editraise.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editraise.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editvlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editvlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editvlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editvlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\emptyicon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\filenew-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\fileopen-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\..\shared\findwidget\findwidget.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\formeditor\images\widgets\fontcombobox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\propertyeditor\fontmapping.xml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\formeditor\formeditor.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\formeditor\images\mac\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\frame.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\graphicsview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\groupbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hscrollbar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\ibeam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\insertimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\insertimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\label.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\lcdnumber.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\leveldown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\levelup.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\line.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\lineedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\listbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\listview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\mdiarea.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\minus-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\no.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\openhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\plaintextedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\plus-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\prefix-add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\progress.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\propertyeditor\propertyeditor.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\formeditor\images\widgets\pushbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\qt3logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\qtlogo.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowser.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\formeditor\images\widgets\radiobutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\reload.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\resetproperty.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\resourceeditortool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\resourceeditortool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\scrollarea.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\signalslottool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\signalslottool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\simplifyrichtext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\simplifyrichtext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizef.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\sort.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\spacer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\spinbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\submenu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\table.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\tabordertool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\tabordertool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\tabwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textanchor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textanchor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\textedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textsubscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textsubscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textsuperscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textsuperscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\timeedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\toolbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\toolbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\uparrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vscrollbar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vspacer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\vsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\wait.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\widget.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\widgetbox\widgetbox.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\widgetbox\widgetbox.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\widgetstack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\widgettool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\widgettool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\wizard.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\wrap.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponents_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponentsd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponents_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponentsd_resource.rc" />
   </ItemGroup>
 </Project>

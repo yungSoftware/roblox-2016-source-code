@@ -51,7 +51,7 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\qmltooling\qmldbg_tcp\qmldbg_tcp_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\qmltooling\qmldbg_tcp\qmldbg_tcpd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\qmltooling\qmldbg_tcp\qmldbg_tcp_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\qmltooling\qmldbg_tcp\qmldbg_tcpd_resource.rc" />
   </ItemGroup>
 </Project>

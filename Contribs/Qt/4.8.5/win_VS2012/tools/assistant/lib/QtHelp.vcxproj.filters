@@ -292,12 +292,24 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\1leftarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\1rightarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\3leftarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\3rightarrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="helpsystem.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\QtHelp_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\QtHelpd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\QtHelp_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\assistant\lib\QtHelpd_resource.rc" />
   </ItemGroup>
 </Project>

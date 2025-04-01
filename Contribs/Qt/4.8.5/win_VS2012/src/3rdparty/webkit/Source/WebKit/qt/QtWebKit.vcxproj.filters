@@ -1786,18 +1786,864 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\WebCore\inspector\front-end\ApplicationCacheItemsView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditCategories.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditFormatters.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditLauncherView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditResultView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditRules.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\AuditsPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\BinarySearch.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\BottomUpProfileDataGridTree.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\BreakpointsSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CSSCompletions.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CSSKeywordCompletions.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CSSStyleModel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CallStackSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Checkbox.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Color.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ConsolePanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ConsoleView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ContextMenu.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CookieItemsView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CookieParser.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\CookiesTable.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DOMAgent.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DOMBreakpointsSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DOMStorage.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DOMStorageItemsView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DOMSyntaxHighlighter.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DataGrid.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Database.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DatabaseQueryView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DatabaseTableView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DebuggerModel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DebuggerPresentationModel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DetailedHeapshotGridNodes.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\DetailedHeapshotView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Drawer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ElementsPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ElementsTreeOutline.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\EventListenersSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionAPI.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionAuditCategory.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionCommon.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionRegistryStub.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ExtensionServer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\FontView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\GoToLineDialog.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HAREntry.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HeapSnapshot.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HeapSnapshotProxy.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HeapSnapshotView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HeapSnapshotWorker.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HeapSnapshotWorkerDispatcher.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\HelpScreen.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ImageView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\InjectedFakeWorker.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\generated\InspectorBackendStub.js">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\WebCore\generated\InspectorBackendStub.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\WebCore\inspector\front-end\InspectorFrontendHostStub.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\JavaScriptFormatter.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\KeyboardShortcut.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\MetricsSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\NetworkItemView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\NetworkManager.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\NetworkPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Object.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ObjectPropertiesSection.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Panel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\PanelEnablerView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Placard.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\PleaseWaitMessage.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Popover.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ProfileDataGridTree.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ProfileView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ProfilesPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\PropertiesSection.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\PropertiesSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\RemoteObject.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Resource.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceCategory.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceCookiesView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceHeadersView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceJSONView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceTimingView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceTreeModel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourceView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ResourcesPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ScopeChainSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Script.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ScriptFormatter.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ScriptFormatterWorker.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ScriptsPanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SearchController.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Section.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Settings.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ShortcutsHelp.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\ShowMoreDataGridNode.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SidebarTreeElement.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceCSSTokenizer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceFile.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceFrame.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceHTMLTokenizer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceJavaScriptTokenizer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SourceTokenizer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\StatusBarButton.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\StylesSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\SummaryBar.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TabbedPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TestController.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TextEditorHighlighter.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TextEditorModel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TextPrompt.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TextViewer.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TimelineAgent.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TimelineGrid.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TimelineOverviewPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TimelinePanel.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Toolbar.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\TopDownProfileDataGridTree.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\View.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\WatchExpressionsSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="..\..\WebCore\WebCore.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="..\..\WebCore\inspector\front-end\WebKit.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="..\..\WebCore\inspector\front-end\WelcomeView.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\WorkerManager.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\WorkersSidebarPane.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\aliasCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\applicationCache.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\audits.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\breakpointBorder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\breakpointConditionalBorder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\breakpointConditionalCounterBorder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\breakpointCounterBorder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\cellCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\checker.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\closeButtons.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\contextMenuCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\cookie.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\copyCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\database.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\databaseTable.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\debuggerContinue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\debuggerPause.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\debuggerStepInto.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\debuggerStepOut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\debuggerStepOver.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\deleteButton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallDown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallDownBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallDownWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRight.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRightBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRightDown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRightDownBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRightDownWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\disclosureTriangleSmallRightWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\errorIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\errorMediumIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\errorRedDot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\frame.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\glossyHeader.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\glossyHeaderPressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\glossyHeaderSelected.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\glossyHeaderSelectedPressed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\goArrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\goToLineDialog.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\graphLabelCalloutLeft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\graphLabelCalloutRight.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\heapProfiler.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\helpScreen.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\inputSpeech.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\inspector.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\inspector.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\inspector.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\inspectorSyntaxHighlight.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\localStorage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\missingImage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\networkPanel.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\nullPlugin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\paneAddButtons.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\paneBottomGrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\paneBottomGrowActive.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\paneGrowHandleLine.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\paneSettingsButtons.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\UglifyJS\parse-js.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\popover.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\popoverArrows.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\popoverBackground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\profileGroupIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\profileIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\profileSmallIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\profilesSilhouette.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\programCounterBorder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\progressCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\radioDot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourceCSSIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourceDocumentIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourceDocumentIconSmall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourceJSIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourcePlainIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourcePlainIconSmall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourcesSizeGraphIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\resourcesTimeGraphIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\scriptsSilhouette.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\searchSmallBlue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\searchSmallBrightBlue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\searchSmallGray.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\searchSmallWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segment.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segmentEnd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segmentHover.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segmentHoverEnd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segmentSelected.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\segmentSelectedEnd.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\sessionStorage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\spinner.gif">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\splitviewDimple.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\splitviewDividerBackground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarBackground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarBottomBackground.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarButtonGlyphs.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarButtons.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarMenuButton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarMenuButtonSelected.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarResizerHorizontal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\statusbarResizerVertical.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\successGreenDot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\textAreaResizeCorner.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\textViewer.css">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbActiveHoriz.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbActiveVert.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbHoriz.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbHoverHoriz.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbHoverVert.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\thumbVert.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarBlue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarGray.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarGreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarOrange.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarPurple.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarRed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineBarYellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineCheckmarks.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineDots.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillBlue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillGray.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillGreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillOrange.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillPurple.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillRed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelineHollowPillYellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillBlue.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillGray.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillGreen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillOrange.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillPurple.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillRed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\timelinePillYellow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\toolbarIcons.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\toolbarIconsSmall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\toolbarItemSelected.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\trackHoriz.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\trackVert.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeDownTriangleBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeDownTriangleWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeRightTriangleBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeRightTriangleWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeUpTriangleBlack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\treeUpTriangleWhite.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\treeoutline.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\urlIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\userInputIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\userInputPreviousIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\userInputResultIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\utilities.js">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\verticalTextCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\warningIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\warningMediumIcon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\warningOrangeDot.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\inspector\front-end\Images\warningsErrors.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\zoomInCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\WebCore\Resources\zoomOutCursor.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\QtWebKit_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\QtWebKitd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\QtWebKit_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\QtWebKitd_resource.rc" />
   </ItemGroup>
 </Project>

@@ -121,5 +121,14 @@
     <CustomBuild Include="arthur_plugin.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="bg1.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="flower.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="flower_alpha.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

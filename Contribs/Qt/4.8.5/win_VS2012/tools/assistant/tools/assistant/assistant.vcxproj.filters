@@ -484,12 +484,114 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\mac\addtab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\addtab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\assistant-128.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\assistant.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="assistant.qch">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="assistant.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
     <CustomBuild Include="assistant_images.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\mac\book.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\book.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\bookmark.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\closebutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\darkclosebutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\find.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\find.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\print.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\print.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\resetzoom.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\resetzoom.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\synctoc.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\synctoc.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\trolltech-logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\wrap.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="assistant.rc" />

@@ -64,8 +64,128 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\mac\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editredo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editredo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\editundo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\editundo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="example.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\exportpdf.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\exportpdf.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\fileprint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\fileprint.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\logo32.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="textedit.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\mac\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\zoomin.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\mac\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\win\zoomout.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

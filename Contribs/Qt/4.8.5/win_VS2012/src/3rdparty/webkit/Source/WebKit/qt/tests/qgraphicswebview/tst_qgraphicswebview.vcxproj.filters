@@ -48,6 +48,18 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\56929.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\input_types.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\pointing_right.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\pointing_up.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qgraphicswebview.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

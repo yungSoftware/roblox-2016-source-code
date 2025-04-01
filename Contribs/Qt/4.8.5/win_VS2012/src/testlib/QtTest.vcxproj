@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{84961CA5-7C44-38EB-B246-8F50C02BCDF8}</ProjectGuid>
+    <ProjectGuid>{A55B318A-D9D3-3240-841B-BC487B301C5C}</ProjectGuid>
     <RootNamespace>QtTest</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -76,8 +76,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -96,8 +96,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_CAST_TO_ASCII;QT_NO_CAST_FROM_ASCII;QTESTLIB_MAKEDLL;QT_NO_DATASTREAM;QT_MAKEDLL;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
-      <Message>Copy QtTestd4.dll to ..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtTestd4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
@@ -119,8 +119,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -140,8 +140,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_CAST_TO_ASCII;QT_NO_CAST_FROM_ASCII;QTESTLIB_MAKEDLL;QT_NO_DATASTREAM;QT_MAKEDLL;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_NO_DEBUG;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
-      <Message>Copy QtTest4.dll to ..\..\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtTest4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -186,12 +186,12 @@
     <ClInclude Include="qtestelementattribute.h" />
     <ClInclude Include="qtestevent.h" />
     <CustomBuild Include="qtesteventloop.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtesteventloop.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQTESTLIB_MAKEDLL -DQT_NO_DATASTREAM -DQT_MAKEDLL -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\QtTest&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtesteventloop.h -o tmp\moc\debug_shared\moc_qtesteventloop.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtesteventloop.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQTESTLIB_MAKEDLL -DQT_NO_DATASTREAM -DQT_MAKEDLL -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\QtTest&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtesteventloop.h -o tmp\moc\debug_shared\moc_qtesteventloop.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qtesteventloop.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qtesteventloop.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtesteventloop.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQTESTLIB_MAKEDLL -DQT_NO_DATASTREAM -DQT_MAKEDLL -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\QtTest&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtesteventloop.h -o tmp\moc\release_shared\moc_qtesteventloop.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtesteventloop.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DQT_SHARED -DQT_THREAD_SUPPORT -DUNICODE -DWIN32 -DQT_NO_CAST_TO_ASCII -DQT_NO_CAST_FROM_ASCII -DQTESTLIB_MAKEDLL -DQT_NO_DATASTREAM -DQT_MAKEDLL -DQT_ASCII_CAST_WARNINGS -DQT3_SUPPORT -DQT_MOC_COMPAT -DQT_USE_QSTRINGBUILDER -D_USE_MATH_DEFINES -DQT_DLL -DQT_NO_DEBUG -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -I&quot;..\..\include\QtCore&quot; -I&quot;..\..\include&quot; -I&quot;.&quot; -I&quot;..\..\include\QtTest&quot; -I&quot;tmp\rcc\debug_shared&quot; -I&quot;tmp&quot; -I&quot;..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtesteventloop.h -o tmp\moc\release_shared\moc_qtesteventloop.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qtesteventloop.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qtesteventloop.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -220,10 +220,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\testlib\QtTest_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\testlib\QtTest_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\testlib\QtTestd_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\testlib\QtTestd_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>

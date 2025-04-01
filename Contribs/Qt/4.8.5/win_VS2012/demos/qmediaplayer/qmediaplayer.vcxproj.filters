@@ -85,5 +85,8 @@
     <CustomBuild Include="mediaplayer.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\screen.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

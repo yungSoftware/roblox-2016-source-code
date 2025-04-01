@@ -64,8 +64,17 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\folder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\interview.png">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="interview.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\services.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

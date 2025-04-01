@@ -30,7 +30,7 @@
     <ClInclude Include="..\..\corelib\kernel\qcorecmdlineargs_p.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\tools\rcc\rcc.h">
+    <ClInclude Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\tools\rcc\rcc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qsvgicon", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/iconengines/svgiconengine\qsvgicon.vcxproj", "{B06A24BF-93A9-3A10-9C93-E8B5A7E865C3}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qsvgicon", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/iconengines/svgiconengine\qsvgicon.vcxproj", "{1315835E-C9EB-362B-98C1-9838B843A898}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -10,10 +10,10 @@ Global
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{B06A24BF-93A9-3A10-9C93-E8B5A7E865C3}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B06A24BF-93A9-3A10-9C93-E8B5A7E865C3}.Debug|Win32.Build.0 = Debug|Win32
-		{B06A24BF-93A9-3A10-9C93-E8B5A7E865C3}.Release|Win32.ActiveCfg = Release|Win32
-		{B06A24BF-93A9-3A10-9C93-E8B5A7E865C3}.Release|Win32.Build.0 = Release|Win32
+		{1315835E-C9EB-362B-98C1-9838B843A898}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1315835E-C9EB-362B-98C1-9838B843A898}.Debug|Win32.Build.0 = Debug|Win32
+		{1315835E-C9EB-362B-98C1-9838B843A898}.Release|Win32.ActiveCfg = Release|Win32
+		{1315835E-C9EB-362B-98C1-9838B843A898}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

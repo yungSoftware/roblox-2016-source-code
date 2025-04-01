@@ -2140,9 +2140,12 @@
     <CustomBuild Include="schema\builtinschemas.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="schema\schemas\xml.xsd">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\xmlpatterns\QtXmlPatterns_resource.rc" />
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\xmlpatterns\QtXmlPatternsd_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\xmlpatterns\QtXmlPatterns_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\xmlpatterns\QtXmlPatternsd_resource.rc" />
   </ItemGroup>
 </Project>

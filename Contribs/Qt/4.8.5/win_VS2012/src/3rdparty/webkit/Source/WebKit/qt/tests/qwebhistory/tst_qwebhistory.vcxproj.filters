@@ -48,6 +48,24 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\page1.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\page2.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\page3.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\page4.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\page5.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\page6.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qwebhistory.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

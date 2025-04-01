@@ -48,6 +48,15 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\frame_a.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\index.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\input_types.html">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qwebview.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>

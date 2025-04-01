@@ -109,5 +109,17 @@
     <CustomBuild Include="phononwidgets.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="images\seekslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\videoplayer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\videowidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="images\volumeslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

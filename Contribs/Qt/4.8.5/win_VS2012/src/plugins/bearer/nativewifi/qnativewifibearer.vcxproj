@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{246CD84D-888A-3ACA-B91E-6A82EDEB9FDF}</ProjectGuid>
+    <ProjectGuid>{7CEF358E-B5B6-3037-9C31-C655DE736A33}</ProjectGuid>
     <RootNamespace>qnativewifibearer</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -113,8 +113,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetwork4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetwork4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
@@ -142,32 +142,32 @@
   <ItemGroup>
     <ClInclude Include="platformdefs.h" />
     <CustomBuild Include="..\qbearerengine_impl.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qbearerengine_impl.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qbearerengine_impl.h -o tmp\moc\debug_shared\moc_qbearerengine_impl.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qbearerengine_impl.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qbearerengine_impl.h -o tmp\moc\debug_shared\moc_qbearerengine_impl.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\qbearerengine_impl.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qbearerengine_impl.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qbearerengine_impl.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qbearerengine_impl.h -o tmp\moc\release_shared\moc_qbearerengine_impl.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qbearerengine_impl.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qbearerengine_impl.h -o tmp\moc\release_shared\moc_qbearerengine_impl.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\qbearerengine_impl.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qbearerengine_impl.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="qnativewifiengine.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qnativewifiengine.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qnativewifiengine.h -o tmp\moc\debug_shared\moc_qnativewifiengine.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qnativewifiengine.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qnativewifiengine.h -o tmp\moc\debug_shared\moc_qnativewifiengine.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qnativewifiengine.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qnativewifiengine.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qnativewifiengine.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qnativewifiengine.h -o tmp\moc\release_shared\moc_qnativewifiengine.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qnativewifiengine.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qnativewifiengine.h -o tmp\moc\release_shared\moc_qnativewifiengine.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qnativewifiengine.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qnativewifiengine.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\qnetworksession_impl.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qnetworksession_impl.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.h -o tmp\moc\debug_shared\moc_qnetworksession_impl.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qnetworksession_impl.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.h -o tmp\moc\debug_shared\moc_qnetworksession_impl.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\qnetworksession_impl.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qnetworksession_impl.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qnetworksession_impl.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.h -o tmp\moc\release_shared\moc_qnetworksession_impl.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qnetworksession_impl.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.h -o tmp\moc\release_shared\moc_qnetworksession_impl.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\qnetworksession_impl.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qnetworksession_impl.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -199,25 +199,25 @@
     </CustomBuild>
     <CustomBuild Include="tmp\moc\debug_shared\qnetworksession_impl.moc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qnetworksession_impl.cpp;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.cpp -o tmp\moc\debug_shared\qnetworksession_impl.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\qnetworksession_impl.cpp;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.cpp -o tmp\moc\debug_shared\qnetworksession_impl.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\qnetworksession_impl.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\qnetworksession_impl.moc;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="tmp\moc\release_shared\qnetworksession_impl.moc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qnetworksession_impl.cpp;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.cpp -o tmp\moc\release_shared\qnetworksession_impl.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\qnetworksession_impl.cpp;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_PLUGIN -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\qnetworksession_impl.cpp -o tmp\moc\release_shared\qnetworksession_impl.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\qnetworksession_impl.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\qnetworksession_impl.moc;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\bearer\nativewifi\qnativewifibearer_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\bearer\nativewifi\qnativewifibearer_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
-    <ResourceCompile Include="c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\src\plugins\bearer\nativewifi\qnativewifibearerd_resource.rc">
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\bearer\nativewifi\qnativewifibearerd_resource.rc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>

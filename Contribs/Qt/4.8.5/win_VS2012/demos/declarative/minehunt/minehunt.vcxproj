@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F93A8044-B548-34A7-924C-755F8B86A570}</ProjectGuid>
+    <ProjectGuid>{7FA60EB2-5FF8-38BE-BFCD-C96D269CDA98}</ProjectGuid>
     <RootNamespace>minehunt</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -74,8 +74,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -113,8 +113,8 @@
       <WarningLevel>Level3</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -141,22 +141,22 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="minehunt.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;minehunt.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 minehunt.h -o tmp\moc\debug_shared\moc_minehunt.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;minehunt.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 minehunt.h -o tmp\moc\debug_shared\moc_minehunt.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC minehunt.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_minehunt.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;minehunt.h;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 minehunt.h -o tmp\moc\release_shared\moc_minehunt.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;minehunt.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 minehunt.h -o tmp\moc\release_shared\moc_minehunt.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC minehunt.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_minehunt.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h">
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qmlapplicationviewer.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\release_shared\moc_qmlapplicationviewer.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\include\QtCore&quot; -I&quot;..\..\..\include\QtGui&quot; -I&quot;..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\include&quot; -I&quot;..\..\helper\qmlapplicationviewer&quot; -I&quot;..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h -o tmp\moc\release_shared\moc_qmlapplicationviewer.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\..\helper\qmlapplicationviewer\qmlapplicationviewer.h</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qmlapplicationviewer.cpp;%(Outputs)</Outputs>
     </CustomBuild>
@@ -182,17 +182,32 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="qml\minehunt\MinehuntCore\Explosion.qml" />
+    <None Include="qml\minehunt\MinehuntCore\Tile.qml" />
+    <None Include="qml\minehunt\MinehuntCore\pics\back.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\background.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\bomb-color.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\bomb.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\face-sad.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\face-smile-big.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\face-smile.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\flag-color.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\flag.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\front.png" />
+    <None Include="qml\minehunt\minehunt.qml" />
     <CustomBuild Include="minehunt.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;minehunt.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name minehunt minehunt.qrc -o tmp\rcc\debug_shared\qrc_minehunt.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;minehunt.qrc;qml\minehunt\MinehuntCore\Explosion.qml;qml\minehunt\MinehuntCore\Tile.qml;qml\minehunt\MinehuntCore\pics\back.png;qml\minehunt\MinehuntCore\pics\background.png;qml\minehunt\MinehuntCore\pics\bomb-color.png;qml\minehunt\MinehuntCore\pics\bomb.png;qml\minehunt\MinehuntCore\pics\face-sad.png;qml\minehunt\MinehuntCore\pics\face-smile-big.png;qml\minehunt\MinehuntCore\pics\face-smile.png;qml\minehunt\MinehuntCore\pics\flag-color.png;qml\minehunt\MinehuntCore\pics\flag.png;qml\minehunt\MinehuntCore\pics\front.png;qml\minehunt\MinehuntCore\pics\quit.png;qml\minehunt\MinehuntCore\pics\star.png;qml\minehunt\minehunt.qml;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name minehunt minehunt.qrc -o tmp\rcc\debug_shared\qrc_minehunt.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC minehunt.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_minehunt.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;minehunt.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name minehunt minehunt.qrc -o tmp\rcc\release_shared\qrc_minehunt.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;minehunt.qrc;qml\minehunt\MinehuntCore\Explosion.qml;qml\minehunt\MinehuntCore\Tile.qml;qml\minehunt\MinehuntCore\pics\back.png;qml\minehunt\MinehuntCore\pics\background.png;qml\minehunt\MinehuntCore\pics\bomb-color.png;qml\minehunt\MinehuntCore\pics\bomb.png;qml\minehunt\MinehuntCore\pics\face-sad.png;qml\minehunt\MinehuntCore\pics\face-smile-big.png;qml\minehunt\MinehuntCore\pics\face-smile.png;qml\minehunt\MinehuntCore\pics\flag-color.png;qml\minehunt\MinehuntCore\pics\flag.png;qml\minehunt\MinehuntCore\pics\front.png;qml\minehunt\MinehuntCore\pics\quit.png;qml\minehunt\MinehuntCore\pics\star.png;qml\minehunt\minehunt.qml;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name minehunt minehunt.qrc -o tmp\rcc\release_shared\qrc_minehunt.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC minehunt.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_minehunt.cpp;%(Outputs)</Outputs>
     </CustomBuild>
+    <None Include="qml\minehunt\MinehuntCore\pics\quit.png" />
+    <None Include="qml\minehunt\MinehuntCore\pics\star.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

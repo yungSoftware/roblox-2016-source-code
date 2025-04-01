@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fftreal", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/demos/spectrum/3rdparty/fftreal\fftreal.vcxproj", "{6716D746-1BF1-3F77-BAF1-09D10A019373}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fftreal", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/demos/spectrum/3rdparty/fftreal\fftreal.vcxproj", "{1E48EB32-6F07-3927-8DFC-5379BD32FA74}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spectrum", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/demos/spectrum/app\spectrum.vcxproj", "{1276C6B2-75ED-33E7-870C-41733AEB3B18}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spectrum", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/demos/spectrum/app\spectrum.vcxproj", "{4D367A68-4A6B-37C5-ABD6-F0B66458F217}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -10,17 +10,17 @@ Global
 		ConfigName.1 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectDependencies) = postSolution
-		{1276C6B2-75ED-33E7-870C-41733AEB3B18}.0 = {6716D746-1BF1-3F77-BAF1-09D10A019373}
+		{4D367A68-4A6B-37C5-ABD6-F0B66458F217}.0 = {1E48EB32-6F07-3927-8DFC-5379BD32FA74}
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{6716D746-1BF1-3F77-BAF1-09D10A019373}.Debug|Win32.ActiveCfg = Debug|Win32
-		{6716D746-1BF1-3F77-BAF1-09D10A019373}.Debug|Win32.Build.0 = Debug|Win32
-		{6716D746-1BF1-3F77-BAF1-09D10A019373}.Release|Win32.ActiveCfg = Release|Win32
-		{6716D746-1BF1-3F77-BAF1-09D10A019373}.Release|Win32.Build.0 = Release|Win32
-		{1276C6B2-75ED-33E7-870C-41733AEB3B18}.Debug|Win32.ActiveCfg = Debug|Win32
-		{1276C6B2-75ED-33E7-870C-41733AEB3B18}.Debug|Win32.Build.0 = Debug|Win32
-		{1276C6B2-75ED-33E7-870C-41733AEB3B18}.Release|Win32.ActiveCfg = Release|Win32
-		{1276C6B2-75ED-33E7-870C-41733AEB3B18}.Release|Win32.Build.0 = Release|Win32
+		{1E48EB32-6F07-3927-8DFC-5379BD32FA74}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1E48EB32-6F07-3927-8DFC-5379BD32FA74}.Debug|Win32.Build.0 = Debug|Win32
+		{1E48EB32-6F07-3927-8DFC-5379BD32FA74}.Release|Win32.ActiveCfg = Release|Win32
+		{1E48EB32-6F07-3927-8DFC-5379BD32FA74}.Release|Win32.Build.0 = Release|Win32
+		{4D367A68-4A6B-37C5-ABD6-F0B66458F217}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4D367A68-4A6B-37C5-ABD6-F0B66458F217}.Debug|Win32.Build.0 = Debug|Win32
+		{4D367A68-4A6B-37C5-ABD6-F0B66458F217}.Release|Win32.ActiveCfg = Release|Win32
+		{4D367A68-4A6B-37C5-ABD6-F0B66458F217}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection

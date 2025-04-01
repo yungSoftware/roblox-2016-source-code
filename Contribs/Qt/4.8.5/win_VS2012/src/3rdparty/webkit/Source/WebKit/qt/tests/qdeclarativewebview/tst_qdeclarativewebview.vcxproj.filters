@@ -48,8 +48,62 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\basic.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\basic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\basic.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\elements.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\elements.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\forward.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\javaScript.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\javaScript.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\loadError.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newwindows.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\newwindows.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\propertychanges.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\sample.html">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\sethtml.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <CustomBuild Include="tst_qdeclarativewebview.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <None Include="resources\webviewbackgroundcolor.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\webviewtest.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="resources\webviewtestdefault.qml">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

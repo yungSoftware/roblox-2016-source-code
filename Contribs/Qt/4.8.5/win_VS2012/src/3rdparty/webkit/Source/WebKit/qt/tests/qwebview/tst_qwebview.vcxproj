@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5A37C339-44AC-3DFE-A465-67046AC0A6CF}</ProjectGuid>
+    <ProjectGuid>{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}</ProjectGuid>
     <RootNamespace>tst_qwebview</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
   </PropertyGroup>
@@ -65,7 +65,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>tmp\obj\debug_shared\</ObjectFileName>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;BUILDING_QT__=1;TESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;BUILDING_QT__=1;TESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -75,8 +75,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -92,7 +92,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;TESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;TESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
@@ -105,7 +105,7 @@
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>tmp\obj\release_shared\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;NDEBUG;TESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_NO_DEBUG;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;NDEBUG;TESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_NO_DEBUG;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
       <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -115,8 +115,8 @@
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtTest4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKit4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtTest4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetwork4.lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTest4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclarative4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKit4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTest4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetwork4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -133,7 +133,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;NDEBUG;TESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_NO_DEBUG;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;WIN32;NDEBUG;BUILDING_QT__=1;NDEBUG;TESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot;;QT_DLL;QT_NO_DEBUG;QT_DECLARATIVE_LIB;QT_WEBKIT_LIB;QT_TESTLIB_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -148,29 +148,32 @@
     </ClCompile>
     <CustomBuild Include="tmp\moc\debug_shared\tst_qwebview.moc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;tst_qwebview.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DTESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot; -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_TESTLIB_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtTest&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\..\include&quot; -I&quot;..\..\tests&quot; -I&quot;..\..\Api&quot; -I&quot;..\..\..\..\..\Source&quot; -I&quot;..\..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 tst_qwebview.cpp -o tmp\moc\debug_shared\tst_qwebview.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;tst_qwebview.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DTESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot; -DQT_DLL -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_TESTLIB_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtTest&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\..\include&quot; -I&quot;..\..\tests&quot; -I&quot;..\..\Api&quot; -I&quot;..\..\..\..\..\Source&quot; -I&quot;..\..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I..\..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 tst_qwebview.cpp -o tmp\moc\debug_shared\tst_qwebview.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC tst_qwebview.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\tst_qwebview.moc;%(Outputs)</Outputs>
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="tmp\moc\release_shared\tst_qwebview.moc">
       <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;tst_qwebview.cpp;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DTESTS_SOURCE_DIR=\&quot;C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot; -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_TESTLIB_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtTest&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\..\include&quot; -I&quot;..\..\tests&quot; -I&quot;..\..\Api&quot; -I&quot;..\..\..\..\..\Source&quot; -I&quot;..\..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 tst_qwebview.cpp -o tmp\moc\release_shared\tst_qwebview.moc</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;tst_qwebview.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DNDEBUG -DBUILDING_QT__=1 -DNDEBUG -DTESTS_SOURCE_DIR=\&quot;C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/\&quot; -DQT_DLL -DQT_NO_DEBUG -DQT_DECLARATIVE_LIB -DQT_WEBKIT_LIB -DQT_TESTLIB_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtTest&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\..\..\..\..\include\QtDeclarative&quot; -I&quot;..\..\..\..\..\..\..\..\include&quot; -I&quot;..\..\tests&quot; -I&quot;..\..\Api&quot; -I&quot;..\..\..\..\..\Source&quot; -I&quot;..\..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I..\..\..\..\..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 tst_qwebview.cpp -o tmp\moc\release_shared\tst_qwebview.moc</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC tst_qwebview.cpp</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\tst_qwebview.moc;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\frame_a.html" />
+    <None Include="resources\index.html" />
+    <None Include="resources\input_types.html" />
     <CustomBuild Include="tst_qwebview.qrc">
       <FileType>Document</FileType>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;tst_qwebview.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name tst_qwebview tst_qwebview.qrc -o tmp\rcc\debug_shared\qrc_tst_qwebview.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;resources\frame_a.html;resources\index.html;resources\input_types.html;tst_qwebview.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name tst_qwebview tst_qwebview.qrc -o tmp\rcc\debug_shared\qrc_tst_qwebview.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC tst_qwebview.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_tst_qwebview.cpp;%(Outputs)</Outputs>
-      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;tst_qwebview.qrc;%(AdditionalInputs)</AdditionalInputs>
-      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name tst_qwebview tst_qwebview.qrc -o tmp\rcc\release_shared\qrc_tst_qwebview.cpp</Command>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;resources\frame_a.html;resources\index.html;resources\input_types.html;tst_qwebview.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name tst_qwebview tst_qwebview.qrc -o tmp\rcc\release_shared\qrc_tst_qwebview.cpp</Command>
       <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC tst_qwebview.qrc</Message>
       <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_tst_qwebview.cpp;%(Outputs)</Outputs>
     </CustomBuild>

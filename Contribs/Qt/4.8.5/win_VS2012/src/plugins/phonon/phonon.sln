@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phonon_ds9", "C:/Trunk2012/Contribs/Qt/4.8.5/win_VS2012/src/plugins/phonon/ds9\phonon_ds9.vcxproj", "{5E28F898-05D1-3829-84AA-F2F04CC03E13}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phonon_ds9", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/phonon/ds9\phonon_ds9.vcxproj", "{89EB4702-1CA2-3E49-B57C-33E10D1E14EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
@@ -10,10 +10,10 @@ Global
 	GlobalSection(ProjectDependencies) = postSolution
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{5E28F898-05D1-3829-84AA-F2F04CC03E13}.Debug|Win32.ActiveCfg = Debug|Win32
-		{5E28F898-05D1-3829-84AA-F2F04CC03E13}.Debug|Win32.Build.0 = Debug|Win32
-		{5E28F898-05D1-3829-84AA-F2F04CC03E13}.Release|Win32.ActiveCfg = Release|Win32
-		{5E28F898-05D1-3829-84AA-F2F04CC03E13}.Release|Win32.Build.0 = Release|Win32
+		{89EB4702-1CA2-3E49-B57C-33E10D1E14EA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{89EB4702-1CA2-3E49-B57C-33E10D1E14EA}.Debug|Win32.Build.0 = Debug|Win32
+		{89EB4702-1CA2-3E49-B57C-33E10D1E14EA}.Release|Win32.ActiveCfg = Release|Win32
+		{89EB4702-1CA2-3E49-B57C-33E10D1E14EA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection
