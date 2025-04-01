@@ -3,7 +3,7 @@
 2. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
 3. Run the following command:
 ```sh
-$ ./configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
+configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
 4. When the configuration complete, type **nmake** and take a long breath.
  
