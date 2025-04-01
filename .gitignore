@@ -10,7 +10,7 @@ App/include/security/RandomConstant.h # Feel free to remove this line if you've 
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
-git.txt # dont even talk about it.
+git.txt # im not gonna even talk about it.
 
 # Ignore precompiled shaders
 shaders/shaders_*.pack
@@ -19,14 +19,20 @@ shaders/shaders_*.pack
 Contribs/boost_1_56_0/bjam.exe
 Contribs/boost_1_56_0/b2.exe
 Contribs/boost_1_56_0/bin.v2/
-Contribs/boost_1_56_0/bin.v2/*
 Contribs/boost_1_56_0/project-config.jam
-Contribs/boost_1_56_0/stage/lib/*
+Contribs/boost_1_56_0/stage/lib/
  
+## Qt
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore
+/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap
+/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt
+/Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater
+
 # Ignore Qt builds
 Contribs/Qt/4.8.5/win_VS2012/lib
-Contribs/Qt/4.8.5/win_VS2012/bin/*.exe
-Contribs/Qt/4.8.5/win_VS2012/bin/*.exe.manifest
+Contribs/Qt/4.8.5/win_VS2012/bin/*.exe*
 Contribs/Qt/4.8.5/win_VS2012/bin/*.pdb
 Contribs/Qt/4.8.5/win_VS2012/bin/*.dll
 Contribs/Qt/4.8.5/win_VS2012/bin/*.lib
@@ -37,19 +43,24 @@ Contribs/Qt/4.8.5/win_VS2012/demos
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.conf
 *.pri
-
-# Qt-es
 *.moc
-moc_*.cpp
-moc_*.h
-qrc_*.cpp
- 
+moc_*.*
+qrc_*.*
+
+## SDL2
+/Contribs/SDL2/VisualC/SDL/Win32/
+/SDL2/Win/2.0.4/
+
+## zlib
+/zlib/win/bin/
+
 # Ignore OpenSSL configure & build cache/output
-Contribs/openssl/*32/
-Contribs/openssl/*32.*/
-Contribs/openssl/*32dll/
-Contribs/openssl/*32dll.*/
+Contribs/openssl/*32*/
 Contribs/openssl/*.mak
+/openssl/
+
+## curl
+/Contribs/windows/x86/curl/curl-7.43.0/build/
 
 # Custom ignore files and folders
 /App/bin/
@@ -65,27 +76,6 @@ Contribs/openssl/*.mak
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
 /Contribs/DSBaseClasses/Sources/Release
-
-## Qt
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore
-/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap
-/Contribs/Qt/4.8.5/win_VS2012/tools/activeqt
-/Contribs/Qt/4.8.5/win_VS2012/tools/qtestlib/updater
-
-## SDL2
-/Contribs/SDL2/VisualC/SDL/Win32/
-/SDL2/Win/2.0.4/
-
-## zlib
-/zlib/win/bin/
-
-## openssl
-/openssl/
-
-## curl
-/Contribs/windows/x86/curl/curl-7.43.0/build/
 
 # Dont ignore these files/folders
 # Add your lines here
@@ -109,6 +99,5 @@ Contribs/openssl/*.mak
 *.obj
 *.pdb
 *.log
-*.vssscc
 
 ## END OF VISUAL STUDIO ##
