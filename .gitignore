@@ -31,6 +31,7 @@ Contribs/Qt/4.8.5/win_VS2012/bin/*.pdb
 Contribs/Qt/4.8.5/win_VS2012/bin/*.dll
 Contribs/Qt/4.8.5/win_VS2012/bin/*.lib
 Contribs/Qt/4.8.5/win_VS2012/lib/*
+Contribs/Qt/4.8.5/win_VS2012/.qmake.cache
 Contribs/Qt/4.8.5/win_VS2012/demos
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.conf
