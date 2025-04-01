@@ -88,8 +88,8 @@ Contribs/openssl/*.mak
 # Dont ignore these files/folders
 # Add your lines here
 # !/location
-# !
-# !
+# !/location2
+# !/location3
 
 ## END OF GENERAL ##
 ## VISUAL STUDIO ##
@@ -108,10 +108,5 @@ Contribs/openssl/*.mak
 *.pdb
 *.log
 *.vssscc
-
-# Backup & report files from converting an old project file
-_UpgradeReport_Files/
-Backup*/
-UpgradeLog*.htm
 
 ## END OF VISUAL STUDIO ##
