@@ -44,7 +44,6 @@ qrc_*.*
 
 # Ignore OpenSSL configure & build cache/output
 Contribs/openssl/*32*/
-Contribs/openssl/*.mak
 /openssl/
 
 ## curl
