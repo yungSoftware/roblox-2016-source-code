@@ -19,8 +19,4 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
 5. And then type this to the command prompt: `ms\32all.bat`.
 6. When the build process done, go inside this folder: `out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
 
-# hlsl2glslfork
-1. Enter to this solution: `"C:\Trunk2016\Rendering\ShaderCompiler\hlsl2glslfork\hlslang.sln"`ü
-2. Build the hlsl2glslfork project.
-
 **That's it, you've compiled the libraries!**
