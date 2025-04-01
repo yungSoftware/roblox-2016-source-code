@@ -76,7 +76,7 @@
     <Link>
       <AdditionalDependencies>$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release\SDL2.lib;strmbasd.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Debug - DLL OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Debug - DLL OpenSSL;C:\Trunk2016\zlib\win\bin\Debug;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -109,7 +109,7 @@
     <Link>
       <AdditionalDependencies>$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release\SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl_a.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)RobloxPlayerBeta.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;C:\Trunk2016\zlib\win\bin;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\DSBaseClasses\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13;C:\Trunk2016\SDL2\Win\2.0.4;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;C:\Trunk2016\zlib\win\bin\Release;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -126,10 +126,8 @@
     <PostBuildEvent>
       <Command>
 copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
-copy /Y $(CONTRIB_PATH)\VMProtectWin_2.13\VMProtect_Con.exe ..\WindowsClient\$(Platform)\$(Configuration)\VMProtect_Con.exe
 copy /Y $(CONTRIB_PATH)\VMProtectWin_2.13\RobloxPlayer.exe.vmp ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayer.exe.vmp
 copy /Y $(CONTRIB_PATH)\VMProtectWin_2.13\VMProtect.key ..\WindowsClient\$(Platform)\$(Configuration)\VMProtect.key
-..\WindowsClient\$(Platform)\$(Configuration)\VMProtect_Con.exe  ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.exe -pf ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayer.exe.vmp
 ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.exe -w 195936478
 copy /Y  ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.tmp  ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.exe
 

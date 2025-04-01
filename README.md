@@ -55,3 +55,6 @@ Feel at home and start messing with the source code as you want :)
 
 [@cetcat](https://github.com/cetcat)
 * Bootstrappers
+
+[@bpr1ch3](https://github.com/bpr1ch3)
+* New Files for Rocknet

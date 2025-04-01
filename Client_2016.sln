@@ -156,8 +156,8 @@ Global
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.DebugRcc|Win32.Build.0 = DebugRcc|Win32
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.DebugStudio|Win32.ActiveCfg = DebugStudio|Win32
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.DebugStudio|Win32.Build.0 = DebugStudio|Win32
-		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.Release|Win32.ActiveCfg = ReleaseStudio|Win32
-		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.Release|Win32.Build.0 = ReleaseStudio|Win32
+		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.Release|Win32.ActiveCfg = Release|Win32
+		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.Release|Win32.Build.0 = Release|Win32
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.ReleaseRcc|Win32.ActiveCfg = ReleaseRcc|Win32
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.ReleaseRcc|Win32.Build.0 = ReleaseRcc|Win32
 		{9B9EB5C6-15D1-4765-BCC7-8A42F2C9F6CC}.ReleaseStudio|Win32.ActiveCfg = ReleaseStudio|Win32

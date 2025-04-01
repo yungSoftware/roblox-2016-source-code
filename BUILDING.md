@@ -26,5 +26,8 @@
   - Error: 'C:\Trunk2016\a\a.vcxproj.filters' Access Denied in path
      - Fix: Right Click to the project and press **Open the Folder in File Explorer** and go into properties of **a.vcxproj.filters**, untick **Read-only** and Press **OK**.
  
+  - Error: cannot open LUAGENCSNEW.INL - No such file or folder
+     - Fix: Go to: `C:\Trunk2016\App\script` and rename the `LuaGenCSNEW - Copy.inl` to `LuaGenCSNEW.inl`
+
  The guide is straight forward so there should be no issues on your side<br>
  Since I've already configured everything, you won't have to do much.
