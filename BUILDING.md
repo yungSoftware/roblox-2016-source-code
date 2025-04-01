@@ -28,7 +28,7 @@
   - Error: cannot open LUAGENCSNEW.INL - No such file or folder
      - Fix: Go to: `C:\Trunk2016\App\script` and clone the file: `LuaGenCSNEW - Copy`, rename it to `LuaGenCSNEW.inl`
   - Error: The code execution cannot proceed because libcurl_a.dll was not found. Reinstalling the program may fix this problem. 
-     - Fix: Copy libcurl.dll from: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL` and put it into the folder, and then change the name to `libcurl_a.dll_`
+     - Fix: Copy libcurl.dll from: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL` and put it into the folder, and then change the name to `libcurl_a.dll`
 
 
  The guide is straight forward so there should be no issues on your side<br>
