@@ -69,9 +69,8 @@ Contribs/openssl/*32*/
 
 # Dont ignore these files/folders
 # Add your lines here
-# !/location
+# !/location1
 # !/location2
-# !/location3
 
 ## END OF GENERAL ##
 ## VISUAL STUDIO ##
@@ -80,15 +79,16 @@ Contribs/openssl/*32*/
 .vs/
 
 # Build results
-
+[Rr]elease/
+!/RCCService/Mesa-7.8.1/lib/release/
 [Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
 
 # Files built by Visual Studio
 *.obj
-
+*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb
 *.log
 
 ## END OF VISUAL STUDIO ##
-/RCCService/Mesa-7.8.1/lib/release
