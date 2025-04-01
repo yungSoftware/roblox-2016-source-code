@@ -63,7 +63,9 @@ Contribs/openssl/*32*/
 /CoreScriptConverter2/tool/win32/*.exp
 /CoreScriptConverter2/tool/win32/fmod.dll
 /CoreScriptConverter2/tool/win32/VMProtectSDK32.dll
-
+/Installer/RobloxProxy/RobloxProxy_i.c
+/Installer/RobloxProxy/RobloxProxy_i.h
+/Installer/RobloxProxy/RobloxProxy_p.c
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -94,3 +96,6 @@ Contribs/openssl/*32*/
 *.log
 
 ## END OF VISUAL STUDIO ##
+
+/Installer/RobloxProxy/RobloxProxy_i.h
+/Installer/RobloxProxy/RobloxProxy_p.c
