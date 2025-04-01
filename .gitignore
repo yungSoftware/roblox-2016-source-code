@@ -58,7 +58,10 @@ Contribs/openssl/*32*/
 /QTitanRibbon/roblox_build/
 /RobloxStudio/bin/
 /Rendering/LibOVR/Lib/Windows/
-/CoreScriptConverter2/tool/win32/
+/CoreScriptConverter2/tool/win32/*.exe
+/CoreScriptConverter2/tool/win32/*.dll
+/CoreScriptConverter2/tool/win32/*.lib
+/CoreScriptConverter2/tool/win32/*.exp
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -77,14 +80,15 @@ Contribs/openssl/*32*/
 .vs/
 
 # Build results
-[Rr]elease/
+
 [Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
 
 # Files built by Visual Studio
 *.obj
-*.pdb
+
 *.log
 
 ## END OF VISUAL STUDIO ##
+/RCCService/Mesa-7.8.1/lib/release
