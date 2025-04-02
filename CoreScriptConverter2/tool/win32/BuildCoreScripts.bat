@@ -13,7 +13,6 @@ IF EXIST LuaGenCS.inl (
 		REN "LuaGenCSNew.inl" "LuaGenCS.inl"
 	) ELSE (
 		ECHO No CoreScript changes detected
-		DEL LuaGenCSNew.inl
 	)
 ) ELSE (
 	ECHO CoreScript changes detected, will require linking 2

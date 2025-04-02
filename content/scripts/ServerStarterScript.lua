@@ -25,7 +25,6 @@ local RemoteEvent_NewFollower = nil
 -- TODO: FFlag check
 if IsServerFollowers then
 	ScriptContext:AddCoreScriptLocal("ServerCoreScripts/ServerSocialScript", script.Parent)
-        warn("brick")
 else
 	-- above script will create this now
 	RemoteEvent_NewFollower = Instance.new('RemoteEvent')
