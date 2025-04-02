@@ -97,6 +97,6 @@
   <ItemGroup>
     <PublishDLLDependency Include="..\fmod\win32\fmod.dll" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
-    <PublishDLLDependency Include="$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl.dll" />
+    <PublishDLLDependency Include="$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.dll" />
   </ItemGroup>
 </Project>
