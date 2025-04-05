@@ -1566,11 +1566,11 @@ void RobloxMainWindow::about()
     aboutMsg.append(tr("<p>ROBLOX STUDIO, an \"Online Building Toy\" Made For Enthusiasts!<br>"));
 	
 	QString copyrightString;
-	copyrightString.sprintf("ROBLOX Corporation %c2016", COPYRIGHT_PREFIX);
+	copyrightString.sprintf("ROBLOX Corporation %c 2016", COPYRIGHT_PREFIX);
 							
     aboutMsg.append(copyrightString);
 					   
-	aboutMsg.append(tr("<p>Contact us at info@roblox.com.</p></div>"));
+	aboutMsg.append(tr("<p>Contact us at info@roblox.com</p></div>"));
 	
 	QMessageBox::about(this, tr("Welcome to ROBLOX!"), aboutMsg);
 }

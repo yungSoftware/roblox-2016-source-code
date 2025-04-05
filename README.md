@@ -16,10 +16,11 @@ Feel at home and start messing with the source code as you want :)
 
 ---
 
-## Features
+## Features/Additions
 - Fixed a lot of issues that breaks the compilation, codebase and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
 - A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
+- Changed Splash Screen and Copyright Date(s)
 - Reverse Engineered some libraries and executables to make them editable
 - General Project Cleanup to make things easier and not complicated
 - All the necessary libraries are included in the repository.
