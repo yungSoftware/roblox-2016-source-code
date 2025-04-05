@@ -1563,7 +1563,7 @@ void RobloxMainWindow::about()
 #endif
 
 	aboutMsg = aboutMsg.arg(RobloxSettings::getVersionString());
-    aboutMsg.append(tr("<p>ROBLOX an \"Online Building Toy\" For Enthusiasts"));
+    aboutMsg.append(tr("<p>ROBLOX STUDIO, an \"Online Building Toy\" Made For Enthusiasts. "));
 	
 	QString copyrightString;
 	copyrightString.sprintf("ROBLOX Corporation %c2016. ", COPYRIGHT_PREFIX);

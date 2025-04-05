@@ -80,7 +80,7 @@ BEGIN
             VALUE "FileDescription", "ROBLOX Game Client"
             VALUE "FileVersion", "0, 0, 0, 1"
             VALUE "InternalName", "RobloxApp.exe"
-            VALUE "LegalCopyright", "© 2013, ROBLOX Corporation.  All rights reserved."
+            VALUE "LegalCopyright", "© 2016 ROBLOX Corporation.  All rights reserved."
             VALUE "OriginalFilename", "RobloxApp.exe"
             VALUE "ProductName", "ROBLOX"
             VALUE "ProductVersion", "0, 0, 0, 1"

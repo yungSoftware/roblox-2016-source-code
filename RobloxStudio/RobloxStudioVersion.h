@@ -13,7 +13,7 @@
 #define VER_COMPANYNAME_STR         "Roblox Corporation"
 #define VER_FILEDESCRIPTION_STR     "RobloxStudio"
 #define VER_INTERNALNAME_STR        "Roblox Studio Qt"
-#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2012 Roblox Corporation"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2016 Roblox Corporation"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
 #define VER_ORIGINALFILENAME_STR    "RobloxStudio.exe"

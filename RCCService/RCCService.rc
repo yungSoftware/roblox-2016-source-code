@@ -72,7 +72,7 @@ BEGIN
             VALUE "FileDescription", "ROBLOX Compute Cloud Service"
             VALUE "FileVersion", "0, 75, 0, 691"
             VALUE "InternalName", "RCCService.exe"
-            VALUE "LegalCopyright", "© 2013 ROBLOX Corporation.  All rights reserved."
+            VALUE "LegalCopyright", "© 2016 ROBLOX Corporation.  All rights reserved."
             VALUE "OriginalFilename", "RCCService.exe"
             VALUE "ProductName", "RCC Service"
             VALUE "ProductVersion", "0, 75, 0, 0"
