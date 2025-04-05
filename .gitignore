@@ -1,7 +1,6 @@
-## Ignore Visual Studio temporary files, build results, and
-## Other file(s) type(s) and unwanted folder(s)
+## Ignore Visual Studio temporary files, build results, and Other file types and unwanted folders.
 ## The Ignore List is also categorized!
-## Written by yungDoom respectively.
+## Written by yungDoom with <3.
 
 ## GENERAL ##
 
@@ -84,7 +83,7 @@ Contribs/openssl/*32*/
 
 # Build results
 [Rr]elease/
-!/RCCService/Mesa-7.8.1/lib/release/
+!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
 [Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
@@ -92,7 +91,7 @@ Contribs/openssl/*32*/
 # Files built by Visual Studio
 *.obj
 *.pdb
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
 *.log
 
 ## END OF VISUAL STUDIO ##
