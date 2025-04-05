@@ -51,7 +51,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
-* Asset Proxy on **online** branch.
+* Asset Proxy **(index_api.php)**
 
 [@cetcat](https://github.com/cetcat)
 * Bootstrappers.
