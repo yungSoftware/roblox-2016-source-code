@@ -20,7 +20,7 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
 6. When the build process done, go inside this folder: `out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
 
 # libcurl and SDL2
-- You can just straight up build it
+- You can just go straight up and build it
 - Project Properties may needed to change depending which output file you want.
 
 **That's it, you've compiled the libraries!**
