@@ -162,8 +162,8 @@ end
 
 Adorn.setWorkplaneAccessor(getWorkplane)
 
-game:GetService("ContentProvider"):Preload("rbxassetid://232196030")
-game:GetService("ContentProvider"):Preload("rbxassetid://233257118")
+game:GetService("ContentProvider"):Preload("rbxasset://textures/rotationArrow.png")
+game:GetService("ContentProvider"):Preload("rbxasset://textures/plane_icon.png")
 
 --handleDeclaration
 local H_NONE = 0
