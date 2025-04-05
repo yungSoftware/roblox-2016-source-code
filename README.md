@@ -51,10 +51,10 @@ After a long effort, this repository has been brought to you on github with hand
 ## ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
-* Asset Proxy
+* Asset Proxy on **online** branch.
 
 [@cetcat](https://github.com/cetcat)
-* Bootstrappers
+* Bootstrappers.
 
 [@bpr1ch3](https://github.com/bpr1ch3)
-* New Files for Rocknet
+* New Files and FFlags for Rocknet.
