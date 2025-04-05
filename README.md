@@ -8,7 +8,7 @@ After a long effort, this repository has been brought to you on github with hand
 **Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
 # Table of Contents
-1. [Features](#featuresadditions)
+1. [Features](#features--additions)
 2. [Libraries Used](#-libraries-used)
 3. [Tools Used](#-tools-used)
 4. [Contributors](#%EF%B8%8F-contributors)
