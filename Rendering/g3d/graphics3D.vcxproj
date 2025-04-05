@@ -228,6 +228,21 @@
     <ClCompile Include="png\pngwrite.c" />
     <ClCompile Include="png\pngwtran.c" />
     <ClCompile Include="png\pngwutil.c" />
+    <ClCompile Include="zlib\adler32.c" />
+    <ClCompile Include="zlib\compress.c" />
+    <ClCompile Include="zlib\crc32.c" />
+    <ClCompile Include="zlib\deflate.c" />
+    <ClCompile Include="zlib\gzclose.c" />
+    <ClCompile Include="zlib\gzlib.c" />
+    <ClCompile Include="zlib\gzread.c" />
+    <ClCompile Include="zlib\gzwrite.c" />
+    <ClCompile Include="zlib\infback.c" />
+    <ClCompile Include="zlib\inffast.c" />
+    <ClCompile Include="zlib\inflate.c" />
+    <ClCompile Include="zlib\inftrees.c" />
+    <ClCompile Include="zlib\trees.c" />
+    <ClCompile Include="zlib\uncompr.c" />
+    <ClCompile Include="zlib\zutil.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ijg\jconfig.h" />
@@ -317,6 +332,17 @@
     <ClInclude Include="include\g3d\Vector4int8.h" />
     <ClInclude Include="include\G3D\vectorMath.h" />
     <ClInclude Include="include\g3d\WrapMode.h" />
+    <ClInclude Include="zlib\crc32.h" />
+    <ClInclude Include="zlib\deflate.h" />
+    <ClInclude Include="zlib\gzguts.h" />
+    <ClInclude Include="zlib\inffast.h" />
+    <ClInclude Include="zlib\inffixed.h" />
+    <ClInclude Include="zlib\inflate.h" />
+    <ClInclude Include="zlib\inftrees.h" />
+    <ClInclude Include="zlib\trees.h" />
+    <ClInclude Include="zlib\zconf.h" />
+    <ClInclude Include="zlib\zlib.h" />
+    <ClInclude Include="zlib\zutil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
