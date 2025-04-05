@@ -1563,13 +1563,12 @@ void RobloxMainWindow::about()
 #endif
 
 	aboutMsg = aboutMsg.arg(RobloxSettings::getVersionString());
-    aboutMsg.append(tr("<p>ROBLOX, \"Online Building Toy\", characters, logos, names, and all related indicia "));
+    aboutMsg.append(tr("<p>ROBLOX an \"Online Building Toy\" For Enthusiasts"));
 	
 	QString copyrightString;
-	copyrightString.sprintf("are trademarks of ROBLOX Corporation %c2014. ", COPYRIGHT_PREFIX);
+	copyrightString.sprintf("ROBLOX Corporation %c2016. ", COPYRIGHT_PREFIX);
 							
     aboutMsg.append(copyrightString);
-	aboutMsg.append(tr("US Patents 7,874,921. Patents pending.</p>"));
 					   
 	aboutMsg.append(tr("<p>Contact us at info@roblox.com.</p></div>"));
 	
