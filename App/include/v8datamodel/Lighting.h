@@ -69,6 +69,8 @@ public:
 	const G3D::Color3& getFogColor() const { return fogColor; }
 	void setFogColor(const G3D::Color3& value);
 
+	float getTimeFloat() const;
+	void setTimeFloat(const float value);
 	std::string getTimeStr() const;
 	void setTimeStr(const std::string& value);
 	void setTime(const boost::posix_time::time_duration& value);

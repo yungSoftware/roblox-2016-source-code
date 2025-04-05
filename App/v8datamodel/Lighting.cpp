@@ -15,6 +15,7 @@ using namespace RBX;
 REFLECTION_BEGIN();
 static Reflection::EventDesc<Lighting, void(bool)> event_LightingChanged(&Lighting::lightingChangedSignal, "LightingChanged", "skyboxChanged");
 static Reflection::PropDescriptor<Lighting, std::string> prop_Time("TimeOfDay", category_Data, &Lighting::getTimeStr, &Lighting::setTimeStr);
+static Reflection::PropDescriptor<Lighting, float> prop_ClockTime("ClockTime", category_Data, &Lighting::getTimeFloat, &Lighting::setTimeFloat);
 
 static Reflection::PropDescriptor<Lighting, float> prop_GeographicLatitude("GeographicLatitude", category_Data, &Lighting::getGeographicLatitude, &Lighting::setGeographicLatitude);
 static Reflection::BoundFuncDesc<Lighting, float()> prop_GetMoonPhase(&Lighting::getMoonPhase, "GetMoonPhase", Security::None);
@@ -105,6 +106,26 @@ std::string Lighting::getTimeStr() const
 void Lighting::setTimeStr(const std::string& value)
 {
 	setTime(boost::posix_time::duration_from_string(value));
+}
+
+float Lighting::getTimeFloat() const
+{
+	return (timeOfDay.total_seconds() / 3600);
+}
+
+void Lighting::setTimeFloat(float value)
+{
+	value = G3D::clamp(value, 0.0f, 24.0f);
+	int seconds = ceil(value * 3600);
+
+	if (timeOfDay.total_seconds() != seconds)
+	{
+		timeOfDay = boost::posix_time::seconds(seconds);
+
+		skyParameters.setTime(getGameTime());
+		this->raisePropertyChanged(prop_ClockTime);
+		fireLightingChanged(false);
+	}
 }
 
 void Lighting::setTime(const boost::posix_time::time_duration& value)
