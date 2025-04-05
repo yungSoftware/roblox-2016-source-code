@@ -1,22 +1,21 @@
 # Roblox 2016 Source Code
 
-This source originates from robloxsrc.zip that was spinning around but its rare to own these days.<br>
-After a long effort, this repository has been brought to you on github!<br>
-Feel at home and start messing with the source code as you want :)
+This source originates from robloxsrc.zip that was spinning around but its rare to find these days.<br>
+After a long effort, this repository has been brought to you on github with handful of changes!<br>
 
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-**Having any problems? you can get help from [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
+**Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 **Want to help us? You can star & clone the repository, made changes and create pull requests!**
 
 # Table of Contents
-1. [Features](#features)
+1. [Features](#featuresadditions)
 2. [Libraries Used](#-libraries-used)
 3. [Tools Used](#-tools-used)
 4. [Contributors](#%EF%B8%8F-contributors)
 
 ---
 
-## Features/Additions
+## Features / Additions
 - Fixed a lot of issues that breaks the compilation, codebase and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
 - A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
