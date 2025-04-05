@@ -1125,7 +1125,7 @@ bool Http::isRobloxSite(const char* url)
             if (hostName == "localhost")
                 return true;
 
-            if (hostName == "xspy.lol")
+            if (hostName == "yoursite.xd")
                 return true;
 
             // trust facebook login
@@ -1166,7 +1166,7 @@ bool Http::isRobloxSite(const char* url)
         const bool isRoblox =
             parsed.isSubdomainOf("roblox.com") ||
             parsed.isSubdomainOf("robloxlabs.com") ||
-            "xspy.lol" == parsed.host() ||
+            "yoursite.xd" == parsed.host() ||
             "localhost" == parsed.host();
 
         const bool isFacebook =
@@ -1214,7 +1214,7 @@ bool Http::isRobloxSite(const char* url)
 
     return
         "roblox.com" == host || hasEnding(host, ".roblox.com") ||
-        "xspy.lol" == host || "localhost" == host ||
+        "yoursite.xd" == host || "localhost" == host ||
         "robloxlabs.com" == host || hasEnding(host, ".robloxlabs.com") ||
         // trust facebook login
         ("login.facebook.com" == host && "/login.php") ||
