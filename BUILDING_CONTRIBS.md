@@ -1,11 +1,12 @@
 # Qt
 1. Open **VS2012 x86 Native Tools Command Prompt**
 2. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
-3. Run the following command:
+3. Type `nmake confclean` and wait
+4. Run the following command:
 ```sh
 configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
-4. When the configuration complete, type **nmake** and take a long breath.
+5. When the configuration complete, type **nmake** and take a long breath.
  
 # Boost
 1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`
