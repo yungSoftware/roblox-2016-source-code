@@ -32,7 +32,7 @@ After a long effort, this repository has been brought to you on github with hand
 - [SDL2](/Contribs/SDL2) = 2.0.4
 - [Roblox SDK](/Contribs/SDK) = *unknown*
 - [OpenSSL](/Contribs/openssl) = 1.0.0c
-- [Qt/Contribs/Qt/4.8.5/win_VS2012](BUILDING_CONTRIBS.md) = 4.8.5
+- [Qt](BUILDING_CONTRIBS.md) = 4.8.5
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
