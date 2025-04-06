@@ -34,6 +34,7 @@ Contribs/Qt/4.8.5/win_VS2012/bin/*.lib
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
 Contribs/Qt/4.8.5/win_VS2012/.qmake.cache
 Contribs/Qt/4.8.5/win_VS2012/configure.cache
+tmp/
 *.moc
 moc_*.*
 qrc_*.*
@@ -77,7 +78,6 @@ Contribs/openssl/*32*/
 # Dont ignore these files/folders
 # Add your lines here
 # !/location1
-# !/location2
 
 ## END OF GENERAL ##
 ## VISUAL STUDIO ##
@@ -86,9 +86,17 @@ Contribs/openssl/*32*/
 .vs/
 
 # Build results
-[Rr]elease/
+[Rr]elease/*.exe
+[Rr]elease/*.lib
+[Rr]elease/*.dll
+[Rr]elease/*.exp
+[Rr]elease/*.pdb
 !/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
-[Dd]ebug/
+[Dd]ebug/*.exe
+[Dd]ebug/*.lib
+[Dd]ebug/*.dll
+[Dd]ebug/*.exp
+[Dd]ebug/*.pdb
 [Oo]bj/
 [Ll]ogs/
 
@@ -99,3 +107,9 @@ Contribs/openssl/*32*/
 *.log
 
 ## END OF VISUAL STUDIO ##
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release
+/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/debug
+/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release
