@@ -1,6 +1,6 @@
 # Qt
 1. Install **[Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=sharing)** and Extract it into **Contribs** folder
-- I needed to exclude the Qt because github breaks the whole library.
+- I needed to exclude the Qt because github freaks out the whole library.
 2. Open **VS2012 x86 Native Tools Command Prompt**
 3. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
 4. Type `nmake confclean` and wait
