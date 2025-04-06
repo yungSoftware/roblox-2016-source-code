@@ -84,6 +84,7 @@ Contribs/openssl/*32*/
 /Installer/RobloxProxy/RobloxProxy_i.c
 /Installer/RobloxProxy/RobloxProxy_i.h
 /Installer/RobloxProxy/RobloxProxy_p.c
+/Rendering/ShaderCompiler/Main
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -95,4 +96,3 @@ Contribs/openssl/*32*/
 # !/location2
 
 ## END OF GENERAL ##
-/Rendering/ShaderCompiler/Main
