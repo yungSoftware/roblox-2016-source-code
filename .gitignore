@@ -2,6 +2,25 @@
 ## The Ignore List is also categorized!
 ## Written by yungDoom with <3.
 
+## VISUAL STUDIO ##
+
+# Visual Studio cache/options directory
+.vs/
+
+# Build results
+[Rr]elease/
+!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
+[Dd]ebug/
+[Oo]bj/
+[Ll]ogs/
+
+# Files built by Visual Studio
+*.obj
+*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
+*.log
+
+## END OF VISUAL STUDIO ##
 ## GENERAL ##
 
 # Roblox
@@ -76,22 +95,4 @@ Contribs/openssl/*32*/
 # !/location2
 
 ## END OF GENERAL ##
-## VISUAL STUDIO ##
-
-# Visual Studio cache/options directory
-.vs/
-
-# Build results
-[Rr]elease/
-!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
-[Dd]ebug/
-[Oo]bj/
-[Ll]ogs/
-
-# Files built by Visual Studio
-*.obj
-*.pdb
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
-*.log
-
-## END OF VISUAL STUDIO ##
+/Rendering/ShaderCompiler/Main
