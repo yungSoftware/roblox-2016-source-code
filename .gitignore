@@ -2,6 +2,26 @@
 ## The Ignore List is also categorized!
 ## Written by yungDoom with <3.
 
+## VISUAL STUDIO ##
+
+# Visual Studio cache/options directory
+.vs/
+
+# Build results
+[Rr]elease/
+!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
+[Dd]ebug/
+[Oo]bj/
+[Ll]ogs/
+
+# Files built by Visual Studio
+*.obj
+*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
+*.log
+
+## END OF VISUAL STUDIO ##
+
 ## GENERAL ##
 
 # Roblox
@@ -76,40 +96,11 @@ Contribs/openssl/*32*/
 /Contribs/DSBaseClasses/Sources/Release
 
 # Dont ignore these files/folders
-# Add your lines here
-# !/location1
+!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug
+!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release
+!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug
+!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release
+!/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/debug
+!S/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release
 
 ## END OF GENERAL ##
-## VISUAL STUDIO ##
-
-# Visual Studio cache/options directory
-.vs/
-
-# Build results
-[Rr]elease/*.exe
-[Rr]elease/*.lib
-[Rr]elease/*.dll
-[Rr]elease/*.exp
-[Rr]elease/*.pdb
-!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
-[Dd]ebug/*.exe
-[Dd]ebug/*.lib
-[Dd]ebug/*.dll
-[Dd]ebug/*.exp
-[Dd]ebug/*.pdb
-[Oo]bj/
-[Ll]ogs/
-
-# Files built by Visual Studio
-*.obj
-*.pdb
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
-*.log
-
-## END OF VISUAL STUDIO ##
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release
-/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/debug
-/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release
