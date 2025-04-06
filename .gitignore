@@ -1,6 +1,6 @@
 ## Ignore Visual Studio temporary files, build results, and Other file types and unwanted folders.
 ## The Ignore List is also categorized!
-## Written by yungDoom with <3.
+## Written by yungDoom with <3
 
 ## VISUAL STUDIO ##
 
@@ -9,7 +9,6 @@
 
 # Build results
 [Rr]elease/
-!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
 [Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
@@ -17,7 +16,6 @@
 # Files built by Visual Studio
 *.obj
 *.pdb
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
 *.log
 
 ## END OF VISUAL STUDIO ##
@@ -84,8 +82,7 @@ Contribs/openssl/*32*/
 /Contribs/DSBaseClasses/Sources/Release
 
 # Dont ignore these files/folders
-# Add your lines here
-# !/location1
-# !/location2
+!/RCCService/Mesa-7.8.1/lib/release/
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
