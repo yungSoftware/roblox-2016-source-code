@@ -1,13 +1,15 @@
 # Qt
-1. Open **VS2012 x86 Native Tools Command Prompt**
-2. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
-3. Type `nmake confclean` and wait
+1. Install **[Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=sharing)** and Extract it into **Contribs** folder
+- I needed to exclude the Qt because github breaks the whole library.
+2. Open **VS2012 x86 Native Tools Command Prompt**
+3. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
+4. Type `nmake confclean` and wait
 - You can remove the **Trunk2012** Folder if it exists
-4. Run the following command:
+5. Run the following command:
 ```sh
 configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
-5. When the configuration complete, type **nmake** and take a long breath.
+6. When the configuration complete, type **nmake** and take a long breath.
  
 # Boost
 1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`

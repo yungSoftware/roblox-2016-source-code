@@ -1,5 +1,0 @@
-QMAKE_PRL_BUILD_DIR = C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/activeqt/control
-QMAKE_PRO_INPUT = control.pro
-QMAKE_PRL_TARGET = QAxServerd
-QMAKE_PRL_CONFIG = include_source_dir lex yacc debug uic resources incremental_off windows debug DebugBuild Debug build_pass qt incremental flat link_prl precompile_header autogen_precompile_source copy_dir_files debug_and_release debug_and_release_target embed_manifest_dll embed_manifest_exe debug stl exceptions rtti mmx 3dnow sse sse2 largefile minimal-config small-config medium-config large-config full-config build_all debug incremental create_prl link_prl depend_includepath QTDIR_build debug DebugBuild Debug build_pass qt_install_headers qt warn_off staticlib debug DebugBuild Debug build_pass no_autoqmake static staticlib moc thread
-QMAKE_PRL_LIBS = user32.lib ole32.lib oleaut32.lib gdi32.lib c:\\Trunk2016\\Contribs\\Qt\\4.8.5\\win_VS2012\\lib\\QtGuid4.lib c:\\Trunk2016\\Contribs\\Qt\\4.8.5\\win_VS2012\\lib\\QtCored4.lib  
