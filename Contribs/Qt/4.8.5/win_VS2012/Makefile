@@ -2373,291 +2373,291 @@ sub-demos-check_ordered: demos\$(MAKEFILE) sub-translations-check_ordered
 	cd demos\ && $(MAKE) -f $(MAKEFILE) check
 check: sub-tools-bootstrap-check_ordered sub-moc-check_ordered sub-rcc-check_ordered sub-uic-check_ordered sub-winmain-check_ordered sub-corelib-check_ordered sub-xml-check_ordered sub-network-check_ordered sub-sql-check_ordered sub-testlib-check_ordered sub-gui-check_ordered sub-qt3support-check_ordered sub-uic3-check_ordered sub-idc-check_ordered sub-activeqt-check_ordered sub-opengl-check_ordered sub-xmlpatterns-check_ordered sub-phonon-check_ordered sub-multimedia-check_ordered sub-svg-check_ordered sub-script-check_ordered sub-declarative-check_ordered sub-webkit-check_ordered sub-scripttools-check_ordered sub-plugins-check_ordered sub-imports-check_ordered sub-tools-check_ordered sub-translations-check_ordered sub-demos-check_ordered
 install_htmldocs: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc 
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\html
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc 
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html
 
 
 uninstall_htmldocs:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\html
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc 
 
 
 install_qchdocs: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc 
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\qch c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\qch
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc 
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\qch c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\qch
 
 
 uninstall_qchdocs:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\qch
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\qch
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc 
 
 
 install_docimages: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\src $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\src 
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src\images c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\src\images
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src 
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src\images c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src\images
 
 
 uninstall_docimages:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\src\images
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\doc\src 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src\images
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\src 
 
 
 install_examplesmanifest: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\examples $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\examples 
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html\examples-manifest.xml c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\examples
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\examples $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\examples 
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html\examples-manifest.xml c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\examples
 
 
 uninstall_examplesmanifest:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\examples\examples-manifest.xml
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\examples 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\examples\examples-manifest.xml
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\examples 
 
 
 install_demosmanifest: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos 
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html\demos-manifest.xml c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos 
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\doc\html\demos-manifest.xml c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos
 
 
 uninstall_demosmanifest:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\demos-manifest.xml
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\demos-manifest.xml
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos 
 
 
 install_qmake: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin 
-	-$(INSTALL_PROGRAM) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\qmake.exe c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin 
+	-$(INSTALL_PROGRAM) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\qmake.exe c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin
 
 
 uninstall_qmake:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\qmake.exe
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\qmake.exe
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin 
 
 
 install_mkspecs: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs 
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++ c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008 c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs 
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++ c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008 c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008
 
 
 uninstall_mkspecs:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++ 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\mkspecs 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\aix-xlc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-armv7le-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-armv7le-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-playbook-x86-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\blackberry-x86-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\common 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\cygwin-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\darwin-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\default 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\features 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-g++46 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\freebsd-icc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-acc-o64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpux-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-32 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-acc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hpuxi-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\hurd-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-cc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\irix-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-arm-gnueabi-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-cxx 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-ecc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-32 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-g++-maemo 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-32 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-icc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-kcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-llvm 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-lsb-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\linux-pgcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\lynxos-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++40 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-g++42 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-icc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-llvm 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-pbuilder 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xcode 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\macx-xlc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\modules 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\netbsd-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\openbsd-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qconfig.pri 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-armv7le-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qnx-x86-qcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\qws 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-cc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\sco-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-64-stlport 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-cc-stlport 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\solaris-g++-64 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-abld 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-armcc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-gcce 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\symbian-sbsv2 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-cxx 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\tru64-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-cc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unixware-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\unsupported 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-borland 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++ 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-g++-4.6 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-icc 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2003 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2010 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\win32-msvc2012 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-armv4i-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsii-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-mipsiv-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-sh4-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince50standard-x86-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-armv4i-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince60standard-x86-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-armv4i-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wince70embedded-x86-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50pocket-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm50smart-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60professional-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm60standard-msvc2008 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2005 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs\wincewm65professional-msvc2008
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\mkspecs 
 
 
 install: install_subtargets install_htmldocs install_qchdocs install_docimages install_examplesmanifest install_demosmanifest install_qmake install_mkspecs  FORCE

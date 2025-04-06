@@ -17,7 +17,7 @@ LINK          = link
 LFLAGS        = /LIBPATH:"c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib" /LIBPATH:"c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib" /NOLOGO /DYNAMICBASE /NXCOMPAT /DEBUG /SUBSYSTEM:CONSOLE "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
 LIBS          = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtTestd4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib 
 QMAKE         = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\qmake
-IDC           = c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\idc.exe
+IDC           = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\idc.exe
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
@@ -1284,12 +1284,12 @@ tmp\obj\debug_shared\qrc_tst_qwebpage.obj: tmp\rcc\debug_shared\qrc_tst_qwebpage
 ####### Install
 
 install_target: all FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage 
-	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage\$(TARGET)"
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage 
+	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage\$(TARGET)"
 
 uninstall_target:  FORCE
-	-$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage\$(TARGET)"
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage 
+	-$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage\$(TARGET)"
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tests\qt4\tst_qwebpage 
 
 
 install:  install_target  FORCE

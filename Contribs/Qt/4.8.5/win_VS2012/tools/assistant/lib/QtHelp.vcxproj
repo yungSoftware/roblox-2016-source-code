@@ -96,8 +96,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QHELP_LIB;QT_CLUCENE_SUPPORT;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
-      <Message>Copy QtHelpd4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtHelpd4.dll to c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
@@ -140,8 +140,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QHELP_LIB;QT_CLUCENE_SUPPORT;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;QT_DLL;QT_NO_DEBUG;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
-      <Message>Copy QtHelp4.dll to c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
+      <Message>Copy QtHelp4.dll to c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

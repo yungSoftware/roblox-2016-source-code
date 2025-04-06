@@ -232,19 +232,19 @@ mocclean: compiler_moc_header_clean compiler_moc_source_clean
 
 mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 install_sources: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum 
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\README.txt c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pri c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pro c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\TODO.txt c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum 
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\README.txt c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pri c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pro c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\TODO.txt c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum
 
 
 uninstall_sources:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\README.txt 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pri 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pro 
-	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\TODO.txt
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\README.txt 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pri 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\spectrum.pro 
+	 -$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum\TODO.txt
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\spectrum 
 
 
 install: install_subtargets install_sources  FORCE

@@ -108,13 +108,13 @@ mocclean: compiler_moc_header_clean compiler_moc_source_clean
 
 mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 install_sources: FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\helper $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\helper 
-	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper 
+	-$(INSTALL_DIR) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer
 
 
 uninstall_sources:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\demos\helper 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper\qmlapplicationviewer
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\demos\helper 
 
 
 install: install_subtargets install_sources  FORCE

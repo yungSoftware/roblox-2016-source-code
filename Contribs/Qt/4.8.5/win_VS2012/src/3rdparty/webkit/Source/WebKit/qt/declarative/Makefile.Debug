@@ -17,7 +17,7 @@ LINK          = link
 LFLAGS        = /LIBPATH:"c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib" /LIBPATH:"c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib" /NOLOGO /DYNAMICBASE /NXCOMPAT /DEBUG /DLL
 LIBS          = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtDeclaratived4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib 
 QMAKE         = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\qmake
-IDC           = c:\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\bin\idc.exe
+IDC           = c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\idc.exe
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
@@ -1365,24 +1365,24 @@ tmp\obj\debug_shared\moc_qdeclarativewebview_p.obj: tmp\moc\debug_shared\moc_qde
 ####### Install
 
 install_target: all FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
-	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\$(TARGET)"
-	-$(INSTALL_FILE) "..\..\..\..\..\..\..\imports\QtWebKit\qmlwebkitplugind.pdb" "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmlwebkitplugind.pdb"
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
+	-$(INSTALL_FILE) "$(DESTDIR_TARGET)" "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\$(TARGET)"
+	-$(INSTALL_FILE) "..\..\..\..\..\..\..\imports\QtWebKit\qmlwebkitplugind.pdb" "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmlwebkitplugind.pdb"
 
 uninstall_target:  FORCE
-	-$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\$(TARGET)" 
-	 -$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmlwebkitplugind.pdb"
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
+	-$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\$(TARGET)" 
+	 -$(DEL_FILE) "c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmlwebkitplugind.pdb"
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
 
 
 install_qmldir: all FORCE
-	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit $(MKDIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
-	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\declarative\qmldir c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit
+	@$(CHK_DIR_EXISTS) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit $(MKDIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
+	-$(INSTALL_FILE) c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\3rdparty\webkit\Source\WebKit\qt\declarative\qmldir c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit
 
 
 uninstall_qmldir:  FORCE
-	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir
-	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2012\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
+	-$(DEL_FILE) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit\qmldir
+	-$(DEL_DIR) c:$(INSTALL_ROOT)\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\imports\QtWebKit 
 
 
 install:  install_target install_qmldir  FORCE
