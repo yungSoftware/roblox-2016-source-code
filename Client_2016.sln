@@ -113,6 +113,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{D1FB4430
 		.gitignore = .gitignore
 		BUILDING.md = BUILDING.md
 		BUILDING_CONTRIBS.md = BUILDING_CONTRIBS.md
+		..\Windows\System32\drivers\etc\hosts = ..\Windows\System32\drivers\etc\hosts
 		README.md = README.md
 	EndProjectSection
 EndProject
