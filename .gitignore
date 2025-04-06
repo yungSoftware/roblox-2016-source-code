@@ -2,26 +2,6 @@
 ## The Ignore List is also categorized!
 ## Written by yungDoom with <3.
 
-## VISUAL STUDIO ##
-
-# Visual Studio cache/options directory
-.vs/
-
-# Build results
-[Rr]elease/
-!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
-[Dd]ebug/
-[Oo]bj/
-[Ll]ogs/
-
-# Files built by Visual Studio
-*.obj
-*.pdb
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
-*.log
-
-## END OF VISUAL STUDIO ##
-
 ## GENERAL ##
 
 # Roblox
@@ -42,19 +22,14 @@ Contribs/boost_1_56_0/project-config.jam
 Contribs/boost_1_56_0/stage/lib/
 
 # Ignore Qt builds
-Contribs/Qt/4.8.5/win_VS2012/lib/*.lib
-Contribs/Qt/4.8.5/win_VS2012/lib/*.dll
-Contribs/Qt/4.8.5/win_VS2012/lib/*.pdb
-Contribs/Qt/4.8.5/win_VS2012/lib/*.exp
-Contribs/Qt/4.8.5/win_VS2012/lib/*.ilk
+Contribs/Qt/4.8.5/win_VS2012/lib
 Contribs/Qt/4.8.5/win_VS2012/bin/*.exe*
 Contribs/Qt/4.8.5/win_VS2012/bin/*.pdb
 Contribs/Qt/4.8.5/win_VS2012/bin/*.dll
 Contribs/Qt/4.8.5/win_VS2012/bin/*.lib
-Contribs/Qt/4.8.5/win_VS2012/projects.sln
 Contribs/Qt/4.8.5/win_VS2012/.qmake.cache
 Contribs/Qt/4.8.5/win_VS2012/configure.cache
-tmp/
+Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.moc
 moc_*.*
 qrc_*.*
@@ -96,11 +71,27 @@ Contribs/openssl/*32*/
 /Contribs/DSBaseClasses/Sources/Release
 
 # Dont ignore these files/folders
-!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug
-!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release
-!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug
-!/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release
-!/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/debug
-!S/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release
+# Add your lines here
+# !/location1
+# !/location2
 
 ## END OF GENERAL ##
+## VISUAL STUDIO ##
+
+# Visual Studio cache/options directory
+.vs/
+
+# Build results
+[Rr]elease/
+!/RCCService/Mesa-7.8.1/lib/release/ # I should put this here to make it work.....
+[Dd]ebug/
+[Oo]bj/
+[Ll]ogs/
+
+# Files built by Visual Studio
+*.obj
+*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.pdb # Same thing goes here.........
+*.log
+
+## END OF VISUAL STUDIO ##
