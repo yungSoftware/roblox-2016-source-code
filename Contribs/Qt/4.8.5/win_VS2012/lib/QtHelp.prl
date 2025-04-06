@@ -1,4 +1,4 @@
-QMAKE_PRL_BUILD_DIR = C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/lib/
+QMAKE_PRL_BUILD_DIR = C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/lib
 QMAKE_PRO_INPUT = lib.pro
 QMAKE_PRL_TARGET = QtHelp
 QMAKE_PRL_DEFINES = QT_SHARED QT_THREAD_SUPPORT

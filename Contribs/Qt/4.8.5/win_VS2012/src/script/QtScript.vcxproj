@@ -97,8 +97,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;JSC=QTJSC;jscyyparse=qtjscyyparse;jscyylex=qtjscyylex;jscyyerror=qtjscyyerror;WTF=QTWTF;QT_BUILD_SCRIPT_LIB;QT_NO_USING_NAMESPACE;QLALR_NO_QSCRIPTGRAMMAR_DEBUG_INFO;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;BUILDING_QT__=1;WTF_USE_ACCELERATED_COMPOSITING;USE_SYSTEM_MALLOC;BUILDING_QT__;BUILDING_JavaScriptCore;BUILDING_WTF;WTF_USE_JAVASCRIPTCORE_BINDINGS=1;WTF_CHANGES=1;JS_NO_EXPORT;QT_DLL;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
-      <Message>Copy QtScriptd4.dll to c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
+      <Message>Copy QtScriptd4.dll to ..\..\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
@@ -142,8 +142,8 @@
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;JSC=QTJSC;jscyyparse=qtjscyyparse;jscyylex=qtjscyylex;jscyyerror=qtjscyyerror;WTF=QTWTF;QT_BUILD_SCRIPT_LIB;QT_NO_USING_NAMESPACE;QLALR_NO_QSCRIPTGRAMMAR_DEBUG_INFO;QT_MAKEDLL;QT_NO_CAST_TO_ASCII;QT_ASCII_CAST_WARNINGS;QT3_SUPPORT;QT_MOC_COMPAT;QT_USE_QSTRINGBUILDER;_USE_MATH_DEFINES;BUILDING_QT__=1;WTF_USE_ACCELERATED_COMPOSITING;USE_SYSTEM_MALLOC;NDEBUG;BUILDING_QT__;BUILDING_JavaScriptCore;BUILDING_WTF;WTF_USE_JAVASCRIPTCORE_BINDINGS=1;WTF_CHANGES=1;NDEBUG;JS_NO_EXPORT;QT_DLL;QT_NO_DEBUG;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_SHARED;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>copy  &quot;$(TargetPath)&quot; &quot;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin&quot;</Command>
-      <Message>Copy QtScript4.dll to c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin</Message>
+      <Command>copy  &quot;$(TargetPath)&quot; &quot;..\..\bin&quot;</Command>
+      <Message>Copy QtScript4.dll to ..\..\bin</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

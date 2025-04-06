@@ -1,4 +1,4 @@
-QMAKE_PRL_BUILD_DIR = C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/phonon/
+QMAKE_PRL_BUILD_DIR = C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/phonon
 QMAKE_PRO_INPUT = phonon.pro
 QMAKE_PRL_TARGET = phonon
 QMAKE_PRL_DEFINES = QT_SHARED QT_THREAD_SUPPORT
