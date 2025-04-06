@@ -1,0 +1,16 @@
+-make 
+nmake 
+-platform 
+win32-msvc2012 
+-prefix 
+C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 
+-opensource 
+-confirm-license 
+-opengl 
+desktop 
+-nomake 
+examples 
+-nomake 
+tests 
+-webkit 
+-xmlpatterns 

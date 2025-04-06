@@ -22,13 +22,15 @@ Contribs/boost_1_56_0/project-config.jam
 Contribs/boost_1_56_0/stage/lib/
 
 # Ignore Qt builds
-Contribs/Qt/4.8.5/win_VS2012/lib
+Contribs/Qt/4.8.5/win_VS2012/lib/*.lib
+Contribs/Qt/4.8.5/win_VS2012/lib/*.dll
+Contribs/Qt/4.8.5/win_VS2012/lib/*.pdb
+Contribs/Qt/4.8.5/win_VS2012/lib/*.exp
+Contribs/Qt/4.8.5/win_VS2012/lib/*.ilk
 Contribs/Qt/4.8.5/win_VS2012/bin/*.exe*
 Contribs/Qt/4.8.5/win_VS2012/bin/*.pdb
 Contribs/Qt/4.8.5/win_VS2012/bin/*.dll
 Contribs/Qt/4.8.5/win_VS2012/bin/*.lib
-Contribs/Qt/4.8.5/win_VS2012/.qmake.cache
-Contribs/Qt/4.8.5/win_VS2012/configure.cache
 Contribs/Qt/4.8.5/win_VS2012/projects.sln
 *.moc
 moc_*.*
