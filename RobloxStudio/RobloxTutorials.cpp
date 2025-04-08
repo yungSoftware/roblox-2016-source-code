@@ -37,9 +37,9 @@
 FASTFLAG(WebkitDeveloperToolsEnabled);
 FASTFLAGVARIABLE(StudioShowTutorialsByDefault, false);
 FASTFLAGVARIABLE(StudioTutorialSeeAll, false);
-FASTSTRINGVARIABLE(StudioTutorialsSeeAllUrl, "http://wiki.roblox.com/index.php?title=AllTutorials");
-FASTSTRINGVARIABLE(StudioTutorialsUrl, "http://wiki.roblox.com/index.php?title=StudioTutorials&studiomode=true");
-FASTSTRINGVARIABLE(StudioTutorialsTOCUrl, "http://wiki.roblox.com/index.php?title=Studio_Tutorials_Landing&studiomode=true");
+FASTSTRINGVARIABLE(StudioTutorialsSeeAllUrl, "http://wiki.roblox.com/wiki/index.php?title=AllTutorials");
+FASTSTRINGVARIABLE(StudioTutorialsUrl, "http://wiki.roblox.com/wiki/index.php?title=StudioTutorials&studiomode=true");
+FASTSTRINGVARIABLE(StudioTutorialsTOCUrl, "http://wiki.roblox.com/wiki/index.php?title=Studio_Tutorials_Landing&studiomode=true");
 
 RobloxTutorials::RobloxTutorials()
 : m_pWebView(NULL)

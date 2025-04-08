@@ -1577,7 +1577,7 @@ void RobloxMainWindow::about()
 
 void RobloxMainWindow::onlineHelp()
 {
-	QUrl helpUrl("http://wiki.roblox.com/index.php/Studio", QUrl::TolerantMode);
+	QUrl helpUrl("http://wiki.roblox.com/wiki/index.php/Studio", QUrl::TolerantMode);
 	QDesktopServices::openUrl(helpUrl);
 }
 

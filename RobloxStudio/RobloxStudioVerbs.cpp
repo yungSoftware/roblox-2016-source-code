@@ -1476,7 +1476,7 @@ CreatePluginVerb::CreatePluginVerb( RBX::VerbContainer* pVerbContainer )
 
 void CreatePluginVerb::doIt( RBX::IDataState* dataState )
 {
-	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/index.php/How_To_Make_Plugins"));
+	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/wiki/index.php/How_To_Make_Plugins"));
 }
 
 PlaySoloVerb::PlaySoloVerb(RBX::VerbContainer* pVerbContainer)
@@ -2428,7 +2428,7 @@ JointToolHelpDialogVerb::JointToolHelpDialogVerb( RBX::VerbContainer* pVerbConta
 
 void JointToolHelpDialogVerb::doIt( RBX::IDataState* dataState )
 {
-	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/index.php/Joint#Automatic_creation"));
+	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/wiki/index.php/Joint#Automatic_creation"));
 }
 
 StudioMaterialVerb::StudioMaterialVerb(RBX::DataModel* dataModel)

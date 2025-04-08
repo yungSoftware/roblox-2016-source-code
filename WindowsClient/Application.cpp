@@ -438,7 +438,7 @@ void Application::OnHelp()
 	if (!DFFlag::DontOpenWikiOnClient) 
 	{
 		ShellExecute(mainWindow, "open", "rundll32.exe", 
-			"url.dll,FileProtocolHandler http://wiki.roblox.com", NULL, SW_SHOWDEFAULT);
+			"url.dll,FileProtocolHandler http://wiki.roblox.com/wiki", NULL, SW_SHOWDEFAULT);
 	}
 }
 

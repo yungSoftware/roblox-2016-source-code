@@ -101,7 +101,7 @@ void RobloxContextualHelp::setupWebView()
 		m_pWebView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
 		connect(m_pWebView->page(), SIGNAL(linkClicked(const QUrl&)), this, SLOT(linkClicked(const QUrl&)));
 	}
-	m_urlString = QString("http://wiki.roblox.com/index.php/Studio");
+	m_urlString = QString("http://wiki.roblox.com/wiki/index.php/Studio");
 
 	if (FFlag::StudioNewWiki)
 	{
@@ -129,9 +129,9 @@ void RobloxContextualHelp::onAuthenticationChanged(bool)
 void RobloxContextualHelp::onHelpTopicChanged(const QString& helpTopic)
 {
 	QString prevURLString(m_urlString);
-    m_urlString = QString("http://wiki.roblox.com/index.php/") + helpTopic;
+    m_urlString = QString("http://wiki.roblox.com/wiki/index.php/") + helpTopic;
  
-    // url with anchor tag and query - http://wiki.roblox.com/index.php/Script_Analysis?studiomode=true#W003
+    // url with anchor tag and query - http://wiki.roblox.com/wiki/index.php/Script_Analysis?studiomode=true#W003
 
 	if (FFlag::StudioNewWiki)
 	{
