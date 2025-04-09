@@ -26,7 +26,8 @@ App/include/security/RandomConstant.h # Feel free to remove this line if you've 
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
-git.txt # im not gonna even talk about it.
+git.txt
+Client_2016_Dev.sln
 
 # Ignore precompiled shaders
 shaders/shaders_*.pack

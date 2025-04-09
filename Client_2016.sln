@@ -108,14 +108,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "Contribs\SDL2\Visua
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreScriptConverter2", "CoreScriptConverter2\CoreScriptConverter2.vcxproj", "{BB0AF3CB-A723-4948-BC84-F9960876C5CE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{D1FB4430-B2FD-4C73-B27F-59AF7CFB2E9D}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		BUILDING.md = BUILDING.md
-		BUILDING_CONTRIBS.md = BUILDING_CONTRIBS.md
-		README.md = README.md
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
