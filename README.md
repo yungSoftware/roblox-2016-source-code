@@ -21,7 +21,7 @@ After a long effort, this repository has been brought to you on github with hand
 - A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
 - Changed Splash Screen and Copyright Date(s)
 - Reverse Engineered some libraries and executables to make them editable
-- General Project Cleanup to make things easier and not complicated
+- Cleaned up the whole source to make things easier and not complicated
 - All the necessary libraries are included in the repository.
 
 ## 📚 Libraries Used
