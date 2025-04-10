@@ -4,7 +4,6 @@
 2. Open **VS2012 x86 Native Tools Command Prompt**
 3. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
 4. Type `nmake confclean` and wait
-- You can remove the **Trunk2012** Folder if it exists
 5. Run the following command:
 ```sh
 configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
