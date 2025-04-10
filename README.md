@@ -23,6 +23,7 @@ After a long effort, this repository has been brought to you on github with hand
 - Reverse Engineered some libraries and executables to make them editable
 - Cleaned up the whole source to make things easier and not complicated
 - All the necessary libraries are included in the repository.
+   - Except **Qt** since github is freaking it out, [see here to download it](/BUILDING_CONTRIBS.md)
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
