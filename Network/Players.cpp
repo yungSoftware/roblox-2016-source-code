@@ -426,7 +426,7 @@ void Players::getCharacterAppearance(int userId, boost::function<void (shared_pt
 		errorFunction("Players:GetCharacterAppearanceAsync() got negative userId");
 		return;
 	}
-	std::string characterAppearance = format("%sAsset/CharacterFetch.ashx?userId=%d", ServiceProvider::create<ContentProvider>(this)->getBaseUrl().c_str(), userId);
+	std::string characterAppearance = format("%sasset/CharacterFetch.ashx?userId=%d", ServiceProvider::create<ContentProvider>(this)->getBaseUrl().c_str(), userId);
 
 	shared_ptr<ModelInstance> model = ModelInstance::createInstance();
 	weak_ptr<DataModel> dm(shared_from(Instance::fastDynamicCast<DataModel>(this->getRootAncestor())));
