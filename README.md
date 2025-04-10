@@ -52,7 +52,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
-* Asset Proxy **(index_api.php)** and Trustcheck Fixes!
+* Asset Proxy **(index_online.php)** and Trustcheck Fixes!
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
