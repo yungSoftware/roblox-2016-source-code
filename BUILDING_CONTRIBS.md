@@ -27,4 +27,4 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
 - Project Properties may needed to change depending which output file you want.
 
 **That's it, you've compiled the libraries!**
-**Also You may want to change the library files in the source with yours.**
+**Also You may want to change or add the library files in the source with yours.**
