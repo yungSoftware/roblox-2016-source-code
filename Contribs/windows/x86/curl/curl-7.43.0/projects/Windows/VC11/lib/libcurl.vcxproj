@@ -75,7 +75,7 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='LIB Debug - LIB OpenSSL|Win32'">$(OutDir)lib\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='LIB Release - LIB OpenSSL|Win32'">..\..\..\..\build\Win32\VC11\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='LIB Release - LIB OpenSSL|Win32'">$(OutDir)lib\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='DLL Debug - DLL OpenSSL|Win32'">$(ProjectName)d</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DLL Debug - DLL OpenSSL|Win32'">$(ProjectName)_a</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='LIB Debug - LIB OpenSSL|Win32'">$(ProjectName)d</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release - DLL OpenSSL|Win32'">
@@ -120,12 +120,13 @@
     <Link>
       <AdditionalDependencies>ws2_32.lib;wldap32.lib;libeay32.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-      <AdditionalLibraryDirectories>..\..\..\..\..\openssl\build\Win32\VC11\DLL Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(CONTRIB_PATH)\openssl\out32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ManifestFile>$(IntDir)$(TargetFileName).intermediate.manifest</ManifestFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <ImportLibrary>$(TargetDir)$(TargetName).lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release - DLL OpenSSL|Win32'">

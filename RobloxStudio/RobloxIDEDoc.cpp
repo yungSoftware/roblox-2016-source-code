@@ -1126,8 +1126,6 @@ IRobloxDoc::RBXCloseRequest RobloxIDEDoc::requestClose()
 			return IRobloxDoc::CLOSE_CANCELED;
 		}
     }
-
-    return IRobloxDoc::NO_SAVE_NEEDED;
 }
 
 bool RobloxIDEDoc::doClose()

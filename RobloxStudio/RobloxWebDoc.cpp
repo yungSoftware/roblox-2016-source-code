@@ -321,14 +321,7 @@ void RobloxWebDoc::refreshPage()
 }
 
 void RobloxWebDoc::sslErrorHandler(QNetworkReply* qnr, const QList<QSslError> & errlist)
-{
-#ifdef _DEBUG
-  qDebug() << "---RobloxWebDoc::sslErrorHandler: ";
-  // show list of all ssl errors
-  Q_FOREACH (QSslError err,errlist)
-    qDebug() << "ssl error: " << err;
-#endif
- 
+{ 
    qnr->ignoreSslErrors();
 }
 

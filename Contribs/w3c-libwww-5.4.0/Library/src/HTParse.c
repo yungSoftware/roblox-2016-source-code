@@ -7,7 +7,7 @@
 **
 ** history:
 **	May 12 94	TAB added as legal char in HTCleanTelnetString
-**
+**  Changed by yungDoom
 */
 
 /* Library include files */
@@ -356,11 +356,8 @@ PUBLIC char *HTSimplify (char ** url)
     char *path;
     char *p;
     if (!url || !*url) {
-	HTTRACE(URI_TRACE, "HTSimplify.. Nothing done\n");
 	return *url;
     }
-    HTTRACE(URI_TRACE, "HTSimplify.. `%s\' " _ *url);
-
     /* Find any scheme name */
     if ((path = strstr(*url, "://")) != NULL) {		   /* Find host name */
 	char *newptr;
@@ -383,7 +380,6 @@ PUBLIC char *HTSimplify (char ** url)
 	    *ptr = TOLOWER(*ptr);
 	    ptr++;
 	}
-	HTTRACE(URI_TRACE, "into\n............ `%s'\n" _ *url);
 	return *url;		      /* Doesn't need to do any more */
     }
     if ((p = path)) {
@@ -434,7 +430,6 @@ PUBLIC char *HTSimplify (char ** url)
 	char * dest = path+3;
 	while ((*orig++ = *dest++));
     }
-    HTTRACE(URI_TRACE, "into\n............ `%s'\n" _ *url);
     return *url;
 }
 
@@ -492,15 +487,10 @@ PUBLIC char * HTRelative (const char * aName, const char * relatedName)
 	strcat(result, last_slash+1);
 	if (!*result) strcat(result, "./");
     }
-    HTTRACE(URI_TRACE, "HTRelative.. `%s' expressed relative to  `%s' is `%s'\n" _ 
-		aName _ relatedName _ result);
 #if 0
     {
 	char * absstr = HTParse(result, relatedName, PARSE_ALL);
 	HTSimplify(&absstr);
-	HTTRACE(URI_TRACE, "HTRelative.. `%s' made absolute based on `%s' is `%s'\n" _
-		result _ relatedName _ absstr);
-	if (strcmp(absstr, aName) != 0) HTTRACE(URI_TRACE, "THEY DIFFER!!!\n");
 	HT_FREE(absstr);
     }
 #endif
@@ -530,9 +520,7 @@ PUBLIC BOOL HTCleanTelnetString (char * str)
     while (*cur) {
 	int a = TOASCII((unsigned char) *cur);
 	if (a != 0x9 && (a < 0x20 || (a > 0x7E && a < 0xA0) ||  a > 0xFE)) {
-	    HTTRACE(URI_TRACE, "Illegal..... character in URL: \"%s\"\n" _ str);
 	    *cur = 0;
-	    HTTRACE(URI_TRACE, "Truncated... \"%s\"\n" _ str);
 	    return YES;
 	}
 	cur++;

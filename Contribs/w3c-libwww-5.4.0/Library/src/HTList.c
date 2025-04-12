@@ -8,6 +8,7 @@
 **	A list is represented as a sequence of linked nodes of type HTList.
 **	The first node is a header which contains no object.
 **	New nodes are inserted between the header and the rest of the list.
+**  Changed by yungDoom
 */
 
 /* Library include files */
@@ -49,8 +50,6 @@ PUBLIC BOOL HTList_addObject (HTList * me, void * newObject)
 	me->next = newNode;
 	return YES;
     } else {
-	HTTRACE(CORE_TRACE, "HTList...... Can not add object %p to nonexisting list\n" _ 
-		    newObject);
     }
     return NO;
 }
@@ -92,7 +91,6 @@ PUBLIC HTList * HTList_addList (HTList * me, void * newObject)
 	me->next = newNode;
 	return newNode;
     } else {
-	HTTRACE(CORE_TRACE, "HTList...... Can not add object %p to nonexisting List\n" _ newObject);
     }
     return (HTList *) NULL;
 }
@@ -322,7 +320,6 @@ PUBLIC BOOL HTList_insertionSort (HTList * head, HTComparer * comp)
 	}
 	return YES;
     } else {
-	HTTRACE(CORE_TRACE, "List........ Empty list or no sort algorithm\n");
     }
     return NO;
 }

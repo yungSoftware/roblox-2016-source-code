@@ -77,6 +77,7 @@ Contribs/openssl/*32*/
 /Installer/RobloxProxy/RobloxProxy_i.h
 /Installer/RobloxProxy/RobloxProxy_p.c
 /Rendering/ShaderCompiler/Main
+/CoreScriptConverter2/tool/win32/rsc.ilk
 
 ## DSBaseClasses
 /Contribs/DSBaseClasses/Sources/Debug
@@ -87,4 +88,3 @@ Contribs/openssl/*32*/
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
-/CoreScriptConverter2/tool/win32/rsc.ilk

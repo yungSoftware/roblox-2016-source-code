@@ -75,7 +75,6 @@ static int fatal(const char* fmt, ...)
     vfprintf(stderr, fmt, ap);
     va_end(ap);
     exit(1);
-    return 1;
 }
 
 template< class Map >

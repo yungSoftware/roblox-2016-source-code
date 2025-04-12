@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Main|Win32">
-      <Configuration>Main</Configuration>
+    <ProjectConfiguration Include="NoOpt|Win32">
+      <Configuration>NoOpt</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
@@ -15,7 +15,7 @@
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
@@ -25,37 +25,33 @@
   <ImportGroup Label="ExtensionSettings">
     <Import Project="..\CustomBuildRules.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <OutDir>tool\win32</OutDir>
     <TargetName>rsc</TargetName>
     <PublishDLLDependencyBeforeTargets>Midl</PublishDLLDependencyBeforeTargets>
     <PublishDLLDependencyAfterTargets>CustomBuild</PublishDLLDependencyAfterTargets>
     <IntDir>obj\$(Configuration)\</IntDir>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <ClCompile>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(CONTRIB_PATH)\SDL2\include;$(CONTRIB_PATH)\boost_1_56_0\include;..\App.BulletPhysics;..\App\include;..\Base\include;..\Network\include;..\Log\include;..\Rendering\GfxBase\include;..\Rendering\g3d\include;..\Rendering\RbxG3D\include;..\ClientShared;..\fmod\api\inc;.;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(CONTRIB_PATH)\SDL2\include;$(CONTRIB_PATH)\boost_1_56_0\include;..\App.BulletPhysics;..\App\include;..\Base\include;..\Network\include;..\Log\include;..\Rendering\GfxBase\include;..\Rendering\g3d\include;..\Rendering\RbxG3D\include;..\ClientShared;..\fmod\api\inc;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_NOOPT;NDEBUG;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <AdditionalDependencies>zlib.lib;fmod_vc.lib;libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;C:\Trunk2016\RCCService\Mesa-7.8.1\lib;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin_2.13\lib;C:\Trunk2016\zlib\win\bin\Release;$(CONTRIB_PATH)\boost_1_56_0\stage\lib;$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;..\RCCService\Mesa-7.8.1;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin;..\zlib\win\bin\Debug;..\Contribs\boost_1_56_0\stage\lib;..\Contribs\VMProtectWin_2.13\lib;..\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Debug - DLL OpenSSL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PublishDLLDependency />
     <PreBuildEvent>
@@ -97,6 +93,5 @@
   <ItemGroup>
     <PublishDLLDependency Include="..\fmod\win32\fmod.dll" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
-    <PublishDLLDependency Include="$(CONTRIB_PATH)\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL\libcurl_a.dll" />
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@ After a long effort, this repository has been brought to you on github with hand
 
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
-**Want to help us? You can star & clone the repository, made changes and create pull requests!**
+**Want to help us? You can star & clone the repository, made changes and create pull requests! (these will help a lot and will give us motivation)**
 
 # Table of Contents
 1. [Features](#features--additions)
@@ -18,7 +18,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## Features / Additions
 - Fixed a lot of issues that breaks the compilation, codebase and the overall experience
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
-- A fully working Asset Proxy, [see here](https://github.com/P0L3NARUBA/rocknet-rblx) to make it work as usual
+- [Asset Proxy and the other server-side stuff]((https://www.github.com/P0L3NARUBA/rocknet-rblx) (partial but needed)
 - Changed Splash Screen and Copyright Date(s)
 - Reverse Engineered some libraries and executables to make them editable
 - Cleaned up the whole source to make things easier and not complicated

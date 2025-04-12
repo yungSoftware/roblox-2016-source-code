@@ -7,6 +7,7 @@
 **
 ** History:
 **	 8 Feb 95	Written by Eric and Henrik
+**  Changed by yungDoom
 */
 
 /* Library include files */
@@ -29,7 +30,6 @@ PRIVATE size_t LastAllocSize = 0;		  /* size of last allocation */
 */
 PUBLIC BOOL HTMemoryCall_add (HTMemoryCallback * cbf)
 {
-    HTTRACE(MEM_TRACE, "Mem Add..... Callback %p\n" _ (void *) cbf);
     if (!HTMemCall) HTMemCall = HTList_new();
     return cbf ? HTList_addObject(HTMemCall, (void *) cbf) : NO;
 }
@@ -40,7 +40,6 @@ PUBLIC BOOL HTMemoryCall_add (HTMemoryCallback * cbf)
 */
 PUBLIC BOOL HTMemoryCall_delete (HTMemoryCallback * cbf)
 {
-    HTTRACE(MEM_TRACE, "Mem Delete.. Callback %p\n" _ (void *) cbf);
     return (HTMemCall && cbf) ? HTList_removeObject(HTMemCall,(void*)cbf) : NO;
 }
 
@@ -50,7 +49,6 @@ PUBLIC BOOL HTMemoryCall_delete (HTMemoryCallback * cbf)
 */
 PUBLIC BOOL HTMemoryCall_deleteAll (void)
 {
-    HTTRACE(MEM_TRACE, "Mem Delete.. All Callback functions\n");
     if (HTMemCall) {
 	HTList_delete(HTMemCall);
 	HTMemCall = NULL;
@@ -70,12 +68,10 @@ PUBLIC void * HTMemory_malloc (size_t size)
     if (HTMemCall) {
 	HTMemoryCallback * pres;
 	while ((pres = (HTMemoryCallback *) HTList_nextObject(HTMemCall))) {
-	    HTTRACE(MEM_TRACE, "Mem Calling. %p (size %d)\n" _ (void*)pres _ size);
 	    (*pres)(size);
 	    if ((ptr = malloc(size)) != NULL) return ptr;
 	}
     }
-    HTTRACE(MEM_TRACE, "Memory.... Couldn't allocate %d bytes\n" _ size);
     return NULL;
 }
 
@@ -91,14 +87,10 @@ PUBLIC void * HTMemory_calloc (size_t nobj, size_t size)
 	HTMemoryCallback * pres;
 	size_t total = size * nobj;
 	while ((pres = (HTMemoryCallback *) HTList_nextObject(HTMemCall))) {
-	    HTTRACE(MEM_TRACE, "Mem Calling. %p (size %d)\n" _ 
-				   (void *) pres _ total);
 	    (*pres)(total);
 	    if ((ptr = calloc(nobj, size)) != NULL) return ptr;
 	}
     }
-    HTTRACE(MEM_TRACE, "Memory...... Couldn't allocate %d objects of size %d\n" _ 
-		 nobj _ size);
     return NULL;
 }
 
@@ -113,12 +105,10 @@ PUBLIC void * HTMemory_realloc (void * p, size_t size)
     if (HTMemCall) {
 	HTMemoryCallback * pres;
 	while ((pres = (HTMemoryCallback *) HTList_nextObject(HTMemCall))) {
-	    HTTRACE(MEM_TRACE, "Mem Calling. %p (size %d)\n" _ (void*)pres _ size);
 	    (*pres)(size);
 	    if ((ptr = realloc(p, size)) != NULL) return ptr;
 	}
     }
-    HTTRACE(MEM_TRACE, "Memory...... Couldn't reallocate %d bytes\n" _ size);
     return NULL;
 }
 
@@ -128,7 +118,6 @@ PUBLIC void * HTMemory_realloc (void * p, size_t size)
 PUBLIC void HTMemory_free (void * ptr)
 {
     if (ptr) {
-	HTTRACE(MEM_TRACE, "Memory Free. %p\n" _ ptr);
 	free(ptr);
     }
 }
@@ -161,8 +150,6 @@ PUBLIC void HTMemory_outofmem (char * name, char * file, unsigned long line)
 {
     if (PExit)
 	(*PExit)(name, file, line);
-    HTTRACE(ALL_TRACE, "%s:%ld failed allocation for \"%s\" (%ld bytes).\nProgram aborted.\n" _
-	    file _ line _ name _ LastAllocSize);
     abort();
 }
 
