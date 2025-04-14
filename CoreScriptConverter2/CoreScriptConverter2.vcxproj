@@ -42,8 +42,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(CONTRIB_PATH)\SDL2\include;$(CONTRIB_PATH)\boost_1_56_0\include;..\App.BulletPhysics;..\App\include;..\Base\include;..\Network\include;..\Log\include;..\Rendering\GfxBase\include;..\Rendering\g3d\include;..\Rendering\RbxG3D\include;..\ClientShared;..\fmod\api\inc;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_NOOPT;NDEBUG;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PreprocessorDefinitions>WIN32;_NOOPT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -51,7 +52,7 @@
       <AdditionalDependencies>zlib.lib;fmod_vc.lib;libcurl_a.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>
       </IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>..\fmod\win32\lib;..\RCCService\Mesa-7.8.1;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin;..\zlib\win\bin\Debug;..\Contribs\boost_1_56_0\stage\lib;..\Contribs\VMProtectWin_2.13\lib;..\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Debug - DLL OpenSSL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\fmod\win32\lib;..\RCCService\Mesa-7.8.1;$(CONTRIB_PATH)\SDK\Lib;$(CONTRIB_PATH)\VMProtectWin;..\zlib\win\bin\Debug;..\Contribs\boost_1_56_0\stage\lib;..\Contribs\VMProtectWin_2.13\lib;..\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL;..\zlib\win\bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PublishDLLDependency />
     <PreBuildEvent>

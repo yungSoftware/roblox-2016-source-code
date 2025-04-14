@@ -16,20 +16,9 @@
      - Did'nt tested out the Debug, DebugRCC and DebugStudio yet since i dont interested in them.
  8. Change the **Solution Platform** to **Win32**
  9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
- 10. Before building anything, you should build **boost.static**, **zlib**, **libcurl**, **SDL2**, **qtnribbon** and **ShaderCompiler** first
+ 10. Before building anything, you should build **boost.static**, **zlib**, **libcurl**, **SDL2**, **qtnribbon**, **ShaderCompiler** and **LibOVR** first
  11. Right click to project and press **Build**
  12. Thats it, you successfully builded from the source!
- 
- ## Common Error(s):
-  - Error: warning treated as error - no 'object' file generated
-     - Fix: Enter the Properties of Project that gives error and head over to **C/C++ > General > Treat Warnings As Errors** and set it to **No (/WX-)**
-  - Error: 'C:\Trunk2016\a\a.vcxproj.filters' Access Denied in path
-     - Fix: Right Click to the project and press **Open the Folder in File Explorer** and go into properties of **a.vcxproj.filters**, untick **Read-only** and Press **OK**.
-  - Error: cannot open LUAGENCSNEW.INL - No such file or folder
-     - Fix: Go to: `C:\Trunk2016\App\script` and clone the file: `LuaGenCSNEW - Copy`, rename it to `LuaGenCSNEW.inl`
-  - Error: The code execution cannot proceed because libcurl_a.dll was not found. Reinstalling the program may fix this problem. 
-     - Fix: Copy libcurl.dll from: `C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0\build\Win32\VC11\DLL Release - DLL OpenSSL` and put it into the folder, and then change the name to `libcurl_a.dll`
-
 
  The guide is straight forward so there should be no issues on your side<br>
  Since I've already configured everything, you won't have to do much.

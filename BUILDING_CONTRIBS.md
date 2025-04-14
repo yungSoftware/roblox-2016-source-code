@@ -36,8 +36,14 @@ To build SDL2 as a .DLL file, Just change the **Target Extention** to **.dll** a
 
 # libcurl
 - You can also build that its straight forward.
-If you build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!<br>
+If you wanna build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!<br>
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 
 **That's it, you've compiled the libraries!**
 **Also You may want to change or add the library files in the source with yours.**
+
+# Errors you may get
+
+- cannot open input file 'C:\Trunk2016\Contribs\SDL2\VisualC\Win32\Release\SDL2.lib'
+  - Copy the SDL2.lib from 'C:\Trunk2016\SDL2\Win\2.0.4' to 'C:\Trunk2016\Contribs\SDL2\VisualC\SDL\Win32\Release'
+  - Also create the Win32 & Release folders if you dont have them.
