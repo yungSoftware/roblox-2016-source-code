@@ -21,4 +21,5 @@
  12. Thats it, you successfully builded from the source!
 
  The guide is straight forward so there should be no issues on your side<br>
+ Most of the errors you may get while launching the game is because you have to copy the required file(s) to the game location.<br>
  Since I've already configured everything, you won't have to do much.
