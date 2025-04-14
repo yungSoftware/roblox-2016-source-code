@@ -63,6 +63,7 @@ qrc_*.*
 /Contribs/openssl/inc32/
 /Contribs/openssl/out32*/
 /Contribs/openssl/tmp32*/
+/openssl
 
 ## curl
 /Contribs/windows/x86/curl/curl-7.43.0/build/
@@ -96,4 +97,3 @@ qrc_*.*
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
-/openssl

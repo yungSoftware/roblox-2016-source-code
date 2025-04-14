@@ -26,8 +26,9 @@ You should greeted with these:
 2. Open **Developer Command Prompt for VS2012**
 3. Change Directory to: `C:\Trunk2016\Contribs\openssl`
 4. Type `perl Configure VC-WIN32`
-5. And then type this to the command prompt: `ms\32all.bat`.
-6. When the build process done, go inside this folder: `Contribs\openssl\out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
+5. And then type this to the command prompt: `ms\32all.bat`
+6. Create a new folder named **openssl** inside **Trunk2016**
+7. When the build process done, go inside this folder: `Contribs\openssl\out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`.
 
 # SDL2
 - You can just go straight up and build it
