@@ -37,7 +37,8 @@ Contribs/boost_1_56_0/b2.exe
 Contribs/boost_1_56_0/bin.v2/
 Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/b2.exe
 Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/bjam.exe
-Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.exe
+/Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.exe
+/Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.ilk
 Contribs/boost_1_56_0/project-config.jam
 Contribs/boost_1_56_0/stage/lib/
 
@@ -90,5 +91,3 @@ Contribs/openssl/*32*/
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
-/Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.exe
-/Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.ilk
