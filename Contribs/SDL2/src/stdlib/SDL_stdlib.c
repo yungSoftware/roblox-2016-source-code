@@ -369,6 +369,12 @@ localexit:
     /* *INDENT-ON* */
 }
 
+void
+_ftol2_sse()
+{
+    _ftol();
+}
+
 /* 64-bit math operators for 32-bit systems */
 void
 __declspec(naked)
