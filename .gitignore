@@ -56,8 +56,11 @@ qrc_*.*
 /zlib/win/bin/
 
 # Ignore OpenSSL configure & build cache/output
-Contribs/openssl/*32*/
-/openssl/
+/Contribs/openssl/crypto/buildinf.h
+/Contribs/openssl/d32.mak
+/Contribs/openssl/32.mak
+/Contribs/openssl/d32dll.mak
+/openssl/inc32/
 
 ## curl
 /Contribs/windows/x86/curl/curl-7.43.0/build/
@@ -91,3 +94,4 @@ Contribs/openssl/*32*/
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
+/Contribs/openssl/inc32/openssl
