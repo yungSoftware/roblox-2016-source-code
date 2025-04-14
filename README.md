@@ -24,6 +24,9 @@ After a long effort, this repository has been brought to you on github with hand
 - All the necessary libraries are included in the repository.
    - Except **Qt** since github is freaking it out, [see here to download it](/BUILDING_CONTRIBS.md)
 
+## Goals
+- Add more helpful documentation
+
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
