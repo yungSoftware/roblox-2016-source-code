@@ -57,6 +57,7 @@ After a long effort, this repository has been brought to you on github with hand
 * Asset Proxy **(index_online.php)** and Trustcheck Fixes!
 * Character and BodyColors Fetching
    * Also he gave his database, what a kind of him :)
+* Avatar Renderer
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers

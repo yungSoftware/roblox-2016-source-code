@@ -67,6 +67,10 @@ qrc_*.*
 ## curl
 /Contribs/windows/x86/curl/curl-7.43.0/build/
 
+## DSBaseClasses
+/Contribs/DSBaseClasses/Sources/Debug
+/Contribs/DSBaseClasses/Sources/Release
+
 # Custom ignore files and folders
 /App/bin/
 /Network/bin/
@@ -86,10 +90,6 @@ qrc_*.*
 /Installer/RobloxProxy/RobloxProxy_p.c
 /Rendering/ShaderCompiler/Main
 /CoreScriptConverter2/tool/win32/rsc.ilk
-
-## DSBaseClasses
-/Contribs/DSBaseClasses/Sources/Debug
-/Contribs/DSBaseClasses/Sources/Release
 
 # Dont ignore these files/folders
 !/RCCService/Mesa-7.8.1/lib/release/
