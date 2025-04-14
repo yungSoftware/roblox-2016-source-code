@@ -22,9 +22,14 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
 5. And then type this to the command prompt: `ms\32all.bat`.
 6. When the build process done, go inside this folder: `out32dll` and copy these 2 files to **C:\Trunk2016\openssl**: `ssleay32.dll, libeay32.dll`
 
-# libcurl and SDL2
+# SDL2
 - You can just go straight up and build it
-- Project Properties may needed to change depending which output file you want.
+To build SDL2 as a .DLL file, Just change the **Target Extention** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)** and Build it!
+
+# libcurl
+- You can also build that its straight forward.
+If you build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!<br>
+If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 
 **That's it, you've compiled the libraries!**
 **Also You may want to change or add the library files in the source with yours.**
