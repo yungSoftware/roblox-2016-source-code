@@ -97,3 +97,4 @@ qrc_*.*
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
+/Rendering/ShaderCompiler/ShaderCompiler.exe
