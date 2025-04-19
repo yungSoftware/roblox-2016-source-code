@@ -63,9 +63,6 @@ void FormFactorPart::setFormFactorXml(FormFactor value)
 void FormFactorPart::setFormFactorUi(FormFactor value)
 {
 	validateFormFactor(value);
-	// Deprication of FormFactor
-	// Deprecation of your mother
-	// RBX::StandardOut::singleton()->printf(RBX::MESSAGE_WARNING,"FormFactor is deprecated. You should no longer use this property.");
 
 	if (value != formFactor) {
 		destroyJoints();
