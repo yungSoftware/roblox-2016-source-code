@@ -90,6 +90,8 @@ qrc_*.*
 /Installer/RobloxProxy/RobloxProxy_i.h
 /Installer/RobloxProxy/RobloxProxy_p.c
 /Rendering/ShaderCompiler/Main
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
 /CoreScriptConverter2/tool/win32/rsc.ilk
 /Rendering/ShaderCompiler/ShaderCompiler.exe
 
@@ -98,5 +100,3 @@ qrc_*.*
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
-/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
-/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
