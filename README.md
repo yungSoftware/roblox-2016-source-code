@@ -42,7 +42,7 @@ After a long effort, this repository has been brought to you on github with hand
   - [ ] RCCService
   - [ ] RobloxStudio
   - [ ] WindowsClient
-##### ##Rendering
+##### Rendering
    - [ ] AppDraw
    - [ ] GfxBase
    - [ ] GfxCore
