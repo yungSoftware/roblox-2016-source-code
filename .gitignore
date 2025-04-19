@@ -98,3 +98,5 @@ qrc_*.*
 !/RCCService/Mesa-7.8.1/lib/release/*.pdb
 
 ## END OF GENERAL ##
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
