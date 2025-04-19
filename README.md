@@ -30,42 +30,42 @@ After a long effort, this repository has been brought to you on github with hand
 - Backport Hitius and Graphictoria Features.
 - Make it able to build all the projects in Visual Studio 2022
 ### Main
-    - [ ] App
-	- [ ] App.BulletPhysics
-	- [ ] Base
-	- [ ] CoreScriptConverter2
-	- [ ] CSG
-	- [ ] Log
-	- [ ] Network
-	- [ ] qtnribbon
-	  - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
-	- [ ] RCCService
-	- [ ] RobloxStudio
-	- [ ] WindowsClient
+  - [ ] App
+  - [ ] App.BulletPhysics
+  - [ ] Base
+  - [ ] CoreScriptConverter2
+  - [ ] CSG
+  - [ ] Log
+  - [ ] Network
+  - [ ] qtnribbon
+    - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
+  - [ ] RCCService
+  - [ ] RobloxStudio
+  - [ ] WindowsClient
 ### Rendering
-    - [ ] AppDraw
-	- [ ] GfxBase
-	- [ ] GfxCore
-	- [ ] GfxRender
-	- [ ] graphics3D
-	- [ ] LibOVR
-	- [ ] RbxG3D
+   - [ ] AppDraw
+   - [ ] GfxBase
+   - [ ] GfxCore
+   - [ ] GfxRender
+   - [ ] graphics3D
+   - [ ] LibOVR
+   - [ ] RbxG3D
 ### Other
-   	- [ ] boost.static
-	  - Needs a new Boost version.
-    - [x] DSBaseClasses
-	- [ ] libcurl
-	  - OpenSSL libraries gives unresolved external symbols so these should get updated too.
-	- [ ] SDL2
-      - Windows SDK gives "negative subscript" errors.
-	- [x] zlib
-	- [ ] ShaderCompiler
-	- [ ] Bootstrapper
-	- [ ] BootstrapperClient
-	- [ ] RobloxProxy
-	- [ ] NPRobloxProxy
-	- [ ] BootstrapperQTStudio
-	- [ ] BootstrapperRCCService
+   - [ ] boost.static
+     - Needs a new Boost version.
+   - [x] DSBaseClasses
+   - [ ] libcurl
+	 - OpenSSL libraries gives unresolved external symbols so these should get updated too.
+   - [ ] SDL2
+     - Windows SDK gives "negative subscript" errors.
+   - [x] zlib
+   - [ ] ShaderCompiler
+   - [ ] Bootstrapper
+   - [ ] BootstrapperClient
+   - [ ] RobloxProxy
+   - [ ] NPRobloxProxy
+   - [ ] BootstrapperQTStudio
+   - [ ] BootstrapperRCCService
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
