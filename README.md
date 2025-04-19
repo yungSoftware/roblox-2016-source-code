@@ -29,7 +29,6 @@ After a long effort, this repository has been brought to you on github with hand
 - Add more helpful documentation.
 - Backport Hitius and Graphictoria Features.
 - Make it able to build all the projects in Visual Studio 2022
-##### Main
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -42,7 +41,6 @@ After a long effort, this repository has been brought to you on github with hand
   - [ ] RCCService
   - [ ] RobloxStudio
   - [ ] WindowsClient
-##### Rendering
    - [ ] AppDraw
    - [ ] GfxBase
    - [ ] GfxCore
@@ -50,7 +48,6 @@ After a long effort, this repository has been brought to you on github with hand
    - [ ] graphics3D
    - [ ] LibOVR
    - [ ] RbxG3D
-##### Other
    - [ ] boost.static
      - Needs a new Boost version.
    - [x] DSBaseClasses
