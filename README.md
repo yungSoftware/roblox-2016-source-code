@@ -92,15 +92,8 @@ After a long effort, this repository has been brought to you on github with hand
 ## ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
-* Asset Proxy **(index_online.php)** and Trustcheck Fixes!
-* Character and BodyColors Fetching
-   * Also he gave his database, what a kind of him :)
-* Avatar Renderer
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
 
-[@bpr1ch3](https://github.com/bpr1ch3)
-* New Files and FFlags for Rocknet.
-
-Be a contributor by doing a helpful of changes to the source code or to the [RockNet](https://github.com/P0L3NARUBA/rocknet-rblx).
+Be a contributor by doing a helpful of changes to the source code!
