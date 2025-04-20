@@ -22,6 +22,7 @@
 ## GENERAL ##
 
 # Roblox
+App/include/security/RandomConstant.h
 App/include/security/tmp.h 
 /RobloxStudio/*.lib
 /RCCService/*.lib
