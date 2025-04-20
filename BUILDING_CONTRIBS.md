@@ -33,7 +33,7 @@ You should greeted with these:
 
 # SDL2
 - You can just go straight up and build it
-To build SDL2 as a .DLL file, Just change the **Target Extention** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)** and Build it!
+To build SDL2 as a .DLL file, Just change the **Target Extention** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC** preprocessor from the properties and Build it!
 
 # libcurl
 - You can also build that its straight forward.
