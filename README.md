@@ -84,7 +84,7 @@ After a long effort, this repository has been brought to you on github with hand
 - [VMProtect](/Contribs/VMProtectWin_2.13) = 2.13
 - [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 
-### 🔨 Tools Used
+## 🔨 Tools Used
 - [HxD](/Tools/HxD) = 2.5.0.0
 - [cecho](/Tools/cecho) = *unknown*
 - [ILSpy](/Tools/ILSpy) = 9.0
