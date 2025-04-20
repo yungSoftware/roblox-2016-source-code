@@ -42,12 +42,3 @@ If you also need to build libcurl as a .LIB file, Just change the **Target Exten
 
 **That's it, you've compiled the libraries!**
 **Also You may want to change or add the library files in the source with yours.**
-
-# Errors You May Have
-
-## SDL2
-- cannot open input file 'C:\Trunk2016\Contribs\SDL2\VisualC\Win32\Release\SDL2.lib'
-  - Copy the SDL2.lib from 'C:\Trunk2016\SDL2\Win\2.0.4' to 'C:\Trunk2016\Contribs\SDL2\VisualC\SDL\Win32\Release'
-  - Also create the Win32 & Release folders if you dont have them.
-- ``__ftol2_sse already defined in SDL2.lib(SDL_stdlib.obj)``
-  - Build SDL2 project with **HAVE_LIBC** Preprocessor Definition as .lib, Delete the **HAVE_LIBC** if you're gonna build as .dll. 
