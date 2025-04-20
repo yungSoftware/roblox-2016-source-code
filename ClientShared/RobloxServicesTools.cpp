@@ -18,7 +18,7 @@ std::string trim_trailing_slashes(const std::string &path)
 	return path.substr(0, i+1);
 }
 
-static std::string BuildGenericApiUrl(const std::string &baseUrl, const std::string &serviceNameIn, const std::string &path, const std::string &key, const char* scheme = "https")
+static std::string BuildGenericApiUrl(const std::string &baseUrl, const std::string &serviceNameIn, const std::string &path, const std::string &key, const char* scheme = "http")
 {
     std::string serviceName(serviceNameIn);
     std::string rbxUrl = ".roblox.com";
@@ -105,7 +105,7 @@ std::string GetClientVersionUploadUrl(const std::string &baseUrl, const std::str
 
 std::string GetPlayerGameDataUrl(const std::string &baseurl, int userId, const std::string &key)
 {
-	return BuildGenericApiUrl(baseurl, "", format_string("/game/players/%d", userId), key);
+	return BuildGenericApiUrl(baseurl, "", format_string("game/players/%d", userId), key);
 }
 
 std::string GetWebChatFilterURL(const std::string& baseUrl, const std::string& key)

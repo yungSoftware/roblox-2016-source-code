@@ -2235,7 +2235,7 @@ void CheatHandlingServerReplicator::PlaceAuthenticationThreadImpl(int previousPl
     }
 #endif
 
-    std::string baseUrl = ServiceProvider::create<ContentProvider>(this)->getApiBaseUrl();
+	std::string baseUrl = "http://api.gametest1.robloxlabs.com/";
     char urlBuf[2048] = {0};
 
 	sprintf_s(urlBuf, 2048, "%suniverses/validate-place-join?originPlaceId=%d&destinationPlaceId=%d", baseUrl.c_str(), previousPlaceId, requestedPlaceId);
