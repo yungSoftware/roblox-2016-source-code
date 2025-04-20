@@ -102,5 +102,3 @@ qrc_*.*
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
 
 ## END OF GENERAL ##
-/App/tmp.h
-/App/include/security/RandomConstant.h
