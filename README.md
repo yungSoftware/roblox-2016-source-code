@@ -7,14 +7,15 @@ After a long effort, this repository has been brought to you on github with hand
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 
 # Table of Contents
-1. [Features](#features--additions)
-2. [Libraries Used](#-libraries-used)
-3. [Tools Used](#-tools-used)
-4. [Contributors](#%EF%B8%8F-contributors)
+1. [Features / Additions](#-features--additions)
+2. [Current Goals](#-current-goals)
+3. [Libraries Used](#-libraries-used)
+4. [Tools Used](#-tools-used)
+5. [Contributors](#%EF%B8%8F-contributors)
 
 ---
 
-## Features / Additions
+## 🪨 Features / Additions
 - Fixed a lot of issues that breaks the compilation and the codebase
   - I messed with a lot of things to fix all the projects though, i should get props for that.
 - ColorProperty, from.RGB, from.HSV and from.Hex implementation
@@ -25,7 +26,7 @@ After a long effort, this repository has been brought to you on github with hand
 - All the necessary libraries are included in the repository.
    - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
 
-## Goals
+## 🎯 Current Goals
 - Add more helpful documentation.
 - Backport Hitius and Graphictoria Features.
 - Make it able to build all the projects in Visual Studio 2022
