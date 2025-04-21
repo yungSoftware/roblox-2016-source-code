@@ -98,6 +98,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## ❤️ Contributors
 [@xspyy](https://github.com/xspyy)
 * fromHSV and fromHex
+* Trustcheck Fixes
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
