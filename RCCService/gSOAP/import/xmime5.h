@@ -61,3 +61,14 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 */
 
 //gsoap xmime5 schema import: http://www.w3.org/2005/05/xmlmime
+//gsoap xmime5 schema namespace2: http://www.w3.org/2004/11/xmlmime
+
+/** base64 type, can be used as MIME attachment (when id and type are set) */
+struct xmime5__base64Binary
+{ unsigned char *__ptr;
+  int __size;
+  char *id;
+  char *type;
+  char *options;
+};
+typedef struct xmime5__base64Binary xmime5__base64Binary;

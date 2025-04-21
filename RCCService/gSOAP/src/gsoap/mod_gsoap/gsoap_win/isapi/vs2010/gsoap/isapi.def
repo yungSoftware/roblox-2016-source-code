@@ -1,5 +1,0 @@
-; declare the module exports for the ISAPI DLL.
-EXPORTS
-	HttpExtensionProc
-	GetExtensionVersion
-	TerminateExtension
