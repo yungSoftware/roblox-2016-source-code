@@ -30,10 +30,10 @@ After a long effort, this repository has been brought to you on github with hand
    - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
 
 ## 🎯 Current Goals
-- Add more helpful documentation.
-- Backport Hitius and Graphictoria Features.
+- Add more helpful documentation
+- Backport Hitius and Graphictoria Features
 - 64-bit Support (💀)
-- Make it able to build all the projects in the latest Visual Studio Compiler Version
+- Make it able to build all the projects inside the latest Visual Studio Version
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
