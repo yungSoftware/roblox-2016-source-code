@@ -32,6 +32,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## 🎯 Current Goals
 - Add more helpful documentation.
 - Backport Hitius and Graphictoria Features.
+- 64-bit Support (💀)
 - Make it able to build all the projects in Visual Studio 2022
   - [ ] App
   - [ ] App.BulletPhysics
