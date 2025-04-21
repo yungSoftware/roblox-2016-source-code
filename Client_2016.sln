@@ -108,11 +108,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "Contribs\SDL2\Visua
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreScriptConverter2", "CoreScriptConverter2\CoreScriptConverter2.vcxproj", "{BB0AF3CB-A723-4948-BC84-F9960876C5CE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soapcpp2", "RCCService\gSOAP\src\gsoap\VisualStudio\soapcpp2\soapcpp2\soapcpp2.vcxproj", "{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsdl2h", "RCCService\gSOAP\src\gsoap\VisualStudio\wsdl2h\wsdl2h\wsdl2h.vcxproj", "{6CBC554A-4FFB-461F-91D4-11B358802815}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gSOAP", "gSOAP", "{13A3BB85-EA5D-4FBC-BA76-85ED03AB92B7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soapcpp2", "RCCService\gSOAP\gsoap-2.7\gsoap\VisualStudio2005\soapcpp2\soapcpp2\soapcpp2.vcxproj", "{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsdl2h", "RCCService\gSOAP\gsoap-2.7\gsoap\VisualStudio2005\wsdl2h\wsdl2h\wsdl2h.vcxproj", "{6CBC554A-4FFB-461F-91D4-11B358802815}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
