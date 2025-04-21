@@ -108,6 +108,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2", "Contribs\SDL2\Visua
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreScriptConverter2", "CoreScriptConverter2\CoreScriptConverter2.vcxproj", "{BB0AF3CB-A723-4948-BC84-F9960876C5CE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soapcpp2", "RCCService\gSOAP\src\gsoap\VisualStudio\soapcpp2\soapcpp2\soapcpp2.vcxproj", "{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsdl2h", "RCCService\gSOAP\src\gsoap\VisualStudio\wsdl2h\wsdl2h\wsdl2h.vcxproj", "{6CBC554A-4FFB-461F-91D4-11B358802815}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -401,6 +405,30 @@ Global
 		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseRcc|Win32.Build.0 = NoOpt|Win32
 		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseStudio|Win32.ActiveCfg = NoOpt|Win32
 		{BB0AF3CB-A723-4948-BC84-F9960876C5CE}.ReleaseStudio|Win32.Build.0 = NoOpt|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.Debug|Win32.Build.0 = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.DebugRcc|Win32.ActiveCfg = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.DebugRcc|Win32.Build.0 = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.DebugStudio|Win32.ActiveCfg = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.DebugStudio|Win32.Build.0 = Debug|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.Release|Win32.ActiveCfg = Release|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.Release|Win32.Build.0 = Release|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.ReleaseRcc|Win32.ActiveCfg = Release|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.ReleaseRcc|Win32.Build.0 = Release|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.ReleaseStudio|Win32.ActiveCfg = Release|Win32
+		{BDD1B293-CE39-4BEC-8E63-8B1621F3EB56}.ReleaseStudio|Win32.Build.0 = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.Debug|Win32.Build.0 = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.DebugRcc|Win32.ActiveCfg = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.DebugRcc|Win32.Build.0 = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.DebugStudio|Win32.ActiveCfg = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.DebugStudio|Win32.Build.0 = Debug|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.Release|Win32.ActiveCfg = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.Release|Win32.Build.0 = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseRcc|Win32.ActiveCfg = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseRcc|Win32.Build.0 = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseStudio|Win32.ActiveCfg = Release|Win32
+		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseStudio|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
