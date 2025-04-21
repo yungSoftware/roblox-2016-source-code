@@ -45,16 +45,8 @@ After a long effort, this repository has been brought to you on github with hand
     - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
   - [ ] RCCService
   - [ ] RobloxStudio
-  - [x] soapcpp2
   - [ ] WindowsClient
-  - [x] wsdl2h
-  - [ ] AppDraw
-  - [ ] GfxBase
-  - [ ] GfxCore
-  - [ ] GfxRender
-  - [ ] graphics3D
-  - [ ] LibOVR
-  - [ ] RbxG3D
+  #### 3rd Party
   - [ ] boost.static
     - Needs a new Boost version.
   - [x] DSBaseClasses
@@ -63,33 +55,45 @@ After a long effort, this repository has been brought to you on github with hand
   - [ ] SDL2
     - Windows SDK gives "negative subscript" errors.
   - [x] zlib
+  #### gSOAP
+  - [x] soapcpp2
+  - [x] wsdl2h
+  #### Rendering
+  - [ ] AppDraw
+  - [ ] GfxBase
+  - [ ] GfxCore
+  - [ ] GfxRender
+  - [ ] graphics3D
+  - [ ] LibOVR
+  - [ ] RbxG3D
+  #### Shaders
   - [ ] ShaderCompiler
+  #### Installer
   - [ ] Bootstrapper
   - [ ] BootstrapperClient
-  - [ ] RobloxProxy
-  - [ ] NPRobloxProxy
   - [ ] BootstrapperQTStudio
   - [ ] BootstrapperRCCService
+  - [ ] RobloxProxy
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
-- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
 - [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
-- [SDL2](/Contribs/SDL2) = 2.0.4
-- [Roblox SDK](/Contribs/SDK) = *unknown*
 - [OpenSSL](/Contribs/openssl) = 1.0.0c
 - [Qt](BUILDING_CONTRIBS.md) = 4.8.5
+- [Roblox SDK](/Contribs/SDK) = *unknown*
+- [SDL2](/Contribs/SDL2) = 2.0.4
+- [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13
+- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
+- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
+- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
-- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
-- [VMProtect](/Contribs/VMProtectWin_2.13) = 2.13
-- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 
 ## 🔨 Tools Used
-- [HxD](/Tools/HxD) = 2.5.0.0
 - [cecho](/Tools/cecho) = *unknown*
+- [HxD](/Tools/HxD) = 2.5.0.0
 - [ILSpy](/Tools/ILSpy) = 9.0
 - [rbxsigner](/Tools/rbxsigner) = *unknown*
 
