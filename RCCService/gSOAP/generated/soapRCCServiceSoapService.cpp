@@ -11,7 +11,7 @@ RCCServiceSoapService::RCCServiceSoapService()
 {	RCCServiceSoapService_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 }
 
-RCCServiceSoapService::RCCServiceSoapService(const struct soap &_soap)
+RCCServiceSoapService::RCCServiceSoapService(const struct soap &_soap) 
 { }
 
 RCCServiceSoapService::RCCServiceSoapService(soap_mode iomode)

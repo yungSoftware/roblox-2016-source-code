@@ -4163,7 +4163,7 @@ gen_object_code(FILE *fd, Table *table, Symbol *ns, char *name, char *URL, char 
   if (namespaceid)
     fprintf(fd,"\n\nnamespace %s {", namespaceid);
   fprintf(fd, "\n\n%s::%s()\n{\t%s_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);\n}", name, name, name);
-  fprintf(fd, "\n\n%s::%s(const struct soap &_soap) :soap(_soap)\n{ }", name, name);
+  fprintf(fd, "\n\n%s::%s(const struct soap &_soap) \n{ }", name, name);
   fprintf(fd, "\n\n%s::%s(soap_mode iomode)\n{\t%s_init(iomode, iomode);\n}", name, name, name);
   fprintf(fd, "\n\n%s::%s(soap_mode imode, soap_mode omode)\n{\t%s_init(imode, omode);\n}", name, name, name);
   fprintf(fd, "\n\n%s::~%s()\n{ }", name, name);
