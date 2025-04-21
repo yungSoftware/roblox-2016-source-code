@@ -1,0 +1,7 @@
+
+INSTALLATION
+
+See README.txt for an overview of the gSOAP software.
+
+Visit www.genivia.com/downloads.html for download and installation instructions.
+
