@@ -45,29 +45,31 @@ After a long effort, this repository has been brought to you on github with hand
     - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
   - [ ] RCCService
   - [ ] RobloxStudio
+  - [x] soapcpp2
   - [ ] WindowsClient
-   - [ ] AppDraw
-   - [ ] GfxBase
-   - [ ] GfxCore
-   - [ ] GfxRender
-   - [ ] graphics3D
-   - [ ] LibOVR
-   - [ ] RbxG3D
-   - [ ] boost.static
-     - Needs a new Boost version.
-   - [x] DSBaseClasses
-   - [ ] libcurl
-	 - OpenSSL libraries gives unresolved external symbols so these should get updated too.
-   - [ ] SDL2
-     - Windows SDK gives "negative subscript" errors.
-   - [x] zlib
-   - [ ] ShaderCompiler
-   - [ ] Bootstrapper
-   - [ ] BootstrapperClient
-   - [ ] RobloxProxy
-   - [ ] NPRobloxProxy
-   - [ ] BootstrapperQTStudio
-   - [ ] BootstrapperRCCService
+  - [x] wsdl2h
+  - [ ] AppDraw
+  - [ ] GfxBase
+  - [ ] GfxCore
+  - [ ] GfxRender
+  - [ ] graphics3D
+  - [ ] LibOVR
+  - [ ] RbxG3D
+  - [ ] boost.static
+    - Needs a new Boost version.
+  - [x] DSBaseClasses
+  - [ ] libcurl
+    - OpenSSL libraries gives unresolved external symbols so these should get updated too.
+  - [ ] SDL2
+    - Windows SDK gives "negative subscript" errors.
+  - [x] zlib
+  - [ ] ShaderCompiler
+  - [ ] Bootstrapper
+  - [ ] BootstrapperClient
+  - [ ] RobloxProxy
+  - [ ] NPRobloxProxy
+  - [ ] BootstrapperQTStudio
+  - [ ] BootstrapperRCCService
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
