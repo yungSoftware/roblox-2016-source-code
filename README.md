@@ -75,6 +75,8 @@ After a long effort, this repository has been brought to you on github with hand
   - [ ] BootstrapperRCCService
   - [ ] RobloxProxy
 
+  - Contribs are didn't tested...
+
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
@@ -90,6 +92,7 @@ After a long effort, this repository has been brought to you on github with hand
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
+- [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7
 
 ## 🔨 Tools Used
 - [cecho](/Tools/cecho) = *unknown*
