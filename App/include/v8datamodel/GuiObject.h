@@ -11,6 +11,7 @@
 #include "Util/Rotation2D.h"
 #include "Gui/GuiDraw.h"
 #include "Script/ThreadRef.h"
+#include <math.h>
 
 namespace RBX
 {
@@ -174,6 +175,9 @@ namespace RBX
         static const Reflection::PropDescriptor<GuiObject, bool> prop_Visible;
         static const Reflection::PropDescriptor<GuiObject, int>	 prop_ZIndex;
 
+		void setanchorPoint(Vector2 value);
+		Vector2 getanchorPoint() const { return anchorPoint; }
+
 		void setSize(UDim2 value);
 		UDim2 getSize() const { return size; }
 
@@ -221,7 +225,9 @@ namespace RBX
 		void handleDragBegin(RBX::Vector2 mousePosition);
 
 		Gui::WidgetState getGuiState() const { return guiState; }
+		Vector2 anchorPoint;
 		void setGuiState(Gui::WidgetState state) { guiState = state; }
+
 
 		void setZIndex(int value);
 

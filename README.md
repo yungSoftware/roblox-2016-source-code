@@ -107,6 +107,9 @@ After a long effort, this repository has been brought to you on github with hand
 * fromHSV and fromHex
 * Trustcheck Fixes
 
+[@eprominecraft](https://github.com/eprominecraft)
+* AnchorPoint
+
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
 

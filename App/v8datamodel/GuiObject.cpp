@@ -40,6 +40,8 @@ static const Reflection::BoundFuncDesc<GuiObject, bool(UDim2, UDim2, GuiObject::
 static const Reflection::BoundFuncDesc<GuiObject, bool(UDim2, GuiObject::TweenEasingDirection, GuiObject::TweenEasingStyle, float, bool, Lua::WeakFunctionRef)> func_tweenPosition(&GuiObject::tweenPosition, "TweenPosition", "endPosition", "easingDirection", GuiObject::EASING_DIRECTION_OUT, "easingStyle", GuiObject::EASING_STYLE_QUAD, "time", 1, "override", false, "callback", Lua::WeakFunctionRef(), Security::None);
 static const Reflection::BoundFuncDesc<GuiObject, bool(UDim2, GuiObject::TweenEasingDirection, GuiObject::TweenEasingStyle, float, bool, Lua::WeakFunctionRef)> func_tweenSize(&GuiObject::tweenSize, "TweenSize", "endSize", "easingDirection", GuiObject::EASING_DIRECTION_OUT, "easingStyle", GuiObject::EASING_STYLE_QUAD, "time", 1, "override", false, "callback", Lua::WeakFunctionRef(), Security::None);
 
+static const Reflection::PropDescriptor<GuiObject, Vector2>	prop_anchorPoint("AnchorPoint", category_Data, &GuiObject::getanchorPoint, &GuiObject::setanchorPoint);
+
 static const Reflection::PropDescriptor<GuiObject, UDim2>	prop_Size("Size", category_Data, &GuiObject::getSize, &GuiObject::setSize);
 static const Reflection::PropDescriptor<GuiObject, UDim2>	prop_Position("Position", category_Data, &GuiObject::getPosition, &GuiObject::setPosition);
 static const Reflection::PropDescriptor<GuiObject, int>		prop_BorderSizePixel("BorderSizePixel", category_Data, &GuiObject::getBorderSizePixel, &GuiObject::setBorderSizePixel);
@@ -178,6 +180,7 @@ bool RBX::StringConverter<GuiObject::TweenStatus>::convertToValue(const std::str
 
 GuiObject::GuiObject(const char* name, bool active) 
 	: DescribedNonCreatable<GuiObject, GuiBase2d, sGuiObject>(name)
+	, anchorPoint()
 	, size()
 	, sizeConstraint(RELATIVE_XY)  
 	, position()
@@ -762,6 +765,13 @@ bool GuiObject::recalculateAbsolutePlacement(const Rect2D& parentViewport)
     // Update position; note that we rotate the center of the element
 	Vector2 transformedPosition = parentRotation.rotate(parentViewport.x0y0() + (position*parentViewport.wh()) + absoluteSizeFloat * 0.5f) - absoluteSizeFloat * 0.5f;
 
+	// AnchorPoint calculation
+	Vector2 absSize = getAbsoluteSize(); // i cant use the variables at the top since they require math and i dont have time
+	float AnchorPointXCalc = transformedPosition.x - absSize.x * anchorPoint.x;
+	float AnchorPointYCalc = transformedPosition.y - absSize.y * anchorPoint.y;
+
+	transformedPosition = Vector2(AnchorPointXCalc, AnchorPointYCalc);
+
 	result = setAbsolutePosition(transformedPosition);
 
     // Update rotation
@@ -801,6 +811,17 @@ void GuiObject::checkForResize()
 		{
 			handleResize(guiParent->getCanvasRect(), false);
 		}
+	}
+}
+
+void GuiObject::setanchorPoint(Vector2 value)
+{
+	if(anchorPoint != value){
+		Vector2 newValue = Vector2(std::min(1.0f, std::max(0.0f, value.x)), std::min(1.0f, std::max(0.0f, value.y)));
+		anchorPoint = newValue;
+		raisePropertyChanged(prop_anchorPoint);
+		
+		checkForResize();
 	}
 }
 
