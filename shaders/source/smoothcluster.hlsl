@@ -1,15 +1,5 @@
 #include "common.h"
 
-#if defined(DX11) || (!defined(GLSLES) && defined(GL3))
-#define ATLAS_ARRAY 1
-#define ATLAS_DECLARE(name, reg) TEX_DECLARE2DARRAY(name, reg)
-#define TEXTURE_IN_ATLAS(name) TEXTURE_IN_2DARRAY(name)
-#else
-#define ATLAS_ARRAY 0
-#define ATLAS_DECLARE(name, reg) TEX_DECLARE2D(name, reg)
-#define TEXTURE_IN_ATLAS(name) TEXTURE_IN_2D(name)
-#endif
-
 struct Appdata
 {
     ATTR_INT4 Position	: POSITION;
@@ -43,7 +33,7 @@ struct VertexOutput
 #endif
 };
 
-WORLD_MATRIX_ARRAY(WorldMatrixArray, 75);
+WORLD_MATRIX_ARRAY(WorldMatrixArray, 72);
 
 uniform float4 LayerScale;
 
@@ -56,11 +46,7 @@ float4 getUV(float3 position, ATTR_INT material, ATTR_INT projection, float seed
 
     float2 uv = float2(dot(position, u), dot(position, v)) * m.x + m.y * float2(seed, floor(seed * 2.6651441f));
 
-#if ATLAS_ARRAY
-    return float4(uv, material, 0);
-#else
     return float4(uv, m.zw);
-#endif
 }
 
 VertexOutput TerrainVS(Appdata IN)
@@ -100,20 +86,17 @@ VertexOutput TerrainVS(Appdata IN)
 	return OUT;
 }
 
-ATLAS_DECLARE(AlbedoMap, 0);
-ATLAS_DECLARE(NormalMap, 1);
-ATLAS_DECLARE(SpecularMap, 2);
-
+TEX_DECLARE2D(AlbedoMap, 0);
+TEX_DECLARE2D(NormalMap, 1);
+TEX_DECLARE2D(SpecularMap, 2);
 TEX_DECLARECUBE(EnvMap, 3);
 LGRID_SAMPLER(LightMap, 4);
 TEX_DECLARE2D(LightMapLookup, 5);
 TEX_DECLARE2D(ShadowMap, 6);
 
-float4 sampleMap(TEXTURE_IN_ATLAS(s), float4 uv)
+float4 sampleMap(TEXTURE_IN_2D(s), float4 uv)
 {
-#if ATLAS_ARRAY
-	return tex2DArray(s, uv.xyz);
-#elif defined(PIN_HQ)
+#ifdef PIN_HQ
     float2 uvs = uv.xy * LayerScale.xy;
 
     return tex2Dgrad(s, frac(uv.xy) * LayerScale.xy + uv.zw, ddx(uvs), ddy(uvs));
@@ -122,7 +105,7 @@ float4 sampleMap(TEXTURE_IN_ATLAS(s), float4 uv)
 #endif
 }
 
-float4 sampleBlend(TEXTURE_IN_ATLAS(s), float4 uv0, float4 uv1, float4 uv2, float3 w)
+float4 sampleBlend(TEXTURE_IN_2D(s), float4 uv0, float4 uv1, float4 uv2, float3 w)
 {
 	return
         sampleMap(TEXTURE(s), uv0) * w.x + 
@@ -130,7 +113,7 @@ float4 sampleBlend(TEXTURE_IN_ATLAS(s), float4 uv0, float4 uv1, float4 uv2, floa
         sampleMap(TEXTURE(s), uv2) * w.z;
 }
 
-float3 sampleNormal(TEXTURE_IN_ATLAS(s), float4 uv0, float4 uv1, float4 uv2, float3 w, float3 normal, float3 tsel)
+float3 sampleNormal(TEXTURE_IN_2D(s), float4 uv0, float4 uv1, float4 uv2, float3 w, float3 normal, float3 tsel)
 {
 	return terrainNormal(sampleMap(TEXTURE(s), uv0), sampleMap(TEXTURE(s), uv1), sampleMap(TEXTURE(s), uv2), w, normal, tsel);
 }
@@ -161,14 +144,12 @@ void TerrainPS(VertexOutput IN,
 
     float ndotl = dot(normal, -G(Lamp0Dir));
 
-    float incandescence = params.b * 2 * fade;
-
     // Compute diffuse term
-    float3 diffuse = (G(AmbientColor) + (saturate(ndotl) * G(Lamp0Color) + max(-ndotl, 0) * G(Lamp1Color)) * shadow + light.rgb + incandescence) * albedo.rgb;
+    float3 diffuse = (G(AmbientColor) + (saturate(ndotl) * G(Lamp0Color) + max(-ndotl, 0) * G(Lamp1Color)) * shadow + light.rgb + params.b * 2) * albedo.rgb;
 
-	// Compute specular term (note: guards against params.g becoming negative which can happen for pixels outside of the triangle if MSAA is on)
+	// Compute specular term
     float specularIntensity = step(0, ndotl) * params.r * fade;
-    float specularPower = saturate0(params.g) * 128 + 0.01;
+    float specularPower = params.g * 128 + 0.01;
 
 	float3 specular = G(Lamp0Color) * (specularIntensity * shadow * (float)(half)pow(saturate(dot(normal, normalize(-G(Lamp0Dir) + normalize(IN.View_Depth.xyz)))), specularPower));
 #else
