@@ -316,8 +316,9 @@ void DefaultPS(VertexOutput IN,
 #ifdef PIN_NEON
     oColor0.rgb = IN.Color.rgb * G(FadeDistance_GlowFactor).w;
     oColor0.a = 1 - fogAlpha * IN.Color.a;
-    diffuse.rgb = 0;
-    specular.rgb = 0;
+
+    // disable SSAO by setting diffuse/specular to 1
+    diffuse.rgb = specular.rgb = 1;
 #endif
 
     oColor0.rgb = lerp(G(FogColor), oColor0.rgb, fogAlpha);
