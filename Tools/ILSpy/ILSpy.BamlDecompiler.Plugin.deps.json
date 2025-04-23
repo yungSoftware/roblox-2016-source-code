@@ -11,17 +11,17 @@
           "ICSharpCode.BamlDecompiler": "8.0.0-noversion",
           "ICSharpCode.Decompiler": "8.0.0-noversion",
           "ILSpy": "1.0.0",
-          "TomsToolbox.Composition.Analyzer": "2.21.0"
+          "TomsToolbox.Composition.Analyzer": "2.22.0"
         },
         "runtime": {
           "ILSpy.BamlDecompiler.Plugin.dll": {}
         }
       },
-      "AvalonEdit/6.3.0.90": {
+      "AvalonEdit/6.3.1.120": {
         "runtime": {
-          "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
-            "assemblyVersion": "6.3.0.90",
-            "fileVersion": "6.3.0.90"
+          "lib/net8.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "assemblyVersion": "6.3.1.120",
+            "fileVersion": "6.3.1.120"
           }
         }
       },
@@ -182,127 +182,127 @@
           }
         }
       },
-      "System.Collections.Immutable/9.0.1": {
+      "System.Collections.Immutable/9.0.4": {
         "runtime": {
           "lib/net8.0/System.Collections.Immutable.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
+            "fileVersion": "9.0.425.16305"
           }
         }
       },
       "System.ComponentModel.Annotations/5.0.0": {},
-      "System.Composition.AttributedModel/9.0.1": {
+      "System.Composition.AttributedModel/9.0.4": {
         "runtime": {
           "lib/net8.0/System.Composition.AttributedModel.dll": {
-            "assemblyVersion": "9.0.0.1",
-            "fileVersion": "9.0.124.61010"
+            "assemblyVersion": "9.0.0.4",
+            "fileVersion": "9.0.425.16305"
           }
         }
       },
-      "System.Reflection.Metadata/9.0.1": {
+      "System.Reflection.Metadata/9.0.4": {
         "dependencies": {
-          "System.Collections.Immutable": "9.0.1"
+          "System.Collections.Immutable": "9.0.4"
         },
         "runtime": {
           "lib/net8.0/System.Reflection.Metadata.dll": {
             "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.124.61010"
+            "fileVersion": "9.0.425.16305"
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.1.0": {},
-      "TomsToolbox.Composition/2.21.0": {
+      "System.Runtime.CompilerServices.Unsafe/6.1.2": {},
+      "TomsToolbox.Composition/2.22.0": {
         "dependencies": {
-          "TomsToolbox.Essentials": "2.21.0"
+          "TomsToolbox.Essentials": "2.22.0"
         },
         "runtime": {
           "lib/net8.0/TomsToolbox.Composition.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Composition.Analyzer/2.21.0": {},
-      "TomsToolbox.Composition.MicrosoftExtensions/2.21.0": {
+      "TomsToolbox.Composition.Analyzer/2.22.0": {},
+      "TomsToolbox.Composition.MicrosoftExtensions/2.22.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
-          "TomsToolbox.Composition": "2.21.0"
+          "TomsToolbox.Composition": "2.22.0"
         },
         "runtime": {
           "lib/net8.0/TomsToolbox.Composition.MicrosoftExtensions.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Essentials/2.21.0": {
+      "TomsToolbox.Essentials/2.22.0": {
         "runtime": {
           "lib/net8.0/TomsToolbox.Essentials.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.ObservableCollections/2.21.0": {
+      "TomsToolbox.ObservableCollections/2.22.0": {
         "dependencies": {
-          "TomsToolbox.Essentials": "2.21.0"
+          "TomsToolbox.Essentials": "2.22.0"
         },
         "runtime": {
           "lib/net8.0/TomsToolbox.ObservableCollections.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Wpf/2.21.0": {
+      "TomsToolbox.Wpf/2.22.0": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
-          "TomsToolbox.Essentials": "2.21.0",
-          "TomsToolbox.ObservableCollections": "2.21.0"
+          "TomsToolbox.Essentials": "2.22.0",
+          "TomsToolbox.ObservableCollections": "2.22.0"
         },
         "runtime": {
           "lib/net8.0-windows7.0/TomsToolbox.Wpf.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Wpf.Composition/2.21.0": {
+      "TomsToolbox.Wpf.Composition/2.22.0": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
-          "TomsToolbox.Composition": "2.21.0",
-          "TomsToolbox.Essentials": "2.21.0",
-          "TomsToolbox.Wpf": "2.21.0"
+          "TomsToolbox.Composition": "2.22.0",
+          "TomsToolbox.Essentials": "2.22.0",
+          "TomsToolbox.Wpf": "2.22.0"
         },
         "runtime": {
           "lib/net8.0-windows7.0/TomsToolbox.Wpf.Composition.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Wpf.Composition.AttributedModel/2.21.0": {
+      "TomsToolbox.Wpf.Composition.AttributedModel/2.22.0": {
         "dependencies": {
-          "System.Composition.AttributedModel": "9.0.1",
-          "TomsToolbox.Wpf.Composition": "2.21.0"
+          "System.Composition.AttributedModel": "9.0.4",
+          "TomsToolbox.Wpf.Composition": "2.22.0"
         },
         "runtime": {
           "lib/net8.0-windows7.0/TomsToolbox.Wpf.Composition.AttributedModel.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
-      "TomsToolbox.Wpf.Styles/2.21.0": {
+      "TomsToolbox.Wpf.Styles/2.22.0": {
         "dependencies": {
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
-          "TomsToolbox.Essentials": "2.21.0",
-          "TomsToolbox.Wpf": "2.21.0"
+          "TomsToolbox.Essentials": "2.22.0",
+          "TomsToolbox.Wpf": "2.22.0"
         },
         "runtime": {
           "lib/net8.0-windows7.0/TomsToolbox.Wpf.Styles.dll": {
-            "assemblyVersion": "2.21.0.0",
-            "fileVersion": "2.21.0.0"
+            "assemblyVersion": "2.22.0.0",
+            "fileVersion": "2.22.0.0"
           }
         }
       },
@@ -319,13 +319,13 @@
       },
       "ICSharpCode.Decompiler/8.0.0-noversion": {
         "dependencies": {
-          "System.Collections.Immutable": "9.0.1",
-          "System.Reflection.Metadata": "9.0.1"
+          "System.Collections.Immutable": "9.0.4",
+          "System.Reflection.Metadata": "9.0.4"
         },
         "runtime": {
           "ICSharpCode.Decompiler.dll": {
             "assemblyVersion": "8.0.0-noversion",
-            "fileVersion": "9.0.0.7889"
+            "fileVersion": "9.1.0.7988"
           }
         }
       },
@@ -334,20 +334,20 @@
           "ICSharpCode.Decompiler": "8.0.0-noversion",
           "K4os.Compression.LZ4": "1.3.8",
           "Mono.Cecil": "0.11.6",
-          "System.Composition.AttributedModel": "9.0.1",
-          "System.Reflection.Metadata": "9.0.1",
-          "System.Runtime.CompilerServices.Unsafe": "6.1.0"
+          "System.Composition.AttributedModel": "9.0.4",
+          "System.Reflection.Metadata": "9.0.4",
+          "System.Runtime.CompilerServices.Unsafe": "6.1.2"
         },
         "runtime": {
           "ICSharpCode.ILSpyX.dll": {
             "assemblyVersion": "8.0.0-noversion",
-            "fileVersion": "9.0.0.7889"
+            "fileVersion": "9.1.0.7988"
           }
         }
       },
       "ILSpy/1.0.0": {
         "dependencies": {
-          "AvalonEdit": "6.3.0.90",
+          "AvalonEdit": "6.3.1.120",
           "DataGridExtensions": "2.6.0",
           "Dirkster.AvalonDock.Themes.VS2013": "4.72.1",
           "ICSharpCode.Decompiler": "8.0.0-noversion",
@@ -356,14 +356,14 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
           "NaturalSort.Extension": "4.3.0",
-          "TomsToolbox.Composition.MicrosoftExtensions": "2.21.0",
-          "TomsToolbox.Wpf.Composition.AttributedModel": "2.21.0",
-          "TomsToolbox.Wpf.Styles": "2.21.0"
+          "TomsToolbox.Composition.MicrosoftExtensions": "2.22.0",
+          "TomsToolbox.Wpf.Composition.AttributedModel": "2.22.0",
+          "TomsToolbox.Wpf.Styles": "2.22.0"
         },
         "runtime": {
           "ILSpy.dll": {
             "assemblyVersion": "1.0.0",
-            "fileVersion": "9.0.0.7889"
+            "fileVersion": "9.1.0.7988"
           }
         },
         "resources": {
@@ -380,12 +380,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AvalonEdit/6.3.0.90": {
+    "AvalonEdit/6.3.1.120": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
-      "path": "avalonedit/6.3.0.90",
-      "hashPath": "avalonedit.6.3.0.90.nupkg.sha512"
+      "sha512": "sha512-6ASBKPzAg64BLDlFOJo4Ypr1sA/6hB5+TfHLJaZYUSTE0jgxvKlVqKeo/ISTG9qEMxu604qUu6BGugmJkfdrNw==",
+      "path": "avalonedit/6.3.1.120",
+      "hashPath": "avalonedit.6.3.1.120.nupkg.sha512"
     },
     "DataGridExtensions/2.6.0": {
       "type": "package",
@@ -457,12 +457,12 @@
       "path": "naturalsort.extension/4.3.0",
       "hashPath": "naturalsort.extension.4.3.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/9.0.1": {
+    "System.Collections.Immutable/9.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qt4+ClsZYKzar/Rw1zbt0t9iuBUCLVNsjXicEuVQyKL7143CwhWzI2gTwzz8AhSaFYVHnpcb8SBGA+zaY4weUg==",
-      "path": "system.collections.immutable/9.0.1",
-      "hashPath": "system.collections.immutable.9.0.1.nupkg.sha512"
+      "sha512": "sha512-wfm2NgK22MmBe5qJjp52qzpkeDZKb4l9LbdubhZSehY1z4LS+lld6R+B+UQNb2AZRHu/QJlHxEUcRst5hIEejg==",
+      "path": "system.collections.immutable/9.0.4",
+      "hashPath": "system.collections.immutable.9.0.4.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/5.0.0": {
       "type": "package",
@@ -471,89 +471,89 @@
       "path": "system.componentmodel.annotations/5.0.0",
       "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
     },
-    "System.Composition.AttributedModel/9.0.1": {
+    "System.Composition.AttributedModel/9.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dZYI+yQcn2dZGnN7Q/7H13VyKJKgMnr9uiJBLeiTJTojQdy+4Alo3T/bfpCBK3FxSksyYjU4uF7wKjkxWAiHQQ==",
-      "path": "system.composition.attributedmodel/9.0.1",
-      "hashPath": "system.composition.attributedmodel.9.0.1.nupkg.sha512"
+      "sha512": "sha512-g+zXB4pcrbMTa6VElfHQ60kbbiFLm552nTIqzUtNFG8OzLPudE/04GbkZp94wKSBNbSR0b/85IYwrpqLkFJUbw==",
+      "path": "system.composition.attributedmodel/9.0.4",
+      "hashPath": "system.composition.attributedmodel.9.0.4.nupkg.sha512"
     },
-    "System.Reflection.Metadata/9.0.1": {
+    "System.Reflection.Metadata/9.0.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-XGkA0wiS4vbZu708VtlgSh40stW2ucDriDItkiJUnnp867x5HaBfmoTqdA00DYG0Ld7Kg0cLvEPkUEUxputgzQ==",
-      "path": "system.reflection.metadata/9.0.1",
-      "hashPath": "system.reflection.metadata.9.0.1.nupkg.sha512"
+      "sha512": "sha512-qeJNsMmZPc/Lieg0Md+D4F6LoLcxV3b9QsUNmBRXc2ZVOkMbAcwuO9l2jbQFv3n+fLiHJilN8v6i5aJNivjrCQ==",
+      "path": "system.reflection.metadata/9.0.4",
+      "hashPath": "system.reflection.metadata.9.0.4.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/6.1.0": {
+    "System.Runtime.CompilerServices.Unsafe/6.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-5o/HZxx6RVqYlhKSq8/zronDkALJZUT2Vz0hx43f0gwe8mwlM0y2nYlqdBwLMzr262Bwvpikeb/yEwkAa5PADg==",
-      "path": "system.runtime.compilerservices.unsafe/6.1.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.6.1.0.nupkg.sha512"
+      "sha512": "sha512-2hBr6zdbIBTDE3EhK7NSVNdX58uTK6iHW/P/Axmm9sl1xoGSLqDvMtpecn226TNwHByFokYwJmt/aQQNlO5CRw==",
+      "path": "system.runtime.compilerservices.unsafe/6.1.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.6.1.2.nupkg.sha512"
     },
-    "TomsToolbox.Composition/2.21.0": {
+    "TomsToolbox.Composition/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1ve8QawI/XZtP6hZTCVaceMEI9F1FKWtXK87yyJisKYKZx1VxbNNrkIS1XmSff2sggRWafQdHheCMAlukCnLNQ==",
-      "path": "tomstoolbox.composition/2.21.0",
-      "hashPath": "tomstoolbox.composition.2.21.0.nupkg.sha512"
+      "sha512": "sha512-X+SxtOuqlTADWq0u5ss5tNtKDvEZ7tWkfuW6wwCJo+z4jax0LlB9WXjSs2F2LD5kLTwhEOWrqXFz0X174++bzQ==",
+      "path": "tomstoolbox.composition/2.22.0",
+      "hashPath": "tomstoolbox.composition.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Composition.Analyzer/2.21.0": {
+    "TomsToolbox.Composition.Analyzer/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vJx9hxAzjni34slGz78ewqYP9Ylk8dJszfEUK1TF5cflVKMBO3ORSFd0FtICTwJtE8munvZrMrcLWwXt5bIcEA==",
-      "path": "tomstoolbox.composition.analyzer/2.21.0",
-      "hashPath": "tomstoolbox.composition.analyzer.2.21.0.nupkg.sha512"
+      "sha512": "sha512-weoSADFwnD+3fyvTX3NEdQHOHXZs3wiCiv1WCvjd19KHCXjS0o0vEib/PVsymWrLjmp8ryCoxO8t5N0t3GSc5g==",
+      "path": "tomstoolbox.composition.analyzer/2.22.0",
+      "hashPath": "tomstoolbox.composition.analyzer.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Composition.MicrosoftExtensions/2.21.0": {
+    "TomsToolbox.Composition.MicrosoftExtensions/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UoZlzDkIOrHYdoSE8J4FpHc63kOisoGtsjq6/hA0nm+vrMHxThClf1llpuIFm4Lz8MWIAUvnSVhWlBl0h4Hljw==",
-      "path": "tomstoolbox.composition.microsoftextensions/2.21.0",
-      "hashPath": "tomstoolbox.composition.microsoftextensions.2.21.0.nupkg.sha512"
+      "sha512": "sha512-pD72VMpz+SEV47LMLTsJSzGhRRbsGGbo/5FsJVjghXCnuOJ+m0fXhcaFRTumw5mgDMXFNEjnR7na4VD5mSU+KQ==",
+      "path": "tomstoolbox.composition.microsoftextensions/2.22.0",
+      "hashPath": "tomstoolbox.composition.microsoftextensions.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Essentials/2.21.0": {
+    "TomsToolbox.Essentials/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vWhVMNM/YAfyaOD/Oolv65dW3ddWX0eTlsaUshlovzbqO4HjWd3u2/G4/QFWeW/W3BuvvMRFvvsNu/z/2/n5yA==",
-      "path": "tomstoolbox.essentials/2.21.0",
-      "hashPath": "tomstoolbox.essentials.2.21.0.nupkg.sha512"
+      "sha512": "sha512-HfwsUd9WYxkKPiFMapcdDDlJ0hNOSTTxdC8SPwKbFNnAwKHFix+3oVki6RXVXGx+5duM22WSbEsJLqiG2pXuGw==",
+      "path": "tomstoolbox.essentials/2.22.0",
+      "hashPath": "tomstoolbox.essentials.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.ObservableCollections/2.21.0": {
+    "TomsToolbox.ObservableCollections/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pDhZx3HYKiSqODSCS7lx1GGV7iPm8bZmfnbqo1iV11mD9UOpjI2g/Xq9syWYoR120Uga2QcorTxaTEpm1xDXEQ==",
-      "path": "tomstoolbox.observablecollections/2.21.0",
-      "hashPath": "tomstoolbox.observablecollections.2.21.0.nupkg.sha512"
+      "sha512": "sha512-bxNKBdkH6orIcg1HR6VUOkXajIldKdAnfHwQymnzJh7UW4GQWOcS1vry+sck2ixGNLL6aqQzzXmDleN7YX76wg==",
+      "path": "tomstoolbox.observablecollections/2.22.0",
+      "hashPath": "tomstoolbox.observablecollections.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Wpf/2.21.0": {
+    "TomsToolbox.Wpf/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GQNgO8/OwyvXNZbBv1RZ/jG5IllBcl7aSWo/yFLE7SS1YbKQu1wlr8QzgNq5rXcEPjyhjrk/4KkisBgy5zixkA==",
-      "path": "tomstoolbox.wpf/2.21.0",
-      "hashPath": "tomstoolbox.wpf.2.21.0.nupkg.sha512"
+      "sha512": "sha512-OtpZG+Y75jdR/nT3VwUs1v/qlY6+hrQ+g1HUFxlG5+8DbA2riJ5q1c+E53F64IkHv+J0+GVptN9TNRV9HqAcjw==",
+      "path": "tomstoolbox.wpf/2.22.0",
+      "hashPath": "tomstoolbox.wpf.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Wpf.Composition/2.21.0": {
+    "TomsToolbox.Wpf.Composition/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E9efhXqL2gQBqYKj8A2562qrryu5cYpQMi1e4n7Lm7igcksKKJKEMgaI6y9rI3NKQZ7fRsWFonbLqeD1DfblLA==",
-      "path": "tomstoolbox.wpf.composition/2.21.0",
-      "hashPath": "tomstoolbox.wpf.composition.2.21.0.nupkg.sha512"
+      "sha512": "sha512-akAkGnE/ARavILRwEYO4Ixi/rvRlWgFrLKhzum19s4FUgcpMmZGjGNepp1I+COuLAwO7OcNe57uVjjhGOqhbyw==",
+      "path": "tomstoolbox.wpf.composition/2.22.0",
+      "hashPath": "tomstoolbox.wpf.composition.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Wpf.Composition.AttributedModel/2.21.0": {
+    "TomsToolbox.Wpf.Composition.AttributedModel/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PmawyzH7jgE51mPjE9MMKlqjATVd589U3lrup8bRJggcgwOo3nrnKGaup/0pUIBHqfXL0B/gjiI4uloRv7vhnQ==",
-      "path": "tomstoolbox.wpf.composition.attributedmodel/2.21.0",
-      "hashPath": "tomstoolbox.wpf.composition.attributedmodel.2.21.0.nupkg.sha512"
+      "sha512": "sha512-DQg6Y6MMmRxzhahPkugdfxyXI+ouktPfBM214EAeVKlm+n1Pz5TQkzJsLJ6FyKHNsJlQcjn6aOoPXhA5lFrcNg==",
+      "path": "tomstoolbox.wpf.composition.attributedmodel/2.22.0",
+      "hashPath": "tomstoolbox.wpf.composition.attributedmodel.2.22.0.nupkg.sha512"
     },
-    "TomsToolbox.Wpf.Styles/2.21.0": {
+    "TomsToolbox.Wpf.Styles/2.22.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zuB+mVN1mTA/t4tOF2So4mLEtswdppvv6iGBrXgNHKRA8MoKSaXvNItBmpmEb/2TQRVnd/bOpannwoXn6R8ksw==",
-      "path": "tomstoolbox.wpf.styles/2.21.0",
-      "hashPath": "tomstoolbox.wpf.styles.2.21.0.nupkg.sha512"
+      "sha512": "sha512-k7Yz6NScWCJ9zKCAr604tD5JUyDeSkRDxpGkhRWB2XP9WBN0RY6Y5g2SGP5BERKWQYLDbyPjMrIbjrlgTSeiMw==",
+      "path": "tomstoolbox.wpf.styles/2.22.0",
+      "hashPath": "tomstoolbox.wpf.styles.2.22.0.nupkg.sha512"
     },
     "ICSharpCode.BamlDecompiler/8.0.0-noversion": {
       "type": "project",
