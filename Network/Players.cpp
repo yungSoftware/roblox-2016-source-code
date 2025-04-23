@@ -1972,7 +1972,7 @@ void Players::disconnectPlayerLocal(int userId, int reason)
 				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LocalLuaKick", boost::lexical_cast<std::string>(placeID).c_str());
 			}
 		}
-		disconnectPlayer(*client, userId, reason);
+		// disconnectPlayer(*client, userId, reason);
 	}
 }
 
@@ -2069,7 +2069,7 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 			if (willKick) {
 				//Shut. It. Down.
 				StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
-				disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
+				// disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
 			}
 		}
 		return;
@@ -2124,7 +2124,7 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 		//Something went bad with our request
 		if (willKick) {
 			StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect send failed");
-			disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
+			// disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
 		}
 		return;
 	}
@@ -2132,7 +2132,7 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 	if (willKick) {
 		StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect");
 		//Shut. It. Down.
-		disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
+		// disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
 	}
 }
 
