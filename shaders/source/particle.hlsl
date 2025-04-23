@@ -1,12 +1,18 @@
 #include "common.h"
 
+//#define PIN_SOFT_PARTICLES 1
+
 TEX_DECLARE2D(tex, 0);
 TEX_DECLARE2D(cstrip, 1);
 TEX_DECLARE2D(astrip, 2);
+TEX_DECLARE2D(depthTex, 3);
 
 uniform float4 throttleFactor; // .x = alpha cutoff, .y = alpha boost (clamp), .w - additive/alpha ratio for Crazy shaders
 uniform float4 modulateColor;
 uniform float4 zOffset;
+uniform float4 halfPixelDepth; // .xy = half-pixel offset for 
+
+#define SOFT_PARTICLE_DENSITY  (1.0f)
 
 struct VS_INPUT
 {
@@ -21,6 +27,9 @@ struct VS_OUTPUT
 	float4 pos   : POSITION;
 	float3 uvFog : TEXCOORD0;
 	float2 colorLookup : TEXCOORD1;
+#ifdef PIN_SOFT_PARTICLES
+    float4 screen : TEXCOORD3;
+#endif
 };
 
 float4 rotScale( float4 scaleRotLife )
@@ -37,24 +46,35 @@ float4 rotScale( float4 scaleRotLife )
 	return r;
 }
 
-float4 mulq( float4 a, float4 b )
+// vs
+float3 screenCoord( float4 vsout )
 {
-	float3 i = cross( a.xyz, b.xyz )  + a.w * b.xyz + b.w * a.xyz;
-	float  r = a.w * b.w - dot( a.xyz, b.xyz );
-	return float4( i, r );
+    float3 screen;
+    screen.xy = vsout.xy / vsout.w;
+#ifndef GLSL
+    screen.xy = float2( 0.5f, -0.5f ) * screen.xy + 0.5f;
+#else
+    screen.xy = float2( 0.5f,  0.5f ) * screen.xy + 0.5f;
+#endif
+
+#if defined(GLSL) || defined(DX11)
+#else
+    screen.xy += halfPixelDepth.xy;
+#endif
+	screen.z  = min( vsout.w - zOffset.x, GBUFFER_MAX_DEPTH * 0.99f );
+    return screen;
 }
 
-float4 conj( float4 a ) { return float4( -a.xyz, a.w ); }
-
-float4 rotate( float4 v, float4 q ) 
+// ps
+float softFactor( float3 screen, float density )
 {
-	return mulq( mulq( q, v ), conj( q ) );
+    float backDepth = tex2D( depthTex, screen.xy ).r * GBUFFER_MAX_DEPTH;
+    //float factor = 1 - saturate( exp( -density * abs(backDepth - screen.z) ) );
+    float factor = saturate( density * (backDepth - screen.z) );
+    return factor;
 }
 
-float4 axis_angle( float3 axis, float angle )
-{
-	return float4( sin(angle/2) * axis, cos(angle/2) );
-}
+
 
 VS_OUTPUT vs( VS_INPUT input )
 {
@@ -71,7 +91,7 @@ VS_OUTPUT vs( VS_INPUT input )
 	pos += G(ViewRight) * dot( disp, rs.xy );
 	pos += G(ViewUp) * dot( disp, rs.zw );
 
-        float4 pos2 = pos + G(ViewDir)*zOffset.x; // Z-offset position in world space
+        float4 pos2 = pos + G(ViewDir)* zOffset.x; // Z-offset position in world space
 
         o.pos = mul( G(ViewProjection), pos );
 	
@@ -85,7 +105,11 @@ VS_OUTPUT vs( VS_INPUT input )
 
         pos2 = mul( G(ViewProjection), pos2 ); // Z-offset position in clip space
         o.pos.z = pos2.z * o.pos.w/pos2.w;     // Only need z
-        
+
+#ifdef PIN_SOFT_PARTICLES
+    o.screen.xyz = screenCoord( o.pos );
+    o.screen.w   = 1.0f/scaleRotLifeFlt.x;
+#endif
 
 	return o;
 }
@@ -96,12 +120,17 @@ float4 psAdd( VS_OUTPUT input ) : COLOR0 // #0
 	float4 texcolor = tex2D( tex, input.uvFog.xy );
 	float4   vcolor = tex2D( cstrip, input.colorLookup.xy );
            vcolor.a = tex2D( astrip, input.colorLookup.xy ).r;
-	
+
+    float sfact = 1;
+#ifdef PIN_SOFT_PARTICLES
+    sfact = softFactor( input.screen.xyz, SOFT_PARTICLE_DENSITY * input.screen.w );
+#endif
+           
 	float4 result;
 
 	result.rgb = (texcolor.rgb + vcolor.rgb) * modulateColor.rgb;
 	result.a   = texcolor.a   * vcolor.a;
-	result.rgb *= result.a;
+	result.rgb *= result.a * sfact;
 
 	result.rgb = lerp( 0.0f.xxx, result.rgb, saturate( input.uvFog.zzz ) );
 	return result;
@@ -114,10 +143,15 @@ float4 psModulate( VS_OUTPUT input ) : COLOR0 // #1
 	float4   vcolor = tex2D( cstrip, input.colorLookup.xy ) * modulateColor;
            vcolor.a = tex2D( astrip, input.colorLookup.xy ).r * modulateColor.a;
 
+    float sfact = 1;
+#ifdef PIN_SOFT_PARTICLES
+    sfact = softFactor( input.screen.xyz, SOFT_PARTICLE_DENSITY * input.screen.w );
+#endif
+
 	float4 result;
 
 	result.rgb = texcolor.rgb * vcolor.rgb;
-	result.a   = texcolor.a   * vcolor.a;
+	result.a   = texcolor.a   * vcolor.a * sfact;
 	
 	result.rgb = lerp( G(FogColor).rgb, result.rgb, saturate( input.uvFog.zzz ) );
 	return result;
@@ -136,11 +170,16 @@ float4 psCrazy( VS_OUTPUT input ) : COLOR0
 	float4  vcolor   = float4(1,0,0,0); //tex2D( cstrip, input.colorLookup.xy ); // not actually used
             vcolor.a = tex2D( astrip, input.colorLookup.xy ).r;
 	float   blendRatio = throttleFactor.w; // yeah yeah
+
+    float sfact = 1;
+#ifdef PIN_SOFT_PARTICLES
+    sfact = softFactor( input.screen.xyz, SOFT_PARTICLE_DENSITY * input.screen.w );
+#endif
 	
 	float4 result;
 
-	result.rgb = (texcolor.rgb ) * modulateColor.rgb  * vcolor.a * texcolor.a;
-	result.a   = blendRatio * texcolor.a  * vcolor.a;
+	result.rgb = (texcolor.rgb ) * modulateColor.rgb  * vcolor.a * texcolor.a * sfact;
+	result.a   = blendRatio * texcolor.a  * vcolor.a * sfact;
 
 	result = lerp( 0.0f.xxxx, result, saturate( input.uvFog.zzzz ) );
 	return result;
@@ -189,7 +228,11 @@ struct VS_OUTPUT2
 	float4 pos   : POSITION;
 	float3 uvFog : TEXCOORD0;
 	float4 color : TEXCOORD1;
+#ifdef PIN_SOFT_PARTICLES
+    float4 screen : TEXCOORD3;
+#endif
 };
+
 
 VS_OUTPUT2 vsCustom( VS_INPUT2 input )
 {
@@ -218,22 +261,35 @@ VS_OUTPUT2 vsCustom( VS_INPUT2 input )
        
 		pos2 = mul( G(ViewProjection), pos2 ); // Z-offset position in clip space
         o.pos.z = pos2.z * o.pos.w/pos2.w;     // Only need z
-
-	
+        
+#ifdef PIN_SOFT_PARTICLES
+    o.screen.xyz = screenCoord( o.pos );
+    o.screen.w   = 1.0f/scaleRotLifeFlt.x;
+#endif        
 	return o;
 }
 
 float4 psCustom( VS_OUTPUT2 input ) : COLOR0 // #1
 {
 	float4  texcolor = tex2D( tex, input.uvFog.xy );
+    
+    float sfact = 1;
+#ifdef PIN_SOFT_PARTICLES
+    sfact = softFactor( input.screen.xyz, SOFT_PARTICLE_DENSITY * input.screen.w );
+#endif
+  
+    //return float4(sfact.xxx,1);
+  
+    //sfact = 1;
+   
 	float4  vcolor   = input.color;
 
 	float   blendRatio = throttleFactor.w; // yeah yeah
 	
 	float4 result;
 
-	result.rgb = texcolor.rgb * vcolor.rgb * vcolor.a * texcolor.a;
-	result.a   = blendRatio * texcolor.a  * vcolor.a;
+	result.rgb = texcolor.rgb * vcolor.rgb * vcolor.a * texcolor.a * sfact;
+	result.a   = blendRatio * texcolor.a  * vcolor.a * sfact;
 
 	result = lerp( 0.0f.xxxx, result, saturate( input.uvFog.zzzz ) );
 	return result;

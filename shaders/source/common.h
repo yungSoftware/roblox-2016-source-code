@@ -21,16 +21,21 @@ float saturate1(float v) { return saturate(v); }
 
 #define GBUFFER_MAX_DEPTH 500.0f 
 
+#define SSAO_SPECULAR_WEIGHT 3
+#define SSAO_DIFFUSE_WEIGHT 0.3
+#define SSAO_FOG_WEIGHT 1
 
 #ifndef DX11
     #define TEX_DECLARE2D(name, reg) sampler2D name: register(s##reg)
     #define TEX_DECLARE3D(name, reg) sampler3D name: register(s##reg)
     #define TEX_DECLARECUBE(name, reg) samplerCUBE name: register(s##reg)
+    #define TEX_DECLARE2DARRAY(name, reg) sampler2DArray name: register(s##reg)
 
     #define TEXTURE(name) name
     #define TEXTURE_IN_2D(name) sampler2D name
     #define TEXTURE_IN_3D(name) sampler3D name
     #define TEXTURE_IN_CUBE(name) samplerCUBE name
+    #define TEXTURE_IN_2DARRAY(name) sampler2DArray name
 
     #define WORLD_MATRIX(name) uniform float4x4 name;
     #define WORLD_MATRIX_ARRAY(name, count) uniform float4 name [ count ];
@@ -50,18 +55,22 @@ float saturate1(float v) { return saturate(v); }
     #define TEX_DECLARE2D(name, reg) SamplerState name##Sampler: register(s##reg); Texture2D<float4> name##Texture: register(t##reg)
     #define TEX_DECLARE3D(name, reg) SamplerState name##Sampler: register(s##reg); Texture3D<float4> name##Texture: register(t##reg)
     #define TEX_DECLARECUBE(name, reg) SamplerState name##Sampler: register(s##reg); TextureCube<float4> name##Texture: register(t##reg)
+    #define TEX_DECLARE2DARRAY(name, reg) SamplerState name##Sampler: register(s##reg); Texture2DArray<float4> name##Texture: register(t##reg)
 
     #define tex2D(tex, uv) tex##Texture.Sample(tex##Sampler, uv)
     #define tex3D(tex, uv) tex##Texture.Sample(tex##Sampler, uv)
     #define texCUBE(tex, uv) tex##Texture.Sample(tex##Sampler, uv)
     #define tex2Dgrad(tex, uv, DDX, DDY) tex##Texture.SampleGrad(tex##Sampler, uv, DDX, DDY)
     #define tex2Dbias(tex, uv) tex##Texture.SampleBias(tex##Sampler, uv.xy, uv.w)
+    #define tex2Dlod(tex, uv) tex##Texture.SampleLevel(tex##Sampler, uv.xy, uv.w)
     #define texCUBEbias(tex, uv) tex##Texture.SampleBias(tex##Sampler, uv.xyz, uv.w)
+    #define tex2DArray(tex, uv) tex##Texture.Sample(tex##Sampler, uv)
 
     #define TEXTURE(name) name##Sampler, name##Texture
     #define TEXTURE_IN_2D(name) SamplerState name##Sampler, Texture2D name##Texture
     #define TEXTURE_IN_3D(name) SamplerState name##Sampler, Texture3D name##Texture
     #define TEXTURE_IN_CUBE(name) SamplerState name##Sampler, TextureCube name##Texture
+    #define TEXTURE_IN_2DARRAY(name) SamplerState name##Sampler, Texture2DArray name##Texture
 
     #define WORLD_MATRIX(name) cbuffer WorldMatrixCB : register( b1 ) { float4x4 name; }
     #define WORLD_MATRIX_ARRAY(name, count) cbuffer WorldMatrixCB : register( b1 ) { float4 name[ count ]; }
@@ -121,23 +130,17 @@ float saturate1(float v) { return saturate(v); }
 
 float4 gbufferPack(float depth, float3 diffuse, float3 specular, float fog)
 {
-	depth = saturate(depth / GBUFFER_MAX_DEPTH);
-	
-	const float3 bitSh	= float3(255*255, 255, 1);
     const float3 lumVec = float3(0.299, 0.587, 0.114);
+    float specularTerm = dot(specular, lumVec);
+    float diffuseTerm = dot(diffuse, lumVec);
 
-	float2 comp;
-	comp = depth*float2(255,255*256);
-	comp = frac(comp);
-	comp = float2(depth,comp.x*256/255) - float2(comp.x, comp.y)/255;
+    // ssaoIntensityParam kills ssao, higher value = less SSAO and other way
+	float ssaoIntensityParam = saturate1((SSAO_FOG_WEIGHT - SSAO_FOG_WEIGHT * fog) + SSAO_SPECULAR_WEIGHT * specularTerm + SSAO_DIFFUSE_WEIGHT * diffuseTerm);
 	
-	float4 result;
-	
-	result.r = lerp(1, dot(specular, lumVec), saturate(3 * fog));
-	result.g = lerp(0, dot(diffuse, lumVec), saturate(3 * fog));
-	result.ba = comp.yx;
-	
-	return result;
+    // SSAO treats depths of 0.997+ as infinite
+    // Sun rays, however, treat depth of 0.999+ as that of sky
+    // To avoid distant objects looking like sky we need to clamp to 0.998
+    return float4(min(depth / GBUFFER_MAX_DEPTH, 0.998), ssaoIntensityParam, 0, 0); // gbuffer is only 2 channel, but we are required to output all 4
 }
 
 float3 lgridOffset(float3 v, float3 n)
