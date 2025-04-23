@@ -50,7 +50,7 @@ struct VertexOutput
 #endif
 };
 
-WORLD_MATRIX_ARRAY(WorldMatrixArray, 72);
+WORLD_MATRIX_ARRAY(WorldMatrixArray, 75);
 
 uniform float4 WaveParams; // .x = frequency  .y = phase  .z = height  .w = lerp
 uniform float4 WaterColor; // deep water color
@@ -168,9 +168,7 @@ float3 sampleNormalSimple(float2 uv0, float2 uv1, float2 uv2, float3 w)
 
 float unpackDepth(float2 uv)
 {
-	float4 geomTex = tex2D(GBufferDepth, uv);
-	float d = geomTex.z * (1.0f/256.0f) + geomTex.w;
-	return d * GBUFFER_MAX_DEPTH;
+	return tex2D(GBufferDepth, uv).r * GBUFFER_MAX_DEPTH;
 }
 
 float3 getRefractedColor(float4 cpos, float3 N, float3 waterColor)
@@ -226,8 +224,8 @@ float3 getReflectedColor(float4 cpos, float3 wpos, float3 R)
     float4 cposi = Pproj + Rproj * distance;
     float2 uv = cposi.xy / cposi.w;
 
-	// Ray hit has to be inside the screen bounds
-    float ufade = abs(uv.x - 0.5) < 0.5;
+	// Ray hit has to be inside the screen bounds (tolerate 5% on left/right to reduce wedge-like artifacts on the sides)
+    float ufade = abs(uv.x - 0.5) < 0.55;
     float vfade = abs(uv.y - 0.5) < 0.5;
 
 	// Fade reflections out with distance; use max(ray hit, original depth) to discard hits that are too far

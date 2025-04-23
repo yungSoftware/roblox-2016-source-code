@@ -10,10 +10,10 @@ After a long effort, this repository has been brought to you on github with hand
 
 # Table of Contents
 1. [Features / Additions](#-features--additions)
-2. [Current Goals](#-current-goals)
-3. [Libraries Used](#-libraries-used)
-4. [Tools Used](#-tools-used)
-5. [Contributors](#%EF%B8%8F-contributors)
+2. [Libraries Used](#-libraries-used)
+3. [Tools Used](#-tools-used)
+4. [Contributors](#%EF%B8%8F-contributors)
+5. [Current Goals](#-current-goals)
 
 ---
 
@@ -28,6 +28,47 @@ After a long effort, this repository has been brought to you on github with hand
 - Cleaned up the whole source to make things easier and not complicated
 - All the necessary libraries are included in the repository.
    - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
+
+## 📚 Libraries Used
+- [Boost](/Contribs/boost_1_56_0) = 1.56.0
+- [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
+- [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
+- [OpenSSL](/Contribs/openssl) = 1.0.0c
+- [Qt](BUILDING_CONTRIBS.md) = 4.8.5
+- [Roblox SDK](/Contribs/SDK) = *unknown*
+- [SDL2](/Contribs/SDL2) = 2.0.4
+- [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13
+- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
+- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
+- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
+- [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
+- [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
+- [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
+- [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7
+
+## 🔨 Tools Used
+- [cecho](/Tools/cecho) = *unknown*
+- [HxD](/Tools/HxD) = 2.5.0.0
+- [ILSpy](/Tools/ILSpy) = 9.1
+- [rbxsigner](/Tools/rbxsigner) = *unknown*
+
+---
+
+## ❤️ Contributors
+[@xspyy](https://github.com/xspyy)
+* fromHSV and fromHex
+* Trustcheck Fixes
+
+[@eprominecraft](https://github.com/eprominecraft)
+* AnchorPoint
+* New Shaders
+
+[@cetcat](https://github.com/cetcat)
+* Helped Compilation of Bootstrappers
+
+Be a contributor by doing a helpful of changes to the source code!
+
+---
 
 ## 🎯 Current Goals
 - Add more helpful documentation
@@ -76,41 +117,3 @@ After a long effort, this repository has been brought to you on github with hand
   - [ ] RobloxProxy
 
   - Contribs are didn't tested...
-
-## 📚 Libraries Used
-- [Boost](/Contribs/boost_1_56_0) = 1.56.0
-- [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
-- [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
-- [OpenSSL](/Contribs/openssl) = 1.0.0c
-- [Qt](BUILDING_CONTRIBS.md) = 4.8.5
-- [Roblox SDK](/Contribs/SDK) = *unknown*
-- [SDL2](/Contribs/SDL2) = 2.0.4
-- [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13
-- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
-- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
-- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
-- [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
-- [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
-- [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
-- [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7
-
-## 🔨 Tools Used
-- [cecho](/Tools/cecho) = *unknown*
-- [HxD](/Tools/HxD) = 2.5.0.0
-- [ILSpy](/Tools/ILSpy) = 9.1
-- [rbxsigner](/Tools/rbxsigner) = *unknown*
-
----
-
-## ❤️ Contributors
-[@xspyy](https://github.com/xspyy)
-* fromHSV and fromHex
-* Trustcheck Fixes
-
-[@eprominecraft](https://github.com/eprominecraft)
-* AnchorPoint
-
-[@cetcat](https://github.com/cetcat)
-* Helped Compilation of Bootstrappers
-
-Be a contributor by doing a helpful of changes to the source code!
