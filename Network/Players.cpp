@@ -2068,7 +2068,7 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 		{
 			if (willKick) {
 				//Shut. It. Down.
-				StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
+				//StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
 				// disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
 			}
 		}
