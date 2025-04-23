@@ -97,7 +97,7 @@ After a long effort, this repository has been brought to you on github with hand
 ## 🔨 Tools Used
 - [cecho](/Tools/cecho) = *unknown*
 - [HxD](/Tools/HxD) = 2.5.0.0
-- [ILSpy](/Tools/ILSpy) = 9.0
+- [ILSpy](/Tools/ILSpy) = 9.1
 - [rbxsigner](/Tools/rbxsigner) = *unknown*
 
 ---
