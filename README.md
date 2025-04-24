@@ -73,7 +73,7 @@ Be a contributor by doing a helpful of changes to the source code!
 ## 🎯 Current Goals
 - Backport Hitius, Graphictoria and New Roblox Features 
 - 64-bit Support (💀)
-- Make it able to build all the projects with the latest Visual Studio Version (💀)
+- Make it able to build all the projects with the latest Visual Studio Version [3/31] (💀)
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -91,7 +91,7 @@ Be a contributor by doing a helpful of changes to the source code!
     - Needs a new Boost version.
   - [x] DSBaseClasses
   - [ ] libcurl
-    - OpenSSL libraries gives unresolved external symbols so these should get updated too.
+    - OpenSSL libraries gives unresolved external symbols so these should get updated.
   - [ ] SDL2
     - Windows SDK gives "negative subscript" errors.
   - [x] zlib
