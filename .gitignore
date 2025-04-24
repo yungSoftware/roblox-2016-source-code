@@ -14,7 +14,7 @@
 [Ll]ogs/
 
 # Upgrade
-[B]backup*/
+[Bb]ackup*/
 UpgradeLog*.*
 
 
