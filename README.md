@@ -96,8 +96,8 @@ Be a contributor by doing a helpful of changes to the source code!
     - Windows SDK gives "negative subscript" errors.
   - [x] zlib
   #### gSOAP
-  - [ ] soapcpp2
-  - [ ] wsdl2h
+  - [x] soapcpp2
+  - [x] wsdl2h
   #### Rendering
   - [ ] AppDraw
   - [ ] GfxBase
