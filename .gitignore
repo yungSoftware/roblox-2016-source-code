@@ -13,6 +13,11 @@
 [Oo]bj/
 [Ll]ogs/
 
+# Upgrade
+[B]backup*/
+UpgradeLog*.*
+
+
 # Files built by Visual Studio
 *.obj
 *.pdb
