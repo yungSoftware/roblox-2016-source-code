@@ -44,7 +44,7 @@ After a long effort, this repository has been brought to you on github with hand
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
-- [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7
+- [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
 
 ## 🔨 Tools Used
 - [cecho](/Tools/cecho) = *unknown*
