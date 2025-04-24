@@ -86,6 +86,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] RCCService
   - [ ] RobloxStudio
   - [ ] WindowsClient
+
   #### 3rd Party
   - [ ] boost.static
     - Needs a new Boost version.
@@ -95,9 +96,11 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] SDL2
     - Windows SDK throws "negative subscript" errors.
   - [x] zlib
+
   #### gSOAP
   - [x] soapcpp2
   - [x] wsdl2h
+  
   #### Rendering
   - [ ] AppDraw
   - [ ] GfxBase
@@ -106,8 +109,10 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] graphics3D
   - [ ] LibOVR
   - [ ] RbxG3D
+
   #### Shaders
   - [ ] ShaderCompiler
+
   #### Installer
   - [ ] Bootstrapper
   - [ ] BootstrapperClient
