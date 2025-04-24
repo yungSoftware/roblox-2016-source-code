@@ -71,7 +71,7 @@ Be a contributor by doing a helpful of changes to the source code!
 ---
 
 ## 🎯 Current Goals
-- Backport Hitius and Graphictoria Features 
+- Backport Hitius, Graphictoria and New Roblox Features 
 - 64-bit Support (💀)
 - Make it able to build all the projects with the latest Visual Studio Version (💀)
   - [ ] App
