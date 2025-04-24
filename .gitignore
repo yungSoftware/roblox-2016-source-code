@@ -15,7 +15,7 @@
 
 # Upgrade
 [Bb]ackup*/
-UpgradeLog*.*
+UpgradeLog*.htm
 
 
 # Files built by Visual Studio
