@@ -93,7 +93,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] libcurl
     - OpenSSL libraries gives unresolved external symbols so these should get updated.
   - [ ] SDL2
-    - Windows SDK gives "negative subscript" errors.
+    - Windows SDK throws "negative subscript" errors.
   - [x] zlib
   #### gSOAP
   - [x] soapcpp2
