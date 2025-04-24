@@ -1,23 +1,21 @@
 /*
-	wsa5.h
 
-	Usage: See plugin/wsaapi.c
+wsa5.h
 
-	Generated with:
-	wsdl2h -cgye -o wsa5.h -t WS/WS-typemap.dat WS/WS-Addressing05.xsd
+Usage: See plugin/wsaapi.c
 
-	Modified by Robert van Engelen:
+Generated with:
+wsdl2h -cgye -o wsa5.h -t WS/WS-typemap.dat WS/WS-Addressing05.xsd
 
-	- Removed //gsoapopt
-	- Removed xsd__boolean declaration
-	- Added the following directive to import WS-Addressing namespace:
-  	//gsoap wsa5  schema import:	http://www.w3.org/2005/08/addressing
-	This ensures that the WS-Addressing schemas are not copied into the
-	generated WSDL by soapcpp2 but are referenced with schema import in the
-	generated WSDL.
-	- Added //gsoap wsa5  schema namespace2: http://schemas.xmlsoap.org/ws/2004/08/addressing
-	- Added #define SOAP_WSA_2005
-	- Added SOAP_ENV__Header struct
+Modified by Robert van Engelen:
+
+- Removed //gsoapopt
+- Removed xsd__boolean declaration
+- Added the following directive to import WS-Addressing namespace:
+  //gsoap wsa5  schema import:	http://www.w3.org/2005/08/addressing
+  This ensures that the WS-Addressing schemas are not copied into the generated
+  WSDL by soapcpp2 but are referenced with schema import in the generated WSDL.
+- Added #define SOAP_WSA_2005
 
 */
 
@@ -43,8 +41,7 @@
  *                                                                            *
 \******************************************************************************/
 
-//gsoap wsa5  schema import:		http://www.w3.org/2005/08/addressing
-//gsoap wsa5  schema namespace2:	http://schemas.xmlsoap.org/ws/2004/08/addressing
+//gsoap wsa5  schema import:	http://www.w3.org/2005/08/addressing
 //gsoap wsa5  schema elementForm:	qualified
 //gsoap wsa5  schema attributeForm:	unqualified
 
@@ -248,17 +245,5 @@ typedef struct wsa5__ProblemActionType _wsa5__ProblemAction;
 /// Attribute "http://www.w3.org/2005/08/addressing":IsReferenceParameter of simpleType xs:boolean.
 /// Imported attribute _wsa5__IsReferenceParameter from typemap WS/WS-typemap.dat.
 typedef enum _wsa5__IsReferenceParameter { wsa5__false, wsa5__true } _wsa5__IsReferenceParameter;
-
-/// Added
-struct SOAP_ENV__Header
-{
-                 _wsa5__MessageID  wsa5__MessageID 0;
-                 _wsa5__RelatesTo *wsa5__RelatesTo 0;
-                 _wsa5__From      *wsa5__From      0;
-  mustUnderstand _wsa5__ReplyTo   *wsa5__ReplyTo   0;
-  mustUnderstand _wsa5__FaultTo   *wsa5__FaultTo   0;
-  mustUnderstand _wsa5__To         wsa5__To        0;
-  mustUnderstand _wsa5__Action     wsa5__Action    0;
-};
 
 /* End of wsa5.h */

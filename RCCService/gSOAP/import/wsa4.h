@@ -15,7 +15,6 @@ Modified by Robert van Engelen:
   This ensures that the WS-Addressing schemas are not copied into the generated
   WSDL by soapcpp2 but are referenced with schema import in the generated WSDL.
 - Added #define SOAP_WSA_2004
-- Added SOAP_ENV__Header struct
 
 */
 
@@ -41,7 +40,7 @@ Modified by Robert van Engelen:
  *                                                                            *
 \******************************************************************************/
 
-//gsoap wsa4  schema import:	http://schemas.xmlsoap.org/ws/2004/03/addressing
+//gsoap wsa4  import namespace:	http://schemas.xmlsoap.org/ws/2004/03/addressing
 //gsoap wsa4  schema elementForm:	qualified
 //gsoap wsa4  schema attributeForm:	unqualified
 
@@ -189,16 +188,5 @@ typedef struct wsa4__EndpointReferenceType _wsa4__FaultTo;
 
 /// Attribute "http://schemas.xmlsoap.org/ws/2004/03/addressing":Action of simpleType xs:anyURI.
 // '_wsa4__Action' attribute definition intentionally left blank.
-
-struct SOAP_ENV__Header
-{
-                 _wsa4__MessageID  wsa4__MessageID 0;
-                 _wsa4__RelatesTo *wsa4__RelatesTo 0;
-                 _wsa4__From      *wsa4__From      0;
-  mustUnderstand _wsa4__ReplyTo   *wsa4__ReplyTo   0;
-  mustUnderstand _wsa4__FaultTo   *wsa4__FaultTo   0;
-  mustUnderstand _wsa4__To         wsa4__To        0;
-  mustUnderstand _wsa4__Action     wsa4__Action    0;
-};
 
 /* End of wsa4.h */

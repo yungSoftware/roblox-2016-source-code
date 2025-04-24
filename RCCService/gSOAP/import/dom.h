@@ -6,7 +6,7 @@ gSOAP DOM interface. Use #import "dom.h" in gSOAP header files to add DOM-based
 xsd__anyType and xsd__anyAttribute types. Automatic with wsdl2h option -d.
 
 gSOAP XML Web services tools
-Copyright (C) 2001-2008, Robert van Engelen, Genivia, Inc. All Rights Reserved.
+Copyright (C) 2001-2005, Robert van Engelen, Genivia, Inc. All Rights Reserved.
 This part of the software is released under one of the following licenses:
 GPL, the gSOAP public license, or Genivia's license for commercial use.
 --------------------------------------------------------------------------------
@@ -21,7 +21,7 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the License.
 
 The Initial Developer of the Original Code is Robert A. van Engelen.
-Copyright (C) 2000-2008 Robert A. van Engelen, Genivia inc. All Rights Reserved.
+Copyright (C) 2000-2004 Robert A. van Engelen, Genivia inc. All Rights Reserved.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -161,10 +161,8 @@ In C we use the DOM "serializers" to accomplish this as follows:
      || soap_end_recv(dom.soap))
       ... // parse error
     dom.soap->sendfd = stdout;
-    if (soap_begin_send(dom.soap))
-      ... // output error
-    dom.soap->ns = 2; // note: must use this to omit namespaces table dumping
-    if (soap_out_xsd__anyType(dom.soap, NULL, 0, &dom, NULL)
+    if (soap_begin_send(dom.soap)
+     || soap_out_xsd__anyType(dom.soap, NULL, 0, &dom, NULL)
      || soap_end_send(dom.soap))
       ... // output error
     soap_end(dom.soap);
@@ -401,7 +399,7 @@ nodes and attribute nodes, respectively.
     dom.set(myURI, "list");
     dom.add(soap_dom_attribute(dom.soap, myURI, "version", "0.9"));
     dom.add(soap_dom_element(dom.soap, myURI, "documentation", "List of products"));
-    dom.add(soap_dom_element(dom.soap, myURI, "product", &product, SOAP_TYPE_ns__myProduct);
+    dom.add(soap_dom_element(dom.soap, myURI, "product", SOAP_TYPE_ns__myProduct, &product);
     cout << dom;
     ...
 @endcode

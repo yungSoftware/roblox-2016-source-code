@@ -1,12 +1,12 @@
 /*
-	stdsoap2.c[pp] 2.7.18
+	stdsoap2.c[pp] 2.7.10
 
 	gSOAP runtime engine
 
 gSOAP XML Web services tools
-Copyright (C) 2000-2010, Robert van Engelen, Genivia Inc., All Rights Reserved.
+Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 This part of the software is released under ONE of the following licenses:
-GPL, or the gSOAP public license, or Genivia's license for commercial use.
+GPL, the gSOAP public license, OR Genivia's license for commercial use.
 --------------------------------------------------------------------------------
 Contributors:
 
@@ -24,7 +24,7 @@ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 for the specific language governing rights and limitations under the License.
 
 The Initial Developer of the Original Code is Robert A. van Engelen.
-Copyright (C) 2000-2010, Robert van Engelen, Genivia Inc., All Rights Reserved.
+Copyright (C) 2000-2008, Robert van Engelen, Genivia Inc., All Rights Reserved.
 --------------------------------------------------------------------------------
 GPL license.
 
@@ -78,15 +78,15 @@ when locally allocated data exceeds 64K.
 #  else
 #   pragma comment(lib, "wsock32.lib")
 #  endif
-#  pragma warning(disable : 4996) /* disable deprecation warnings */
+#  pragma warning(disable : 4996) // disable deprecation warnings
 # endif
 #endif
 
 #ifdef __cplusplus
-SOAP_SOURCE_STAMP("@(#) stdsoap2.cpp ver 2.7.18 2010-05-10 00:00:00 GMT")
+SOAP_SOURCE_STAMP("@(#) stdsoap2.cpp ver 2.7.10 2008-01-27 00:00:00 GMT")
 extern "C" {
 #else
-SOAP_SOURCE_STAMP("@(#) stdsoap2.c ver 2.7.18 2010-05-10 00:00:00 GMT")
+SOAP_SOURCE_STAMP("@(#) stdsoap2.c ver 2.7.10 2008-01-27 00:00:00 GMT")
 #endif
 
 /* 8bit character representing unknown/nonrepresentable character data (e.g. not supported by current locale with multibyte support enabled) */
@@ -110,10 +110,8 @@ SOAP_SOURCE_STAMP("@(#) stdsoap2.c ver 2.7.18 2010-05-10 00:00:00 GMT")
 #define soap_hash_ptr(p)	((size_t)(((unsigned long)(p) >> 3) & (SOAP_PTRHASH-1)))
 #endif
 
-#if !defined(WITH_LEAN) || defined(SOAP_DEBUG)
-static void soap_init_logs(struct soap*);
-#endif
 #ifdef SOAP_DEBUG
+static void soap_init_logs(struct soap*);
 static void soap_close_logfile(struct soap*, int);
 static void soap_set_logfile(struct soap*, int, const char*);
 #endif
@@ -131,14 +129,10 @@ static int soap_getattrval(struct soap*, char*, size_t, soap_wchar);
 #endif
 
 #ifndef PALM_1
-static void soap_free_ns(struct soap *soap);
 static soap_wchar soap_char(struct soap*);
 static soap_wchar soap_get_pi(struct soap*);
 static int soap_isxdigit(int);
 static void *fplugin(struct soap*, const char*);
-static char *soap_get_http_body(struct soap*);
-static size_t soap_count_attachments(struct soap *soap);
-static int soap_try_connect_command(struct soap*, int http_command, const char *endpoint, const char *action);
 #ifndef WITH_NOIDREF
 static void soap_update_ptrs(struct soap*, char*, char*, char*, char*);
 static int soap_has_copies(struct soap*, const char*, const char*);
@@ -153,6 +147,7 @@ static void soap_free_pht(struct soap*);
 static const char *soap_set_validation_fault(struct soap*, const char*, const char*);
 static int soap_isnumeric(struct soap*, const char*);
 static struct soap_nlist *soap_push_ns(struct soap *soap, const char *id, const char *ns, short utilized);
+static void soap_pop_ns(struct soap *soap);
 static void soap_utilize_ns(struct soap *soap, const char *tag, size_t n);
 #endif
 
@@ -172,31 +167,14 @@ static int soap_getgziphdr(struct soap*);
 #endif
 
 #ifdef WITH_OPENSSL
-# ifndef SOAP_SSL_RSA_BITS
-#  define SOAP_SSL_RSA_BITS 2048
-# endif
-static int soap_ssl_init_done = 0;
+int soap_ssl_init_done = 0;
+
 static int ssl_auth_init(struct soap*);
 static int ssl_verify_callback(int, X509_STORE_CTX*);
-static int ssl_verify_callback_allow_expired_certificate(int, X509_STORE_CTX*);
 static int ssl_password(char*, int, int, void *);
-#endif
-
-#ifdef WITH_GNUTLS
-# ifndef SOAP_SSL_RSA_BITS
-#  define SOAP_SSL_RSA_BITS 2048
-# endif
-static int soap_ssl_init_done = 0;
-static const char *ssl_verify(struct soap *soap, const char *host);
-# if defined(HAVE_PTHREAD_H)
-#  include <pthread.h>
-   /* make GNUTLS thread safe with pthreads */
-   GCRY_THREAD_OPTION_PTHREAD_IMPL;
-# elif defined(HAVE_PTH_H)
-   #include <pth.h>
-   /* make GNUTLS thread safe with PTH */
-   GCRY_THREAD_OPTION_PTH_IMPL;
-# endif
+/* The callback below is included for future references:
+static DH *ssl_tmp_dh(SSL*, int, int);
+*/
 #endif
 
 #if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
@@ -209,9 +187,11 @@ static const char *soap_decode(char*, size_t, const char*, const char*);
 #ifndef PALM_1
 static soap_wchar soap_getchunkchar(struct soap*);
 static const char *http_error(struct soap*, int);
-static int http_get(struct soap*);
-static int http_405(struct soap*);
 static int http_post(struct soap*, const char*, const char*, int, const char*, const char*, size_t);
+static int http_get(struct soap*);
+static int http_put(struct soap*);
+static int http_del(struct soap*);
+static int http_head(struct soap*);
 static int http_send_header(struct soap*, const char*);
 static int http_post_header(struct soap*, const char*, const char*);
 static int http_response(struct soap*, int, size_t);
@@ -227,22 +207,19 @@ static int fsend(struct soap*, const char*, size_t);
 static size_t frecv(struct soap*, char*, size_t);
 static int tcp_init(struct soap*);
 static const char *tcp_error(struct soap*);
+#ifndef WITH_LEAN
+static size_t frecv_stop(struct soap*, char*, size_t);
+#endif
 #ifndef WITH_IPV6
 static int tcp_gethost(struct soap*, const char *addr, struct in_addr *inaddr);
 #endif
 static SOAP_SOCKET tcp_connect(struct soap*, const char *endpoint, const char *host, int port);
 static SOAP_SOCKET tcp_accept(struct soap*, SOAP_SOCKET, struct sockaddr*, int*);
-static int tcp_select(struct soap*, SOAP_SOCKET, int, int);
 static int tcp_disconnect(struct soap*);
 static int tcp_closesocket(struct soap*, SOAP_SOCKET);
 static int tcp_shutdownsocket(struct soap*, SOAP_SOCKET, int);
 static const char *soap_strerror(struct soap*);
 #endif
-
-#define SOAP_TCP_SELECT_RCV 0x1
-#define SOAP_TCP_SELECT_SND 0x2
-#define SOAP_TCP_SELECT_ERR 0x4
-#define SOAP_TCP_SELECT_ALL 0x7
 
 #if defined(WIN32)
   #define SOAP_SOCKBLOCK(fd) \
@@ -519,17 +496,13 @@ static const struct soap_code_map mime_codes[] =
 static int tcp_done = 0;
 #endif
 
-#if defined(HP_UX) && defined(HAVE_GETHOSTBYNAME_R)
-extern int h_errno;
-#endif
-
 /******************************************************************************/
 #ifndef WITH_NOIO
 #ifndef PALM_1
 static int
 fsend(struct soap *soap, const char *s, size_t n)
 { register int nwritten, err;
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplusplus) && !defined(WITH_LEAN)
   if (soap->os)
   { soap->os->write(s, (std::streamsize)n);
     if (soap->os->good())
@@ -541,31 +514,47 @@ fsend(struct soap *soap, const char *s, size_t n)
   while (n)
   { if (soap_valid_socket(soap->socket))
     { 
+#ifndef WITH_LEAN
       if (soap->send_timeout)
-      { for (;;)
-        { register int r;
+      {
+#ifndef WIN32
+        if ((int)soap->socket >= (int)FD_SETSIZE)
+          return SOAP_FD_EXCEEDED;	/* Hint: MUST increase FD_SETSIZE */
+#endif
+        for (;;)
+        { struct timeval timeout;
+          fd_set fd;
+          register int r;
+          if (soap->send_timeout > 0)
+          { timeout.tv_sec = soap->send_timeout;
+            timeout.tv_usec = 0;
+          }
+          else
+          { timeout.tv_sec = -soap->send_timeout/1000000;
+            timeout.tv_usec = -soap->send_timeout%1000000;
+          }
+          FD_ZERO(&fd);
+          FD_SET(soap->socket, &fd);
 #ifdef WITH_OPENSSL
           if (soap->ssl)
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_ALL, soap->send_timeout);
+            r = select((int)soap->socket + 1, &fd, &fd, &fd, &timeout);
           else
 #endif
-#ifdef WITH_GNUTLS
-          if (soap->session)
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_ALL, soap->send_timeout);
-          else
-#endif
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, soap->send_timeout);
+          r = select((int)soap->socket + 1, NULL, &fd, &fd, &timeout);
           if (r > 0)
             break;
           if (!r)
+          { soap->errnum = 0;
             return SOAP_EOF;
-	  err = soap->errnum;
-	  if (!err)
-            return soap->error;
+          }
+          err = soap_socket_errno(soap->socket);
           if (err != SOAP_EINTR && err != SOAP_EAGAIN && err != SOAP_EWOULDBLOCK)
+          { soap->errnum = err;
             return SOAP_EOF;
+          }
         }
       }
+#endif
 #ifdef WITH_OPENSSL
       if (soap->ssl)
         nwritten = SSL_write(soap->ssl, s, (int)n);
@@ -573,31 +562,36 @@ fsend(struct soap *soap, const char *s, size_t n)
         nwritten = BIO_write(soap->bio, s, (int)n);
       else
 #endif
-#ifdef WITH_GNUTLS
-      if (soap->session)
-        nwritten = gnutls_record_send(soap->session, s, n);
-      else
-#endif
 #ifndef WITH_LEAN
       if ((soap->omode & SOAP_IO_UDP))
       { if (soap->peerlen)
-          nwritten = sendto(soap->socket, (char*)s, (SOAP_WINSOCKINT)n, soap->socket_flags, (struct sockaddr*)&soap->peer, (SOAP_WINSOCKINT)soap->peerlen);
+          nwritten = sendto(soap->socket, s, (SOAP_WINSOCKINT)n, soap->socket_flags, (struct sockaddr*)&soap->peer, (SOAP_WINSOCKINT)soap->peerlen);
         else
           nwritten = send(soap->socket, s, (SOAP_WINSOCKINT)n, soap->socket_flags);
         /* retry and back-off algorithm */
         /* TODO: this is not very clear from specs so verify and limit conditions under which we should loop (e.g. ENOBUFS) */
         if (nwritten < 0)
-        { int udp_repeat;
+        { struct timeval timeout;
+          fd_set fd;
+          int udp_repeat;
           int udp_delay;
+#ifndef WIN32
+          if ((int)soap->socket >= (int)FD_SETSIZE)
+            return SOAP_FD_EXCEEDED;	/* Hint: MUST increase FD_SETSIZE */
+#endif
           if ((soap->connect_flags & SO_BROADCAST))
             udp_repeat = 3; /* SOAP-over-UDP MULTICAST_UDP_REPEAT - 1 */
           else
             udp_repeat = 1; /* SOAP-over-UDP UNICAST_UDP_REPEAT - 1 */
           udp_delay = (soap_random % 201) + 50; /* UDP_MIN_DELAY .. UDP_MAX_DELAY */
           do
-          { tcp_select(soap, soap->socket, SOAP_TCP_SELECT_ERR, -1000 * udp_delay);
+          { timeout.tv_sec = 0;
+            timeout.tv_usec = 1000 * udp_delay; /* ms */
+            FD_ZERO(&fd);
+            FD_SET(soap->socket, &fd);
+            select((int)soap->socket + 1, NULL, NULL, &fd, &timeout);
             if (soap->peerlen)
-              nwritten = sendto(soap->socket, (char*)s, (SOAP_WINSOCKINT)n, soap->socket_flags, (struct sockaddr*)&soap->peer, (SOAP_WINSOCKINT)soap->peerlen);
+              nwritten = sendto(soap->socket, s, (SOAP_WINSOCKINT)n, soap->socket_flags, (struct sockaddr*)&soap->peer, (SOAP_WINSOCKINT)soap->peerlen);
             else
               nwritten = send(soap->socket, s, (SOAP_WINSOCKINT)n, soap->socket_flags);
             udp_delay <<= 1;
@@ -616,7 +610,9 @@ fsend(struct soap *soap, const char *s, size_t n)
 #endif
       if (nwritten <= 0)
       {
+#if defined(WITH_OPENSSL) || !defined(WITH_LEAN)
         register int r = 0;
+#endif
         err = soap_socket_errno(soap->socket);
 #ifdef WITH_OPENSSL
         if (soap->ssl && (r = SSL_get_error(soap->ssl, nwritten)) != SSL_ERROR_NONE && r != SSL_ERROR_WANT_READ && r != SSL_ERROR_WANT_WRITE)
@@ -624,30 +620,42 @@ fsend(struct soap *soap, const char *s, size_t n)
           return SOAP_EOF;
         }
 #endif
-#ifdef WITH_GNUTLS
-	if (soap->session)
-        { if (nwritten == GNUTLS_E_INTERRUPTED)
-	    err = SOAP_EINTR;
-	  else if (nwritten == GNUTLS_E_AGAIN)
-	    err = SOAP_EAGAIN;
-	}
-#endif
         if (err == SOAP_EWOULDBLOCK || err == SOAP_EAGAIN)
         {
-#if defined(WITH_OPENSSL)
-          if (soap->ssl && r == SSL_ERROR_WANT_READ)
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, soap->send_timeout ? soap->send_timeout : -10000);
-          else
-#elif defined(WITH_GNUTLS)
-          if (soap->session && !gnutls_record_get_direction(soap->session))
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, soap->send_timeout ? soap->send_timeout : -10000);
-          else
+#ifndef WITH_LEAN
+          struct timeval timeout;
+          fd_set fd;
+#ifndef WIN32
+          if ((int)soap->socket >= (int)FD_SETSIZE)
+            return SOAP_FD_EXCEEDED; /* Hint: MUST increase FD_SETSIZE */
 #endif
-            r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, soap->send_timeout ? soap->send_timeout : -10000);
-	  if (!r && soap->send_timeout)
+          if (soap->send_timeout > 0)
+          { timeout.tv_sec = soap->send_timeout;
+            timeout.tv_usec = 0;
+          }
+          else if (soap->send_timeout < 0)
+          { timeout.tv_sec = -soap->send_timeout/1000000;
+            timeout.tv_usec = -soap->send_timeout%1000000;
+          }
+          else
+          { timeout.tv_sec = 0;
+            timeout.tv_usec = 10000;
+          }
+          FD_ZERO(&fd);
+          FD_SET(soap->socket, &fd);
+#ifdef WITH_OPENSSL
+          if (soap->ssl && r == SSL_ERROR_WANT_READ)
+            r = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
+          else
+            r = select((int)soap->socket + 1, NULL, &fd, &fd, &timeout);
+#else
+          r = select((int)soap->socket + 1, NULL, &fd, &fd, &timeout);
+#endif
+          if (r < 0 && (r = soap_socket_errno(soap->socket)) != SOAP_EINTR)
+          { soap->errnum = r;
             return SOAP_EOF;
-	  if (r < 0 && soap->errnum != SOAP_EINTR)
-            return SOAP_EOF;
+          }
+#endif
         }
         else if (err && err != SOAP_EINTR)
         { soap->errnum = err;
@@ -668,26 +676,17 @@ fsend(struct soap *soap, const char *s, size_t n)
 #ifdef VXWORKS
 #ifdef WMW_RPM_IO
       if (soap->rpmreqid)
-        nwritten = (httpBlockPut(soap->rpmreqid, (char*)s, n) == 0) ? n : -1; 
+        nwritten = (httpBlockPut(soap->rpmreqid, s, n) == 0) ? n : -1; 
       else
 #endif
         nwritten = fwrite(s, sizeof(char), n, fdopen(soap->sendfd, "w"));
-#else
-#ifdef WIN32
-      nwritten = _write(soap->sendfd, s, (unsigned int)n);
 #else
       nwritten = write(soap->sendfd, s, (unsigned int)n);
 #endif
 #endif
 #endif
-#endif
       if (nwritten <= 0)
-      { 
-#ifndef WITH_FASTCGI
-        err = soap_errno;
-#else
-        err = EOF;
-#endif
+      { err = soap_errno;
         if (err && err != SOAP_EINTR && err != SOAP_EWOULDBLOCK && err != SOAP_EAGAIN)
         { soap->errnum = err;
           return SOAP_EOF;
@@ -746,15 +745,7 @@ SOAP_FMAC2
 soap_flush(struct soap *soap)
 { register size_t n = soap->bufidx;
   if (n)
-  {
-#ifndef WITH_LEANER
-    if ((soap->mode & SOAP_IO) == SOAP_IO_STORE)
-    { register int r;
-      if (soap->fpreparesend && (r = soap->fpreparesend(soap, soap->buf, n)))
-        return soap->error = r;
-    }
-#endif
-    soap->bufidx = 0;
+  { soap->bufidx = 0;
 #ifdef WITH_ZLIB
     if (soap->mode & SOAP_ENC_ZLIB)
     { soap->d_stream->next_in = (Byte*)soap->buf;
@@ -765,7 +756,7 @@ soap_flush(struct soap *soap)
       do
       { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Deflating %u bytes\n", soap->d_stream->avail_in));
         if (deflate(soap->d_stream, Z_NO_FLUSH) != Z_OK)
-        { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to deflate: %s\n", soap->d_stream->msg?soap->d_stream->msg:SOAP_STR_EOS));
+        { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to deflate: %s\n", soap->d_stream->msg?soap->d_stream->msg:""));
           return soap->error = SOAP_ZLIB_ERROR;
         }
         if (!soap->d_stream->avail_out)
@@ -792,9 +783,13 @@ SOAP_FMAC2
 soap_flush_raw(struct soap *soap, const char *s, size_t n)
 { if ((soap->mode & SOAP_IO) == SOAP_IO_STORE)
   { register char *t;
-    if (!(t = (char*)soap_push_block(soap, NULL, n)))
+    if (!(t = (char*)soap_push_block(soap, n)))
       return soap->error = SOAP_EOM;
     memcpy(t, s, n);
+#ifndef WITH_LEANER
+    if (soap->fpreparesend)
+      return soap->error = soap->fpreparesend(soap, s, n);
+#endif
     return SOAP_OK;
   }
 #ifndef WITH_LEANER
@@ -859,12 +854,16 @@ soap_send3(struct soap *soap, const char *s1, const char *s2, const char *s3)
 static size_t
 frecv(struct soap *soap, char *s, size_t n)
 { register int r;
+#ifndef WITH_LEAN
   register int retries = 100; /* max 100 retries with non-blocking sockets */
+#endif
   soap->errnum = 0;
-#if defined(__cplusplus) && !defined(WITH_LEAN) && !defined(WITH_COMPAT)
+#if defined(__cplusplus) && !defined(WITH_LEAN)
   if (soap->is)
   { if (soap->is->good())
-      return soap->is->read(s, (std::streamsize)n).gcount();
+	// BEGIN ROBLOX CHANGE: Add size_t cast to silence compiler warning
+      return (size_t)soap->is->read(s, (std::streamsize)n).gcount();
+    // END ROBLOX CHANGE
     return 0;
   }
 #endif
@@ -874,22 +873,47 @@ frecv(struct soap *soap, char *s, size_t n)
 #ifdef WITH_OPENSSL
       register int err = 0;
 #endif
+#ifndef WITH_LEAN
 #ifdef WITH_OPENSSL
       if (soap->recv_timeout && !soap->ssl) /* SSL: sockets are nonblocking */
 #else
       if (soap->recv_timeout)
 #endif
-      { for (;;)
-        { r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, soap->recv_timeout);
+      {
+#ifndef WIN32
+        if ((int)soap->socket >= (int)FD_SETSIZE)
+        { soap->error = SOAP_FD_EXCEEDED;
+          return 0;	/* Hint: MUST increase FD_SETSIZE */
+        }
+#endif
+        for (;;)
+        { struct timeval timeout;
+          fd_set fd;
+          if (soap->recv_timeout > 0)
+          { timeout.tv_sec = soap->recv_timeout;
+            timeout.tv_usec = 0;
+          }
+          else
+          { timeout.tv_sec = -soap->recv_timeout/1000000;
+            timeout.tv_usec = -soap->recv_timeout%1000000;
+          }
+          FD_ZERO(&fd);
+          FD_SET(soap->socket, &fd);
+          r = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
           if (r > 0)
             break;
           if (!r)
+          { soap->errnum = 0;
             return 0;
-	  r = soap->errnum;
+          }
+          r = soap_socket_errno(soap->socket);
           if (r != SOAP_EINTR && r != SOAP_EAGAIN && r != SOAP_EWOULDBLOCK)
+          { soap->errnum = r;
             return 0;
+          }
         }
       }
+#endif
 #ifdef WITH_OPENSSL
       if (soap->ssl)
       { r = SSL_read(soap->ssl, s, (int)n);
@@ -904,14 +928,6 @@ frecv(struct soap *soap, char *s, size_t n)
         if (r > 0)
           return (size_t)r;
         return 0;
-      }
-      else
-#endif
-#ifdef WITH_GNUTLS
-      if (soap->session)
-      { r = (int)gnutls_record_recv(soap->session, s, n);
-        if (r >= 0)
-	  return (size_t)r;
       }
       else
 #endif
@@ -940,25 +956,54 @@ frecv(struct soap *soap, char *s, size_t n)
           return 0;
         }
       }
-#if defined(WITH_OPENSSL)
-      if (soap->ssl && err == SSL_ERROR_WANT_WRITE)
-         r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, soap->recv_timeout ? soap->recv_timeout : 5);
-      else
-#elif defined(WITH_GNUTLS)
-      if (soap->session && gnutls_record_get_direction(soap->session))
-         r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, soap->recv_timeout ? soap->recv_timeout : 5);
-      else
+#ifndef WITH_LEAN
+      { struct timeval timeout;
+        fd_set fd;
+        if (soap->recv_timeout > 0)
+        { timeout.tv_sec = soap->recv_timeout;
+          timeout.tv_usec = 0;
+        }
+        else if (soap->recv_timeout < 0)
+        { timeout.tv_sec = -soap->recv_timeout/1000000;
+          timeout.tv_usec = -soap->recv_timeout%1000000;
+        }
+        else
+        { timeout.tv_sec = 5;
+          timeout.tv_usec = 0;
+        }
+#ifndef WIN32
+        if ((int)soap->socket >= (int)FD_SETSIZE)
+        { soap->error = SOAP_FD_EXCEEDED;
+          return 0;	/* Hint: MUST increase FD_SETSIZE */
+        }
 #endif
-        r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, soap->recv_timeout ? soap->recv_timeout : 5);
-      if (!r && soap->recv_timeout)
-        return 0;
-      if (r < 0)
-      { r = soap->errnum;
-        if (r != SOAP_EINTR && r != SOAP_EAGAIN && r != SOAP_EWOULDBLOCK)
+        FD_ZERO(&fd);
+        FD_SET(soap->socket, &fd);
+#ifdef WITH_OPENSSL
+        if (soap->ssl && err == SSL_ERROR_WANT_WRITE)
+          r = select((int)soap->socket + 1, NULL, &fd, &fd, &timeout);
+        else
+          r = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
+#else
+        r = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
+#endif
+        if (!r && soap->recv_timeout)
+        { soap->errnum = 0;
           return 0;
+        }
+        if (r < 0)
+        { r = soap_socket_errno(soap->socket);
+          if (r != SOAP_EINTR && r != SOAP_EAGAIN && r != SOAP_EWOULDBLOCK)
+          { soap->errnum = r;
+            return 0;
+          }
+        }
+        if (retries-- <= 0)
+        { soap->errnum = soap_socket_errno(soap->socket);
+          return 0;
+        }
       }
-      if (retries-- <= 0)
-        return 0;
+#endif
 #ifdef PALM
       r = soap_socket_errno(soap->socket);
       if (r != SOAP_EINTR && retries-- <= 0)
@@ -979,11 +1024,7 @@ frecv(struct soap *soap, char *s, size_t n)
     r = httpBlockRead(soap->rpmreqid, s, n);
   else
 #endif
-#ifdef WIN32
-    r = _read(soap->recvfd, s, (unsigned int)n);
-#else
     r = read(soap->recvfd, s, (unsigned int)n);
-#endif
   if (r >= 0)
     return (size_t)r;
   soap->errnum = soap_errno;
@@ -991,6 +1032,18 @@ frecv(struct soap *soap, char *s, size_t n)
 #endif
 #endif
 }
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_LEAN
+#ifndef WITH_NOIO
+#ifndef PALM_1
+static size_t
+frecv_stop(struct soap *soap, char *s, size_t n)
+{ return 0;
+}
+#endif
 #endif
 #endif
 
@@ -1027,20 +1080,16 @@ int
 SOAP_FMAC2
 soap_recv_raw(struct soap *soap)
 { register size_t ret;
-#if !defined(WITH_LEANER) || defined(WITH_ZLIB)
-  register int r;
-#endif
 #ifdef WITH_ZLIB
   if (soap->mode & SOAP_ENC_ZLIB)
   { if (soap->d_stream->next_out == Z_NULL)
       return EOF;
     if (soap->d_stream->avail_in || !soap->d_stream->avail_out)
-    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflating\n"));
+    { register int r;
+      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflating\n"));
       soap->d_stream->next_out = (Byte*)soap->buf;
       soap->d_stream->avail_out = SOAP_BUFLEN;
       r = inflate(soap->d_stream, Z_NO_FLUSH);
-      if (r == Z_NEED_DICT && soap->z_dict)
-	r = inflateSetDictionary(soap->d_stream, (const Bytef*)soap->z_dict, soap->z_dict_len);
       if (r == Z_OK || r == Z_STREAM_END)
       { soap->bufidx = 0;
         ret = soap->buflen = SOAP_BUFLEN - soap->d_stream->avail_out;
@@ -1056,15 +1105,11 @@ soap_recv_raw(struct soap *soap)
           DBGLOG(RECV, SOAP_MESSAGE(fdebug, "\n---- decompressed ----\n"));
           DBGMSG(RECV, soap->buf, ret);
           DBGLOG(RECV, SOAP_MESSAGE(fdebug, "\n----\n"));
-#ifndef WITH_LEANER
-          if (soap->fpreparerecv && (r = soap->fpreparerecv(soap, soap->buf, ret)))
-            return soap->error = r;
-#endif
           return SOAP_OK;
         }
       }
       else if (r != Z_BUF_ERROR)
-      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflate error: %s\n", soap->d_stream->msg?soap->d_stream->msg:SOAP_STR_EOS));
+      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflate error: %s\n", soap->d_stream->msg?soap->d_stream->msg:""));
         soap->d_stream->next_out = Z_NULL;
         soap->error = SOAP_ZLIB_ERROR;
         return EOF;
@@ -1118,7 +1163,7 @@ zlib_again:
       *t = '\0';
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Chunk size = %s (hex)\n", tmp));
       soap->chunksize = soap_strtoul(tmp, &t, 16);
-      if (soap->bufidx + soap->chunksize <= soap->bufidx)
+      if (!soap->chunksize)
       { soap->chunkbuflen = 0;
         DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End of chunked message\n"));
         while ((int)c != EOF && c != '\n')
@@ -1149,16 +1194,19 @@ zlib_again:
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Read %u bytes from socket %d\n", (unsigned int)ret, soap->socket));
     DBGMSG(RECV, soap->buf, ret);
   }
+#ifndef WITH_LEANER
+  if (soap->fpreparerecv && (soap->error = soap->fpreparerecv(soap, soap->buf, ret)))
+    return soap->error;
+#endif
 #ifdef WITH_ZLIB
   if (soap->mode & SOAP_ENC_ZLIB)
-  { memcpy(soap->z_buf, soap->buf, SOAP_BUFLEN);
+  { register int r;
+    memcpy(soap->z_buf, soap->buf, SOAP_BUFLEN);
     soap->d_stream->next_in = (Byte*)(soap->z_buf + soap->bufidx);
     soap->d_stream->avail_in = (unsigned int)ret;
     soap->d_stream->next_out = (Byte*)soap->buf;
     soap->d_stream->avail_out = SOAP_BUFLEN;
     r = inflate(soap->d_stream, Z_NO_FLUSH);
-    if (r == Z_NEED_DICT && soap->z_dict)
-      r = inflateSetDictionary(soap->d_stream, (const Bytef*)soap->z_dict, soap->z_dict_len);
     if (r == Z_OK || r == Z_STREAM_END)
     { soap->bufidx = 0;
       soap->z_buflen = soap->buflen;
@@ -1166,7 +1214,7 @@ zlib_again:
       if (soap->zlib_in == SOAP_ZLIB_GZIP)
         soap->z_crc = crc32(soap->z_crc, (Byte*)soap->buf, (unsigned int)soap->buflen);
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflated %u bytes\n", (unsigned int)soap->buflen));
-      if (ret && !soap->buflen && r != Z_STREAM_END)
+      if (ret && !soap->buflen)
         goto zlib_again;
       ret = soap->buflen;
       if (r == Z_STREAM_END)
@@ -1176,26 +1224,14 @@ zlib_again:
       }
       DBGLOG(RECV, SOAP_MESSAGE(fdebug, "\n---- decompressed ----\n"));
       DBGMSG(RECV, soap->buf, ret);
-#ifndef WITH_LEANER
-      if (soap->fpreparerecv && (r = soap->fpreparerecv(soap, soap->buf, ret)))
-        return soap->error = r;
-#endif
     }
     else
-    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to inflate: (%d) %s\n", r, soap->d_stream->msg?soap->d_stream->msg:SOAP_STR_EOS));
+    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to inflate: (%d) %s\n", r, soap->d_stream->msg?soap->d_stream->msg:""));
       soap->d_stream->next_out = Z_NULL;
       soap->error = SOAP_ZLIB_ERROR;
       return EOF;
     }
   }
-#endif
-#ifndef WITH_LEANER
-  if (soap->fpreparerecv
-#ifdef WITH_ZLIB
-   && soap->zlib_in == SOAP_ZLIB_NONE
-#endif
-   && (r = soap->fpreparerecv(soap, soap->buf + soap->bufidx, ret)))
-    return soap->error = r;
 #endif
   soap->count += ret;
   return !ret;
@@ -1411,8 +1447,8 @@ soap_char(struct soap *soap)
   *s = '\0';
   if (*tmp == '#')
   { if (tmp[1] == 'x' || tmp[1] == 'X')
-      return (soap_wchar)soap_strtol(tmp + 2, NULL, 16);
-    return (soap_wchar)soap_strtol(tmp + 1, NULL, 10);
+      return soap_strtol(tmp + 2, NULL, 16);
+    return atol(tmp + 1);
   }
   if (!strcmp(tmp, "lt"))
     return '<';
@@ -1565,7 +1601,7 @@ soap_get_pi(struct soap *soap)
   /* This is a quick way to parse XML PI and we could use a callback instead to
    * enable applications to intercept processing instructions */
   while ((int)c != EOF && c != '?')
-  { if (i > 1 && --i)
+  { if (--i > 0)
     { if (soap_blank(c))
         c = ' ';
       *s++ = (char)c;
@@ -1675,10 +1711,11 @@ SOAP_FMAC2
 soap_getutf8(struct soap *soap)
 { register soap_wchar c, c1, c2, c3, c4;
   c = soap->ahead;
-  if (c > 0x7F)
+  if (c > 0xFF)
   { soap->ahead = 0;
     return c;
   }
+again:
   c = soap_get(soap);
   if (c < 0x80 || (soap->mode & SOAP_ENC_LATIN))
     return c;
@@ -1691,6 +1728,8 @@ soap_getutf8(struct soap *soap)
   if (c < 0xE0)
     return ((soap_wchar)(c & 0x1F) << 6) | c1;
   c2 = (soap_wchar)soap_get1(soap) & 0x3F;
+  if (c == 0xEF && c1 == 0x3B && c2 == 0x3F)	/* ignore UTF-8 BOM */
+    goto again;
   if (c < 0xF0)
     return ((soap_wchar)(c & 0x0F) << 12) | (c1 << 6) | c2;
   c3 = (soap_wchar)soap_get1(soap) & 0x3F;
@@ -1781,13 +1820,13 @@ soap_gethex(struct soap *soap, int *n)
     }
   }
 #else
-  if (soap_new_block(soap) == NULL)
+  if (soap_new_block(soap))
     return NULL;
   for (;;)
   { register int i;
-    register char *s = (char*)soap_push_block(soap, NULL, SOAP_BLKLEN);
+    register char *s = (char*)soap_push_block(soap, SOAP_BLKLEN);
     if (!s)
-    { soap_end_block(soap, NULL);
+    { soap_end_block(soap);
       return NULL;
     }
     for (i = 0; i < SOAP_BLKLEN; i++)
@@ -1799,7 +1838,7 @@ soap_gethex(struct soap *soap, int *n)
         if (soap_isxdigit(c))
           d2 = (char)c;
         else 
-        { soap_end_block(soap, NULL);
+        { soap_end_block(soap);
           soap->error = SOAP_TYPE;
           return NULL;
         }
@@ -1808,7 +1847,7 @@ soap_gethex(struct soap *soap, int *n)
       { unsigned char *p;
         soap_unget(soap, c);
         if (n)
-          *n = (int)soap_size_block(soap, NULL, i);
+          *n = (int)soap_size_block(soap, i);
         p = (unsigned char*)soap_save_block(soap, NULL, 0);
         return p;
       }
@@ -1940,13 +1979,13 @@ soap_getbase64(struct soap *soap, int *n, int malloc_flag)
     }
   }
 #else
-  if (soap_new_block(soap) == NULL)
+  if (soap_new_block(soap))
     return NULL;
   for (;;)
   { register int i;
-    register char *s = (char*)soap_push_block(soap, NULL, 3 * SOAP_BLKLEN); /* must be multiple of 3 */
+    register char *s = (char*)soap_push_block(soap, 3 * SOAP_BLKLEN); /* must be multiple of 3 */
     if (!s)
-    { soap_end_block(soap, NULL);
+    { soap_end_block(soap);
       return NULL;
     }
     for (i = 0; i < SOAP_BLKLEN; i++)
@@ -1968,7 +2007,7 @@ soap_getbase64(struct soap *soap, int *n, int malloc_flag)
               i += 2;
           }
           if (n)
-            *n = (int)soap_size_block(soap, NULL, i);
+            *n = (int)soap_size_block(soap, i);
           p = (unsigned char*)soap_save_block(soap, NULL, 0);
           if (c >= 0)
           { while ((int)((c = soap_get(soap)) != EOF) && c != SOAP_LT && c != SOAP_TT)
@@ -2090,20 +2129,18 @@ soap_wstrdup(struct soap *soap, const wchar_t *s)
 /******************************************************************************/
 #ifndef PALM_1
 SOAP_FMAC1
-struct soap_blist*
+int
 SOAP_FMAC2
 soap_new_block(struct soap *soap)
 { struct soap_blist *p;
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "New block sequence (prev=%p)\n", soap->blist));
   if (!(p = (struct soap_blist*)SOAP_MALLOC(soap, sizeof(struct soap_blist))))
-  { soap->error = SOAP_EOM;   
-    return NULL;
-  }
+    return SOAP_EOM;   
   p->next = soap->blist; 
   p->ptr = NULL;
   p->size = 0;
   soap->blist = p;
-  return p;
+  return SOAP_OK;
 }
 #endif
 
@@ -2112,19 +2149,17 @@ soap_new_block(struct soap *soap)
 SOAP_FMAC1
 void*
 SOAP_FMAC2
-soap_push_block(struct soap *soap, struct soap_blist *b, size_t n)
+soap_push_block(struct soap *soap, size_t n)
 { char *p;
-  if (!b)
-    b = soap->blist;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Push block of %u bytes (%u bytes total)\n", (unsigned int)n, (unsigned int)b->size + (unsigned int)n));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Push block of %u bytes (%u bytes total)\n", (unsigned int)n, (unsigned int)soap->blist->size + (unsigned int)n));
   if (!(p = (char*)SOAP_MALLOC(soap, n + sizeof(char*) + sizeof(size_t))))
   { soap->error = SOAP_EOM;
     return NULL;
   }
-  *(char**)p = b->ptr;
+  *(char**)p = soap->blist->ptr;
   *(size_t*)(p + sizeof(char*)) = n;
-  b->ptr = p;
-  b->size += n;
+  soap->blist->ptr = p;
+  soap->blist->size += n;
   return p + sizeof(char*) + sizeof(size_t);
 }
 #endif
@@ -2134,16 +2169,14 @@ soap_push_block(struct soap *soap, struct soap_blist *b, size_t n)
 SOAP_FMAC1
 void
 SOAP_FMAC2
-soap_pop_block(struct soap *soap, struct soap_blist *b)
+soap_pop_block(struct soap *soap)
 { char *p;
-  if (!b)
-    b = soap->blist;
-  if (!b->ptr)
+  if (!soap->blist->ptr)
     return;
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Pop block\n"));
-  p = b->ptr;
-  b->size -= *(size_t*)(p + sizeof(char*));
-  b->ptr = *(char**)p;
+  p = soap->blist->ptr;
+  soap->blist->size -= *(size_t*)(p + sizeof(char*));
+  soap->blist->ptr = *(char**)p;
   SOAP_FREE(soap, p);
 }
 #endif
@@ -2191,7 +2224,7 @@ soap_update_ptrs(struct soap *soap, char *start, char *end, char *p1, char *p2)
 #ifndef WITH_LEANER
   for (xp = soap->xlist; xp; xp = xp->next)
   { if (xp->ptr && (char*)xp->ptr >= start && (char*)xp->ptr < end)
-    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Update id='%s' %p -> %p\n", xp->id?xp->id:SOAP_STR_EOS, xp->ptr, (char*)xp->ptr + (p1-p2)));
+    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Update id='%s' %p -> %p\n", xp->id?xp->id:"", xp->ptr, (char*)xp->ptr + (p1-p2)));
       xp->ptr = (unsigned char**)((char*)xp->ptr + (p1-p2));
       xp->size = (int*)((char*)xp->size + (p1-p2));
       xp->type = (char**)((char*)xp->type + (p1-p2));
@@ -2324,14 +2357,12 @@ soap_resolve(struct soap *soap)
 SOAP_FMAC1
 size_t
 SOAP_FMAC2
-soap_size_block(struct soap *soap, struct soap_blist *b, size_t n)
-{ if (!b)
-    b = soap->blist;
-  if (b->ptr)
-  { b->size -= *(size_t*)(b->ptr + sizeof(char*)) - n;
-    *(size_t*)(b->ptr + sizeof(char*)) = n;
+soap_size_block(struct soap *soap, size_t n)
+{ if (soap->blist->ptr)
+  { soap->blist->size -= *(size_t*)(soap->blist->ptr + sizeof(char*)) - n;
+    *(size_t*)(soap->blist->ptr + sizeof(char*)) = n;
   }
-  return b->size;
+  return soap->blist->size;
 }
 #endif
 
@@ -2340,11 +2371,9 @@ soap_size_block(struct soap *soap, struct soap_blist *b, size_t n)
 SOAP_FMAC1
 char*
 SOAP_FMAC2
-soap_first_block(struct soap *soap, struct soap_blist *b)
+soap_first_block(struct soap *soap)
 { char *p, *q, *r;
-  if (!b)
-    b = soap->blist;
-  p = b->ptr;
+  p = soap->blist->ptr;
   if (!p)
     return NULL;
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "First block\n"));
@@ -2355,7 +2384,7 @@ soap_first_block(struct soap *soap, struct soap_blist *b)
     r = p;
     p = q;
   } while (p);
-  b->ptr = r;
+  soap->blist->ptr = r;
   return r + sizeof(char*) + sizeof(size_t);
 }
 #endif
@@ -2365,17 +2394,15 @@ soap_first_block(struct soap *soap, struct soap_blist *b)
 SOAP_FMAC1
 char*
 SOAP_FMAC2
-soap_next_block(struct soap *soap, struct soap_blist *b)
+soap_next_block(struct soap *soap)
 { char *p;
-  if (!b)
-    b = soap->blist;
-  p = b->ptr;
+  p = soap->blist->ptr;
   if (p)
   { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Next block\n"));
-    b->ptr = *(char**)p;
+    soap->blist->ptr = *(char**)p;
     SOAP_FREE(soap, p);
-    if (b->ptr)
-      return b->ptr + sizeof(char*) + sizeof(size_t);
+    if (soap->blist->ptr)
+      return soap->blist->ptr + sizeof(char*) + sizeof(size_t);
   }
   return NULL;
 }
@@ -2386,10 +2413,8 @@ soap_next_block(struct soap *soap, struct soap_blist *b)
 SOAP_FMAC1
 size_t
 SOAP_FMAC2
-soap_block_size(struct soap *soap, struct soap_blist *b)
-{ if (!b)
-    b = soap->blist;
-  return *(size_t*)(b->ptr + sizeof(char*));
+soap_block_size(struct soap *soap)
+{ return *(size_t*)(soap->blist->ptr + sizeof(char*));
 }
 #endif
 
@@ -2398,28 +2423,18 @@ soap_block_size(struct soap *soap, struct soap_blist *b)
 SOAP_FMAC1
 void
 SOAP_FMAC2
-soap_end_block(struct soap *soap, struct soap_blist *b)
-{ char *p, *q;
-  if (!b)
-    b = soap->blist;
-  if (b)
+soap_end_block(struct soap *soap)
+{ struct soap_blist *bp;
+  char *p, *q;
+  bp = soap->blist;
+  if (bp)
   { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End of block sequence, free all remaining blocks\n"));
-    for (p = b->ptr; p; p = q)
+    for (p = bp->ptr; p; p = q)
     { q = *(char**)p;
       SOAP_FREE(soap, p);
     }
-    if (soap->blist == b)
-      soap->blist = b->next;
-    else
-    { struct soap_blist *bp;
-      for (bp = soap->blist; bp; bp = bp->next)
-      { if (bp->next == b)
-        { bp->next = b->next;
-	  break;
-        }
-      }
-    }
-    SOAP_FREE(soap, b);
+    soap->blist = bp->next;
+    SOAP_FREE(soap, bp);
   }
   DBGLOG(TEST, if (soap->blist) SOAP_MESSAGE(fdebug, "Restore previous block sequence\n"));
 }
@@ -2430,18 +2445,16 @@ soap_end_block(struct soap *soap, struct soap_blist *b)
 SOAP_FMAC1
 char*
 SOAP_FMAC2
-soap_save_block(struct soap *soap, struct soap_blist *b, char *p, int flag)
+soap_save_block(struct soap *soap, char *p, int flag)
 { register size_t n;
   register char *q, *s;
-  if (!b)
-    b = soap->blist;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Save all blocks in contiguous memory space of %u bytes (%p->%p)\n", (unsigned int)b->size, b->ptr, p));
-  if (b->size)
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Save all blocks in contiguous memory space of %u bytes (%p->%p)\n", (unsigned int)soap->blist->size, soap->blist->ptr, p));
+  if (soap->blist->size)
   { if (!p)
-      p = (char*)soap_malloc(soap, b->size);
+      p = (char*)soap_malloc(soap, soap->blist->size);
     if (p)
-    { for (s = p, q = soap_first_block(soap, b); q; q = soap_next_block(soap, b))
-      { n = soap_block_size(soap, b);
+    { for (s = p, q = soap_first_block(soap); q; q = soap_next_block(soap))
+      { n = soap_block_size(soap);
 #ifndef WITH_NOIDREF
         if (flag)
           soap_update_ptrs(soap, q, q + n, s, q);
@@ -2454,7 +2467,7 @@ soap_save_block(struct soap *soap, struct soap_blist *b, char *p, int flag)
     else
       soap->error = SOAP_EOM;
   }
-  soap_end_block(soap, b);
+  soap_end_block(soap);
   return p;
 }
 #endif
@@ -2559,14 +2572,14 @@ soap_getoffsets(const char *attr, const int *size, int *offset, int dim)
     for (i = 0; i < dim && attr && *attr; i++)
     { attr++;
       j *= size[i];
-      j += offset[i] = (int)soap_strtol(attr, NULL, 10);
+      j += offset[i] = (int)atol(attr);
       attr = strchr(attr, ',');
     }
   else
     for (i = 0; i < dim && attr && *attr; i++)
     { attr++;
       j *= size[i];
-      j += (int)soap_strtol(attr, NULL, 10);
+      j += (int)atol(attr);
       attr = strchr(attr, ',');
     }
   return j;
@@ -2627,7 +2640,7 @@ soap_getsizes(const char *attr, int *size, int dim)
   { for (i = i-1; i >= 0; i--)
       if (attr[i] == '[' || attr[i] == ',' || attr[i] == ' ')
         break;
-    k = (int)soap_strtol(attr + i + 1, NULL, 10);
+    k = (int)atol(attr + i + 1);
     n *= size[--dim] = k;
     if (k < 0 || n > SOAP_MAXARRAYSIZE)
       return -1;
@@ -2648,7 +2661,7 @@ soap_getposition(const char *attr, int *pos)
   n = 0;
   i = 1;
   do
-  { pos[n++] = (int)soap_strtol(attr + i, NULL, 10);
+  { pos[n++] = (int)atol(attr + i);
     while (attr[i] && attr[i] != ',' && attr[i] != ']')
       i++;
     if (attr[i] == ',')
@@ -2661,7 +2674,7 @@ soap_getposition(const char *attr, int *pos)
 /******************************************************************************/
 #ifndef PALM_2
 SOAP_FMAC1
-struct soap_nlist *
+int
 SOAP_FMAC2
 soap_push_namespace(struct soap *soap, const char *id, const char *ns)
 { register struct soap_nlist *np;
@@ -2699,9 +2712,7 @@ soap_push_namespace(struct soap *soap, const char *id, const char *ns)
     k = 0;
   np = (struct soap_nlist*)SOAP_MALLOC(soap, sizeof(struct soap_nlist) + n + k);
   if (!np)
-  { soap->error = SOAP_EOM;
-    return NULL;
-  }
+    return soap->error = SOAP_EOM;
   np->next = soap->nlist;
   soap->nlist = np;
   np->level = soap->level;
@@ -2709,14 +2720,15 @@ soap_push_namespace(struct soap *soap, const char *id, const char *ns)
   strcpy(np->id, id);
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Push namespace binding (level=%u) '%s' '%s'\n", soap->level, id, ns));
   if (i < 0)
-  { np->ns = strcpy(np->id + n + 1, ns);
+  { np->ns = np->id + n + 1;
+    strcpy(np->ns, ns);
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Push NOT OK: no match found for '%s' in namespace mapping table (added to stack anyway)\n", ns));
   }
   else
   { np->ns = NULL;
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Push OK ('%s' matches '%s' in namespace table)\n", id, p->id));
   }
-  return np;
+  return SOAP_OK;
 }
 #endif
 
@@ -2746,18 +2758,14 @@ soap_match_namespace(struct soap *soap, const char *id1, const char *id2, size_t
   while (np && (strncmp(np->id, id1, n1) || np->id[n1]))
     np = np->next;
   if (np)
-  { if (!(soap->mode & SOAP_XML_IGNORENS))
-      if (np->index < 0
-       || (soap->local_namespaces[np->index].id
-        && (strncmp(soap->local_namespaces[np->index].id, id2, n2)
-         || soap->local_namespaces[np->index].id[n2])))
-        return SOAP_NAMESPACE;
+  { if (np->index < 0
+     || (soap->local_namespaces[np->index].id
+      && (strncmp(soap->local_namespaces[np->index].id, id2, n2)
+       || soap->local_namespaces[np->index].id[n2])))
+      return SOAP_NAMESPACE;
     return SOAP_OK;
   }
-  if (n1 == 0)
-    return (soap->mode & SOAP_XML_IGNORENS) ? SOAP_OK : SOAP_NAMESPACE;
-  if ((n1 == 3 && n1 == n2 && !strncmp(id1, "xml", 3) && !strncmp(id1, id2, 3))
-   || (soap->mode & SOAP_XML_IGNORENS))
+  if (n1 == 3 && n1 == n2 && !strncmp(id1, "xml", 3) && !strncmp(id1, id2, 3))
     return SOAP_OK;
   return soap->error = SOAP_SYNTAX_ERROR; 
 }
@@ -2908,12 +2916,12 @@ soap_match_array(struct soap *soap, const char *type)
 
 /******************************************************************************\
  *
- *	SSL/TLS
+ *	SSL
  *
 \******************************************************************************/
 
-/******************************************************************************/
 #ifdef WITH_OPENSSL
+/******************************************************************************/
 #ifndef PALM_2
 SOAP_FMAC1
 int
@@ -2926,10 +2934,8 @@ soap_rand()
   return *(int*)buf;
 }
 #endif
-#endif
 
 /******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 #ifndef PALM_2
 SOAP_FMAC1
 int
@@ -2940,64 +2946,18 @@ soap_ssl_server_context(struct soap *soap, unsigned short flags, const char *key
   soap->password = password;
   soap->cafile = cafile;
   soap->capath = capath;
-  soap->crlfile = NULL;
-#ifdef WITH_OPENSSL
   soap->dhfile = dhfile;
   soap->randfile = randfile;
-#endif
   soap->ssl_flags = flags | (dhfile == NULL ? SOAP_SSL_RSA : 0);
-#ifdef WITH_GNUTLS
-  if (dhfile)
-  { char *s;
-    int n = (int)soap_strtoul(dhfile, &s, 10);
-    if (!soap->dh_params)
-      gnutls_dh_params_init(&soap->dh_params);
-    /* if dhfile is numeric, treat it as a key length to generate DH params which can take a while */
-    if (n >= 512 && s && *s == '\0')
-      gnutls_dh_params_generate2(soap->dh_params, (unsigned int)n);
-    else
-    { unsigned int dparams_len;
-      unsigned char dparams_buf[1024];
-      FILE *fd = fopen(dhfile, "r");
-      if (!fd)
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Invalid DH file", SOAP_SSL_ERROR);
-      dparams_len = (unsigned int)fread(dparams_buf, 1, sizeof(dparams_buf), fd);
-      fclose(fd);
-      gnutls_datum_t dparams = { dparams_buf, dparams_len };
-      if (gnutls_dh_params_import_pkcs3(soap->dh_params, &dparams, GNUTLS_X509_FMT_PEM))
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Invalid DH file", SOAP_SSL_ERROR);
-    }
-  }
-  else
-  { if (!soap->rsa_params)
-      gnutls_rsa_params_init(&soap->rsa_params);
-    gnutls_rsa_params_generate2(soap->rsa_params, SOAP_SSL_RSA_BITS);
-  }
-  if (soap->session)
-  { gnutls_deinit(soap->session);
-    soap->session = NULL;
-  }
-  if (soap->xcred)
-  { gnutls_certificate_free_credentials(soap->xcred);
-    soap->xcred = NULL;
-  }
-#endif
-  err = soap->fsslauth(soap);
-#ifdef WITH_OPENSSL
-  if (!err)
+  if (!(err = soap->fsslauth(soap)))
   { if (sid)
       SSL_CTX_set_session_id_context(soap->ctx, (unsigned char*)sid, (unsigned int)strlen(sid));
-    else
-      SSL_CTX_set_session_cache_mode(soap->ctx, SSL_SESS_CACHE_OFF);
   }
-#endif
   return err; 
 }
 #endif
-#endif
 
 /******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 #ifndef PALM_2
 SOAP_FMAC1
 int
@@ -3007,29 +2967,14 @@ soap_ssl_client_context(struct soap *soap, unsigned short flags, const char *key
   soap->password = password;
   soap->cafile = cafile;
   soap->capath = capath;
-  soap->ssl_flags = SOAP_SSL_CLIENT | flags;
-#ifdef WITH_OPENSSL
   soap->dhfile = NULL;
+  soap->ssl_flags = flags;
   soap->randfile = randfile;
-  soap->fsslverify = (flags & SOAP_SSL_ALLOW_EXPIRED_CERTIFICATE) == 0 ? ssl_verify_callback : ssl_verify_callback_allow_expired_certificate;
-#endif
-#ifdef WITH_GNUTLS
-  if (soap->session)
-  { gnutls_deinit(soap->session);
-    soap->session = NULL;
-  }
-  if (soap->xcred)
-  { gnutls_certificate_free_credentials(soap->xcred);
-    soap->xcred = NULL;
-  }
-#endif
   return soap->fsslauth(soap);
 }
 #endif
-#endif
 
 /******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 #ifndef PALM_2
 SOAP_FMAC1
 void
@@ -3038,7 +2983,6 @@ soap_ssl_init()
 { /* Note: for MT systems, the main program MUST call soap_ssl_init() before any threads are started */
   if (!soap_ssl_init_done)
   { soap_ssl_init_done = 1;
-#ifdef WITH_OPENSSL
     SSL_library_init();
 #ifndef WITH_LEAN
     SSL_load_error_strings();
@@ -3051,31 +2995,17 @@ soap_ssl_init()
         RAND_seed(&r, sizeof(int));
       }
     }
-#endif
-#ifdef WITH_GNUTLS
-# if defined(HAVE_PTHREAD_H)
-    gcry_control(GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
-# elif defined(HAVE_PTH_H)
-    gcry_control(GCRYCTL_SET_THREAD_CBS, &gcry_threads_pth);
-# endif
-    gcry_control(GCRYCTL_ENABLE_QUICK_RANDOM, 0);
-    gnutls_global_init();
-#endif
   }
 }
 #endif
-#endif
 
 /******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 #ifndef PALM_1
 SOAP_FMAC1
 const char *
 SOAP_FMAC2
 soap_ssl_error(struct soap *soap, int ret)
-{
-#ifdef WITH_OPENSSL
-  int err = SSL_get_error(soap->ssl, ret);
+{ int err = SSL_get_error(soap->ssl, ret);
   const char *msg = soap_code_str(h_ssl_error_codes, err);
   if (msg)
     strcpy(soap->msgbuf, msg);
@@ -3098,61 +3028,93 @@ soap_ssl_error(struct soap *soap, int ret)
     }
   }
   return soap->msgbuf;
-#endif
-#ifdef WITH_GNUTLS
-  return gnutls_strerror(ret);
-#endif
 }
-#endif
 #endif
 
 /******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
+#ifndef PALM_1
+static int
+ssl_password(char *buf, int num, int rwflag, void *userdata)
+{ if (num < (int)strlen((char*)userdata) + 1)
+    return 0;
+  return (int)strlen(strcpy(buf, (char*)userdata));
+}
+#endif
+
+/******************************************************************************/
+/* This callback is included for future references. It should not be deleted
+#ifndef PALM_2
+static DH *
+ssl_tmp_dh(SSL *ssl, int is_export, int keylength)
+{ static DH *dh512 = NULL;
+  static DH *dh1024 = NULL;
+  DH *dh;
+  switch (keylength)
+  { case 512:
+      if (!dh512)
+      { BIO *bio = BIO_new_file("dh512.pem", "r");
+        if (bio)
+        { dh512 = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+          BIO_free(bio);
+          return dh512;
+        }
+      }
+      else
+        return dh512;
+    default:
+      if (!dh1024)
+      { BIO *bio = BIO_new_file("dh1024.pem", "r");
+        if (bio)
+        { dh1024 = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+          BIO_free(bio);
+        }
+      }
+      dh = dh1024;
+  }
+  return dh;
+}
+#endif
+*/
+
+/******************************************************************************/
 #ifndef PALM_1
 static int
 ssl_auth_init(struct soap *soap)
-{
-#ifdef WITH_OPENSSL
-  long flags;
+{ long flags;
   int mode;
   if (!soap_ssl_init_done)
     soap_ssl_init();
-  ERR_clear_error();
   if (!soap->ctx)
   { if (!(soap->ctx = SSL_CTX_new(SSLv23_method())))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't setup context", SOAP_SSL_ERROR);
-    /* The following alters the behavior of SSL read/write: */
-#if 0
+      return soap_set_receiver_error(soap, "SSL error", "Can't setup context", SOAP_SSL_ERROR);
+    /* Alters the behavior of SSL read/write:
     SSL_CTX_set_mode(soap->ctx, SSL_MODE_ENABLE_PARTIAL_WRITE | SSL_MODE_AUTO_RETRY);
-#endif
+    */
   }
   if (soap->randfile)
   { if (!RAND_load_file(soap->randfile, -1))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't load randomness", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't load randomness", SOAP_SSL_ERROR);
   }
   if (soap->cafile || soap->capath)
   { if (!SSL_CTX_load_verify_locations(soap->ctx, soap->cafile, soap->capath))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read CA file", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't read CA file and directory", SOAP_SSL_ERROR);
     if (soap->cafile && (soap->ssl_flags & SOAP_SSL_REQUIRE_CLIENT_AUTHENTICATION))
       SSL_CTX_set_client_CA_list(soap->ctx, SSL_load_client_CA_file(soap->cafile));
   }
-  if (!(soap->ssl_flags & SOAP_SSL_NO_DEFAULT_CA_PATH))
-  { if (!SSL_CTX_set_default_verify_paths(soap->ctx))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read default CA file and/or directory", SOAP_SSL_ERROR);
-  }
+  if (!SSL_CTX_set_default_verify_paths(soap->ctx))
+    return soap_set_receiver_error(soap, "SSL error", "Can't read default CA file and/or directory", SOAP_SSL_ERROR);
 /* This code assumes a typical scenario, see alternative code below */
   if (soap->keyfile)
   { if (!SSL_CTX_use_certificate_chain_file(soap->ctx, soap->keyfile))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read certificate key file", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't read certificate key file", SOAP_SSL_ERROR);
     if (soap->password)
     { SSL_CTX_set_default_passwd_cb_userdata(soap->ctx, (void*)soap->password);
       SSL_CTX_set_default_passwd_cb(soap->ctx, ssl_password);
     }
     if (!SSL_CTX_use_PrivateKey_file(soap->ctx, soap->keyfile, SSL_FILETYPE_PEM))
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read key file", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't read key file", SOAP_SSL_ERROR);
   }
-/* Suggested alternative approach to check the key file for certs (cafile=NULL):*/
-#if 0
+/* Suggested alternative approach to check the key file for certs (cafile=NULL):
   if (soap->password)
   { SSL_CTX_set_default_passwd_cb_userdata(soap->ctx, (void*)soap->password);
     SSL_CTX_set_default_passwd_cb(soap->ctx, ssl_password);
@@ -3160,40 +3122,33 @@ ssl_auth_init(struct soap *soap)
   if (!soap->cafile || !SSL_CTX_use_certificate_chain_file(soap->ctx, soap->cafile))
   { if (soap->keyfile)
     { if (!SSL_CTX_use_certificate_chain_file(soap->ctx, soap->keyfile))
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read certificate or key file", SOAP_SSL_ERROR);
+        return soap_set_receiver_error(soap, "SSL error", "Can't read certificate or key file", SOAP_SSL_ERROR);
       if (!SSL_CTX_use_PrivateKey_file(soap->ctx, soap->keyfile, SSL_FILETYPE_PEM))
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read key file", SOAP_SSL_ERROR);
+        return soap_set_receiver_error(soap, "SSL error", "Can't read key file", SOAP_SSL_ERROR);
     }
   }
-#endif
+*/
   if ((soap->ssl_flags & SOAP_SSL_RSA))
-  { RSA *rsa = RSA_generate_key(SOAP_SSL_RSA_BITS, RSA_F4, NULL, NULL);
+  { RSA *rsa = RSA_generate_key(1024, RSA_F4, NULL, NULL);
     if (!SSL_CTX_set_tmp_rsa(soap->ctx, rsa))
     { if (rsa)
         RSA_free(rsa);
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't set RSA key", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't set RSA key", SOAP_SSL_ERROR);
     }
     RSA_free(rsa);
   }
   else if (soap->dhfile)
   { DH *dh = 0;
-    char *s;
-    int n = (int)soap_strtoul(soap->dhfile, &s, 10);
-    /* if dhfile is numeric, treat it as a key length to generate DH params which can take a while */
-    if (n >= 512 && s && *s == '\0')
-      dh = DH_generate_parameters(n, 2/*or 5*/, NULL, NULL);
-    else
-    { BIO *bio;
-      bio = BIO_new_file(soap->dhfile, "r");
-      if (!bio)
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read DH file", SOAP_SSL_ERROR);
-      dh = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
-      BIO_free(bio);
-    }
-    if (!dh || DH_check(dh, &n) != 1 || SSL_CTX_set_tmp_dh(soap->ctx, dh) < 0)
+    BIO *bio;
+    bio = BIO_new_file(soap->dhfile, "r");
+    if (!bio)
+      return soap_set_receiver_error(soap, "SSL error", "Can't read DH file", SOAP_SSL_ERROR);
+    dh = PEM_read_bio_DHparams(bio, NULL, NULL, NULL);
+    BIO_free(bio);
+    if (SSL_CTX_set_tmp_dh(soap->ctx, dh) < 0)
     { if (dh)
         DH_free(dh);
-      return soap_set_receiver_error(soap, "SSL/TLS error", "Can't set DH parameters", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "Can't set DH parameters", SOAP_SSL_ERROR);
     }
     DH_free(dh);
   }
@@ -3202,11 +3157,6 @@ ssl_auth_init(struct soap *soap)
     flags |= SSL_OP_NO_TLSv1;
   if ((soap->ssl_flags & SOAP_TLSv1))
     flags |= SSL_OP_NO_SSLv3;
-#ifdef SSL_OP_NO_TICKET
-  /* TLS extension is enabled by default in OPENSSL v0.9.8k
-     Disable it by adding SSL_OP_NO_TICKET */
-  flags |= SSL_OP_NO_TICKET;
-#endif
   SSL_CTX_set_options(soap->ctx, flags);
   if ((soap->ssl_flags & SOAP_SSL_REQUIRE_CLIENT_AUTHENTICATION))
     mode = (SSL_VERIFY_PEER | SSL_VERIFY_FAIL_IF_NO_PEER_CERT);
@@ -3220,78 +3170,11 @@ ssl_auth_init(struct soap *soap)
 #else
   SSL_CTX_set_verify_depth(soap->ctx, 9); 
 #endif  
-#endif
-#ifdef WITH_GNUTLS
-  int ret;
-  if (!soap_ssl_init_done)
-    soap_ssl_init();
-  if (!soap->xcred)
-  { gnutls_certificate_allocate_credentials(&soap->xcred);
-    if (soap->cafile)
-    { if (gnutls_certificate_set_x509_trust_file(soap->xcred, soap->cafile, GNUTLS_X509_FMT_PEM) < 0)
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read CA file", SOAP_SSL_ERROR);
-    }
-    if (soap->crlfile)
-    { if (gnutls_certificate_set_x509_crl_file(soap->xcred, soap->crlfile, GNUTLS_X509_FMT_PEM) < 0)
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read CRL file", SOAP_SSL_ERROR);
-    }
-    if (soap->keyfile)
-    { if (gnutls_certificate_set_x509_key_file(soap->xcred, soap->keyfile, soap->keyfile, GNUTLS_X509_FMT_PEM) < 0) /* TODO: GNUTLS need to concat cert and key in single key file */
-        return soap_set_receiver_error(soap, "SSL/TLS error", "Can't read key file", SOAP_SSL_ERROR);
-    }
-  }
-  if ((soap->ssl_flags & SOAP_SSL_CLIENT))
-  { gnutls_init(&soap->session, GNUTLS_CLIENT);
-    if (soap->cafile || soap->crlfile || soap->keyfile)
-    { ret = gnutls_priority_set_direct(soap->session, "PERFORMANCE", NULL);
-      if (ret < 0)
-        return soap_set_receiver_error(soap, soap_ssl_error(soap, ret), "SSL/TLS set priority error", SOAP_SSL_ERROR);
-      gnutls_credentials_set(soap->session, GNUTLS_CRD_CERTIFICATE, soap->xcred);
-    }
-    else
-    { if (!soap->acred)
-        gnutls_anon_allocate_client_credentials(&soap->acred);
-      gnutls_init(&soap->session, GNUTLS_CLIENT);
-      gnutls_priority_set_direct(soap->session, "PERFORMANCE:+ANON-DH:!ARCFOUR-128", NULL);
-      gnutls_credentials_set(soap->session, GNUTLS_CRD_ANON, soap->acred);
-    }
-  }
-  else
-  { if (!soap->keyfile)
-      return soap_set_receiver_error(soap, "SSL/TLS error", "No key file: anonymous server authentication not supported in this release", SOAP_SSL_ERROR);
-    if ((soap->ssl_flags & SOAP_SSL_RSA) && soap->rsa_params)
-      gnutls_certificate_set_rsa_export_params(soap->xcred, soap->rsa_params);
-    else if (soap->dh_params)
-      gnutls_certificate_set_dh_params(soap->xcred, soap->dh_params);
-    if (!soap->cache)
-      gnutls_priority_init(&soap->cache, "NORMAL", NULL);
-    gnutls_init(&soap->session, GNUTLS_SERVER);
-    gnutls_priority_set(soap->session, soap->cache);
-    gnutls_credentials_set(soap->session, GNUTLS_CRD_CERTIFICATE, soap->xcred);
-    if ((soap->ssl_flags & SOAP_SSL_REQUIRE_CLIENT_AUTHENTICATION))
-      gnutls_certificate_server_set_request(soap->session, GNUTLS_CERT_REQUEST);
-    gnutls_session_enable_compatibility_mode(soap->session);
-  }
-#endif
   return SOAP_OK;
 }
 #endif
-#endif
 
 /******************************************************************************/
-#ifdef WITH_OPENSSL
-#ifndef PALM_1
-static int
-ssl_password(char *buf, int num, int rwflag, void *userdata)
-{ if (num < (int)strlen((char*)userdata) + 1)
-    return 0;
-  return (int)strlen(strcpy(buf, (char*)userdata));
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifdef WITH_OPENSSL
 #ifndef PALM_1
 static int
 ssl_verify_callback(int ok, X509_STORE_CTX *store)
@@ -3307,124 +3190,65 @@ ssl_verify_callback(int ok, X509_STORE_CTX *store)
     fprintf(stderr, "certificate subject %s\n", data);
   }
 #endif
-  /* Note: return 1 to continue, but unsafe progress will be terminated by OpenSSL */
-  return ok;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifdef WITH_OPENSSL
-#ifndef PALM_1
-static int
-ssl_verify_callback_allow_expired_certificate(int ok, X509_STORE_CTX *store)
-{ ok = ssl_verify_callback(ok, store);
-  if (ok == 0 && X509_STORE_CTX_get_error(store) == X509_V_ERR_CERT_HAS_EXPIRED)
-  {
-#ifdef SOAP_DEBUG
-    fprintf(stderr, "ignoring certificate expiration\n");
-#endif
-    X509_STORE_CTX_set_error(store, X509_V_OK);
-    ok = 1;
-  }
   /* Note: return 1 to continue, but unsafe progress will be terminated by SSL */
   return ok;
 }
 #endif
-#endif
 
 /******************************************************************************/
-#ifdef WITH_GNUTLS
-static const char *
-ssl_verify(struct soap *soap, const char *host)
-{ unsigned int status;
-  const char *err = NULL;
-  int r = gnutls_certificate_verify_peers2(soap->session, &status); 
-  if (r < 0)
-    err = "Certificate verify error";
-  else if ((status & GNUTLS_CERT_INVALID))
-    err = "The certificate is not trusted";
-  else if ((status & GNUTLS_CERT_SIGNER_NOT_FOUND))
-    err = "The certificate hasn't got a known issuer";
-  else if ((status & GNUTLS_CERT_REVOKED))
-    err = "The certificate has been revoked";
-  else if (gnutls_certificate_type_get(soap->session) == GNUTLS_CRT_X509)
-  { gnutls_x509_crt_t cert;
-    const gnutls_datum_t *cert_list;
-    unsigned int cert_list_size;
-    if (gnutls_x509_crt_init(&cert) < 0)
-      err = "Could not get X509 certificates";
-    else if ((cert_list = gnutls_certificate_get_peers(soap->session, &cert_list_size)) == NULL)
-      err = "Could not get X509 certificates";
-    else if (gnutls_x509_crt_import(cert, &cert_list[0], GNUTLS_X509_FMT_DER) < 0)
-      err = "Error parsing X509 certificate";
-    else if (!(soap->ssl_flags & SOAP_SSL_ALLOW_EXPIRED_CERTIFICATE) && gnutls_x509_crt_get_expiration_time(cert) < time(NULL))
-      err = "The certificate has expired";
-    else if (!(soap->ssl_flags & SOAP_SSL_ALLOW_EXPIRED_CERTIFICATE) && gnutls_x509_crt_get_activation_time(cert) > time(NULL))
-      err = "The certificate is not yet activated";
-    else if (host && !(soap->ssl_flags & SOAP_SSL_SKIP_HOST_CHECK))
-    { if (!gnutls_x509_crt_check_hostname(cert, host))
-        err = "Certificate host name mismatch";
-    }
-    gnutls_x509_crt_deinit(cert);
-  }
-  return err;
-}
-#endif
-
-/******************************************************************************/
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
-#ifndef WITH_NOIO
 #ifndef PALM_1
 SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_ssl_accept(struct soap *soap)
-{ SOAP_SOCKET fd = soap->socket;
-#ifdef WITH_OPENSSL
-  BIO *bio;
+{ BIO *bio;
   int retries, r, s;
-  if (!soap_valid_socket(fd))
-    return soap_set_receiver_error(soap, "SSL/TLS error", "No socket in soap_ssl_accept()", SOAP_SSL_ERROR);
-  soap->ssl_flags &= ~SOAP_SSL_CLIENT;
+  if (!soap_valid_socket(soap->socket))
+    return soap_set_receiver_error(soap, "SSL error", "No socket in soap_ssl_accept()", SOAP_SSL_ERROR);
   if (!soap->ctx && (soap->error = soap->fsslauth(soap)))
-    return soap->error;
+    return SOAP_INVALID_SOCKET;
   if (!soap->ssl)
   { soap->ssl = SSL_new(soap->ctx);
     if (!soap->ssl)
-      return soap_set_receiver_error(soap, "SSL/TLS error", "SSL_new() failed in soap_ssl_accept()", SOAP_SSL_ERROR);
+      return soap_set_receiver_error(soap, "SSL error", "SSL_new() failed in soap_ssl_accept()", SOAP_SSL_ERROR);
   }
   else
     SSL_clear(soap->ssl);
   soap->imode |= SOAP_ENC_SSL;
   soap->omode |= SOAP_ENC_SSL;
-  bio = BIO_new_socket((int)fd, BIO_NOCLOSE);
-  SSL_set_bio(soap->ssl, bio, bio);
   /* Set SSL sockets to non-blocking */
-  retries = 0;
-  if (soap->accept_timeout)
-  { SOAP_SOCKNONBLOCK(fd)
-    retries = 10*soap->accept_timeout;
-  }
-  if (retries <= 0)
-    retries = 100; /* timeout: 10 sec retries, 100 times 0.1 sec */
+  SOAP_SOCKNONBLOCK(soap->socket)
+  bio = BIO_new_socket(soap->socket, BIO_NOCLOSE);
+  SSL_set_bio(soap->ssl, bio, bio);
+  retries = 100; /* 10 sec retries, 100 times 0.1 sec */
   while ((r = SSL_accept(soap->ssl)) <= 0)
-  { int err;
-    if (retries-- <= 0)
-      break;
-    err = SSL_get_error(soap->ssl, r);
-    if (err == SSL_ERROR_WANT_ACCEPT || err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE)
-    { if (err == SSL_ERROR_WANT_READ)
-        s = tcp_select(soap, fd, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, -100000);
+  { int err = SSL_get_error(soap->ssl, r);
+    if (err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE)
+    { struct timeval timeout;
+      fd_set fd;
+#ifndef WIN32
+      if ((int)soap->socket >= (int)FD_SETSIZE)
+        return SOAP_FD_EXCEEDED;	/* Hint: MUST increase FD_SETSIZE */
+#endif
+      timeout.tv_sec = 0;
+      timeout.tv_usec = 100000;
+      FD_ZERO(&fd);
+      FD_SET(soap->socket, &fd);
+      if (err == SSL_ERROR_WANT_READ)
+        s = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
       else
-        s = tcp_select(soap, fd, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, -100000);
-      if (s < 0 && soap->errnum != SOAP_EINTR)
+        s = select((int)soap->socket + 1, NULL, &fd, &fd, &timeout);
+      if (s < 0 && (s = soap_socket_errno(soap->socket)) != SOAP_EINTR)
+      { soap->errnum = s;
         break;
+      }
     }
     else
-    { soap->errnum = soap_socket_errno(fd);
+    { soap->errnum = err;
       break;
     }
+    if (retries-- <= 0)
+      break;
   }
   if (r <= 0)
   { soap_set_receiver_error(soap, soap_ssl_error(soap, r), "SSL_accept() failed in soap_ssl_accept()", SOAP_SSL_ERROR);
@@ -3441,73 +3265,16 @@ soap_ssl_accept(struct soap *soap)
     peer = SSL_get_peer_certificate(soap->ssl);
     if (!peer)
     { soap_closesock(soap);
-      return soap_set_sender_error(soap, "SSL/TLS error", "No SSL certificate was presented by the peer in soap_ssl_accept()", SOAP_SSL_ERROR);
+      return soap_set_sender_error(soap, "SSL error", "No SSL certificate was presented by the peer in soap_ssl_accept()", SOAP_SSL_ERROR);
     }
     X509_free(peer);
   }
-#endif
-#ifdef WITH_GNUTLS
-  int retries = 0, r;
-  if (!soap_valid_socket(fd))
-    return soap_set_receiver_error(soap, "SSL/TLS error", "No socket in soap_ssl_accept()", SOAP_SSL_ERROR);
-  soap->ssl_flags &= ~SOAP_SSL_CLIENT;
-  if (!soap->session && (soap->error = soap->fsslauth(soap)))
-  { soap_closesock(soap);
-    return soap->error;
-  }
-  gnutls_transport_set_ptr(soap->session, (gnutls_transport_ptr_t)(long)fd);
-  /* Set SSL sockets to non-blocking */
-  if (soap->accept_timeout)
-  { SOAP_SOCKNONBLOCK(fd)
-    retries = 10*soap->accept_timeout;
-  }
-  if (retries <= 0)
-    retries = 100; /* timeout: 10 sec retries, 100 times 0.1 sec */
-  while ((r = gnutls_handshake(soap->session)))
-  { int s;
-    /* GNUTLS repeat handhake when GNUTLS_E_AGAIN */
-    if (retries-- <= 0)
-      break;
-    if (r == GNUTLS_E_AGAIN || r == GNUTLS_E_INTERRUPTED)
-    { if (!gnutls_record_get_direction(soap->session))
-        s = tcp_select(soap, fd, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, -100000);
-      else
-        s = tcp_select(soap, fd, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, -100000);
-      if (s < 0 && soap->errnum != SOAP_EINTR)
-        break;
-    }
-    else
-    { soap->errnum = soap_socket_errno(fd);
-      break;
-    }
-  }
-  if (r)
-  { soap_closesock(soap);
-    return soap_set_receiver_error(soap, soap_ssl_error(soap, r), "SSL/TLS handshake failed", SOAP_SSL_ERROR);
-  }
-  if ((soap->ssl_flags & SOAP_SSL_REQUIRE_CLIENT_AUTHENTICATION))
-  { const char *err = ssl_verify(soap, NULL);
-    if (err)
-    { soap_closesock(soap);
-      return soap_set_receiver_error(soap, "SSL/TLS error", err, SOAP_SSL_ERROR);
-    }
-  }
-#endif
-  if (soap->recv_timeout || soap->send_timeout)
-    SOAP_SOCKNONBLOCK(fd)
-  else
-    SOAP_SOCKBLOCK(fd)
   return SOAP_OK;
 }
 #endif
-#endif
-#endif
 
-/******************************************************************************\
- *
- *	TCP/UDP [SSL/TLS] IPv4 and IPv6
- *
-\******************************************************************************/
+/******************************************************************************/
+#endif /* WITH_OPENSSL */
 
 /******************************************************************************/
 #ifndef WITH_NOIO
@@ -3526,6 +3293,144 @@ tcp_init(struct soap *soap)
   }
 #endif
   return 0;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef PALM_1
+SOAP_FMAC1
+void
+SOAP_FMAC2
+soap_done(struct soap *soap)
+{ 
+#ifdef SOAP_DEBUG
+  int i;
+#endif
+  if (soap_check_state(soap))
+    return;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Done with context\n"));
+  soap_free_temp(soap);
+  while (soap->clist)
+  { struct soap_clist *p = soap->clist->next;
+    SOAP_FREE(soap, soap->clist);
+    soap->clist = p;
+  }
+  soap->keep_alive = 0; /* to force close the socket */
+  soap_closesock(soap);
+#ifdef WITH_COOKIES
+  soap_free_cookies(soap);
+#endif
+  while (soap->plugins)
+  { register struct soap_plugin *p = soap->plugins->next;
+    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Removing plugin '%s'\n", soap->plugins->id));
+    if (soap->plugins->fcopy || soap->state == SOAP_INIT)
+      soap->plugins->fdelete(soap, soap->plugins);
+    SOAP_FREE(soap, soap->plugins);
+    soap->plugins = p;
+  }
+  soap->fplugin = fplugin;
+  soap->fmalloc = NULL;
+#ifndef WITH_NOHTTP
+  soap->fpost = http_post;
+  soap->fget = http_get;
+  soap->fput = http_put;
+  soap->fdel = http_del;
+  soap->fhead = http_head;
+  soap->fform = NULL;
+  soap->fposthdr = http_post_header;
+  soap->fresponse = http_response;
+  soap->fparse = http_parse;
+  soap->fparsehdr = http_parse_header;
+#endif
+  soap->fheader = NULL;
+#ifndef WITH_NOIO
+#ifndef WITH_IPV6
+  soap->fresolve = tcp_gethost;
+#else
+  soap->fresolve = NULL;
+#endif
+  soap->faccept = tcp_accept;
+  soap->fopen = tcp_connect;
+  soap->fclose = tcp_disconnect;
+  soap->fclosesocket = tcp_closesocket;
+  soap->fshutdownsocket = tcp_shutdownsocket;
+  soap->fsend = fsend;
+  soap->frecv = frecv;
+  soap->fpoll = soap_poll;
+#else
+  soap->fopen = NULL;
+  soap->fclose = NULL;
+  soap->fpoll = NULL;
+#endif
+#ifndef WITH_LEANER
+  soap->fprepareinit = NULL;
+  soap->fpreparesend = NULL;
+  soap->fpreparerecv = NULL;
+  soap->fpreparefinal = NULL;
+#endif
+  soap->fseterror = NULL;
+  soap->fignore = NULL;
+  soap->fserveloop = NULL;
+#ifdef WITH_OPENSSL
+  if (soap->session)
+  { SSL_SESSION_free(soap->session);
+    soap->session = NULL;
+  }
+#endif
+  if (soap->state == SOAP_INIT)
+  { if (soap_valid_socket(soap->master))
+    { soap->fclosesocket(soap, soap->master);
+      soap->master = SOAP_INVALID_SOCKET;
+    }
+#ifdef WITH_OPENSSL
+    if (soap->ctx)
+    { SSL_CTX_free(soap->ctx);
+      soap->ctx = NULL;
+    }
+#endif
+  }
+#ifdef WITH_ZLIB
+  if (soap->d_stream)
+  { SOAP_FREE(soap, (void*)soap->d_stream);
+    soap->d_stream = NULL;
+  }
+  if (soap->z_buf)
+  { SOAP_FREE(soap, (void*)soap->z_buf);
+    soap->z_buf = NULL;
+  }
+#endif
+#ifdef SOAP_DEBUG
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free logfiles\n"));
+  for (i = 0; i < SOAP_MAXLOGS; i++)
+  { if (soap->logfile[i])
+    { SOAP_FREE(soap, (void*)soap->logfile[i]);
+      soap->logfile[i] = NULL;
+    }
+    soap_close_logfile(soap, i);
+  }
+  soap->state = 0;
+#endif
+#ifdef SOAP_MEM_DEBUG
+  soap_free_mht(soap);
+#endif
+}
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOIO
+#ifndef PALM_2
+SOAP_FMAC1
+void
+SOAP_FMAC2
+soap_cleanup(struct soap *soap)
+{ soap_done(soap);
+#ifdef WIN32
+  if (!tcp_done)
+    return;
+  tcp_done = 0;
+  WSACleanup();
+#endif
 }
 #endif
 #endif
@@ -3560,6 +3465,22 @@ tcp_error(struct soap *soap)
 #endif
 
 /******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static const char*
+http_error(struct soap *soap, int status)
+{ register const char *msg = SOAP_STR_EOS;
+#ifndef WITH_LEAN
+  msg = soap_code_str(h_http_error_codes, status);
+  if (!msg)
+    msg = SOAP_STR_EOS;
+#endif
+  return msg;
+}
+#endif
+#endif
+
+/******************************************************************************/
 #ifndef WITH_IPV6
 #ifndef WITH_NOIO
 #ifndef PALM_1
@@ -3572,7 +3493,7 @@ tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
   /* inet_addr(), and hostGetByName() expect "char *"; addr is a "const char *". */
   iadd = inet_addr((char*)addr);
 #else
-#if defined(_AIX43) || ((defined(TRU64) || defined(HP_UX)) && defined(HAVE_GETHOSTBYNAME_R))
+#if defined(_AIX43) || defined(TRU64)
   struct hostent_data ht_data;
 #endif
 #ifdef AS400
@@ -3588,7 +3509,7 @@ tcp_gethost(struct soap *soap, const char *addr, struct in_addr *inaddr)
 #if defined(__GLIBC__) || (defined(HAVE_GETHOSTBYNAME_R) && (defined(FREEBSD) || defined(__FreeBSD__)))
   if (gethostbyname_r(addr, &hostent, soap->buf, SOAP_BUFLEN, &host, &soap->errnum) < 0)
     host = NULL;
-#elif defined(_AIX43) || ((defined(TRU64) || defined(HP_UX)) && defined(HAVE_GETHOSTBYNAME_R))
+#elif defined(_AIX43) || defined(TRU64)
   memset((void*)&ht_data, 0, sizeof(ht_data));
   if (gethostbyname_r(addr, &hostent, &ht_data) < 0)
   { host = NULL;
@@ -3641,11 +3562,9 @@ tcp_connect(struct soap *soap, const char *endpoint, const char *host, int port)
   SOAP_SOCKET fd;
   int err = 0;
 #ifndef WITH_LEAN
+  int retry = 10;
   int len = SOAP_BUFLEN;
   int set = 1;
-#endif
-#if !defined(WITH_LEAN) || defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
-  int retries;
 #endif
   if (soap_valid_socket(soap->socket))
     soap->fclosesocket(soap, soap->socket);
@@ -3718,7 +3637,7 @@ again:
   { struct linger linger;
     memset((void*)&linger, 0, sizeof(linger));
     linger.l_onoff = 1;
-    linger.l_linger = soap->linger_time;
+    linger.l_linger = 0;
     if (setsockopt(fd, SOL_SOCKET, SO_LINGER, (char*)&linger, sizeof(struct linger)))
     { soap->errnum = soap_socket_errno(fd);
       soap_set_sender_error(soap, tcp_error(soap), "setsockopt SO_LINGER failed in tcp_connect()", SOAP_TCP_ERROR);
@@ -3766,7 +3685,7 @@ again:
     return SOAP_INVALID_SOCKET;
   }
 #ifdef TCP_KEEPIDLE
-  if (soap->tcp_keep_idle && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPIDLE, (char*)&(soap->tcp_keep_idle), sizeof(int)))
+  if (soap->tcp_keep_idle && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPIDLE, (unsigned int*)&(soap->tcp_keep_idle), sizeof(int)))
   { soap->errnum = soap_socket_errno(fd);
     soap_set_sender_error(soap, tcp_error(soap), "setsockopt TCP_KEEPIDLE failed in tcp_connect()", SOAP_TCP_ERROR);
     soap->fclosesocket(soap, (SOAP_SOCKET)fd);
@@ -3777,7 +3696,7 @@ again:
   }
 #endif
 #ifdef TCP_KEEPINTVL
-  if (soap->tcp_keep_intvl && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPINTVL, (char*)&(soap->tcp_keep_intvl), sizeof(int)))
+  if (soap->tcp_keep_intvl && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPINTVL, (unsigned int*)&(soap->tcp_keep_intvl), sizeof(int)))
   { soap->errnum = soap_socket_errno(fd);
     soap_set_sender_error(soap, tcp_error(soap), "setsockopt TCP_KEEPINTVL failed in tcp_connect()", SOAP_TCP_ERROR);
     soap->fclosesocket(soap, (SOAP_SOCKET)fd);
@@ -3788,7 +3707,7 @@ again:
   }
 #endif
 #ifdef TCP_KEEPCNT
-  if (soap->tcp_keep_cnt && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPCNT, (char*)&(soap->tcp_keep_cnt), sizeof(int)))
+  if (soap->tcp_keep_cnt && setsockopt((SOAP_SOCKET)fd, IPPROTO_TCP, TCP_KEEPCNT, (unsigned int*)&(soap->tcp_keep_cnt), sizeof(int)))
   { soap->errnum = soap_socket_errno(fd);
     soap_set_sender_error(soap, tcp_error(soap), "setsockopt TCP_KEEPCNT failed in tcp_connect()", SOAP_TCP_ERROR);
     soap->fclosesocket(soap, (SOAP_SOCKET)fd);
@@ -3809,43 +3728,6 @@ again:
     return SOAP_INVALID_SOCKET;
   }
 #endif
-#ifdef WITH_IPV6
-  if ((soap->omode & SOAP_IO_UDP) && soap->ipv6_multicast_if)
-  { struct sockaddr_in6 *in6addr = (struct sockaddr_in6*)res->ai_addr;
-    in6addr->sin6_scope_id = soap->ipv6_multicast_if;
-  }
-#endif
-#ifdef IP_MULTICAST_TTL
-  if ((soap->omode & SOAP_IO_UDP) && soap->ipv4_multicast_if && !soap->ipv6_multicast_if)
-  { if (soap->ipv4_multicast_ttl > 0)
-    { char ttl = (char)(soap->ipv4_multicast_ttl);
-      if (setsockopt(fd, IPPROTO_IP, IP_MULTICAST_TTL, (char*)&ttl, sizeof(ttl)))
-      { soap->errnum = soap_socket_errno(fd);
-        soap_set_sender_error(soap, tcp_error(soap), "setsockopt IP_MULTICAST_TTL failed in tcp_connect()", SOAP_TCP_ERROR);
-        soap->fclosesocket(soap, fd);
-        return SOAP_INVALID_SOCKET;
-      }
-    }
-#ifndef WINDOWS
-    if (setsockopt(fd, IPPROTO_IP, IP_MULTICAST_IF, (char*)soap->ipv4_multicast_if, sizeof(struct in_addr))) 
-    { soap->errnum = soap_socket_errno(fd);
-      soap_set_sender_error(soap, tcp_error(soap), "setsockopt IP_MULTICAST_IF failed in tcp_connect()", SOAP_TCP_ERROR);
-      soap->fclosesocket(soap, fd);
-      return SOAP_INVALID_SOCKET;
-    }
-#else
-#ifndef IP_MULTICAST_IF
-#define IP_MULTICAST_IF 2
-#endif
-    if (setsockopt(fd, IPPROTO_IP, IP_MULTICAST_IF, (char*)soap->ipv4_multicast_if, sizeof(struct in_addr))) 
-    { soap->errnum = soap_socket_errno(fd);
-      soap_set_sender_error(soap, tcp_error(soap), "setsockopt IP_MULTICAST_IF failed in tcp_connect()", SOAP_TCP_ERROR);
-      soap->fclosesocket(soap, fd);
-      return SOAP_INVALID_SOCKET;
-    }
-#endif
-  }
-#endif
 #endif
   DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Opening socket %d to host='%s' port=%d\n", fd, host, port));
 #ifndef WITH_IPV6
@@ -3857,6 +3739,9 @@ again:
   { if (soap->fresolve(soap, soap->proxy_host, &soap->peer.sin_addr))
     { soap_set_sender_error(soap, tcp_error(soap), "get proxy host by name failed in tcp_connect()", SOAP_TCP_ERROR);
       soap->fclosesocket(soap, fd);
+#ifdef WITH_IPV6
+      freeaddrinfo(ressave);
+#endif
       return SOAP_INVALID_SOCKET;
     }
     soap->peer.sin_port = htons((short)soap->proxy_port);
@@ -3865,6 +3750,9 @@ again:
   { if (soap->fresolve(soap, host, &soap->peer.sin_addr))
     { soap_set_sender_error(soap, tcp_error(soap), "get host by name failed in tcp_connect()", SOAP_TCP_ERROR);
       soap->fclosesocket(soap, fd);
+#ifdef WITH_IPV6
+      freeaddrinfo(ressave);
+#endif
       return SOAP_INVALID_SOCKET;
     }
     soap->peer.sin_port = htons((short)port);
@@ -3872,22 +3760,19 @@ again:
   soap->errmode = 0;
 #ifndef WITH_LEAN
   if ((soap->omode & SOAP_IO_UDP))
-    return fd;
-#endif
-#else
-  if ((soap->omode & SOAP_IO_UDP))
-  { memcpy(&soap->peer, res->ai_addr, res->ai_addrlen);
-    soap->peerlen = res->ai_addrlen;
+  {
+#ifdef WITH_IPV6
     freeaddrinfo(ressave);
+#endif
     return fd;
   }
+#endif
 #endif
 #ifndef WITH_LEAN
   if (soap->connect_timeout)
     SOAP_SOCKNONBLOCK(fd)
   else
     SOAP_SOCKBLOCK(fd)
-  retries = 10;
 #endif
   for (;;)
   { 
@@ -3900,19 +3785,41 @@ again:
 #ifndef WITH_LEAN
       if (err == SOAP_EADDRINUSE)
       { soap->fclosesocket(soap, fd);
-        if (retries-- > 0)
+        if (retry-- > 0)
           goto again;
       }
       else if (soap->connect_timeout && (err == SOAP_EINPROGRESS || err == SOAP_EAGAIN || err == SOAP_EWOULDBLOCK))
       {
         SOAP_SOCKLEN_T k;
+#ifndef WIN32
+        if ((int)soap->socket >= (int)FD_SETSIZE)
+        { soap->error = SOAP_FD_EXCEEDED;
+#ifdef WITH_IPV6
+          freeaddrinfo(ressave);
+#endif
+          return SOAP_INVALID_SOCKET;	/* Hint: MUST increase FD_SETSIZE */
+        }
+#endif
         for (;;)
-        { register int r;
-          r = tcp_select(soap, fd, SOAP_TCP_SELECT_SND, soap->connect_timeout);
+        { struct timeval timeout;
+          fd_set fds;
+          register int r;
+          if (soap->connect_timeout > 0)
+          { timeout.tv_sec = soap->connect_timeout;
+            timeout.tv_usec = 0;
+          }
+          else
+          { timeout.tv_sec = -soap->connect_timeout/1000000;
+            timeout.tv_usec = -soap->connect_timeout%1000000;
+          }
+          FD_ZERO(&fds);
+          FD_SET(fd, &fds);
+          r = select((int)fd + 1, NULL, &fds, NULL, &timeout);
           if (r > 0)
             break;
           if (!r)
-          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connect timeout\n"));
+          { soap->errnum = 0;
+            DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connect timeout\n"));
             soap_set_sender_error(soap, "Timeout", "connect failed in tcp_connect()", SOAP_TCP_ERROR);
             soap->fclosesocket(soap, fd);
 #ifdef WITH_IPV6
@@ -3920,9 +3827,10 @@ again:
 #endif
             return SOAP_INVALID_SOCKET;
           }
-	  r = soap->errnum;
+          r = soap_socket_errno(fd);
           if (r != SOAP_EINTR)
-          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Could not connect to host\n"));
+          { soap->errnum = r;
+            DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Could not connect to host\n"));
             soap_set_sender_error(soap, tcp_error(soap), "connect failed in tcp_connect()", SOAP_TCP_ERROR);
             soap->fclosesocket(soap, fd);
 #ifdef WITH_IPV6
@@ -3970,21 +3878,24 @@ again:
   soap->peerlen = 0; /* IPv6: already connected so use send() */
   freeaddrinfo(ressave);
 #endif
+#ifndef WITH_LEAN
+  if (soap->recv_timeout || soap->send_timeout)
+    SOAP_SOCKNONBLOCK(fd)
+  else
+    SOAP_SOCKBLOCK(fd)
+#endif
   soap->socket = fd;
   soap->imode &= ~SOAP_ENC_SSL;
   soap->omode &= ~SOAP_ENC_SSL;
   if (!soap_tag_cmp(endpoint, "https:*"))
   {
-#if defined(WITH_OPENSSL) || defined(WITH_GNUTLS)
 #ifdef WITH_OPENSSL
     BIO *bio;
-#endif
     int r;
     if (soap->proxy_host)
-    { soap_mode m = soap->mode; /* preserve settings */
-      soap_mode om = soap->omode; /* make sure we only parse HTTP */
+    { unsigned int k = soap->omode; /* make sure we only parse HTTP */
       size_t n = soap->count; /* save the content length */
-      const char *userid, *passwd;
+      char *userid, *passwd;
       soap->omode &= ~SOAP_ENC; /* mask IO and ENC */
       soap->omode |= SOAP_IO_BUFFER;
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connecting to %s proxy server\n", soap->proxy_http_version));
@@ -4010,8 +3921,8 @@ again:
       { soap->fclosesocket(soap, fd);
         return SOAP_INVALID_SOCKET;
       }
-      soap->omode = om;
-      om = soap->imode;
+      soap->omode = k;
+      k = soap->imode;
       soap->imode &= ~SOAP_ENC; /* mask IO and ENC */
       userid = soap->userid; /* preserve */
       passwd = soap->passwd; /* preserve */
@@ -4021,7 +3932,7 @@ again:
       }
       soap->userid = userid; /* restore */
       soap->passwd = passwd; /* restore */
-      soap->imode = om; /* restore */
+      soap->imode = k; /* restore */
       soap->count = n; /* restore */
       if (soap_begin_send(soap))
       { soap->fclosesocket(soap, fd);
@@ -4029,24 +3940,18 @@ again:
       }
       if (endpoint)
         strncpy(soap->endpoint, endpoint, sizeof(soap->endpoint)-1); /* restore */
-      soap->mode = m;
     }
-#ifdef WITH_OPENSSL
-    soap->ssl_flags |= SOAP_SSL_CLIENT;
     if (!soap->ctx && (soap->error = soap->fsslauth(soap)))
-    { soap->fclosesocket(soap, fd);
+    { soap_set_sender_error(soap, "SSL error", "SSL authentication failed in tcp_connect(): check password, key file, and ca file.", SOAP_SSL_ERROR);
+      soap->fclosesocket(soap, fd);
       return SOAP_INVALID_SOCKET;
     }
+    soap->ssl = SSL_new(soap->ctx);
     if (!soap->ssl)
-    { soap->ssl = SSL_new(soap->ctx);
-      if (!soap->ssl)
-      { soap->fclosesocket(soap, fd);
-        soap->error = SOAP_SSL_ERROR;
-        return SOAP_INVALID_SOCKET;
-      }
+    { soap->fclosesocket(soap, fd);
+      soap->error = SOAP_SSL_ERROR;
+      return SOAP_INVALID_SOCKET;
     }
-    else
-      SSL_clear(soap->ssl);
     if (soap->session)
     { if (!strcmp(soap->session_host, host) && soap->session_port == port)
         SSL_set_session(soap->ssl, soap->session);
@@ -4055,55 +3960,69 @@ again:
     }
     soap->imode |= SOAP_ENC_SSL;
     soap->omode |= SOAP_ENC_SSL;
-    bio = BIO_new_socket((int)fd, BIO_NOCLOSE);
+    bio = BIO_new_socket(fd, BIO_NOCLOSE);
     SSL_set_bio(soap->ssl, bio, bio);
+#ifndef WITH_LEAN
     /* Connect timeout: set SSL sockets to non-blocking */
-    retries = 0;
     if (soap->connect_timeout)
-    { SOAP_SOCKNONBLOCK(fd)
-      retries = 10*soap->connect_timeout;
-    }
+      SOAP_SOCKNONBLOCK(fd)
     else
       SOAP_SOCKBLOCK(fd)
-    if (retries <= 0)
-      retries = 100; /* timeout: 10 sec retries, 100 times 0.1 sec */
-    /* Try connecting until success or timeout (when nonblocking) */
-    do
+    /* Try connecting until success or timeout */
+    for (;;)
     { if ((r = SSL_connect(soap->ssl)) <= 0)
       { int err = SSL_get_error(soap->ssl, r);
-        if (err == SSL_ERROR_WANT_CONNECT || err == SSL_ERROR_WANT_READ || err == SSL_ERROR_WANT_WRITE)
-        { register int s;
-	  if (err == SSL_ERROR_WANT_READ)
-            s = tcp_select(soap, fd, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, -100000);
-          else
-            s = tcp_select(soap, fd, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, -100000);
-          if (s < 0 && soap->errnum != SOAP_EINTR)
-          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "SSL_connect/select error in tcp_connect\n"));
-            soap_set_sender_error(soap, soap_ssl_error(soap, r), "SSL_connect failed in tcp_connect()", SOAP_TCP_ERROR);
-            soap->fclosesocket(soap, fd);
-            return SOAP_INVALID_SOCKET;
-          }
-	  if (s == 0 && retries-- <= 0)
-          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "SSL/TLS connect timeout\n"));
-            soap_set_sender_error(soap, "Timeout", "SSL_connect failed in tcp_connect()", SOAP_TCP_ERROR);
-            soap->fclosesocket(soap, fd);
-            return SOAP_INVALID_SOCKET;
-          }
-        }
-	else
-        { soap_set_sender_error(soap, soap_ssl_error(soap, r), "SSL_connect error in tcp_connect()", SOAP_SSL_ERROR);
+        if (err != SSL_ERROR_NONE && err != SSL_ERROR_WANT_READ && err != SSL_ERROR_WANT_WRITE)
+        { soap_set_sender_error(soap, soap_ssl_error(soap, r), "SSL connect failed in tcp_connect()", SOAP_SSL_ERROR);
           soap->fclosesocket(soap, fd);
           return SOAP_INVALID_SOCKET;
         }
+        if (soap->connect_timeout)
+        {
+#ifndef WIN32
+          if ((int)soap->socket >= (int)FD_SETSIZE)
+          { soap->error = SOAP_FD_EXCEEDED;
+            return SOAP_INVALID_SOCKET;	/* Hint: MUST increase FD_SETSIZE */
+          }
+#endif
+          for (;;)
+          { struct timeval timeout;
+            fd_set fds;
+            register int r;
+            if (soap->connect_timeout > 0)
+            { timeout.tv_sec = soap->connect_timeout;
+              timeout.tv_usec = 0;
+            }
+            else
+            { timeout.tv_sec = -soap->connect_timeout/1000000;
+              timeout.tv_usec = -soap->connect_timeout%1000000;
+            }
+            FD_ZERO(&fds);
+            FD_SET(fd, &fds);
+            r = select((int)fd + 1, &fds, &fds, &fds, &timeout);
+            if (r > 0)
+              break;
+            if (!r)
+            { soap->errnum = 0;
+              DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connect timeout\n"));
+              soap_set_sender_error(soap, "Timeout", "connect failed in tcp_connect()", SOAP_TCP_ERROR);
+              soap->fclosesocket(soap, fd);
+              return SOAP_INVALID_SOCKET;
+            }
+          }
+          continue;
+        }
       }
-    } while (!SSL_is_init_finished(soap->ssl));
+      break;
+    }
     /* Set SSL sockets to nonblocking */
     SOAP_SOCKNONBLOCK(fd)
+#endif
     /* Check server credentials when required */
     if ((soap->ssl_flags & SOAP_SSL_REQUIRE_SERVER_AUTHENTICATION))
     { int err;
       if ((err = SSL_get_verify_result(soap->ssl)) != X509_V_OK)
-      { soap_set_sender_error(soap, X509_verify_cert_error_string(err), "SSL/TLS certificate presented by peer cannot be verified in tcp_connect()", SOAP_SSL_ERROR);
+      { soap_set_sender_error(soap, X509_verify_cert_error_string(err), "SSL certificate presented by peer cannot be verified in tcp_connect()", SOAP_SSL_ERROR);
         soap->fclosesocket(soap, fd);
         return SOAP_INVALID_SOCKET;
       }
@@ -4114,7 +4033,7 @@ again:
         X509 *peer;
         peer = SSL_get_peer_certificate(soap->ssl);
         if (!peer)
-        { soap_set_sender_error(soap, "SSL/TLS error", "No SSL/TLS certificate was presented by the peer in tcp_connect()", SOAP_SSL_ERROR);
+        { soap_set_sender_error(soap, "SSL error", "No SSL certificate was presented by the peer in tcp_connect()", SOAP_SSL_ERROR);
           soap->fclosesocket(soap, fd);
           return SOAP_INVALID_SOCKET;
         }
@@ -4125,7 +4044,7 @@ again:
           { X509_EXTENSION *ext = X509_get_ext(peer, i);
             const char *ext_str = OBJ_nid2sn(OBJ_obj2nid(X509_EXTENSION_get_object(ext)));
             if (ext_str && !strcmp(ext_str, "subjectAltName"))
-            { X509V3_EXT_METHOD *meth = (X509V3_EXT_METHOD*)X509V3_EXT_get(ext);
+            { X509V3_EXT_METHOD *meth = X509V3_EXT_get(ext);
               void *ext_data;
 #if (OPENSSL_VERSION_NUMBER >= 0x0090800fL)
               const unsigned char *data;
@@ -4143,36 +4062,23 @@ again:
               else
               { /* OpenSSL not perfectly portable at this point (?):
                    Some compilers appear to prefer
-                     meth->d2i(NULL, (const unsigned char**)&data, ...
-                   and others prefer
-                     meth->d2i(NULL, &data, ext->value->length);
+                   meth->d2i(NULL, (const unsigned char**)&data, ...
+                   or
+                   meth->d2i(NULL, &data, ext->value->length);
                 */
                 ext_data = meth->d2i(NULL, &data, ext->value->length);
               }
 #else
               ext_data = meth->d2i(NULL, &data, ext->value->length);
 #endif
-              if (ext_data)
-              { val = meth->i2v(meth, ext_data, NULL);
-		if (val)
-                { for (j = 0; j < sk_CONF_VALUE_num(val); j++)
-                  { CONF_VALUE *nval = sk_CONF_VALUE_value(val, j);
-                    if (nval && !strcmp(nval->name, "DNS") && !strcmp(nval->value, host))
-                    { ok = 1;
-                      break;
-                    }
-                  }
-                  sk_CONF_VALUE_pop_free(val, X509V3_conf_free);
+              val = meth->i2v(meth, ext_data, NULL);
+              for (j = 0; j < sk_CONF_VALUE_num(val); j++)
+              { CONF_VALUE *nval = sk_CONF_VALUE_value(val, j);
+                if (nval && !strcmp(nval->name, "DNS") && !strcmp(nval->value, host))
+                { ok = 1;
+                  break;
                 }
-#if (OPENSSL_VERSION_NUMBER > 0x00907000L)
-                if (meth->it)
-                  ASN1_item_free((ASN1_VALUE*)ext_data, ASN1_ITEM_ptr(meth->it));
-                else
-                  meth->ext_free(ext_data);
-#else
-                meth->ext_free(ext_data);
-#endif
-	      }
+              }
             }
             if (ok)
               break;
@@ -4187,7 +4093,7 @@ again:
               break;
             name = X509_NAME_ENTRY_get_data(X509_NAME_get_entry(subj, i));
             if (name)
-            { if (!soap_tag_cmp(host, (const char*)M_ASN1_STRING_data(name)))
+            { if (!soap_tag_cmp(host, (const char*)name))
                 ok = 1;
               else
               { unsigned char *tmp = NULL;
@@ -4203,300 +4109,19 @@ again:
         }
         X509_free(peer);
         if (!ok)
-        { soap_set_sender_error(soap, "SSL/TLS error", "SSL/TLS certificate host name mismatch in tcp_connect()", SOAP_SSL_ERROR);
+        { soap_set_sender_error(soap, "SSL error", "SSL certificate host name mismatch in tcp_connect()", SOAP_SSL_ERROR);
           soap->fclosesocket(soap, fd);
           return SOAP_INVALID_SOCKET;
         }
       }
     }
-#endif
-#ifdef WITH_GNUTLS
-    soap->ssl_flags |= SOAP_SSL_CLIENT;
-    if (!soap->session && (soap->error = soap->fsslauth(soap)))
-    { soap->fclosesocket(soap, fd);
-      return SOAP_INVALID_SOCKET;
-    }
-    gnutls_transport_set_ptr(soap->session, (gnutls_transport_ptr_t)(long)fd);
-    /* Set SSL sockets to non-blocking */
-    if (soap->connect_timeout)
-    { SOAP_SOCKNONBLOCK(fd)
-      retries = 10*soap->connect_timeout;
-    }
-    else
-      SOAP_SOCKBLOCK(fd)
-    if (retries <= 0)
-      retries = 100; /* timeout: 10 sec retries, 100 times 0.1 sec */
-    while ((r = gnutls_handshake(soap->session)))
-    { int s;
-      /* GNUTLS repeat handhake when GNUTLS_E_AGAIN */
-      if (retries-- <= 0)
-        break;
-      if (r == GNUTLS_E_AGAIN || r == GNUTLS_E_INTERRUPTED)
-      { if (!gnutls_record_get_direction(soap->session))
-          s = tcp_select(soap, fd, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, -100000);
-        else
-          s = tcp_select(soap, fd, SOAP_TCP_SELECT_SND | SOAP_TCP_SELECT_ERR, -100000);
-        if (s < 0 && soap->errnum != SOAP_EINTR)
-          break;
-      }
-      else
-      { soap->errnum = soap_socket_errno(fd);
-        break;
-      }
-    }
-    if (r)
-    { soap_set_sender_error(soap, soap_ssl_error(soap, r), "SSL/TLS handshake failed", SOAP_SSL_ERROR);
-      soap->fclosesocket(soap, fd);
-      return SOAP_INVALID_SOCKET;
-    }
-    if ((soap->ssl_flags & SOAP_SSL_REQUIRE_SERVER_AUTHENTICATION))
-    { const char *err = ssl_verify(soap, host);
-      if (err)
-      { soap->fclosesocket(soap, fd);
-        soap->error = soap_set_sender_error(soap, "SSL/TLS error", err, SOAP_SSL_ERROR);
-        return SOAP_INVALID_SOCKET;
-      }
-    }
-#endif
 #else
     soap->fclosesocket(soap, fd);
     soap->error = SOAP_SSL_ERROR;
     return SOAP_INVALID_SOCKET;
 #endif
   }
-  if (soap->recv_timeout || soap->send_timeout)
-    SOAP_SOCKNONBLOCK(fd)
-  else
-    SOAP_SOCKBLOCK(fd)
   return fd;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_1
-static int
-tcp_select(struct soap *soap, SOAP_SOCKET s, int flags, int timeout)
-{ register int r;
-  struct timeval tv;
-  fd_set fd[3], *rfd, *sfd, *efd;
-  soap->errnum = 0;
-#ifndef WIN32
-  /* if fd max set size exceeded, use poll() when available */
-#if defined(__QNX__) || defined(QNX) /* select() is not MT safe on some QNX */
-  if (1)
-#else
-  if ((int)s >= (int)FD_SETSIZE)
-#endif
-#ifdef HAVE_POLL
-  { struct pollfd pollfd;
-    int retries = 0;
-    pollfd.fd = (int)s;
-    pollfd.events = 0;
-    if (flags & SOAP_TCP_SELECT_RCV)
-      pollfd.events |= POLLIN;
-    if (flags & SOAP_TCP_SELECT_SND)
-      pollfd.events |= POLLOUT;
-    if (flags & SOAP_TCP_SELECT_ERR)
-      pollfd.events |= POLLERR;
-    if (timeout < 0)
-      timeout /= -1000; /* -usec -> ms */
-    else if (timeout <= 1000000) /* avoid overflow */
-      timeout *= 1000; /* sec -> ms */
-    else
-    { retries = timeout / 1000000;
-      timeout = 1000000000;
-    }
-    do r = poll(&pollfd, 1, timeout);
-    while (r == 0 && retries--);
-    if (r > 0)
-    { r = 0;
-      if ((flags & SOAP_TCP_SELECT_RCV) && (pollfd.revents & POLLIN))
-        r |= SOAP_TCP_SELECT_RCV;
-      if ((flags & SOAP_TCP_SELECT_SND) && (pollfd.revents & POLLOUT))
-        r |= SOAP_TCP_SELECT_SND;
-      if ((flags & SOAP_TCP_SELECT_ERR) && (pollfd.revents & POLLERR))
-        r |= SOAP_TCP_SELECT_ERR;
-    }
-    else if (r < 0)
-      soap->errnum = soap_socket_errno(s);
-    return r;
-  }
-#else
-  { soap->error = SOAP_FD_EXCEEDED;
-    return -1;
-  }
-#endif
-#endif
-  rfd = sfd = efd = NULL;
-  if (flags & SOAP_TCP_SELECT_RCV)
-  { rfd = &fd[0];
-    FD_ZERO(rfd);
-    FD_SET(s, rfd);
-  }
-  if (flags & SOAP_TCP_SELECT_SND)
-  { sfd = &fd[1];
-    FD_ZERO(sfd);
-    FD_SET(s, sfd);
-  }
-  if (flags & SOAP_TCP_SELECT_ERR)
-  { efd = &fd[2];
-    FD_ZERO(efd);
-    FD_SET(s, efd);
-  }
-  if (timeout >= 0)
-  { tv.tv_sec = timeout;
-    tv.tv_usec = 0;
-  }
-  else
-  { tv.tv_sec = -timeout / 1000000;
-    tv.tv_usec = -timeout % 1000000;
-  }
-  r = select((int)s + 1, rfd, sfd, efd, &tv);
-  if (r > 0)
-  { r = 0;
-    if ((flags & SOAP_TCP_SELECT_RCV) && FD_ISSET(s, rfd))
-      r |= SOAP_TCP_SELECT_RCV;
-    if ((flags & SOAP_TCP_SELECT_SND) && FD_ISSET(s, sfd))
-      r |= SOAP_TCP_SELECT_SND;
-    if ((flags & SOAP_TCP_SELECT_ERR) && FD_ISSET(s, efd))
-      r |= SOAP_TCP_SELECT_ERR;
-  }
-  else if (r < 0)
-    soap->errnum = soap_socket_errno(s);
-  return r;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_1
-static SOAP_SOCKET
-tcp_accept(struct soap *soap, SOAP_SOCKET s, struct sockaddr *a, int *n)
-{ SOAP_SOCKET fd;
-  fd = accept(s, a, (SOAP_SOCKLEN_T*)n); /* portability note: see SOAP_SOCKLEN_T definition in stdsoap2.h */
-#ifdef SOCKET_CLOSE_ON_EXEC
-#ifdef WIN32
-#ifndef UNDER_CE
-  SetHandleInformation((HANDLE)fd, HANDLE_FLAG_INHERIT, 0);
-#endif
-#else
-  fcntl(fd, F_SETFD, FD_CLOEXEC);
-#endif
-#endif
-  return fd;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_1
-static int
-tcp_disconnect(struct soap *soap)
-{
-#ifdef WITH_OPENSSL
-  if (soap->ssl)
-  { int r, s = 0;
-    if (soap->session)
-    { SSL_SESSION_free(soap->session);
-      soap->session = NULL;
-    }
-    if (*soap->host)
-    { soap->session = SSL_get1_session(soap->ssl);
-      if (soap->session)
-      { strcpy(soap->session_host, soap->host);
-        soap->session_port = soap->port;
-      }
-    }
-    r = SSL_shutdown(soap->ssl);
-    /* SSL shutdown does not work when reads are pending */
-    while (SSL_want_read(soap->ssl))
-    { SSL_read(soap->ssl, NULL, 0);
-      if (soap_socket_errno(soap->socket) != SOAP_EAGAIN)
-      { r = SSL_shutdown(soap->ssl);
-	break;
-      }
-    }
-    if (r == 0)
-    { if (soap_valid_socket(soap->socket))
-      { if (!soap->fshutdownsocket(soap, soap->socket, SOAP_SHUT_WR))
-        {
-#ifndef WITH_LEAN
-	  /*
-          wait up to 10 seconds for close_notify to be sent by peer (if peer not
-          present, this avoids calling SSL_shutdown() which has a lengthy return
-          timeout)
-          */
-          r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_ERR, 10);
-          if (r <= 0 && soap->errnum != SOAP_EINTR)
-          { soap->errnum = 0;
-            DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connection lost...\n"));
-            soap->fclosesocket(soap, soap->socket);
-            soap->socket = SOAP_INVALID_SOCKET;
-            ERR_remove_state(0);
-            return SOAP_OK;
-          }
-#else
-          r = SSL_shutdown(soap->ssl);
-#endif
-        }
-      }
-    }
-    if (r != 1)
-    { s = ERR_get_error();
-      if (s)
-      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Shutdown failed: %d\n", SSL_get_error(soap->ssl, r)));
-        if (soap_valid_socket(soap->socket) && !(soap->omode & SOAP_IO_UDP))
-        { soap->fclosesocket(soap, soap->socket);
-          soap->socket = SOAP_INVALID_SOCKET;
-        }
-      }
-    }
-    SSL_free(soap->ssl);
-    soap->ssl = NULL;
-    if (s)
-      return SOAP_SSL_ERROR;
-    ERR_remove_state(0);
-  }
-#endif
-#ifdef WITH_GNUTLS
-  if (soap->session)
-  { gnutls_bye(soap->session, GNUTLS_SHUT_RDWR);
-    gnutls_deinit(soap->session);
-    soap->session = NULL;
-  }
-#endif
-  if (soap_valid_socket(soap->socket) && !(soap->omode & SOAP_IO_UDP))
-  { soap->fshutdownsocket(soap, soap->socket, SOAP_SHUT_RDWR);
-    soap->fclosesocket(soap, soap->socket);
-    soap->socket = SOAP_INVALID_SOCKET;
-  }
-  return SOAP_OK;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_1
-static int
-tcp_closesocket(struct soap *soap, SOAP_SOCKET fd)
-{ DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Close socket %d\n", (int)fd));
-  return soap_closesocket(fd);
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_1
-static int
-tcp_shutdownsocket(struct soap *soap, SOAP_SOCKET fd, int how)
-{ DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Shutdown socket %d how=%d\n", (int)fd, how));
-  return shutdown(fd, how);
 }
 #endif
 #endif
@@ -4514,9 +4139,6 @@ soap_bind(struct soap *soap, const char *host, int port, int backlog)
   struct addrinfo hints;
   struct addrinfo res;
   int err;
-#ifdef WITH_NO_IPV6_V6ONLY
-  int unset = 0;
-#endif
 #endif
 #ifndef WITH_LEAN
   int len = SOAP_BUFLEN;
@@ -4544,16 +4166,18 @@ soap_bind(struct soap *soap, const char *host, int port, int backlog)
   hints.ai_flags = AI_PASSIVE;
   soap->errmode = 2;
   err = getaddrinfo(host, soap_int2s(soap, port), &hints, &addrinfo);
+  if (addrinfo)
+  { res = *addrinfo;
+    memcpy(&soap->peer, addrinfo->ai_addr, addrinfo->ai_addrlen);
+    soap->peerlen = addrinfo->ai_addrlen;
+    res.ai_addr = (struct sockaddr*)&soap->peer;
+    res.ai_addrlen = soap->peerlen;
+    freeaddrinfo(addrinfo);
+  }
   if (err || !addrinfo)
   { soap_set_receiver_error(soap, SOAP_GAI_STRERROR(err), "getaddrinfo failed in soap_bind()", SOAP_TCP_ERROR);
     return SOAP_INVALID_SOCKET;
   }
-  res = *addrinfo;
-  memcpy(&soap->peer, addrinfo->ai_addr, addrinfo->ai_addrlen);
-  soap->peerlen = addrinfo->ai_addrlen;
-  res.ai_addr = (struct sockaddr*)&soap->peer;
-  res.ai_addrlen = soap->peerlen;
-  freeaddrinfo(addrinfo);
   soap->master = (int)socket(res.ai_family, res.ai_socktype, res.ai_protocol);
 #else
 #ifndef WITH_LEAN
@@ -4612,20 +4236,6 @@ soap_bind(struct soap *soap, const char *host, int port, int backlog)
 #endif
 #endif
 #ifdef WITH_IPV6
-#ifdef WITH_IPV6_V6ONLY
-  if (setsockopt(soap->master, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&set, sizeof(int)))
-  { soap->errnum = soap_socket_errno(soap->master);
-    soap_set_receiver_error(soap, tcp_error(soap), "setsockopt IPV6_V6ONLY failed in soap_bind()", SOAP_TCP_ERROR);
-    return SOAP_INVALID_SOCKET;
-  }
-#endif
-#ifdef WITH_NO_IPV6_V6ONLY
-  if (setsockopt(soap->master, IPPROTO_IPV6, IPV6_V6ONLY, (char*)&unset, sizeof(int)))
-  { soap->errnum = soap_socket_errno(soap->master);
-    soap_set_receiver_error(soap, tcp_error(soap), "setsockopt IPV6_V6ONLY failed in soap_bind()", SOAP_TCP_ERROR);
-    return SOAP_INVALID_SOCKET;
-  }
-#endif
   soap->errmode = 0;
   if (bind(soap->master, res.ai_addr, (int)res.ai_addrlen))
   { soap->errnum = soap_socket_errno(soap->master);
@@ -4678,14 +4288,30 @@ SOAP_FMAC2
 soap_poll(struct soap *soap)
 { 
 #ifndef WITH_LEAN
+  struct timeval timeout;
+  fd_set rfd, sfd, xfd;
   register int r;
+#ifndef WIN32
+  if ((int)soap->socket >= (int)FD_SETSIZE)
+    return SOAP_FD_EXCEEDED;	/* Hint: MUST increase FD_SETSIZE */
+#endif
+  timeout.tv_sec = 0;
+  timeout.tv_usec = 0;
+  FD_ZERO(&rfd);
+  FD_ZERO(&sfd);
+  FD_ZERO(&xfd);
   if (soap_valid_socket(soap->socket))
-  { r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_ALL, 0);
-    if (r > 0 && (r & SOAP_TCP_SELECT_ERR))
+  { FD_SET(soap->socket, &rfd);
+    FD_SET(soap->socket, &sfd);
+    FD_SET(soap->socket, &xfd);
+    r = select((int)soap->socket + 1, &rfd, &sfd, &xfd, &timeout);
+    if (r > 0 && FD_ISSET(soap->socket, &xfd))
       r = -1;
   }
   else if (soap_valid_socket(soap->master))
-    r = tcp_select(soap, soap->master, SOAP_TCP_SELECT_SND, 0);
+  { FD_SET(soap->master, &sfd);
+    r = select((int)soap->master + 1, NULL, &sfd, NULL, &timeout);
+  }
   else
     return SOAP_OK;
   if (r > 0)
@@ -4694,30 +4320,54 @@ soap_poll(struct soap *soap)
     if (soap->imode & SOAP_ENC_SSL)
     {
       if (soap_valid_socket(soap->socket)
-       && (r & SOAP_TCP_SELECT_SND)
-       && (!(r & SOAP_TCP_SELECT_RCV)
+       && FD_ISSET(soap->socket, &sfd)
+       && (!FD_ISSET(soap->socket, &rfd)
         || SSL_peek(soap->ssl, soap->tmpbuf, 1) > 0))
         return SOAP_OK;
     }
     else
 #endif
       if (soap_valid_socket(soap->socket)
-       && (r & SOAP_TCP_SELECT_SND)
-       && (!(r & SOAP_TCP_SELECT_RCV)
+       && FD_ISSET(soap->socket, &sfd)
+       && (!FD_ISSET(soap->socket, &rfd)
         || recv(soap->socket, soap->tmpbuf, 1, MSG_PEEK) > 0))
         return SOAP_OK;
   }
   else if (r < 0)
-  { if ((soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) && soap_socket_errno(soap->master) != SOAP_EINTR)
+  { soap->errnum = soap_socket_errno(soap->master);
+    if ((soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) && soap_socket_errno(soap->master) != SOAP_EINTR)
     { soap_set_receiver_error(soap, tcp_error(soap), "select failed in soap_poll()", SOAP_TCP_ERROR);
       return soap->error = SOAP_TCP_ERROR;
     }
   }
+  else
+    soap->errnum = 0;
   DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Polling: other end down on socket=%d select=%d\n", soap->socket, r));
   return SOAP_EOF;
 #else
   return SOAP_OK;
 #endif
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOIO
+#ifndef PALM_1
+static SOAP_SOCKET
+tcp_accept(struct soap *soap, SOAP_SOCKET s, struct sockaddr *a, int *n)
+{ SOAP_SOCKET fd;
+  fd = accept(s, a, (SOAP_SOCKLEN_T*)n);	/* portability note: see SOAP_SOCKLEN_T definition in stdsoap2.h */
+#ifdef SOCKET_CLOSE_ON_EXEC
+#ifdef WIN32
+#ifndef UNDER_CE
+  SetHandleInformation((HANDLE)fd, HANDLE_FLAG_INHERIT, 0);
+#endif
+#else
+  fcntl(fd, F_SETFD, FD_CLOEXEC);
+#endif
+#endif
+  return fd;
 }
 #endif
 #endif
@@ -4746,30 +4396,58 @@ soap_accept(struct soap *soap)
   if (soap_valid_socket(soap->master))
   { register int err;
     for (;;)
-    { if (soap->accept_timeout || soap->send_timeout || soap->recv_timeout)
-      { for (;;)
-        { register int r;
-          r = tcp_select(soap, soap->master, SOAP_TCP_SELECT_ALL, soap->accept_timeout ? soap->accept_timeout : 60);
+    { 
+#ifndef WITH_LEAN
+      if (soap->accept_timeout || soap->send_timeout || soap->recv_timeout)
+      {
+#ifndef WIN32
+        if ((int)soap->socket >= (int)FD_SETSIZE)
+        { soap->error = SOAP_FD_EXCEEDED;
+          return SOAP_INVALID_SOCKET;	/* Hint: MUST increase FD_SETSIZE */
+        }
+#endif
+        for (;;)
+        { struct timeval timeout;
+          fd_set fd;
+          register int r;
+          if (soap->accept_timeout > 0)
+          { timeout.tv_sec = soap->accept_timeout;
+            timeout.tv_usec = 0;
+          }
+          else if (soap->accept_timeout < 0)
+          { timeout.tv_sec = -soap->accept_timeout/1000000;
+            timeout.tv_usec = -soap->accept_timeout%1000000;
+          }
+	  else
+          { timeout.tv_sec = 60;
+            timeout.tv_usec = 0;
+          }
+          FD_ZERO(&fd);
+          FD_SET(soap->master, &fd);
+          r = select((int)soap->master + 1, &fd, &fd, &fd, &timeout);
           if (r > 0)
             break;
           if (!r && soap->accept_timeout)
-          { soap_set_receiver_error(soap, "Timeout", "accept failed in soap_accept()", SOAP_TCP_ERROR);
+          { soap->errnum = 0;
+            soap_set_receiver_error(soap, "Timeout", "accept failed in soap_accept()", SOAP_TCP_ERROR);
             return SOAP_INVALID_SOCKET;
           }
 	  if (r < 0)
-          { r = soap->errnum;
+          { r = soap_socket_errno(soap->master);
             if (r != SOAP_EINTR)
-            { soap_closesock(soap);
+            { soap->errnum = r;
+              soap_closesock(soap);
               soap_set_sender_error(soap, tcp_error(soap), "accept failed in soap_accept()", SOAP_TCP_ERROR);
               return SOAP_INVALID_SOCKET;
             }
 	  }
         }
       }
-      if (soap->accept_timeout)
+      if (soap->accept_timeout || soap->send_timeout || soap->recv_timeout)
         SOAP_SOCKNONBLOCK(soap->master)
       else
         SOAP_SOCKBLOCK(soap->master)
+#endif
       soap->socket = soap->faccept(soap, soap->master, (struct sockaddr*)&soap->peer, &n);
       soap->peerlen = (size_t)n;
       if (soap_valid_socket(soap->socket))
@@ -4790,7 +4468,7 @@ soap_accept(struct soap *soap)
         { struct linger linger;
           memset((void*)&linger, 0, sizeof(linger));
           linger.l_onoff = 1;
-          linger.l_linger = soap->linger_time;
+          linger.l_linger = 0;
           if (setsockopt(soap->socket, SOL_SOCKET, SO_LINGER, (char*)&linger, sizeof(struct linger)))
           { soap->errnum = soap_socket_errno(soap->socket);
             soap_set_receiver_error(soap, tcp_error(soap), "setsockopt SO_LINGER failed in soap_accept()", SOAP_TCP_ERROR);
@@ -4832,10 +4510,6 @@ soap_accept(struct soap *soap)
 #endif
 #endif
         soap->keep_alive = (((soap->imode | soap->omode) & SOAP_IO_KEEPALIVE) != 0);
-        if (soap->send_timeout || soap->recv_timeout)
-          SOAP_SOCKNONBLOCK(soap->socket)
-        else
-          SOAP_SOCKBLOCK(soap->socket)
         return soap->socket;
       }
       err = soap_socket_errno(soap->socket);
@@ -4858,20 +4532,120 @@ soap_accept(struct soap *soap)
 #endif
 
 /******************************************************************************/
+#ifndef WITH_NOIO
+#ifndef PALM_1
+static int
+tcp_disconnect(struct soap *soap)
+{
+#ifdef WITH_OPENSSL
+  if (soap->ssl)
+  { int r, s = 0;
+    if (soap->session)
+    { SSL_SESSION_free(soap->session);
+      soap->session = NULL;
+    }
+    if (*soap->host)
+    { soap->session = SSL_get1_session(soap->ssl);
+      if (soap->session)
+      { strcpy(soap->session_host, soap->host);
+        soap->session_port = soap->port;
+      }
+    }
+    r = SSL_shutdown(soap->ssl);
+    if (r == 0)
+    { if (soap_valid_socket(soap->socket))
+      { struct timeval timeout;
+        fd_set fd;
+        if (soap->fshutdownsocket(soap, soap->socket, 1))
+        { /*
+          wait up to 10 seconds for close_notify to be sent by peer (if peer not
+          present, this avoids calling SSL_shutdown() which has a lengthy return
+          timeout)
+          */
+#ifndef WIN32
+          if ((int)soap->socket < (int)FD_SETSIZE)
+          {
+#endif
+            timeout.tv_sec = 10;
+            timeout.tv_usec = 0;
+            FD_ZERO(&fd);
+            FD_SET(soap->socket, &fd);
+            r = select((int)soap->socket + 1, &fd, NULL, &fd, &timeout);
+            if (r <= 0 && soap_socket_errno(soap->socket) != SOAP_EINTR)
+            { soap->errnum = 0;
+              DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Connection lost...\n"));
+              soap->fclosesocket(soap, soap->socket);
+              soap->socket = SOAP_INVALID_SOCKET;
+              SSL_free(soap->ssl);
+              soap->ssl = NULL;
+              ERR_remove_state(0);
+              return SOAP_OK;
+            }
+#ifndef WIN32
+          }
+#endif
+        }
+      }
+      r = SSL_shutdown(soap->ssl);
+    }
+    if (r != 1)
+    { s = ERR_get_error();
+      if (s)
+      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Shutdown failed: %d\n", SSL_get_error(soap->ssl, r)));
+        if (soap_valid_socket(soap->socket) && !(soap->omode & SOAP_IO_UDP))
+        { soap->fclosesocket(soap, soap->socket);
+          soap->socket = SOAP_INVALID_SOCKET;
+        }
+        SSL_free(soap->ssl);
+        soap->ssl = NULL;
+        ERR_remove_state(0);
+        return SOAP_SSL_ERROR;
+      }
+    }
+    SSL_free(soap->ssl);
+    soap->ssl = NULL;
+    ERR_remove_state(0);
+  }
+#endif
+  if (soap_valid_socket(soap->socket) && !(soap->omode & SOAP_IO_UDP))
+  { soap->fshutdownsocket(soap, soap->socket, 2);
+    soap->fclosesocket(soap, soap->socket);
+    soap->socket = SOAP_INVALID_SOCKET;
+  }
+  return SOAP_OK;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOIO
+#ifndef PALM_1
+static int
+tcp_closesocket(struct soap *soap, SOAP_SOCKET fd)
+{ DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Close socket %d\n", (int)fd));
+  return soap_closesocket(fd);
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOIO
+#ifndef PALM_1
+static int
+tcp_shutdownsocket(struct soap *soap, SOAP_SOCKET fd, int how)
+{ DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Shutdown socket %d how=%d\n", (int)fd, how));
+  return shutdown(fd, how);
+}
+#endif
+#endif
+
+/******************************************************************************/
 #ifndef PALM_1
 SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_closesock(struct soap *soap)
 { register int status = soap->error;
-#ifndef WITH_LEANER
-  soap->mime.first = NULL;
-  soap->mime.last = NULL;
-  soap->dime.first = NULL;
-  soap->dime.last = NULL;
-#endif
-  if (soap->fdisconnect && (soap->error = soap->fdisconnect(soap)))
-    return soap->error;
   if (status == SOAP_EOF || status == SOAP_TCP_ERROR || status == SOAP_SSL_ERROR || !soap->keep_alive)
   { if (soap->fclose && (soap->error = soap->fclose(soap)))
       return soap->error;
@@ -4887,1506 +4661,6 @@ soap_closesock(struct soap *soap)
   return soap->error = status;
 }
 #endif
-
-/******************************************************************************/
-#ifndef WITH_NOIO
-#ifndef PALM_2
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_cleanup(struct soap *soap)
-{ soap_done(soap);
-#ifdef WIN32
-  if (!tcp_done)
-    return;
-  tcp_done = 0;
-  WSACleanup();
-#endif
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_done(struct soap *soap)
-{ 
-#ifdef SOAP_DEBUG
-  int i;
-#endif
-  if (soap_check_state(soap))
-    return;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Done with context\n"));
-  soap_free_temp(soap);
-  while (soap->clist)
-  { struct soap_clist *p = soap->clist->next;
-    SOAP_FREE(soap, soap->clist);
-    soap->clist = p;
-  }
-  if (soap->state == SOAP_INIT)
-    soap->omode &= ~SOAP_IO_UDP; /* to force close the socket */
-  soap->keep_alive = 0; /* to force close the socket */
-  soap_closesock(soap);
-#ifdef WITH_COOKIES
-  soap_free_cookies(soap);
-#endif
-  while (soap->plugins)
-  { register struct soap_plugin *p = soap->plugins->next;
-    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Removing plugin '%s'\n", soap->plugins->id));
-    if (soap->plugins->fcopy || soap->state == SOAP_INIT)
-      soap->plugins->fdelete(soap, soap->plugins);
-    SOAP_FREE(soap, soap->plugins);
-    soap->plugins = p;
-  }
-  soap->fplugin = fplugin;
-  soap->fmalloc = NULL;
-#ifndef WITH_NOHTTP
-  soap->fpost = http_post;
-  soap->fget = http_get;
-  soap->fput = http_405;
-  soap->fdel = http_405;
-  soap->fhead = http_405;
-  soap->fform = NULL;
-  soap->fposthdr = http_post_header;
-  soap->fresponse = http_response;
-  soap->fparse = http_parse;
-  soap->fparsehdr = http_parse_header;
-#endif
-  soap->fheader = NULL;
-#ifndef WITH_NOIO
-#ifndef WITH_IPV6
-  soap->fresolve = tcp_gethost;
-#else
-  soap->fresolve = NULL;
-#endif
-  soap->faccept = tcp_accept;
-  soap->fopen = tcp_connect;
-  soap->fclose = tcp_disconnect;
-  soap->fclosesocket = tcp_closesocket;
-  soap->fshutdownsocket = tcp_shutdownsocket;
-  soap->fsend = fsend;
-  soap->frecv = frecv;
-  soap->fpoll = soap_poll;
-#else
-  soap->fopen = NULL;
-  soap->fclose = NULL;
-  soap->fpoll = NULL;
-#endif
-#ifndef WITH_LEANER
-  soap->fprepareinitsend = NULL;
-  soap->fprepareinitrecv = NULL;
-  soap->fpreparesend = NULL;
-  soap->fpreparerecv = NULL;
-  soap->fpreparefinalsend = NULL;
-  soap->fpreparefinalrecv = NULL;
-#endif
-  soap->fseterror = NULL;
-  soap->fignore = NULL;
-  soap->fserveloop = NULL;
-#ifdef WITH_OPENSSL
-  if (soap->session)
-  { SSL_SESSION_free(soap->session);
-    soap->session = NULL;
-  }
-#endif
-  if (soap->state == SOAP_INIT)
-  { if (soap_valid_socket(soap->master))
-    { soap->fclosesocket(soap, soap->master);
-      soap->master = SOAP_INVALID_SOCKET;
-    }
-  }
-#ifdef WITH_OPENSSL
-  if (soap->ssl)
-  { SSL_free(soap->ssl);
-    soap->ssl = NULL;
-  }
-  if (soap->state == SOAP_INIT)
-  { if (soap->ctx)
-    { SSL_CTX_free(soap->ctx);
-      soap->ctx = NULL;
-    }
-  }
-  ERR_remove_state(0);
-#endif
-#ifdef WITH_GNUTLS
-  if (soap->state == SOAP_INIT)
-  { if (soap->xcred)
-    { gnutls_certificate_free_credentials(soap->xcred);
-      soap->xcred = NULL;
-    }
-    if (soap->acred)
-    { gnutls_anon_free_client_credentials(soap->acred);
-      soap->acred = NULL;
-    }
-    if (soap->cache)
-    { gnutls_priority_deinit(soap->cache);
-      soap->cache = NULL;
-    }
-    if (soap->dh_params)
-    { gnutls_dh_params_deinit(soap->dh_params);
-      soap->dh_params = NULL;
-    }
-    if (soap->rsa_params)
-    { gnutls_rsa_params_deinit(soap->rsa_params);
-      soap->rsa_params = NULL;
-    }
-  }
-  if (soap->session)
-  { gnutls_deinit(soap->session);
-    soap->session = NULL;
-  }
-#endif
-#ifdef WITH_C_LOCALE
-  freelocale(soap->c_locale);
-#endif
-#ifdef WITH_ZLIB
-  if (soap->d_stream)
-  { SOAP_FREE(soap, (void*)soap->d_stream);
-    soap->d_stream = NULL;
-  }
-  if (soap->z_buf)
-  { SOAP_FREE(soap, (void*)soap->z_buf);
-    soap->z_buf = NULL;
-  }
-#endif
-#ifdef SOAP_DEBUG
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free logfiles\n"));
-  for (i = 0; i < SOAP_MAXLOGS; i++)
-  { if (soap->logfile[i])
-    { SOAP_FREE(soap, (void*)soap->logfile[i]);
-      soap->logfile[i] = NULL;
-    }
-    soap_close_logfile(soap, i);
-  }
-  soap->state = SOAP_NONE;
-#endif
-#ifdef SOAP_MEM_DEBUG
-  soap_free_mht(soap);
-#endif
-}
-#endif
-
-/******************************************************************************\
- *
- *	HTTP
- *
-\******************************************************************************/
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_parse(struct soap *soap)
-{ char header[SOAP_HDRLEN], *s;
-  unsigned short httpcmd = 0, status = 0;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Waiting for HTTP request/response...\n"));
-  *soap->endpoint = '\0';
-  soap->length = 0;
-  soap->userid = NULL;
-  soap->passwd = NULL;
-  soap->action = NULL;
-  soap->authrealm = NULL;
-  soap->proxy_from = NULL;
-  soap->http_content = NULL;
-  soap->status = 0;
-  do
-  { if (soap_getline(soap, soap->msgbuf, sizeof(soap->msgbuf)))
-    { if (soap->error == SOAP_EOF)
-        return SOAP_EOF;
-      return soap->error = 414;
-    }
-    if ((s = strchr(soap->msgbuf, ' ')))
-    { soap->status = (unsigned short)soap_strtoul(s, &s, 10);
-      if (!soap_blank(*s))
-        soap->status = 0;
-    }
-    else
-      soap->status = 0;
-    DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP status: %s\n", soap->msgbuf));
-    for (;;)
-    { if (soap_getline(soap, header, SOAP_HDRLEN))
-      { if (soap->error == SOAP_EOF)
-        { soap->error = SOAP_OK;
-          DBGLOG(TEST,SOAP_MESSAGE(fdebug, "EOF in HTTP header, continue anyway\n"));
-          break;
-        }
-        return soap->error;
-      }
-      if (!*header)
-        break;
-      DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP header: %s\n", header));
-      s = strchr(header, ':');
-      if (s)
-      { char *t;
-        *s = '\0';
-        do s++;
-        while (*s && *s <= 32);
-        if (*s == '"')
-          s++;
-        t = s + strlen(s) - 1;
-        while (t > s && *t <= 32)
-          t--;
-        if (t >= s && *t == '"')
-          t--;
-        t[1] = '\0';
-        if ((soap->error = soap->fparsehdr(soap, header, s)))
-        { if (soap->error < SOAP_STOP)
-            return soap->error;
-          status = soap->error;
-          soap->error = SOAP_OK;
-        }
-      }
-    }
-  } while (soap->status == 100);
-  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Finished HTTP header parsing, status = %d\n", soap->status));
-  s = strstr(soap->msgbuf, "HTTP/");
-  if (s && s[7] != '1')
-  { if (soap->keep_alive == 1)
-      soap->keep_alive = 0;
-    if (soap->status == 0 && (soap->omode & SOAP_IO) == SOAP_IO_CHUNK) /* soap->status == 0 for HTTP request */
-    { soap->imode |= SOAP_IO_CHUNK;
-      soap->omode = (soap->omode & ~SOAP_IO) | SOAP_IO_STORE;
-    }
-  }
-  if (soap->keep_alive < 0)
-    soap->keep_alive = 1;
-  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Keep alive connection = %d\n", soap->keep_alive));
-  if (soap->status == 0)
-  { size_t l = 0;
-    if (s)
-    { if (!strncmp(soap->msgbuf, "POST ", l = 5))
-        httpcmd = 1;
-      else if (!strncmp(soap->msgbuf, "GET ", l = 4))
-        httpcmd = 2;
-      else if (!strncmp(soap->msgbuf, "PUT ", l = 4))
-        httpcmd = 3;
-      else if (!strncmp(soap->msgbuf, "DELETE ", l = 7))
-        httpcmd = 4;
-      else if (!strncmp(soap->msgbuf, "HEAD ", l = 5))
-        httpcmd = 5;
-    }
-    if (s && httpcmd) 
-    { size_t m = strlen(soap->endpoint);
-      size_t n = m + (s - soap->msgbuf) - l - 1;
-      if (m > n)
-        m = n;
-      if (n >= sizeof(soap->endpoint))
-        n = sizeof(soap->endpoint) - 1;
-      strncpy(soap->path, soap->msgbuf + l, n - m);
-      soap->path[n - m] = '\0';
-      strcat(soap->endpoint, soap->path);
-      DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Target endpoint='%s'\n", soap->endpoint));
-      if (httpcmd > 1)
-      { switch (httpcmd)
-        { case  2: soap->error = soap->fget(soap); break;
-          case  3: soap->error = soap->fput(soap); break;
-          case  4: soap->error = soap->fdel(soap); break;
-          case  5: soap->error = soap->fhead(soap); break;
-	  default: soap->error = 405; break;
-	}
-        if (soap->error == SOAP_OK)
-          soap->error = SOAP_STOP; /* prevents further processing */
-        return soap->error;
-      }
-      if (status)
-        return soap->error = status;
-    }
-    else if (status)
-      return soap->error = status;
-    else if (s)
-      return soap->error = 405;
-  }
-  /* Status OK (HTTP 200) */
-  if (soap->status == 0 || soap->status == 200)
-    return SOAP_OK;
-  /* Status 201 (Created), 202 (Accepted), ... and HTTP 400 and 500 errors
-     may not have a body. When content length, content type, or chunking is
-     used assume there is a message to parse, either XML or HTTP.
-  This version allows parsing of content when length=0:
-  if (soap->length > 0 || soap->http_content || (soap->imode & SOAP_IO) == SOAP_IO_CHUNK)
-  */
-  if (soap->length > 0 || (soap->imode & SOAP_IO) == SOAP_IO_CHUNK)
-  { if (((soap->status > 200 && soap->status <= 299) || soap->status == 400 || soap->status == 500))
-      return SOAP_OK;
-    /* force close afterwards in soap_closesock() */
-    soap->keep_alive = 0;
-    /* read HTTP body for error details */
-    s = soap_get_http_body(soap);
-    if (s)
-      return soap_set_receiver_error(soap, soap->msgbuf, s, soap->status);
-  }
-  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP error %d\n", soap->status));
-  return soap_set_receiver_error(soap, "HTTP Error", soap->msgbuf, soap->status);
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_parse_header(struct soap *soap, const char *key, const char *val)
-{ if (!soap_tag_cmp(key, "Host"))
-  { 
-#ifdef WITH_OPENSSL
-    if (soap->imode & SOAP_ENC_SSL)
-      strcpy(soap->endpoint, "https://");
-    else
-#endif
-      strcpy(soap->endpoint, "http://");
-    strncat(soap->endpoint, val, sizeof(soap->endpoint) - 8);
-    soap->endpoint[sizeof(soap->endpoint) - 1] = '\0';
-  }
-#ifndef WITH_LEANER
-  else if (!soap_tag_cmp(key, "Content-Type"))
-  { const char *action;
-    soap->http_content = soap_strdup(soap, val);
-    if (soap_get_header_attribute(soap, val, "application/dime"))
-      soap->imode |= SOAP_ENC_DIME;
-    else if (soap_get_header_attribute(soap, val, "multipart/related")
-          || soap_get_header_attribute(soap, val, "multipart/form-data"))
-    { soap->mime.boundary = soap_strdup(soap, soap_get_header_attribute(soap, val, "boundary"));
-      soap->mime.start = soap_strdup(soap, soap_get_header_attribute(soap, val, "start"));
-      soap->imode |= SOAP_ENC_MIME;
-    }
-    action = soap_get_header_attribute(soap, val, "action");
-    if (action)
-    { if (*action == '"')
-      { soap->action = soap_strdup(soap, action + 1);
-        soap->action[strlen(soap->action) - 1] = '\0';
-      }
-      else
-        soap->action = soap_strdup(soap, action);
-    }
-  }
-#endif
-  else if (!soap_tag_cmp(key, "Content-Length"))
-  { soap->length = soap_strtoul(val, NULL, 10);
-  }
-  else if (!soap_tag_cmp(key, "Content-Encoding"))
-  { if (!soap_tag_cmp(val, "deflate"))
-#ifdef WITH_ZLIB
-      soap->zlib_in = SOAP_ZLIB_DEFLATE;
-#else
-      return SOAP_ZLIB_ERROR;
-#endif
-    else if (!soap_tag_cmp(val, "gzip"))
-#ifdef WITH_GZIP
-      soap->zlib_in = SOAP_ZLIB_GZIP;
-#else
-      return SOAP_ZLIB_ERROR;
-#endif
-  }
-#ifdef WITH_ZLIB
-  else if (!soap_tag_cmp(key, "Accept-Encoding"))
-  {
-#ifdef WITH_GZIP
-    if (strchr(val, '*') || soap_get_header_attribute(soap, val, "gzip"))
-      soap->zlib_out = SOAP_ZLIB_GZIP;
-    else
-#endif
-    if (strchr(val, '*') || soap_get_header_attribute(soap, val, "deflate"))
-      soap->zlib_out = SOAP_ZLIB_DEFLATE;
-    else
-      soap->zlib_out = SOAP_ZLIB_NONE;
-  }
-#endif
-  else if (!soap_tag_cmp(key, "Transfer-Encoding"))
-  { soap->imode &= ~SOAP_IO;
-    if (!soap_tag_cmp(val, "chunked"))
-      soap->imode |= SOAP_IO_CHUNK;
-  }
-  else if (!soap_tag_cmp(key, "Connection"))
-  { if (!soap_tag_cmp(val, "keep-alive"))
-      soap->keep_alive = -soap->keep_alive;
-    else if (!soap_tag_cmp(val, "close"))
-      soap->keep_alive = 0;
-  }
-#ifndef WITH_LEAN
-  else if (!soap_tag_cmp(key, "Authorization"))
-  { if (!soap_tag_cmp(val, "Basic *"))
-    { int n;
-      char *s;
-      soap_base642s(soap, val + 6, soap->tmpbuf, sizeof(soap->tmpbuf) - 1, &n);
-      soap->tmpbuf[n] = '\0';
-      if ((s = strchr(soap->tmpbuf, ':')))
-      { *s = '\0';
-        soap->userid = soap_strdup(soap, soap->tmpbuf);
-        soap->passwd = soap_strdup(soap, s + 1);
-      }
-    }
-  }
-  else if (!soap_tag_cmp(key, "WWW-Authenticate"))
-  { soap->authrealm = soap_strdup(soap, soap_get_header_attribute(soap, val + 6, "realm"));
-  }
-  else if (!soap_tag_cmp(key, "Expect"))
-  { if (!soap_tag_cmp(val, "100-continue"))
-    { if ((soap->error = soap->fposthdr(soap, "HTTP/1.1 100 Continue", NULL))
-       || (soap->error = soap->fposthdr(soap, NULL, NULL)))
-        return soap->error;
-    }
-  }
-#endif
-  else if (!soap_tag_cmp(key, "SOAPAction"))
-  { if (*val == '"')
-    { soap->action = soap_strdup(soap, val + 1);
-      soap->action[strlen(soap->action) - 1] = '\0';
-    }
-    else
-      soap->action = soap_strdup(soap, val);
-  }
-  else if (!soap_tag_cmp(key, "Location"))
-  { strncpy(soap->endpoint, val, sizeof(soap->endpoint));
-    soap->endpoint[sizeof(soap->endpoint) - 1] = '\0';
-  }
-  else if (!soap_tag_cmp(key, "X-Forwarded-For"))
-  { soap->proxy_from = soap_strdup(soap, val);
-  }
-#ifdef WITH_COOKIES
-  else if (!soap_tag_cmp(key, "Cookie")
-   || !soap_tag_cmp(key, "Cookie2")
-   || !soap_tag_cmp(key, "Set-Cookie")
-   || !soap_tag_cmp(key, "Set-Cookie2"))
-  { soap_getcookies(soap, val);
-  }
-#endif
-  return SOAP_OK;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
-#ifndef PALM_1
-SOAP_FMAC1
-const char*
-SOAP_FMAC2
-soap_get_header_attribute(struct soap *soap, const char *line, const char *key)
-{ register const char *s = line;
-  if (s)
-  { while (*s)
-    { register short flag;
-      s = soap_decode_key(soap->tmpbuf, sizeof(soap->tmpbuf), s);
-      flag = soap_tag_cmp(soap->tmpbuf, key);
-      s = soap_decode_val(soap->tmpbuf, sizeof(soap->tmpbuf), s);
-      if (!flag)
-        return soap->tmpbuf;
-    }
-  }
-  return NULL;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
-#ifndef PALM_1
-SOAP_FMAC1
-const char*
-SOAP_FMAC2
-soap_decode_key(char *buf, size_t len, const char *val)
-{ return soap_decode(buf, len, val, "=,;");
-}
-#endif
-#endif
-
-/******************************************************************************/
-#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
-#ifndef PALM_1
-SOAP_FMAC1
-const char*
-SOAP_FMAC2
-soap_decode_val(char *buf, size_t len, const char *val)
-{ if (*val != '=')
-  { *buf = '\0';
-    return val;
-  }
-  return soap_decode(buf, len, val + 1, ",;");
-}
-#endif
-#endif
-
-/******************************************************************************/
-#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
-#ifndef PALM_1
-static const char*
-soap_decode(char *buf, size_t len, const char *val, const char *sep)
-{ const char *s;
-  char *t = buf;
-  for (s = val; *s; s++)
-    if (*s != ' ' && *s != '\t' && !strchr(sep, *s))
-      break;
-  if (*s == '"')
-  { s++;
-    while (*s && *s != '"' && --len)
-      *t++ = *s++;
-  }
-  else
-  { while (*s && !soap_blank(*s) && !strchr(sep, *s) && --len)
-    { if (*s == '%')
-      { *t++ = ((s[1] >= 'A' ? (s[1] & 0x7) + 9 : s[1] - '0') << 4)
-              + (s[2] >= 'A' ? (s[2] & 0x7) + 9 : s[2] - '0');
-        s += 3;
-      }
-      else
-        *t++ = *s++;
-    }
-  }
-  *t = '\0';
-  while (*s && !strchr(sep, *s))
-    s++;
-  return s;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static const char*
-http_error(struct soap *soap, int status)
-{ register const char *msg = SOAP_STR_EOS;
-#ifndef WITH_LEAN
-  msg = soap_code_str(h_http_error_codes, status);
-  if (!msg)
-    msg = SOAP_STR_EOS;
-#endif
-  return msg;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_get(struct soap *soap)
-{ return SOAP_GET_METHOD;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_405(struct soap *soap)
-{ return 405;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_post(struct soap *soap, const char *endpoint, const char *host, int port, const char *path, const char *action, size_t count)
-{ register const char *s;
-  register int err;
-  if (soap->status == SOAP_GET)
-    s = "GET";
-  else
-    s = "POST";
-#ifdef PALM
-  if (!endpoint || (soap_tag_cmp(endpoint, "http:*") && soap_tag_cmp(endpoint, "https:*") && strncmp(endpoint, "httpg:", 6)) && strncmp(endpoint, "_beam:", 6) && strncmp(endpoint, "_local:", 7) && strncmp(endpoint, "_btobex:", 8))
-#else
-  if (!endpoint || (soap_tag_cmp(endpoint, "http:*") && soap_tag_cmp(endpoint, "https:*") && strncmp(endpoint, "httpg:", 6)))
-#endif
-    return SOAP_OK;
-  if (strlen(endpoint) + strlen(soap->http_version) > sizeof(soap->tmpbuf) - 80)
-    return soap->error = SOAP_EOM;
-  if (soap->proxy_host && soap_tag_cmp(endpoint, "https:*"))
-    sprintf(soap->tmpbuf, "%s %s HTTP/%s", s, endpoint, soap->http_version);
-  else
-    sprintf(soap->tmpbuf, "%s /%s HTTP/%s", s, (*path == '/' ? path + 1 : path), soap->http_version);
-  if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
-    return err;
-#ifdef WITH_OPENSSL
-  if ((soap->ssl && soap->port != 443) || (!soap->ssl && soap->port != 80))
-    sprintf(soap->tmpbuf, "%s:%d", host, port);
-  else
-    strcpy(soap->tmpbuf, host); 
-#else
-  if (port != 80)
-    sprintf(soap->tmpbuf, "%s:%d", host, port);
-  else
-    strcpy(soap->tmpbuf, host); 
-#endif
-  if ((err = soap->fposthdr(soap, "Host", soap->tmpbuf))
-   || (err = soap->fposthdr(soap, "User-Agent", "gSOAP/2.7"))
-   || (err = soap_puthttphdr(soap, SOAP_OK, count)))
-    return err;
-#ifdef WITH_ZLIB
-#ifdef WITH_GZIP
-  if ((err = soap->fposthdr(soap, "Accept-Encoding", "gzip, deflate")))
-#else
-  if ((err = soap->fposthdr(soap, "Accept-Encoding", "deflate")))
-#endif
-    return err;
-#endif
-#ifndef WITH_LEAN
-  if (soap->userid && soap->passwd && strlen(soap->userid) + strlen(soap->passwd) < 761)
-  { sprintf(soap->tmpbuf + 262, "%s:%s", soap->userid, soap->passwd);
-    strcpy(soap->tmpbuf, "Basic ");
-    soap_s2base64(soap, (const unsigned char*)(soap->tmpbuf + 262), soap->tmpbuf + 6, (int)strlen(soap->tmpbuf + 262));
-    if ((err = soap->fposthdr(soap, "Authorization", soap->tmpbuf)))
-      return err;
-  }
-  if (soap->proxy_userid && soap->proxy_passwd && strlen(soap->proxy_userid) + strlen(soap->proxy_passwd) < 761)
-  { sprintf(soap->tmpbuf + 262, "%s:%s", soap->proxy_userid, soap->proxy_passwd);
-    strcpy(soap->tmpbuf, "Basic ");
-    soap_s2base64(soap, (const unsigned char*)(soap->tmpbuf + 262), soap->tmpbuf + 6, (int)strlen(soap->tmpbuf + 262));
-    if ((err = soap->fposthdr(soap, "Proxy-Authorization", soap->tmpbuf)))
-      return err;
-  }
-#endif
-#ifdef WITH_COOKIES
-#ifdef WITH_OPENSSL
-  if (soap_putcookies(soap, host, path, soap->ssl != NULL))
-    return soap->error;
-#else
-  if (soap_putcookies(soap, host, path, 0))
-    return soap->error;
-#endif
-#endif
-  if (soap->status != SOAP_GET && (soap->version == 1 || (action && *action)))
-  { sprintf(soap->tmpbuf, "\"%s\"", action && strlen(action) < sizeof(soap->tmpbuf) - 3 ? action : SOAP_STR_EOS);
-    if ((err = soap->fposthdr(soap, "SOAPAction", soap->tmpbuf)))
-      return err;
-  }
-  return soap->fposthdr(soap, NULL, NULL);
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_send_header(struct soap *soap, const char *s)
-{ register const char *t;
-  do
-  { t = strchr(s, '\n'); /* disallow \n in HTTP headers */
-    if (!t)
-      t = s + strlen(s);
-    if (soap_send_raw(soap, s, t - s))
-      return soap->error;
-    s = t + 1;
-  } while (*t);
-  return SOAP_OK;
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_post_header(struct soap *soap, const char *key, const char *val)
-{ if (key)
-  { if (http_send_header(soap, key))
-      return soap->error;
-    if (val && (soap_send_raw(soap, ": ", 2) || http_send_header(soap, val)))
-      return soap->error;
-  }
-  return soap_send_raw(soap, "\r\n", 2);
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef WITH_NOHTTP
-#ifndef PALM_1
-static int
-http_response(struct soap *soap, int status, size_t count)
-{ register int err;
-#ifdef WMW_RPM_IO
-  if (soap->rpmreqid)
-    httpOutputEnable(soap->rpmreqid);
-#endif
-  if (strlen(soap->http_version) > 4)
-    return soap->error = SOAP_EOM;
-  if (!status || status == SOAP_HTML || status == SOAP_FILE)
-  { const char *s;
-    if (count || ((soap->omode & SOAP_IO) == SOAP_IO_CHUNK))
-      s = "200 OK";
-    else
-      s = "202 ACCEPTED";
-    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Status = %s\n", s));
-#ifdef WMW_RPM_IO
-    if (soap->rpmreqid || soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* RPM behaves as if standalone */
-#else
-    if (soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* standalone application (socket) or CGI (stdin/out)? */
-#endif
-    { sprintf(soap->tmpbuf, "HTTP/%s %s", soap->http_version, s);
-      if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
-        return err;
-    }
-    else if ((err = soap->fposthdr(soap, "Status", s))) /* CGI header */
-      return err;
-  }
-  else if (status >= 200 && status < 600)
-  { sprintf(soap->tmpbuf, "HTTP/%s %d %s", soap->http_version, status, http_error(soap, status));
-    if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
-      return err;
-#ifndef WITH_LEAN 
-    if (status == 401)
-    { sprintf(soap->tmpbuf, "Basic realm=\"%s\"", (soap->authrealm && strlen(soap->authrealm) < sizeof(soap->tmpbuf) - 14) ? soap->authrealm : "gSOAP Web Service");
-      if ((err = soap->fposthdr(soap, "WWW-Authenticate", soap->tmpbuf)))
-        return err;
-    }
-    else if ((status >= 301 && status <= 303) || status == 307)
-    { if ((err = soap->fposthdr(soap, "Location", soap->endpoint)))
-        return err;
-    }
-#endif
-  }
-  else
-  { const char *s = *soap_faultcode(soap);
-    if (status >= SOAP_GET_METHOD && status <= SOAP_HTTP_METHOD)
-      s = "405 Method Not Allowed";
-    else if (soap->version == 2 && (!s || !strcmp(s, "SOAP-ENV:Sender")))
-      s = "400 Bad Request";
-    else
-      s = "500 Internal Server Error";
-    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error %s (status=%d)\n", s, status));
-#ifdef WMW_RPM_IO
-    if (soap->rpmreqid || soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* RPM behaves as if standalone */
-#else
-    if (soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* standalone application */
-#endif
-    { sprintf(soap->tmpbuf, "HTTP/%s %s", soap->http_version, s);
-      if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
-        return err;
-    }
-    else if ((err = soap->fposthdr(soap, "Status", s)))	/* CGI */
-      return err;
-  }
-  if ((err = soap->fposthdr(soap, "Server", "gSOAP/2.7"))
-   || (err = soap_puthttphdr(soap, status, count)))
-    return err;
-#ifdef WITH_COOKIES
-  if (soap_putsetcookies(soap))
-    return soap->error;
-#endif
-  return soap->fposthdr(soap, NULL, NULL);
-}
-#endif
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_response(struct soap *soap, int status)
-{ register size_t count;
-  if (!(soap->omode & (SOAP_ENC_XML | SOAP_IO_STORE /* this tests for chunking too */))
-   && (status == SOAP_HTML || status == SOAP_FILE))
-    soap->omode = (soap->omode & ~SOAP_IO) | SOAP_IO_STORE;
-  soap->status = status;
-  count = soap_count_attachments(soap);
-  if (soap_begin_send(soap))
-    return soap->error;
-#ifndef WITH_NOHTTP
-  if ((soap->mode & SOAP_IO) != SOAP_IO_STORE && !(soap->mode & SOAP_ENC_XML))
-  { register int n = soap->mode;
-    soap->mode &= ~(SOAP_IO | SOAP_ENC_ZLIB);
-    if ((n & SOAP_IO) != SOAP_IO_FLUSH)
-      soap->mode |= SOAP_IO_BUFFER;
-    if ((soap->error = soap->fresponse(soap, status, count)))
-      return soap->error;
-#ifndef WITH_LEANER
-    if ((n & SOAP_IO) == SOAP_IO_CHUNK)
-    { if (soap_flush(soap))
-        return soap->error;
-    }
-#endif
-    soap->mode = n;
-  }
-#endif
-  return SOAP_OK;
-}
-#endif
-
-/******************************************************************************\
- *
- *	HTTP Cookies
- *
-\******************************************************************************/
-
-#ifdef WITH_COOKIES
-/******************************************************************************/
-SOAP_FMAC1
-size_t
-SOAP_FMAC2
-soap_encode_cookie(const char *s, char *t, int len)
-{ register int c;
-  register int n = len;
-  if (n <= 0)
-    return 0;
-  while ((c = *s++) && --n > 0)
-  { if (c > ' ' && c < 128 && !strchr("()<>@,;:\\\"/[]?={}#!$&'*+", c))
-      *t++ = c;
-    else if (n > 2)
-    { *t++ = '%';
-      *t++ = (c >> 4) + (c > 159 ? '7' : '0');
-      c &= 0xF;
-      *t++ = c + (c > 9 ? '7' : '0');
-      n -= 2;
-    }
-    else
-      break;
-  }
-  *t = '\0';
-  return len - n;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-struct soap_cookie*
-SOAP_FMAC2
-soap_cookie(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if (!domain)
-    domain = soap->cookie_domain;
-  if (!path)
-    path = soap->cookie_path;
-  if (!path)
-    path = SOAP_STR_EOS;
-  else if (*path == '/')
-    path++;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Search cookie %s domain=%s path=%s\n", name, domain?domain:"(null)", path?path:"(null)"));
-  for (p = soap->cookies; p; p = p->next)
-  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie in database: %s=%s domain=%s path=%s env=%hd\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->env));
-    if (!strcmp(p->name, name)
-     && p->domain
-     && p->path
-     && !strcmp(p->domain, domain)
-     && (!*p->path || !strncmp(p->path, path, strlen(p->path))))
-      break;
-  }
-  return p;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-struct soap_cookie*
-SOAP_FMAC2
-soap_set_cookie(struct soap *soap, const char *name, const char *value, const char *domain, const char *path)
-{ struct soap_cookie **p, *q;
-  int n;
-  if (!domain)
-    domain = soap->cookie_domain;
-  if (!path)
-    path = soap->cookie_path;
-  if (!path)
-    path = SOAP_STR_EOS;
-  else if (*path == '/')
-    path++;
-  q = soap_cookie(soap, name, domain, path);
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set %scookie: %s=%s domain=%s path=%s\n", q ? SOAP_STR_EOS : "new ", name, value?value:"(null)", domain?domain:"(null)", path?path:"(null)"));
-  if (!q)
-  { if ((q = (struct soap_cookie*)SOAP_MALLOC(soap, sizeof(struct soap_cookie))))
-    { if ((q->name = (char*)SOAP_MALLOC(soap, strlen(name)+1)))
-        strcpy(q->name, name);
-      q->value = NULL;
-      q->domain = NULL;
-      q->path = NULL;
-      q->expire = 0;
-      q->maxage = -1;
-      q->version = 1;
-      q->secure = 0;
-      q->modified = 0;
-      for (p = &soap->cookies, n = soap->cookie_max; *p && n; p = &(*p)->next, n--)
-        if (!strcmp((*p)->name, name) && (*p)->path && path && strcmp((*p)->path, path) < 0)
-          break;
-      if (n)
-      { q->next = *p;
-        *p = q;
-      }
-      else
-      { SOAP_FREE(soap, q->name);
-        SOAP_FREE(soap, q);
-        q = NULL;
-      }
-    }
-  }
-  else
-    q->modified = 1;
-  if (q)
-  { if (q->value)
-    { if (!value || strcmp(value, q->value))
-      { SOAP_FREE(soap, q->value);
-        q->value = NULL;
-      }
-    }
-    if (value && *value && !q->value && (q->value = (char*)SOAP_MALLOC(soap, strlen(value)+1)))
-      strcpy(q->value, value);
-    if (q->domain)
-    { if (!domain || strcmp(domain, q->domain))
-      { SOAP_FREE(soap, q->domain);
-        q->domain = NULL;
-      }
-    }
-    if (domain && !q->domain && (q->domain = (char*)SOAP_MALLOC(soap, strlen(domain)+1)))
-      strcpy(q->domain, domain);
-    if (q->path)
-    { if (!path || strncmp(path, q->path, strlen(q->path)))
-      { SOAP_FREE(soap, q->path);
-        q->path = NULL;
-      }
-    }
-    if (path && !q->path && (q->path = (char*)SOAP_MALLOC(soap, strlen(path)+1)))
-      strcpy(q->path, path);
-    q->session = 1;
-    q->env = 0;
-  }
-  return q;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_clr_cookie(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie **p, *q;
-  if (!domain)
-    domain = soap->cookie_domain;
-  if (!domain)
-  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error in clear cookie %s: cookie domain not set\n", name?name:"(null)"));
-    return;
-  }
-  if (!path)
-    path = soap->cookie_path;
-  if (!path)
-  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error in clear cookie %s: cookie path not set\n", name?name:"(null)"));
-    return;
-  }
-  if (*path == '/')
-    path++;
-  for (p = &soap->cookies, q = *p; q; q = *p)
-  { if (!strcmp(q->name, name) && !strcmp(q->domain, domain) && !strncmp(q->path, path, strlen(q->path)))
-    { if (q->value)
-        SOAP_FREE(soap, q->value);
-      if (q->domain)
-        SOAP_FREE(soap, q->domain);
-      if (q->path)
-        SOAP_FREE(soap, q->path);
-      *p = q->next;
-      SOAP_FREE(soap, q);
-    }
-    else
-      p = &q->next;
-  }
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-char *
-SOAP_FMAC2
-soap_cookie_value(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if ((p = soap_cookie(soap, name, domain, path)))
-    return p->value;
-  return NULL;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-char *
-SOAP_FMAC2
-soap_env_cookie_value(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if ((p = soap_cookie(soap, name, domain, path)) && p->env)
-    return p->value;
-  return NULL;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-time_t
-SOAP_FMAC2
-soap_cookie_expire(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if ((p = soap_cookie(soap, name, domain, path)))
-    return p->expire;
-  return -1;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_set_cookie_expire(struct soap *soap, const char *name, long expire, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set cookie expiration max-age %ld: %s domain=%s path=%s\n", expire, name, domain?domain:"(null)", path?path:"(null)"));
-  if ((p = soap_cookie(soap, name, domain, path)))
-  { p->maxage = expire;
-    p->modified = 1;
-    return SOAP_OK;
-  }
-  return SOAP_ERR;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_set_cookie_session(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if ((p = soap_cookie(soap, name, domain, path)))
-  { p->session = 1;
-    p->modified = 1;
-    return SOAP_OK;
-  }
-  return SOAP_ERR;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_clr_cookie_session(struct soap *soap, const char *name, const char *domain, const char *path)
-{ struct soap_cookie *p;
-  if ((p = soap_cookie(soap, name, domain, path)))
-  { p->session = 0;
-    p->modified = 1;
-    return SOAP_OK;
-  }
-  return SOAP_ERR;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_putsetcookies(struct soap *soap)
-{ struct soap_cookie *p;
-  char *s, tmp[4096];
-  const char *t;
-  for (p = soap->cookies; p; p = p->next)
-  {
-    if (p->modified
-#ifdef WITH_OPENSSL
-     || (!p->env && !soap->ssl == !p->secure)
-#endif
-       )
-    { s = tmp;
-      if (p->name)
-        s += soap_encode_cookie(p->name, s, tmp-s+4063);
-      if (p->value && *p->value)
-      { *s++ = '=';
-        s += soap_encode_cookie(p->value, s, tmp-s+4064);
-      }
-      if (p->domain && (int)strlen(p->domain) < tmp-s+4064)
-      { strcpy(s, ";Domain=");
-        strcat(s, p->domain);
-      }
-      else if (soap->cookie_domain && (int)strlen(soap->cookie_domain) < tmp-s+4064)
-      { strcpy(s, ";Domain=");
-        strcat(s, soap->cookie_domain);
-      }
-      strcat(s, ";Path=/");
-      s += strlen(s);
-      if (p->path)
-        t = p->path;
-      else
-        t = soap->cookie_path;
-      if (t)
-      { if (*t == '/')
-          t++;
-        if ((int)strlen(t) < tmp-s+4064)
-        { if (strchr(t, '%'))	/* already URL encoded? */
-          { strcpy(s, t);
-            s += strlen(s);
-          }
-          else
-            s += soap_encode_cookie(t, s, tmp-s+4064);
-        }
-      }
-      if (p->version > 0 && s-tmp < 4060)
-      { sprintf(s, ";Version=%u", p->version);
-        s += strlen(s);
-      }
-      if (p->maxage >= 0 && s-tmp < 4060)
-      { sprintf(s, ";Max-Age=%ld", p->maxage);
-        s += strlen(s);
-      }
-      if (s-tmp < 4073
-       && (p->secure
-#ifdef WITH_OPENSSL
-       || soap->ssl
-#endif
-         ))
-        strcpy(s, ";Secure");
-      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set-Cookie: %s\n", tmp));
-      if ((soap->error = soap->fposthdr(soap, "Set-Cookie", tmp)))
-        return soap->error;
-    }
-  }
-  return SOAP_OK;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_putcookies(struct soap *soap, const char *domain, const char *path, int secure)
-{ struct soap_cookie **p, *q;
-  unsigned int version = 0;
-  time_t now = time(NULL);
-  char *s, tmp[4096];
-  p = &soap->cookies;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Sending cookies for domain=%s path=%s\n", domain, path));
-  if (*path == '/')
-    path++;
-  while ((q = *p))
-  { if (q->expire && now > q->expire)
-    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie %s expired\n", q->name));
-      SOAP_FREE(soap, q->name);
-      if (q->value)
-        SOAP_FREE(soap, q->value);
-      if (q->domain)
-        SOAP_FREE(soap, q->domain);
-      if (q->path)
-        SOAP_FREE(soap, q->path);
-      *p = q->next;
-      SOAP_FREE(soap, q);
-    }
-    else
-    { int flag;
-      char *t = q->domain;
-      size_t n = 0;
-      if (!t)
-        flag = 1;
-      else
-      { const char *r = strchr(t, ':');
-        if (r)
-          n = r - t;
-        else
-          n = strlen(t);
-        flag = !strncmp(t, domain, n);
-      }
-      /* domain-level cookies, cannot compile when WITH_NOIO set */
-#ifndef WITH_NOIO
-      if (!flag)
-      { struct hostent *hostent = gethostbyname((char*)domain);
-        if (hostent)
-        { const char *r = strchr(hostent->h_name, '.');
-          if (!r)
-            r = hostent->h_name;
-          flag = !strncmp(t, r, n);
-        }
-      }
-#endif
-      if (flag
-          && (!q->path || !strncmp(q->path, path, strlen(q->path)))
-          && (!q->secure || secure))
-      { s = tmp;
-        if (q->version != version)
-        { sprintf(s, "$Version=%u;", q->version);
-          version = q->version;
-        }
-        if (q->name)
-          s += soap_encode_cookie(q->name, s, tmp-s+4080);
-        if (q->value && *q->value)
-        { *s++ = '=';
-          s += soap_encode_cookie(q->value, s, tmp-s+4080);
-        }
-        if (q->path && *q->path && (int)strlen(q->path) < tmp-s+4080)
-        { sprintf(s, ";$Path=\"/%s\"", (*q->path == '/' ? q->path + 1 : q->path));
-          s += strlen(s);
-        }
-        if (q->domain && (int)strlen(q->domain) < tmp-s+4080)
-          sprintf(s, ";$Domain=\"%s\"", q->domain);
-        DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie: %s\n", tmp));
-        if ((soap->error = soap->fposthdr(soap, "Cookie", tmp)))
-          return soap->error;
-      }
-      p = &q->next;
-    }
-  }
-  return SOAP_OK;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_getcookies(struct soap *soap, const char *val)
-{ struct soap_cookie *p = NULL, *q;
-  const char *s;
-  char *t, tmp[4096]; /* cookie size is up to 4096 bytes [RFC2109] */
-  char *domain = NULL;
-  char *path = NULL;
-  unsigned int version = 0;
-  time_t now = time(NULL);
-  if (!val)
-    return;
-  s = val;
-  while (*s)
-  { s = soap_decode_key(tmp, sizeof(tmp), s);
-    if (!soap_tag_cmp(tmp, "$Version"))
-    { if ((s = soap_decode_val(tmp, sizeof(tmp), s)))
-      { if (p)
-	  p->version = (int)soap_strtol(tmp, NULL, 10);
-	else
-	  version = (int)soap_strtol(tmp, NULL, 10);
-      }
-    }
-    else if (!soap_tag_cmp(tmp, "$Path"))
-    { s = soap_decode_val(tmp, sizeof(tmp), s);
-      if (*tmp)
-      { if ((t = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
-          strcpy(t, tmp);
-      }
-      else
-        t = NULL;
-      if (p)
-      { if (p->path)
-          SOAP_FREE(soap, p->path);
-        p->path = t;
-      }
-      else
-      { if (path)
-          SOAP_FREE(soap, path);
-        path = t;
-      }
-    }
-    else if (!soap_tag_cmp(tmp, "$Domain"))
-    { s = soap_decode_val(tmp, sizeof(tmp), s);
-      if (*tmp)
-      { if ((t = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
-          strcpy(t, tmp);
-      }
-      else
-        t = NULL;
-      if (p)
-      { if (p->domain)
-          SOAP_FREE(soap, p->domain);
-        p->domain = t;
-      }
-      else
-      { if (domain)
-          SOAP_FREE(soap, domain);
-        domain = t;
-      }
-    }
-    else if (p && !soap_tag_cmp(tmp, "Path"))
-    { if (p->path)
-        SOAP_FREE(soap, p->path);
-      s = soap_decode_val(tmp, sizeof(tmp), s);
-      if (*tmp)
-      { if ((p->path = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
-          strcpy(p->path, tmp);
-      }
-      else
-        p->path = NULL;
-    }
-    else if (p && !soap_tag_cmp(tmp, "Domain"))
-    { if (p->domain)
-        SOAP_FREE(soap, p->domain);
-      s = soap_decode_val(tmp, sizeof(tmp), s);
-      if (*tmp)
-      { if ((p->domain = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
-          strcpy(p->domain, tmp);
-      }
-      else
-        p->domain = NULL;
-    }
-    else if (p && !soap_tag_cmp(tmp, "Version"))
-    { s = soap_decode_val(tmp, sizeof(tmp), s);
-      p->version = (unsigned int)soap_strtoul(tmp, NULL, 10);
-    }
-    else if (p && !soap_tag_cmp(tmp, "Max-Age"))
-    { s = soap_decode_val(tmp, sizeof(tmp), s);
-      p->expire = now + soap_strtol(tmp, NULL, 10);
-    }
-    else if (p && !soap_tag_cmp(tmp, "Expires"))
-    { struct tm T;
-      char a[3]; 
-      static const char mns[] = "anebarprayunulugepctovec";
-      s = soap_decode_val(tmp, sizeof(tmp), s);
-      if (strlen(tmp) > 20)
-      { memset((void*)&T, 0, sizeof(T));
-        a[0] = tmp[4];
-        a[1] = tmp[5];
-        a[2] = '\0';
-        T.tm_mday = (int)soap_strtol(a, NULL, 10);
-        a[0] = tmp[8];
-        a[1] = tmp[9];
-        T.tm_mon = (int)(strstr(mns, a) - mns) / 2;
-        a[0] = tmp[11];
-        a[1] = tmp[12];
-        T.tm_year = 100 + (int)soap_strtol(a, NULL, 10);
-        a[0] = tmp[13];
-        a[1] = tmp[14];
-        T.tm_hour = (int)soap_strtol(a, NULL, 10);
-        a[0] = tmp[16];
-        a[1] = tmp[17];
-        T.tm_min = (int)soap_strtol(a, NULL, 10);
-        a[0] = tmp[19];
-        a[1] = tmp[20];
-        T.tm_sec = (int)soap_strtol(a, NULL, 10);
-        p->expire = soap_timegm(&T);
-      }
-    }
-    else if (p && !soap_tag_cmp(tmp, "Secure"))
-      p->secure = 1;
-    else
-    { if (p)
-      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Got environment cookie %s=%s domain=%s path=%s expire=%ld secure=%d\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->expire, p->secure));
-        if ((q = soap_set_cookie(soap, p->name, p->value, p->domain, p->path)))
-        { q->version = p->version;
-          q->expire = p->expire;
-          q->secure = p->secure;
-          q->env = 1;
-        }
-        if (p->name)
-          SOAP_FREE(soap, p->name);
-        if (p->value)
-          SOAP_FREE(soap, p->value);
-        if (p->domain)
-          SOAP_FREE(soap, p->domain);
-        if (p->path)
-          SOAP_FREE(soap, p->path);
-        SOAP_FREE(soap, p);
-      }
-      if ((p = (struct soap_cookie*)SOAP_MALLOC(soap, sizeof(struct soap_cookie))))
-      { p->name = (char*)SOAP_MALLOC(soap, strlen(tmp)+1);
-        strcpy(p->name, tmp);
-        s = soap_decode_val(tmp, sizeof(tmp), s);
-        if (*tmp)
-        { p->value = (char*)SOAP_MALLOC(soap, strlen(tmp)+1);
-          strcpy(p->value, tmp);
-        }
-        else
-          p->value = NULL;
-        if (domain)
-          p->domain = domain,domain = NULL;
-        else if (*soap->host)
-        { p->domain = (char*)SOAP_MALLOC(soap, strlen(soap->host)+1);
-          strcpy(p->domain, soap->host);
-        }
-        else
-          p->domain = NULL;
-        if (path)
-          p->path = path,path = NULL;
-        else if (soap->path && *soap->path)
-        { p->path = (char*)SOAP_MALLOC(soap, strlen(soap->path)+1);
-          strcpy(p->path, soap->path);
-        }
-        else
-        { p->path = (char*)SOAP_MALLOC(soap, 2);
-          strcpy(p->path, "/");
-        }
-        p->expire = 0;
-        p->secure = 0;
-        p->version = version;
-      }
-    }
-  }
-  if (p)
-  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Got environment cookie %s=%s domain=%s path=%s expire=%ld secure=%d\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->expire, p->secure));
-    if ((q = soap_set_cookie(soap, p->name, p->value, p->domain, p->path)))
-    { q->version = p->version;
-      q->expire = p->expire;
-      q->secure = p->secure;
-      q->env = 1;
-    }
-    if (p->name)
-      SOAP_FREE(soap, p->name);
-    if (p->value)
-      SOAP_FREE(soap, p->value);
-    if (p->domain)
-      SOAP_FREE(soap, p->domain);
-    if (p->path)
-      SOAP_FREE(soap, p->path);
-    SOAP_FREE(soap, p);
-  }
-  if (domain)
-    SOAP_FREE(soap, domain);
-  if (path)
-    SOAP_FREE(soap, path);
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-int
-SOAP_FMAC2
-soap_getenv_cookies(struct soap *soap)
-{ struct soap_cookie *p;
-  const char *s;
-  char key[4096], val[4096]; /* cookie size is up to 4096 bytes [RFC2109] */
-  if (!(s = getenv("HTTP_COOKIE")))
-    return SOAP_ERR;
-  do
-  { s = soap_decode_key(key, sizeof(key), s);
-    s = soap_decode_val(val, sizeof(val), s);
-    p = soap_set_cookie(soap, key, val, NULL, NULL);
-    if (p)
-      p->env = 1;
-  } while (*s);
-  return SOAP_OK;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-struct soap_cookie*
-SOAP_FMAC2
-soap_copy_cookies(struct soap *copy, const struct soap *soap)
-{ struct soap_cookie *p, **q, *r;
-  q = &r;
-  for (p = soap->cookies; p; p = p->next)
-  { if (!(*q = (struct soap_cookie*)SOAP_MALLOC(copy, sizeof(struct soap_cookie))))
-      return r;
-    **q = *p;
-    if (p->name)
-    { if (((*q)->name = (char*)SOAP_MALLOC(copy, strlen(p->name)+1)))
-        strcpy((*q)->name, p->name);
-    }
-    if (p->value)
-    { if (((*q)->value = (char*)SOAP_MALLOC(copy, strlen(p->value)+1)))
-        strcpy((*q)->value, p->value);
-    }
-    if (p->domain)
-    { if (((*q)->domain = (char*)SOAP_MALLOC(copy, strlen(p->domain)+1)))
-        strcpy((*q)->domain, p->domain);
-    }
-    if (p->path)
-    { if (((*q)->path = (char*)SOAP_MALLOC(copy, strlen(p->path)+1)))
-        strcpy((*q)->path, p->path);
-    }
-    q = &(*q)->next;
-  }
-  *q = NULL;
-  return r;
-}
-
-/******************************************************************************/
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_free_cookies(struct soap *soap)
-{ struct soap_cookie *p;
-  for (p = soap->cookies; p; p = soap->cookies)
-  { soap->cookies = p->next;
-    SOAP_FREE(soap, p->name);
-    if (p->value)
-      SOAP_FREE(soap, p->value);
-    if (p->domain)
-      SOAP_FREE(soap, p->domain);
-    if (p->path)
-      SOAP_FREE(soap, p->path);
-    SOAP_FREE(soap, p);
-  }
-}
-
-/******************************************************************************/
-#endif /* WITH_COOKIES */
 
 /******************************************************************************/
 #ifndef WITH_NOIDREF
@@ -6409,6 +4683,7 @@ soap_hash(register const char *s)
 static void
 soap_init_pht(struct soap *soap)
 { register int i;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Initializing pointer hashtable\n"));
   soap->pblk = NULL;
   soap->pidx = 0;
   for (i = 0; i < (int)SOAP_PTRHASH; i++)
@@ -6500,7 +4775,7 @@ SOAP_FMAC2
 soap_embed(struct soap *soap, const void *p, const struct soap_array *a, int n, const char *tag, int type)
 { register int i;
   struct soap_plist *pp;
-  if (soap->version == 2)
+  if (soap->version != 1)
     soap->encoding = 1;
   if (a)
     i = soap_array_pointer_lookup(soap, p, a, n, type, &pp);
@@ -6615,15 +4890,13 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_begin_count(struct soap *soap)
-{ soap_free_ns(soap);
+{
 #ifndef WITH_LEANER
   if ((soap->mode & SOAP_ENC_DIME) || (soap->omode & SOAP_ENC_DIME))
     soap->mode = soap->omode | SOAP_IO_LENGTH | SOAP_ENC_DIME;
   else
 #endif
   { soap->mode = soap->omode;
-    if ((soap->mode & SOAP_IO_UDP))
-      soap->mode |= SOAP_ENC_XML;
     if ((soap->mode & SOAP_IO) == SOAP_IO_STORE
      || (((soap->mode & SOAP_IO) == SOAP_IO_CHUNK || (soap->mode & SOAP_ENC_XML))
 #ifndef WITH_LEANER
@@ -6649,7 +4922,7 @@ soap_begin_count(struct soap *soap)
 #ifndef WITH_LEANER
   if ((soap->mode & SOAP_ENC_MTOM) && (soap->mode & SOAP_ENC_DIME))
     soap->mode |= SOAP_ENC_MIME;
-  else if (!(soap->mode & SOAP_ENC_MIME))
+  else
     soap->mode &= ~SOAP_ENC_MTOM;
   if (soap->mode & SOAP_ENC_MIME)
     soap_select_mime_boundary(soap);
@@ -6665,12 +4938,12 @@ soap_begin_count(struct soap *soap)
   soap->idnum = 0;
   soap_clr_attr(soap);
   soap_set_local_namespaces(soap);
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Begin count phase (socket=%d mode=0x%x count=%lu)\n", soap->socket, (unsigned int)soap->mode, (unsigned long)soap->count));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Begin count phase (socket=%d mode=0x%x count=%lu)\n", soap->socket, soap->mode, (unsigned long)soap->count));
 #ifndef WITH_LEANER
   soap->dime.count = 0; /* count # of attachments */
   soap->dime.size = 0; /* accumulate total size of attachments */
-  if (soap->fprepareinitsend && (soap->mode & SOAP_IO) != SOAP_IO_STORE)
-    return soap->error = soap->fprepareinitsend(soap);   
+  if (soap->fprepareinit && (soap->mode & SOAP_IO) != SOAP_IO_STORE)
+    return soap->error = soap->fprepareinit(soap);   
 #endif
   return SOAP_OK;
 }
@@ -6682,11 +4955,12 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_end_count(struct soap *soap)
-{ DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End of count phase\n"));
+{ 
 #ifndef WITH_LEANER
-  if (soap->fpreparefinalsend && (soap->mode & SOAP_IO_LENGTH))
-    return soap->error = soap->fpreparefinalsend(soap);
+  if (soap->fpreparefinal)
+    return soap->error = soap->fpreparefinal(soap);
 #endif
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End of count phase\n"));
   return SOAP_OK;
 }
 #endif
@@ -6698,7 +4972,6 @@ int
 SOAP_FMAC2
 soap_begin_send(struct soap *soap)
 { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Initializing for output\n"));
-  soap_free_ns(soap);
   soap->error = SOAP_OK;
   soap->mode = soap->omode | (soap->mode & (SOAP_IO_LENGTH | SOAP_ENC_DIME));
 #ifdef WITH_ZLIB
@@ -6724,8 +4997,7 @@ soap_begin_send(struct soap *soap)
   }
   soap->mode &= ~SOAP_IO_LENGTH;
   if ((soap->mode & SOAP_IO) == SOAP_IO_STORE)
-    if (soap_new_block(soap) == NULL)
-      return soap->error;
+    soap_new_block(soap);
   if (!(soap->mode & SOAP_IO_KEEPALIVE))
     soap->keep_alive = 0;
   if (!soap->encodingStyle && !(soap->mode & SOAP_XML_GRAPH))
@@ -6735,7 +5007,7 @@ soap_begin_send(struct soap *soap)
   { soap->mode |= SOAP_ENC_MIME;
     soap->mode &= ~SOAP_ENC_DIME;
   }
-  else if (!(soap->mode & SOAP_ENC_MIME))
+  else
     soap->mode &= ~SOAP_ENC_MTOM;
   if (soap->mode & SOAP_ENC_MIME)
     soap_select_mime_boundary(soap);
@@ -6744,7 +5016,7 @@ soap_begin_send(struct soap *soap)
 #ifndef WITH_FASTCGI
   if (!soap_valid_socket(soap->socket)) /* Set win32 stdout or soap->sendfd to BINARY, e.g. to support DIME */
 #ifdef __BORLANDC__
-    setmode(soap->sendfd, _O_BINARY);
+    setmode(soap->sendfd, O_BINARY);
 #else
     _setmode(soap->sendfd, _O_BINARY);
 #endif
@@ -6780,8 +5052,6 @@ soap_begin_send(struct soap *soap)
       soap->d_stream->avail_out = SOAP_BUFLEN - 10;
       soap->z_crc = crc32(0L, NULL, 0);
       soap->zlib_out = SOAP_ZLIB_GZIP;
-      if (soap->z_dict)
-        *((Byte*)soap->z_buf + 2) = 0xff;
       if (deflateInit2(soap->d_stream, soap->z_level, Z_DEFLATED, -MAX_WBITS, 8, Z_DEFAULT_STRATEGY) != Z_OK)
         return soap->error = SOAP_ZLIB_ERROR;
     }
@@ -6789,23 +5059,15 @@ soap_begin_send(struct soap *soap)
 #endif
     if (deflateInit(soap->d_stream, soap->z_level) != Z_OK)
       return soap->error = SOAP_ZLIB_ERROR;
-    if (soap->z_dict)
-    { if (deflateSetDictionary(soap->d_stream, (const Bytef*)soap->z_dict, soap->z_dict_len) != Z_OK)
-        return soap->error = SOAP_ZLIB_ERROR;
-    }
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Deflate initialized\n"));
     soap->zlib_state = SOAP_ZLIB_DEFLATE;
   }
 #endif
-#ifdef WITH_OPENSSL
-  if (soap->ssl)
-    ERR_clear_error();
-#endif
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Begin send phase (socket=%d mode=0x%x count=%lu)\n", soap->socket, soap->mode, (unsigned long)soap->count));
   soap->part = SOAP_BEGIN;
 #ifndef WITH_LEANER
-  if (soap->fprepareinitsend && (soap->mode & SOAP_IO) == SOAP_IO_STORE)
-    soap->fprepareinitsend(soap);   
+  if (soap->fprepareinit && (soap->mode & SOAP_IO) == SOAP_IO_STORE)
+    soap->fprepareinit(soap);   
 #endif
   return SOAP_OK;
 }
@@ -6997,7 +5259,7 @@ soap_attachment(struct soap *soap, const char *tag, int id, const void *p, const
   int i;
   if (!p || !a->__ptr || (!aid && !atype))
     return soap_element_id(soap, tag, id, p, a, n, type, t);
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Attachment tag='%s' id='%s' (%d) type='%s'\n", tag, aid?aid:SOAP_STR_EOS, id, atype?atype:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Attachment tag='%s' id='%s' (%d) type='%s'\n", tag, aid?aid:"", id, atype?atype:""));
   i = soap_array_pointer_lookup(soap, p, a, n, t, &pp);
   if (!i)
   { i = soap_pointer_enter(soap, p, a, n, t, &pp);
@@ -7016,7 +5278,7 @@ soap_attachment(struct soap *soap, const char *tag, int id, const void *p, const
   /* TODO: this code to be obsoleted with new import/xop.h conventions */
   if ((soap->mode & SOAP_ENC_MTOM) && strcmp(tag, "xop:Include"))
   { if (soap_element_begin_out(soap, tag, 0, type)
-     || soap_element_href(soap, "xop:Include", 0, "xmlns:xop=\"http://www.w3.org/2004/08/xop/include\" href", aid)
+     || soap_element_href(soap, "xop:Include", 0, "href", aid)
      || soap_element_end_out(soap, tag))
       return soap->error;
   }
@@ -7068,6 +5330,7 @@ soap_attachment(struct soap *soap, const char *tag, int id, const void *p, const
 static void
 soap_init_iht(struct soap *soap)
 { register int i;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Initializing ID hashtable\n"));
   for (i = 0; i < SOAP_IDHASH; i++)
     soap->iht[i] = NULL;
 }
@@ -7129,8 +5392,9 @@ soap_enter(struct soap *soap, const char *id)
     strcpy(ip->id, id);
     ip->next = soap->iht[h];
     soap->iht[h] = ip;
+    return ip;
   }
-  return ip;
+  return NULL;
 }
 #endif
 #endif
@@ -7156,7 +5420,7 @@ soap_malloc(struct soap *soap, size_t n)
       return NULL;
     }
     /* set the canary to detect corruption */
-    *(unsigned short*)(p + n - sizeof(unsigned short)) = (unsigned short)SOAP_CANARY;
+    *(short*)(p + n - sizeof(short)) = (short)SOAP_CANARY;
     /* keep chain of alloced cells for destruction */
     *(void**)(p + n) = soap->alist;
     *(size_t*)(p + n + sizeof(void*)) = n;
@@ -7205,7 +5469,9 @@ soap_track_malloc(struct soap *soap, const char *file, int line, size_t size)
   if (soap)
   { register size_t h = soap_hash_ptr(p);
     register struct soap_mlist *mp = (struct soap_mlist*)malloc(sizeof(struct soap_mlist));
-    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "%s(%d): malloc(%lu) = %p\n", file, line, (unsigned long)size, p));
+    if (soap->fdebug[SOAP_INDEX_TEST])
+    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "%s(%d): malloc(%lu) = %p\n", file, line, (unsigned long)size, p));
+    }
     mp->next = soap->mht[h];
     mp->ptr = p;
     mp->file = file;
@@ -7270,7 +5536,7 @@ soap_dealloc(struct soap *soap, void *p)
   { register char **q;
     for (q = (char**)&soap->alist; *q; q = *(char***)q)
     { 
-      if (*(unsigned short*)(char*)(*q - sizeof(unsigned short)) != (unsigned short)SOAP_CANARY)
+      if (*(short*)(char*)(*q - sizeof(short)) != (short)SOAP_CANARY)
       {
 #ifdef SOAP_MEM_DEBUG
         fprintf(stderr, "Data corruption in dynamic allocation (see logs)\n");
@@ -7295,7 +5561,7 @@ soap_dealloc(struct soap *soap, void *p)
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free all soap_malloc() data\n"));
     while (soap->alist)
     { q = (char*)soap->alist;
-      if (*(unsigned short*)(char*)(q - sizeof(unsigned short)) != (unsigned short)SOAP_CANARY)
+      if (*(short*)(char*)(q - sizeof(short)) != (short)SOAP_CANARY)
       {
 #ifdef SOAP_MEM_DEBUG
         fprintf(stderr, "Data corruption in dynamic allocation (see logs)\n");
@@ -7368,61 +5634,6 @@ soap_delete(struct soap *soap, void *p)
   }
   soap->fault = NULL; /* this was possibly deallocated */
   soap->header = NULL; /* this was possibly deallocated */
-}
-#endif
-
-/******************************************************************************/
-#ifndef PALM_2
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_delegate_deletion(struct soap *soap, struct soap *soap_to)
-{ register struct soap_clist *cp;
-  register char **q;
-#ifdef SOAP_MEM_DEBUG
-  register void *p;
-  register struct soap_mlist **mp, *mq;
-  size_t h;
-#endif
-  for (q = (char**)&soap->alist; *q; q = *(char***)q)
-  {
-    if (*(unsigned short*)(char*)(*q - sizeof(unsigned short)) != (unsigned short)SOAP_CANARY)
-    {
-#ifdef SOAP_MEM_DEBUG
-      fprintf(stderr, "Data corruption in dynamic allocation (see logs)\n");
-#endif
-      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Data corruption:\n"));
-      DBGHEX(TEST, *q - 200, 200);
-      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "\n"));
-      soap->error = SOAP_MOE;
-      return;
-    }
-#ifdef SOAP_MEM_DEBUG
-    p = (void*)(*q - *(size_t*)(*q + sizeof(void*)));
-    h = soap_hash_ptr(p);
-    for (mp = &soap->mht[h]; *mp; mp = &(*mp)->next)
-    { if ((*mp)->ptr == p)
-      { mq = *mp;
-        *mp = mq->next;
-	mq->next = soap_to->mht[h];
-        soap_to->mht[h] = mq;
-        break;
-      }
-    }
-#endif
-  }
-  *q = (char*)soap_to->alist;
-  soap_to->alist = soap->alist;
-  soap->alist = NULL;
-  cp = soap_to->clist;
-  if (cp)
-  { while (cp->next)
-      cp = cp->next;
-    cp->next = soap->clist;
-  }
-  else
-    soap_to->clist = soap->clist;
-  soap->clist = NULL;
 }
 #endif
 
@@ -7511,8 +5722,7 @@ soap_id_lookup(struct soap *soap, const char *id, void **p, int t, size_t n, uns
     return p;
   ip = soap_lookup(soap, id); /* lookup pointer to hash table entry for string id */
   if (!ip)
-  { if (!(ip = soap_enter(soap, id))) /* new hash table entry for string id */
-      return NULL;
+  { ip = soap_enter(soap, id); /* new hash table entry for string id */
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Forwarding first href='%s' type=%d %p (%u bytes)\n", id, t, p, (unsigned int)n));
     ip->type = t;
     ip->size = n; 
@@ -7549,8 +5759,6 @@ soap_id_lookup(struct soap *soap, const char *id, void **p, int t, size_t n, uns
       q = (void**)ip->link;
       while (q)
       { *r = (void*)soap_malloc(soap, sizeof(void*));
-        if (!*r)
-	  return NULL;
         s = *q;
         *q = *r;
         r = (void**)*r;
@@ -7570,8 +5778,6 @@ soap_id_lookup(struct soap *soap, const char *id, void **p, int t, size_t n, uns
   { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Forwarded href='%s' type=%d location=%p (%u bytes)\n", id, t, p, (unsigned int)n));
     while (ip->level < k)
     { q = (void**)soap_malloc(soap, sizeof(void*));  
-      if (!q)
-        return NULL;
       *p = q;
       p = q;
       k--;
@@ -7598,8 +5804,7 @@ soap_id_forward(struct soap *soap, const char *href, void *p, size_t len, int st
     return p;
   ip = soap_lookup(soap, href); /* lookup pointer to hash table entry for string id */
   if (!ip)
-  { if (!(ip = soap_enter(soap, href))) /* new hash table entry for string id */
-      return NULL;
+  { ip = soap_enter(soap, href); /* new hash table entry for string id */
     ip->type = st;
     ip->size = n;
     ip->link = NULL;
@@ -7671,8 +5876,7 @@ soap_id_enter(struct soap *soap, const char *id, void *p, int t, size_t n, unsig
   ip = soap_lookup(soap, id); /* lookup pointer to hash table entry for string id */
   DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Lookup entry id='%s for location=%p'\n", id, p));
   if (!ip)
-  { if (!(ip = soap_enter(soap, id))) /* new hash table entry for string id */
-      return NULL;
+  { ip = soap_enter(soap, id); /* new hash table entry for string id */
     ip->type = t;
     ip->link = NULL;
     ip->copy = NULL;
@@ -7724,7 +5928,6 @@ SOAP_FMAC2
 soap_end_send(struct soap *soap)
 { 
 #ifndef WITH_LEANER
-  int err;
   if (soap->dime.list)
   { /* SOAP body referenced attachments must appear first */
     soap->dime.last->next = soap->dime.first;
@@ -7732,16 +5935,14 @@ soap_end_send(struct soap *soap)
     soap->dime.list->next = NULL;
     soap->dime.last = soap->dime.list;
   }
-  if (!(err = soap_putdime(soap)))
-    err = soap_putmime(soap);
+  if (soap_putdime(soap) || soap_putmime(soap))
+    return soap->error;
   soap->mime.list = NULL;
   soap->mime.first = NULL;
   soap->mime.last = NULL;
   soap->dime.list = NULL;
   soap->dime.first = NULL;
   soap->dime.last = NULL;
-  if (err)
-    return err;
 #endif
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End send\n"));
   if (soap->mode & SOAP_IO) /* need to flush the remaining data in buffer */
@@ -7778,7 +5979,7 @@ soap_end_send(struct soap *soap)
       soap->mode &= ~SOAP_ENC_ZLIB;
       soap->zlib_state = SOAP_ZLIB_NONE;
       if (deflateEnd(soap->d_stream) != Z_OK || r != Z_STREAM_END)
-      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to end deflate: %s\n", soap->d_stream->msg?soap->d_stream->msg:SOAP_STR_EOS));
+      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Unable to end deflate: %s\n", soap->d_stream->msg?soap->d_stream->msg:""));
         return soap->error = SOAP_ZLIB_ERROR;
       }
 #ifdef WITH_GZIP
@@ -7813,14 +6014,14 @@ soap_end_send(struct soap *soap)
         soap->mode++;
       }
 #endif
-      for (p = soap_first_block(soap, NULL); p; p = soap_next_block(soap, NULL))
-      { DBGMSG(SENT, p, soap_block_size(soap, NULL));
-        if ((soap->error = soap->fsend(soap, p, soap_block_size(soap, NULL))))
-        { soap_end_block(soap, NULL);
+      for (p = soap_first_block(soap); p; p = soap_next_block(soap))
+      { DBGMSG(SENT, p, soap_block_size(soap));
+        if ((soap->error = soap->fsend(soap, p, soap_block_size(soap))))
+        { soap_end_block(soap);
           return soap->error;
         }
       }
-      soap_end_block(soap, NULL);
+      soap_end_block(soap);
     }
 #ifndef WITH_LEANER
     else if ((soap->mode & SOAP_IO) == SOAP_IO_CHUNK)
@@ -7833,10 +6034,10 @@ soap_end_send(struct soap *soap)
 #ifdef WITH_TCPFIN
 #ifdef WITH_OPENSSL
   if (!soap->ssl && soap_valid_socket(soap->socket) && !soap->keep_alive && !(soap->omode & SOAP_IO_UDP))
-    soap->fshutdownsocket(soap, soap->socket, SOAP_SHUT_WR); /* Send TCP FIN */
+    soap->fshutdownsocket(soap, soap->socket, 1); /* Send TCP FIN */
 #else
   if (soap_valid_socket(soap->socket) && !soap->keep_alive && !(soap->omode & SOAP_IO_UDP))
-    soap->fshutdownsocket(soap, soap->socket, SOAP_SHUT_WR); /* Send TCP FIN */
+    soap->fshutdownsocket(soap, soap->socket, 1); /* Send TCP FIN */
 #endif
 #endif
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End of send phase\n"));
@@ -7854,10 +6055,6 @@ int
 SOAP_FMAC2
 soap_end_recv(struct soap *soap)
 { soap->part = SOAP_END;
-#ifndef WITH_LEAN
-  soap->wsuid = NULL;		/* reset before next send */
-  soap->c14nexclude = NULL;	/* reset before next send */
-#endif
 #ifndef WITH_LEANER
   if ((soap->mode & SOAP_ENC_DIME) && soap_getdime(soap))
   { soap->dime.first = NULL;
@@ -7930,6 +6127,8 @@ soap_end_recv(struct soap *soap)
   if ((soap->mode & SOAP_IO) == SOAP_IO_CHUNK)
     while ((int)soap_getchar(soap) != EOF) /* advance to last chunk */
       ;
+  if (soap->fdisconnect && (soap->error = soap->fdisconnect(soap)))
+    return soap->error;
 #ifndef WITH_NOIDREF
   if (soap_resolve(soap))
     return soap->error;
@@ -7941,11 +6140,7 @@ soap_end_recv(struct soap *soap)
     return soap->error = SOAP_DIME_HREF;
   }
 #endif
-  soap_free_ns(soap);
-#ifndef WITH_LEANER
-  if (soap->fpreparefinalrecv)
-    return soap->error = soap->fpreparefinalrecv(soap);
-#endif
+  soap_free_temp(soap);
   return SOAP_OK;
 }
 #endif
@@ -7956,12 +6151,18 @@ SOAP_FMAC1
 void
 SOAP_FMAC2
 soap_free_temp(struct soap *soap)
-{ register struct soap_attribute *tp, *tq;
+{ register struct soap_nlist *np, *nq;
+  register struct soap_attribute *tp, *tq;
   register struct Namespace *ns;
-  soap_free_ns(soap);
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free namespace stack\n"));
+  for (np = soap->nlist; np; np = nq)
+  { nq = np->next;
+    SOAP_FREE(soap, np);
+  }
+  soap->nlist = NULL;
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free any remaining temp blocks\n"));
   while (soap->blist)
-    soap_end_block(soap, NULL);
+    soap_end_block(soap);
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free attribute storage\n"));
   for (tp = soap->attributes; tp; tp = tq)
   { tq = tp->next;
@@ -8007,22 +6208,7 @@ soap_free_temp(struct soap *soap)
 #endif
 
 /******************************************************************************/
-#ifndef PALM_1
-static void
-soap_free_ns(struct soap *soap)
-{ register struct soap_nlist *np, *nq;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Free namespace stack\n"));
-  for (np = soap->nlist; np; np = nq)
-  { nq = np->next;
-    SOAP_FREE(soap, np);
-  }
-  soap->nlist = NULL;
-}
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
-#if !defined(WITH_LEAN) || defined(SOAP_DEBUG)
+#ifdef SOAP_DEBUG
 static void
 soap_init_logs(struct soap *soap)
 { int i;
@@ -8031,7 +6217,6 @@ soap_init_logs(struct soap *soap)
     soap->fdebug[i] = NULL;
   }
 }
-#endif
 #endif
 
 /******************************************************************************/
@@ -8136,11 +6321,7 @@ soap_copy_context(struct soap *copy, const struct soap *soap)
     return NULL;
   if (copy)
   { register struct soap_plugin *p = NULL;
-#ifdef __cplusplus
-    *copy = *soap;
-#else
     memcpy(copy, soap, sizeof(struct soap));
-#endif
     copy->state = SOAP_COPY;
     copy->error = SOAP_OK;
     copy->userid = NULL;
@@ -8156,26 +6337,11 @@ soap_copy_context(struct soap *copy, const struct soap *soap)
 #ifdef SOAP_MEM_DEBUG
     soap_init_mht(copy);
 #endif
-#if !defined(WITH_LEAN) || defined(SOAP_DEBUG)
-    soap_init_logs(copy);
-#endif
 #ifdef SOAP_DEBUG
-    soap_set_test_logfile(copy, soap->logfile[SOAP_INDEX_TEST]);
-    soap_set_sent_logfile(copy, soap->logfile[SOAP_INDEX_SENT]);
+    soap_init_logs(copy);
     soap_set_recv_logfile(copy, soap->logfile[SOAP_INDEX_RECV]);
-#endif
-#ifdef WITH_C_LOCALE
-    copy->c_locale = duplocale(soap->c_locale);
-#else
-    copy->c_locale = NULL;
-#endif
-#ifdef WITH_OPENSSL
-    copy->bio = NULL;
-    copy->ssl = NULL;
-    copy->session = NULL;
-#endif
-#ifdef WITH_GNUTLS
-    copy->session = NULL;
+    soap_set_sent_logfile(copy, soap->logfile[SOAP_INDEX_SENT]);
+    soap_set_test_logfile(copy, soap->logfile[SOAP_INDEX_TEST]);
 #endif
 #ifdef WITH_ZLIB
     copy->d_stream = (z_stream*)SOAP_MALLOC(copy, sizeof(z_stream));
@@ -8258,9 +6424,6 @@ soap_copy_stream(struct soap *copy, struct soap *soap)
   copy->ssl = soap->ssl;
   copy->ctx = soap->ctx;
 #endif
-#ifdef WITH_GNUTLS
-  copy->session = soap->session; /* TODO: GNUTLS provides a dup? */
-#endif
 #ifdef WITH_ZLIB
   copy->zlib_state = soap->zlib_state;
   copy->zlib_in = soap->zlib_in;
@@ -8277,40 +6440,8 @@ soap_copy_stream(struct soap *copy, struct soap *soap)
   { copy->z_buf = (char*)SOAP_MALLOC(copy, SOAP_BUFLEN);
     memcpy(copy->z_buf, soap->z_buf, sizeof(soap->z_buf));
   }
-  copy->z_dict = soap->z_dict;
-  copy->z_dict_len = soap->z_dict_len;
 #endif
   memcpy(copy->buf, soap->buf, sizeof(soap->buf));
-}
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
-SOAP_FMAC1
-void
-SOAP_FMAC2
-soap_free_stream(struct soap *soap)
-{ soap->socket = SOAP_INVALID_SOCKET;
-#ifdef WITH_OPENSSL
-  soap->bio = NULL;
-  soap->ssl = NULL;
-#endif
-#ifdef WITH_GNUTLS
-  soap->xcred = NULL;
-  soap->acred = NULL;
-  soap->cache = NULL;
-  soap->session = NULL; /* TODO: GNUTLS free (when dupped)? */
-  soap->dh_params = NULL;
-  soap->rsa_params = NULL;
-#endif
-#ifdef WITH_ZLIB
-  if (soap->d_stream)
-    SOAP_FREE(soap, soap->d_stream);
-  soap->d_stream = NULL;
-  if (soap->z_buf)
-    SOAP_FREE(soap, soap->z_buf);
-  soap->z_buf = NULL;
-#endif
 }
 #endif
 
@@ -8324,14 +6455,6 @@ soap_init(struct soap *soap)
 #ifdef SOAP_MEM_DEBUG
   soap_init_mht(soap);
 #endif
-#if !defined(WITH_LEAN) || defined(SOAP_DEBUG)
-  soap_init_logs(soap);
-#endif
-#ifdef SOAP_DEBUG
-  soap_set_test_logfile(soap, "TEST.log");
-  soap_set_sent_logfile(soap, "SENT.log");
-  soap_set_recv_logfile(soap, "RECV.log");
-#endif
   soap->version = 0;
   soap_imode(soap, SOAP_IO_DEFAULT);
   soap_omode(soap, SOAP_IO_DEFAULT);
@@ -8342,9 +6465,9 @@ soap_init(struct soap *soap)
 #ifndef WITH_NOHTTP
   soap->fpost = http_post;
   soap->fget = http_get;
-  soap->fput = http_405;
-  soap->fdel = http_405;
-  soap->fhead = http_405;
+  soap->fput = http_put;
+  soap->fdel = http_del;
+  soap->fhead = http_head;
   soap->fform = NULL;
   soap->fposthdr = http_post_header;
   soap->fresponse = http_response;
@@ -8355,8 +6478,6 @@ soap_init(struct soap *soap)
   soap->fconnect = NULL;
   soap->fdisconnect = NULL;
 #ifndef WITH_NOIO
-  soap->ipv6_multicast_if = 0;
-  soap->ipv4_multicast_if = NULL;
 #ifndef WITH_IPV6
   soap->fresolve = tcp_gethost;
 #else
@@ -8381,12 +6502,10 @@ soap_init(struct soap *soap)
   soap->fplugin = fplugin;
   soap->fmalloc = NULL;
 #ifndef WITH_LEANER
-  soap->fprepareinitsend = NULL;
-  soap->fprepareinitrecv = NULL;
+  soap->fprepareinit = NULL;
   soap->fpreparesend = NULL;
   soap->fpreparerecv = NULL;
-  soap->fpreparefinalsend = NULL;
-  soap->fpreparefinalrecv = NULL;
+  soap->fpreparefinal = NULL;
   soap->fdimereadopen = NULL;
   soap->fdimewriteopen = NULL;
   soap->fdimereadclose = NULL;
@@ -8407,7 +6526,6 @@ soap_init(struct soap *soap)
   soap->proxy_http_version = "1.0";
   soap->http_content = NULL;
   soap->actor = NULL;
-  soap->lang = "en";
   soap->keep_alive = 0;
   soap->tcp_keep_alive = 0;
   soap->tcp_keep_idle = 0;
@@ -8422,7 +6540,6 @@ soap_init(struct soap *soap)
   soap->connect_flags = 0;
   soap->bind_flags = 0;
   soap->accept_flags = 0;
-  soap->linger_time = 0;
   soap->ip = 0;
   soap->labbuf = NULL;
   soap->lablen = 0;
@@ -8483,16 +6600,17 @@ soap_init(struct soap *soap)
   soap->d_stream->opaque = Z_NULL;
   soap->z_buf = NULL;
   soap->z_level = 6;
-  soap->z_dict = NULL;
-  soap->z_dict_len = 0;
 #endif
 #ifndef WITH_LEAN
-  soap->wsuid = NULL;
+  soap->c14ninclude = NULL;
   soap->c14nexclude = NULL;
   soap->cookies = NULL;
   soap->cookie_domain = NULL;
   soap->cookie_path = NULL;
   soap->cookie_max = 32;
+#endif
+#ifdef SOAP_DEBUG
+  soap_init_logs(soap);
 #endif
 #ifdef WMW_RPM_IO
   soap->rpmreqid = NULL;
@@ -8504,69 +6622,33 @@ soap_init(struct soap *soap)
   soap_init_iht(soap);
   soap_init_pht(soap);
 #endif
+#ifdef SOAP_DEBUG
+  soap_set_recv_logfile(soap, "RECV.log");
+  soap_set_sent_logfile(soap, "SENT.log");
+  soap_set_test_logfile(soap, "TEST.log");
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Initializing context\n"));
+#endif
 #ifdef WITH_OPENSSL
   if (!soap_ssl_init_done)
-    soap_ssl_init();
+  { soap_ssl_init();
+    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Initializing OpenSSL, version=%ld\n", (long)OPENSSL_VERSION_NUMBER));
+  }
   soap->fsslauth = ssl_auth_init;
   soap->fsslverify = ssl_verify_callback;
   soap->bio = NULL;
   soap->ssl = NULL;
   soap->ctx = NULL;
-  soap->session = NULL;
   soap->ssl_flags = SOAP_SSL_DEFAULT;
   soap->keyfile = NULL;
   soap->password = NULL;
-  soap->cafile = NULL;
-  soap->capath = NULL;
-  soap->crlfile = NULL;
   soap->dhfile = NULL;
-  soap->randfile = NULL;
-#endif
-#ifdef WITH_GNUTLS
-  if (!soap_ssl_init_done)
-    soap_ssl_init();
-  soap->fsslauth = ssl_auth_init;
-  soap->fsslverify = NULL;
-  soap->xcred = NULL;
-  soap->acred = NULL;
-  soap->cache = NULL;
-  soap->session = NULL;
-  soap->ssl_flags = SOAP_SSL_DEFAULT;
-  soap->keyfile = NULL;
-  soap->password = NULL;
   soap->cafile = NULL;
   soap->capath = NULL;
   soap->crlfile = NULL;
-  soap->dh_params = NULL;
-  soap->rsa_params = NULL;
+  soap->randfile = NULL;
+  soap->session = NULL;
 #endif
-#ifdef WITH_C_LOCALE
-  soap->c_locale = newlocale(LC_ALL_MASK, "C", NULL);
-#else
-  soap->c_locale = NULL;
-#endif
-  soap->buflen = 0;
-  soap->bufidx = 0;
-#ifndef WITH_LEANER
-  soap->dime.chunksize = 0;
-  soap->dime.buflen = 0;
-#endif
-  soap->null = 0;
-  soap->position = 0;
-  soap->encoding = 0;
-  soap->mustUnderstand = 0;
-  soap->ns = 0;
-  soap->part = SOAP_END;
-  soap->alloced = 0;
-  soap->count = 0;
-  soap->length = 0;
-  soap->cdata = 0;
-  soap->peeked = 0;
-  soap->ahead = 0;
-  soap->idnum = 0;
-  soap->level = 0;
-  soap->endpoint[0] = '\0';
-  soap->error = SOAP_OK;
+  soap_begin(soap);
 }
 #endif
 
@@ -8689,7 +6771,7 @@ soap_set_namespaces(struct soap *soap, const struct Namespace *p)
       if (!s)
         s = ns[np->index].ns;
     }
-    if (s && soap_push_namespace(soap, np->id, s) == NULL)
+    if (s && soap_push_namespace(soap, np->id, s))
       return soap->error;
     nq = np;
     np = np->next;
@@ -8744,25 +6826,15 @@ soap_set_local_namespaces(struct soap *soap)
 SOAP_FMAC1
 const char *
 SOAP_FMAC2
-soap_tagsearch(const char *big, const char *little)
-{ if (little)
-  { register size_t n = strlen(little);
-    register const char *s = big;
-    while (s) 
-    { register const char *t = s;
-      register size_t i;
-      for (i = 0; i < n; i++, t++)
-      { if (*t != little[i])
-          break;
-      }
-      if (*t == '\0' || *t == ' ')
-      { if (i == n || (i && little[i-1] == ':'))
-          return s;
-      }
-      s = strchr(t, ' ');
-      if (s)
-        s++;
-    }
+soap_strsearch(const char *big, const char *little)
+{ size_t n = strlen(little);
+  const char *s = big;
+  while (s) 
+  { if (!strncmp(s, little, n) && (s[n] == '\0' || s[n] == ' '))
+      return s;
+    s = strchr(s, ' ');
+    if (s)
+      s++;
   }
   return NULL;
 }
@@ -8792,7 +6864,7 @@ static struct soap_nlist *
 soap_push_ns(struct soap *soap, const char *id, const char *ns, short utilized)
 { register struct soap_nlist *np;
   size_t n, k;
-  if (soap_tagsearch(soap->c14nexclude, id))
+  if (soap_strsearch(soap->c14nexclude, id))
     return NULL;
   if (!utilized)
   { for (np = soap->nlist; np; np = np->next)
@@ -8821,7 +6893,9 @@ soap_push_ns(struct soap *soap, const char *id, const char *ns, short utilized)
   soap->nlist = np;
   strcpy(np->id, id);
   if (ns)
-    np->ns = strcpy(np->id + n + 1, ns);
+  { np->ns = np->id + n + 1;
+    strcpy(np->ns, ns);
+  }
   else
     np->ns = NULL;
   np->level = soap->level;
@@ -8849,27 +6923,25 @@ soap_utilize_ns(struct soap *soap, const char *tag, size_t n)
 #endif
 
 /******************************************************************************/
+#ifndef WITH_LEAN
+static void
+soap_pop_ns(struct soap *soap)
+{ soap_pop_namespace(soap);
+}
+#endif
+
+/******************************************************************************/
 #ifndef PALM_2
 SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_element(struct soap *soap, const char *tag, int id, const char *type)
 {
-#ifndef WITH_LEAN
+#ifdef WITH_XMLNS
   register const char *s;
 #endif
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Element begin tag='%s' id='%d' type='%s'\n", tag, id, type?type:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Element begin tag='%s' id='%d' type='%s'\n", tag, id, type?type:""));
 #ifdef WITH_DOM
-#ifndef WITH_LEAN
-  if (soap->wsuid && soap_tagsearch(soap->wsuid, tag))
-  { int i;
-    for (s = tag, i = 0; *s && i < sizeof(soap->tag); s++, i++)
-      soap->tag[i] = *s == ':' ? '-' : *s;
-    soap->tag[sizeof(soap->tag) - 1] = '\0';
-    if (soap_set_attr(soap, "wsu:Id", soap->tag, 1))
-      return soap->error;
-  }
-#endif 
   if (soap->part == SOAP_BEGIN_SECURITY && (soap->mode & SOAP_XML_CANONICAL) && !(soap->mode & SOAP_DOM_ASIS))
   { register struct soap_nlist *np;
     /* wsu:Id found: clear xmlns renderings, so re-emit them for exc-c14n */
@@ -8881,7 +6953,7 @@ soap_element(struct soap *soap, const char *tag, int id, const char *type)
   if (soap->mode & SOAP_XML_DOM)
   { register struct soap_dom_element *elt = (struct soap_dom_element*)soap_malloc(soap, sizeof(struct soap_dom_element));
     if (!elt)
-      return soap->error;
+      return soap->error = SOAP_EOM;
     elt->soap = soap;
     elt->next = NULL;
     elt->prnt = soap->dom;
@@ -8922,7 +6994,10 @@ soap_element(struct soap *soap, const char *tag, int id, const char *type)
         return soap->error;
       soap->body = 1;
     }
-    if ((soap->mode & SOAP_XML_DEFAULTNS) && (s = strchr(tag, ':')))
+#endif
+#ifdef WITH_XMLNS
+    s = strchr(tag, ':');
+    if (s && strncmp(tag, "SOAP-ENV", s - tag))
     { struct Namespace *ns = soap->local_namespaces;
       size_t n = s - tag;
       if (soap_send_raw(soap, "<", 1)
@@ -8949,12 +7024,7 @@ soap_element(struct soap *soap, const char *tag, int id, const char *type)
 #endif
   if (!soap->ns)
   { struct Namespace *ns;
-    int k = -1;
-#ifndef WITH_LEAN
-    if ((soap->mode & SOAP_XML_DEFAULTNS))
-      k = 4; /* only produce the first four required entries */
-#endif
-    for (ns = soap->local_namespaces; ns && ns->id && k; ns++, k--)
+    for (ns = soap->local_namespaces; ns && ns->id; ns++)
     { if (*ns->id && (ns->out || ns->ns))
       { sprintf(soap->tmpbuf, "xmlns:%s", ns->id);
         if (soap_attribute(soap, soap->tmpbuf, ns->out ? ns->out : ns->ns))
@@ -8962,7 +7032,7 @@ soap_element(struct soap *soap, const char *tag, int id, const char *type)
       }
     }   
   }
-  soap->ns = 1; /* namespace table control: ns = 0 or 2 to start, then 1 to stop dumping the table  */
+  soap->ns = 1; /* start with 0 or 2, but should be one to continue */
 #ifndef WITH_LEAN
   if (soap->mode & SOAP_XML_CANONICAL)
   { const char *t = strchr(tag, ':');
@@ -9012,7 +7082,7 @@ soap_element(struct soap *soap, const char *tag, int id, const char *type)
         else
           soap->encodingStyle = soap->local_namespaces[1].ns;
       }
-      if (soap->encodingStyle && soap_attribute(soap, "SOAP-ENV:encodingStyle", soap->encodingStyle))
+      if (soap_attribute(soap, "SOAP-ENV:encodingStyle", soap->encodingStyle))
         return soap->error;
     }
     soap->encoding = 0;
@@ -9084,7 +7154,7 @@ soap_strtol(const char *s, char **t, int b)
     if (neg)
       n = -n;
   }
-  else /* assume b == 16 and value is always positive */
+  else /* b == 16 and value is always positive */
   { while ((c = *s))
     { if (c >= '0' && c <= '9')
         c -= '0';
@@ -9156,9 +7226,7 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_array_begin_out(struct soap *soap, const char *tag, int id, const char *type, const char *offset)
-{ if (!type || !*type)
-    return soap_element_begin_out(soap, tag, id, NULL);
-  if (soap_element(soap, tag, id, "SOAP-ENC:Array"))
+{ if (soap_element(soap, tag, id, "SOAP-ENC:Array"))
     return soap->error;
   if (soap->version == 2)
   { const char *s;
@@ -9166,20 +7234,20 @@ soap_array_begin_out(struct soap *soap, const char *tag, int id, const char *typ
     if ((size_t)(s - type) < sizeof(soap->tmpbuf))
     { strncpy(soap->tmpbuf, type, s - type);
       soap->tmpbuf[s - type] = '\0';
-      if (soap_attribute(soap, "SOAP-ENC:itemType", soap->tmpbuf))
+      if (type && *type && (soap_attribute(soap, "SOAP-ENC:itemType", soap->tmpbuf)))
         return soap->error;
       if (s && (soap_attribute(soap, "SOAP-ENC:arraySize", s + 1)))
         return soap->error;
     }
   }
   else
-  { if (offset && soap_attribute(soap, "SOAP-ENC:offset", offset))
+  { if (offset && (soap_attribute(soap, "SOAP-ENC:offset", offset)))
       return soap->error;
-    if (soap_attribute(soap, "SOAP-ENC:arrayType", type))
+    if (type && *type && (soap_attribute(soap, "SOAP-ENC:arrayType", type)))
       return soap->error;
   }
 #ifndef WITH_LEAN
-  if ((soap->mode & SOAP_XML_CANONICAL))
+  if (type && *type && (soap->mode & SOAP_XML_CANONICAL))
   { const char *s = strchr(type, ':');
     if (s)
       soap_utilize_ns(soap, type, s - type);
@@ -9210,7 +7278,7 @@ soap_element_start_end_out(struct soap *soap, const char *tag)
     { if (np->index == 1 && np->ns)
       { sprintf(soap->tmpbuf, "xmlns:%s", np->id);
         DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Enabling utilized binding (level=%u) %s='%s'\n", np->level, soap->tmpbuf, np->ns));
-        soap_set_attr(soap, soap->tmpbuf, np->ns, 1);
+        soap_set_attr(soap, soap->tmpbuf, np->ns);
         np->index = 2;
       }
     }
@@ -9224,7 +7292,7 @@ soap_element_start_end_out(struct soap *soap, const char *tag)
     { if (tp->visible)
       { *att = (struct soap_dom_attribute*)soap_malloc(soap, sizeof(struct soap_dom_attribute));
         if (!*att)
-          return soap->error;
+          return soap->error = SOAP_EOM;
         (*att)->next = NULL;
         (*att)->nstr = NULL;
         (*att)->name = soap_strdup(soap, tp->name);
@@ -9241,9 +7309,9 @@ soap_element_start_end_out(struct soap *soap, const char *tag)
   for (tp = soap->attributes; tp; tp = tp->next)
   { if (tp->visible)
     {
-#ifndef WITH_LEAN
-      const char *s;
-      if ((soap->mode & SOAP_XML_DEFAULTNS) && (s = strchr(tp->name, ':')))
+#ifdef WITH_XMLNS
+      const char *s = strchr(tp->name, ':');
+      if (s)
       { size_t n = s - tp->name;
         if (soap->nlist && !strncmp(soap->nlist->id, tp->name, n) && !soap->nlist->id[n])
           s++;
@@ -9258,7 +7326,7 @@ soap_element_start_end_out(struct soap *soap, const char *tag)
         return soap->error;
       if (tp->visible == 2 && tp->value)
         if (soap_send_raw(soap, "=\"", 2)
-         || soap_string_out(soap, tp->value, tp->flag)
+         || soap_string_out(soap, tp->value, 1)
          || soap_send_raw(soap, "\"", 1))
           return soap->error;
       tp->visible = 0;
@@ -9289,11 +7357,7 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_element_end_out(struct soap *soap, const char *tag)
-{
-#ifndef WITH_LEAN
-  const char *s;
-#endif
-  if (*tag == '-')
+{ if (*tag == '-')
     return SOAP_OK;
   DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Element ending tag='%s'\n", tag));
 #ifdef WITH_DOM
@@ -9305,7 +7369,7 @@ soap_element_end_out(struct soap *soap, const char *tag)
 #endif
 #ifndef WITH_LEAN
   if (soap->mode & SOAP_XML_CANONICAL)
-    soap_pop_namespace(soap);
+    soap_pop_ns(soap);
   if (soap->mode & SOAP_XML_INDENT)
   { if (!soap->body)
     { if (soap_send_raw(soap, soap_indent, soap->level < sizeof(soap_indent) ? soap->level : sizeof(soap_indent) - 1))
@@ -9313,9 +7377,13 @@ soap_element_end_out(struct soap *soap, const char *tag)
     }
     soap->body = 0;
   }
-  if ((soap->mode & SOAP_XML_DEFAULTNS) && (s = strchr(tag, ':')))
-  { soap_pop_namespace(soap);
-    tag = s + 1;
+#endif
+#ifdef WITH_XMLNS
+  { const char *s = strchr(tag, ':');
+    if (s && strncmp(tag, "SOAP-ENV", s - tag))
+    { soap_pop_ns(soap);
+      tag = s + 1;
+    }
   }
 #endif
   if (soap_send_raw(soap, "</", 2)
@@ -9388,7 +7456,7 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_element_id(struct soap *soap, const char *tag, int id, const void *p, const struct soap_array *a, int n, const char *type, int t) 
-{ if (!p)
+{ if (!p || (a && !a->__ptr))
   { soap_element_null(soap, tag, id, type);
     return -1;
   }
@@ -9456,12 +7524,9 @@ int
 SOAP_FMAC2
 soap_attribute(struct soap *soap, const char *name, const char *value)
 { 
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Attribute '%s'='%s'\n", name, value));
 #ifdef WITH_DOM
   if ((soap->mode & SOAP_XML_DOM) && !(soap->mode & SOAP_XML_CANONICAL) && soap->dom)
   { register struct soap_dom_attribute *a = (struct soap_dom_attribute*)soap_malloc(soap, sizeof(struct soap_dom_attribute));
-    if (!a)
-      return soap->error;
     a->next = soap->dom->atts;
     a->nstr = NULL;
     a->name = soap_strdup(soap, name);
@@ -9475,7 +7540,7 @@ soap_attribute(struct soap *soap, const char *name, const char *value)
 #ifndef WITH_LEAN
   if (soap->mode & SOAP_XML_CANONICAL)
   { /* TODO: consider using this code to handle default namespace bindings
-    if (value && !strncmp(name, "xmlns", 5) && (name[5] == ':' || name[5] == '\0'))
+    if (!strncmp(name, "xmlns", 5) && (name[5] == ':' || name[5] == '\0'))
     { if (name[5] == ':')
         soap_push_ns(soap, name + 6, value, 0);
       else
@@ -9484,7 +7549,7 @@ soap_attribute(struct soap *soap, const char *name, const char *value)
     */
     if (!strncmp(name, "xmlns:", 6))
       soap_push_ns(soap, name + 6, value, 0);
-    else if (soap_set_attr(soap, name, value, 1))
+    else if (soap_set_attr(soap, name, value))
       return soap->error;
   }
   else
@@ -9520,7 +7585,7 @@ soap_element_begin_in(struct soap *soap, const char *tag, int nillable, const ch
         return soap->error = SOAP_NULL;
       if (soap->body)
         soap->level++;
-      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Begin element found (level=%u) '%s'='%s'\n", soap->level, soap->tag, tag?tag:SOAP_STR_EOS ));
+      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Begin element found (level=%u) '%s'='%s'\n", soap->level, soap->tag, tag?tag:"" ));
     }
   }
   else if (soap->error == SOAP_NO_TAG && tag && *tag == '-')
@@ -9574,7 +7639,7 @@ soap_element_end_in(struct soap *soap, const char *tag)
   s = soap->tag;
   n = sizeof(soap->tag);
   while (soap_notblank(c = soap_get(soap)))
-  { if (n > 1 && --n)
+  { if (--n > 0)
       *s++ = (char)c;
   }
   *s = '\0';
@@ -9584,7 +7649,7 @@ soap_element_end_in(struct soap *soap, const char *tag)
     c = soap_get(soap);
   if (c != SOAP_GT)
     return soap->error = SOAP_SYNTAX_ERROR;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End element found (level=%u) '%s'='%s'\n", soap->level, soap->tag, tag?tag:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "End element found (level=%u) '%s'='%s'\n", soap->level, soap->tag, tag?tag:""));
 #ifndef WITH_LEAN
   if (tag && (soap->mode & SOAP_XML_STRICT))
   { soap_pop_namespace(soap);
@@ -9620,8 +7685,6 @@ soap_attr_value(struct soap *soap, const char *name, int flag)
   }
   else if (flag == 1 && (soap->mode & SOAP_XML_STRICT))
     soap->error = SOAP_REQUIRED;
-  else
-    soap->error = SOAP_OK;
   return NULL;
 }
 #endif
@@ -9631,11 +7694,11 @@ soap_attr_value(struct soap *soap, const char *name, int flag)
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_set_attr(struct soap *soap, const char *name, const char *value, int flag)
+soap_set_attr(struct soap *soap, const char *name, const char *value)
 { register struct soap_attribute *tp;
   if (*name == '-')
     return SOAP_OK;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set attribute %s='%s'\n", name, value?value:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set attribute %s='%s'\n", name, value?value:""));
   for (tp = soap->attributes; tp; tp = tp->next)
   { if (!strcmp(tp->name, name))
       break;
@@ -9646,7 +7709,7 @@ soap_set_attr(struct soap *soap, const char *name, const char *value, int flag)
       return soap->error = SOAP_EOM;
     tp->ns = NULL;
 #ifndef WITH_LEAN
-    if ((soap->mode & SOAP_XML_CANONICAL))
+    if (soap->mode & SOAP_XML_CANONICAL)
     { struct soap_attribute **tpp = &soap->attributes;
       const char *s = strchr(name, ':');
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inserting attribute %s for c14n\n", name))
@@ -9704,9 +7767,8 @@ soap_set_attr(struct soap *soap, const char *name, const char *value, int flag)
     if (!strncmp(tp->name, "xmlns:", 6))
       tp->ns = tp->value;
     tp->visible = 2;
-    tp->flag = flag;
 #ifndef WITH_LEAN
-    if (soap->part != SOAP_IN_SECURITY && !strcmp(name, "wsu:Id"))
+    if (!strcmp(name, "wsu:Id"))
     { soap->part = SOAP_BEGIN_SECURITY;
       strncpy(soap->id, value, sizeof(soap->id));
       soap->id[sizeof(soap->id)-1] = '\0';
@@ -9862,7 +7924,7 @@ soap_peek_element(struct soap *soap)
   register char *lead = NULL;
 #endif
   register struct soap_attribute *tp, *tq = NULL;
-  register const char *t;
+  const char *t;
   register char *s;
   register soap_wchar c;
   register int i;
@@ -9883,34 +7945,29 @@ soap_peek_element(struct soap *soap)
   soap->position = 0;
   soap->null = 0;
   soap->mustUnderstand = 0;
-  /* skip BOM */
-  if ((c = soap_getchar(soap)) != 0xEF || (c = soap_get1(soap)) != 0xBB || (c = soap_get1(soap)) != 0xBF)
-    soap_unget(soap, c);
-  c = soap_get(soap);
+  c = soap_getutf8(soap);
 #ifdef WITH_DOM
   /* whitespace leading to start tag is not insignificant for DOM */
   if (soap_blank(c))
   { soap->labidx = 0;
     do
     { if (soap_append_lab(soap, NULL, 0))
-        return soap->error;
+        return SOAP_EOM;
       s = soap->labbuf + soap->labidx;
       i = soap->lablen - soap->labidx;
       soap->labidx = soap->lablen;
       while (soap_blank(c) && i--)
       { *s++ = c;
-        c = soap_get(soap);
+        c = soap_getutf8(soap);
       }
     }
     while (soap_blank(c));
     *s = '\0';
-    if (*soap->labbuf)
-      lead = soap->labbuf;
+    lead = soap_strdup(soap, soap->labbuf);
   }
 #else
-  /* skip space */
   while (soap_blank(c))
-    c = soap_get(soap);
+    c = soap_getutf8(soap);
 #endif
   if (c != SOAP_LT)
   { *soap->tag = '\0';
@@ -9929,7 +7986,7 @@ soap_peek_element(struct soap *soap)
   while (soap_blank(c));
   i = sizeof(soap->tag);
   while (c != '>' && c != '/' && soap_notblank(c) && (int)c != EOF)
-  { if (i > 1 && --i)
+  { if (--i > 0)
       *s++ = (char)c;
     c = soap_get1(soap);
   }
@@ -9941,7 +7998,7 @@ soap_peek_element(struct soap *soap)
   { register struct soap_dom_element *elt;
     elt = (struct soap_dom_element*)soap_malloc(soap, sizeof(struct soap_dom_element));
     if (!elt)
-      return soap->error;
+      return soap->error = SOAP_EOM;
     elt->next = NULL;
     elt->nstr = NULL;
     elt->name = soap_strdup(soap, soap->tag);
@@ -9952,7 +8009,7 @@ soap_peek_element(struct soap *soap)
     elt->wide = NULL;
     elt->type = 0;
     elt->node = NULL;
-    elt->head = soap_strdup(soap, lead);
+    elt->head = lead;
     elt->tail = NULL;
     elt->soap = soap;
     if (soap->dom)
@@ -9976,7 +8033,7 @@ soap_peek_element(struct soap *soap)
   { s = soap->tmpbuf;
     i = sizeof(soap->tmpbuf);
     while (c != '=' && c != '>' && c != '/' && soap_notblank(c) && (int)c != EOF)
-    { if (i > 1 && --i)
+    { if (--i > 0)
         *s++ = (char)c;
       c = soap_get1(soap);
     }
@@ -9988,7 +8045,7 @@ soap_peek_element(struct soap *soap)
     if (att)
     { *att = (struct soap_dom_attribute*)soap_malloc(soap, sizeof(struct soap_dom_attribute));
        if (!*att)
-         return soap->error;
+         return soap->error = SOAP_EOM;
        (*att)->next = NULL;
        (*att)->nstr = NULL;
        (*att)->name = soap_strdup(soap, soap->tmpbuf);
@@ -10075,10 +8132,10 @@ soap_peek_element(struct soap *soap)
         if (soap->error != SOAP_EOM)
           return soap->error;
         soap->error = SOAP_OK;
-        if (soap_new_block(soap) == NULL)
+        if (soap_new_block(soap))
           return soap->error;
         for (;;)
-        { if (!(s = (char*)soap_push_block(soap, NULL, SOAP_BLKLEN)))
+        { if (!(s = (char*)soap_push_block(soap, SOAP_BLKLEN)))
             return soap->error;
           if (soap_getattrval(soap, s, SOAP_BLKLEN, c))
           { if (soap->error != SOAP_EOM)
@@ -10095,7 +8152,7 @@ soap_peek_element(struct soap *soap)
         { memcpy(s, tp->value, tp->size);
           SOAP_FREE(soap, tp->value);
         }
-        soap_save_block(soap, NULL, s + tp->size, 0);
+        soap_save_block(soap, s + tp->size, 0);
         tp->value = s;
         tp->size = n;
 #endif
@@ -10115,7 +8172,7 @@ soap_peek_element(struct soap *soap)
       att = &(*att)->next;
 #endif
     if (t && tp->value)
-    { if (soap_push_namespace(soap, t, tp->value) == NULL)
+    { if (soap_push_namespace(soap, t, tp->value))
         return soap->error;
     }
   }
@@ -10152,8 +8209,7 @@ soap_peek_element(struct soap *soap)
       else if (!strcmp(tp->name, "href"))
       { if (soap->version == 1
          || (soap->mode & SOAP_XML_GRAPH)
-         || (soap->mode & SOAP_ENC_MTOM)
-         || (soap->mode & SOAP_ENC_DIME))
+         || (soap->mode & SOAP_ENC_MTOM))
         { strncpy(soap->href, tp->value, sizeof(soap->href) - 1);
           soap->href[sizeof(soap->href)-1] = '\0';
         }
@@ -10222,10 +8278,6 @@ soap_peek_element(struct soap *soap)
             soap->other = 1;
         }
       }
-      else
-      { if (!soap_match_tag(soap, tp->name, "wsdl:required") && !strcmp(tp->value, "true"))
-          soap->mustUnderstand = 1;
-      }
     }
   }
   return soap->error = SOAP_OK;
@@ -10266,14 +8318,14 @@ SOAP_FMAC2
 soap_string_out(struct soap *soap, const char *s, int flag)
 { register const char *t;
   register soap_wchar c;
-  register soap_wchar mask = (soap_wchar)0xFFFFFF80UL;
+  register soap_wchar mask = 0xFFFFFF80UL;
 #ifdef WITH_DOM
   if ((soap->mode & SOAP_XML_DOM) && soap->dom)
   { soap->dom->data = soap_strdup(soap, s);
     return SOAP_OK;
   }
 #endif
-  if (flag == 2 || soap->mode & SOAP_C_UTFSTRING)
+  if (soap->mode & SOAP_C_UTFSTRING)
     mask = 0;
   t = s;
   while ((c = *t++))
@@ -10360,53 +8412,53 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
   char *t = NULL;
   register size_t i;
   register long l = 0;
-  register int n = 0, f = 0, m = 0;
+  register int n = 0;
+  register int m = 0;
   register soap_wchar c;
 #if !defined(WITH_LEANER) && defined(HAVE_WCTOMB)
   char buf[MB_LEN_MAX > 8 ? MB_LEN_MAX : 8];
 #else
   char buf[8];
 #endif
-  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Reading string content, flag=%d\n", flag));
-  if (soap->peeked && *soap->tag)
-  {
+  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Reading string content\n"));
+  if (soap->peeked)
+  { if (!soap->body)
+      return NULL;
+    if (*soap->tag)
+    {
 #ifndef WITH_LEAN
-    struct soap_attribute *tp;
-    DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String content includes tag '%s' and attributes\n", soap->tag));
-    t = soap->tmpbuf;
-    *t = '<';
-    t[sizeof(soap->tmpbuf)-1] = '\0';
-    strncpy(t + 1, soap->tag, sizeof(soap->tmpbuf) - 2);
-    t += strlen(t);
-    for (tp = soap->attributes; tp; tp = tp->next)
-    { if (tp->visible)
-      { if (t >= soap->tmpbuf + sizeof(soap->tmpbuf) - 2)
-          break;
-        *t++ = ' ';
-        strcpy(t, tp->name);
-        t += strlen(t);
-        if (t >= soap->tmpbuf + sizeof(soap->tmpbuf) - 2)
-          break; /* too many or large attribute values */
-        if (tp->value)
-        { *t++ = '=';
-          *t++ = '"';
-          strcpy(t, tp->value);
+      struct soap_attribute *tp;
+      t = soap->tmpbuf;
+      *t = '<';
+      t[sizeof(soap->tmpbuf)-1] = '\0';
+      strncpy(t + 1, soap->tag, sizeof(soap->tmpbuf) - 2);
+      t += strlen(t);
+      for (tp = soap->attributes; tp; tp = tp->next)
+      { if (tp->visible)
+        { if (t >= soap->tmpbuf + sizeof(soap->tmpbuf) - 2)
+            break;
+          *t++ = ' ';
+          strcpy(t, tp->name);
           t += strlen(t);
-          *t++ = '"';
+          if (t >= soap->tmpbuf + sizeof(soap->tmpbuf) - 2)
+            break;
+          if (tp->value)
+          { *t++ = '=';
+            *t++ = '"';
+            strcpy(t, tp->value);
+            t += strlen(t);
+            *t++ = '"';
+          }
         }
       }
-    }
-    if (!soap->body)
-      *t++ = '/';
-    *t++ = '>';
-    *t = '\0';
-    t = soap->tmpbuf;
-    m = (int)strlen(soap->tmpbuf);
+      *t++ = '>';
+      *t = '\0';
+      t = soap->tmpbuf;
+      m = (int)strlen(soap->tmpbuf);
 #endif
-    if (soap->body)
       n = 1;
-    f = 1;
-    soap->peeked = 0;
+      soap->peeked = 0;
+    }
   }
 #ifdef WITH_CDATA
   if (!flag)
@@ -10414,7 +8466,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
 #ifdef WITH_FAST
     soap->labidx = 0;			/* use look-aside buffer */
 #else
-    if (soap_new_block(soap) == NULL)
+    if (soap_new_block(soap))
       return NULL;
 #endif
     for (;;)
@@ -10428,7 +8480,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
       soap->labidx = soap->lablen;	/* claim this space */
 #else
       register size_t k = SOAP_BLKLEN;
-      if (!(s = (char*)soap_push_block(soap, NULL, k)))
+      if (!(s = (char*)soap_push_block(soap, k)))
         return NULL;
 #endif
       for (i = 0; i < k; i++)
@@ -10444,34 +8496,36 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
         { soap_unget(soap, c);
           c = soap_getutf8(soap);
           if (soap->mode & SOAP_C_UTFSTRING)
-          { c &= 0x7FFFFFFF;
-            t = buf;
-            if (c < 0x0800)
-              *t++ = (char)(0xC0 | ((c >> 6) & 0x1F));
-            else
-            { if (c < 0x010000)
-                *t++ = (char)(0xE0 | ((c >> 12) & 0x0F));
+          { if ((c & 0x80000000) && c >= -0x7FFFFF80 && c < SOAP_AP)
+            { c &= 0x7FFFFFFF;
+              t = buf;
+              if (c < 0x0800)
+                *t++ = (char)(0xC0 | ((c >> 6) & 0x1F));
               else
-              { if (c < 0x200000)
-                  *t++ = (char)(0xF0 | ((c >> 18) & 0x07));
+              { if (c < 0x010000)
+                  *t++ = (char)(0xE0 | ((c >> 12) & 0x0F));
                 else
-                { if (c < 0x04000000)
-                    *t++ = (char)(0xF8 | ((c >> 24) & 0x03));
+                { if (c < 0x200000)
+                    *t++ = (char)(0xF0 | ((c >> 18) & 0x07));
                   else
-                  { *t++ = (char)(0xFC | ((c >> 30) & 0x01));
-                    *t++ = (char)(0x80 | ((c >> 24) & 0x3F));
-                  }
-                  *t++ = (char)(0x80 | ((c >> 18) & 0x3F));
-                }     
-                *t++ = (char)(0x80 | ((c >> 12) & 0x3F));
+                  { if (c < 0x04000000)
+                      *t++ = (char)(0xF8 | ((c >> 24) & 0x03));
+                    else
+                    { *t++ = (char)(0xFC | ((c >> 30) & 0x01));
+                      *t++ = (char)(0x80 | ((c >> 24) & 0x3F));
+                    }
+                    *t++ = (char)(0x80 | ((c >> 18) & 0x3F));
+                  }     
+                  *t++ = (char)(0x80 | ((c >> 12) & 0x3F));
+                }
+                *t++ = (char)(0x80 | ((c >> 6) & 0x3F));
               }
-              *t++ = (char)(0x80 | ((c >> 6) & 0x3F));
+              *t++ = (char)(0x80 | (c & 0x3F));
+              m = (int)(t - buf) - 1;
+              t = buf;
+              *s++ = *t++;
+              continue;
             }
-            *t++ = (char)(0x80 | (c & 0x3F));
-            m = (int)(t - buf) - 1;
-            t = buf;
-            *s++ = *t++;
-            continue;
           }
         }
         switch (state)
@@ -10531,20 +8585,6 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
         }
         switch (c)
         {
-        case SOAP_TT:
-          if (n == 0)
-            goto end;
-          n--;
-          *s++ = '<';
-          t = (char*)"/";
-          m = 1;
-          break;
-        case SOAP_LT:
-	  if (f && n == 0)
-	    goto end;
-          n++;
-          *s++ = '<';
-          break;
         case '/':
           if (n > 0)
           { c = soap_getchar(soap);
@@ -10591,12 +8631,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
           }
           else if (c == '?')
             state = 3;
-          else if (f && n == 0)
-	  { soap_revget1(soap);
-	    c = '<';
-	    goto end;
-	  }
-	  else
+          else
             n++;
           soap_unget(soap, c);
           *s++ = '<';
@@ -10628,7 +8663,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
             *s++ = (char)(c & 0xFF);
         }
         l++;
-        if (maxlen >= 0 && l > maxlen)
+        if ((soap->mode & SOAP_XML_STRICT) && maxlen >= 0 && l > maxlen)
         { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String too long: maxlen=%ld\n", maxlen));
           soap->error = SOAP_LENGTH;
           return NULL;
@@ -10640,7 +8675,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
 #ifdef WITH_FAST
   soap->labidx = 0;			/* use look-aside buffer */
 #else
-  if (soap_new_block(soap) == NULL)
+  if (soap_new_block(soap))
     return NULL;
 #endif
   for (;;)
@@ -10654,7 +8689,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
     soap->labidx = soap->lablen;	/* claim this space */
 #else
     register size_t k = SOAP_BLKLEN;
-    if (!(s = (char*)soap_push_block(soap, NULL, k)))
+    if (!(s = (char*)soap_push_block(soap, k)))
       return NULL;
 #endif
     for (i = 0; i < k; i++)
@@ -10708,8 +8743,6 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
         m = 1;
         break;
       case SOAP_LT:
-	if (f && n == 0)
-	  goto end;
         n++;
         *s++ = '<';
         break;
@@ -10799,7 +8832,7 @@ soap_string_in(struct soap *soap, int flag, long minlen, long maxlen)
           *s++ = (char)(c & 0xFF);
       }
       l++;
-      if (maxlen >= 0 && l > maxlen)
+      if ((soap->mode & SOAP_XML_STRICT) && maxlen >= 0 && l > maxlen)
       { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String too long: maxlen=%ld\n", maxlen));
         soap->error = SOAP_LENGTH;
         return NULL;
@@ -10812,10 +8845,10 @@ end:
 #ifdef WITH_FAST
   t = soap_strdup(soap, soap->labbuf);
 #else
-  soap_size_block(soap, NULL, i+1);
+  soap_size_block(soap, i+1);
   t = soap_save_block(soap, NULL, 0);
 #endif
-  if (l < minlen)
+  if ((soap->mode & SOAP_XML_STRICT) && l < minlen)
   { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String too short: %ld chars, minlen=%ld\n", l, minlen));
     soap->error = SOAP_LENGTH;
     return NULL;
@@ -10829,7 +8862,7 @@ end:
   }
 #endif
   if (flag == 2)
-    if (soap_s2QName(soap, t, &t, minlen, maxlen))
+    if (soap_s2QName(soap, t, &t))
       return NULL;
   return t;
 }
@@ -10899,17 +8932,8 @@ soap_wstring_out(struct soap *soap, const wchar_t *s, int flag)
         if (soap_send_raw(soap, &tmp, 1))
           return soap->error;
       }
-      else /* check UTF16 encoding when wchar_t is too small to hold UCS */
-      { if (sizeof(wchar_t) < 4 && (c & 0xD800) == 0xD800)
-	{ /* http://unicode.org/faq/utf_bom.html#utf16-2 */
-          if ((*s & 0xD800) == 0xD800)
-	    c = (c << 10) + *s++ + 0x10000 - (0xD800 << 10) - 0xDC00;
-	  else
-	    c = 0xFFFD; /* Malformed */
-        }
-        if (soap_pututf8(soap, (unsigned long)c))
-          return soap->error;
-      }
+      else if (soap_pututf8(soap, (unsigned long)c))
+        return soap->error;
       continue;
     }
     if (soap_send(soap, t))
@@ -10928,13 +8952,15 @@ wchar_t *
 SOAP_FMAC2
 soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
 { wchar_t *s;
-  register int i, n = 0, f = 0;
+  register int i, n = 0;
   register long l = 0;
   register soap_wchar c;
   char *t = NULL;
   DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Reading wide string content\n"));
   if (soap->peeked)
-  { if (*soap->tag)
+  { if (!soap->body)
+      return NULL;
+    if (*soap->tag)
     {
 #ifndef WITH_LEAN
       struct soap_attribute *tp;
@@ -10961,22 +8987,18 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
           }
         }
       }
-      if (!soap->body)
-        *t++ = '/';
       *t++ = '>';
       *t = '\0';
       t = soap->tmpbuf;
 #endif
-      if (soap->body)
-        n = 1;
-      f = 1;
+      n = 1;
       soap->peeked = 0;
     }
   }
-  if (soap_new_block(soap) == NULL)
+  if (soap_new_block(soap))
     return NULL;
   for (;;)
-  { if (!(s = (wchar_t*)soap_push_block(soap, NULL, sizeof(wchar_t)*SOAP_BLKLEN)))
+  { if (!(s = (wchar_t*)soap_push_block(soap, sizeof(wchar_t)*SOAP_BLKLEN)))
       return NULL;
     for (i = 0; i < SOAP_BLKLEN; i++)
     { if (t)
@@ -10996,8 +9018,6 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
         soap_unget(soap, '/');
         break;
       case SOAP_LT:
-        if (f && n == 0)
-	  goto end;
         n++;
         *s++ = '<';
         break;
@@ -11024,7 +9044,7 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
           *s++ = (soap_wchar)'<';
         else
         { *s++ = (soap_wchar)'&';
-          t = (char*)"lt;";
+          t = "lt;";
         }
         break;
       case '>':
@@ -11032,7 +9052,7 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
           *s++ = (soap_wchar)'>';
         else
         { *s++ = (soap_wchar)'&';
-          t = (char*)"gt;";
+          t = "gt;";
         }
         break;
       case '"':
@@ -11040,24 +9060,16 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
           *s++ = (soap_wchar)'"';
         else
         { *s++ = (soap_wchar)'&';
-          t = (char*)"quot;";
+          t = "quot;";
         }
         break;
       default:
         if ((int)c == EOF)
           goto end;
-	if (sizeof(wchar_t) < 4 && c > 0xFFFF)
-	{ wchar_t c1, c2;
-	  /* http://unicode.org/faq/utf_bom.html#utf16-2 */
-	  c1 = 0xD800 - (0x10000 >> 10) + (c >> 10);
-	  c2 = 0xDC00 + (c & 0x3FF);
-	  c = c1;
-	  soap_unget(soap, c2);
-	}
         *s++ = (wchar_t)c & 0x7FFFFFFF;
       }
       l++;
-      if (maxlen >= 0 && l > maxlen)
+      if ((soap->mode & SOAP_XML_STRICT) && maxlen >= 0 && l > maxlen)
       { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String too long: maxlen=%ld\n", maxlen));
         soap->error = SOAP_LENGTH;
         return NULL;
@@ -11067,13 +9079,13 @@ soap_wstring_in(struct soap *soap, int flag, long minlen, long maxlen)
 end:
   soap_unget(soap, c);
   *s = '\0';
-  soap_size_block(soap, NULL, sizeof(wchar_t) * (i + 1));
-  if (l < minlen)
+  soap_size_block(soap, sizeof(wchar_t) * (i + 1));
+  if ((soap->mode & SOAP_XML_STRICT) && l < minlen)
   { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "String too short: %ld chars, minlen=%ld\n", l, minlen));
     soap->error = SOAP_LENGTH;
     return NULL;
   }
-  s = (wchar_t*)soap_save_block(soap, NULL, NULL, 0);
+  s = (wchar_t*)soap_save_block(soap, NULL, 0);
 #ifdef WITH_DOM
   if ((soap->mode & SOAP_XML_DOM) && soap->dom)
     soap->dom->wide = s;
@@ -11502,7 +9514,7 @@ soap_float2s(struct soap *soap, float n)
     return "-INF";
   s = soap->tmpbuf;
 #if defined(HAVE_SPRINTF_L)
-  sprintf_l(s, soap->c_locale, soap->float_format, n);
+  sprintf_l(s, NULL, soap->float_format, n);
 #else
   sprintf(s, soap->float_format, n);
   s = strchr(s, ',');	/* convert decimal comma to DP */
@@ -11545,27 +9557,26 @@ soap_s2float(struct soap *soap, const char *s, float *p)
       *p = FLT_NAN;
     else
     {
-/* On some systems strtof requires -std=c99 or does not even link: so we try to use strtod first */
-#if defined(HAVE_STRTOD_L)
+/* On some systems, strtof appears to be broken or doesn't link: use with caution */
+#if defined(HAVE_STRTOF_L)
       char *r;
-      *p = (float)strtod_l(s, &r, soap->c_locale);
+      *p = strtof_l((char*)s, &r, NULL);
       if (*r)
-#elif defined(HAVE_STRTOD)
+#elif defined(HAVE_STRTOD_L)
       char *r;
-      *p = (float)strtod(s, &r);
-      if (*r)
-#elif defined(HAVE_STRTOF_L)
-      char *r;
-      *p = strtof_l((char*)s, &r, soap->c_locale);
+      *p = (float)strtod_l(s, &r, NULL);
       if (*r)
 #elif defined(HAVE_STRTOF)
       char *r;
       *p = strtof((char*)s, &r);
       if (*r)
+#elif defined(HAVE_STRTOD)
+      char *r;
+      *p = (float)strtod(s, &r);
+      if (*r)
 #endif
-      {
-#if defined(HAVE_SSCANF_L) && !defined(HAVE_STRTOF_L) && !defined(HAVE_STRTOD_L)
-        if (sscanf_l(s, soap->c_locale, "%g", p) != 1)
+#if defined(HAVE_SSCANF_L)
+        if (sscanf_l(s, NULL, "%g", p) != 1)
           soap->error = SOAP_TYPE;
 #elif defined(HAVE_SSCANF)
         if (sscanf(s, "%g", p) != 1)
@@ -11573,7 +9584,6 @@ soap_s2float(struct soap *soap, const char *s, float *p)
 #else
         soap->error = SOAP_TYPE;
 #endif
-      }
     }
   }
   return soap->error;
@@ -11648,7 +9658,7 @@ soap_double2s(struct soap *soap, double n)
     return "-INF";
   s = soap->tmpbuf;
 #if defined(HAVE_SPRINTF_L)
-  sprintf_l(s, soap->c_locale, soap->double_format, n);
+  sprintf_l(s, NULL, soap->double_format, n);
 #else
   sprintf(s, soap->double_format, n);
   s = strchr(s, ',');	/* convert decimal comma to DP */
@@ -11693,16 +9703,15 @@ soap_s2double(struct soap *soap, const char *s, double *p)
     {
 #if defined(HAVE_STRTOD_L)
       char *r;
-      *p = strtod_l(s, &r, soap->c_locale);
+      *p = strtod_l(s, &r, NULL);
       if (*r)
 #elif defined(HAVE_STRTOD)
       char *r;
       *p = strtod(s, &r);
       if (*r)
 #endif
-      {
-#if defined(HAVE_SSCANF_L) && !defined(HAVE_STRTOF_L) && !defined(HAVE_STRTOD_L)
-        if (sscanf_l(s, soap->c_locale, "%lg", p) != 1)
+#if defined(HAVE_SSCANF_L)
+        if (sscanf_l(s, NULL, "%lg", p) != 1)
           soap->error = SOAP_TYPE;
 #elif defined(HAVE_SSCANF)
         if (sscanf(s, "%lg", p) != 1)
@@ -11710,7 +9719,6 @@ soap_s2double(struct soap *soap, const char *s, double *p)
 #else
         soap->error = SOAP_TYPE;
 #endif
-      }
     }
   }
   return soap->error;
@@ -12146,20 +10154,12 @@ soap_inULONG64(struct soap *soap, const char *tag, ULONG64 *p, const char *type,
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_s2string(struct soap *soap, const char *s, char **t, long minlen, long maxlen)
+soap_s2string(struct soap *soap, const char *s, char **t)
 { if (s)
-  { long l = (long)strlen(s);
-    if ((maxlen >= 0 && l > maxlen) || l < minlen)
-      return soap->error = SOAP_LENGTH;
-    if (!(*t = soap_strdup(soap, s)))
+  { if (!(*t = soap_strdup(soap, s)))
       return soap->error = SOAP_EOM;
     if (!(soap->mode & (SOAP_ENC_LATIN | SOAP_C_UTFSTRING)))
-    { char *r = *t;
-      /* remove non-ASCII chars */
-      for (s = *t; *s; s++)
-        if (!(*s & 0x80))
-	  *r++ = *s;
-      *r = '\0';
+    { /* TODO: consider truncating UTF8 to ASCII for regular XML attribute strings? */
     }
   }
   return soap->error;
@@ -12171,12 +10171,9 @@ soap_s2string(struct soap *soap, const char *s, char **t, long minlen, long maxl
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_s2QName(struct soap *soap, const char *s, char **t, long minlen, long maxlen)
+soap_s2QName(struct soap *soap, const char *s, char **t)
 { if (s)
-  { long l = (long)strlen(s);
-    if ((maxlen >= 0 && l > maxlen) || l < minlen)
-      return soap->error = SOAP_LENGTH;
-    soap->labidx = 0;
+  { soap->labidx = 0;
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Normalized namespace(s) of QNames '%s'", s));
     /* convert (by prefix normalize prefix) all QNames in s */
     for (;;)
@@ -12198,10 +10195,8 @@ soap_s2QName(struct soap *soap, const char *s, char **t, long minlen, long maxle
       { soap_append_lab(soap, s, n);
       }
       else /* we normalize the QName by replacing its prefix */
-      { for (p = s; *p && p < s + n; p++)
-          if (*p == ':')
-	    break;
-        if (*p == ':')
+      { p = strchr(s, ':');
+        if (p)
         { size_t k = p - s;
           while (np && (strncmp(np->id, s, k) || np->id[k]))
             np = np->next;
@@ -12225,16 +10220,13 @@ soap_s2QName(struct soap *soap, const char *s, char **t, long minlen, long maxle
             soap_append_lab(soap, "\"", 1);
           }
           else
-          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "\nNamespace prefix of '%s' not defined (index=%d, URI=%s)\n", s, np->index, np->ns?np->ns:SOAP_STR_EOS));
+          { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "\nNamespace prefix of '%s' not defined (index=%d, URI=%s)\n", s, np->index, np->ns?np->ns:""));
             return soap->error = SOAP_NAMESPACE; 
           }
         }
-        else if (s[n]) /* no namespace, part of string */
-        { soap_append_lab(soap, s, n);
-        } 
-	else /* no namespace: assume "" namespace */
+        else /* no namespace: assume default "" namespace */
         { soap_append_lab(soap, "\"\"", 2);
-	}
+        } 
         soap_append_lab(soap, ":", 1);
         soap_append_lab(soap, p, n - (p-s));
       }
@@ -12306,7 +10298,7 @@ soap_QName2s(struct soap *soap, const char *s)
           { char *r = soap_strdup(soap, s);
             r[q-s] = '\0';
             sprintf(soap->tmpbuf, "xmlns:_%d", soap->idnum++);
-            soap_set_attr(soap, soap->tmpbuf, r, 1);
+            soap_set_attr(soap, soap->tmpbuf, r);
             soap_append_lab(soap, soap->tmpbuf + 6, strlen(soap->tmpbuf + 6));
           }
           soap_append_lab(soap, q + 1, n - (q-s) - 1);
@@ -12329,13 +10321,12 @@ soap_QName2s(struct soap *soap, const char *s)
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_s2wchar(struct soap *soap, const char *s, wchar_t **t, long minlen, long maxlen)
+soap_s2wchar(struct soap *soap, const char *s, wchar_t **t)
 { if (s)
-  { long l;
-    wchar_t *r;
+  { wchar_t *r;
     *t = r = (wchar_t*)soap_malloc(soap, sizeof(wchar_t) * (strlen(s) + 1));
     if (!r)
-      return soap->error = SOAP_EOM;
+      return soap->error;
     if (soap->mode & SOAP_ENC_LATIN)
     { while (*s)
         *r++ = (wchar_t)*s++;
@@ -12344,7 +10335,7 @@ soap_s2wchar(struct soap *soap, const char *s, wchar_t **t, long minlen, long ma
     { /* Convert UTF8 to wchar */
       while (*s)
       { register soap_wchar c, c1, c2, c3, c4;
-        c = (unsigned char)*s++;
+        c = *s++;
         if (c < 0x80)
           *r++ = (wchar_t)c;
         else
@@ -12372,11 +10363,8 @@ soap_s2wchar(struct soap *soap, const char *s, wchar_t **t, long minlen, long ma
       }
     }
     *r = L'\0';
-    l = (long)(r - *t);
-    if ((maxlen >= 0 && l > maxlen) || l < minlen)
-      return soap->error = SOAP_LENGTH;
   }
-  return soap->error;
+  return SOAP_OK;
 }
 #endif
 
@@ -12467,9 +10455,7 @@ soap_instring(struct soap *soap, const char *tag, char **p, const char *type, in
   { if (!(p = (char**)soap_malloc(soap, sizeof(char*))))
       return NULL;
   }
-  if (soap->null)
-    *p = NULL;
-  else if (soap->body)
+  if (soap->body)
   { *p = soap_string_in(soap, flag, minlen, maxlen);
     if (!*p || !(char*)soap_id_enter(soap, soap->id, *p, t, sizeof(char*), 0, NULL, NULL, NULL))
       return NULL;
@@ -12482,10 +10468,8 @@ soap_instring(struct soap *soap, const char *tag, char **p, const char *type, in
   { soap->error = SOAP_NO_TAG;
     return NULL;
   }
-  else if (!*soap->href && minlen > 0)
-  { soap->error = SOAP_LENGTH;
-    return NULL;
-  }
+  else if (soap->null)
+    *p = NULL;
   else
     *p = soap_strdup(soap, SOAP_STR_EOS);
   if (*soap->href)
@@ -12679,70 +10663,52 @@ int
 SOAP_FMAC2
 soap_s2dateTime(struct soap *soap, const char *s, time_t *p)
 { if (s)
-  { char zone[32];
-    struct tm T;
+  { struct tm T;
+    char zone[32];
     const char *t;
-    *zone = '\0';
     memset((void*)&T, 0, sizeof(T));
+    zone[sizeof(zone)-1] = '\0';
     if (strchr(s, '-'))
       t = "%d-%d-%dT%d:%d:%d%31s";
     else if (strchr(s, ':'))
       t = "%4d%2d%2dT%d:%d:%d%31s";
     else /* parse non-XSD-standard alternative ISO 8601 format */
       t = "%4d%2d%2dT%2d%2d%2d%31s";
-    if (sscanf(s, t, &T.tm_year, &T.tm_mon, &T.tm_mday, &T.tm_hour, &T.tm_min, &T.tm_sec, zone) < 6)
-      return soap->error = SOAP_TYPE;
+    sscanf(s, t, &T.tm_year, &T.tm_mon, &T.tm_mday, &T.tm_hour, &T.tm_min, &T.tm_sec, zone);
     if (T.tm_year == 1)
       T.tm_year = 70;
     else
       T.tm_year -= 1900;
     T.tm_mon--;
-    if (*zone == '.')
-    { for (s = zone + 1; *s; s++)
-        if (*s < '0' || *s > '9')
-          break;
-    }
-    else
-      s = zone;
-    if (*s)
-    {
-#ifndef WITH_NOZONE
+    if (*zone)
+    { if (*zone == '.')
+      { for (s = zone + 1; *s; s++)
+          if (*s < '0' || *s > '9')
+            break;
+      }
+      else
+        s = zone;
       if (*s == '+' || *s == '-')
       { int h = 0, m = 0;
         if (s[3] == ':')
-        { /* +hh:mm */
-	  sscanf(s, "%d:%d", &h, &m);
+        { sscanf(s, "%d:%d", &h, &m);
           if (h < 0)
             m = -m;
         }
-        else /* +hhmm */
-        { m = (int)soap_strtol(s, NULL, 10);
+        else
+        { m = (int)atol(s);
           h = m / 100;
           m = m % 100;
         }
-	T.tm_min -= m;
-	T.tm_hour -= h;
-	/* put hour and min in range */
-        T.tm_hour += T.tm_min / 60;
-        T.tm_min %= 60;
-        if (T.tm_min < 0)
-        { T.tm_min += 60;
-	  T.tm_hour--;
-	}
-        T.tm_mday += T.tm_hour / 24;
-        T.tm_hour %= 24;
-        if (T.tm_hour < 0)
-        { T.tm_hour += 24;
-          T.tm_mday--;
-	}
-	/* note: day of the month may be out of range, timegm() handles it */
+        T.tm_hour -= h;
+        T.tm_min -= m;
       }
-#endif
+      T.tm_isdst = 0;
       *p = soap_timegm(&T);
     }
-    else /* no UTC or timezone, so assume we got a localtime */
+    else
     { T.tm_isdst = -1;
-      *p = mktime(&T);
+      *p = mktime(&T); /* no time zone: suppose it is localtime? */
     }
   }
   return soap->error;
@@ -12829,7 +10795,7 @@ soap_inliteral(struct soap *soap, const char *tag, char **p)
   { if (!(p = (char**)soap_malloc(soap, sizeof(char*))))
       return NULL;
   }
-  if (soap->body || (tag && *tag == '-'))
+  if (soap->body)
   { *p = soap_string_in(soap, 0, -1, -1);
     if (!*p)
       return NULL;
@@ -12837,6 +10803,10 @@ soap_inliteral(struct soap *soap, const char *tag, char **p)
     { soap->error = SOAP_NO_TAG;
       return NULL;
     }
+  }
+  else if (tag && *tag == '-')
+  { soap->error = SOAP_NO_TAG;
+    return NULL;
   }
   else if (soap->null)
     *p = NULL;
@@ -12947,7 +10917,7 @@ soap_value(struct soap *soap)
   do c = soap_get(soap);
   while (soap_blank(c));
   for (i = 0; i < sizeof(soap->tmpbuf) - 1; i++)
-  { if (c == SOAP_TT || c == SOAP_LT || (int)c == EOF)
+  { if (c == SOAP_TT || (int)c == EOF)
       break;
     *s++ = (char)c;
     c = soap_get(soap);
@@ -12957,13 +10927,9 @@ soap_value(struct soap *soap)
       break;
   }
   s[1] = '\0';
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Element content value='%s'\n", soap->tmpbuf));
-  if (c == SOAP_TT || c == SOAP_LT || (int)c == EOF)
+  if ((int)c == EOF || c == SOAP_TT)
     soap_unget(soap, c);
-  else if (soap->mode & SOAP_XML_STRICT)
-  { soap->error = SOAP_LENGTH;
-    return NULL;
-  }
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Element content value='%s'\n", soap->tmpbuf));
 #ifdef WITH_DOM
   if ((soap->mode & SOAP_XML_DOM) && soap->dom)
     soap->dom->data = soap_strdup(soap, soap->tmpbuf);
@@ -13002,9 +10968,9 @@ soap_getline(struct soap *soap, char *s, int len)
     }
     else if ((int)c == EOF)
       return soap->error = SOAP_EOF;
-    if (i < 0)
-      return soap->error = SOAP_HDR;
   }
+  if (i < 0)
+    return soap->error = SOAP_HDR;
   return SOAP_OK;
 }
 #endif
@@ -13116,7 +11082,7 @@ SOAP_FMAC2
 soap_putdimehdr(struct soap *soap)
 { unsigned char tmp[12];
   size_t optlen = 0, idlen = 0, typelen = 0;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Put DIME header id='%s'\n", soap->dime.id?soap->dime.id:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Put DIME header id='%s'\n", soap->dime.id?soap->dime.id:""));
   if (soap->dime.options)
     optlen = (((unsigned char)soap->dime.options[2] << 8) | ((unsigned char)soap->dime.options[3])) + 4;
   if (soap->dime.id)
@@ -13291,6 +11257,7 @@ soap_getdimehdr(struct soap *soap)
       return soap->error = SOAP_EOF;
     soap_unget(soap, soap_getchar(soap)); /* skip padding and get hdr */
     DBGLOG(TEST, SOAP_MESSAGE(fdebug, "... From chunked\n"));
+    return SOAP_OK;
   }
   s = (char*)tmp;
   for (i = 12; i > 0; i--)
@@ -13312,7 +11279,7 @@ soap_getdimehdr(struct soap *soap)
     return soap->error;
   if (!(soap->dime.type = soap_getdimefield(soap, typelen)) && soap->error)
     return soap->error;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "DIME id=%s, type=%s, options=%s\n", soap->dime.id?soap->dime.id:SOAP_STR_EOS, soap->dime.type?soap->dime.type:"", soap->dime.options?soap->dime.options+4:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "DIME id=%s, type=%s, options=%s\n", soap->dime.id?soap->dime.id:"", soap->dime.type?soap->dime.type:"", soap->dime.options?soap->dime.options+4:""));
   if (soap->dime.flags & SOAP_DIME_ME)
     soap->mode &= ~SOAP_ENC_DIME;
   return SOAP_OK;
@@ -13387,13 +11354,13 @@ end:
       id = soap->dime.id;
       type = soap->dime.type;
       options = soap->dime.options;
-      if (soap_new_block(soap) == NULL)
+      if (soap_new_block(soap))
         return SOAP_EOM;
       for (;;)
       { register soap_wchar c;
         register size_t i;
         register char *s;
-        s = (char*)soap_push_block(soap, NULL, soap->dime.size);
+        s = (char*)soap_push_block(soap, soap->dime.size);
         if (!s)
           return soap->error = SOAP_EOM;
         for (i = soap->dime.size; i > 0; i--)
@@ -13409,7 +11376,7 @@ end:
           return soap->error;
       }
       soap->dime.size = soap->blist->size++; /* allocate one more for '\0' */
-      if (!(soap->dime.ptr = soap_save_block(soap, NULL, NULL, 0)))
+      if (!(soap->dime.ptr = soap_save_block(soap, NULL, 0)))
         return soap->error;
       soap->dime.ptr[soap->dime.size] = '\0'; /* force 0-terminated */
       soap->dime.id = id;
@@ -13564,15 +11531,15 @@ soap_get_mime_attachment(struct soap *soap, void *handle)
         return NULL;
     }
   }
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Parsing MIME content id=%s type=%s\n", content->id?content->id:SOAP_STR_EOS, content->type?content->type:SOAP_STR_EOS));
-  if (!content->ptr && soap_new_block(soap) == NULL)
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Parsing MIME content id=%s type=%s\n", content->id?content->id:"", content->type?content->type:""));
+  if (!content->ptr && soap_new_block(soap))
   { soap->error = SOAP_EOM;
     return NULL;
   }
   for (;;)
   { if (content->ptr)
       s = soap->tmpbuf;
-    else if (!(s = (char*)soap_push_block(soap, NULL, sizeof(soap->tmpbuf))))
+    else if (!(s = (char*)soap_push_block(soap, sizeof(soap->tmpbuf))))
     { soap->error = SOAP_EOM;
       return NULL;
     }
@@ -13628,8 +11595,8 @@ end:
       return NULL;
   }
   else
-  { content->size = soap_size_block(soap, NULL, i+1)-1;
-    content->ptr = soap_save_block(soap, NULL, NULL, 0);
+  { content->size = soap_size_block(soap, i+1)-1;
+    content->ptr = soap_save_block(soap, NULL, 0);
   }
   soap_resolve_attachment(soap, content);
   if (c == '-' && soap_getchar(soap) == '-')
@@ -13719,7 +11686,7 @@ int
 SOAP_FMAC2
 soap_putmimehdr(struct soap *soap, struct soap_multipart *content)
 { const char *s;
-  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "MIME attachment type=%s\n", content->type?content->type:SOAP_STR_EOS));
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "MIME attachment type=%s\n", content->type?content->type:""));
   if (soap_send3(soap, "\r\n--", soap->mime.boundary, "\r\n"))
     return soap->error;
   if (content->type && soap_send3(soap, "Content-Type: ", content->type, "\r\n"))
@@ -14000,6 +11967,675 @@ soap_valid_mime_boundary(struct soap *soap)
 #endif
 #endif
 
+/******************************************************************************\
+ *
+ *	HTTP cookie handling
+ *
+\******************************************************************************/
+
+#ifdef WITH_COOKIES
+/******************************************************************************/
+SOAP_FMAC1
+size_t
+SOAP_FMAC2
+soap_encode_cookie(const char *s, char *t, size_t len)
+{ register int c;
+  register size_t n = len;
+  while ((c = *s++) && --n > 0)
+  { if (c > ' ' && c < 128 && !strchr("()<>@,;:\\\"/[]?={}", c))
+      *t++ = c;
+    else if (n > 2)
+    { *t++ = '%';
+      *t++ = (c >> 4) + (c > 159 ? '7' : '0');
+      c &= 0xF;
+      *t++ = c + (c > 9 ? '7' : '0');
+      n -= 2;
+    }
+    else
+      break;
+  }
+  *t = '\0';
+  return len - n;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+struct soap_cookie*
+SOAP_FMAC2
+soap_cookie(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  size_t n;
+  if (!domain)
+    domain = soap->cookie_domain;
+  if (!path)
+    path = soap->cookie_path;
+  if (!path)
+    path = SOAP_STR_EOS;
+  else if (*path == '/')
+    path++;
+  n = strlen(path);
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Search cookie %s domain=%s path=%s\n", name, domain?domain:"(null)", path?path:"(null)"));
+  for (p = soap->cookies; p; p = p->next)
+  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie in database: %s=%s domain=%s path=%s env=%hd\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->env));
+    if (!strcmp(p->name, name)
+     && p->domain
+     && p->path
+     && !strcmp(p->domain, domain)
+     && !strncmp(p->path, path, n))
+      break;
+  }
+  return p;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+struct soap_cookie*
+SOAP_FMAC2
+soap_set_cookie(struct soap *soap, const char *name, const char *value, const char *domain, const char *path)
+{ struct soap_cookie **p, *q;
+  int n;
+  if (!domain)
+    domain = soap->cookie_domain;
+  if (!path)
+    path = soap->cookie_path;
+  if (!path)
+    path = SOAP_STR_EOS;
+  else if (*path == '/')
+    path++;
+  q = soap_cookie(soap, name, domain, path);
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set %scookie: %s=%s domain=%s path=%s\n", q ? "" : "new ", name, value?value:"(null)", domain?domain:"(null)", path?path:"(null)"));
+  if (!q)
+  { if ((q = (struct soap_cookie*)SOAP_MALLOC(soap, sizeof(struct soap_cookie))))
+    { if ((q->name = (char*)SOAP_MALLOC(soap, strlen(name)+1)))
+        strcpy(q->name, name);
+      q->value = NULL;
+      q->domain = NULL;
+      q->path = NULL;
+      q->expire = 0;
+      q->maxage = -1;
+      q->version = 1;
+      q->secure = 0;
+      q->modified = 0;
+      for (p = &soap->cookies, n = soap->cookie_max; *p && n; p = &(*p)->next, n--)
+        if (!strcmp((*p)->name, name) && (*p)->path && path && strcmp((*p)->path, path) < 0)
+          break;
+      if (n)
+      { q->next = *p;
+        *p = q;
+      }
+      else
+      { SOAP_FREE(soap, q->name);
+        SOAP_FREE(soap, q);
+        q = NULL;
+      }
+    }
+  }
+  else
+    q->modified = 1;
+  if (q)
+  { if (q->value)
+    { SOAP_FREE(soap, q->value);
+      q->value = NULL;
+    }
+    if (q->domain)
+    { SOAP_FREE(soap, q->domain);
+      q->domain = NULL;
+    }
+    if (q->path)
+    { SOAP_FREE(soap, q->path);
+      q->path = NULL;
+    }
+    if (value && *value && (q->value = (char*)SOAP_MALLOC(soap, strlen(value)+1)))
+      strcpy(q->value, value);
+    if (domain && (q->domain = (char*)SOAP_MALLOC(soap, strlen(domain)+1)))
+      strcpy(q->domain, domain);
+    if (path && (q->path = (char*)SOAP_MALLOC(soap, strlen(path)+1)))
+      strcpy(q->path, path);
+    q->session = 1;
+    q->env = 0;
+  }
+  return q;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+void
+SOAP_FMAC2
+soap_clr_cookie(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie **p, *q;
+  if (!domain)
+    domain = soap->cookie_domain;
+  if (!domain)
+  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error in clear cookie %s: cookie domain not set\n", name?name:"(null)"));
+    return;
+  }
+  if (!path)
+    path = soap->cookie_path;
+  if (!path)
+  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error in clear cookie %s: cookie path not set\n", name?name:"(null)"));
+    return;
+  }
+  if (*path == '/')
+    path++;
+  for (p = &soap->cookies, q = *p; q; q = *p)
+  { if (!strcmp(q->name, name) && !strcmp(q->domain, domain) && !strncmp(q->path, path, strlen(q->path)))
+    { if (q->value)
+        SOAP_FREE(soap, q->value);
+      if (q->domain)
+        SOAP_FREE(soap, q->domain);
+      if (q->path)
+        SOAP_FREE(soap, q->path);
+      *p = q->next;
+      SOAP_FREE(soap, q);
+    }
+    else
+      p = &q->next;
+  }
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+char *
+SOAP_FMAC2
+soap_cookie_value(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  if ((p = soap_cookie(soap, name, domain, path)))
+    return p->value;
+  return NULL;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+char *
+SOAP_FMAC2
+soap_env_cookie_value(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  if ((p = soap_cookie(soap, name, domain, path)) && p->env)
+    return p->value;
+  return NULL;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+time_t
+SOAP_FMAC2
+soap_cookie_expire(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  if ((p = soap_cookie(soap, name, domain, path)))
+    return p->expire;
+  return -1;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_set_cookie_expire(struct soap *soap, const char *name, long expire, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set cookie expiration max-age %ld: %s domain=%s path=%s\n", expire, name, domain?domain:"(null)", path?path:"(null)"));
+  if ((p = soap_cookie(soap, name, domain, path)))
+  { p->maxage = expire;
+    p->modified = 1;
+    return SOAP_OK;
+  }
+  return SOAP_ERR;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_set_cookie_session(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  if ((p = soap_cookie(soap, name, domain, path)))
+  { p->session = 1;
+    p->modified = 1;
+    return SOAP_OK;
+  }
+  return SOAP_ERR;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_clr_cookie_session(struct soap *soap, const char *name, const char *domain, const char *path)
+{ struct soap_cookie *p;
+  if ((p = soap_cookie(soap, name, domain, path)))
+  { p->session = 0;
+    p->modified = 1;
+    return SOAP_OK;
+  }
+  return SOAP_ERR;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_putsetcookies(struct soap *soap)
+{ struct soap_cookie *p;
+  char *s, tmp[4096];
+  const char *t;
+  for (p = soap->cookies; p; p = p->next)
+  {
+    if (p->modified
+#ifdef WITH_OPENSSL
+     || (!p->env && !soap->ssl == !p->secure)
+#endif
+       )
+    { s = tmp;
+      if (p->name)
+        s += soap_encode_cookie(p->name, s, tmp-s+4064);
+      if (p->value && *p->value)
+      { *s++ = '=';
+        s += soap_encode_cookie(p->value, s, tmp-s+4064);
+      }
+      if (p->domain && (int)strlen(p->domain) < tmp-s+4064)
+      { strcpy(s, ";Domain=");
+        strcat(s, p->domain);
+      }
+      else if (soap->cookie_domain && (int)strlen(soap->cookie_domain) < tmp-s+4064)
+      { strcpy(s, ";Domain=");
+        strcat(s, soap->cookie_domain);
+      }
+      strcat(s, ";Path=/");
+      s += strlen(s);
+      if (p->path)
+        t = p->path;
+      else
+        t = soap->cookie_path;
+      if (t)
+      { if (*t == '/')
+          t++;
+        if ((int)strlen(t) < tmp-s+4064)
+        { if (strchr(t, '%'))	/* already URL encoded? */
+          { strcpy(s, t);
+            s += strlen(s);
+          }
+          else
+            s += soap_encode_cookie(t, s, tmp-s+4064);
+        }
+      }
+      if (p->version > 0 && s-tmp < 4060)
+      { sprintf(s, ";Version=%u", p->version);
+        s += strlen(s);
+      }
+      if (p->maxage >= 0 && s-tmp < 4060)
+      { sprintf(s, ";Max-Age=%ld", p->maxage);
+        s += strlen(s);
+      }
+      if (s-tmp < 4073
+       && (p->secure
+#ifdef WITH_OPENSSL
+       || soap->ssl
+#endif
+         ))
+        strcpy(s, ";Secure");
+      DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Set-Cookie: %s\n", tmp));
+      if ((soap->error = soap->fposthdr(soap, "Set-Cookie", tmp)))
+        return soap->error;
+    }
+  }
+  return SOAP_OK;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_putcookies(struct soap *soap, const char *domain, const char *path, int secure)
+{ struct soap_cookie **p, *q;
+  unsigned int version = 0;
+  time_t now = time(NULL);
+  char *s, tmp[4096];
+  p = &soap->cookies;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Sending cookies for domain=%s path=%s\n", domain, path));
+  if (*path == '/')
+    path++;
+  while ((q = *p))
+  { if (q->expire && now > q->expire)
+    { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie %s expired\n", q->name));
+      SOAP_FREE(soap, q->name);
+      if (q->value)
+        SOAP_FREE(soap, q->value);
+      if (q->domain)
+        SOAP_FREE(soap, q->domain);
+      if (q->path)
+        SOAP_FREE(soap, q->path);
+      *p = q->next;
+      SOAP_FREE(soap, q);
+    }
+    else
+    { int flag;
+      char *t = q->domain;
+      size_t n = 0;
+      if (!t)
+        flag = 1;
+      else
+      { const char *r = strchr(t, ':');
+        if (r)
+          n = r - t;
+        else
+          n = strlen(t);
+        flag = !strncmp(t, domain, n);
+      }
+      /* domain-level cookies */
+      if (!flag)
+      { struct hostent *hostent = gethostbyname((char*)domain);
+        if (hostent)
+        { const char *r = strchr(hostent->h_name, '.');
+          if (!r)
+            r = hostent->h_name;
+          flag = !strncmp(t, r, n);
+        }
+      }
+      if (flag
+          && (!q->path || !strncmp(q->path, path, strlen(q->path)))
+          && (!q->secure || secure))
+      { s = tmp;
+        if (q->version != version)
+        { sprintf(s, "$Version=%u;", q->version);
+          version = q->version;
+        }
+        if (q->name)
+          s += soap_encode_cookie(q->name, s, tmp-s+4080);
+        if (q->value && *q->value)
+        { *s++ = '=';
+          s += soap_encode_cookie(q->value, s, tmp-s+4080);
+        }
+        if (q->path && *q->path && (int)strlen(q->path) < tmp-s+4080)
+        { sprintf(s, ";$Path=\"/%s\"", (*q->path == '/' ? q->path + 1 : q->path));
+          s += strlen(s);
+        }
+        if (q->domain && (int)strlen(q->domain) < tmp-s+4080)
+          sprintf(s, ";$Domain=\"%s\"", q->domain);
+        DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Cookie: %s\n", tmp));
+        if ((soap->error = soap->fposthdr(soap, "Cookie", tmp)))
+          return soap->error;
+      }
+      p = &q->next;
+    }
+  }
+  return SOAP_OK;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+void
+SOAP_FMAC2
+soap_getcookies(struct soap *soap, const char *val)
+{ struct soap_cookie *p = NULL, *q;
+  const char *s;
+  char *t, tmp[4096]; /* cookie size is up to 4096 bytes [RFC2109] */
+  char *domain = NULL;
+  char *path = NULL;
+  unsigned int version = 0;
+  time_t now = time(NULL);
+  if (!val)
+    return;
+  s = val;
+  while (*s)
+  { s = soap_decode_key(tmp, sizeof(tmp), s);
+    if (!soap_tag_cmp(tmp, "$Version"))
+    { if ((s = soap_decode_val(tmp, sizeof(tmp), s)))
+      { if (p)
+          p->version = (int)atol(tmp);
+        else
+          version = (int)atol(tmp);
+      }
+    }
+    else if (!soap_tag_cmp(tmp, "$Path"))
+    { s = soap_decode_val(tmp, sizeof(tmp), s);
+      if (*tmp)
+      { if ((t = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
+          strcpy(t, tmp);
+      }
+      else
+        t = NULL;
+      if (p)
+      { if (p->path)
+          SOAP_FREE(soap, p->path);
+        p->path = t;
+      }
+      else
+      { if (path)
+          SOAP_FREE(soap, path);
+        path = t;
+      }
+    }
+    else if (!soap_tag_cmp(tmp, "$Domain"))
+    { s = soap_decode_val(tmp, sizeof(tmp), s);
+      if (*tmp)
+      { if ((t = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
+          strcpy(t, tmp);
+      }
+      else
+        t = NULL;
+      if (p)
+      { if (p->domain)
+          SOAP_FREE(soap, p->domain);
+        p->domain = t;
+      }
+      else
+      { if (domain)
+          SOAP_FREE(soap, domain);
+        domain = t;
+      }
+    }
+    else if (p && !soap_tag_cmp(tmp, "Path"))
+    { if (p->path)
+        SOAP_FREE(soap, p->path);
+      s = soap_decode_val(tmp, sizeof(tmp), s);
+      if (*tmp)
+      { if ((p->path = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
+          strcpy(p->path, tmp);
+      }
+      else
+        p->path = NULL;
+    }
+    else if (p && !soap_tag_cmp(tmp, "Domain"))
+    { if (p->domain)
+        SOAP_FREE(soap, p->domain);
+      s = soap_decode_val(tmp, sizeof(tmp), s);
+      if (*tmp)
+      { if ((p->domain = (char*)SOAP_MALLOC(soap, strlen(tmp)+1)))
+          strcpy(p->domain, tmp);
+      }
+      else
+        p->domain = NULL;
+    }
+    else if (p && !soap_tag_cmp(tmp, "Version"))
+    { s = soap_decode_val(tmp, sizeof(tmp), s);
+      p->version = (unsigned int)atol(tmp);
+    }
+    else if (p && !soap_tag_cmp(tmp, "Max-Age"))
+    { s = soap_decode_val(tmp, sizeof(tmp), s);
+      p->expire = now + atol(tmp);
+    }
+    else if (p && !soap_tag_cmp(tmp, "Expires"))
+    { struct tm T;
+      char a[3]; 
+      static const char mns[] = "anebarprayunulugepctovec";
+      s = soap_decode_val(tmp, sizeof(tmp), s);
+      if (strlen(tmp) > 20)
+      { memset((void*)&T, 0, sizeof(T));
+        a[0] = tmp[4];
+        a[1] = tmp[5];
+        a[2] = '\0';
+        T.tm_mday = (int)atol(a);
+        a[0] = tmp[8];
+        a[1] = tmp[9];
+        T.tm_mon = (int)(strstr(mns, a) - mns) / 2;
+        a[0] = tmp[11];
+        a[1] = tmp[12];
+        T.tm_year = 100 + (int)atol(a);
+        a[0] = tmp[13];
+        a[1] = tmp[14];
+        T.tm_hour = (int)atol(a);
+        a[0] = tmp[16];
+        a[1] = tmp[17];
+        T.tm_min = (int)atol(a);
+        a[0] = tmp[19];
+        a[1] = tmp[20];
+        T.tm_sec = (int)atol(a);
+        p->expire = soap_timegm(&T);
+      }
+    }
+    else if (p && !soap_tag_cmp(tmp, "Secure"))
+      p->secure = 1;
+    else
+    { if (p)
+      { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Got environment cookie %s=%s domain=%s path=%s expire=%ld secure=%d\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->expire, p->secure));
+        if ((q = soap_set_cookie(soap, p->name, p->value, p->domain, p->path)))
+        { q->version = p->version;
+          q->expire = p->expire;
+          q->secure = p->secure;
+          q->env = 1;
+        }
+        if (p->name)
+          SOAP_FREE(soap, p->name);
+        if (p->value)
+          SOAP_FREE(soap, p->value);
+        if (p->domain)
+          SOAP_FREE(soap, p->domain);
+        if (p->path)
+          SOAP_FREE(soap, p->path);
+        SOAP_FREE(soap, p);
+      }
+      if ((p = (struct soap_cookie*)SOAP_MALLOC(soap, sizeof(struct soap_cookie))))
+      { p->name = (char*)SOAP_MALLOC(soap, strlen(tmp)+1);
+        strcpy(p->name, tmp);
+        s = soap_decode_val(tmp, sizeof(tmp), s);
+        if (*tmp)
+        { p->value = (char*)SOAP_MALLOC(soap, strlen(tmp)+1);
+          strcpy(p->value, tmp);
+        }
+        else
+          p->value = NULL;
+        if (domain)
+          p->domain = domain;
+        else if (*soap->host)
+        { p->domain = (char*)SOAP_MALLOC(soap, strlen(soap->host)+1);
+          strcpy(p->domain, soap->host);
+        }
+        else
+          p->domain = NULL;
+        if (path)
+          p->path = path;
+        else if (soap->path && *soap->path)
+        { p->path = (char*)SOAP_MALLOC(soap, strlen(soap->path)+1);
+          strcpy(p->path, soap->path);
+        }
+        else
+        { p->path = (char*)SOAP_MALLOC(soap, 2);
+          strcpy(p->path, "/");
+        }
+        p->expire = 0;
+        p->secure = 0;
+        p->version = version;
+      }
+    }
+  }
+  if (p)
+  { DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Got environment cookie %s=%s domain=%s path=%s expire=%ld secure=%d\n", p->name, p->value?p->value:"(null)", p->domain?p->domain:"(null)", p->path?p->path:"(null)", p->expire, p->secure));
+    if ((q = soap_set_cookie(soap, p->name, p->value, p->domain, p->path)))
+    { q->version = p->version;
+      q->expire = p->expire;
+      q->secure = p->secure;
+      q->env = 1;
+    }
+    if (p->name)
+      SOAP_FREE(soap, p->name);
+    if (p->value)
+      SOAP_FREE(soap, p->value);
+    if (p->domain)
+      SOAP_FREE(soap, p->domain);
+    if (p->path)
+      SOAP_FREE(soap, p->path);
+    SOAP_FREE(soap, p);
+  }
+  if (domain)
+    SOAP_FREE(soap, domain);
+  if (path)
+    SOAP_FREE(soap, path);
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_getenv_cookies(struct soap *soap)
+{ struct soap_cookie *p;
+  const char *s;
+  char key[4096], val[4096]; /* cookie size is up to 4096 bytes [RFC2109] */
+  if (!(s = getenv("HTTP_COOKIE")))
+    return SOAP_ERR;
+  do
+  { s = soap_decode_key(key, sizeof(key), s);
+    s = soap_decode_val(val, sizeof(val), s);
+    p = soap_set_cookie(soap, key, val, NULL, NULL);
+    if (p)
+      p->env = 1;
+  } while (*s);
+  return SOAP_OK;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+struct soap_cookie*
+SOAP_FMAC2
+soap_copy_cookies(struct soap *copy, const struct soap *soap)
+{ struct soap_cookie *p, **q, *r;
+  q = &r;
+  for (p = soap->cookies; p; p = p->next)
+  { if (!(*q = (struct soap_cookie*)SOAP_MALLOC(copy, sizeof(struct soap_cookie))))
+      return r;
+    **q = *p;
+    if (p->name)
+    { if (((*q)->name = (char*)SOAP_MALLOC(copy, strlen(p->name)+1)))
+        strcpy((*q)->name, p->name);
+    }
+    if (p->value)
+    { if (((*q)->value = (char*)SOAP_MALLOC(copy, strlen(p->value)+1)))
+        strcpy((*q)->value, p->value);
+    }
+    if (p->domain)
+    { if (((*q)->domain = (char*)SOAP_MALLOC(copy, strlen(p->domain)+1)))
+        strcpy((*q)->domain, p->domain);
+    }
+    if (p->path)
+    { if (((*q)->path = (char*)SOAP_MALLOC(copy, strlen(p->path)+1)))
+        strcpy((*q)->path, p->path);
+    }
+    q = &(*q)->next;
+  }
+  *q = NULL;
+  return r;
+}
+
+/******************************************************************************/
+SOAP_FMAC1
+void
+SOAP_FMAC2
+soap_free_cookies(struct soap *soap)
+{ struct soap_cookie *p;
+  for (p = soap->cookies; p; p = soap->cookies)
+  { soap->cookies = p->next;
+    SOAP_FREE(soap, p->name);
+    if (p->value)
+      SOAP_FREE(soap, p->value);
+    if (p->domain)
+      SOAP_FREE(soap, p->domain);
+    if (p->path)
+      SOAP_FREE(soap, p->path);
+    SOAP_FREE(soap, p);
+  }
+}
+
+/******************************************************************************/
+#endif /* WITH_COOKIES */
+
 /******************************************************************************/
 #ifdef WITH_GZIP
 #ifndef PALM_1
@@ -14011,8 +12647,6 @@ soap_getgziphdr(struct soap *soap)
   for (i = 0; i < 9; i++)
   { if ((int)(c = soap_get1(soap) == EOF))
       return soap->error = SOAP_EOF;
-    if (i == 1 && c == 8)
-      soap->z_dict = 0;
     if (i == 2)
       f = c;
   }
@@ -14022,17 +12656,17 @@ soap_getgziphdr(struct soap *soap)
         return soap->error = SOAP_EOF;
     }
   }
-  if (f & 0x08) /* skip FNAME */
+  if (f & 0x08) /* FNAME */
   { do
       c = soap_get1(soap);
     while (c && (int)c != EOF);
   }
-  if ((int)c != EOF && (f & 0x10)) /* skip FCOMMENT */
+  if ((int)c != EOF && (f & 0x10)) /* FCOMMENT */
   { do
       c = soap_get1(soap);
     while (c && (int)c != EOF);
   }
-  if ((int)c != EOF && (f & 0x02)) /* skip FHCRC (CRC32 is used) */
+  if ((int)c != EOF && (f & 0x01)) /* FHCRC */
   { if ((int)(c = soap_get1(soap)) != EOF)
       c = soap_get1(soap);
   }
@@ -14060,7 +12694,7 @@ soap_begin_recv(struct soap *soap)
 #endif
   if ((soap->imode & SOAP_IO) == SOAP_IO_CHUNK)
     soap->omode |= SOAP_IO_CHUNK;
-  soap->imode &= ~(SOAP_IO | SOAP_ENC_MIME);
+  soap->imode &= ~SOAP_IO;
   soap->mode = soap->imode;
   if (!soap->keep_alive)
   { soap->buflen = 0;
@@ -14093,13 +12727,14 @@ soap_begin_recv(struct soap *soap)
   soap->mime.last = NULL;
   soap->mime.boundary = NULL;
   soap->mime.start = NULL;
+  soap->xlist = NULL;
 #endif
 #ifdef WIN32
 #ifndef UNDER_CE
 #ifndef WITH_FASTCGI
   if (!soap_valid_socket(soap->socket))
 #ifdef __BORLANDC__
-    setmode(soap->recvfd, _O_BINARY);
+    setmode(soap->recvfd, O_BINARY);
 #else
     _setmode(soap->recvfd, _O_BINARY);
 #endif
@@ -14116,13 +12751,9 @@ soap_begin_recv(struct soap *soap)
   soap->d_stream->avail_out = SOAP_BUFLEN;
   soap->z_ratio_in = 1.0;
 #endif
-#ifdef WITH_OPENSSL
-  if (soap->ssl)
-    ERR_clear_error();
-#endif
 #ifndef WITH_LEANER
-  if (soap->fprepareinitrecv && (soap->error = soap->fprepareinitrecv(soap)))
-    return soap->error;
+  if (soap->fprepareinit)
+    soap->fprepareinit(soap);
 #endif
   c = soap_getchar(soap);
 #ifdef WITH_GZIP
@@ -14131,10 +12762,6 @@ soap_begin_recv(struct soap *soap)
       return soap->error;
     if (inflateInit2(soap->d_stream, -MAX_WBITS) != Z_OK)
       return soap->error = SOAP_ZLIB_ERROR;
-    if (soap->z_dict)
-    { if (inflateSetDictionary(soap->d_stream, (const Bytef*)soap->z_dict, soap->z_dict_len) != Z_OK)
-        return soap->error = SOAP_ZLIB_ERROR;
-    }
     soap->zlib_state = SOAP_ZLIB_INFLATE;
     soap->mode |= SOAP_ENC_ZLIB;
     soap->zlib_in = SOAP_ZLIB_GZIP;
@@ -14151,11 +12778,9 @@ soap_begin_recv(struct soap *soap)
     soap->d_stream->avail_in = soap->buflen - soap->bufidx;
     soap->z_buflen = soap->buflen;
     soap->buflen = soap->bufidx;
-    c = ' ';
-  }
-#endif
-  while (soap_blank(c))
     c = soap_getchar(soap);
+  }  
+#endif
 #ifndef WITH_LEANER
   if (c == '-' && soap_get0(soap) == '-')
     soap->mode |= SOAP_ENC_MIME;
@@ -14163,21 +12788,16 @@ soap_begin_recv(struct soap *soap)
     soap->mode |= SOAP_ENC_DIME;
   else
 #endif
-  { /* skip BOM */
-    if (c == 0xEF && (c = soap_getchar(soap)) == 0xBB && (c = soap_getchar(soap)) == 0xBF)
-      c = soap_getchar(soap);
-    /* skip space */
-    while (soap_blank(c))
+  { while (soap_blank(c))
       c = soap_getchar(soap);
   }
   if ((int)c == EOF)
     return soap->error = SOAP_EOF;
   soap_unget(soap, c);
 #ifndef WITH_NOHTTP
-  /* if not XML or MIME/DIME/ZLIB, assume HTTP header */
-  if (c != '<' && !(soap->mode & (SOAP_ENC_MIME | SOAP_ENC_DIME | SOAP_ENC_ZLIB)))
-  { soap_mode m = soap->imode;
-    soap->mode &= ~SOAP_IO;
+  /* if not XML or (start of)BOM or MIME/DIME/ZLIB, assume HTTP header */
+  if (c != '<' && c != 0xEF && !(soap->mode & (SOAP_ENC_MIME | SOAP_ENC_DIME | SOAP_ENC_ZLIB)))
+  { soap->mode &= ~SOAP_IO;
     soap->error = soap->fparse(soap);
     if (soap->error && soap->error < SOAP_STOP)
     { soap->keep_alive = 0; /* force close later */
@@ -14185,20 +12805,19 @@ soap_begin_recv(struct soap *soap)
     }
     if (soap->error == SOAP_STOP)
       return soap->error;
-    soap->mode = soap->imode; /* if imode is changed, effectuate */
-    soap->imode = m; /* restore imode */
-#ifdef WITH_ZLIB
-    soap->mode &= ~SOAP_ENC_ZLIB;
-#endif
     if ((soap->mode & SOAP_IO) == SOAP_IO_CHUNK)
     { soap->chunkbuflen = soap->buflen;
       soap->buflen = soap->bufidx;
       soap->chunksize = 0;
     }
+#ifndef WITH_LEANER
+    else if (soap->fpreparerecv && soap->buflen != soap->bufidx)
+      soap->fpreparerecv(soap, soap->buf + soap->bufidx, soap->buflen - soap->bufidx);
+#endif
     /* Note: fparse should not use soap_unget to push back last char */
     if (soap_get0(soap) == (int)EOF)
     { if (soap->status == 200)
-        return soap->error = SOAP_NO_DATA; /* HTTP OK: always expect data */
+        return soap->error = SOAP_NO_DATA;
       return soap->error = soap->status;
     }
 #ifdef WITH_ZLIB
@@ -14226,10 +12845,6 @@ soap_begin_recv(struct soap *soap)
 #endif
       if (inflateInit(soap->d_stream) != Z_OK)
         return soap->error = SOAP_ZLIB_ERROR;
-      if (soap->z_dict)
-      { if (inflateSetDictionary(soap->d_stream, (const Bytef*)soap->z_dict, soap->z_dict_len) != Z_OK)
-          return soap->error = SOAP_ZLIB_ERROR;
-      }
       soap->zlib_state = SOAP_ZLIB_INFLATE;
       DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Inflate initialized\n"));
       soap->mode |= SOAP_ENC_ZLIB;
@@ -14240,13 +12855,6 @@ soap_begin_recv(struct soap *soap)
       soap->d_stream->avail_in = soap->buflen - soap->bufidx;
       soap->z_buflen = soap->buflen;
       soap->buflen = soap->bufidx;
-    }
-#endif
-#ifndef WITH_LEANER
-    if (soap->fpreparerecv && (soap->mode & SOAP_IO) != SOAP_IO_CHUNK && soap->buflen > soap->bufidx)
-    { int r;
-      if ((r = soap->fpreparerecv(soap, soap->buf + soap->bufidx, soap->buflen - soap->bufidx)))
-        return soap->error = r;
     }
 #endif
     if (soap->error)
@@ -14295,6 +12903,370 @@ soap_begin_recv(struct soap *soap)
 #endif
 
 /******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_parse(struct soap *soap)
+{ char header[SOAP_HDRLEN], *s;
+  unsigned short httpcmd = 0, status = 0, k = 0;
+  DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Waiting for HTTP request/response...\n"));
+  *soap->endpoint = '\0';
+  soap->length = 0;
+  soap->userid = NULL;
+  soap->passwd = NULL;
+  soap->action = NULL;
+  soap->authrealm = NULL;
+  soap->proxy_from = NULL;
+  soap->http_content = NULL;
+  soap->status = 0;
+  do
+  { if (soap_getline(soap, soap->msgbuf, sizeof(soap->msgbuf)))
+    { if (soap->error == SOAP_EOF)
+        return SOAP_EOF;
+      return soap->error = 414;
+    }
+    DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP status: %s\n", soap->msgbuf));
+    for (;;)
+    { if (soap_getline(soap, header, SOAP_HDRLEN))
+      { if (soap->error == SOAP_EOF)
+        { soap->error = SOAP_OK;
+          DBGLOG(TEST,SOAP_MESSAGE(fdebug, "EOF in HTTP header, continue anyway\n"));
+          break;
+        }
+        return soap->error;
+      }
+      if (!*header)
+        break;
+      DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP header: %s\n", header));
+      s = strchr(header, ':');
+      if (s)
+      { char *t;
+        *s = '\0';
+        do s++;
+        while (*s && *s <= 32);
+        if (*s == '"')
+          s++;
+        t = s + strlen(s) - 1;
+        while (t > s && *t <= 32)
+          t--;
+        if (t >= s && *t == '"')
+          t--;
+        t[1] = '\0';
+        if ((soap->error = soap->fparsehdr(soap, header, s)))
+        { if (soap->error < SOAP_STOP)
+            return soap->error;
+          status = soap->error;
+          soap->error = SOAP_OK;
+        }
+      }
+    }
+    if ((s = strchr(soap->msgbuf, ' ')))
+    { k = (unsigned short)soap_strtoul(s, &s, 10);
+      if (!soap_blank(*s))
+        k = 0;
+    }
+    else
+      k = 0;
+  } while (k == 100);
+  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Finished HTTP header parsing, status = %d\n", k));
+  s = strstr(soap->msgbuf, "HTTP/");
+  if (s && s[7] != '1')
+  { if (soap->keep_alive == 1)
+      soap->keep_alive = 0;
+    if (k == 0 && (soap->omode & SOAP_IO) == SOAP_IO_CHUNK) /* k == 0 for HTTP request */
+    { soap->imode |= SOAP_IO_CHUNK;
+      soap->omode = (soap->omode & ~SOAP_IO) | SOAP_IO_STORE;
+    }
+  }
+  if (soap->keep_alive < 0)
+    soap->keep_alive = 1;
+  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Keep alive connection = %d\n", soap->keep_alive));
+  if (k == 0)
+  { size_t l = 0;
+    if (s)
+    { if (!strncmp(soap->msgbuf, "POST ", l = 5))
+        httpcmd = 1;
+      else if (!strncmp(soap->msgbuf, "GET ", l = 4))
+        httpcmd = 2;
+      else if (!strncmp(soap->msgbuf, "PUT ", l = 4))
+        httpcmd = 3;
+      else if (!strncmp(soap->msgbuf, "DELETE ", l = 7))
+        httpcmd = 4;
+      else if (!strncmp(soap->msgbuf, "HEAD ", l = 5))
+        httpcmd = 5;
+    }
+    if (s && httpcmd) 
+    { size_t m = strlen(soap->endpoint);
+      size_t n = m + (s - soap->msgbuf) - l - 1;
+      if (m > n)
+        m = n;
+      if (n >= sizeof(soap->endpoint))
+        n = sizeof(soap->endpoint) - 1;
+      strncpy(soap->path, soap->msgbuf + l, n - m);
+      soap->path[n - m] = '\0';
+      strcat(soap->endpoint, soap->path);
+      DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Target endpoint='%s'\n", soap->endpoint));
+      if (httpcmd > 1)
+      { switch (httpcmd)
+        { case  2: soap->error = soap->fget(soap); break;
+          case  3: soap->error = soap->fput(soap); break;
+          case  4: soap->error = soap->fdel(soap); break;
+          case  5: soap->error = soap->fhead(soap); break;
+	  default: soap->error = SOAP_HTTP_METHOD; break;
+	}
+        if (soap->error == SOAP_OK)
+          soap->error = SOAP_STOP; /* prevents further processing */
+        return soap->error;
+      }
+      if (status)
+        return soap->error = status;
+    }
+    else if (status)
+      return soap->error = status;
+    else if (s)
+      return soap->error = 405;
+  }
+  soap->status = k;
+  /* Status OK (HTTP 200) */
+  if (k == 0 || k == 200)
+    return SOAP_OK;
+  /* Status 201 (Created), 202 (Accepted), ... and HTTP 400 and 500 errors.
+     Only keep parsing HTTP body when content-length>0 or chunked is set.
+  */
+  if (((k > 200 && k <= 299) || k == 400 || k == 500) && (soap->length > 0 || (soap->imode & SOAP_IO) == SOAP_IO_CHUNK))
+    return SOAP_OK;
+  /* HTTP 400 and 500 headers are supposed to set content-length or chunked.
+     For those that don't we keep parsing the body only if content type is
+     given and connection closes.
+  */
+  if ((k == 400 || k == 500) && (soap->http_content || soap->keep_alive == 0))
+    return SOAP_OK;
+  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "HTTP error %d\n", k));
+  return soap_set_receiver_error(soap, "HTTP Error", soap->msgbuf, k);
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_parse_header(struct soap *soap, const char *key, const char *val)
+{ if (!soap_tag_cmp(key, "Host"))
+  { 
+#ifdef WITH_OPENSSL
+    if (soap->imode & SOAP_ENC_SSL)
+      strcpy(soap->endpoint, "https://");
+    else
+#endif
+      strcpy(soap->endpoint, "http://");
+    strncat(soap->endpoint, val, sizeof(soap->endpoint) - 8);
+    soap->endpoint[sizeof(soap->endpoint) - 1] = '\0';
+  }
+#ifndef WITH_LEANER
+  else if (!soap_tag_cmp(key, "Content-Type"))
+  { const char *action;
+    soap->http_content = soap_strdup(soap, val);
+    if (soap_get_header_attribute(soap, val, "application/dime"))
+      soap->mode |= SOAP_ENC_DIME;
+    else if (soap_get_header_attribute(soap, val, "multipart/related")
+          || soap_get_header_attribute(soap, val, "multipart/form-data"))
+    { soap->mime.boundary = soap_strdup(soap, soap_get_header_attribute(soap, val, "boundary"));
+      soap->mime.start = soap_strdup(soap, soap_get_header_attribute(soap, val, "start"));
+      soap->mode |= SOAP_ENC_MIME;
+    }
+    action = soap_get_header_attribute(soap, val, "action");
+    if (action)
+    { if (*action == '"')
+      { soap->action = soap_strdup(soap, action + 1);
+        soap->action[strlen(soap->action) - 1] = '\0';
+      }
+      else
+        soap->action = soap_strdup(soap, action);
+    }
+  }
+#endif
+  else if (!soap_tag_cmp(key, "Content-Length"))
+  { soap->length = soap_strtoul(val, NULL, 10);
+  }
+  else if (!soap_tag_cmp(key, "Content-Encoding"))
+  { if (!soap_tag_cmp(val, "deflate"))
+#ifdef WITH_ZLIB
+      soap->zlib_in = SOAP_ZLIB_DEFLATE;
+#else
+      return SOAP_ZLIB_ERROR;
+#endif
+    else if (!soap_tag_cmp(val, "gzip"))
+#ifdef WITH_GZIP
+      soap->zlib_in = SOAP_ZLIB_GZIP;
+#else
+      return SOAP_ZLIB_ERROR;
+#endif
+  }
+#ifdef WITH_ZLIB
+  else if (!soap_tag_cmp(key, "Accept-Encoding"))
+  {
+#ifdef WITH_GZIP
+    if (strchr(val, '*') || soap_get_header_attribute(soap, val, "gzip"))
+      soap->zlib_out = SOAP_ZLIB_GZIP;
+    else
+#endif
+    if (strchr(val, '*') || soap_get_header_attribute(soap, val, "deflate"))
+      soap->zlib_out = SOAP_ZLIB_DEFLATE;
+    else
+      soap->zlib_out = SOAP_ZLIB_NONE;
+  }
+#endif
+  else if (!soap_tag_cmp(key, "Transfer-Encoding"))
+  { soap->mode &= ~SOAP_IO;
+    if (!soap_tag_cmp(val, "chunked"))
+      soap->mode |= SOAP_IO_CHUNK;
+  }
+  else if (!soap_tag_cmp(key, "Connection"))
+  { if (!soap_tag_cmp(val, "keep-alive"))
+      soap->keep_alive = -soap->keep_alive;
+    else if (!soap_tag_cmp(val, "close"))
+      soap->keep_alive = 0;
+  }
+#ifndef WITH_LEAN
+  else if (!soap_tag_cmp(key, "Authorization"))
+  { if (!soap_tag_cmp(val, "Basic *"))
+    { int n;
+      char *s;
+      soap_base642s(soap, val + 6, soap->tmpbuf, sizeof(soap->tmpbuf) - 1, &n);
+      soap->tmpbuf[n] = '\0';
+      if ((s = strchr(soap->tmpbuf, ':')))
+      { *s = '\0';
+        soap->userid = soap_strdup(soap, soap->tmpbuf);
+        soap->passwd = soap_strdup(soap, s + 1);
+      }
+    }
+  }
+  else if (!soap_tag_cmp(key, "WWW-Authenticate"))
+  { soap->authrealm = soap_strdup(soap, soap_get_header_attribute(soap, val + 6, "realm"));
+  }
+  else if (!soap_tag_cmp(key, "Expect"))
+  { if (!soap_tag_cmp(val, "100-continue"))
+    { if ((soap->error = soap->fposthdr(soap, "HTTP/1.1 100 Continue", NULL))
+       || (soap->error = soap->fposthdr(soap, NULL, NULL)))
+        return soap->error;
+    }
+  }
+#endif
+  else if (!soap_tag_cmp(key, "SOAPAction"))
+  { if (*val == '"')
+    { soap->action = soap_strdup(soap, val + 1);
+      soap->action[strlen(soap->action) - 1] = '\0';
+    }
+    else
+      soap->action = soap_strdup(soap, val);
+  }
+  else if (!soap_tag_cmp(key, "Location"))
+  { strncpy(soap->endpoint, val, sizeof(soap->endpoint));
+    soap->endpoint[sizeof(soap->endpoint) - 1] = '\0';
+  }
+  else if (!soap_tag_cmp(key, "X-Forwarded-For"))
+  { soap->proxy_from = soap_strdup(soap, val);
+  }
+#ifdef WITH_COOKIES
+  else if (!soap_tag_cmp(key, "Cookie")
+   || !soap_tag_cmp(key, "Cookie2")
+   || !soap_tag_cmp(key, "Set-Cookie")
+   || !soap_tag_cmp(key, "Set-Cookie2"))
+  { soap_getcookies(soap, val);
+  }
+#endif
+  return SOAP_OK;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
+#ifndef PALM_1
+SOAP_FMAC1
+const char*
+SOAP_FMAC2
+soap_get_header_attribute(struct soap *soap, const char *line, const char *key)
+{ register const char *s = line;
+  if (s)
+  { while (*s)
+    { register short flag;
+      s = soap_decode_key(soap->tmpbuf, sizeof(soap->tmpbuf), s);
+      flag = soap_tag_cmp(soap->tmpbuf, key);
+      s = soap_decode_val(soap->tmpbuf, sizeof(soap->tmpbuf), s);
+      if (!flag)
+        return soap->tmpbuf;
+    }
+  }
+  return NULL;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
+#ifndef PALM_1
+SOAP_FMAC1
+const char*
+SOAP_FMAC2
+soap_decode_key(char *buf, size_t len, const char *val)
+{ return soap_decode(buf, len, val, "=,;");
+}
+#endif
+#endif
+
+/******************************************************************************/
+#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
+#ifndef PALM_1
+SOAP_FMAC1
+const char*
+SOAP_FMAC2
+soap_decode_val(char *buf, size_t len, const char *val)
+{ if (*val != '=')
+  { *buf = '\0';
+    return val;
+  }
+  return soap_decode(buf, len, val + 1, ",;");
+}
+#endif
+#endif
+
+/******************************************************************************/
+#if !defined(WITH_NOHTTP) || !defined(WITH_LEANER)
+#ifndef PALM_1
+static const char*
+soap_decode(char *buf, size_t len, const char *val, const char *sep)
+{ const char *s;
+  char *t = buf;
+  for (s = val; *s; s++)
+    if (*s != ' ' && *s != '\t' && !strchr(sep, *s))
+      break;
+  if (*s == '"')
+  { s++;
+    while (*s && *s != '"' && --len)
+      *t++ = *s++;
+  }
+  else
+  { while (*s && !soap_blank(*s) && !strchr(sep, *s) && --len)
+    { if (*s == '%')
+      { *t++ = ((s[1] >= 'A' ? (s[1] & 0x7) + 9 : s[1] - '0') << 4)
+              + (s[2] >= 'A' ? (s[2] & 0x7) + 9 : s[2] - '0');
+        s += 3;
+      }
+      else
+        *t++ = *s++;
+    }
+  }
+  *t = '\0';
+  while (*s && !strchr(sep, *s))
+    s++;
+  return s;
+}
+#endif
+#endif
+
+/******************************************************************************/
 #ifndef PALM_2
 SOAP_FMAC1
 int
@@ -14313,8 +13285,6 @@ soap_envelope_begin_out(struct soap *soap)
       else
         s = "application/soap+xml; charset=utf-8";
     }
-    else if (soap->mode & SOAP_ENC_MTOM)
-      s = "application/xop+xml; charset=utf-8; type=\"text/xml\"";
     else
       s = "text/xml; charset=utf-8";
     sprintf(soap->tmpbuf, "--%s\r\nContent-Type: %s\r\nContent-Transfer-Encoding: binary\r\nContent-ID: %s\r\n\r\n", soap->mime.boundary, s, soap->mime.start);
@@ -14340,7 +13310,7 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_envelope_end_out(struct soap *soap)
-{ if (soap_element_end_out(soap, "SOAP-ENV:Envelope") || ((soap->mode & SOAP_XML_INDENT) && soap_send_raw(soap, "\r\n", 2)))
+{ if (soap_element_end_out(soap, "SOAP-ENV:Envelope"))
     return soap->error;
 #ifndef WITH_LEANER
   if ((soap->mode & SOAP_IO_LENGTH) && (soap->mode & SOAP_ENC_DIME) && !(soap->mode & SOAP_ENC_MTOM))
@@ -14369,65 +13339,6 @@ soap_envelope_end_out(struct soap *soap)
 
 /******************************************************************************/
 #ifndef PALM_1
-static char*
-soap_get_http_body(struct soap *soap)
-{
-#ifndef WITH_LEAN
-  register size_t l = 0, n = 0;
-  register char *s;
-  /* get HTML body of HTTP error content */
-  if (!(soap->mode & SOAP_ENC_ZLIB) && (soap->mode & SOAP_IO) != SOAP_IO_CHUNK)
-  { n = soap->length;
-    if (!n)
-      return NULL;
-  }
-#ifdef WITH_FAST
-  soap->labidx = 0;			/* use look-aside buffer */
-#else
-  if (soap_new_block(soap) == NULL)
-    return NULL;
-#endif
-  for (;;)
-  { 
-#ifdef WITH_FAST
-    register size_t i, k;
-    if (soap_append_lab(soap, NULL, 0))	/* allocate more space in look-aside buffer if necessary */
-      return NULL;
-    s = soap->labbuf + soap->labidx;	/* space to populate */
-    k = soap->lablen - soap->labidx;	/* number of bytes available */
-    soap->labidx = soap->lablen;	/* claim this space */
-#else
-    register size_t i, k = SOAP_BLKLEN;
-    if (!(s = (char*)soap_push_block(soap, NULL, k)))
-      return NULL;
-#endif
-    for (i = 0; i < k; i++)
-    { register soap_wchar c = soap_getchar(soap);
-      if ((int)c == EOF)
-        goto end;
-      *s++ = (char)(c & 0xFF);
-      l++;
-      if (n > 0 && l >= n)
-        goto end;
-    }
-  }
-end:
-  *s = '\0';
-#ifdef WITH_FAST
-  s = soap_strdup(soap, soap->labbuf);
-#else
-  soap_size_block(soap, NULL, i+1);
-  s = soap_save_block(soap, NULL, 0);
-#endif
-  return s;
-#else
-  return NULL;
-#endif
-}
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
 SOAP_FMAC1
 int
 SOAP_FMAC2
@@ -14435,11 +13346,25 @@ soap_envelope_begin_in(struct soap *soap)
 { register struct Namespace *p;
   soap->part = SOAP_IN_ENVELOPE;
   if (soap_element_begin_in(soap, "SOAP-ENV:Envelope", 0, NULL))
-  { if (soap->error == SOAP_TAG_MISMATCH
-     && !soap_element_begin_in(soap, "Envelope", 0, NULL))
-      soap->error = SOAP_VERSIONMISMATCH;
-    else if (soap->status)
-      soap->error = soap->status;
+  { 
+#ifndef WITH_LEAN
+    if (soap->error == SOAP_TAG_MISMATCH && !soap_element_begin_in(soap, "html", 0, NULL))
+    { /* get HTML from buffer, stop receiving to avoid HTML parsing issues */
+      char *s;
+#ifndef WITH_NOIO
+      size_t (*f)(struct soap*, char*, size_t) = soap->frecv;
+      soap->frecv = frecv_stop;
+#endif
+      soap_revert(soap);
+      s = soap_string_in(soap, 1, -1, -1);
+#ifndef WITH_NOIO
+      soap->frecv = f;
+#endif
+      return soap_set_receiver_error(soap, "HTTP Error", s, SOAP_HTTP_ERROR);
+    }
+#endif
+    if (soap->error == SOAP_TAG_MISMATCH)
+      return soap->error = SOAP_VERSIONMISMATCH;
     return soap->error;
   }
   p = soap->local_namespaces;
@@ -14487,7 +13412,7 @@ soap_body_begin_out(struct soap *soap)
   if (soap->version == 1)
     soap->encoding = 1;
 #ifndef WITH_LEAN
-  if ((soap->mode & SOAP_XML_SEC) && soap_set_attr(soap, "wsu:Id", "Body", 1))
+  if ((soap->mode & SOAP_XML_SEC) && soap_set_attr(soap, "wsu:Id", "Body"))
     return soap->error;
 #endif
   if (soap_element(soap, "SOAP-ENV:Body", 0, NULL))
@@ -14531,7 +13456,7 @@ int
 SOAP_FMAC2
 soap_body_end_in(struct soap *soap)
 { if (soap->part == SOAP_NO_BODY)
-    return soap->error = SOAP_OK;
+    return SOAP_OK;
   soap->part = SOAP_END_BODY;
   return soap_element_end_in(soap, "SOAP-ENV:Body");
 }
@@ -14545,7 +13470,7 @@ SOAP_FMAC2
 soap_recv_header(struct soap *soap)
 { if (soap_getheader(soap) && soap->error == SOAP_TAG_MISMATCH)
     soap->error = SOAP_OK;
-  if (soap->error == SOAP_OK && soap->fheader)
+  else if (soap->error == SOAP_OK && soap->fheader)
     soap->error = soap->fheader(soap);
   return soap->error;
 }
@@ -14608,7 +13533,7 @@ soap_set_endpoint(struct soap *soap, const char *endpoint)
 #endif
   soap->host[i] = '\0';
   if (s[i] == ':')
-  { soap->port = (int)soap_strtol(s + i + 1, NULL, 10);
+  { soap->port = (int)atol(s + i + 1);
     for (i++; i < n; i++)
       if (s[i] == '/')
         break;
@@ -14635,43 +13560,12 @@ soap_connect(struct soap *soap, const char *endpoint, const char *action)
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_connect_command(struct soap *soap, int http_command, const char *endpoints, const char *action)
-{ char *endpoint;
-  const char *s;
-  if (endpoints && (s = strchr(endpoints, ' ')))
-  { endpoint = (char*)SOAP_MALLOC(soap, strlen(endpoints) + 1);
-    for (;;)
-    { strncpy(endpoint, endpoints, s - endpoints);
-      endpoint[s - endpoints] = '\0';
-      if (soap_try_connect_command(soap, http_command, endpoint, action) != SOAP_TCP_ERROR)
-        break;
-      if (!*s)
-        break;
-      soap->error = SOAP_OK;
-      while (*s == ' ')
-        s++;
-      endpoints = s;
-      s = strchr(endpoints, ' ');
-      if (!s)
-        s = endpoints + strlen(endpoints);
-    }
-    SOAP_FREE(soap, endpoint);
-  }
-  else
-    soap_try_connect_command(soap, http_command, endpoints, action);
-  return soap->error;
-}
-#endif
-
-/******************************************************************************/
-#ifndef PALM_1
-static int
-soap_try_connect_command(struct soap *soap, int http_command, const char *endpoint, const char *action)
+soap_connect_command(struct soap *soap, int http_command, const char *endpoint, const char *action)
 { char host[sizeof(soap->host)];
   int port;
   size_t count;
   soap->error = SOAP_OK;
-  strcpy(host, soap->host); /* save previous host name: if != then reconnect */
+  strcpy(host, soap->host); /* save previous host name to compare */
   port = soap->port; /* save previous port to compare */
   soap->status = http_command;
   soap_set_endpoint(soap, endpoint);
@@ -14701,7 +13595,7 @@ soap_try_connect_command(struct soap *soap, int http_command, const char *endpoi
   count = soap_count_attachments(soap);
   if (soap_begin_send(soap))
     return soap->error;
-  if (http_command == SOAP_GET)
+  if (http_command != SOAP_POST)
   { soap->mode &= ~SOAP_IO;
     soap->mode |= SOAP_IO_BUFFER;
   }
@@ -14722,7 +13616,7 @@ soap_try_connect_command(struct soap *soap, int http_command, const char *endpoi
 #endif
     soap->mode = k;
   }
-  if (http_command == SOAP_GET)
+  if (http_command != SOAP_POST)
     return soap_end_send(soap);
 #endif
   return SOAP_OK;
@@ -14741,7 +13635,9 @@ soap_s2base64(struct soap *soap, const unsigned char *s, char *t, int n)
   if (!t)
     t = (char*)soap_malloc(soap, (n + 2) / 3 * 4 + 1);
   if (!t)
+  { soap->error = SOAP_EOM;
     return NULL;
+  }
   p = t;
   t[0] = '\0';
   if (!s)
@@ -14792,7 +13688,9 @@ soap_base642s(struct soap *soap, const char *s, char *t, size_t l, int *n)
     t = (char*)soap_malloc(soap, l);
   }
   if (!t)
+  { soap->error = SOAP_EOM;
     return NULL;
+  }
   p = t;
   if (n)
     *n = 0;
@@ -14859,7 +13757,9 @@ soap_s2hex(struct soap *soap, const unsigned char *s, char *t, int n)
   if (!t)
     t = (char*)soap_malloc(soap, 2 * n + 1);
   if (!t)
+  { soap->error = SOAP_EOM;
     return NULL;
+  }
   p = t;
   t[0] = '\0';
   if (s)
@@ -14894,7 +13794,9 @@ soap_hex2s(struct soap *soap, const char *s, char *t, size_t l, int *n)
     t = (char*)soap_malloc(soap, l);
   }
   if (!t)
+  { soap->error = SOAP_EOM;
     return NULL;
+  }
   p = t;
   while (l)
   { register int d1, d2;
@@ -14926,7 +13828,7 @@ soap_puthttphdr(struct soap *soap, int status, size_t count)
 #ifndef WITH_LEANER
     register const char *r = NULL;
 #endif
-    if ((status == SOAP_FILE || soap->status == SOAP_POST_FILE) && soap->http_content)
+    if (status == SOAP_FILE && soap->http_content)
       s = soap->http_content;
     else if (status == SOAP_HTML)
       s = "text/html; charset=utf-8";
@@ -14937,22 +13839,17 @@ soap_puthttphdr(struct soap *soap, int status, size_t count)
 #ifndef WITH_LEANER
     if (soap->mode & (SOAP_ENC_DIME | SOAP_ENC_MTOM))
     { if (soap->mode & SOAP_ENC_MTOM)
-      { if (soap->version == 2)
-          r = "application/soap+xml";
-	else
-          r = "text/xml";
-        s = "application/xop+xml";
+      { r = s;
+        s = "application/xop+xml; charset=utf-8";
       }
       else
         s = "application/dime";
     }
     if ((soap->mode & SOAP_ENC_MIME) && soap->mime.boundary && strlen(soap->mime.boundary) + strlen(soap->mime.start ? soap->mime.start : SOAP_STR_EOS) < sizeof(soap->tmpbuf) - 80)
     { register const char *t = strchr(s, ';');
-      sprintf(soap->tmpbuf, "multipart/related; charset=utf-8; boundary=\"%s\"; type=\"", soap->mime.boundary);
+      sprintf(soap->tmpbuf, "multipart/related; boundary=\"%s\"; type=\"", soap->mime.boundary);
       if (t)
-      { strncat(soap->tmpbuf, s, t - s);
-        soap->tmpbuf[sizeof(soap->tmpbuf)-1] = '\0';
-      }
+        strncat(soap->tmpbuf, s, t - s);
       else
         strcat(soap->tmpbuf, s);
       if (soap->mime.start)
@@ -14971,7 +13868,7 @@ soap_puthttphdr(struct soap *soap, int status, size_t count)
     if (s && (err = soap->fposthdr(soap, "Content-Type", s)))
       return err;
 #ifdef WITH_ZLIB
-    if ((soap->omode & SOAP_ENC_ZLIB))
+    if (soap->omode & SOAP_ENC_ZLIB)
     { 
 #ifdef WITH_GZIP
       err = soap->fposthdr(soap, "Content-Encoding", soap->zlib_out == SOAP_ZLIB_DEFLATE ? "deflate" : "gzip");
@@ -15000,11 +13897,284 @@ soap_puthttphdr(struct soap *soap, int status, size_t count)
 #endif
 
 /******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_get(struct soap *soap)
+{ return SOAP_GET_METHOD;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_put(struct soap *soap)
+{ return SOAP_PUT_METHOD;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_del(struct soap *soap)
+{ return SOAP_DEL_METHOD;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_head(struct soap *soap)
+{ return SOAP_HEAD_METHOD;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_post(struct soap *soap, const char *endpoint, const char *host, int port, const char *path, const char *action, size_t count)
+{ register const char *s;
+  register int err;
+  if (soap->status == SOAP_GET)
+    s = "GET";
+  else
+    s = "POST";
+#ifdef PALM
+  if (!endpoint || (soap_tag_cmp(endpoint, "http:*") && soap_tag_cmp(endpoint, "https:*") && strncmp(endpoint, "httpg:", 6)) && strncmp(endpoint, "_beam:", 6) && strncmp(endpoint, "_local:", 7) && strncmp(endpoint, "_btobex:", 8))
+#else
+  if (!endpoint || (soap_tag_cmp(endpoint, "http:*") && soap_tag_cmp(endpoint, "https:*") && strncmp(endpoint, "httpg:", 6)))
+#endif
+    return SOAP_OK;
+  if (strlen(endpoint) + strlen(soap->http_version) > sizeof(soap->tmpbuf) - 80)
+    return soap->error = SOAP_EOM;
+  if (soap->proxy_host && soap_tag_cmp(endpoint, "https:*"))
+    sprintf(soap->tmpbuf, "%s %s HTTP/%s", s, endpoint, soap->http_version);
+  else
+    sprintf(soap->tmpbuf, "%s /%s HTTP/%s", s, (*path == '/' ? path + 1 : path), soap->http_version);
+  if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
+    return err;
+#ifdef WITH_OPENSSL
+  if ((soap->ssl && soap->port != 443) || (!soap->ssl && soap->port != 80))
+    sprintf(soap->tmpbuf, "%s:%d", host, port);
+  else
+    strcpy(soap->tmpbuf, host); 
+#else
+  if (port != 80)
+    sprintf(soap->tmpbuf, "%s:%d", host, port);
+  else
+    strcpy(soap->tmpbuf, host); 
+#endif
+  if ((err = soap->fposthdr(soap, "Host", soap->tmpbuf))
+   || (err = soap->fposthdr(soap, "User-Agent", "gSOAP/2.7"))
+   || (err = soap_puthttphdr(soap, SOAP_OK, count)))
+    return err;
+#ifdef WITH_ZLIB
+#ifdef WITH_GZIP
+  if ((err = soap->fposthdr(soap, "Accept-Encoding", "gzip, deflate")))
+#else
+  if ((err = soap->fposthdr(soap, "Accept-Encoding", "deflate")))
+#endif
+    return err;
+#endif
+#ifndef WITH_LEAN
+  if (soap->userid && soap->passwd && strlen(soap->userid) + strlen(soap->passwd) < 761)
+  { sprintf(soap->tmpbuf + 262, "%s:%s", soap->userid, soap->passwd);
+    strcpy(soap->tmpbuf, "Basic ");
+    soap_s2base64(soap, (const unsigned char*)(soap->tmpbuf + 262), soap->tmpbuf + 6, (int)strlen(soap->tmpbuf + 262));
+    if ((err = soap->fposthdr(soap, "Authorization", soap->tmpbuf)))
+      return err;
+  }
+  if (soap->proxy_userid && soap->proxy_passwd && strlen(soap->proxy_userid) + strlen(soap->proxy_passwd) < 761)
+  { sprintf(soap->tmpbuf + 262, "%s:%s", soap->proxy_userid, soap->proxy_passwd);
+    strcpy(soap->tmpbuf, "Basic ");
+    soap_s2base64(soap, (const unsigned char*)(soap->tmpbuf + 262), soap->tmpbuf + 6, (int)strlen(soap->tmpbuf + 262));
+    if ((err = soap->fposthdr(soap, "Proxy-Authorization", soap->tmpbuf)))
+      return err;
+  }
+#endif
+#ifdef WITH_COOKIES
+#ifdef WITH_OPENSSL
+  if (soap_putcookies(soap, host, path, soap->ssl != NULL))
+    return soap->error;
+#else
+  if (soap_putcookies(soap, host, path, 0))
+    return soap->error;
+#endif
+#endif
+  if (soap->status != SOAP_GET && (soap->version == 1 || (action && *action && strlen(action) < sizeof(soap->tmpbuf) - 2)))
+  { sprintf(soap->tmpbuf, "\"%s\"", action?action:"");
+    if ((err = soap->fposthdr(soap, "SOAPAction", soap->tmpbuf)))
+      return err;
+  }
+  return soap->fposthdr(soap, NULL, NULL);
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_send_header(struct soap *soap, const char *s)
+{ register const char *t;
+  do
+  { t = strchr(s, '\n'); /* disallow \n in HTTP headers */
+    if (!t)
+      t = s + strlen(s);
+    if (soap_send_raw(soap, s, t - s))
+      return soap->error;
+    s = t + 1;
+  } while (*t);
+  return SOAP_OK;
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_post_header(struct soap *soap, const char *key, const char *val)
+{ if (key)
+  { if (http_send_header(soap, key))
+      return soap->error;
+    if (val && (soap_send_raw(soap, ": ", 2) || http_send_header(soap, val)))
+      return soap->error;
+  }
+  return soap_send_raw(soap, "\r\n", 2);
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef WITH_NOHTTP
+#ifndef PALM_1
+static int
+http_response(struct soap *soap, int status, size_t count)
+{ register int err;
+#ifdef WMW_RPM_IO
+  if (soap->rpmreqid)
+    httpOutputEnable(soap->rpmreqid);
+#endif
+  if (strlen(soap->http_version) > 4)
+    return soap->error = SOAP_EOM;
+  if (!status || status == SOAP_HTML || status == SOAP_FILE)
+  { const char *s;
+    if (count || ((soap->omode & SOAP_IO) == SOAP_IO_CHUNK))
+      s = "200 OK";
+    else
+      s = "202 ACCEPTED";
+    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Status = %s\n", s));
+#ifdef WMW_RPM_IO
+    if (soap->rpmreqid || soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* RPM behaves as if standalone */
+#else
+    if (soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* standalone application */
+#endif
+    { sprintf(soap->tmpbuf, "HTTP/%s %s", soap->http_version, s);
+      if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
+        return err;
+    }
+    else if ((err = soap->fposthdr(soap, "Status", s)))
+      return err;
+  }
+  else if (status >= 200 && status < 600)
+  { sprintf(soap->tmpbuf, "HTTP/%s %d %s", soap->http_version, status, http_error(soap, status));
+    if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
+      return err;
+#ifndef WITH_LEAN 
+    if (status == 401)
+    { sprintf(soap->tmpbuf, "Basic realm=\"%s\"", (soap->authrealm ? strlen(soap->authrealm) : 18) < sizeof(soap->tmpbuf) - 14 ? soap->authrealm : "gSOAP Web Service");
+      if ((err = soap->fposthdr(soap, "WWW-Authenticate", soap->tmpbuf)))
+        return err;
+    }
+    else if ((status >= 301 && status <= 303) || status == 307)
+    { if ((err = soap->fposthdr(soap, "Location", soap->endpoint)))
+        return err;
+    }
+#endif
+  }
+  else
+  { const char *s = *soap_faultcode(soap);
+    if (soap->version == 2 && (!s || !strcmp(s, "SOAP-ENV:Sender")))
+      s = "400 Bad Request";
+    else
+      s = "500 Internal Server Error";
+    DBGLOG(TEST, SOAP_MESSAGE(fdebug, "Error %s (status=%d)\n", s, status));
+#ifdef WMW_RPM_IO
+    if (soap->rpmreqid || soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* RPM behaves as if standalone */
+#else
+    if (soap_valid_socket(soap->master) || soap_valid_socket(soap->socket)) /* standalone application */
+#endif
+    { sprintf(soap->tmpbuf, "HTTP/%s %s", soap->http_version, s);
+      if ((err = soap->fposthdr(soap, soap->tmpbuf, NULL)))
+        return err;
+    }
+    else if ((err = soap->fposthdr(soap, "Status", s)))	/* CGI */
+      return err;
+  }
+  if ((err = soap->fposthdr(soap, "Server", "gSOAP/2.7"))
+   || (err = soap_puthttphdr(soap, status, count)))
+    return err;
+#ifdef WITH_COOKIES
+  if (soap_putsetcookies(soap))
+    return soap->error;
+#endif
+  return soap->fposthdr(soap, NULL, NULL);
+}
+#endif
+#endif
+
+/******************************************************************************/
+#ifndef PALM_1
+SOAP_FMAC1
+int
+SOAP_FMAC2
+soap_response(struct soap *soap, int status)
+{ register size_t count;
+  if (!(soap->omode & (SOAP_ENC_XML | SOAP_IO_STORE /* this tests for chunking too */))
+   && (status == SOAP_HTML || status == SOAP_FILE))
+  { soap->omode &= ~SOAP_IO;
+    soap->omode |= SOAP_IO_STORE;
+  }
+  soap->status = status;
+  count = soap_count_attachments(soap);
+  if (soap_begin_send(soap))
+    return soap->error;
+#ifndef WITH_NOHTTP
+  if ((soap->mode & SOAP_IO) != SOAP_IO_STORE && !(soap->mode & SOAP_ENC_XML))
+  { register int n = soap->mode;
+    soap->mode &= ~(SOAP_IO | SOAP_ENC_ZLIB);
+    if ((n & SOAP_IO) != SOAP_IO_FLUSH)
+      soap->mode |= SOAP_IO_BUFFER;
+    if ((soap->error = soap->fresponse(soap, status, count)))
+      return soap->error;
+#ifndef WITH_LEANER
+    if ((n & SOAP_IO) == SOAP_IO_CHUNK)
+    { if (soap_flush(soap))
+        return soap->error;
+    }
+#endif
+    soap->mode = n;
+  }
+#endif
+  return SOAP_OK;
+}
+#endif
+
+/******************************************************************************/
 #ifndef WITH_LEAN
 static const char*
 soap_set_validation_fault(struct soap *soap, const char *s, const char *t)
 { if (*soap->tag)
-    sprintf(soap->msgbuf, "Validation constraint violation: %s%s in element '%s'", s, t?t:SOAP_STR_EOS, soap->tag);
+    sprintf(soap->msgbuf, "Validation constraint violation: %s%s in element <%s>", s, t?t:SOAP_STR_EOS, soap->tag);
   else
     sprintf(soap->msgbuf, "Validation constraint violation: %s%s", s, t?t:SOAP_STR_EOS);
   return soap->msgbuf;
@@ -15048,7 +14218,7 @@ soap_set_fault(struct soap *soap)
       *s = "Well-formedness violation";
       break;
     case SOAP_NO_TAG:
-      *s = "No XML root element";
+      *s = "No XML element tag";
       break;
     case SOAP_MUSTUNDERSTAND:
       *c = "SOAP-ENV:MustUnderstand";
@@ -15134,7 +14304,7 @@ soap_set_fault(struct soap *soap)
       break;
     case SOAP_SSL_ERROR:
 #ifdef WITH_OPENSSL
-      *s = "SSL/TLS error";
+      *s = "SSL error";
 #else
       *s = "OpenSSL not installed: recompile with -DWITH_OPENSSL";
 #endif
@@ -15165,7 +14335,7 @@ soap_set_fault(struct soap *soap)
       break;
     case SOAP_ZLIB_ERROR:
 #ifdef WITH_ZLIB
-      sprintf(soap->msgbuf, "Zlib/gzip error: '%s'", soap->d_stream->msg?soap->d_stream->msg:SOAP_STR_EOS);
+      sprintf(soap->msgbuf, "Zlib/gzip error: '%s'", soap->d_stream->msg?soap->d_stream->msg:"");
       *s = soap->msgbuf;
 #else
       *s = "Zlib/gzip not installed for (de)compression: recompile with -DWITH_GZIP";
@@ -15181,13 +14351,13 @@ soap_set_fault(struct soap *soap)
       *s = soap_set_validation_fault(soap, "occurrence violation", NULL);
       break;
     case SOAP_LENGTH:
-      *s = soap_set_validation_fault(soap, "content range or length violation", NULL);
+      *s = soap_set_validation_fault(soap, "content length violation", NULL);
       break;
     case SOAP_FD_EXCEEDED:
-      *s = "Maximum number of open connections was reached (no define HAVE_POLL): increase FD_SETSIZE";
+      *s = "Maximum number of open connections was reached";
       break;
     case SOAP_STOP:
-      *s = "Stopped: no response to be sent or received (informative)";
+      *s = "Stopped: no response sent";
       break;
 #endif
     case SOAP_EOF:
@@ -15229,55 +14399,57 @@ int
 SOAP_FMAC2
 soap_send_fault(struct soap *soap)
 { register int status = soap->error;
+  int r = 1;
   if (status == SOAP_STOP)
-    return soap_closesock(soap);
+    return status;
   DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Sending back fault struct for error code %d\n", soap->error));
   soap->keep_alive = 0; /* to terminate connection */
   soap_set_fault(soap);
-  if (soap->error < 200 && soap->error != SOAP_FAULT)
-    soap->header = NULL;
-  if (status != SOAP_EOF || (!soap->recv_timeout && !soap->send_timeout))
-  { int r = 1;
 #ifndef WITH_NOIO
-    if (soap->fpoll && soap->fpoll(soap))
-      r = 0;
 #ifndef WITH_LEAN
-    else if (soap_valid_socket(soap->socket))
-    { r = tcp_select(soap, soap->socket, SOAP_TCP_SELECT_RCV | SOAP_TCP_SELECT_SND, 0);
-      if (r > 0)
-      { if (!(r & SOAP_TCP_SELECT_SND)
-	 || ((r & SOAP_TCP_SELECT_RCV)
-          && recv(soap->socket, soap->tmpbuf, 1, MSG_PEEK) < 0))
-          r = 0;
-      }
-    }
-#endif
-#endif
+  if (soap_valid_socket(soap->socket))
+  { struct timeval timeout;
+    fd_set rfd, sfd;
+    timeout.tv_sec = 0;
+    timeout.tv_usec = 0;
+    FD_ZERO(&rfd);
+    FD_ZERO(&sfd);
+    FD_SET(soap->socket, &rfd);
+    FD_SET(soap->socket, &sfd);
+    r = select((int)soap->socket + 1, &rfd, &sfd, NULL, &timeout);
     if (r > 0)
-    { soap->error = SOAP_OK;
-      soap_serializeheader(soap);
-      soap_serializefault(soap);
-      soap_begin_count(soap);
-      if (soap->mode & SOAP_IO_LENGTH)
-      { soap_envelope_begin_out(soap);
-        soap_putheader(soap);
-        soap_body_begin_out(soap);
-        soap_putfault(soap);
-        soap_body_end_out(soap);
-        soap_envelope_end_out(soap);
-      }
-      soap_end_count(soap);
-      if (soap_response(soap, status)
-       || soap_envelope_begin_out(soap)
-       || soap_putheader(soap)
-       || soap_body_begin_out(soap)
-       || soap_putfault(soap)
-       || soap_body_end_out(soap)
-       || soap_envelope_end_out(soap))
-        return soap_closesock(soap);
-      soap_end_send(soap);
+    { if (!FD_ISSET(soap->socket, &sfd)
+       || (FD_ISSET(soap->socket, &rfd)
+        && recv(soap->socket, soap->tmpbuf, 1, MSG_PEEK) < 0))
+        r = 0;
     }
-  } 
+  }
+#endif
+#endif
+  if ((status != SOAP_EOF || (!soap->recv_timeout && !soap->send_timeout)) && r > 0)
+  { soap->error = SOAP_OK;
+    soap_serializeheader(soap);
+    soap_serializefault(soap);
+    soap_begin_count(soap);
+    if (soap->mode & SOAP_IO_LENGTH)
+    { soap_envelope_begin_out(soap);
+      soap_putheader(soap);
+      soap_body_begin_out(soap);
+      soap_putfault(soap);
+      soap_body_end_out(soap);
+      soap_envelope_end_out(soap);
+    }
+    soap_end_count(soap);
+    if (soap_response(soap, status)
+     || soap_envelope_begin_out(soap)
+     || soap_putheader(soap)
+     || soap_body_begin_out(soap)
+     || soap_putfault(soap)
+     || soap_body_end_out(soap)
+     || soap_envelope_end_out(soap))
+      return soap_closesock(soap);
+    soap_end_send(soap);
+  }
   soap->error = status;
   return soap_closesock(soap);
 }
@@ -15288,21 +14460,12 @@ soap_send_fault(struct soap *soap)
 SOAP_FMAC1
 int
 SOAP_FMAC2
-soap_recv_fault(struct soap *soap, int check)
+soap_recv_fault(struct soap *soap)
 { register int status = soap->error;
-  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Check if receiving SOAP Fault\n"));
-  if (!check)
-  { /* try getfault when no tag or tag mismatched at level 2, otherwise ret */
-    if (soap->error != SOAP_NO_TAG
-     && (soap->error != SOAP_TAG_MISMATCH || soap->level != 2))
-      return soap->error;
-  }
+  DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Receiving SOAP Fault\n"));
   soap->error = SOAP_OK;
   if (soap_getfault(soap))
-  { /* check flag set: check if SOAP Fault is present, if not just return */
-    if (check && soap->error == SOAP_TAG_MISMATCH && soap->level == 2)
-      return soap->error = SOAP_OK;
-    DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Error: soap_get_soapfault() failed. Is this a SOAP message at all?\n"));
+  { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Error: soap_get_soapfault() failed. Is this a SOAP message at all?\n"));
     *soap_faultcode(soap) = (soap->version == 2 ? "SOAP-ENV:Sender" : "SOAP-ENV:Client");
     soap->error = status;
     soap_set_fault(soap);
@@ -15318,14 +14481,15 @@ soap_recv_fault(struct soap *soap, int check)
     else if (!soap_match_tag(soap, s, "SOAP-ENV:VersionMismatch"))
       status = SOAP_VERSIONMISMATCH;
     else
-    { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Received SOAP Fault code %s\n", s));
+    { DBGLOG(TEST,SOAP_MESSAGE(fdebug, "Fault code %s\n", s));
       status = SOAP_FAULT;
     }
-    if (!soap_body_end_in(soap))
-      soap_envelope_end_in(soap);
+    if (soap_body_end_in(soap)
+     || soap_envelope_end_in(soap)
+     || soap_end_recv(soap))
+      return soap_closesock(soap);
+    soap->error = status;
   }
-  soap_end_recv(soap);
-  soap->error = status;
   return soap_closesock(soap);
 }
 #endif
@@ -15340,13 +14504,15 @@ soap_send_empty_response(struct soap *soap, int httpstatuscode)
 { register soap_mode m = soap->omode;
   soap->count = 0;
   if ((m & SOAP_IO) == SOAP_IO_CHUNK)
-    soap->omode = (m & ~SOAP_IO) | SOAP_IO_BUFFER;
+  { soap->omode &= ~SOAP_IO_CHUNK;
+    soap->omode |= SOAP_IO_BUFFER;
+  }
   if (soap_response(soap, httpstatuscode) || soap_end_send(soap))
   { soap->omode = m;
     return soap_closesock(soap);
   }
   soap->omode = m;
-  return soap->error = SOAP_STOP; /* stops the server's response */
+  return SOAP_OK;
 }
 #endif
 #endif
@@ -15358,11 +14524,12 @@ SOAP_FMAC1
 int
 SOAP_FMAC2
 soap_recv_empty_response(struct soap *soap)
-{ if (!soap_begin_recv(soap))
-    soap_end_recv(soap);
-  else if (soap->error == SOAP_NO_DATA || soap->error == 202)
+{ if (soap_begin_recv(soap) || soap_end_recv(soap))
+  { if (soap->error != 202)
+      return soap_closesock(soap);
     soap->error = SOAP_OK;
-  return soap_closesock(soap);
+  }
+  return SOAP_OK;
 }
 #endif
 #endif
@@ -15393,31 +14560,19 @@ soap_strerror(struct soap *soap)
         soap->msgbuf[i] = '?';
     }
 #endif
+    return soap->msgbuf;
 #endif
   }
-  else
-  { char *s = soap->msgbuf;
 #ifndef WITH_LEAN
-    int rt = soap->recv_timeout, st = soap->send_timeout;
-    int ru = ' ', su = ' ';
-#endif
-    strcpy(s, "Operation interrupted or timed out");
-#ifndef WITH_LEAN
-    if (rt < 0)
-    { rt = -rt;
-      ru = 'u';
-    }
-    if (st < 0)
-    { st = -st;
-      su = 'u';
-    }
-    if (rt)
-      sprintf(s + strlen(s), " (%d%cs receive delay)", rt, ru);
-    if (st)
-      sprintf(s + strlen(s), " (%d%cs send delay)", st, su);
-#endif
+  if (soap->recv_timeout > 0)
+  { if (soap->send_timeout > 0)
+      sprintf(soap->msgbuf, "Operation interrupted or timed out after %ds send or %ds receive delay", soap->send_timeout, soap->recv_timeout);
+    else
+      sprintf(soap->msgbuf, "Operation interrupted or timed out after %ds receive delay", soap->recv_timeout);
+    return soap->msgbuf;
   }
-  return soap->msgbuf;
+#endif
+  return "Operation interrupted or timed out";
 }
 #endif
 #endif 
@@ -15593,21 +14748,12 @@ soap_sprint_fault(struct soap *soap, char *buf, size_t len)
       v = *soap_faultsubcode(soap);
     s = *soap_faultstring(soap);
     d = soap_faultdetail(soap);
-#ifdef HAVE_SNPRINTF
-# ifdef WIN32
+#ifdef WIN32
     _snprintf
-# else
-    snprintf
-# endif
-      (buf, len, "%s%d fault: %s [%s]\n\"%s\"\nDetail: %s\n", soap->version ? "SOAP 1." : "Error ", soap->version ? (int)soap->version : soap->error, c, v ? v : "no subcode", s ? s : "[no reason]", d && *d ? *d : "[no detail]");
 #else
-    if (len > 40 + (v ? strlen(v) : 0) + (s ? strlen(s) : 0) + (d && *d ? strlen(*d) : 0))
-      sprintf(buf, "%s%d fault: %s [%s]\n\"%s\"\nDetail: %s\n", soap->version ? "SOAP 1." : "Error ", soap->version ? (int)soap->version : soap->error, c, v ? v : "no subcode", s ? s : "[no reason]", d && *d ? *d : "[no detail]");
-    else if (len > 40)
-      sprintf(buf, "%s%d fault: %s\n", soap->version ? "SOAP 1." : "Error ", soap->version ? (int)soap->version : soap->error, c);
-    else
-      buf[0] = '\0';
+    snprintf
 #endif
+      (buf, len, "%s%d fault: %s [%s]\n\"%s\"\nDetail: %s\n", soap->version ? "SOAP 1." : "Error ", soap->version ? (int)soap->version : soap->error, c, v ? v : "no subcode", s ? s : "[no reason]", d && *d ? *d : "[no detail]");
   }
   return buf;
 }
@@ -15624,7 +14770,7 @@ soap_print_fault_location(struct soap *soap, FILE *fd)
 { 
 #ifndef WITH_LEAN
   int i, j, c1, c2;
-  if (soap->error && soap->error != SOAP_STOP && soap->bufidx <= soap->buflen && soap->buflen > 0 && soap->buflen <= SOAP_BUFLEN)
+  if (soap->error && soap->bufidx <= soap->buflen && soap->buflen > 0 && soap->buflen <= SOAP_BUFLEN)
   { i = (int)soap->bufidx - 1;
     if (i <= 0)
       i = 0;
@@ -15729,7 +14875,7 @@ soap::soap(soap_mode im, soap_mode om)
 
 /******************************************************************************/
 #ifdef __cplusplus
-soap::soap(const struct soap& soap)
+soap::soap(struct soap& soap)
 { soap_copy_context(this, &soap);
 }
 #endif

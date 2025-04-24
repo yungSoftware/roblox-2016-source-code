@@ -49,6 +49,3 @@ A commercial use license is available from Genivia, Inc., contact@genivia.com
 
 //gsoap SOAP-ENV schema namespace: http://www.w3.org/2003/05/soap-envelope
 //gsoap SOAP-ENC schema namespace: http://www.w3.org/2003/05/soap-encoding
-
-//gsoap SOAP-ENV schema namespace2: http://schemas.xmlsoap.org/soap/envelope/
-//gsoap SOAP-ENC schema namespace2: http://schemas.xmlsoap.org/soap/encoding/

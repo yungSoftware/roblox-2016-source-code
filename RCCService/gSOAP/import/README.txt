@@ -4,7 +4,6 @@ Use the #import directive in the gSOAP header file processed by soapcpp2 to
 include the features listed below.
 
 dom.h		DOM for xs:anyType, xs:any, xs:anyAttribute (link with dom.c/pp)
-stdstring.h	module for std::string to enable std::string serializer sharing
 stldeque.h	std::deque serializer
 stllist.h	std::list serializer
 stlset.h	std::set serializer
@@ -15,12 +14,8 @@ wsa.h		WS-Addressing 2004/08 (see plugin/wsaapi.c)
 wsa3.h		WS-Addressing 2003/03 (see plugin/wsaapi.c)
 wsa4.h		WS-Addressing 2004/03 (see plugin/wsaapi.c)
 wsa5.h		WS-Addressing 2005/03 (see plugin/wsaapi.c)
-wsrm4.h		WS-ReliableMessaging (2004, deprecated)
-wsrm.h		WS-ReliableMessaging schema definiions
-wsrx.h		WS-ReliableMessaging (see plugin/wsrmapi.c)
 wsse.h		WS-Security (see plugin/wsseapi.c)
 wsu.h		Utility
-xlink.h		Xlink bindings
 xmlmime.h	XML MIME bindings
 xop.h		XOP MTOM attachments
 

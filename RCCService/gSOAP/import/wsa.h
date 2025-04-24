@@ -14,12 +14,21 @@ Modified by Robert van Engelen:
   //gsoap wsa schema import: http://schemas.xmlsoap.org/ws/2004/08/addressing
   This ensures that the WS-Addressing schemas are not copied into the generated
   WSDL by soapcpp2 but are referenced with schema import in the generated WSDL.
-- Added SOAP_ENV__Header struct
 
 Usage:
 
 // header file for soapcpp2
 #import "wsa.h"
+struct SOAP_ENV__Header
+{
+                 _wsa__MessageID  wsa__MessageID 0;
+                 _wsa__RelatesTo *wsa__RelatesTo 0;
+                 _wsa__From      *wsa__From      0;
+  mustUnderstand _wsa__ReplyTo   *wsa__ReplyTo   0;
+  mustUnderstand _wsa__FaultTo   *wsa__FaultTo   0;
+  mustUnderstand _wsa__To         wsa__To        0;
+  mustUnderstand _wsa__Action     wsa__Action    0;
+};
 
 // client-side source code
 { struct soap soap;
@@ -54,8 +63,6 @@ int soap_ns__method(struct soap *soap, ...)
   ...
 
 */
-
-#define SOAP_WSA_200408
 
 /******************************************************************************\
  *                                                                            *
@@ -244,16 +251,5 @@ typedef unsigned int _wsa__ReplyAfter;
 
 /// Attribute "http://schemas.xmlsoap.org/ws/2004/08/addressing":Action of simpleType xs:anyURI.
 // '_wsa__Action' attribute definition intentionally left blank.
-
-struct SOAP_ENV__Header
-{
-                 _wsa__MessageID  wsa__MessageID 0;
-                 _wsa__RelatesTo *wsa__RelatesTo 0;
-                 _wsa__From      *wsa__From      0;
-  mustUnderstand _wsa__ReplyTo   *wsa__ReplyTo   0;
-  mustUnderstand _wsa__FaultTo   *wsa__FaultTo   0;
-  mustUnderstand _wsa__To         wsa__To        0;
-  mustUnderstand _wsa__Action     wsa__Action    0;
-};
 
 /* End of wsa.h */
