@@ -114,6 +114,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "soapcpp2", "RCCService\gSOA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsdl2h", "RCCService\gSOAP\gsoap-2.7\gsoap\VisualStudio2005\wsdl2h\wsdl2h\wsdl2h.vcxproj", "{6CBC554A-4FFB-461F-91D4-11B358802815}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sgCore", "CSG\sgCore\prj\ms\sgCore.vcxproj", "{49F6CA3D-F537-40FB-8138-E83F9BA19625}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -431,6 +433,18 @@ Global
 		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseRcc|Win32.Build.0 = Release|Win32
 		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseStudio|Win32.ActiveCfg = Release|Win32
 		{6CBC554A-4FFB-461F-91D4-11B358802815}.ReleaseStudio|Win32.Build.0 = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.Debug|Win32.ActiveCfg = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.Debug|Win32.Build.0 = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.DebugRcc|Win32.ActiveCfg = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.DebugRcc|Win32.Build.0 = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.DebugStudio|Win32.ActiveCfg = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.DebugStudio|Win32.Build.0 = Debug|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.Release|Win32.ActiveCfg = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.Release|Win32.Build.0 = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.ReleaseRcc|Win32.ActiveCfg = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.ReleaseRcc|Win32.Build.0 = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.ReleaseStudio|Win32.ActiveCfg = Release|Win32
+		{49F6CA3D-F537-40FB-8138-E83F9BA19625}.ReleaseStudio|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
