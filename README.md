@@ -120,7 +120,8 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] BootstrapperQTStudio
   - [ ] BootstrapperRCCService
   - [ ] RobloxProxy
- #### Other
+
+  #### Other
   - [x] IncludeChecker
   - [x] RbxTestHooks
   - [x] ScriptSigner
