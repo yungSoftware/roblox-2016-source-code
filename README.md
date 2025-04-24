@@ -18,6 +18,7 @@ After a long effort, this repository has been brought to you on github with hand
 ---
 
 ## 🪨 Features / Additions
+- Added some new features
 - Fixed a lot of issues that breaks the compilation and the codebase
   - I messed with a lot of things to fix all the projects though, i should get props for that.
 - Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source
