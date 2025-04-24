@@ -26,7 +26,7 @@
 #include "sgIApp.h"
 #include "sgFileManager.h"
 
-sgCore_API    bool   sgInitKernel(const char* temp_directory = 0);
+sgCore_API    bool   sgInitKernel();
 sgCore_API    void   sgFreeKernel(bool show_memleaks=true);
 sgCore_API    void   sgGetVersion(int& major, int& minor, int& release, int& build);
 /****************************************************************/

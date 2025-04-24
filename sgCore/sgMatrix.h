@@ -25,7 +25,6 @@ public:
 	void  Multiply(const sgCMatrix& MatrB);
 	void  Translate(const SG_VECTOR& transVector);
 	void  Rotate(const SG_POINT& axePoint, const SG_VECTOR& axeDir, sgFloat alpha_radians);
-    void  Scale(sgFloat scaleX, sgFloat scaleY, sgFloat scaleZ);
 	void  VectorToZAxe(const SG_VECTOR& vect);
 
 	void  ApplyMatrixToVector(SG_POINT& vectBegin, SG_VECTOR& vectDir) const;

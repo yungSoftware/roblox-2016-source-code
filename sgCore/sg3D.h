@@ -34,21 +34,13 @@ typedef enum
 	SG_DELAUNAY_TRIANGULATION
 } SG_TRIANGULATION_TYPE;
 
-typedef enum
-{
-    SG_SEPARATE_BUFFERS,
-    SG_GENERAL_BUFFER
-} SG_TRIANGLES_BUFFER_TYPE;
-
 typedef struct
 {
   int                nTr;
   SG_POINT*          allVertex;
   SG_VECTOR*         allNormals;
-  sgFloat*           allUV;
-    
-  sgFloat*           generalBuffer;
-  unsigned int*      indexes;
+  SG_POINT*          allColors;
+  sgFloat*            allUV;
 } SG_ALL_TRIANGLES;
 
 typedef  enum
@@ -148,10 +140,9 @@ protected:
   virtual    ~sgC3DObject();
 
 public:
-  static     void         AutoTriangulate(bool,SG_TRIANGULATION_TYPE, SG_TRIANGLES_BUFFER_TYPE);
+  static     void         AutoTriangulate(bool,SG_TRIANGULATION_TYPE);
 
-  bool                    Triangulate(SG_TRIANGULATION_TYPE, SG_TRIANGLES_BUFFER_TYPE);
-  void                    FreeTriangles();
+  bool                    Triangulate(SG_TRIANGULATION_TYPE);
 
   SG_3DOBJECT_TYPE        Get3DObjectType() const;
 
@@ -167,6 +158,11 @@ public:
 
   sgFloat                  GetVolume();
   sgFloat                  GetSquare();
+
+  void                    SetColor(const SG_POINT& color);
+  void                    Scale(const SG_POINT& scale);
+  void                    Translate(const SG_POINT& translation);
+  void                    Transform(const sgCMatrix& matrix);
 
 private:
   SG_3DOBJECT_TYPE    m_objectType;

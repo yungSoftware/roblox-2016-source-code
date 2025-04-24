@@ -85,6 +85,7 @@ Be a contributor by doing a helpful of changes to the source code!
     - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
   - [ ] RCCService
   - [ ] RobloxStudio
+  - [ ] sgCore
   - [ ] WindowsClient
 
   #### 3rd Party

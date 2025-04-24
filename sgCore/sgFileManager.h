@@ -5,7 +5,7 @@
 namespace sgFileManager
 {
 	sgCore_API bool Save(const sgCScene* scen, const char* file_name, 
-							const void* userData, unsigned long userDataSize, bool selected = false);
+							const void* userData, unsigned long userDataSize);
 
 #define   SG_FILE_SIGNATURE      "SGSc"
 
@@ -32,7 +32,7 @@ namespace sgFileManager
 	sgCore_API const void*  ObjectToBitArray(const sgCObject* obj, unsigned long& arrSize);
 	sgCore_API sgCObject*   BitArrayToObject(const void* bitArray, unsigned long arrSize);
 
-	sgCore_API sgCObject*   ObjectFromTriangles(const SG_POINT* vertexes, long vert_count,
+	sgCore_API sgCObject*   ObjectFromTriangles(const SG_VERT* vertexes, long vert_count,
 												const SG_INDEX_TRIANGLE* triangles, long tr_count,
 												float smooth_angle_in_radians=30.0*3.14159265/180.0,
 												bool  solids_checking=false);

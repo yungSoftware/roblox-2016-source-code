@@ -5,12 +5,8 @@
 #define   SG_PLATFORM_WINDOWS     0
 #define   SG_PLATFORM_MAC         1
 #define   SG_PLATFORM_IOS         2
-#define   SG_PLATFORM_ANDROID     3
-
 
 #define   SG_CURRENT_PLATFORM     SG_PLATFORM_WINDOWS
-
-//#define     PLATFORM_64
 
 
 #if (SG_CURRENT_PLATFORM==SG_PLATFORM_WINDOWS)
@@ -24,12 +20,11 @@
    #define  sgCore_API
 #endif
 
-#if (SG_CURRENT_PLATFORM==SG_PLATFORM_IOS || SG_CURRENT_PLATFORM==SG_PLATFORM_ANDROID)
-    typedef   float   sgFloat;
-#else
-    typedef   double  sgFloat;
-#endif
+// ROBLOX change
+//#if (SG_CURRENT_PLATFORM!=SG_PLATFORM_IOS)
+//typedef double sgFloat;
 
+typedef   float  sgFloat;
 
 typedef struct
 {
@@ -37,6 +32,16 @@ typedef struct
   sgFloat y;
   sgFloat z;
 } SG_POINT;
+
+typedef struct
+{
+    sgFloat x;
+    sgFloat y;
+    sgFloat z;
+    sgFloat r;
+    sgFloat g;
+    sgFloat b;
+} SG_VERT;
 
 #define  SG_VECTOR   SG_POINT
 

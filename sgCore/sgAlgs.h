@@ -6,9 +6,9 @@ namespace  sgBoolean
 	sgCore_API      sgCGroup*	Intersection(const sgC3DObject& aOb,
 												const sgC3DObject& bOb);
 	sgCore_API      sgCGroup*	Union(const sgC3DObject& aOb,
-											const sgC3DObject& bOb);
+											const sgC3DObject& bOb, int& errcode);
 	sgCore_API      sgCGroup*	Sub(const sgC3DObject& aOb,
-											const sgC3DObject& bOb);
+											const sgC3DObject& bOb, int& errcode);
 	sgCore_API      sgCGroup*	IntersectionContour(const sgC3DObject& aOb,
 														const sgC3DObject& bOb);
 	sgCore_API      sgCGroup*	Section(const sgC3DObject& obj, 
