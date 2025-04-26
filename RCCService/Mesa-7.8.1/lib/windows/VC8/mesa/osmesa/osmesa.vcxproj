@@ -124,6 +124,7 @@
       <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\..\..\..\src\mesa\drivers\osmesa\osmesa.def</ModuleDefinitionFile>
       <ProgramDatabaseFile>$(TargetDir)OSMESA32.pdb</ProgramDatabaseFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>if not exist ..\..\..\..\lib md ..\..\..\..\lib

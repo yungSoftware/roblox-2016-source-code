@@ -23,6 +23,7 @@
     <ProjectGuid>{2E50FDAF-430B-475B-AE6B-60B68F2875BA}</ProjectGuid>
     <RootNamespace>glu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>glu32</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static CRT|Win32'" Label="Configuration">
@@ -121,6 +122,7 @@
       <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\..\..\..\src\glu\sgi\glu.def</ModuleDefinitionFile>
       <ProgramDatabaseFile>$(TargetDir)GLU32.pdb</ProgramDatabaseFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>if not exist ..\..\..\..\lib md ..\..\..\..\lib

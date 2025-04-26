@@ -166,6 +166,7 @@ if exist ..\..\..\..\progs\demos copy "$(TargetDir)OPENGL32.DLL" ..\..\..\..\pro
       <AdditionalLibraryDirectories>$(TargetDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ModuleDefinitionFile>..\..\..\..\src\mesa\drivers\windows\gdi\mesa.def</ModuleDefinitionFile>
       <ProgramDatabaseFile>$(TargetDir)OPENGL32.pdb</ProgramDatabaseFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
       <Command>if not exist ..\..\..\..\lib md ..\..\..\..\lib
