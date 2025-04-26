@@ -365,7 +365,7 @@
       -->
         <TabPage name="Plugins">
           <Group name="Tools">
-            <addaction name="managePluginsAction" text="Manage Plugins" style="textundericon" height="32" width="32" tooltip="Manage plugins installed from roblox.com" icon=":/RibbonBar/images/RibbonIcons/AddOns/Manage-Plugins.png"/>
+            <addaction name="managePluginsAction" text="Manage Plugins" style="textundericon" height="32" width="32" tooltip="Manage plugins installed from idk16.com" icon=":/RibbonBar/images/RibbonIcons/AddOns/Manage-Plugins.png"/>
             <addaction name="openPluginsFolderAction" text="Plugins Folder" style="textundericon" height="32" width="32" tooltip="Open the local plugins folder" icon=":/RibbonBar/images/RibbonIcons/AddOns/Plugins-folder.png"/>
           </Group>
         </TabPage>
