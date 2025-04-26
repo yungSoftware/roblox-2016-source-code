@@ -73,7 +73,7 @@ Be a contributor by doing a helpful of changes to the source code!
 ## 🎯 Current Goals
 - Backport Hitius, Graphictoria and New Roblox Features 
 - 64-bit Support (💀)
-- Make it able to build all the projects with the latest Visual Studio Version **[8/36]** (💀) 
+- Make it able to build all the projects with the latest Visual Studio Version **[10/40]** (💀) 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -115,7 +115,6 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] ShaderCompiler
 
   #### Installer
-
   - [ ] Bootstrapper
   - [ ] BootstrapperClient
   - [ ] BootstrapperQTStudio
@@ -128,6 +127,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] ScriptSigner
   - [x] RegressionTestSuite
     - [x] RobloxLib 
+
   #### Libraries
   - [ ] Qt
   - [ ] Boost 
