@@ -11,12 +11,22 @@
  5. Now you need to build libraries, to do so head over to : [BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)
  6. Enter the **Client_2016.sln** Solution inside Trunk2016 Folder with **Visual Studio 2022**
  7. Change the Solution Configurations to **ReleaseStudio**
-     - **ReleaseRCC** if you want to build **RCCService**
-     - **Release** if you want to build **WindowsClient**
-     - Did'nt tested out the Debug, DebugRCC and DebugStudio yet since i dont interested in them.
+    - **ReleaseRCC** if you want to build **RCCService**
+    - **Release** if you want to build **WindowsClient**
+    - Did'nt tested out the Debug, DebugRCC and DebugStudio yet since i dont interested in them.
  8. Change the **Solution Platform** to **Win32**
  9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
- 10. Before building anything, you should build **boost.static**, **zlib**, **libcurl**, **SDL2**, **qtnribbon**, **ShaderCompiler** and **LibOVR** first
+ 10. Before building anything, you should build these first: 
+    - 3rd Party > **boost.static** 
+    - 3rd Party > **zlib** 
+    - 3rd Party > **libcurl** 
+    - 3rd Party > **SDL2** 
+    - gSOAP > **soapcpp2**
+    - gSOAP > **wsdl2h**
+    - Shaders > **ShaderCompiler**
+    - Rendering > **LibOVR**
+    - **qtnribbon** 
+    - **sgCore**
  11. Right click to project and press **Build**
  12. Thats it, you successfully builded from the source!
 
