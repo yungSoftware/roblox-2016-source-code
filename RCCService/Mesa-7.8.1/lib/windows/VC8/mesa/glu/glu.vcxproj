@@ -23,7 +23,7 @@
     <ProjectGuid>{2E50FDAF-430B-475B-AE6B-60B68F2875BA}</ProjectGuid>
     <RootNamespace>glu</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>glu32</ProjectName>
+    <ProjectName>GLU32</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release Static CRT|Win32'" Label="Configuration">
