@@ -128,3 +128,8 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] ScriptSigner
   - [x] RegressionTestSuite
     - [x] RobloxLib 
+  #### Libraries
+  - [ ] Qt
+  - [ ] Boost 
+  - [ ] OpenSSL
+  - [x] Mesa

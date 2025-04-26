@@ -1,4 +1,4 @@
-# Qt (Optional)
+# Qt (Optional to build)
 1. Install **[Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=sharing)** and Extract it into **Contribs** folder
    - I needed to exclude the Qt because github freaks out the whole library
 2. Open **VS2012 x86 Native Tools Command Prompt**
@@ -41,7 +41,7 @@ If you wanna build libcurl.dll, Just change the **Target Name** to **$(ProjectNa
 
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 
-# Mesa (Optional)
+# Mesa (Optional to build)
 - Open this solution: "C:\Trunk2016\RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\mesa.sln"
 - Build it
 - And when its done, open this solution: "C:\Trunk2016\RCCService\Mesa-7.8.1\lib\windows\VC8\progs\progs.sln"
