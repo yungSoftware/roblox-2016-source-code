@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.102
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gdi", "gdi\gdi.vcxproj", "{A1B24907-E196-4826-B6AF-26723629B633}"
 EndProject
@@ -65,6 +65,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B2DE8083-EB17-47A1-B9A3-D49DE246D5CA}
+		SolutionGuid = {16B61E0D-645C-4D17-8BB9-F786A2A724C6}
 	EndGlobalSection
 EndGlobal

@@ -2,19 +2,19 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{ca701b62-07ee-4366-96ec-b216e6fd0d32}</UniqueIdentifier>
+      <UniqueIdentifier>{74a450d1-1298-4df5-9331-405c0faff10e}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{bdee3164-9519-4d63-98e5-f65fea796f2b}</UniqueIdentifier>
+      <UniqueIdentifier>{da90f072-ffbc-4c34-bcd5-1740d362e14f}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl</Extensions>
     </Filter>
     <Filter Include="C++ files">
-      <UniqueIdentifier>{c7a507ed-5278-4c83-9835-9984dade9d9b}</UniqueIdentifier>
+      <UniqueIdentifier>{24904443-35e8-4bdb-90a9-3fbd317058a4}</UniqueIdentifier>
       <Extensions>.cc</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{6dd9c2a1-dd9d-4c82-a5fb-68e748c9762c}</UniqueIdentifier>
+      <UniqueIdentifier>{a990ef53-6e3e-4a59-bd7b-f60b98ced65b}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
   </ItemGroup>

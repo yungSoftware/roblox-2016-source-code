@@ -1,7 +1,6 @@
-# Qt
+# Qt (Optional)
 1. Install **[Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=sharing)** and Extract it into **Contribs** folder
    - I needed to exclude the Qt because github freaks out the whole library
-   - This is already compiled by me but if you want to compile it yourself watch the steps at the bottom.
 2. Open **VS2012 x86 Native Tools Command Prompt**
 3. Change Directory to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
 4. Type `nmake confclean` and wait
@@ -41,6 +40,13 @@ To build SDL2 as a .DLL file, Just change the **Target Extention** to **.dll** a
 If you wanna build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!
 
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
+
+# Mesa (Optional)
+- Open this solution: "C:\Trunk2016\RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\mesa.sln"
+- Build it
+- And when its done, open this solution: "C:\Trunk2016\RCCService\Mesa-7.8.1\lib\windows\VC8\progs\progs.sln"
+- And build this too.
+- Copy everything from RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release folder to RCCService\Mesa-7.8.1\lib\release
 
 **That's it, you've compiled the libraries!**
 **Also You may want to change or add the library files in the source with yours.**
