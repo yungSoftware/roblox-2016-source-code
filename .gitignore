@@ -102,8 +102,7 @@ qrc_*.*
 /Rendering/ShaderCompiler/ShaderCompiler.exe
 
 # Dont ignore these files and folders
-!/RCCService/Mesa-7.8.1/lib/release/
-!/RCCService/Mesa-7.8.1/lib/release/*.pdb
+!/RCCService/Mesa-7.8.1/lib/release/*.*
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
 
 ## END OF GENERAL ##
