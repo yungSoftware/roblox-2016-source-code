@@ -874,8 +874,8 @@ shared_ptr<const RBX::Instances> RobloxView::handleDropOperation(const QString& 
 		if (FFlag::StudioRecordToolboxInsert && !hasError)
 			UpdateUIManager::Instance().getMainWindow().trackToolboxInserts(contentId, *instances);
 
-		if (instances->size() < 1)
-			throw std::runtime_error("Dragged object cannot be inserted.");
+		//if (hasError || instances->size() < 1)
+		//	throw std::runtime_error("Dragged object cannot be inserted.");
 
 		RBX::DataModel::LegacyLock lock(m_pDataModel, RBX::DataModelJob::Write);
 		RBX::LuaSourceContainer::blockingLoadLinkedScriptsForInstances(cp, *instances);
