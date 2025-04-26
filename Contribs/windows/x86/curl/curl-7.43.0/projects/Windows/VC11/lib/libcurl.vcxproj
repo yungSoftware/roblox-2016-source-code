@@ -66,7 +66,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\..\include;..\..\..\..\lib;$(CONTRIB_PATH)\openssl\inc32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_DEBUG;BUILDING_LIBCURL;DEBUGBUILD;USE_OPENSSL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;BUILDING_LIBCURL;DEBUGBUILD;USE_OPENSSL;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -88,6 +88,10 @@
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <Lib>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Wldap32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CONTRIB_PATH)\openssl\out32dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DLL Release - DLL OpenSSL|Win32'">
     <Midl>
@@ -102,7 +106,7 @@
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>..\..\..\..\include;..\..\..\..\lib;$(CONTRIB_PATH)\openssl\inc32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;BUILDING_LIBCURL;USE_OPENSSL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;BUILDING_LIBCURL;USE_OPENSSL;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -121,6 +125,10 @@
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
+    <Lib>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;Wldap32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CONTRIB_PATH)\openssl\out32dll;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\lib\amigaos.c" />
