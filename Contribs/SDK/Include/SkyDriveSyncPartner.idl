@@ -1,0 +1,338 @@
+//
+// SkyDriveSyncPartner.idl. 
+//
+// These interfaces are a legacy way to support partner syncing. A partner can take over syncing and merging
+//   of files. 
+//
+
+cpp_quote("#include <winapifamily.h>")
+
+#pragma region Desktop Family
+cpp_quote("#if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)")
+
+// This API is only available after WinBlue
+cpp_quote("#if (NTDDI_VERSION >= NTDDI_WINBLUE)")
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+cpp_quote("#define E_LSC_FILENOTSUPPORTED				MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0300)")
+cpp_quote("#define E_LSC_CONFLICTINGFILE				MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0301)")
+cpp_quote("#define E_LSC_LOCALFILEUNAVAILABLE			MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0302)")
+cpp_quote("#define E_LSC_NOTINITIALIZED					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0303)")
+cpp_quote("#define E_LSC_FILENOTFOUND					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0304)")
+cpp_quote("#define E_LSC_LOCALPATHNOTMAPPED				MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0305)")
+cpp_quote("#define E_LSC_CACHEMISMATCH					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0306)")
+cpp_quote("#define E_LSC_PENDINGCHANGESINCACHE			MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0307)")
+cpp_quote("#define E_LSC_SERVERPATHINDIFFERENTCACHE		MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0308)")
+cpp_quote("#define E_LSC_DIRECTORYHINTCONFLICT			MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0309)")
+cpp_quote("#define E_LSC_PATHMISMATCH					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x030A)")
+cpp_quote("#define E_LSC_PROGIDCONFLICT					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x030B)")
+cpp_quote("#define E_LSC_FILEUPTODATE 					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x030C)")
+cpp_quote("#define E_LSC_DEPRECATED 					MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x030D)")
+
+cpp_quote("#define E_SC_NOT_RUNNING                     MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0400)")
+cpp_quote("#define E_SC_NONMAPPED_PATH                  MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0401)")
+cpp_quote("#define E_SC_ALREADY_RUNNING                 MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0402)")
+cpp_quote("#define E_SC_CREDTYPEMISMATCH                MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0403)")
+cpp_quote("#define E_SC_DIFFERENT_USER                  MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0404)")
+cpp_quote("#define E_SC_AUTH_FAILURE                    MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0405)")
+cpp_quote("#define E_SC_INIT_REQUIRED                   MAKE_HRESULT(SEVERITY_ERROR, FACILITY_ITF, 0x0406)")
+
+cpp_quote("#define S_SC_RAN_PREVIOUSLY                  MAKE_HRESULT(SEVERITY_SUCCESS, FACILITY_ITF, 0x0407)")
+
+cpp_quote("#define LSCFILESYNC_REGISTRY_KEY              L\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\SkyDrive\\\\FileSyncPartner\"")
+cpp_quote("#define LSCFILESYNC_REGISTRY_PARTNER_CLID     L\"PartnerCLSID\"")
+cpp_quote("#define LSCFILESYNC_REGISTRY_PARTNER_WATCH    L\"PartnerInstallationRegistryToWatch\"")
+cpp_quote("#define LSCFILESYNC_REGISTRY_PARTNER_DISABLED L\"PartnerDisabled\"")
+
+
+typedef [ uuid(2F1AE2BF-C855-40c9-B5F3-B4F23BE244C8) ] enum LSCEventTypeOccurred
+{
+	LSCEventTypeOccurred_GetChanges,
+	LSCEventTypeOccurred_GetSupportedFileExtensions,
+} LSCEventTypeOccurred;
+
+typedef [ uuid(EED6739B-07B5-485f-811A-4777A82195CA) ] enum LSCEventType
+{
+	LSCEventType_None = 0,
+	LSCEventType_OnLocalChanges = 1,
+	LSCEventType_OnOpenedByUser = 2,
+	LSCEventType_OnServerChangesDownloaded = 3,
+	LSCEventType_OnLocalChangesUploaded = 4,
+	LSCEventType_OnLocalConflictStateChanged = 5,
+	LSCEventType_OnFileAdded = 6,
+	LSCEventType_OnFileDeleted = 7,
+	LSCEventType_OnSyncEnabled = 8,
+	LSCEventType_OnServerChangesDownloadStarted = 9,
+	LSCEventType_OnLocalChangesUploadStarted = 10,
+	LSCEventType_OnFilePathConflict = 11
+} LSCEventType;
+
+typedef [ uuid(46952438-6B4D-4d8d-A8C0-9085E9B53D0F) ] enum LSCEventSyncErrorType
+{
+	LSCEventSyncErrorType_UserInterventionRequiredUnexpected = 0,
+	LSCEventSyncErrorType_NoInterventionRequired = 1,
+	LSCEventSyncErrorType_UserInterventionRequired = 2,
+	LSCEventSyncErrorType_WaitingOnClient = 3,
+	LSCEventSyncErrorType_ClientInterventionRequired = 4
+} LSCEventSyncErrorType;
+
+typedef [ uuid(A0A82A6A-3456-4436-B4FA-B966E4F1C956) ] enum LSCStatusFlag
+{
+	LSCStatusFlag_None = 0x0000,
+	LSCStatusFlag_UploadPending = 0x0001,
+	LSCStatusFlag_DownloadPending = 0x0002,
+	LSCStatusFlag_LocalFileUnchanged = 0x0004
+} LSCStatusFlag;
+cpp_quote("DEFINE_ENUM_FLAG_OPERATORS(LSCStatusFlag);")
+
+typedef [ uuid(7D6F7719-B00B-4bd3-A1CE-CD145C6E6526) ] enum LSCNetworkSyncPermissionType
+{
+	LSCNetworkSyncPermissionType_HighCost,
+	LSCNetworkSyncPermissionType_HighPowerUsage
+} LSCNetworkSyncPermissionType;
+
+[
+	object,
+	uuid(7256DC08-3D4C-48e9-8AA7-442CE42BD9CB),
+	oleautomation,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILSCEvent : IUnknown
+{	
+	HRESULT GetEventType(
+		[out] LSCEventType* pnEventType);
+
+	HRESULT GetLocalWorkingPath(
+		[out] BSTR* pbstrLocalWorkingPath);
+
+	HRESULT GetETag(
+		[out] BSTR* pbstrETag);
+
+	HRESULT GetError(
+		[out] LONG* pnError);
+
+	HRESULT GetResourceID(
+		[out] BSTR* pbstrResourceID);
+
+	HRESULT GetConflictStatus(
+		[out] VARIANT_BOOL* pfIsInConflict);
+
+	HRESULT GetWebPath(
+		[out] BSTR* pbstrWebPath);
+
+	HRESULT GetResourceIDAttempted(
+		[out] BSTR* pbstrResourceIDAttempted);
+
+	HRESULT GetSyncErrorType(
+		[out] LSCEventSyncErrorType* pnSyncErrorType);
+}
+
+[
+    object,
+    uuid(AC373B58-AF6C-4e10-AA96-B68271071D5E),
+    oleautomation,
+    nonextensible,
+    pointer_default(unique)
+]
+interface ILSCEvent2 : IUnknown
+{
+    HRESULT GetErrorChain(
+        [out] BSTR* pbstrErrorChain);
+}
+
+[
+	object,
+	uuid(6EAF0C65-1463-4a28-9D17-A3F8BE51D835),
+	oleautomation,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IEnumLSCEvent : IUnknown
+{	
+	HRESULT FNext(
+		[out] ILSCEvent** ppiLSCEvent);
+	
+	HRESULT Reset();
+}
+
+[
+	object,
+	uuid(1DAFC534-4732-4b41-B3B8-44CC68ECD764),
+	oleautomation,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IPartnerActivityCallback : IUnknown
+{	
+	HRESULT EventOccurred(
+		[in] LSCEventTypeOccurred eEventTypeOccurred);
+}
+
+[
+	object,
+	uuid(9844296B-3DF9-43c1-B474-8BABC6F6B47F),
+	oleautomation,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILSCLocalSyncClient : IUnknown
+{
+	HRESULT Initialize(
+		[in] BSTR bstrSuppliedID,
+		[in] BSTR bstrProgID,
+		[in] BSTR bstrFileSystemDirectoryHint,
+		[in] IPartnerActivityCallback* pEventCallback,
+		[out] VARIANT_BOOL* pfCreatedNewCache);
+	
+	HRESULT LocalFileChange(
+		[in] BSTR bstrFileSystemPath,
+		[in] BSTR bstrWebPath,
+		[in] BSTR bstrResourceID);
+
+	HRESULT ServerFileChange(
+		[in] BSTR bstrFileSystemPath,
+		[in] BSTR bstrWebPath,
+		[in] BSTR bstrResourceID);
+
+	HRESULT DeleteFile(
+		[in] BSTR bstrResourceID);
+
+	HRESULT RenameFile(
+		[in] BSTR bstrResourceID,
+		[in] BSTR bstrNewFileSystemPath,
+		[in] BSTR bstrNewWebPath,
+		[in] VARIANT_BOOL fBlockUploads);
+
+	HRESULT GetChanges(
+		[in] LONG nPreviousChangesToken,
+		[out] LONG* pnCurrentChangesToken,
+		[out] IEnumLSCEvent** ppiEvents);
+
+	HRESULT ResetCache();
+
+	HRESULT GetSupportedFileExtensions(
+		[out] BSTR* pbstrSupportedFileExtensions);
+
+	HRESULT Uninitialize();
+
+	HRESULT SetClientConnectivityState(
+		[in] VARIANT_BOOL fIsOnline);
+
+	HRESULT GetFileStatus(
+		[in] BSTR bstrResourceID,
+		[in] LSCStatusFlag sfRequestedStatus,
+		[out] BSTR* pbstrFileSystemPath,
+		[out] BSTR* pbstrETag,
+		[out] LSCStatusFlag* psfFileStatus);
+
+	HRESULT SetClientNetworkSyncPermission(
+		[in] LSCNetworkSyncPermissionType nspType,
+		[in] VARIANT_BOOL fEnableSync);
+
+	HRESULT GetClientNetworkSyncPermission(
+		[in] LSCNetworkSyncPermissionType nspType,
+		[out] VARIANT_BOOL* pfSyncEnabled);
+}
+
+[
+	object,
+	uuid(328968BE-B00A-4207-B76B-1A4978AA63E9),
+	oleautomation,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILSCFileSyncHost : IUnknown
+{
+    HRESULT ResetIntegration([in] BSTR partnerId);
+
+    /// <summary>
+    /// FindLocalPathInformation is used to retrieve the information about a local file, specifically its resourceId and associated 
+    /// URL endpoint.  Also if it is known that this file is currently in transition (i.e. local rename cases) it will inform the 
+    /// partner that it is unwise to attempt to communicate with the server copy using the pOfflineFile value
+    ///
+    /// Return values may be:
+    ///
+    ///     S_OK                        - Lookup succesfully completed
+    ///     E_INVALIDARG                - One of the out arguments was NULL or the localPath was NULL or invalid
+    ///     E_SC_NOT_RUNNING            - The Sync application is not currently running with a signed in user or the request timed out
+    ///     E_SC_NONMAPPED_PATH         - The requested local path is not in the partner sync scope
+    ///     E_FAIL                      - General sync engine failure
+    ///
+    /// localPath is a BSTR indicating the full path on disk to the file or folder of interest
+    /// serverPath is a BSTR* taking the complete URL to the file or folder in the cloud
+    /// resourceId is a BSTR* indicating the file or folders identifying resourceId if it is known to the sync system, may be empty
+    /// pOfflineFile is a VARIANT_BOOL* to store whether the web instance should be contacted
+    /// </summary>
+    HRESULT FindLocalPathInformation(
+        [in] BSTR localPath, 
+        [out] BSTR* serverPath, 
+        [out] BSTR* resourceId, 
+        [out] VARIANT_BOOL* pOfflineFile);
+
+    /// <summary>
+    /// FindServerPathInformation is used to retrieve the information about a server file, specifically its resourceId and associated 
+    /// local path on disk. 
+    ///
+    /// Retun values may be:
+    ///
+    ///     S_OK                        - Lookup succesfully completed
+    ///     E_INVALIDARG                - One of the out arguments was NULL or the server was NULL or invalid
+    ///     E_SC_NOT_RUNNING            - The Sync application is not currently running with a signed in user or the request timed out
+    ///     E_SC_NONMAPPED_PATH         - The requested server path is not in the partner sync scope
+    ///     E_FAIL                      - General sync engine failure
+    ///
+    /// serverPath is a BSTR taking the complete URL to the file or folder in the cloud
+    /// localPath is a BSTR* indicating the full path on disk to the file or folder of interest
+    /// resourceId is a BSTR* indicating the file or folders identifying resourceId if it is known to the sync system, may be empty
+    /// </summary>
+    HRESULT FindServerPathInformation(
+        [in] BSTR serverPath, 
+        [out] BSTR* localPath, 
+        [out] BSTR* resourceId);
+    
+    /// <summary>
+    /// GetFileActivity is used to retrieve the information about changes to the server copy of a file.  The returned fileActivityCount 
+    /// is a proxy for the number of changes recorded on that resourceId since the first call to GetFileActivity was made for that resourceId on 
+    /// this instance of the COM object.  This value will automatically increment at the default poll rate as controlled by the sync partner.
+    /// Usage of this API should follow the pattern that if the returned fileActivity is different than the previous return value a cloud request
+    /// is advised.
+    ///
+    /// Retun values may be:
+    ///
+    ///     S_OK                        - Lookup succesfully completed
+    ///     E_INVALIDARG                - One of the arguments was NULL
+    ///     E_SC_NOT_RUNNING            - The Sync application is not currently running with a signed in user.
+    ///     E_FAIL                      - General sync engine failure
+    ///
+    /// resourceId is a BSTR indicating the file or folders identifying resourceId
+    /// fileActivityCount is a ULONG* holding a value that tracks the activity of the path of interest
+    /// </summary>
+    HRESULT GetFileActivity(
+        [in] BSTR resourceId, 
+        [out] ULONG* fileActivityCount);
+}
+
+[
+	uuid(CBD2B18F-598B-4551-9FAD-4CCEDBB5A488),
+	version(1.0),
+]
+library LSCFileSyncHost
+{
+    importlib("stdole2.tlb");
+    	
+	[
+		uuid(B842558F-8A34-4C90-8066-F2BE6BE92BF1)
+	]
+	coclass LSCFileSyncHost
+	{
+		[default] interface ILSCFileSyncHost;
+	}
+}
+
+cpp_quote("#endif // NTDDI_WINBLUE")
+
+cpp_quote("#endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */")
+#pragma endregion
