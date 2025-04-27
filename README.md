@@ -127,3 +127,10 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] Boost 
   - [ ] OpenSSL
   - [x] Mesa
+- Able to build in these platforms **[1/6]** (💀💀)
+  - [x] Windows
+  - [ ] Android 
+  - [ ] Linux
+  - [ ] MacOS
+  - [ ] iOS
+  - [ ] XBox
