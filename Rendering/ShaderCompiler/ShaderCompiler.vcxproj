@@ -5,14 +5,25 @@
       <Configuration>Main</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Main|x64">
+      <Configuration>Main</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F4B21823-2EB7-4D89-B7F5-0E1645ED4F8E}</ProjectGuid>
     <RootNamespace>ShaderCompiler</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Main|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -24,6 +35,9 @@
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Main|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
@@ -32,6 +46,12 @@
     <OutDir>$(SolutionDir)Rendering\ShaderCompiler\</OutDir>
     <IntDir>$(SolutionDir)Rendering\ShaderCompiler\$(Configuration)</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Main|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)_x64</TargetName>
+    <OutDir>$(SolutionDir)Rendering\ShaderCompiler\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">
     <ClCompile>
@@ -52,6 +72,27 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Main|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>hlsl2glslfork/hlslang/MachineIndependent;hlsl2glslfork/hlslang/OSDependent/Windows;hlsl2glslfork/OGLCompilersDLL;glsl-optimizer/include/c99;glsl-optimizer/include;glsl-optimizer/src;glsl-optimizer/src/mesa;glsl-optimizer/src/glsl;glsl-optimizer/src/mapi;../../ClientShared;$(CONTRIB_PATH)/SDK/Include;mojoshader/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;MOJOSHADER_NO_VERSION_INCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(ProjectName)_x64.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -94,15 +135,19 @@
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\IntermTraverse.cpp" />
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">$(IntDir)\hlmojoshader.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|x64'">$(IntDir)\hlmojoshader.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_common.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">$(IntDir)\hlmojoshader_common.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|x64'">$(IntDir)\hlmojoshader_common.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_lexer.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">$(IntDir)\hlmojoshader_lexer.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|x64'">$(IntDir)\hlmojoshader_lexer.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_preprocessor.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">$(IntDir)\hlmojoshader_preprocessor.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Main|x64'">$(IntDir)\hlmojoshader_preprocessor.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="hlsl2glslfork\hlslang\MachineIndependent\preprocessor\sourceloc.cpp" />
     <ClCompile Include="hlsl2glslfork\hlslang\OSDependent\Windows\ossource.cpp" />
@@ -200,15 +245,19 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mojoshader\mojoshader.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="mojoshader\mojoshader_common.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="mojoshader\mojoshader_lexer.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="mojoshader\mojoshader_preprocessor.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">CompileAsCpp</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">CompileAsCpp</CompileAs>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -278,15 +327,23 @@
   <ItemGroup>
     <CustomBuild Include="hlsl2glslfork\hlslang\MachineIndependent\hlslang.l">
       <Message Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">Executing flex on %(FullPath)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Main|x64'">Executing flex on %(FullPath)</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">%(RootDir)%(Directory)..\..\tools\flex.exe %(FullPath)
 if EXIST %(RootDir)%(Directory)gen_hlslang.cpp del %(RootDir)%(Directory)gen_hlslang.cpp
 move gen_hlslang.cpp %(RootDir)%(Directory)gen_hlslang.cpp
 </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Main|x64'">%(RootDir)%(Directory)..\..\tools\flex.exe %(FullPath)
+if EXIST %(RootDir)%(Directory)gen_hlslang.cpp del %(RootDir)%(Directory)gen_hlslang.cpp
+move gen_hlslang.cpp %(RootDir)%(Directory)gen_hlslang.cpp
+</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">hlslang_tab.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">hlslang_tab.h;%(AdditionalInputs)</AdditionalInputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">%(RootDir)%(Directory)Gen_hlslang.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">%(RootDir)%(Directory)Gen_hlslang.cpp;%(Outputs)</Outputs>
     </CustomBuild>
     <CustomBuild Include="hlsl2glslfork\hlslang\MachineIndependent\hlslang.y">
       <Message Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">Executing Bison on %(FullPath)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Main|x64'">Executing Bison on %(FullPath)</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">SET BISON_SIMPLE=%(RootDir)%(Directory)..\..\tools\bison.simple
 SET BISON_HAIRY=%(RootDir)%(Directory)..\..\tools\bison.simple
 SET PATH=%PATH%;%(RootDir)%(Directory)..\..\tools\bin
@@ -297,7 +354,18 @@ del /s /q %(RootDir)%(Directory)%(Filename)_tab.h
 rename %(RootDir)%(Directory)%(Filename).tab.c Gen_%(Filename)_tab.cpp
 rename %(RootDir)%(Directory)%(Filename).tab.h %(Filename)_tab.h
 </Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Main|x64'">SET BISON_SIMPLE=%(RootDir)%(Directory)..\..\tools\bison.simple
+SET BISON_HAIRY=%(RootDir)%(Directory)..\..\tools\bison.simple
+SET PATH=%PATH%;%(RootDir)%(Directory)..\..\tools\bin
+cd %(RootDir)%(Directory)
+%(RootDir)%(Directory)..\..\tools\bin\bison.exe -d -t -v %(Filename).y
+del /s /q %(RootDir)%(Directory)Gen_%(Filename)_tab.cpp
+del /s /q %(RootDir)%(Directory)%(Filename)_tab.h
+rename %(RootDir)%(Directory)%(Filename).tab.c Gen_%(Filename)_tab.cpp
+rename %(RootDir)%(Directory)%(Filename).tab.h %(Filename)_tab.h
+</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Main|Win32'">%(RootDir)%(Directory)Gen_%(Filename)_tab.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Main|x64'">%(RootDir)%(Directory)Gen_%(Filename)_tab.cpp;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
