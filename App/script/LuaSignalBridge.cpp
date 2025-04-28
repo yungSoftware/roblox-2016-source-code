@@ -32,7 +32,12 @@ int Bridge<EventInstance>::on_index(const EventInstance& object, const char* nam
 		lua_pushcfunction(L, EventBridge::connect);
 		return 1;
 	}
-
+	// The pre-defined "Connect()" method
+	if (strcmp(name, "Connect") == 0)
+	{
+		lua_pushcfunction(L, EventBridge::connect);
+		return 1;
+	}
 	// TODO: Remove this when we remove it from any Roblox scripts.
 	if (strcmp(name, "connectFirst")==0)
 	{
@@ -53,6 +58,12 @@ int Bridge<EventInstance>::on_index(const EventInstance& object, const char* nam
 
 	// The pre-defined "wait()" method
 	if (strcmp(name, "wait")==0)
+	{
+		lua_pushcfunction(L, EventBridge::wait);
+		return 1;
+	}
+	// The pre-defined "Wait()" method
+	if (strcmp(name, "Wait") == 0)
 	{
 		lua_pushcfunction(L, EventBridge::wait);
 		return 1;
