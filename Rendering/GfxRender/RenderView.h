@@ -100,7 +100,7 @@ private:
     void drawVRWindow(DeviceContext* context);
 
     void presetLighting(RBX::Lighting* l, const RBX::Color3& extraAmbient = RBX::Color3(0, 0, 0), float skylightFactor = 1);
-    void presetPostProcess(RBX::PlatformService* platformService);
+    void presetPostProcess(RBX::Lighting* l);
 
     void renderPrepareImpl(IMetric* metric, bool updateViewport);
 	void renderPerformImpl(double timeRenderJob, Framebuffer* mainFramebuffer);

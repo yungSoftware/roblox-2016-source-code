@@ -368,6 +368,8 @@ cmd /c "exit /b 0"</Command>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='ReleaseRcc|Win32'">Level2</WarningLevel>
       <WarningLevel Condition="'$(Configuration)|$(Platform)'=='DebugStudio|Win32'">Level2</WarningLevel>
     </ClCompile>
+    <ClCompile Include="BlurEffect.cpp" />
+    <ClCompile Include="ColorCorrectionEffect.cpp" />
     <ClCompile Include="lz4\lz4.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugRcc|Win32'">NotUsing</PrecompiledHeader>
@@ -384,6 +386,7 @@ cmd /c "exit /b 0"</Command>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseRcc|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseStudio|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PostEffect.cpp" />
     <ClCompile Include="script\LuaCoreFunctions.cpp" />
     <ClCompile Include="script\LuaSourceContainer.cpp" />
     <ClCompile Include="script\LuaVM.cpp" />
@@ -1693,6 +1696,8 @@ cmd /c "exit /b 0"</Command>
     <ClInclude Include="$(CONTRIB_PATH)\w3c-libwww-5.4.0\Library\src\HTMemory.h" />
     <ClInclude Include="$(CONTRIB_PATH)\w3c-libwww-5.4.0\Library\src\HTParse.h" />
     <ClInclude Include="$(CONTRIB_PATH)\w3c-libwww-5.4.0\Library\src\HTString.h" />
+    <ClInclude Include="BlurEffect.h" />
+    <ClInclude Include="ColorCorrectionEffect.h" />
     <ClInclude Include="include\script\LuaCoreFunctions.h" />
     <ClInclude Include="include\script\LuaSourceContainer.h" />
     <ClInclude Include="include\script\LuaVM.h" />
@@ -2317,6 +2322,7 @@ cmd /c "exit /b 0"</Command>
     <ClInclude Include="lz4\lz4hc_encoder.h" />
     <ClInclude Include="lz4\lz4_decoder.h" />
     <ClInclude Include="lz4\lz4_encoder.h" />
+    <ClInclude Include="PostEffect.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="include\util\Math.inl" />

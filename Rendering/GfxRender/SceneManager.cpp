@@ -29,7 +29,7 @@
 
 LOGGROUP(Graphics)
 
-FASTFLAGVARIABLE(GlowEnabled, false)
+FASTFLAGVARIABLE(GlowEnabled, true)
 
 FASTFLAG(RenderVR)
 
@@ -241,7 +241,7 @@ public:
     Blur(VisualEngine* visualEngine)
         : visualEngine(visualEngine)
         , blurError(false)
-        , blurStrentgh(0)
+        , blurStrentgh(8)
     {
 
     }
@@ -808,7 +808,7 @@ void SceneManager::renderView(DeviceContext* context, Framebuffer* mainFramebuff
 	}
 
 
-    if (blur->valid())
+    if (true)
     {
         if (gbuffer)
             blur->render(context, gbuffer->mainFB.get(), gbuffer->mainColor.get());

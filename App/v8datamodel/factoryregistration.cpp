@@ -220,6 +220,10 @@
 #include "v8datamodel/NumberRange.h"
 #include "v8datamodel/ColorSequence.h"
 
+#include "../PostEffect.h"
+#include "../../BlurEffect.h"
+#include "../../ColorCorrectionEffect.h"
+
 
 
 using namespace RBX;
@@ -422,6 +426,10 @@ RBX_REGISTER_CLASS(CSGDictionaryService);
 RBX_REGISTER_CLASS(NonReplicatedCSGDictionaryService);
 RBX_REGISTER_CLASS(TouchInputService);
 
+// Post FX
+RBX_REGISTER_CLASS(PostEffect);
+RBX_REGISTER_CLASS(BlurEffect);
+RBX_REGISTER_CLASS(ColorCorrectionEffect);
 
 // network
 RBX_REGISTER_CLASS(Network::PhysicsPacketCache);

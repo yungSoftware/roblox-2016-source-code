@@ -1,7 +1,15 @@
 <roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
   <Item class="ReflectionMetadataClasses">
     <Properties></Properties>
-    <Item class="ReflectionMetadataClass">
+	  <Item class="ReflectionMetadataClass">
+		  <Properties>
+			  <string name="Name">BlurEffect</string>
+			  <string name="summary">blur</string>
+			  <string name="ExplorerOrder">1</string>
+			  <string name="ExplorerImageIndex">65</string>
+		  </Properties>
+	  </Item>
+	  <Item class="ReflectionMetadataClass">
       <Properties>
         <string name="Name">BindableFunction</string>
         <string name="summary">Allow functions defined in one script to be called by another script</string>

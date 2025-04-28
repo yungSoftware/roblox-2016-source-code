@@ -144,6 +144,12 @@
     <Filter Include="Header Files\Solver">
       <UniqueIdentifier>{3a51e026-0b49-484b-89a5-1947fa16b4c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\v8BetaItems">
+      <UniqueIdentifier>{7231cab2-bf36-4d45-b1d2-9e64fe677b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\v8BetaItems">
+      <UniqueIdentifier>{02104cc9-03f6-42f8-8bb2-eaef61edadbb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="V8Kernel\Body.cpp">
@@ -1774,6 +1780,15 @@
     </ClCompile>
     <ClCompile Include="v8datamodel\Attachment.cpp">
       <Filter>Source Files\V8DataModel Source</Filter>
+    </ClCompile>
+    <ClCompile Include="BlurEffect.cpp">
+      <Filter>Source Files\v8BetaItems</Filter>
+    </ClCompile>
+    <ClCompile Include="PostEffect.cpp">
+      <Filter>Source Files\v8BetaItems</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorCorrectionEffect.cpp">
+      <Filter>Source Files\v8BetaItems</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3660,6 +3675,15 @@
     </ClInclude>
     <ClInclude Include="include\v8datamodel\Attachment.h">
       <Filter>Header Files\V8DataModel Header</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurEffect.h">
+      <Filter>Header Files\v8BetaItems</Filter>
+    </ClInclude>
+    <ClInclude Include="PostEffect.h">
+      <Filter>Header Files\v8BetaItems</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorCorrectionEffect.h">
+      <Filter>Header Files\v8BetaItems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
