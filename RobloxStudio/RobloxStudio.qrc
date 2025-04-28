@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="/"> 
+  <qresource prefix="/">
     <file>fonts/SourceSansPro/TTF/SourceSansPro-Regular.ttf</file>
     <file>images/c_tiltUpCamera_old.png</file>
     <file>images/img_classtree.bmp</file>
@@ -45,6 +45,7 @@
     <file>content/FirstPlaceBasePlate.rbxl</file>
   </qresource>
   <qresource prefix="/16x16">
+    <file>images/Studio 2.0 icons/16x16/postef.png</file>
     <file>images/Studio 2.0 icons/16x16/expand_gray_16.png</file>
     <file>images/Studio 2.0 icons/16x16/collapse_gray_16.png</file>
     <file>images/Studio 2.0 icons/16x16/match_case.png</file>
@@ -183,7 +184,7 @@
     <file>images/Studio 2.0 icons/16x16/team_create_add.png</file>
     <file>images/Studio 2.0 icons/16x16/team_create_add_ON.png</file>
     <file>images/Studio 2.0 icons/16x16/team_create_more.png</file>
-    <file>images/Studio 2.0 icons/16x16/download_copy.png</file>    
+    <file>images/Studio 2.0 icons/16x16/download_copy.png</file>
   </qresource>
   <qresource prefix="/RibbonBar">
     <file>images/Studio Ribbon Icons/help.png</file>
@@ -371,7 +372,7 @@
     <file>images/RibbonIcons/View/Tutorials.png</file>
     <file>images/RibbonIcons/AddOns/Plugins-folder.png</file>
     <file>images/RibbonIcons/AddOns/Manage-Plugins.png</file>
-	<file>images/Studio 2.0 icons/32x32/x_orange_32.png</file>
-	<file>images/Studio 2.0 icons/32x32/x_white_32.png</file>
+    <file>images/Studio 2.0 icons/32x32/x_orange_32.png</file>
+    <file>images/Studio 2.0 icons/32x32/x_white_32.png</file>
   </qresource>
 </RCC>

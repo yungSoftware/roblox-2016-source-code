@@ -250,7 +250,7 @@ public:
     {
         if (RBXMainWindow->objectName().isEmpty())
             RBXMainWindow->setObjectName(QString::fromUtf8("RBXMainWindow"));
-        RBXMainWindow->resize(1280, 765);
+        RBXMainWindow->resize(1280, 891);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/images/RobloxStudio.png"), QSize(), QIcon::Normal, QIcon::Off);
         RBXMainWindow->setWindowIcon(icon);

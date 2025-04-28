@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>765</height>
+    <height>891</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2921,19 +2921,18 @@
     <string>Ctrl+G</string>
    </property>
   </action>
-   <action name="downloadPlaceCopyAction">
-     <property name="icon">
-       <iconset resource="RobloxStudio.qrc">
-         <normaloff>:/16x16/images/Studio 2.0 icons/16x16/download_copy.png</normaloff>:/16x16/images/Studio 2.0 icons/16x16/download_copy.png
-       </iconset>
-     </property>
-     <property name="text">
-       <string>Download a Copy...</string>
-     </property>
-     <property name="toolTip">
-       <string>Download a copy of the active document</string>
-     </property>     
-   </action>
+  <action name="downloadPlaceCopyAction">
+   <property name="icon">
+    <iconset resource="RobloxStudio.qrc">
+     <normaloff>:/16x16/images/Studio 2.0 icons/16x16/download_copy.png</normaloff>:/16x16/images/Studio 2.0 icons/16x16/download_copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Download a Copy...</string>
+   </property>
+   <property name="toolTip">
+    <string>Download a copy of the active document</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="RobloxStudio.qrc"/>

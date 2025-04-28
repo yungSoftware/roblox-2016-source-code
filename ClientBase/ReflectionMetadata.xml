@@ -9,6 +9,14 @@
 			  <string name="ExplorerImageIndex">65</string>
 		  </Properties>
 	  </Item>
+    <Item class="ReflectionMetadataClass">
+		  <Properties>
+			  <string name="Name">ColorCorrectionEffect</string>
+			  <string name="summary">cce</string>
+			  <string name="ExplorerOrder">1</string>
+			  <string name="ExplorerImageIndex">65</string>
+		  </Properties>
+	  </Item>
 	  <Item class="ReflectionMetadataClass">
       <Properties>
         <string name="Name">BindableFunction</string>
