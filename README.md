@@ -9,11 +9,11 @@ After a long effort, this repository has been brought to you on github with hand
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 
 # Table of Contents
-1. [Features / Additions](#-features--additions)
-2. [Libraries Used](#-libraries-used)
-3. [Tools Used](#-tools-used)
-4. [Contributors](#%EF%B8%8F-contributors)
-5. [Current Goals](#-current-goals)
+1. [🪨 Features / Additions](#-features--additions)
+2. [📚 Libraries Used](#-libraries-used)
+3. [🔨 Tools Used](#-tools-used)
+4. [❤️ Contributors](#%EF%B8%8F-contributors)
+5. [🎯 Current Goals](#-current-goals)
 
 ---
 
