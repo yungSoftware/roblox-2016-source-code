@@ -63,6 +63,7 @@ After a long effort, this repository has been brought to you on github with hand
 [@eprominecraft](https://github.com/eprominecraft)
 * AnchorPoint
 * Post Effects
+* :Connect() and :Wait()
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
