@@ -134,4 +134,4 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] Linux
   - [ ] MacOS
   - [ ] iOS
-  - [ ] XBox
+  - [ ] Xbox
