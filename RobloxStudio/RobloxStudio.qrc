@@ -1,10 +1,10 @@
 <RCC>
   <qresource prefix="/">
+    <file>images/ClassImages.PNG</file>
     <file>fonts/SourceSansPro/TTF/SourceSansPro-Regular.ttf</file>
     <file>images/c_tiltUpCamera_old.png</file>
     <file>images/img_classtree.bmp</file>
     <file>images/TASKSCHEDULERIMAGES.bmp</file>
-    <file>images/ClassImages.PNG</file>
     <file>images/checkmark.png</file>
     <file>images/DeveloperProduct.png</file>
     <file>images/RobloxStudio.png</file>
