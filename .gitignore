@@ -34,6 +34,9 @@ App/include/security/tmp.h
 /WindowsClient/*.lib
 Client_2016_Dev.sln
 
+## Holding this as a template for new releases.
+Client2016.7z 
+
 # Ignore precompiled shaders
 shaders/shaders_*.pack
 
