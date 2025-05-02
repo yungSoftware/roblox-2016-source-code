@@ -74,7 +74,8 @@ Be a contributor by doing a helpful of changes to the source code!
 ---
 
 ## 🎯 Current Goals
-- Backport Hitius, Graphictoria, Economy Simulator and New Roblox Features 
+- Backport Hitius, Graphictoria, Economy Simulator and New Roblox Features
+   - [ ] Color3uint8
 - 64-bit Support (💀)
 - Make it able to build all the projects with the latest Visual Studio Version **[10/40]** (💀💀) 
   - [ ] App
