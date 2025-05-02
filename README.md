@@ -14,7 +14,7 @@ After a long effort, this repository has been brought to you on github with hand
 3. [🔨 Tools Used](#-tools-used)
 4. [❤️ Contributors](#%EF%B8%8F-contributors)
 5. [🎯 Current Goals](#-current-goals)
-6. [⚠️ Current Issues](#-current-issues)
+6. [⚠️ Current Issues](#%EF%B8%8F-current-issues)
 
 ---
 
