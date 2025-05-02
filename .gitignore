@@ -32,6 +32,8 @@ App/include/security/tmp.h
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
+
+## This is for my stuff, ignoring it.
 Client_2016_Dev.sln
 
 ## Holding this as a template for new releases.
