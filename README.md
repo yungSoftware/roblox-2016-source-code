@@ -138,4 +138,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] Xbox
 
 ## ⚠️ Current Issues
-- Fix the Roblox in-game Video Recorder is being awful.
+- Fix the Roblox in-game Video Recorder is being awful
+- Fix when importing some models or opening places all parts are colored as gray
+   - This is due to the source doesn't have Color3uint8 support
+   - Not happens with everything but it happens commonly.
