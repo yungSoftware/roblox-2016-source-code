@@ -220,9 +220,9 @@
 #include "v8datamodel/NumberRange.h"
 #include "v8datamodel/ColorSequence.h"
 
-#include "../PostEffect.h"
-#include "../../BlurEffect.h"
-#include "../../ColorCorrectionEffect.h"
+#include "v8datamodel/PostEffect.h"
+#include "v8datamodel/BlurEffect.h"
+#include "v8datamodel/ColorCorrectionEffect.h"
 
 
 

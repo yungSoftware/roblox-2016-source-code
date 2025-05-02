@@ -2,6 +2,7 @@
 
 #include "v8datamodel/InputObject.h"
 #include "v8datamodel/Lighting.h"
+#include "V8Tree/instance.h"
 #include "PostEffect.h"
 
 namespace RBX {

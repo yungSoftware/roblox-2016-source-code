@@ -500,7 +500,7 @@ void RbxWorkspace::insert(RBX::Instances& instances, bool insertInto)
 				if ( QMessageBox::question(
                         &UpdateUIManager::Instance().getMainWindow(), 
                         "Insert Tool", 
-                        "Put this tool into the starter pack (otherwise drop into the 3d view)?", 
+                        "Put this tool into the StarterPack?", 
                         QMessageBox::Yes | QMessageBox::No, QMessageBox::No ) == QMessageBox::Yes )
 					promptMode = RBX::PUT_TOOL_IN_STARTERPACK;
 			}

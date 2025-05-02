@@ -2,22 +2,6 @@
   <Item class="ReflectionMetadataClasses">
     <Properties></Properties>
 	  <Item class="ReflectionMetadataClass">
-		  <Properties>
-			  <string name="Name">BlurEffect</string>
-			  <string name="summary">blur</string>
-			  <string name="ExplorerOrder">1</string>
-			  <string name="ExplorerImageIndex">81</string>
-		  </Properties>
-	  </Item>
-    <Item class="ReflectionMetadataClass">
-		  <Properties>
-			  <string name="Name">ColorCorrectionEffect</string>
-			  <string name="summary">cce</string>
-			  <string name="ExplorerOrder">1</string>
-			  <string name="ExplorerImageIndex">81</string>
-		  </Properties>
-	  </Item>
-	  <Item class="ReflectionMetadataClass">
       <Properties>
         <string name="Name">BindableFunction</string>
         <string name="summary">Allow functions defined in one script to be called by another script</string>
@@ -3901,6 +3885,20 @@
         <string name="summary">A 3D GUI object to represent the visible selection around an object</string>
         <string name="ExplorerOrder">21</string>
         <string name="ExplorerImageIndex">54</string>
+      </Properties>
+    </Item>
+    <Item class="ReflectionMetadataClass">
+      <Properties>
+        <string name="Name">BlurEffect</string>
+        <string name="ExplorerOrder">21</string>
+        <string name="ExplorerImageIndex">81</string>
+      </Properties>
+    </Item>
+    <Item class="ReflectionMetadataClass">
+      <Properties>
+        <string name="Name">ColorCorrectionEffect</string>
+        <string name="ExplorerOrder">21</string>
+        <string name="ExplorerImageIndex">81</string>
       </Properties>
     </Item>
     <Item class="ReflectionMetadataClass">

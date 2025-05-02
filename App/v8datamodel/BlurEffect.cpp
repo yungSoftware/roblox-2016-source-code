@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "./BlurEffect.h"
+#include "V8DataModel/BlurEffect.h"
 
 namespace RBX {
 	const char* const  sBlurEffect = "BlurEffect";

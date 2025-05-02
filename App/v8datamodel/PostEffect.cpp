@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "PostEffect.h"
+#include "V8DataModel/PostEffect.h"
 
 namespace RBX {
 
@@ -14,6 +14,7 @@ namespace RBX {
 	PostEffect::PostEffect(const char* name)
 		: DescribedNonCreatable<PostEffect, Instance, sPostEffect>(name)
 	{
+		setName(sPostEffect);
 	}
 
 	void PostEffect::setEnabled(bool value)

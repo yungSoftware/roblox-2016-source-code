@@ -285,44 +285,6 @@ InsertObjectWidget::InsertObjectWidget(QWidget *pParentWidget)
 	m_pInsertObjectListWidget->setResizeMode(QListView::Adjust);
 	m_pInsertObjectListWidget->setAlternatingRowColors(true);
 
-	m_sObjectExceptions.insert("Accoutrement");
-	m_sObjectExceptions.insert("AnimationController");
-	m_sObjectExceptions.insert("ArcHandles");
-	m_sObjectExceptions.insert("Backpack");
-	m_sObjectExceptions.insert("BodyColors");
-	m_sObjectExceptions.insert("Camera");
-	m_sObjectExceptions.insert("CharacterMesh");
-	m_sObjectExceptions.insert("FileMesh");
-	m_sObjectExceptions.insert("Flag");
-	m_sObjectExceptions.insert("FlagStand");
-	m_sObjectExceptions.insert("FloorWire");
-	m_sObjectExceptions.insert("Glue");
-	m_sObjectExceptions.insert("Handles");
-	m_sObjectExceptions.insert("Hole");
-	m_sObjectExceptions.insert("KeyFrame");
-	m_sObjectExceptions.insert("Motor");
-	m_sObjectExceptions.insert("MotorFeature");
-	m_sObjectExceptions.insert("Pants");
-	m_sObjectExceptions.insert("PlayerGui");
-	m_sObjectExceptions.insert("Plugin");
-	m_sObjectExceptions.insert("Pose");
-	m_sObjectExceptions.insert("RotateP");
-	m_sObjectExceptions.insert("RotateV");
-	m_sObjectExceptions.insert("SelectionBox");
-	m_sObjectExceptions.insert("SelectionSphere");
-	m_sObjectExceptions.insert("Shirt");
-	m_sObjectExceptions.insert("ShirtGraphic");
-	m_sObjectExceptions.insert("SkateboardPlatform");
-	m_sObjectExceptions.insert("Skin");
-	m_sObjectExceptions.insert("Snap");
-	m_sObjectExceptions.insert("StarterGear");
-	m_sObjectExceptions.insert("Status");
-	m_sObjectExceptions.insert("SurfaceSelection");
-	m_sObjectExceptions.insert("TerrainRegion");
-	m_sObjectExceptions.insert("TextureTrail");
-	m_sObjectExceptions.insert("VelocityMotor");
-	m_sObjectExceptions.insert("Weld");
-
 	m_pFilterEdit = new QLineEdit(this);
 
 	m_pFilterEdit->setPlaceholderText(QString("Search object (%1)").arg(UpdateUIManager::Instance().getMainWindow().quickInsertAction->shortcut().toString()));

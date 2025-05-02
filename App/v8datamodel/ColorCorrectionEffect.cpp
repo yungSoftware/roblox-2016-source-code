@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "./ColorCorrectionEffect.h"
+#include "V8DataModel/ColorCorrectionEffect.h"
 
 namespace RBX {
 	const char* const sColorCorrectionEffect = "ColorCorrectionEffect";
@@ -19,6 +19,7 @@ namespace RBX {
 	ColorCorrectionEffect::ColorCorrectionEffect()
 		:DescribedCreatable<ColorCorrectionEffect, PostEffect, sColorCorrectionEffect, Reflection::ClassDescriptor::PERSISTENT>("ColorCorrectionEffect")
 	{
+		setName(sColorCorrectionEffect);
 	}
 
 	void ColorCorrectionEffect::setBrightness(int value)

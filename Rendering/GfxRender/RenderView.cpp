@@ -21,9 +21,9 @@
 #include "v8datamodel/UserInputService.h"
 
 // POST EFFECT IMPORTS //
-#include "../PostEffect.h"
-#include "../BlurEffect.h"
-#include "../ColorCorrectionEffect.h"
+#include "V8DataModel/PostEffect.h"
+#include "V8DataModel/BlurEffect.h"
+#include "V8DataModel/ColorCorrectionEffect.h"
 
 #include "util/standardout.h"
 #include "rbx/MathUtil.h"
