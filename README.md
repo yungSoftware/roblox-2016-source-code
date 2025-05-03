@@ -10,6 +10,11 @@ After a long effort, this repository has been brought to you on github with hand
 
 **Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**
 
+<p align="center">
+<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/P0L3NARUBA/roblox-2016-source-code">
+<img alt="GitHub Release" src="https://img.shields.io/github/v/release/P0L3NARUBA/roblox-2016-source-code">
+</p>
+
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
 2. [📚 Libraries Used](#-libraries-used)
