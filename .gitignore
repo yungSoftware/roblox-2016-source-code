@@ -110,6 +110,7 @@ qrc_*.*
 # Dont ignore these files and folders
 !/RCCService/Mesa-7.8.1/lib/release/
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
+!/Contribs/boost_1_56_0/boost/preprocessor/debug
 
 ## END OF GENERAL ##
 
