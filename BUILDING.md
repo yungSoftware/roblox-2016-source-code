@@ -14,7 +14,6 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 7. Change the Solution Configurations to **ReleaseStudio**
   - **ReleaseRCC** if you want to build **RCCService**
   - **Release** if you want to build **WindowsClient**
-  - Did'nt tested out the Debug, DebugRCC and DebugStudio yet since i dont interested in them.
 8. Change the **Solution Platform** to **Win32**
 9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
 10. Before building anything, you should build these first:
