@@ -113,6 +113,7 @@ qrc_*.*
 /Rendering/g3d/bin/graphics3D/Release/
 /Rendering/GfxRender/bin/Release/
 /Rendering/RbxG3D/bin/Release/
+/App.BulletPhysics/Release/
 
 # Dont ignore these files and folders
 !/RCCService/Mesa-7.8.1/lib/release/
