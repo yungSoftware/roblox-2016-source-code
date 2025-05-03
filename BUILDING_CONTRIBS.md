@@ -12,6 +12,7 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
  
 # Boost
 1. Run `C:\Trunk2016\Contribs\boost_1_56_0\bootstrap.bat`
+- Small note: _If it just returns errors and stop: Try double-clicking the .bat file._
 2. After the command is done, run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
 - If you get any errors about Python, do not worry, this will not affect the compilation.
 You should greeted with these:
