@@ -15,7 +15,9 @@ configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\
    - Small note: _If it just returns errors and stop: Try double-clicking the .bat file._
 2. After the command is done, run `C:\Trunk2016\Contribs\boost_1_56_0\build_boost.bat`.
 - If you get any errors about Python, do not worry, this will not affect the compilation.
+
 You should greeted with these:
+
 ```
 ...failed updating 56 targets...
 ...skipped 8 targets...
@@ -38,6 +40,7 @@ To build SDL2 as a .DLL file, just change the **Target Extension** to **.dll** a
 
 # libcurl
 - You can also build that its straight forward.
+
 If you wanna build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!
 
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
@@ -50,4 +53,5 @@ If you also need to build libcurl as a .LIB file, Just change the **Target Exten
 - Copy everything from RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release folder to RCCService\Mesa-7.8.1\lib\release
 
 **That's it, you've compiled the libraries!**
+
 **Also, you may want to change or add the library files in the source with yours.**
