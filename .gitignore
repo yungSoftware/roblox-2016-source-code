@@ -8,8 +8,6 @@
 .vs/
 
 # Build results
-[Rr]elease/
-[Dd]ebug/
 [Oo]bj/
 [Ll]ogs/
 
@@ -106,11 +104,23 @@ qrc_*.*
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
 /CoreScriptConverter2/tool/win32/rsc.ilk
 /Rendering/ShaderCompiler/ShaderCompiler.exe
+/Contribs/SDL2/VisualC/Win32/Release/SDL2.lib
+/CSG/bin/Release/
+/CSG/sgCore_build/ms/Release/
+/QTitanRibbon/src/shared/ribbon/release/
+/Rendering/AppDraw/bin/Release/
+/RCCService/Win32/Release/
+/RCCService/gSOAP/gsoap-2.7/gsoap/VisualStudio2005/wsdl2h/wsdl2h/Release/
+/RCCService/gSOAP/gsoap-2.7/gsoap/VisualStudio2005/soapcpp2/soapcpp2/Release/
+/Rendering/GfxCore/bin/Release/
+/WindowsClient/Win32/Release/
 
 # Dont ignore these files and folders
 !/RCCService/Mesa-7.8.1/lib/release/
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
-!/Contribs/boost_1_56_0/boost/preprocessor/debug
 
 ## END OF GENERAL ##
-
+/Rendering/GfxBase/bin/Release/RenderLibBase.lib
+/Rendering/g3d/bin/graphics3D/Release/graphics3D.lib
+/Rendering/GfxRender/bin/Release/GfxRender.lib
+/Rendering/RbxG3D/bin/Release/RenderLib.lib
