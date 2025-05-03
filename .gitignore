@@ -99,7 +99,7 @@ qrc_*.*
 /Rendering/ShaderCompiler/Main
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
-/Rendering/ShaderCompiler/ShaderCompiler.exe
+/Rendering/ShaderCompiler/ShaderCompiler*.exe
 /Contribs/SDL2/VisualC/Win32/Release/SDL2.lib
 /CSG/bin/Release/
 /CSG/sgCore_build/ms/Release/
