@@ -29,6 +29,7 @@ UpgradeLog*.htm
 # Roblox
 /App/tmp.h
 /App/include/security/RandomConstant.h
+/App/AlreadyBuiltRandomConstant.h
 /RobloxStudio/*.lib
 /RCCService/*.lib
 /WindowsClient/*.lib
