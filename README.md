@@ -1,5 +1,10 @@
 ![My Roblox Logo](https://github.com/user-attachments/assets/dad023be-4fb9-4ad5-b7a3-2c66b7d45d71)
 
+<p align="center">
+<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/P0L3NARUBA/roblox-2016-source-code">
+<img alt="GitHub Release" src="https://img.shields.io/github/v/release/P0L3NARUBA/roblox-2016-source-code">
+</p>
+
 # Roblox 2016 Source Code
 
 This source originates from robloxsrc.zip that was spinning around but its rare to find these days.<br>
@@ -9,11 +14,6 @@ After a long effort, this repository has been brought to you on github with hand
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 
 **Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**
-
-<p align="center">
-<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/P0L3NARUBA/roblox-2016-source-code">
-<img alt="GitHub Release" src="https://img.shields.io/github/v/release/P0L3NARUBA/roblox-2016-source-code">
-</p>
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
