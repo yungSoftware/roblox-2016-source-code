@@ -28,6 +28,7 @@
     - Rendering > **LibOVR**
     - **qtnribbon** 
     - **sgCore**
+    - **CoreScriptConverter2**
  11. Right click to project and press **Build**
  12. Thats it, you successfully builded from the source!
 
