@@ -114,13 +114,13 @@ qrc_*.*
 /RCCService/gSOAP/gsoap-2.7/gsoap/VisualStudio2005/soapcpp2/soapcpp2/Release/
 /Rendering/GfxCore/bin/Release/
 /WindowsClient/Win32/Release/
+/Rendering/GfxBase/bin/Release/
+/Rendering/g3d/bin/graphics3D/Release/
+/Rendering/GfxRender/bin/Release/
+/Rendering/RbxG3D/bin/Release/
 
 # Dont ignore these files and folders
 !/RCCService/Mesa-7.8.1/lib/release/
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
 
 ## END OF GENERAL ##
-/Rendering/GfxBase/bin/Release/RenderLibBase.lib
-/Rendering/g3d/bin/graphics3D/Release/graphics3D.lib
-/Rendering/GfxRender/bin/Release/GfxRender.lib
-/Rendering/RbxG3D/bin/Release/RenderLib.lib
