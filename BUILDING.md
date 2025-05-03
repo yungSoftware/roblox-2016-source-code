@@ -14,9 +14,8 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 7. Change the Solution Configurations to **ReleaseStudio**
   - **ReleaseRCC** if you want to build **RCCService**
   - **Release** if you want to build **WindowsClient**
-8. Change the **Solution Platform** to **Win32**
-9. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
-10. Before building anything, you should build these first:
+8. Open the **Build** Tab at the top and Press **Clean the Solution** to create a fresh build
+9. Before building anything, you should build these first:
   - 3rd Party > **boost.static** 
   - 3rd Party > **zlib** 
   - 3rd Party > **libcurl** 
@@ -28,8 +27,8 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
   - **qtnribbon** 
   - **sgCore**
   - **CoreScriptConverter2**
-11. Right click to project and press **Build**
-12. Thats it, you successfully builded from the source!
+10. Right click to project and press **Build**
+11. Thats it, you successfully builded from the source!
 
  The guide is straight forward so there should be no issues on your side<br>
  Most of the errors you may get while launching the game is because you have to copy the required file(s) to the game location.<br>
