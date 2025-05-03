@@ -9,7 +9,6 @@
 
 # Build results
 [Oo]bj/
-[Ll]ogs/
 
 # Upgrade
 [Bb]ackup*/
@@ -94,15 +93,12 @@ qrc_*.*
 /CoreScriptConverter2/tool/win32/*.exe
 /CoreScriptConverter2/tool/win32/*.lib
 /CoreScriptConverter2/tool/win32/*.exp
-/CoreScriptConverter2/tool/win32/fmod.dll
-/CoreScriptConverter2/tool/win32/VMProtectSDK32.dll
-/Installer/RobloxProxy/RobloxProxy_i.c
-/Installer/RobloxProxy/RobloxProxy_i.h
-/Installer/RobloxProxy/RobloxProxy_p.c
+/CoreScriptConverter2/tool/win32/*.dll
+/CoreScriptConverter2/tool/win32/*.ilk
+/Installer/RobloxProxy/*_i.*
 /Rendering/ShaderCompiler/Main
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
-/CoreScriptConverter2/tool/win32/rsc.ilk
 /Rendering/ShaderCompiler/ShaderCompiler.exe
 /Contribs/SDL2/VisualC/Win32/Release/SDL2.lib
 /CSG/bin/Release/
