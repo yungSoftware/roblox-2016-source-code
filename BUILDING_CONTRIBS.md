@@ -41,8 +41,6 @@ To build SDL2 as a .DLL file, just change the **Target Extension** to **.dll** a
 # libcurl
 - You can also build that its straight forward.
 
-If you wanna build libcurl.dll, Just change the **Target Name** to **$(ProjectName)** and Build it!
-
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 
 # Mesa (Optional to build)
