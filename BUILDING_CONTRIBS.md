@@ -1,4 +1,4 @@
-# Qt (Optional to build)
+# Qt
 1. Open **VS2012 x86 Native Tools Command Prompt**
 2. Change Directory (cd) to: `C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
 3. Type `nmake confclean` and wait
