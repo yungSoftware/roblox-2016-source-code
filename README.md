@@ -27,27 +27,28 @@ After a long effort, this repository has been brought to you on github with hand
 
 ## 🪨 Features / Additions
 - Added some new features
-- Fixed a lot of issues that breaks the compilation and the codebase.
+- Fixed a lot of issues that breaks the compilation and the codebase
   - I messed with a lot of things to fix all the projects though, i should get props for that.
-- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source.
+- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source
   - You need this if you want to make the game work as intended.
-- Changed Splash Screen and Copyright Date(s).
-- Reverse Engineered some libraries and executables to make them editable.
-- Cleaned up the whole source to make things easier and not complicated.
-- All the necessary libraries are included.
+- Changed Splash Screen and Copyright Date(s)
+- Reverse Engineered some libraries and executables to make them editable
+- Cleaned up the whole source to make things easier and not complicated
+- All the necessary libraries are included in the repository.
+   - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
 
 ## 📚 Libraries Used
-- [Boost](https://github.com/P0L3NARUBA/roblox-2016-contribs/boost_1_56_0) = 1.56.0
-- [cpp-netlib](https://github.com/P0L3NARUBA/roblox-2016-contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
-- [DSBaseClasses](https://github.com/P0L3NARUBA/roblox-2016-contribs/DSBaseClasses) = *unknown*
-- [OpenSSL](https://github.com/P0L3NARUBA/roblox-2016-contribs/openssl) = 1.0.0c
-- [Qt](https://github.com/P0L3NARUBA/roblox-2016-contribs/Qt/4.8.5/win_VS2012/) = 4.8.5
-- [Roblox SDK](https://github.com/P0L3NARUBA/roblox-2016-contribs/SDK) = *unknown*
-- [SDL2](https://github.com/P0L3NARUBA/roblox-2016-contribs/SDL2) = 2.0.4
-- [VMProtectWin](https://github.com/P0L3NARUBA/roblox-2016-contribs/VMProtectWin_2.13) = 2.13
-- [w3c-libwww](https://github.com/P0L3NARUBA/roblox-2016-contribs/w3c-libwww-5.4.0) = 5.4.0
-- [curl](https://github.com/P0L3NARUBA/roblox-2016-contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
-- [zlib](https://github.com/P0L3NARUBA/roblox-2016-contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
+- [Boost](/Contribs/boost_1_56_0) = 1.56.0
+- [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
+- [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
+- [OpenSSL](/Contribs/openssl) = 1.0.0c
+- [Qt](BUILDING_CONTRIBS.md) = 4.8.5
+- [Roblox SDK](/Contribs/SDK) = *unknown*
+- [SDL2](/Contribs/SDL2) = 2.0.4
+- [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13
+- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
+- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
+- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*

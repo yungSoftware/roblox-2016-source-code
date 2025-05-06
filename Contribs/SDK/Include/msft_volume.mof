@@ -1,0 +1,60 @@
+//============================================================================
+// Copyright (C) Microsoft Corporation, All rights reserved. 
+//============================================================================
+//
+
+
+[ClassVersion ( "1.0" ),
+Description ( "Represents a volume on the system." )]
+class MSFT_Volume {
+
+    [Key, Read, Description(
+        "ObjectId is a mandatory property that is used to opaquely and uniquely identify an "
+        "instance of a class within the scope of the host computer system."
+        )]
+    String ObjectId;
+
+    [Read, Description(
+        "Drive letter assigned to the volume."
+        )]
+    Char16 DriveLetter;
+
+    [Read, Required, Description(
+        "Guid path of the volume."
+        )]
+    String Path;
+
+    [Read, Description(
+        "Denotes the health of the volume."
+        ),
+        ValueMap { "0", "1", "2", "3" },
+        Values { "Healthy", "Scan Needed", "Spot Fix Needed", "Full Repair Needed" }]
+    UInt16 HealthStatus;
+
+    [Read, Description(
+        "File system on the volume."
+        )]
+    String FileSystem;
+
+    [Description(
+        "File system label of the volume."
+        )]
+    String FileSystemLabel;
+
+    [Read, Description(
+        "Total size of the volume"
+        ), Units("Bytes")]
+    UInt64 Size;
+
+    [Read, Description(
+        "Available space on the volume"
+        ), Units("Bytes")]
+    UInt64 SizeRemaining;
+
+    [Read, Description(
+        "Denotes the type of the volume."
+        ),
+        ValueMap { "0", "1", "2", "3", "4", "5", "6" },
+        Values { "Unknown", "Invalid Root Path", "Removable", "Fixed", "Remote", "CD-ROM", "RAM Disk" }]
+    UInt32 DriveType;
+};
