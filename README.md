@@ -38,17 +38,17 @@ After a long effort, this repository has been brought to you on github with hand
    - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
 
 ## 📚 Libraries Used
-- [Boost](/Contribs/boost_1_56_0) = 1.56.0
-- [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
-- [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
-- [OpenSSL](/Contribs/openssl) = 1.0.0c
+- [Boost](https://github.com/P0L3NARUBA/roblox-2016-contribs/boost_1_56_0) = 1.56.0
+- [cpp-netlib](https://github.com/P0L3NARUBA/roblox-2016-contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
+- [DSBaseClasses](https://github.com/P0L3NARUBA/roblox-2016-contribs/DSBaseClasses) = *unknown*
+- [OpenSSL](https://github.com/P0L3NARUBA/roblox-2016-contribs/openssl) = 1.0.0c
 - [Qt](BUILDING_CONTRIBS.md) = 4.8.5
-- [Roblox SDK](/Contribs/SDK) = *unknown*
-- [SDL2](/Contribs/SDL2) = 2.0.4
-- [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13
-- [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
-- [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
-- [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
+- [Roblox SDK](https://github.com/P0L3NARUBA/roblox-2016-contribs/SDK) = *unknown*
+- [SDL2](https://github.com/P0L3NARUBA/roblox-2016-contribs/SDL2) = 2.0.4
+- [VMProtectWin](https://github.com/P0L3NARUBA/roblox-2016-contribs/VMProtectWin_2.13) = 2.13
+- [w3c-libwww](https://github.com/P0L3NARUBA/roblox-2016-contribs/w3c-libwww-5.4.0) = 5.4.0
+- [curl](https://github.com/P0L3NARUBA/roblox-2016-contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
+- [zlib](https://github.com/P0L3NARUBA/roblox-2016-contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
 - [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
