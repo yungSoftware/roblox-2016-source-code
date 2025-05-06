@@ -1,0 +1,48 @@
+
+DISTRIBUTION NOTES
+
+To install gSOAP, unpack the archive. You will get the following files:
+
+README.txt	read this first
+LICENSE.txt	license information
+NOTES.txt	this file
+license.html	gSOAP public license (HTML), see LICENSE.txt
+license.pdf	gSOAP public license (PDF), see LICENSE.txt
+gpl.txt		GPL license, see LICENSE.txt
+
+The 'gsoap' folder contains essential source code for the run-time libraries:
+
+stdsoap2.h	header file for stdsoap2.c[pp]
+stdsoap2.c	library and gSOAP runtime
+stdsoap2.cpp	library (identical to stdsoap2.c)
+dom.c		C DOM parser
+dom.cpp		C++ DOM parser
+
+and the following folders:
+
+bin		binaries
+doc		documentation, including soapdoc2.html, soapdoc2.pdf
+samples		examples
+extras		contributed extras
+import		#import-ed header files for soapcpp2 compiler
+plugin		plug-in examples
+custom		custom serializers for various data types
+mod_gsoap	contributed Apache mod_gsoap, IIS, and WinInet support
+src		gSOAP soapcpp2 compiler sources
+wsdl		WSDL parser wsdl2h sources
+WS		typemap.dat and WS-* protocol schemas
+uddi2		UDDI v2
+
+All examples are available in the 'samples' subdirectory.
+
+The 'gsoap_mod' directory includes Apache 1.x and 2.0 mods for gSOAP, IIS, and
+WinInet support. WinInet allows gsoap to use the WinInet API instead of calls
+to the socket API. The primary benefit of this arrangement is that "if IE
+works, your program will work". There is no need to read proxy settings from
+the registry, deal with proxy configuration scripts, etc. Changes in the
+"Internet Options" dialog box will immediately take effect in your program.
+Additionally, this will allow gsoap to handle forms of authentication not yet
+supported natively, such as NTLM (Integrated Windows Authentication), etc.
+
+Contributions are included in the 'extras' directory and 'mod_gsoap'.
+

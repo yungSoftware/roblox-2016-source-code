@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/mcritelli/Downloads/CircleImageView-master/circleimageview/src/main/res"><file path="/Users/mcritelli/Downloads/CircleImageView-master/circleimageview/src/main/res/values/attrs.xml" qualifiers=""><declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+        <attr format="boolean" name="border_overlay"/>
+    </declare-styleable></file></source><source path="/Users/mcritelli/Downloads/CircleImageView-master/circleimageview/build/generated/res/rs/release"/><source path="/Users/mcritelli/Downloads/CircleImageView-master/circleimageview/build/generated/res/generated/release"/></dataSet><dataSet config="release"><source path="/Users/mcritelli/Downloads/CircleImageView-master/circleimageview/src/release/res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="boolean" name="border_overlay"/></declare-styleable></configuration></mergedItems></merger>

@@ -1,0 +1,97 @@
+## Ignore Visual Studio temporary files, build results, and Other file types and unwanted folders.
+## The Ignore List is also categorized!
+## Written by yungDoom with <3
+
+## VISUAL STUDIO ##
+
+# Visual Studio cache/options directory
+.vs/
+
+# Build results
+[Oo]bj/
+
+# Upgrade
+[Bb]ackup*/
+UpgradeLog*.htm
+
+
+# Files built by Visual Studio
+*.obj
+*.pdb
+*.log
+
+## END OF VISUAL STUDIO ##
+## GENERAL ##
+
+# Roblox
+/App/tmp.h
+/App/include/security/RandomConstant.h
+/App/AlreadyBuiltRandomConstant.h
+/RobloxStudio/*.lib
+/RCCService/*.lib
+/WindowsClient/*.lib
+
+## This is for my stuff, ignoring it.
+Client_2016_Dev.sln
+
+## Holding this as a template for new releases.
+Client2016.7z 
+
+## Because Contribs is a submodule
+/Contribs/
+
+# Ignore precompiled shaders
+shaders/shaders_*.pack
+
+# Ignore Qt builds
+*.moc
+moc_*.*
+qrc_*.*
+ui_*.*
+
+## SDL2
+/SDL2/Win/2.0.4/
+
+## zlib
+/zlib/win/bin/
+
+# Ignore OpenSSL
+/openssl
+
+# Custom ignore files and folders
+/App/bin/
+/Network/bin/
+/boostlibs/bin/
+/Base/bin/
+/Log/bin/
+/QTitanRibbon/roblox_build/
+/RobloxStudio/bin/
+/Rendering/LibOVR/Lib/Windows/
+/CoreScriptConverter2/tool/win32/*.exe
+/CoreScriptConverter2/tool/win32/*.lib
+/CoreScriptConverter2/tool/win32/*.exp
+/CoreScriptConverter2/tool/win32/*.dll
+/CoreScriptConverter2/tool/win32/*.ilk
+/Rendering/ShaderCompiler/Main
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
+/Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
+/Rendering/ShaderCompiler/ShaderCompiler*.exe
+/CSG/bin/Release/
+/CSG/sgCore_build/ms/Release/
+/QTitanRibbon/src/shared/ribbon/release/
+/Rendering/AppDraw/bin/Release/
+/RCCService/Win32/Release/
+/RCCService/gSOAP/gsoap-2.7/gsoap/VisualStudio2005/wsdl2h/wsdl2h/Release/
+/RCCService/gSOAP/gsoap-2.7/gsoap/VisualStudio2005/soapcpp2/soapcpp2/Release/
+/Rendering/GfxCore/bin/Release/
+/WindowsClient/Win32/Release/
+/Rendering/GfxBase/bin/Release/
+/Rendering/g3d/bin/graphics3D/Release/
+/Rendering/GfxRender/bin/Release/
+/Rendering/RbxG3D/bin/Release/
+/App.BulletPhysics/Release/
+
+# Dont ignore these files and folders
+!/RCCService/Mesa-7.8.1/lib/release/
+
+## END OF GENERAL ##
