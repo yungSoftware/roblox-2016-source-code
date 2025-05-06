@@ -23,7 +23,6 @@ UpgradeLog*.htm
 ## END OF VISUAL STUDIO ##
 ## GENERAL ##
 
-# Roblox
 /App/tmp.h
 /App/include/security/RandomConstant.h
 /App/AlreadyBuiltRandomConstant.h
@@ -49,10 +48,10 @@ moc_*.*
 qrc_*.*
 ui_*.*
 
-## SDL2
+## Ignore SDL2
 /SDL2/Win/2.0.4/
 
-## zlib
+## Ignore zlib
 /zlib/win/bin/
 
 # Ignore OpenSSL
@@ -93,5 +92,4 @@ ui_*.*
 
 # Dont ignore these files and folders
 !/RCCService/Mesa-7.8.1/lib/release/
-
 ## END OF GENERAL ##
