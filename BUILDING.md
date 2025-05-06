@@ -2,7 +2,7 @@
  
 1. First of all, Open a Command Prompt and clone the repository with [Git](https://git-scm.com/) like this:
 ```
-cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
+cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code --recursive
 ```
 2. You need to use [Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing), [Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing) and [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for viewing the solution, pretty self-explanatory right?
     - Uncheck all optional components in the Visual Studio 2012 installer except **"Microsoft Foundation Classes for C++"** to save space due to none of them are needed
