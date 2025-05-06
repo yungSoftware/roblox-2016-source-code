@@ -1,9 +1,0 @@
-
-Make an file named:
-
-    Client/Android/NativeShell/res/raw/internal_build
-
-E.g. using the command line:
-
-    $ touch Client/Android/NativeShell/res/raw/internal_build
-
