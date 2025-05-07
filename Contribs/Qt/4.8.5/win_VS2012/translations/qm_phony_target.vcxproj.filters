@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts;xlf</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="phony.c">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="assistant_cs.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_da.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_cs.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_cs.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ar.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_cs.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_da.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_es.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_fa.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_gl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_he.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_cs.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_da.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_de.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_fr.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_gl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_lt.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_pt.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sv.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_hu.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ja.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ko.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_pl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ru.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_sl.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_uk.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_zh_CN.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_zh_TW.ts">
+      <Filter>Translation Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="assistant_cs.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_da.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_de.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_fr.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="assistant_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_cs.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_de.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_fr.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="designer_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_cs.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_de.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_fr.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="linguist_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ar.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_cs.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_da.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_de.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_es.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_fa.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_fr.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_gl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_he.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_cs.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_da.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_de.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_fr.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_gl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_help_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_lt.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_pt.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_sv.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qt_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtconfig_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_hu.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ja.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ko.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_pl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_ru.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_sl.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_uk.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_zh_CN.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qvfb_zh_TW.ts">
+      <Filter>LRELEASE</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include=".">
+      <Filter>CREATE</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

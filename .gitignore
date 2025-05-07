@@ -19,6 +19,7 @@ UpgradeLog*.htm
 *.obj
 *.pdb
 *.log
+*.ilk
 
 ## END OF VISUAL STUDIO ##
 ## GENERAL ##
@@ -68,6 +69,11 @@ Contribs/boost_1_56_0/stage/lib/
 /Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/particles/*.lib
 /Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/gestures/*.lib
 /Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/folderlistmodel/*.lib
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release/
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug/
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release/
+/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug/
+/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release/
 *.moc
 moc_*.*
 qrc_*.*
@@ -136,8 +142,3 @@ ui_*.*
 !/Contribs/Qt/4.8.5/win_VS2012/patches/
 
 ## END OF GENERAL ##
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release/webcore.lib
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug/webcore.lib
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release/jscore.lib
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug/jscore.lib
-/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release/bootstrap.lib
