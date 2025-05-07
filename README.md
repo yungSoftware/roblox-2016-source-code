@@ -27,15 +27,14 @@ After a long effort, this repository has been brought to you on github with hand
 
 ## 🪨 Features / Additions
 - Added some new features
-- Fixed a lot of issues that breaks the compilation and the codebase
+- Fixed a lot of issues that breaks the compilation and the codebase.
   - I messed with a lot of things to fix all the projects though, i should get props for that.
-- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source
+- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source.
   - You need this if you want to make the game work as intended.
-- Changed Splash Screen and Copyright Date(s)
-- Reverse Engineered some libraries and executables to make them editable
-- Cleaned up the whole source to make things easier and not complicated
-- All the necessary libraries are included in the repository.
-   - Except **Qt**, [see here to download it](/BUILDING_CONTRIBS.md)
+- Changed Splash Screen and Copyright Date(s).
+- Reverse Engineered some libraries and executables to make them editable.
+- Cleaned up the whole source to make things easier and not complicated.
+- All the necessary libraries are included.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
