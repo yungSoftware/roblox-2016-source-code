@@ -27,9 +27,6 @@ UpgradeLog*.htm
 /App/tmp.h
 /App/include/security/RandomConstant.h
 /App/AlreadyBuiltRandomConstant.h
-/RobloxStudio/*.lib
-/RCCService/*.lib
-/WindowsClient/*.lib
 
 ## This is my developer environment, so ignoring it.
 Client_2016_Dev.sln
@@ -116,7 +113,6 @@ ui_*.*
 /CoreScriptConverter2/tool/win32/*.lib
 /CoreScriptConverter2/tool/win32/*.exp
 /CoreScriptConverter2/tool/win32/*.dll
-/CoreScriptConverter2/tool/win32/*.ilk
 /Rendering/ShaderCompiler/Main
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/Gen_hlslang_tab.cpp
