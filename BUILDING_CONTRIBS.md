@@ -46,7 +46,7 @@ If you also need to build libcurl as a .LIB file, Just change the **Target Exten
 - Build it
 - And when its done, open this solution: "C:\Trunk2016\RCCService\Mesa-7.8.1\lib\windows\VC8\progs\progs.sln"
 - And build this too.
-- Copy everything from RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release folder to RCCService\Mesa-7.8.1\lib\release
+- Copy everything inside **RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release** and **RCCService\Mesa-7.8.1\lib\windows\VC8\progs\Release** folders to RCCService\Mesa-7.8.1\lib\release
 
 **That's it, you've compiled the libraries!**
 
