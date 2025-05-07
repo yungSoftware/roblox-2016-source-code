@@ -1,1 +1,0 @@
-I will add .patch files to here if i make any changes to the Qt.
