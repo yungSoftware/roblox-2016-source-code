@@ -23,7 +23,6 @@ UpgradeLog*.htm
 ## END OF VISUAL STUDIO ##
 ## GENERAL ##
 
-# Roblox
 /App/tmp.h
 /App/include/security/RandomConstant.h
 /App/AlreadyBuiltRandomConstant.h
@@ -58,11 +57,11 @@ moc_*.*
 qrc_*.*
 ui_*.*
 
-## SDL2
+## Ignore SDL2 builds
 /Contribs/SDL2/VisualC/SDL/Win32/
 /SDL2/Win/2.0.4/
 
-## zlib
+## Ignore zlib builds
 /zlib/win/bin/
 
 # Ignore OpenSSL configure & build cache/output
@@ -75,10 +74,10 @@ ui_*.*
 /Contribs/openssl/tmp32*/
 /openssl
 
-## curl
+## Ignore curl builds
 /Contribs/windows/x86/curl/curl-7.43.0/build/
 
-## DSBaseClasses
+## Ignore DSBaseClasses builds
 /Contribs/DSBaseClasses/Sources/Debug
 /Contribs/DSBaseClasses/Sources/Release
 
