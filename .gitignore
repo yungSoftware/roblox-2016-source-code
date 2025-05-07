@@ -31,7 +31,7 @@ UpgradeLog*.htm
 /RCCService/*.lib
 /WindowsClient/*.lib
 
-## This is for my stuff, ignoring it.
+## This is my developer environment, so ignoring it.
 Client_2016_Dev.sln
 
 ## Holding this as a template for new releases.
