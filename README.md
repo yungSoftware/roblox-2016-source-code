@@ -127,12 +127,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] RbxTestHooks
   - [x] ScriptSigner
   - [x] RegressionTestSuite
-    - [x] RobloxLib 
-  #### Libraries
-  - [ ] Qt
-  - [ ] Boost 
-  - [ ] OpenSSL
-  - [x] Mesa
+    - [x] RobloxLib
 - Able to build in these platforms **[1/7]** (💀💀)
   - [x] Windows
   - [ ] CMake 
