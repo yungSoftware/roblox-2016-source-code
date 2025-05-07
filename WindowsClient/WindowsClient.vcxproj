@@ -82,6 +82,7 @@
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <LargeAddressAware>true</LargeAddressAware>
+      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"</Command>
@@ -122,6 +123,7 @@
       <FixedBaseAddress>true</FixedBaseAddress>
       <FunctionOrder>linkorder.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -330,6 +332,8 @@ echo placeholder &gt; ..\WindowsClient\$(Platform)\$(Configuration)\boost.pdb
     <PublishDLLDependency Include="..\Rendering\ShaderCompiler\d3dcompiler_47.dll" />
     <PublishDLLDependency Include="..\Rendering\OpenVR\bin\win32\openvr_api.dll" />
     <PublishDLLDependency Include="..\SDL2\Win\2.0.4\SDL2.dll" />
+    <PublishDLLDependency Include="..\openssl\libeay32.dll" />
+    <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
     <PublishDLLDependency Include="..\SDL2\Win\2.0.4\SDL2.pdb" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
     <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.dll">

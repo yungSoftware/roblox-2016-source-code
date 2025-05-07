@@ -79,6 +79,7 @@
       <SubSystem>Console</SubSystem>
       <LinkTimeCodeGeneration />
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"</Command>
@@ -116,6 +117,7 @@
       <BaseAddress>
       </BaseAddress>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>if not exist "$(ProjectDir)$(OutDir)Log.dll" (
@@ -220,8 +222,10 @@ echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.pdb"
   <ItemGroup>
     <PublishDLLDependency Include="gameserver.txt" />
     <PublishDLLDependency Include="..\fmod\win32\fmod.dll" />
+    <PublishDLLDependency Include="..\openssl\libeay32.dll" />
+    <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
-    </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="AppSettings.xml">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(Filename)%(Extension)</Message>
