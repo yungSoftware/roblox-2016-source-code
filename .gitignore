@@ -48,28 +48,7 @@ UpgradeLog*.htm
 /Contribs/boost_1_56_0/stage/lib/
 
 # Ignore Qt builds
-/Contribs/Qt/4.8.5/win_VS2012/bin
-/Contribs/Qt/4.8.5/win_VS2012/plugins
-/Contribs/Qt/4.8.5/win_VS2012/lib
-/Contribs/Qt/4.8.5/win_VS2012/bin/*
-/Contribs/Qt/4.8.5/win_VS2012/lib/*
-/Contribs/Qt/4.8.5/win_VS2012/demos
-/Contribs/Qt/4.8.5/win_VS2012/projects.sln
-/Contribs/Qt/4.8.5/win_VS2012/imports/QtWebKit/*.dll
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/shaders/*.dll
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/particles/*.dll
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/gestures/*.dll
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/folderlistmodel/*.dll
-/Contribs/Qt/4.8.5/win_VS2012/imports/QtWebKit/*.lib
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/shaders/*.lib
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/particles/*.lib
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/gestures/*.lib
-/Contribs/Qt/4.8.5/win_VS2012/imports/Qt/labs/folderlistmodel/*.lib
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/release/
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebCore/debug/
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/release/
-/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/JavaScriptCore/debug/
-/Contribs/Qt/4.8.5/win_VS2012/src/tools/bootstrap/release/
+/Contribs/Qt/4.8.5/win_VS2012
 *.moc
 moc_*.*
 qrc_*.*

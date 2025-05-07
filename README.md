@@ -38,7 +38,7 @@ After a long effort, this repository has been brought to you on github with hand
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
 - [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
 - [OpenSSL](/Contribs/openssl) = 1.0.0c
-- [Qt](/Contribs/Qt/4.8.5/win_VS2012/) = 4.8.5
+- [Qt](/BUILDING_CONTRIBS.md) = 4.8.5
 - [Roblox SDK](/Contribs/SDK) = *unknown*
 - [SDL2](/Contribs/SDL2) = 2.0.4
 - [VMProtectWin](/Contribs/VMProtectWin_2.13) = 2.13

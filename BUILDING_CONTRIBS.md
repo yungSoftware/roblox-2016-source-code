@@ -1,13 +1,14 @@
 # Cookbook for CONTRIBS:
 
 ## Qt
-1. Open **VS2012 x86 Native Tools Command Prompt**
-2. Change Directory (cd) to: `Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
-3. Run the following command:
+1. Install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link) and extract it into **Contribs** folder
+2. Open **VS2012 x86 Native Tools Command Prompt**
+3. Change Directory (cd) to: `Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
+4. Run the following command:
 ```sh
 configure -make nmake -platform win32-msvc2012 -prefix C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
-4. When the configuration completes, type **nmake** and take a long breath since it will take a lot of time.
+5. When the configuration completes, type **nmake** and take a long breath since it will take a lot of time.
  
 ## Boost
 1. Run the **bootstrap.bat**
