@@ -135,7 +135,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] Mesa
 - Able to build in these platforms **[1/7]** (💀💀)
   - [x] Windows
-    - [ ] CMake 
+  - [ ] CMake 
   - [ ] Android
   - [ ] Linux
   - [ ] MacOS / Unix
