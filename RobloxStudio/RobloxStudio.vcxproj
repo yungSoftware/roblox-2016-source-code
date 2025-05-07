@@ -117,9 +117,7 @@ mkdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins\"
 
 "$(SolutionDir)buildshaders.bat"
-
-del $(TargetDir)$(TargetName).lib
-del $(TargetDir)$(TargetName).exp</Command>
+"$(SolutionDir)cleaner.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -179,9 +177,7 @@ mkdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins\"
 
 "$(SolutionDir)buildshaders.bat"
-
-del $(TargetDir)$(TargetName).lib
-del $(TargetDir)$(TargetName).exp</Command>
+"$(SolutionDir)cleaner.bat"</Command>
     </PostBuildEvent>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>

@@ -83,9 +83,7 @@
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"
-
-del $(TargetDir)$(TargetName).lib
-del $(TargetDir)$(TargetName).exp</Command>
+"$(SolutionDir)cleaner.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,9 +122,7 @@ del $(TargetDir)$(TargetName).exp</Command>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"
-
-del $(TargetDir)$(TargetName).lib
-del $(TargetDir)$(TargetName).exp</Command>
+"$(SolutionDir)cleaner.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
