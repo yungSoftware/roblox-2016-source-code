@@ -114,7 +114,4 @@ qrc_*.*
 /Rendering/RbxG3D/bin/Release/
 /App.BulletPhysics/Release/
 
-# Dont ignore these files and folders
-!/Contribs/Qt/4.8.5/win_VS2012/patches/
-
 ## END OF GENERAL ##
