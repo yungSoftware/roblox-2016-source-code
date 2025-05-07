@@ -71,7 +71,7 @@ static void thumbRenderWorker()
 
     ViewBase::InitPluginModules();
 
-    dummyView.reset(ViewBase::CreateView(CRenderSettings::AutoGraphicsMode, &dummyContext, &dummySettings));
+    dummyView.reset(ViewBase::CreateView(CRenderSettings::Direct3D11, &dummyContext, &dummySettings));
 	
 	while (true)
 	{
