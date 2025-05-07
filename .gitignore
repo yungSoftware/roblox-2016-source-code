@@ -75,7 +75,7 @@ Contribs/boost_1_56_0/stage/lib/
 *.moc
 moc_*.*
 qrc_*.*
-ui_*.*
+
 
 ## Ignore SDL2 builds
 /Contribs/SDL2/VisualC/SDL/Win32/
