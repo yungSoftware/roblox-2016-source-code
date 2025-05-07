@@ -26,7 +26,6 @@ UpgradeLog*.htm
 ## GENERAL ##
 
 /App/tmp.h
-/App/include/security/RandomConstant.h
 /App/AlreadyBuiltRandomConstant.h
 
 ## This is my developer environment, so ignoring it.
