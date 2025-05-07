@@ -48,7 +48,7 @@ UpgradeLog*.htm
 /Contribs/boost_1_56_0/stage/lib/
 
 # Ignore Qt builds
-/Contribs/Qt/4.8.5/win_VS2012
+/Contribs/Qt/4.8.5/win_VS2012/
 *.moc
 moc_*.*
 qrc_*.*
