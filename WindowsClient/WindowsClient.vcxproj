@@ -85,7 +85,9 @@
       <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)buildshaders.bat"</Command>
+      <Command>copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
+
+"$(SolutionDir)buildshaders.bat"</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>..\CoreScriptConverter2\tool\win32\BuildCoreScripts.bat ..\rsc.config</Command>
@@ -126,24 +128,8 @@
       <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>
-copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
-copy /Y $(CONTRIB_PATH)\VMProtectWin_2.13\RobloxPlayer.exe.vmp ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayer.exe.vmp
-copy /Y $(CONTRIB_PATH)\VMProtectWin_2.13\VMProtect.key ..\WindowsClient\$(Platform)\$(Configuration)\VMProtect.key
+      <Command>copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
 ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.exe -w 195936478
-copy /Y  ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.tmp  ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.exe
-
-if not exist ..\WindowsClient\$(Platform)\$(Configuration)\Log.dll (
-echo placeholder &gt; ..\WindowsClient\$(Platform)\$(Configuration)\Log.dll
-)
-
-if not exist ..\WindowsClient\$(Platform)\$(Configuration)\boost.dll (
-echo placeholder &gt; ..\WindowsClient\$(Platform)\$(Configuration)\boost.dll
-)
-
-if not exist ..\WindowsClient\$(Platform)\$(Configuration)\boost.pdb (
-echo placeholder &gt; ..\WindowsClient\$(Platform)\$(Configuration)\boost.pdb
-)
 
 "$(SolutionDir)buildshaders.bat"
 </Command>

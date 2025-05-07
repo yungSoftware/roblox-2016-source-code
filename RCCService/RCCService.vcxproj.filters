@@ -276,5 +276,7 @@
     </PublishDLLDependency>
     <PublishDLLDependency Include="gameserver.txt" />
     <PublishDLLDependency Include="..\fmod\win32\fmod.dll" />
+    <PublishDLLDependency Include="..\openssl\libeay32.dll" />
+    <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
   </ItemGroup>
 </Project>

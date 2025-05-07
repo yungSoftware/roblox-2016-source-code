@@ -23,6 +23,8 @@
       <Filter>Libraries\SDL2.0.4</Filter>
     </PublishDLLDependency>
     <PublishDLLDependency Include="..\Rendering\OpenVR\bin\win32\openvr_api.dll" />
+    <PublishDLLDependency Include="..\openssl\libeay32.dll" />
+    <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">

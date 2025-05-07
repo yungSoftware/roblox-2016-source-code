@@ -120,19 +120,7 @@
       <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>if not exist "$(ProjectDir)$(OutDir)Log.dll" (
-echo placeholder &gt; "$(ProjectDir)$(OutDir)Log.dll"
-)
-
-if not exist "$(ProjectDir)$(OutDir)boost.dll" (
-echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.dll"
-)
-
-if not exist "$(ProjectDir)$(OutDir)boost.pdb" (
-echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.pdb"
-)
-
-"$(SolutionDir)buildshaders.bat"</Command>
+      <Command>"$(SolutionDir)buildshaders.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

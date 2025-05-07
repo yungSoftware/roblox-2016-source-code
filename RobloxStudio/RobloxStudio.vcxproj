@@ -117,14 +117,6 @@ rmdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 mkdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins\"
 
-if not exist "$(ProjectDir)$(OutDir)Log.dll" (
-echo placeholder &gt; "$(ProjectDir)$(OutDir)Log.dll"
-)
-
-if not exist "$(ProjectDir)$(OutDir)boost.dll" (
-echo placeholder &gt; "$(ProjectDir)$(OutDir)boost.dll"
-)
-
 "$(SolutionDir)buildshaders.bat"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
