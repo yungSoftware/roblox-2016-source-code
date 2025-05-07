@@ -43,10 +43,8 @@ However if you want to build as .DLL, then also you dont have to change anything
 
 ## Mesa (Optional to build)
 - Open this solution inside: RCCService\Mesa-7.8.1\lib\windows\VC8\mesa
-- Build it
-- And when its done, open this solution inside: RCCService\Mesa-7.8.1\lib\windows\VC8\progs
-- And build this too
-- Copy everything inside **windows\VC8\mesa\Release** and **windows\VC8\progs\Release** folders to **RCCService\Mesa-7.8.1\lib\release**.
+- Build it and wait until it finished compiling.
+- Copy everything inside **RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release** to **RCCService\Mesa-7.8.1\lib\release**.
 
 **That's it, you've compiled the libraries!**<br>
 **Also, you may want to change or add the library files in the source with yours.**
