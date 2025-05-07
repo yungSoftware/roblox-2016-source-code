@@ -20,6 +20,7 @@ UpgradeLog*.htm
 *.pdb
 *.log
 *.ilk
+*.exp
 
 ## END OF VISUAL STUDIO ##
 ## GENERAL ##
@@ -111,7 +112,6 @@ ui_*.*
 /Rendering/LibOVR/Lib/Windows/
 /CoreScriptConverter2/tool/win32/*.exe
 /CoreScriptConverter2/tool/win32/*.lib
-/CoreScriptConverter2/tool/win32/*.exp
 /CoreScriptConverter2/tool/win32/*.dll
 /Rendering/ShaderCompiler/Main
 /Rendering/ShaderCompiler/hlsl2glslfork/hlslang/MachineIndependent/gen_hlslang.cpp
