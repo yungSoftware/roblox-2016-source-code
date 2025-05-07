@@ -133,13 +133,14 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] Boost 
   - [ ] OpenSSL
   - [x] Mesa
-- Able to build in these platforms **[1/6]** (💀💀)
+- Able to build in these platforms **[1/7]** (💀💀)
   - [x] Windows
-  - [ ] Android 
+    - [ ] CMake 
+  - [ ] Android
   - [ ] Linux
-  - [ ] MacOS
+  - [ ] MacOS / Unix
   - [ ] iOS
-  - [ ] Xbox
+  - [ ] Xbox / Durango
 
 ## ⚠️ Current Issues
 - The Roblox in-game Video Recorder is being awful
