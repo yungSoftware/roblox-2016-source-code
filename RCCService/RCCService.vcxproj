@@ -82,7 +82,10 @@
       <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)buildshaders.bat"</Command>
+      <Command>"$(SolutionDir)buildshaders.bat"
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -120,7 +123,10 @@
       <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
-      <Command>"$(SolutionDir)buildshaders.bat"</Command>
+      <Command>"$(SolutionDir)buildshaders.bat"
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

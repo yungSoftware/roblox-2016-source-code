@@ -30,6 +30,3 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 10. Right click to project and press **Build**
 
 **Thats it, you successfully built from the source!**
-
-The guide is straight forward so there should be no issues on your side<br>
-Most of the errors you may get while launching the game is because you have to copy the required file(s) to the game location.

@@ -42,4 +42,4 @@ If you also need to build libcurl as a .LIB file, Just change the **Target Exten
 However if you want to build as .DLL, then also you dont have to change anything just build it.
 
 **That's it, you've compiled the libraries!**<br>
-**Also, you may want to change or add the library files in the source with yours.**
+**Also, you may want to change the library files in the source with yours.**

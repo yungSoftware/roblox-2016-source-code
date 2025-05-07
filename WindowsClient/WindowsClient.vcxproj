@@ -87,7 +87,10 @@
     <PostBuildEvent>
       <Command>copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
 
-"$(SolutionDir)buildshaders.bat"</Command>
+"$(SolutionDir)buildshaders.bat"
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>..\CoreScriptConverter2\tool\win32\BuildCoreScripts.bat ..\rsc.config</Command>
@@ -132,7 +135,9 @@
 ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.exe -w 195936478
 
 "$(SolutionDir)buildshaders.bat"
-</Command>
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>..\CoreScriptConverter2\tool\win32\BuildCoreScripts.bat ..\rsc.config</Command>

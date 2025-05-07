@@ -101,7 +101,6 @@
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Message>Copy Plugins</Message>
@@ -117,7 +116,10 @@ rmdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 mkdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins\"
 
-"$(SolutionDir)buildshaders.bat"</Command>
+"$(SolutionDir)buildshaders.bat"
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -176,7 +178,10 @@ rmdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 mkdir "$(ProjectDir)$(OutDir)BuiltInPlugins"
 xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins\"
 
-"$(SolutionDir)buildshaders.bat"</Command>
+"$(SolutionDir)buildshaders.bat"
+
+del $(TargetDir)$(TargetName).lib
+del $(TargetDir)$(TargetName).exp</Command>
     </PostBuildEvent>
     <ProjectReference>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
