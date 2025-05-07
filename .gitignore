@@ -29,24 +29,24 @@ UpgradeLog*.htm
 /App/AlreadyBuiltRandomConstant.h
 
 ## This is my developer environment, so ignoring it.
-Client_2016_Dev.sln
+/Client_2016_Dev.sln
 
 ## Holding this as a template for new releases.
-Client2016.7z 
+/Client2016.7z 
 
 # Ignore precompiled shaders
-shaders/shaders_*.pack
+/shaders/shaders_*.pack
 
 # Ignore boost builds
-Contribs/boost_1_56_0/bjam.exe
-Contribs/boost_1_56_0/b2.exe
-Contribs/boost_1_56_0/bin.v2/
-Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/b2.exe
-Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/bjam.exe
+/Contribs/boost_1_56_0/bjam.exe
+/Contribs/boost_1_56_0/b2.exe
+/Contribs/boost_1_56_0/bin.v2/
+/Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/b2.exe
+/Contribs/boost_1_56_0/tools/build/src/engine/bin.ntx86/bjam.exe
 /Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.exe
 /Contribs/boost_1_56_0/tools/build/src/engine/bootstrap/jam0.ilk
-Contribs/boost_1_56_0/project-config.jam
-Contribs/boost_1_56_0/stage/lib/
+/Contribs/boost_1_56_0/project-config.jam
+/Contribs/boost_1_56_0/stage/lib/
 
 # Ignore Qt builds
 /Contribs/Qt/4.8.5/win_VS2012/bin
