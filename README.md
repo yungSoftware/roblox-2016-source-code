@@ -79,8 +79,8 @@ Be a contributor by doing a helpful of changes to the source code!
    - [ ] Color3uint8
    - [ ] R15
    - [x] :Connect() and :Wait()
-- 64-bit Support (💀💀)
-- Make it able to build all the projects with the latest Visual Studio Version **[10/40]** (💀💀) 
+- 64-bit Support
+- Make it able to build all the projects with the latest Visual Studio Version **[10/40]** 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -128,7 +128,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] ScriptSigner
   - [x] RegressionTestSuite
     - [x] RobloxLib
-- Able to build in these platforms **[1/7]** (💀💀)
+- Able to build in these platforms **[1/7]**
   - [x] Windows
   - [ ] CMake 
   - [ ] Android
