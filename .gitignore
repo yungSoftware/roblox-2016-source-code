@@ -1,4 +1,4 @@
-## Ignore Visual Studio temporary files, build results, and Other file types and unwanted folders.
+## Ignore Visual Studio temporary files, build results and unwanted files/folders.
 ## The Ignore List is also categorized!
 ## Written by yungDoom with <3
 
@@ -28,11 +28,9 @@ UpgradeLog*.htm
 /App/tmp.h
 /App/AlreadyBuiltRandomConstant.h
 
-## This is my developer environment, so ignoring it.
+## Personal Files & Folders
 /Client_2016_Dev.sln
-
-## Holding this as a template for new releases.
-/Client2016.7z 
+/Extras/
 
 # Ignore precompiled shaders
 /shaders/shaders_*.pack
