@@ -49,7 +49,6 @@ After a long effort, this repository has been brought to you on github with hand
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = 2016.10+
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
-- [Mesa](RCCService/Mesa-7.8.1/lib) = 7.8.1
 
 ## 🔨 Tools Used
 - [cecho](/Tools/cecho) = *unknown*

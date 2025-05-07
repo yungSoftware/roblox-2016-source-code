@@ -274,66 +274,6 @@
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll">
       <Filter>Libraries</Filter>
     </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\GLU32.dll">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\GLU32.pdb">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OPENGL32.dll">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OPENGL32.pdb">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OSMESA32.dll">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OSMESA32.pdb">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\GLU32.dll">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\GLU32.pdb">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OPENGL32.dll">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OPENGL32.pdb">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OSMESA32.dll">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OSMESA32.pdb">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.dll">
-      <Filter>Libraries\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.pdb">
-      <Filter>Libraries\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\GLU32.lib">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OPENGL32.lib">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OSMESA32.lib">
-      <Filter>Libraries\Mesa\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\GLU32.lib">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OPENGL32.lib">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OSMESA32.lib">
-      <Filter>Libraries\Mesa\Release</Filter>
-    </PublishDLLDependency>
     <PublishDLLDependency Include="gameserver.txt" />
     <PublishDLLDependency Include="..\fmod\win32\fmod.dll" />
   </ItemGroup>

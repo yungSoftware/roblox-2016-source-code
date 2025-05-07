@@ -41,10 +41,5 @@ However if you want to build as .LIB, then you dont have to change anything just
 If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 However if you want to build as .DLL, then also you dont have to change anything just build it.
 
-## Mesa (Optional to build)
-- Open this solution inside: RCCService\Mesa-7.8.1\lib\windows\VC8\mesa
-- Build it and wait until it finished compiling.
-- Copy everything inside **RCCService\Mesa-7.8.1\lib\windows\VC8\mesa\Release** to **RCCService\Mesa-7.8.1\lib\release**.
-
 **That's it, you've compiled the libraries!**<br>
 **Also, you may want to change or add the library files in the source with yours.**
