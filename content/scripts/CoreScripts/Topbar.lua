@@ -1149,9 +1149,6 @@ local function OnCoreGuiChanged(coreGuiType, enabled)
 				AddItemInOrder(LeftMenubar, mobileShowChatIcon, LEFT_ITEM_ORDER)
 			end
 		else
-			if chatIcon then
-				LeftMenubar:RemoveItem(chatIcon)
-			end
 			if mobileShowChatIcon then
 				LeftMenubar:RemoveItem(mobileShowChatIcon)
 			end
