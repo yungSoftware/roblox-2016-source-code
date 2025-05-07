@@ -79,7 +79,6 @@
       <SubSystem>Console</SubSystem>
       <LinkTimeCodeGeneration />
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"
@@ -118,7 +117,6 @@
       <BaseAddress>
       </BaseAddress>
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>"$(SolutionDir)buildshaders.bat"

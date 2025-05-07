@@ -159,7 +159,6 @@ xcopy /E /Y "$(SolutionDir)BuiltInPlugins" "$(ProjectDir)$(OutDir)BuiltInPlugins
       <LinkTimeCodeGeneration>
       </LinkTimeCodeGeneration>
       <TargetMachine>MachineX86</TargetMachine>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Message>Copy Plugins</Message>

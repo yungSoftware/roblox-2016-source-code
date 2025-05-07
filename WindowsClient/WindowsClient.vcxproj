@@ -82,7 +82,6 @@
       <TargetMachine>MachineX86</TargetMachine>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <LargeAddressAware>true</LargeAddressAware>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
@@ -126,7 +125,6 @@
       <FixedBaseAddress>true</FixedBaseAddress>
       <FunctionOrder>linkorder.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <AdditionalOptions>/NOIMPLIB /NOEXP %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBetaRaw.pdb ..\WindowsClient\$(Platform)\$(Configuration)\RobloxPlayerBeta.pdb
