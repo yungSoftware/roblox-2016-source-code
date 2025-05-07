@@ -89,6 +89,7 @@ qrc_*.*
 /Contribs/openssl/d32.mak
 /Contribs/openssl/32.mak
 /Contribs/openssl/d32dll.mak
+/Contribs/openssl/32dll.mak
 /Contribs/openssl/inc32/
 /Contribs/openssl/out32*/
 /Contribs/openssl/tmp32*/
