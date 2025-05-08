@@ -2106,7 +2106,7 @@ void CheatHandlingServerReplicator::processSendStats(unsigned int sendStats, uns
             //doDelayedSysStats(maskedSendStats, HATE_VEH_HOOK, "vegah", "VEH used (25)");
             doRemoteSysStats(maskedSendStats,  HATE_HSCE_HASH_CHANGED, "fisher", "HumanoidState::computeEvent changed (24)");
 
-            doDelayedSysStats(maskedSendStats, HATE_DLL_INJECTION, "dallas", "DLL Injection (23)");
+            //doDelayedSysStats(maskedSendStats, HATE_DLL_INJECTION, "dallas", "DLL Injection (23)");
             doRemoteSysStats(maskedSendStats,  HATE_INVALID_ENVIRONMENT, "tomy", "Sandbox or VM detected (22)");
             doRemoteSysStats(maskedSendStats,  HATE_SPEEDHACK, "usain", "Speedhack. (21)");
             doRemoteSysStats(maskedSendStats,  HATE_LUA_VM_HOOKED, "carol", "Lua vm hooked (20)");
@@ -2131,7 +2131,7 @@ void CheatHandlingServerReplicator::processSendStats(unsigned int sendStats, uns
             //doRemoteSysStats(maskedSendStats,  HATE_MEMORY_HASH_CHANGED, "imogen", "Memory hash changed (5)");
             doRemoteSysStats(maskedSendStats,  HATE_ILLEGAL_SCRIPTS, "ivan", "Illegal scripts (4)");
 
-            doRemoteSysStats(maskedSendStats,  HATE_SIGNATURE, "omar", "Bad signature (3)");
+            //doRemoteSysStats(maskedSendStats,  HATE_SIGNATURE, "omar", "Bad signature (3)");
             doDelayedSysStats(maskedSendStats, HATE_NEW_HWBP, "moe", "detected HWBP (2)");
             doRemoteSysStats(maskedSendStats,  HATE_XXHASH_BROKEN, "lafayette", "xxhash broken (1)");
             doRemoteSysStats(maskedSendStats,  HATE_CHEATENGINE_OLD, "murdle", "Cheat Engine Stable Methods (0)");
