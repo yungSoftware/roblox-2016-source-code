@@ -67,6 +67,9 @@ After a long effort, this repository has been brought to you on github with hand
 * AnchorPoint
 * Post Effects
 
+[@watrabi](https://github.com/watrabi)
+* Sysstats Patch
+
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
 
