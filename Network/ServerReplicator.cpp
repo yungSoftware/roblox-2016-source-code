@@ -2093,13 +2093,17 @@ void CheatHandlingServerReplicator::processSendStats(unsigned int sendStats, uns
         doRemoteSysStats(maskedSendStats, HATE_IMPOSSIBLE_ERROR, "impala", "Impossible Error (31)");
         if (maskedSendStats && ((maskedSendStats & HATE_IMPOSSIBLE_ERROR) == 0))
         {
-            doRemoteSysStats(maskedSendStats,  HATE_CE_ASM, "robert", "WriteCopy changed (30)");
-            doRemoteSysStats(maskedSendStats,  HATE_NEW_AV_CHECK, "moded", "Stealth Edit Revival (29)");
+			// Not the perfect fix but should prevent it from false triggering.
+			// FFLags can trigger one of these (robert iirc)
+			// If I figure out more in the future I'll fix it
+
+            //doRemoteSysStats(maskedSendStats,  HATE_CE_ASM, "robert", "WriteCopy changed (30)");
+            //doRemoteSysStats(maskedSendStats,  HATE_NEW_AV_CHECK, "moded", "Stealth Edit Revival (29)");
             doRemoteSysStats(maskedSendStats,  HATE_HASH_FUNCTION_CHANGED, "booing", "Tried to modify hash function (28)");
 
             doRemoteSysStats(maskedSendStats,  HATE_RETURN_CHECK, "bobby", "Function Return Check Failed (27)");
             doRemoteSysStats(maskedSendStats,  HATE_VERB_SNATCH, "vera", "Tried to get build tools (26)");
-            doDelayedSysStats(maskedSendStats, HATE_VEH_HOOK, "vegah", "VEH used (25)");
+            //doDelayedSysStats(maskedSendStats, HATE_VEH_HOOK, "vegah", "VEH used (25)");
             doRemoteSysStats(maskedSendStats,  HATE_HSCE_HASH_CHANGED, "fisher", "HumanoidState::computeEvent changed (24)");
 
             doDelayedSysStats(maskedSendStats, HATE_DLL_INJECTION, "dallas", "DLL Injection (23)");
@@ -2124,7 +2128,7 @@ void CheatHandlingServerReplicator::processSendStats(unsigned int sendStats, uns
 
             doRemoteSysStats(maskedSendStats,  HATE_CONST_CHANGED, "lance", "Const Changed (7)");
             doRemoteSysStats(maskedSendStats,  HATE_INVALID_BYTECODE, "jack", "Invalid bytecode (6)");
-            doRemoteSysStats(maskedSendStats,  HATE_MEMORY_HASH_CHANGED, "imogen", "Memory hash changed (5)");
+            //doRemoteSysStats(maskedSendStats,  HATE_MEMORY_HASH_CHANGED, "imogen", "Memory hash changed (5)");
             doRemoteSysStats(maskedSendStats,  HATE_ILLEGAL_SCRIPTS, "ivan", "Illegal scripts (4)");
 
             doRemoteSysStats(maskedSendStats,  HATE_SIGNATURE, "omar", "Bad signature (3)");
