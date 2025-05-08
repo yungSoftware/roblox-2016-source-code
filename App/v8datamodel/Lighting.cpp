@@ -65,7 +65,7 @@ Lighting::Lighting(void)
 ,fogStart(0.0f)
 ,fogEnd(100000.0f)
 ,globalShadows(false)
-,globalOutdoorAmbient(G3D::Color3(0.4,0.4,0.4))
+,globalOutdoorAmbient(G3D::Color3(0.5,0.5,0.5))
 ,outlines(true)
 {
 	skyParameters.lightColor = fromRGB(152, 137, 102);
