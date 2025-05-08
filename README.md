@@ -12,7 +12,7 @@ After a long effort, this repository has been brought to you on github with hand
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp)**<br>
 
-**Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**
+**Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**<br>
 **NOTE:** You may need [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local) to launch the game.
 
 # Table of Contents
