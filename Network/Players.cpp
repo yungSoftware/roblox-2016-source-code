@@ -2058,6 +2058,9 @@ bool Players::getUseCoreScriptHealthBar()
 // used to report hackers
 void Players::onRemoteSysStats(int userId, const std::string& stat, const std::string& message, bool desireKick)
 {
+	StandardOut::singleton()->printf(MESSAGE_INFO,
+		"Call made to SysStats! UserID: %d, Stat: %s, Message: %s",
+		userId, stat.c_str(), message.c_str()); // logging to see if more are triggered
 	bool willKick = desireKick && canKickBecauseRunningInRealGameServer;
 	// make call to handler
 	if(cheatingPlayers[userId].find(stat+message) != cheatingPlayers[userId].end()) {
@@ -2069,9 +2072,8 @@ void Players::onRemoteSysStats(int userId, const std::string& stat, const std::s
 		{
 			if (willKick) {
 				//Shut. It. Down.
-				// Remove the 2 comments at the down if you already prepared your sysstats.
-				// StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
-				// disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
+				StandardOut::singleton()->printf(MESSAGE_INFO, "Players::onRemoteSysStats disconnect not in the clist");
+				disconnectPlayer(userId, Replicator::DisconnectReason_OnRemoteSysStats);
 			}
 		}
 		return;
