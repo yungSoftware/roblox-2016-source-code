@@ -1107,8 +1107,6 @@ void Application::setWindowFrame()
 #if !defined(LOVE_ALL_ACCESS) && !defined(_DEBUG) && !defined(_NOOPT) && !defined(RBX_STUDIO_BUILD)
 	if(!::VerifyCryptSignature(utf8_decode(moduleFilename)))
 	{
-		// bugus message for security reasons
-		RBX::StandardOut::singleton()->print(RBX::MESSAGE_ERROR, "Important !Loading shader files");
 		RBX::DataModel::sendStats |= HATE_SIGNATURE;
 	}
 #endif
