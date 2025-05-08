@@ -27,10 +27,10 @@ After a long effort, this repository has been brought to you on github with hand
 
 ## 🪨 Features / Additions
 - Added a lot of new features, we're continuing to improve it!
-- Fixed issues that breaks the compilation to make every project compileable.
+- Fixed issues that breaks the compilation to make every project works like intended.
 - Cleaned up the whole source to make things easier and not complicated.
 - Changed Splash Screen and Copyright Date(s) just for the sake of it.
-- Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make them editable.
+- Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make them open-source.
 - Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source.
 
 ## 📚 Libraries Used
