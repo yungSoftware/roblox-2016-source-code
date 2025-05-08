@@ -3147,7 +3147,7 @@ const Instance* Replicator::getDefault(const RBX::Name& className)
 
 		shared_ptr<Instance> instance = Creatable<Instance>::createByName(className, RBX::ReplicationCreator);
 		if (!instance && strcmp(className.c_str(), "Workspace"))
-		//	RBX::StandardOut::singleton()->printf(RBX::MESSAGE_WARNING, "Replication: Can't create default object of type %s", className.c_str());
+			RBX::StandardOut::singleton()->printf(RBX::MESSAGE_WARNING, "Replication: Can't create default object of type %s", className.c_str());
 		defaultObjects[&className] = instance;
 		return instance.get();
 	}
