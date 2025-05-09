@@ -115,3 +115,4 @@ qrc_*.*
 /App.BulletPhysics/Release/
 
 ## END OF GENERAL ##
+/rbxsigner/INIFileParser.dll
