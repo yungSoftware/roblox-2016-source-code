@@ -169,7 +169,7 @@ void Document::executeScript(HttpFuture& scriptResult, const SharedLauncher::Lau
 	{
         verifiedSource = ProtectedString::fromTrustedSource(data);
 
-		// Try to comment this line at the bottom if you having issues about Document::ExecuteScript
+		// Try to comment this line at the bottom if you having issues about Document::executeScript
         ContentProvider::verifyScriptSignature(verifiedSource, true);
 	}
 	catch(std::bad_alloc& e)
