@@ -1439,6 +1439,9 @@ void DescriptorReceiver<ClassDescriptor>::learnName(std::string s, int i, uint32
 		}
 		++iter;
 	}
+	StandardOut::singleton()->printf(MESSAGE_WARNING, "ClassDescriptor failed to learn %s", s.c_str());
+	idToDesc[i].desc = NULL;
+    idToDesc[i].outdated = false;
 }
 
 template<>
@@ -1482,6 +1485,9 @@ void DescriptorReceiver<EventDescriptor>::learnName(std::string s, int i, uint32
 		}
 		++iter;
 	}
+	StandardOut::singleton()->printf(MESSAGE_WARNING, "EventDescriptor failed to learn %s", s.c_str());
+	idToDesc[i].desc = NULL;
+    idToDesc[i].outdated = false;
 }
 
 template<>
@@ -1547,6 +1553,10 @@ void DescriptorReceiver<Type>::learnName(std::string s, int i, uint32_t checksum
 			return;
 		}
 	}
+
+	StandardOut::singleton()->printf(MESSAGE_WARNING, "Type failed to learn %s", s.c_str());
+	idToDesc[i].desc = NULL;
+    idToDesc[i].outdated = false;
 }
 
 template<>
