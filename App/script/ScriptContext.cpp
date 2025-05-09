@@ -2447,7 +2447,7 @@ int ScriptContext::loadfile(lua_State* L)
 	request.get(message);
 	//The script needs to be signed
 	ProtectedString verifiedSource = ProtectedString::fromTrustedSource(message);
-	//ContentProvider::verifyScriptSignature(verifiedSource, true); // checks if script signed, if not.. NOT RAN!
+	ContentProvider::verifyScriptSignature(verifiedSource, true); // checks if script signed, if not.. NOT RAN!
 	return load_aux(L, LuaVM::load(L, verifiedSource, ("=" + contentId.toString()).c_str()));
 }
 
