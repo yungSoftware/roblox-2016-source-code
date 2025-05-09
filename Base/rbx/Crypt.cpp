@@ -12,7 +12,7 @@ namespace RBX {
 
 Crypt::Crypt()
 {
-	static const char* keyB64 = "BgIAAACkAABSU0ExAAQAAAEAAQAxeVT1XG9lcxu7i4dQoq2wolQa5sn6lEvRbS9ooTvo6HkbzXUNN6Fix0/HxbkHFNGVo28W7fVHMgGoeTN2vf6mezp3rTo5WobPpU5SPVifwDjnh/zyWdUpF5wLoSLnP9/s/jDiInvkbh6ilqeZFeJPWbzjg9jj0nsi+UQHZ+GR5w==";
+	static const char* keyB64 = "BgIAAACkAABSU0ExAAQAAAEAAQBBr7Zn+QHfNgsZEe7fU2JZGWZPJC37AUU7+wSXLTbZBdwlHJjDDAB0qT2s3OZsbJgP2TZkv/JkLBWwcPVXvDG4UdRmH3/L9fG8I6pdY7YJLWK6aXn4cUP2Fx4srYsr6w/hK9eHA5yx2T+5HocRtFI46qlnUIveGUyT0VlD9PxHtw==";
 	char pbKeyBlob[256];
 	int dwBlobLen = 256;
 
