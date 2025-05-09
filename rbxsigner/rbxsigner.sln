@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyGenerator", "KeyGenerator\KeyGenerator.csproj", "{D4384C20-C683-78A7-4377-39439FE519C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signer", "Signer\Signer.csproj", "{CDEAEB32-4A85-C6A0-F4ED-89C1D3472EA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INIFileParser", "INIFileParser\INIFileParser.csproj", "{CA3A8A10-3FCC-D437-DD34-0996D62D2062}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CDEAEB32-4A85-C6A0-F4ED-89C1D3472EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDEAEB32-4A85-C6A0-F4ED-89C1D3472EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDEAEB32-4A85-C6A0-F4ED-89C1D3472EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3A8A10-3FCC-D437-DD34-0996D62D2062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3A8A10-3FCC-D437-DD34-0996D62D2062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3A8A10-3FCC-D437-DD34-0996D62D2062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3A8A10-3FCC-D437-DD34-0996D62D2062}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

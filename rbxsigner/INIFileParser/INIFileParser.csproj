@@ -1,16 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>KeyGenerator</AssemblyName>
+    <AssemblyName>INIFileParser</AssemblyName>
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net481</TargetFramework>
-    <Prefer32Bit>True</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <LangVersion>5</LangVersion>
+    <LangVersion>12.0</LangVersion>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup />
+  <PropertyGroup>
+    <BaseOutputPath></BaseOutputPath>
+  </PropertyGroup>
   <ItemGroup />
   <ItemGroup />
 </Project>

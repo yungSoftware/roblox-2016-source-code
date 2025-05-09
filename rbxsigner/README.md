@@ -1,0 +1,2 @@
+First build INIFileParser and copy the INIFileParser.dll from INIFileParser\bin\Release\net481 to here where is README.md is located.
+And then you can build the other projects and put the compiled executable(s) and the dll(s) to htdocs\Tools\rbxsigner.

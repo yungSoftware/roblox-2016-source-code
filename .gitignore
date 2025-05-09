@@ -113,6 +113,8 @@ qrc_*.*
 /Rendering/GfxRender/bin/Release/
 /Rendering/RbxG3D/bin/Release/
 /App.BulletPhysics/Release/
+/rbxsigner/INIFileParser/bin/
+/rbxsigner/KeyGenerator/bin/
+/rbxsigner/Signer/bin/
 
 ## END OF GENERAL ##
-/rbxsigner/INIFileParser.dll
