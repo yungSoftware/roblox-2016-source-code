@@ -321,13 +321,7 @@
     <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
     <PublishDLLDependency Include="..\SDL2\Win\2.0.4\SDL2.pdb" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.dll">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.pdb">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-  </ItemGroup>
+    </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="AppSettings.xml">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(Filename)%(Extension)</Message>

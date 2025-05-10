@@ -4,8 +4,8 @@
 #include "V8DataModel/Seat.h"
 
 DYNAMIC_FASTINTVARIABLE(ActionStationDebounceTime, 2)
-DYNAMIC_FASTFLAGVARIABLE(FixAnchoredSeatingPosition, false)
-DYNAMIC_FASTFLAGVARIABLE(FixSeatingWhileSitting, false)
+DYNAMIC_FASTFLAGVARIABLE(FixAnchoredSeatingPosition, true)
+DYNAMIC_FASTFLAGVARIABLE(FixSeatingWhileSitting, true)
 
 namespace RBX {
 
