@@ -20,12 +20,12 @@
 
 #include <boost/algorithm/string.hpp>
 
-FASTFLAGVARIABLE(NewInGameDevConsole, false)
+FASTFLAGVARIABLE(NewInGameDevConsole, true)
 FASTFLAGVARIABLE(UseNewSubdomainsInCoreScripts, false)
 DYNAMIC_FASTFLAG(EnableShowStatsLua)
 FASTFLAGVARIABLE(UseGameLoadedInLoadingScript, true)
-FASTFLAGVARIABLE(UseUserListMenu, false)
-FASTFLAGVARIABLE(EnableSetCoreTopbarEnabled, false)
+FASTFLAGVARIABLE(UseUserListMenu, true)
+FASTFLAGVARIABLE(EnableSetCoreTopbarEnabled, true)
 FASTFLAGVARIABLE(Durango3DBackground, true)     // this is Xbox flag. Defined here so it is accessible in studio and xbox client
 
 namespace RBX
