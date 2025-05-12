@@ -117,4 +117,20 @@ void Crypt::verifySignatureBase64(std::string message, std::string signatureBase
 	}
 }
 
+} //namespace RBX
+
+#else
+
+#include "rbx/Crypt.h"
+
+namespace RBX
+{
+
+Crypt::Crypt() {}
+Crypt::~Crypt() {}
+void Crypt::verifySignatureBase64(std::string message, std::string signatureBase64) {}
+bool Crypt::verifySignatureBase64(std::string message, std::string signatureBase64, ALG_ID hashAlgorithm) { return true; }
+
 }
+
+#endif
