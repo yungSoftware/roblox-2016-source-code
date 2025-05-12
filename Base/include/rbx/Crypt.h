@@ -19,6 +19,7 @@ namespace RBX
 		Crypt();
 		~Crypt();
 		void verifySignatureBase64(std::string message, std::string signatureBase64);
+                bool verifySignatureBase64(std::string message, std::string signatureBase64, ALG_ID hashAlgorithm) { return true; }
 	};
 }
 
