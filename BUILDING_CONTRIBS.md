@@ -1,6 +1,6 @@
 # Cookbook for CONTRIBS:
 
-## Qt
+## Qt (Optional to build)
 1. Install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link) and extract it into **Contribs** folder
 2. Open **VS2012 x86 Native Tools Command Prompt**
 3. Change Directory (cd) to: `Trunk2016\Contribs\Qt\4.8.5\win_VS2012`
