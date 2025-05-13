@@ -43,9 +43,6 @@ jobs:
             C:\Trunk2016\openssl
           key: contribs-${{ hashFiles('**/Contribs/**', '**/openssl/**') }}
 
-      - name: Install Strawberry Perl (for OpenSSL)
-        run: choco install strawberryperl --version=5.30.0.1 -y
-
       - name: Ensure OpenSSL binaries are present
         if: steps.cache.outputs.cache-hit != 'true'
         shell: cmd
