@@ -118,3 +118,4 @@ qrc_*.*
 /rbxsigner/Signer/bin/
 
 ## END OF GENERAL ##
+/Contribs/openssl/32dll.mak
