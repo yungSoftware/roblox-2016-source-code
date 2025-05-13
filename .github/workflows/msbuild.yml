@@ -1,4 +1,4 @@
-name: Windows 
+name: Windows Build
 
 on:
   workflow_dispatch:
@@ -19,104 +19,73 @@ jobs:
       SDL2_PATH: C:\Trunk2016\Contribs\SDL2
       LIBCURL_PATH: C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0
     steps:
-      - name: fuck you git
+      - name: Enable git longpaths
         run: git config --system core.longpaths true
-    
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Create C:\Trunk2016 junction (symlink)
         shell: cmd
         run: |
-          if exist C:\Trunk2016 rmdir /s /q C:\Trunk2016
           mklink /J C:\Trunk2016 "%GITHUB_WORKSPACE%"
 
       - name: Set CONTRIB_PATH env var
-        run: |
-          echo CONTRIB_PATH=C:\Trunk2016\Contribs>> %GITHUB_ENV
+        run: echo CONTRIB_PATH=C:\Trunk2016\Contribs>> %GITHUB_ENV
 
-      - name: Cache contribs dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            C:\Trunk2016\Contribs
-            C:\Trunk2016\openssl
-          key: contribs-${{ hashFiles('**/Contribs/**', '**/openssl/**') }}
-
-      - name: Ensure OpenSSL binaries are present
-        if: steps.cache.outputs.cache-hit != 'true'
+      - name: Build Boost
         shell: cmd
         run: |
-          set PATH=%PATH%;C:\Strawberry\perl\bin
-          cd /d %OPENSSL_SRC%
-          perl Configure VC-WIN32
-          ms\32all.bat
-          if not exist %OPENSSL_OUT% mkdir %OPENSSL_OUT%
-          copy /Y Contribs\openssl\out32dll\ssleay32.dll %OPENSSL_OUT%
-          copy /Y Contribs\openssl\out32dll\libeay32.dll %OPENSSL_OUT%
-
-      - name: Bootstrap & Build Boost
-        shell: cmd
-        run: |
-          cd /d %BOOST_SRC%
+          cd /d C:\Trunk2016\Contribs\boost_1_56_0
           if exist b2.exe (echo Boost already built) else (
             call bootstrap.bat
             call build_boost.bat
           )
 
-      - name: Build SDL2 as DLL
+      - name: Build OpenSSL
+        if: steps.cache.outputs.cache-hit != 'true'
+        shell: cmd
+        run: |
+          set PATH=%PATH%;C:\Strawberry\perl\bin
+          cd /d C:\Trunk2016\Contribs\openssl
+          perl Configure VC-WIN32
+          ms\32all.bat
+          if not exist C:\Trunk2016\openssl mkdir C:\Trunk2016\openssl
+          copy /Y out32dll\ssleay32.dll C:\Trunk2016\openssl
+          copy /Y out32dll\libeay32.dll C:\Trunk2016\openssl
+
+      - name: Build SDL2
         shell: pwsh
         run: |
-          # Patch SDL2 project to build as DLL
           $sln = "${env:SDL2_PATH}\VisualC\SDL\SDL.vcxproj"
-          (Get-Content $sln) -replace '<ConfigurationType>StaticLibrary</ConfigurationType>', '<ConfigurationType>DynamicLibrary</ConfigurationType>' |
-            Set-Content $sln
-          (Get-Content $sln) -replace '<TargetExtension>.lib</TargetExtension>', '<TargetExtension>.dll</TargetExtension>' |
-            Set-Content $sln
-          # Remove HAVE_LIBC preprocessor
+          (Get-Content $sln) -replace '<ConfigurationType>StaticLibrary</ConfigurationType>', '<ConfigurationType>DynamicLibrary</ConfigurationType>' | Set-Content $sln
+          (Get-Content $sln) -replace '<TargetExtension>.lib</TargetExtension>', '<TargetExtension>.dll</TargetExtension>' | Set-Content $sln
           (Get-Content $sln) -replace 'HAVE_LIBC;', '' | Set-Content $sln
-          # Build
-          & "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
           msbuild $sln /p:Configuration=Release /p:Platform=Win32
 
       - name: Build libcurl as Static Library
         shell: pwsh
         run: |
           $libcurl = "${env:LIBCURL_PATH}\projects\Windows\VC11\lib\libcurl.vcxproj"
-          (Get-Content $libcurl) -replace '<ConfigurationType>DynamicLibrary</ConfigurationType>', '<ConfigurationType>StaticLibrary</ConfigurationType>' |
-            Set-Content $libcurl
-          (Get-Content $libcurl) -replace '<TargetExtension>.dll</TargetExtension>', '<TargetExtension>.lib</TargetExtension>' |
-            Set-Content $libcurl
-          & "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
+          (Get-Content $libcurl) -replace '<ConfigurationType>DynamicLibrary</ConfigurationType>', '<ConfigurationType>StaticLibrary</ConfigurationType>' | Set-Content $libcurl
+          (Get-Content $libcurl) -replace '<TargetExtension>.dll</TargetExtension>', '<TargetExtension>.lib</TargetExtension>' | Set-Content $libcurl
           msbuild $libcurl /p:Configuration=Release /p:Platform=Win32
 
-      - name: Build contrib libraries (deps for main projects)
-        shell: cmd
+      - name: Build contrib
         run: |
-          setlocal
-          call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
-          msbuild "%SOLUTION_PATH%" /t:boost.static;zlib;libcurl;SDL2;soapcpp2;wsdl2h;ShaderCompiler;LibOVR;qtnribbon;sgCore;CoreScriptConverter2 /p:Configuration=Release /p:Platform=Win32 /m
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:boost.static;zlib;libcurl;SDL2;soapcpp2;wsdl2h;ShaderCompiler;LibOVR;qtnribbon;sgCore;CoreScriptConverter2 /p:Configuration=Release /p:Platform=Win32 /m
 
-      - name: Build RobloxStudio (ReleaseStudio)
-        shell: cmd
+      - name: Build RobloxStudio
         run: |
-          setlocal
-          call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
-          msbuild "%SOLUTION_PATH%" /t:RobloxStudio /p:Configuration=ReleaseStudio /p:Platform=Win32 /m
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:RobloxStudio /p:Configuration=ReleaseStudio /p:Platform=Win32 /m
 
-      - name: Build RCCService (ReleaseRcc)
-        shell: cmd
+      - name: Build RCCService
         run: |
-          setlocal
-          call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
-          msbuild "%SOLUTION_PATH%" /t:RCCService /p:Configuration=ReleaseRcc /p:Platform=Win32 /m
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:RCCService /p:Configuration=ReleaseRcc /p:Platform=Win32 /m
 
-      - name: Build WindowsClient (Release)
-        shell: cmd
+      - name: Build WindowsClient
         run: |
-          setlocal
-          call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_xp
-          msbuild "%SOLUTION_PATH%" /t:WindowsClient /p:Configuration=Release /p:Platform=Win32 /m
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:WindowsClient /p:Configuration=Release /p:Platform=Win32 /m
 
       - name: Upload RobloxStudio artifact
         uses: actions/upload-artifact@v4
