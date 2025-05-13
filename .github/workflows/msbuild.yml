@@ -1,0 +1,110 @@
+name: Windows Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    runs-on: windows-2019
+    env:
+      CONTRIB_PATH: C:\Trunk2016\Contribs
+      SOLUTION_PATH: C:\Trunk2016\Client_2016.sln
+      BOOST_SRC: C:\Trunk2016\Contribs\boost_1_56_0
+      OPENSSL_SRC: C:\Trunk2016\Contribs\openssl
+      OPENSSL_OUT: C:\Trunk2016\openssl
+      SDL2_PATH: C:\Trunk2016\Contribs\SDL2
+      LIBCURL_PATH: C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0
+    steps:
+      - name: Enable git longpaths
+        run: git config --system core.longpaths true
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create C:\Trunk2016 junction (symlink)
+        shell: cmd
+        run: |
+          mklink /J C:\Trunk2016 "%GITHUB_WORKSPACE%"
+
+      - name: Set CONTRIB_PATH env var
+        run: echo CONTRIB_PATH=C:\Trunk2016\Contribs>> %GITHUB_ENV
+
+      - name: Build Boost
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\vcvarsall.bat
+          cd /d C:\Trunk2016\Contribs\boost_1_56_0
+          if exist b2.exe (echo Boost already built) else (
+            call bootstrap.bat
+            call build_boost.bat
+          )
+
+      - name: Build OpenSSL
+        if: steps.cache.outputs.cache-hit != 'true'
+        shell: cmd
+        run: |
+          set PATH=%PATH%;C:\Strawberry\perl\bin
+          cd /d C:\Trunk2016\Contribs\openssl
+          perl Configure VC-WIN32
+          ms\32all.bat
+          if not exist C:\Trunk2016\openssl mkdir C:\Trunk2016\openssl
+          copy /Y out32dll\ssleay32.dll C:\Trunk2016\openssl
+          copy /Y out32dll\libeay32.dll C:\Trunk2016\openssl
+
+      - name: Build SDL2
+        shell: pwsh
+        run: |
+          $sln = "${env:SDL2_PATH}\VisualC\SDL\SDL.vcxproj"
+          (Get-Content $sln) -replace '<ConfigurationType>StaticLibrary</ConfigurationType>', '<ConfigurationType>DynamicLibrary</ConfigurationType>' | Set-Content $sln
+          (Get-Content $sln) -replace '<TargetExtension>.lib</TargetExtension>', '<TargetExtension>.dll</TargetExtension>' | Set-Content $sln
+          (Get-Content $sln) -replace 'HAVE_LIBC;', '' | Set-Content $sln
+          msbuild $sln /p:Configuration=Release /p:Platform=Win32
+
+      - name: Build libcurl as Static Library
+        shell: pwsh
+        run: |
+          $libcurl = "${env:LIBCURL_PATH}\projects\Windows\VC11\lib\libcurl.vcxproj"
+          (Get-Content $libcurl) -replace '<ConfigurationType>DynamicLibrary</ConfigurationType>', '<ConfigurationType>StaticLibrary</ConfigurationType>' | Set-Content $libcurl
+          (Get-Content $libcurl) -replace '<TargetExtension>.dll</TargetExtension>', '<TargetExtension>.lib</TargetExtension>' | Set-Content $libcurl
+          msbuild $libcurl /p:Configuration=Release /p:Platform=Win32
+
+      - name: Build contrib
+        run: |
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:boost.static;zlib;libcurl;SDL2;soapcpp2;wsdl2h;ShaderCompiler;LibOVR;qtnribbon;sgCore;CoreScriptConverter2 /p:Configuration=Release /p:Platform=Win32 /m
+
+      - name: Build RobloxStudio
+        run: |
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:RobloxStudio /p:Configuration=ReleaseStudio /p:Platform=Win32 /m
+
+      - name: Build RCCService
+        run: |
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:RCCService /p:Configuration=ReleaseRcc /p:Platform=Win32 /m
+
+      - name: Build WindowsClient
+        run: |
+          msbuild "C:\Trunk2016\Client_2016.sln" /t:WindowsClient /p:Configuration=Release /p:Platform=Win32 /m
+
+      - name: Upload RobloxStudio artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RobloxStudio
+          path: |
+            C:\Trunk2016\RobloxStudio\bin\ReleaseStudio\*
+
+      - name: Upload RCCService artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RCCService
+          path: |
+            C:\Trunk2016\RCCService\bin\ReleaseRcc\*
+
+      - name: Upload WindowsClient artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: WindowsClient
+          path: |
+            C:\Trunk2016\WindowsClient\bin\Release\*
