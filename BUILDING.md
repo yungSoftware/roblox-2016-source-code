@@ -26,7 +26,7 @@ cd C:\ && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
   - Rendering > **LibOVR**
   - **qtnribbon** 
   - **sgCore**
-  - **CoreScriptConverter2**
+  - **CoreScriptConverter2** (Only if you're in Release Mode)
 10. Right click to project and press **Build**
 
 **Thats it, you successfully built from the source!**
