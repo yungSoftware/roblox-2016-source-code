@@ -25,12 +25,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Move repo to C:\Trunk2016
+      - name: Create C:\Trunk2016 junction (symlink)
         shell: cmd
         run: |
           if exist C:\Trunk2016 rmdir /s /q C:\Trunk2016
-          mkdir C:\Trunk2016
-          xcopy "%GITHUB_WORKSPACE%\*" "C:\Trunk2016" /e /i /h /y
+          mklink /J C:\Trunk2016 "%GITHUB_WORKSPACE%"
 
       - name: Set CONTRIB_PATH env var
         run: |
