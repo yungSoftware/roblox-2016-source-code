@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Move repo to C:\Trunk2016
+        shell: cmd
         run: |
           if exist C:\Trunk2016 rmdir /s /q C:\Trunk2016
           mkdir C:\Trunk2016
