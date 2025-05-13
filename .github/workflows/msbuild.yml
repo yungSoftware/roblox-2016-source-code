@@ -19,6 +19,9 @@ jobs:
       SDL2_PATH: C:\Trunk2016\Contribs\SDL2
       LIBCURL_PATH: C:\Trunk2016\Contribs\windows\x86\curl\curl-7.43.0
     steps:
+      - name: fuck you git
+        run: git config --system core.longpaths true
+    
       - name: Checkout repository
         uses: actions/checkout@v4
 
