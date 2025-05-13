@@ -21,8 +21,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          path: C:\Trunk2016
+
+      - name: Move repo to C:\Trunk2016
+        run: |
+          if exist C:\Trunk2016 rmdir /s /q C:\Trunk2016
+          mkdir C:\Trunk2016
+          xcopy "%GITHUB_WORKSPACE%\*" "C:\Trunk2016" /e /i /h /y
+
+      - name: Set CONTRIB_PATH env var
+        run: |
+          echo CONTRIB_PATH=C:\Trunk2016\Contribs>> %GITHUB_ENV
 
       - name: Cache contribs dependencies
         uses: actions/cache@v4
@@ -32,11 +40,10 @@ jobs:
             C:\Trunk2016\openssl
           key: contribs-${{ hashFiles('**/Contribs/**', '**/openssl/**') }}
 
-      - name: Install Strawberry Perl (for OpenSSL build)
+      - name: Install Strawberry Perl (for OpenSSL)
         run: choco install strawberryperl --version=5.30.0.1 -y
 
       - name: Ensure OpenSSL binaries are present
-        # Only build if not cached
         if: steps.cache.outputs.cache-hit != 'true'
         shell: cmd
         run: |
