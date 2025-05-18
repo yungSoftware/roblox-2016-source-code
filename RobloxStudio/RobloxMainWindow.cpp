@@ -1563,7 +1563,7 @@ void RobloxMainWindow::about()
 #endif
 
 	aboutMsg = aboutMsg.arg(RobloxSettings::getVersionString());
-    aboutMsg.append(tr("<p>ROBLOX STUDIO, an \"Online Building Toy\" Made For Enthusiasts!<br>"));
+    aboutMsg.append(tr("<p>ROBLOX STUDIO, an \"Online Building Toy\" made for Enthusiasts!<br>"));
 	
 	QString copyrightString;
 	copyrightString.sprintf("ROBLOX Corporation %c 2016", COPYRIGHT_PREFIX);
@@ -1571,6 +1571,7 @@ void RobloxMainWindow::about()
     aboutMsg.append(copyrightString);
 					   
 	aboutMsg.append(tr("<p>Contact us at info@roblox.com</p></div>"));
+	aboutMsg.append(tr("<p>This page has modified by yungDoom respectively."));
 	
 	QMessageBox::about(this, tr("Welcome to ROBLOX!"), aboutMsg);
 }
