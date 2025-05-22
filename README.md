@@ -77,7 +77,7 @@ Be a contributor by doing a helpful of changes to the source code!
 ---
 
 ## 🎯 Current Goals
-- Backporting Hitius, Graphictoria and Economy Simulator Features
+- Backporting/Implementing Hitius, Graphictoria and Economy Simulator Features
    - [ ] Color3uint8
    - [ ] R15
    - [x] :Connect() and :Wait()
