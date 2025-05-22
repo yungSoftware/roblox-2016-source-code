@@ -132,12 +132,12 @@ Be a contributor by doing a helpful of changes to the source code!
     - [x] RobloxLib
 - Make it possible to build on listed platforms **[1/7]**
   - [x] Windows
-  - [ ] CMake 
   - [ ] Android
   - [ ] Linux
   - [ ] MacOS / Unix
   - [ ] iOS
   - [ ] Xbox / Durango
+  - [ ] CMake 
 
 ## ⚠️ Current Issues
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
