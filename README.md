@@ -140,7 +140,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] Xbox / Durango
 
 ## ⚠️ Current Issues
-- The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises).
+- The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - Probably an issue related to DSBaseClasses 
 - When importing some models or opening places all parts are colored as gray
    - This is due to the source doesn't have Color3uint8 support, however we'll add it ASAP.
