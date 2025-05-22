@@ -141,6 +141,6 @@ Be a contributor by doing a helpful of changes to the source code!
 
 ## ⚠️ Current Issues
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises
-   - The audio can be fixed by Turning on the Compatibility Mode to Windows 8.
+   - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7.
 - When importing some models or opening places all parts are colored as gray
    - This is due to the source doesn't have Color3uint8 support, however we'll add it ASAP.
