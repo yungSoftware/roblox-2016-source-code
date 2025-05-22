@@ -1210,7 +1210,8 @@ namespace RBX {
 
 		ERROR_ON_FAIL(WMCreateProfileManager(&profileMgr));
 
-		// sound should be enables we should not force you to no sound and we have sound only on Vista & Win7 for now
+		// sound should be enables we should not force you to no sound and we have sound only on Vista & Win7 (also Windows 8) for now
+		// Good take roblox developers, you guys probably did an hack and now we figuring out. or did bill gates did something while updating windows? because old windows versions seems fine when playing.
 		if (soundState->enabledFunction() && !forceNoAudio && osvi.dwMajorVersion > 5)
 		{
 			if (osvi.dwMajorVersion > 5)
