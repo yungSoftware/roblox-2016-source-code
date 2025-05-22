@@ -44,8 +44,9 @@
     <_ProjectFileVersion>15.0.28127.55</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>.\Release\</OutDir>
+    <OutDir>..\Lib\</OutDir>
     <IntDir>.\Release\</IntDir>
+    <TargetName>strmbase</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>.\Debug\</OutDir>
@@ -72,7 +73,7 @@
     </ClCompile>
     <Lib>
       <AdditionalOptions>..\..\SDK\lib\strmiids.lib  /nodefaultlib  %(AdditionalOptions)</AdditionalOptions>
-      <OutputFile>Release\STRMBASE.lib</OutputFile>
+      <OutputFile>..\Lib\strmbase.lib</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </Lib>
     <ResourceCompile>

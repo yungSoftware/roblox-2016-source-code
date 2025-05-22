@@ -21,9 +21,6 @@
 #include <tchar.h>
 #endif // DEBUG
 
-extern CFactoryTemplate g_Templates[];
-extern int g_cTemplates;
-
 HINSTANCE g_hInst;
 DWORD	  g_amPlatform;		// VER_PLATFORM_WIN32_WINDOWS etc... (from GetVersionEx)
 OSVERSIONINFO g_osInfo;
@@ -192,8 +189,8 @@ DllGetClassObject(
 
     // traverse the array of templates looking for one with this
     // class id
-    for (int i = 0; i < g_cTemplates; i++) {
-        const CFactoryTemplate * pT = &g_Templates[i];
+    for (int i = 0; i < NULL; i++) {
+        const CFactoryTemplate * pT = 0;
         if (pT->IsClassID(rClsID)) {
 
             // found a template - make a class factory based on this
@@ -220,8 +217,8 @@ DllInitClasses(BOOL bLoading)
 
     // traverse the array of templates calling the init routine
     // if they have one
-    for (i = 0; i < g_cTemplates; i++) {
-        const CFactoryTemplate * pT = &g_Templates[i];
+    for (int i = 0; i < NULL; i++) {
+        const CFactoryTemplate* pT = 0;
         if (pT->m_lpfnInit != NULL) {
             (*pT->m_lpfnInit)(bLoading, pT->m_ClsID);
         }
