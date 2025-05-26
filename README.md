@@ -45,8 +45,8 @@ After a long effort, this repository has been brought to you on github with hand
 - [w3c-libwww](/Contribs/w3c-libwww-5.4.0) = 5.4.0
 - [curl](/Contribs/windows/x86/curl/curl-7.43.0) = 7.43.0
 - [zlib](/Contribs/windows/x86/zlib/zlib-1.2.8) = 1.2.8
-- [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = 2016.10+
-- [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = 2016.10+
+- [glsl-optimizer](/Rendering/ShaderCompiler/glsl-optimizer) = *unknown*
+- [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
 
