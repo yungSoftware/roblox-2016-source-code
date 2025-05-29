@@ -43,7 +43,7 @@ Crypt::~Crypt()
 	CryptReleaseContext(context, 0);
 }
 
-void Crypt::verifySignatureBase64(std::string message, std::string signatureBase64)
+bool Crypt::verifySignatureBase64(std::string message, std::string signatureBase64)
 {
 	HCRYPTHASH hash;
 	if (!CryptCreateHash(context, CALG_SHA1, NULL, 0, &hash))
@@ -52,6 +52,9 @@ void Crypt::verifySignatureBase64(std::string message, std::string signatureBase
 #else
 		 throw RBX::runtime_error("");
 #endif
+	
+	bool result = false;
+
 	try
 	{
 		if (!CryptHashData(hash, (BYTE*)message.c_str(), message.size(), 0))
@@ -71,19 +74,21 @@ void Crypt::verifySignatureBase64(std::string message, std::string signatureBase
 			API, you must swap the order of signature bytes before calling the 
 			CryptVerifySignature function to verify the signature.
 		*/
-		BYTE signatureRev[10240];
-		for (int i=0; i<signatureLen && i<=10240; ++i)
+		BYTE* signatureRev = (BYTE*)alloca(signatureLen);
+		for (int i = 0; i < signatureLen; ++i)
 			signatureRev[i] = signature[signatureLen - i - 1];
 
 #pragma warning(push)
 #pragma warning(disable: 6309)
 #pragma warning(disable: 6387)
-		if (!CryptVerifySignature(hash, signatureRev, signatureLen, key, NULL, 0))
+		result = CryptVerifySignature(hash, signatureRev, signatureLen, key, NULL, 0) != 0;
+		if (!result) {
 #ifdef _DEBUG
 			throw RBX::runtime_error("CryptVerifySignature Error 0x%x. sigLen=%d sigB64='%s' message='%s'", GetLastError(), signatureLen, signatureBase64.c_str(), message.c_str());
 #else
 			throw RBX::runtime_error("");
 #endif
+		}
 #pragma warning(pop)
 	}
 	catch (...)
@@ -93,6 +98,7 @@ void Crypt::verifySignatureBase64(std::string message, std::string signatureBase
 	}
 
 	::CryptDestroyHash(hash);
+	return result;
 }
 
 } //namespace RBX
@@ -106,7 +112,7 @@ namespace RBX
 
 Crypt::Crypt() {}
 Crypt::~Crypt() {}
-void Crypt::verifySignatureBase64(std::string message, std::string signatureBase64) {}
+bool Crypt::verifySignatureBase64(std::string message, std::string signatureBase64) { return true; }
 
 }
 
