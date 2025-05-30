@@ -10,7 +10,7 @@ This source originates from robloxsrc.zip that was spinning around but its rare 
 After a long effort, this repository has been brought to you on github with handful of changes!<br>
 
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-   - Make sure to read it properly so you wont face with any issues.
+   - Make sure to read them properly so you wont face with any issues.
 
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp) or at the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues)**<br>
 
