@@ -82,7 +82,7 @@ Be a contributor by doing a helpful of changes to the source code!
    - [ ] R15
    - [x] :Connect() and :Wait()
 - 64-bit Support
-- Making it able to build all the projects with the latest Visual Studio Version **[10/40]** 
+- Building all the projects with the latest Visual Studio Version **[10/38]** 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -128,9 +128,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [x] IncludeChecker
   - [x] RbxTestHooks
   - [x] ScriptSigner
-  - [x] RegressionTestSuite
-    - [x] RobloxLib
-- Make it possible to build on listed platforms **[1/7]**
+- Be able to build on listed platforms **[1/7]**
   - [x] Windows
   - [ ] Android
   - [ ] Linux
@@ -140,7 +138,7 @@ Be a contributor by doing a helpful of changes to the source code!
   - [ ] CMake 
 
 ## ⚠️ Current Issues
-- The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises
+- The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7.
 - When importing some models or opening places all parts are colored as gray
    - This is due to the source doesn't have Color3uint8 support, however we'll add it ASAP.
