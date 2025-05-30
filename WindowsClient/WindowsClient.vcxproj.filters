@@ -4,12 +4,6 @@
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll">
       <Filter>Libraries</Filter>
     </PublishDLLDependency>
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.dll">
-      <Filter>Libraries\Debug</Filter>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="..\RbxDebug\bin\Debug\RbxDebug.pdb">
-      <Filter>Libraries\Debug</Filter>
-    </PublishDLLDependency>
     <PublishDLLDependency Include="..\Rendering\ShaderCompiler\d3dcompiler_47.dll">
       <Filter>Libraries</Filter>
     </PublishDLLDependency>

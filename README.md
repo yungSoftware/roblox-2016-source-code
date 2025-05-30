@@ -6,8 +6,8 @@
 </p>
 
 # Roblox 2016 Source Code
-This source originates from robloxsrc.zip that was spinning around but its rare to find these days.<br>
-After a long effort, this repository has been brought to you on github with handful of changes!<br>
+This source originates from **robloxsrc.zip** that was spinning around but its hard to find these days.<br>
+After a long effort, this repository has been brought to you on github with lots of changes!<br>
 
 **To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
    - Make sure to read them properly so you wont face with any issues.
@@ -32,7 +32,7 @@ After a long effort, this repository has been brought to you on github with hand
 - Fixed issues that breaks the compilation to make every project works like intended.
 - Cleaned up the whole source to make things easier and not complicated.
 - Changed Splash Screen and Copyright Date(s) just for the sake of it.
-- Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make them open-source.
+- Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make their source accessible.
 - Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source.
 
 ## 📚 Libraries Used
@@ -69,12 +69,13 @@ After a long effort, this repository has been brought to you on github with hand
 * Post Effects
 
 [@watrabi](https://github.com/watrabi)
-* Sysstats Patch
+* Proper Sysstats Patch
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
 
-Be a contributor by doing a helpful of changes to the source code!
+**Want to be in the list and help us?**<br>
+Be a contributor by doing a helpful of changes/commits to the repository!
 
 ---
 
@@ -143,4 +144,4 @@ Be a contributor by doing a helpful of changes to the source code!
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7.
 - When importing some models or opening places all parts are colored as gray
-   - This is due to the source doesn't have Color3uint8 support, however we'll add it ASAP.
+   - This is due to the source doesn't have Color3uint8 support, however [we will add it ASAP.](#-current-goals).
