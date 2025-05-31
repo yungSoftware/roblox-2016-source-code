@@ -82,6 +82,8 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 ## 🎯 Current Goals
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
    - [ ] Color3uint8
+     - [ ] Color3.fromRGB()
+       - We already added this but it's not working properly since we don't have the feature at the top.
    - [ ] R15
    - [x] :Connect() and :Wait()
 - 64-bit Support
