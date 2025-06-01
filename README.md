@@ -15,7 +15,7 @@ After a long effort, this repository has been brought to you on github with lots
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp) or at the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues)**<br>
 
 **Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**<br>
-**NOTE:** You may need [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local) to launch the game.
+**NOTE:** You may need [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main) to launch the game.
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
@@ -33,7 +33,7 @@ After a long effort, this repository has been brought to you on github with lots
 - Cleaned up the whole source to make things easier and not complicated.
 - Changed Splash Screen and Copyright Date(s) just for the sake of it.
 - Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make their source accessible.
-- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet-rblx/tree/local)! A backend made for this particular source.
+- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)! A backend made for this particular source.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
