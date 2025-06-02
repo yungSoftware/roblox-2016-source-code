@@ -1,4 +1,4 @@
-# Cookbook for the Source:
+# Cookbook for the Source
 
 1. First of all, Open a Command Prompt and clone the repository with **[Git](https://git-scm.com/)** like this:
 ```
