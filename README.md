@@ -9,7 +9,7 @@
 This source originates from **robloxsrc.zip** that was spinning around but its hard to find these days.<br>
 After a long effort, this repository has been brought to you on github with lots of changes!<br>
 
-**To see how you can build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
+**To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
    - Make sure to read them properly so you wont face with any issues.
 
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp) or at the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues)**<br>
@@ -147,3 +147,5 @@ Be a contributor by doing a helpful of changes/commits to the repository!
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7. (for now. it'll be fixed soon.)
 - When importing some models or opening places all parts are colored as gray
    - This is due to the source doesn't have Color3uint8 support, however [we will add it ASAP.](#-current-goals).
+
+---
