@@ -1,4 +1,4 @@
-# Cookbook for CONTRIBS:
+# Cookbook for Contribs
 
 ## Qt (Optional to build)
 1. Install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link) and extract it into **Contribs** folder
