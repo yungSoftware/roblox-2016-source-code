@@ -82,7 +82,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
    - [ ] Color3uint8
      - [ ] Color3.fromRGB()
-       - We already added this but it's not working properly since we don't have the feature at the top.
+       - We already added this but it's not working properly for the parts since we don't have the feature at the top.
    - [ ] R15
    - [x] :Connect() and :Wait()
 - 64-bit Support
@@ -145,6 +145,6 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7. <br>(for now. it'll be fixed soon.)
 - When importing some models or opening places all parts are colored as gray
-   - This is due to the source doesn't have Color3uint8 support, however [we will add it.](#-current-goals).
+   - This is due to the source doesn't have Color3uint8 support for the Parts, however [we will add it.](#-current-goals).
 
 ---
