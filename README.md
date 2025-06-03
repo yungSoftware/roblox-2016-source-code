@@ -136,7 +136,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [x] Windows
      - [x] Ready to Build, Everything is prepared.
   - [ ] Android
-     - [x] Ready to Build, Everything is prepared.
+     - [ ] Ready to Build, Everything is prepared.
   - [ ] Linux
      - [ ] Ready to Build, Everything is prepared.
   - [ ] MacOS / Unix
