@@ -21,7 +21,7 @@ After a long effort, this repository has been brought to you on github with lots
 1. [🪨 Features / Additions](#-features--additions)
 2. [📚 Libraries Used](#-libraries-used)
 3. [🔨 Tools Used](#-tools-used)
-4. [❤️ Contributors](#%EF%B8%8F-contributors)
+4. ❤️ Contributors](#%EF%B8%8F-contributors)
 5. [🎯 Current Goals](#-current-goals)
 6. [⚠️ Current Issues](#%EF%B8%8F-current-issues)
 
@@ -152,6 +152,6 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7. <br>(for now. it'll be fixed soon.)
 - When importing some models or opening places all parts are colored as gray
-   - This is due to the source doesn't have Color3uint8 support for the Parts, however [we will add it.](#-current-goals)
+   - This is due to the source doesn't have Color3uint8 support for the Parts, doesn't happen frequently but however [we will fix it.](#-current-goals)
 
 ---
