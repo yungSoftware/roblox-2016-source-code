@@ -1,8 +1,8 @@
 # Cookbook for the Source
 
-1. First of all, Open a Command Prompt and clone the repository with **[Git](https://git-scm.com/)** like this:
+1. First of all, Open a Command Prompt with Administrator Right and clone the repository with **[Git](https://git-scm.com/)** like this:
 ```
-cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
+git config --system core.longpaths true && cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 ```
   - Do this if you dont want to download the source code over and over again. **(Recommended)**
 2. You need to use **[Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)**, **[Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)** and **[Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/)** for viewing the solution, pretty self-explanatory right?
