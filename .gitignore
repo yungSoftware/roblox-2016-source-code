@@ -118,3 +118,11 @@ qrc_*.*
 /rbxsigner/Signer/bin/
 
 ## END OF GENERAL ##
+/Installer/Bootstrapper/bin/Release
+/Installer/BootstrapperClient/bin/Release
+/Installer/BootstrapperQTStudio/bin/Release
+/Installer/BootstrapperRccService/bin/Release
+/Installer/RobloxProxy/bin/Release
+/Installer/RobloxProxy/RobloxProxy_i.c
+/Installer/RobloxProxy/RobloxProxy_i.h
+/Installer/RobloxProxy/RobloxProxy_p.c
