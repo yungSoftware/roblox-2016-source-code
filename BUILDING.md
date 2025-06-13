@@ -1,6 +1,6 @@
 # Cookbook for the Source
 
-1. First of all, Open a Command Prompt with Administrator Right and clone the repository with **[Git](https://git-scm.com/)** like this:
+1. First of all, Open a Command Prompt with Administrator Rights and clone the repository with **[Git](https://git-scm.com/)** like this:
 ```
 git config --system core.longpaths true && cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 ```
