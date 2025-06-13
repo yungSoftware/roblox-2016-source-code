@@ -5,7 +5,7 @@
 git config --system core.longpaths true && cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 ```
   - Do this if you dont want to download the source code over and over again. **(Recommended)**
-2. You need to use **[Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)**, **[Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)** and **[Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/)** for viewing the solution, pretty self-explanatory right?
+2. You need to use **[Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)**, **[Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)** and **[Visual Studio 2022 (OPTIONAL)](https://visualstudio.microsoft.com/tr/vs/)** for viewing the solution, pretty self-explanatory right?
     - Uncheck all optional components in the Visual Studio 2012 installer except **"Microsoft Foundation Classes for C++"** to save space due to none of them are needed.
 3. Create an environment variable as system variable called **CONTRIB_PATH** and set the path to: **``<your path>\<your folder name>\Contribs``**
 4. Now you need to build libraries, to do so head over to: **[BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)**
