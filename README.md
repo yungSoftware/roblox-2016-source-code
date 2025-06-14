@@ -33,7 +33,7 @@ After a long effort, this repository has been brought to you on github with lots
 - Cleaned up the whole source to make things easier and not complicated.
 - Changed Splash Screen and Copyright Date(s) just for the sake of it.
 - Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make their source accessible.
-- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)! A backend made for this particular source.
+- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)! A server made for this particular source.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
@@ -66,6 +66,7 @@ After a long effort, this repository has been brought to you on github with lots
 [@eprominecraft](https://github.com/eprominecraft)
 * AnchorPoint
 * Post Effects
+* Made Bootstrappers Work
 
 [@watrabi](https://github.com/watrabi)
 * Proper Sysstats Patch

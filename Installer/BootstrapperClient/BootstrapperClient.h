@@ -40,7 +40,6 @@ private:
 	//install steps of Bootstrapper client
 	void DeployBootstrapper();
 	void RegisterInstallHost();
-	void DeployRobloxProxys();
 	void InstallPlayer();
 
 	std::string BuildDateTime(int y, int m, int d);
@@ -51,10 +50,6 @@ private:
 
 	void deployExtraStudioBootstrapper(std::string exeName, TCHAR *linkName, std::wstring componentId, bool forceDesktopIconCreation, const TCHAR *registryPath);
 	void deployStudioBetaBootstrapper(bool forceDesktopIconCreation);
-	void deployRobloxProxy(bool commitData);
-	void deployNPRobloxProxy(bool commitData);
-	void registerFirefoxPlugin(const TCHAR* id, bool is64Bits);
-	void unregisterFirefoxPlugin(const TCHAR* id, bool is64Bits);
 
 	virtual std::wstring GetRegistryPath() const;
 	virtual std::wstring GetRegistrySubPath() const;

@@ -28,8 +28,6 @@ static const TCHAR* BootstrapperFileName    = _T("RobloxPlayerLauncher.exe");
 static const TCHAR* RobloxAppFileName		= _T(PLAYEREXENAME);
 static const TCHAR* BootstrapperMutexName   = _T("www.roblox.com/bootstrapper");
 static const TCHAR* StartRobloxAppMutex     = _T("www.roblox.com/startRobloxApp");
-static const TCHAR* LauncherFileName        = _T("RobloxProxy.dll");
-static const TCHAR* LauncherFileName64      = _T("RobloxProxy64.dll");
 static const TCHAR* FriendlyName            = _T("ROBLOX");
 static const TCHAR* CLSID_Launcher          = _T("{76D50904-6780-4c8b-8986-1A7EE0B1716D}");
 static const TCHAR* CLSID_Launcher64        = _T("{DEE03C2B-0C0C-41A9-9877-FD4B4D7B6EA3}");
@@ -534,8 +532,6 @@ void BootstrapperClient::RunPreDeploy()
 		setInstallVersion(preVersion);
 
 		deploySelf(false);
-		deployRobloxProxy(false);
-		deployNPRobloxProxy(false);
 		DeployComponents(true, false);
 
 		CRegKey key;
@@ -970,104 +966,6 @@ void BootstrapperClient::deployStudioBetaBootstrapper(bool forceDesktopIconCreat
         getQTStudioRegistryPath().c_str() );
 }
 
-void BootstrapperClient::deployRobloxProxy(bool commitData)
-{
-	deployer->deployVersionedFile(_T("RobloxProxy.zip"), NULL, Progress(), commitData);
-	CheckCancel();
-
-	if (!commitData)
-	{
-		return;
-	}
-
-	if (!isPerUser())
-	{
-		//Global install in process, so remove local settings to prevent conflicts
-		CRegKey ckey;
-		if (!FAILED(ckey.Open(HKEY_CURRENT_USER, _T("Software\\Classes"))))
-			proxyModule.unregisterModule(ckey, true, logger);
-	}
-
-	proxyModule.registerModule(classesKey, programDirectory(), logger);
-
-	// create the 64 bit keys
-	CRegKey classesKey64;
-	throwHRESULT(classesKey64.Create(isPerUser() ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\Classes"), REG_NONE, REG_OPTION_NON_VOLATILE, KEY_READ | KEY_WRITE | KEY_WOW64_64KEY), "Failed to create 64 bits HK**\\Software\\Classes");
-	LOG_ENTRY1("classesKey64 = %s\\Software\\Classes", (isPerUser() ? "HKEY_CURRENT_USER" : "HKEY_LOCAL_MACHINE"));
-	proxyModule64.registerModule(classesKey64, programDirectory(), logger);
-
-	{
-		// IE hack to avoid DLL security warning
-		// Ideally we'd just register the DLL as pre-approved, but this doesn't work in HKCU, only HKLM
-		CRegKey key;
-		throwHRESULT(key.Create(HKEY_CURRENT_USER, format_string(_T("Software\\Microsoft\\Windows\\CurrentVersion\\Ext\\Stats\\%s\\iexplore"), CLSID_Launcher).c_str()), "Failed to create key for iexplorer stats");
-		key.SetDWORDValue(_T("Flags"), 4);
-
-		// For IE8:
-		CRegKey allowedDomainsKey = CreateKey(key, _T("AllowedDomains"));
-		CreateKey(allowedDomainsKey, _T("roblox.com"));
-		CreateKey(allowedDomainsKey, _T("robloxlabs.com"));
-	}
-
-	CVersionInfo vi;
-	std::wstring filePath = programDirectory() + _T("\\RobloxProxy.dll");
-	if (vi.Load(filePath))
-	{
-		std::string version = vi.GetFileVersionAsString();
-		CRegKey installKey;
-		if (!FAILED(installKey.Open(isPerUser() ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, GetRegistryPath().c_str())))
-			installKey.SetStringValue(_T("Plug-in version"), convert_s2w(version).c_str());
-	}
-}
-
-void BootstrapperClient::deployNPRobloxProxy(bool commitData)
-{
-	deployer->deployVersionedFile(_T("NPRobloxProxy.zip"), NULL, Progress(), commitData);
-	CheckCancel();
-
-	if (!commitData)
-	{
-		return;
-	}
-
-	unregisterFirefoxPlugin(_T(FIREFOXREGKEY), false);
-	unregisterFirefoxPlugin(_T(FIREFOXREGKEY64), true);
-
-	registerFirefoxPlugin(_T(FIREFOXREGKEY), false);
-	registerFirefoxPlugin(_T(FIREFOXREGKEY64), true);
-}
-
-void BootstrapperClient::registerFirefoxPlugin(const TCHAR* id, bool is64Bits)
-{
-	HKEY parent = HKEY_CURRENT_USER;
-	CRegKey key = CreateKey(parent, format_string(_T("SOFTWARE\\MozillaPlugins\\%s"), id).c_str(), NULL, is64Bits);
-
-	key.SetStringValue(_T("ProductName"), _T("Launcher"));
-	key.SetStringValue(_T("Description"), _T("Roblox Launcher"));
-	key.SetStringValue(_T("Vendor"), _T("Roblox"));
-	key.SetStringValue(_T("Version"), _T("1"));
-
-	if (is64Bits)
-		key.SetStringValue(_T("Path"), (programDirectory() + _T("\\NPRobloxProxy64.dll")).c_str());
-	else
-		key.SetStringValue(_T("Path"), (programDirectory() + _T("\\NPRobloxProxy.dll")).c_str());
-
-	CreateKey(parent, format_string(_T("SOFTWARE\\MozillaPlugins\\%s\\MimeTypes"), id).c_str(), NULL, is64Bits);
-	CreateKey(parent, format_string(_T("SOFTWARE\\MozillaPlugins\\%s\\MimeTypes\\application/x-vnd-roblox-launcher"), id).c_str(), NULL, is64Bits);
-}
-
-void BootstrapperClient::unregisterFirefoxPlugin(const TCHAR* id, bool is64Bits)
-{
-	CRegKey mozillaKey;
-	REGSAM sam = KEY_READ | KEY_WRITE;
-	if (is64Bits)
-		sam |= KEY_WOW64_64KEY;
-
-	if(!FAILED(mozillaKey.Open(HKEY_CURRENT_USER,_T("Software\\MozillaPlugins"), sam))){
-		DeleteKey(logger, mozillaKey, id);
-	}
-}
-
 void BootstrapperClient::DeployComponents(bool isUpdating, bool commitData)
 {
 	std::vector<std::pair<std::wstring, std::wstring> > files;
@@ -1116,20 +1014,12 @@ void BootstrapperClient::DoInstallApp()
 	// setup studio bootstrappers so we can launch studio (has to be done before we do much else, to make sure we launch right application)
 	installStudioLauncher(isUpdating);
 
-	// "install key" and "install host" must be set before RobloxProxy is deployed, because RobloxProxy uses these values
 	LOG_ENTRY("set install key");
 	CRegKey installKey = CreateKey(isPerUser() ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, GetRegistryPath().c_str(), (programDirectory() + BootstrapperFileName).c_str());
 	LOG_ENTRY("set install host key value");
 	throwHRESULT(installKey.SetStringValue(_T("install host"), convert_s2w(InstallHost()).c_str()), "Failed to set install host key value");
 	CheckCancel();
 	
-	// Now deploy RobloxProxy so that javascript clients can get going ASAP (has to go after studio bootstrappers in case we are in editMode)
-	LOG_ENTRY("deployRobloxProxy()");
-	deployRobloxProxy(true);
-	CheckCancel();
-
-	LOG_ENTRY("deployNPRobloxProxy()");
-	deployNPRobloxProxy(true);
 	CheckCancel();
 
 	setStage(3);
@@ -1208,9 +1098,6 @@ void BootstrapperClient::DoUninstallApp(CRegKey &hk)
 		{
 			//unregisterFileTypes(ckey);
 			proxyModule.unregisterModule(ckey, isPerUser(), logger);
-
-			unregisterFirefoxPlugin(_T(FIREFOXREGKEY), false);
-			unregisterFirefoxPlugin(_T(FIREFOXREGKEY64), true);
 		}
 
 		// unregister 64 bit proxy module
@@ -1263,29 +1150,6 @@ void BootstrapperClient::initialize()
 {
 	LOG_ENTRY("BootstrapperClient::initialize");
 	counters.reset(new CountersClient(BaseHost(), "76E5A40C-3AE1-4028-9F10-7C62520BD94F", &logger));
-
-	{
-		proxyModule.appName = "RobloxProxy";
-		proxyModule.fileName = _T("RobloxProxy.DLL");
-		proxyModule.clsid = CLSID_Launcher;
-		proxyModule.typeLib = "{731B317A-E2B8-4BF7-A2C4-B47C225DDAFF}"; 
-		proxyModule.typeLibVersion = "1.0"; 
-		proxyModule.appID = AppID_Launcher;
-		proxyModule.interfaces.push_back(ComModule::Interface("ILauncher", "{699F0898-B7BC-4DE5-AFEE-0EC38AD42240}", false));
-		proxyModule.interfaces.push_back(ComModule::Interface("_ILauncherEvents", "{6E9600BE-5654-47F0-9A68-D6DC25FADC55}", true));
-		proxyModule.progID = "RobloxProxy.Launcher.4";
-		proxyModule.versionIndependentProgID = "RobloxProxy.Launcher";
-		proxyModule.name = _T("Launcher Class");
-		proxyModule.moduleName = LauncherFileName;
-		proxyModule.isDll = true;
-		proxyModule.is64Bits = false;
-
-		proxyModule64 = proxyModule;
-		proxyModule64.clsid = CLSID_Launcher64;
-		proxyModule64.moduleName = LauncherFileName64;
-		proxyModule64.fileName = _T("RobloxProxy64.DLL");
-		proxyModule64.is64Bits = true;
-	}
 
 	Bootstrapper::initialize();
 }
