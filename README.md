@@ -90,7 +90,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
 - 64-bit Support
-- Building all the projects with the latest Visual Studio Version **[10/38]** 
+- Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -130,7 +130,6 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [ ] Bootstrapper
   - [ ] BootstrapperClient
   - [ ] BootstrapperQTStudio
-  - [ ] BootstrapperRCCService
   - [ ] RobloxProxy
   #### Other
   - [x] IncludeChecker
