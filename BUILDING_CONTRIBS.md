@@ -15,7 +15,7 @@ configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder 
 2. Run the **bootstrap.bat**
 3. After the command is done, run **build_boost.bat** and it will start compiling.
 
-**IMPORTANT:** You may have to change the paths inside **build_boost.bat*.
+**IMPORTANT:** You may have to change the paths inside **build_boost.bat**.
 
 - If you get any errors about Python, **do not worry** because its normal and they will not affect the compilation.
 
