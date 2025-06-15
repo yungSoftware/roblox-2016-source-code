@@ -89,6 +89,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
    - [ ] Keyboard Shortcuts
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
+      - [ ] Windows Key on WindowsClient
 - 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
