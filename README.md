@@ -90,8 +90,8 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
-- [ ] Cyrillic & Non-Latin Languages Support
-- [ ] Improve Profanity/Swear Filter
+- [ ] Adding Cyrillic & Non-Latin Languages Support
+- [ ] Improving Profanity/Swear Filter
 - [ ] 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
