@@ -90,7 +90,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
-- [ ] UTF8/Unicode - Cyrillic & Non-Latin Languages Support
+- [ ] Cyrillic & Non-Latin Languages Support
 - [ ] 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
