@@ -86,6 +86,9 @@ Be a contributor by doing a helpful of changes/commits to the repository!
        - We already added this but it's not working properly for the parts since we don't have the feature at the top.
    - [ ] R15
    - [x] :Connect() and :Wait()
+   - [ ] Keyboard Shortcuts
+      - [ ] Reset Character Keybind
+      - [ ] Chat Keybind
 - 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/38]** 
   - [ ] App
