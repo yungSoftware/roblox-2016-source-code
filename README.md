@@ -91,7 +91,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
 - [ ] Adding Cyrillic & Non-Latin Languages Support
-- [ ] Improving Profanity/Swear Filter
+   - [ ] Improving Profanity/Swear Filter
 - [ ] Making Bootstrappers functional as intended
 - [ ] 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
