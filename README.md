@@ -82,6 +82,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 ## 🎯 Current Goals
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
    - [ ] Color3uint8
+        - Potential fix to [this issue](#L156)
      - [ ] Color3.fromRGB()
        - We already added this but it's not working properly for the parts since we don't have the feature at the top.
    - [ ] R15
@@ -93,6 +94,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] Improving Profanity/Swear Filter
 - [ ] Making Bootstrappers functional as intended
+- [ ] [Fixing in-game Recorder behaving goofy](#L154)
 - [ ] 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
