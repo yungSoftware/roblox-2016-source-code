@@ -139,21 +139,14 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [x] IncludeChecker
   - [x] RbxTestHooks
   - [x] ScriptSigner
-- Be able to build on listed platforms **[1/7]**
+- Be able to build on listed platforms/compilers **[1/7]**
   - [x] Windows
-     - [x] Ready to Build, Everything is prepared.
   - [ ] Android
-     - [ ] Ready to Build, Everything is prepared.
   - [ ] Linux
-     - [ ] Ready to Build, Everything is prepared.
   - [ ] MacOS / Unix
-     - [ ] Ready to Build, Everything is prepared.
   - [ ] iOS
-     - [ ] Ready to Build, Everything is prepared.
   - [ ] Xbox / Durango
-     - [ ] Ready to Build, Everything is prepared.
-  - [ ] CMake 
-     - [ ] Ready to Build, Everything is prepared.
+  - [ ] CMake
 
 ## ⚠️ Current Issues
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
