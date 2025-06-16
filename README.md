@@ -82,7 +82,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 ## 🎯 Current Goals
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
    - [ ] Color3uint8
-        - Potential fix to [this issue](#L156)
+        - Potential fix to [this issue](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L156)
      - [ ] Color3.fromRGB()
        - We already added this but it's not working properly for the parts since we don't have the feature at the top.
    - [ ] R15
@@ -94,7 +94,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] Improving Profanity/Swear Filter
 - [ ] Making Bootstrappers functional as intended
-- [ ] [Fixing in-game Recorder behaving goofy](#L154)
+- [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support
 - Building all the projects with the latest Visual Studio Version **[10/37]** 
   - [ ] App
@@ -154,6 +154,6 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
    - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7. <br>(for now. it'll be fixed soon.)
 - When importing some models or opening places all parts are colored as gray
-   - This is due to the source doesn't have Color3uint8 support for the Parts, doesn't happen frequently but however [we will fix it.](#-current-goals)
+   - This is due to the source doesn't have Color3uint8 support for the Parts, doesn't happen frequently but however [we will fix it.](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L84)
 
 ---
