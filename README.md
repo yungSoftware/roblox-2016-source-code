@@ -90,7 +90,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
        - We already added this but it's not working properly for the parts since we don't have the feature at the top.
    - [ ] R15
    - [x] :Connect() and :Wait()
-   - [ ] Keyboard Shortcuts
+   - [ ] Fix Keyboard Shortcuts
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
@@ -101,7 +101,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [x] New Fonts 
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
-- [ ] Making Bootstrappers functional as intended
+- [ ] Making Bootstrappers functional as intended 
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support 
 - [ ] Uploading the Qt to the Github as issue-free
