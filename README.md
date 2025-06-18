@@ -3,6 +3,7 @@
 <p align="center">
 <img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/P0L3NARUBA/roblox-2016-source-code">
 <img alt="GitHub Release" src="https://img.shields.io/github/v/release/P0L3NARUBA/roblox-2016-source-code">
+<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/P0L3NARUBA/roblox-2016-source-code/master">
 </p>
 
 # Roblox 2016 Source Code
@@ -76,6 +77,7 @@ After a long effort, this repository has been brought to you on github with lots
 
 **Want to be in the list and help us?**<br>
 Be a contributor by doing a helpful of changes/commits to the repository!
+*You can add your own github profile/name like at the top and tell what you did.*
 
 ---
 
