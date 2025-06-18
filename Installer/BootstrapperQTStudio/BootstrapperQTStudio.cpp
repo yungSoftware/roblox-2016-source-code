@@ -220,7 +220,6 @@ void BootstrapperQTStudio::DeployComponents(bool isUpdating, bool commitData)
 	createDirectory((programDirectory() + _T("imageformats")).c_str());
 
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("RobloxStudio.zip"), _T("")));
-	files.push_back(std::pair<std::wstring, std::wstring>(_T("Libraries.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-fonts.zip"), _T("content\\fonts\\")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-music.zip"), _T("content\\music\\")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-particles.zip"), _T("content\\particles\\")));
