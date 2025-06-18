@@ -130,3 +130,9 @@ qrc_*.*
 /rbxsigner/Signer/bin/
 
 ## END OF GENERAL ##
+/Roblox.RccServiceArbiter/bin/Release
+/Client.LegacyAssemblies/Roblox.Configuration/bin/Release
+/Client.LegacyAssemblies/Roblox.Common/bin/Release
+/Client.LegacyAssemblies/Grid/Arbiter/Roblox.Grid.Arbiter.Common/bin/Release
+/Client.LegacyAssemblies/Grid/Roblox.Grid.Client/bin/Release
+/Client.LegacyAssemblies/Grid/Roblox.Grid.Common/bin/Release
