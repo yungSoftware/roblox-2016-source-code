@@ -22,6 +22,7 @@ git config --system core.longpaths true && cd <your path> && git clone https://g
   - gSOAP > **soapcpp2**
   - gSOAP > **wsdl2h**
   - Shaders > **ShaderCompiler**
+     - You should also build this as x64 too. 
   - Rendering > **LibOVR**
   - **qtnribbon** 
   - **sgCore**
