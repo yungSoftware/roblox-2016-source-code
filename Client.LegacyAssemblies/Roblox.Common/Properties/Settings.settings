@@ -1,0 +1,70 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Roblox.Common.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SMTPServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="ApplicationURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:3966/RobloxWebSite</Value>
+    </Setting>
+    <Setting Name="dbHelper_DefaultPoolSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="ReplicateLocalCache" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorWaitTime" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00:00:00.05</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">224.168.100.2</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">11000</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorBatchSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">60000</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorSendtimeout" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00:00:00.1</Value>
+    </Setting>
+    <Setting Name="CacheReplicatorNicPrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.0</Value>
+    </Setting>
+    <Setting Name="PgmWindowSizeinMB" Type="System.UInt32" Scope="Application">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="PgmWindowSizeTimeSpan" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:10</Value>
+    </Setting>
+    <Setting Name="CcrServiceBacklogTrigger" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CcrServiceBacklogTriggerInterval" Type="System.TimeSpan" Scope="Application">
+      <Value Profile="(Default)">00:00:03</Value>
+    </Setting>
+    <Setting Name="PreventDirectAppServerAccess" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ClientPresenceUpdateIntervalInSeconds" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="AccessKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">!0x5f3759df</Value>
+    </Setting>
+    <Setting Name="BillingConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;Data Source=192.168.100.80;Initial Catalog=RobloxBilling;User ID=Roblox;Password=To0Big2F@il&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=192.168.100.80;Initial Catalog=RobloxBilling;User ID=Roblox;Password=To0Big2F@il</Value>
+    </Setting>
+    <Setting Name="CacheSlidingExpiration" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">01:00:00</Value>
+    </Setting>
+    <Setting Name="FacebookUploadEnabled" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

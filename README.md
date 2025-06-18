@@ -96,7 +96,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [ ] Making Bootstrappers functional as intended
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support
-- Building all the projects with the latest Visual Studio Version **[10/37]** 
+- Building all the projects with the latest Visual Studio Version **[24/51]** 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -141,6 +141,20 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [x] IncludeChecker
   - [x] RbxTestHooks
   - [x] ScriptSigner
+  - [x] Emcaster
+  - [x] EmcasterTest
+  - [x] EmReciever
+  - [x] Roblox.Common
+  - [x] Roblox.Common.Web
+  - [x] Roblox.Configuration
+  - [x] Roblox.Diagnostics
+  - [x] Roblox.Grid.Arbiter.Common
+  - [x] Roblox.Grid.Client
+  - [x] Roblox.Grid.Common
+  - [x] Roblox.Ssh
+  - [x] Roblox.System
+  - [x] Roblox.WebsiteSettings
+  - [x] Roblox.RccServiceArbiter
 - Be able to build on listed platforms/compilers **[1/7]**
   - [x] Windows
   - [ ] Android

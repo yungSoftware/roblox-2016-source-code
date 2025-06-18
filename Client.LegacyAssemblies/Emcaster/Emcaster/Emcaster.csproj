@@ -1,0 +1,88 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="Current">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6FBD14B8-C57D-49FD-8283-A162F40ABE37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Emcaster</RootNamespace>
+    <AssemblyName>Emcaster</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging, Version=1.1.0.2, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libs\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sockets\AsyncReader.cs" />
+    <Compile Include="Sockets\ByteBuffer.cs" />
+    <Compile Include="Sockets\ByteParser.cs" />
+    <Compile Include="Sockets\IByteParser.cs" />
+    <Compile Include="Sockets\IByteWriter.cs" />
+    <Compile Include="Sockets\IByteParserFactory.cs" />
+    <Compile Include="Sockets\IPacketEvent.cs" />
+    <Compile Include="Sockets\ISourceReader.cs" />
+    <Compile Include="Sockets\PgmConstants.cs" />
+    <Compile Include="Sockets\PgmSource.cs" />
+    <Compile Include="Sockets\PgmSocket.cs" />
+    <Compile Include="Sockets\PgmReceiver.cs" />
+    <Compile Include="Sockets\BatchWriter.cs" />
+    <Compile Include="Sockets\PgmReader.cs" />
+    <Compile Include="Sockets\UdpReceiver.cs" />
+    <Compile Include="Sockets\UdpSource.cs" />
+    <Compile Include="Topics\ByteMessageParser.cs" />
+    <Compile Include="Topics\IMessageEvent.cs" />
+    <Compile Include="Topics\IMessageListener.cs" />
+    <Compile Include="Topics\IMessageParser.cs" />
+    <Compile Include="Topics\ITopicMessage.cs" />
+    <Compile Include="Topics\ITopicSubscriber.cs" />
+    <Compile Include="Topics\MessageHeader.cs" />
+    <Compile Include="Topics\MessageParser.cs" />
+    <Compile Include="Topics\MessageParserFactory.cs" />
+    <Compile Include="Topics\TopicMonitor.cs" />
+    <Compile Include="Topics\TopicPublisher.cs" />
+    <Compile Include="Topics\TopicQueueSubscriber.cs" />
+    <Compile Include="Topics\TopicSubscriber.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
