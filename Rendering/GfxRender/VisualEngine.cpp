@@ -101,7 +101,27 @@ VisualEngine::VisualEngine(Device* device, CRenderSettings* settings)
         for (Text::Font font = Text::FONT_LEGACY; font != Text::FONT_LAST; font=Text::Font(font+1))
         {
             static const char* kFontTTFPaths[] = {
-                "fonts/arial.ttf", "fonts/arial.ttf", "fonts/arialbd.ttf", "fonts/SourceSansPro-Regular.ttf", "fonts/SourceSansPro-Bold.ttf", "fonts/SourceSansPro-Light.ttf", "fonts/SourceSansPro-It.ttf"
+                "fonts/arial.ttf", 
+				"fonts/arial.ttf", 
+				"fonts/arialbd.ttf", 
+				"fonts/SourceSansPro-Regular.ttf", 
+				"fonts/SourceSansPro-Bold.ttf", 
+				"fonts/SourceSansPro-Light.ttf", 
+				"fonts/SourceSansPro-It.ttf", 
+				"fonts/AccanthisADFStd-Regular.otf", 
+				"fonts/Guru-Regular.otf", 
+				"fonts/ComicNeue-Angular-Bold.ttf", 
+				"fonts/Inconsolata-Regular.ttf", 
+				"fonts/HWYGOTH.ttf", 
+				"fonts/zekton_rg.ttf", 
+				"fonts/PressStart2P-Regular.ttf", 
+				"fonts/Balthazar-Regular.ttf", 
+				"fonts/RomanAntique.otf", 
+				"fonts/SourceSansPro-Semibold.ttf", 
+				"fonts/GothamSSm-Book.ttf", 
+				"fonts/GothamSSm-Medium.ttf", 
+				"fonts/GothamSSm-Bold.ttf", 
+				"fonts/GothamSSm-Black.ttf"
             };
 
             float legacyHeightScale = (font == Text::FONT_LEGACY) ? 1.5f : 1.f;

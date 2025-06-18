@@ -68,6 +68,7 @@ After a long effort, this repository has been brought to you on github with lots
 * AnchorPoint
 * Post Effects
 * Made Bootstrappers Work
+* More Fonts
 
 [@watrabi](https://github.com/watrabi)
 * Proper Sysstats Patch
@@ -95,9 +96,12 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Windows Key on WindowsClient
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] Improving Profanity/Swear Filter
+- [x] New Fonts 
+- [ ] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support
+- [ ] Upload the Qt to the Github as issue-free
 - Building all the projects with the latest Visual Studio Version **[24/51]** 
   - **FYI:** Most of them are never tried 
   - [ ] App

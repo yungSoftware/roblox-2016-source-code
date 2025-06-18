@@ -3,7 +3,7 @@
 #include "V8DataModel/TextService.h"
 
 FASTFLAGVARIABLE(TypesettersReleaseResources, true);
-FASTFLAGVARIABLE(UseDynamicTypesetterUTF8, false)
+FASTFLAGVARIABLE(UseDynamicTypesetterUTF8, true)
 
 namespace RBX
 {
@@ -43,6 +43,21 @@ EnumDesc<TextService::Font>::EnumDesc()
 	addPair(TextService::FONT_SOURCESANSBOLD, "SourceSansBold");
 	addPair(TextService::FONT_SOURCESANSLIGHT, "SourceSansLight");
 	addPair(TextService::FONT_SOURCESANSITALIC, "SourceSansItalic");
+	addPair(TextService::FONT_BODONI, "Bodoni");
+	addPair(TextService::FONT_GARAMOND, "Garamond");
+	addPair(TextService::FONT_CARTOON, "Cartoon");
+	addPair(TextService::FONT_CODE, "Code");
+	addPair(TextService::FONT_HIGHWAY, "Highway");
+	addPair(TextService::FONT_SCIFI, "SciFi");
+	addPair(TextService::FONT_ARCADE, "Arcade");
+	addPair(TextService::FONT_FANTASY, "Fantasy");
+	addPair(TextService::FONT_ANTIQUE, "Antique");
+	addPair(TextService::FONT_SOURCESANSSEMIBOLD, "SourceSansSemiBold");
+	addPair(TextService::FONT_GOTHAM, "Gotham");
+	addPair(TextService::FONT_GOTHAMSEMIBOLD, "GothamSemiBold");
+	addPair(TextService::FONT_GOTHAMBOLD, "GothamBold");
+	addPair(TextService::FONT_GOTHAMBLACK, "GothamBlack");
+
 }
 
 template<>
@@ -89,6 +104,20 @@ TextService::Font TextService::FromTextFont(Text::Font font)
 	case Text::FONT_SOURCESANSBOLD:	return FONT_SOURCESANSBOLD;
 	case Text::FONT_SOURCESANSLIGHT:	return FONT_SOURCESANSLIGHT;
 	case Text::FONT_SOURCESANSITALIC:	return FONT_SOURCESANSITALIC;
+	case Text::FONT_BODONI:		return FONT_BODONI;
+	case Text::FONT_GARAMOND:	return FONT_GARAMOND;
+	case Text::FONT_CARTOON:	return FONT_CARTOON;
+	case Text::FONT_CODE:	return FONT_CODE;
+	case Text::FONT_HIGHWAY:	return FONT_HIGHWAY;
+	case Text::FONT_SCIFI:		return FONT_SCIFI;
+	case Text::FONT_ARCADE:	return FONT_ARCADE;
+	case Text::FONT_FANTASY:	return FONT_FANTASY;
+	case Text::FONT_ANTIQUE:	return FONT_ANTIQUE;
+	case Text::FONT_SOURCESANSSEMIBOLD:	return FONT_SOURCESANSSEMIBOLD;
+	case Text::FONT_GOTHAM:	return FONT_GOTHAM;
+	case Text::FONT_GOTHAMSEMIBOLD:		return FONT_GOTHAMSEMIBOLD;
+	case Text::FONT_GOTHAMBOLD:	return FONT_GOTHAMBOLD;
+	case Text::FONT_GOTHAMBLACK:	return FONT_GOTHAMBLACK;
 	default:
 		RBXASSERT(0);
 		return FONT_LEGACY;
@@ -105,6 +134,20 @@ Text::Font TextService::ToTextFont(Font font)
 	case FONT_SOURCESANSBOLD:	return Text::FONT_SOURCESANSBOLD;
 	case FONT_SOURCESANSLIGHT:	return Text::FONT_SOURCESANSLIGHT;
 	case FONT_SOURCESANSITALIC:	return Text::FONT_SOURCESANSITALIC;
+	case FONT_BODONI:		return Text::FONT_BODONI;
+	case FONT_GARAMOND:	return Text::FONT_GARAMOND;
+	case FONT_CARTOON:	return Text::FONT_CARTOON;
+	case FONT_CODE:	return Text::FONT_CODE;
+	case FONT_HIGHWAY:	return Text::FONT_HIGHWAY;
+	case FONT_SCIFI:		return Text::FONT_SCIFI;
+	case FONT_ARCADE:	return Text::FONT_ARCADE;
+	case FONT_FANTASY:	return Text::FONT_FANTASY;
+	case FONT_ANTIQUE:	return Text::FONT_ANTIQUE;
+	case FONT_SOURCESANSSEMIBOLD:	return Text::FONT_SOURCESANSSEMIBOLD;
+	case FONT_GOTHAM:	return Text::FONT_GOTHAM;
+	case FONT_GOTHAMSEMIBOLD:		return Text::FONT_GOTHAMSEMIBOLD;
+	case FONT_GOTHAMBOLD:	return Text::FONT_GOTHAMBOLD;
+	case FONT_GOTHAMBLACK:	return Text::FONT_GOTHAMBLACK;
 	default:
 		RBXASSERT(0);
 		return Text::FONT_LEGACY;
