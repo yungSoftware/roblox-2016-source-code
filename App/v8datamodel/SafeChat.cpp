@@ -30,7 +30,7 @@ SafeChat& SafeChat::singleton()
 
 static std::string getChatTreeFile()
 {
-	std::string filename = ContentProvider::getAssetFile("fonts/safechat.xml");
+	std::string filename = ContentProvider::getAssetFile("other/safechat.xml");
 	return filename;
 }
 

@@ -329,25 +329,26 @@ namespace RBX
 		AddEntry("rbxasset://sounds/Kerplunk.wav",					  "12222054");
 		//AddEntry("rbxasset://sounds/hit.wav",						  "12222046");*/
 		
-		AddEntry("rbxasset://fonts/BaseballCap.mesh",				  "12220916");
-		AddEntry("rbxasset://fonts/clonewand.mesh",					  "12221344");
-		AddEntry("rbxasset://fonts/fusedgirl.mesh",					  "12221423");
-		AddEntry("rbxasset://fonts/girlhair.mesh",					  "12221431");
-		AddEntry("rbxasset://fonts/hammer.mesh",					  "12221451");
-		AddEntry("rbxasset://fonts/NinjaMask.mesh",					  "12221524");
-		AddEntry("rbxasset://fonts/paintballgun.mesh",				  "11900867");
-		AddEntry("rbxasset://fonts/pawn.mesh",						  "12221585");
-		AddEntry("rbxasset://fonts/PirateHat.mesh",					  "12221595");
-		AddEntry("rbxasset://fonts/PoliceCap.mesh",					  "12221603");
-		AddEntry("rbxasset://fonts/rocketlauncher.mesh",			  "12221651");
-		AddEntry("rbxasset://fonts/slingshot.mesh",					  "12221682");
-		AddEntry("rbxasset://fonts/sombrero.mesh",					  "12221705");
-		AddEntry("rbxasset://fonts/sword.mesh",						  "12221720");
-		AddEntry("rbxasset://fonts/timebomb.mesh",					  "12221733");
-		AddEntry("rbxasset://fonts/tophat.mesh",					  "12221750");
-		AddEntry("rbxasset://fonts/tree.mesh",						  "12221787");
-		AddEntry("rbxasset://fonts/trowel.mesh",					  "12221793");
-		AddEntry("rbxasset://fonts/VikingHelmet.mesh",                "12221815");
+		AddEntry("rbxasset://other/BaseballCap.mesh",				  "12220916");
+		AddEntry("rbxasset://other/clonewand.mesh",					  "12221344");
+		AddEntry("rbxasset://other/fusedgirl.mesh",					  "12221423");
+		AddEntry("rbxasset://other/girlhair.mesh",					  "12221431");
+		AddEntry("rbxasset://other/hammer.mesh",					  "12221451");
+		AddEntry("rbxasset://other/NinjaMask.mesh",					  "12221524");
+		AddEntry("rbxasset://other/paintballgun.mesh",				  "11900867");
+		AddEntry("rbxasset://other/pawn.mesh",						  "12221585");
+		AddEntry("rbxasset://other/PirateHat.mesh",					  "12221595");
+		AddEntry("rbxasset://other/PoliceCap.mesh",					  "12221603");
+		AddEntry("rbxasset://other/rocketlauncher.mesh",			  "12221651");
+		AddEntry("rbxasset://other/slingshot.mesh",					  "12221682");
+		AddEntry("rbxasset://other/sombrero.mesh",					  "12221705");
+		AddEntry("rbxasset://other/sword.mesh",						  "12221720");
+		AddEntry("rbxasset://other/timebomb.mesh",					  "12221733");
+		AddEntry("rbxasset://other/tophat.mesh",					  "12221750");
+		AddEntry("rbxasset://other/tree.mesh",						  "12221787");
+		AddEntry("rbxasset://other/trowel.mesh",					  "12221793");
+		AddEntry("rbxasset://other/VikingHelmet.mesh",                "12221815");
+		AddEntry("rbxasset://other/VikingHelmet.mesh",                "12221815");
 		
 
 	/*	
@@ -376,31 +377,31 @@ namespace RBX
 		//AddEntry("rbxasset://sky/lensflare.jpg",					  "12221853");
 		
 		
-		AddEntry("rbxasset://fonts/torso.mesh",						  "12221758");
-		AddEntry("rbxasset://fonts/rightleg.mesh",					  "12221626");
-		AddEntry("rbxasset://fonts/rightarm.mesh",					  "12221614");
-		AddEntry("rbxasset://fonts/leftleg.mesh",					  "12221512");
-		AddEntry("rbxasset://fonts/leftarm.mesh",					  "12221505");
-		AddEntry("rbxasset://fonts/head.mesh",						  "12221462");
+		AddEntry("rbxasset://other/torso.mesh",						  "12221758");
+		AddEntry("rbxasset://other/rightleg.mesh",					  "12221626");
+		AddEntry("rbxasset://other/rightarm.mesh",					  "12221614");
+		AddEntry("rbxasset://other/leftleg.mesh",					  "12221512");
+		AddEntry("rbxasset://other/leftarm.mesh",					  "12221505");
+		AddEntry("rbxasset://other/head.mesh",						  "12221462");
 		
-		AddEntry("rbxasset://fonts/CompositTShirt.mesh",			  "12221404");
-		AddEntry("rbxasset://fonts/CompositTorsoBase.mesh",			  "12221396");
-		AddEntry("rbxasset://fonts/CompositShirtTemplate.mesh",		  "12221382");
-		AddEntry("rbxasset://fonts/CompositRightLegBase.mesh",		  "12221373");
-		AddEntry("rbxasset://fonts/CompositRightArmBase.mesh",		  "12221368");
-		AddEntry("rbxasset://fonts/CompositPantsTemplate.mesh",		  "12221364");
-		AddEntry("rbxasset://fonts/CompositLeftLegBase.mesh",		  "12221356");
-		AddEntry("rbxasset://fonts/CompositLeftArmBase.mesh",		  "12221351");
+		AddEntry("rbxasset://other/CompositTShirt.mesh",			  "12221404");
+		AddEntry("rbxasset://other/CompositTorsoBase.mesh",			  "12221396");
+		AddEntry("rbxasset://other/CompositShirtTemplate.mesh",		  "12221382");
+		AddEntry("rbxasset://other/CompositRightLegBase.mesh",		  "12221373");
+		AddEntry("rbxasset://other/CompositRightArmBase.mesh",		  "12221368");
+		AddEntry("rbxasset://other/CompositPantsTemplate.mesh",		  "12221364");
+		AddEntry("rbxasset://other/CompositLeftLegBase.mesh",		  "12221356");
+		AddEntry("rbxasset://other/CompositLeftArmBase.mesh",		  "12221351");
 
-		//AddEntry("rbxasset://fonts/humanoidStatic.rbxm",			  "12221500");
-		//AddEntry("rbxasset://fonts/humanoidSound.rbxm",				  "12221490");*/
-		AddEntry("rbxasset://fonts/humanoidHealth.rbxm",		      "38037265");
-		AddEntry("rbxasset://fonts/humanoidHealthRegenScript.rbxm",		      "11911558");
-		/*//AddEntry("rbxasset://fonts/humanoidExtra.rbxm",				  "12221478");
-		//AddEntry("rbxasset://fonts/humanoidAnimate.rbxm",			  "12221472");
-		//AddEntry("rbxasset://fonts/character.rbxm",					  "12221333");
-		//AddEntry("rbxasset://fonts/SlingshotPellet.rbxm",			  "12221691");
-		//AddEntry("rbxasset://fonts/Rocket.rbxm",					  "12221636");
+		//AddEntry("rbxasset://other/humanoidStatic.rbxm",			  "12221500");
+		//AddEntry("rbxasset://other/humanoidSound.rbxm",				  "12221490");*/
+		AddEntry("rbxasset://other/humanoidHealth.rbxm",		      "38037265");
+		AddEntry("rbxasset://other/humanoidHealthRegenScript.rbxm",		      "11911558");
+		/*//AddEntry("rbxasset://other/humanoidExtra.rbxm",				  "12221478");
+		//AddEntry("rbxasset://other/humanoidAnimate.rbxm",			  "12221472");
+		//AddEntry("rbxasset://other/character.rbxm",					  "12221333");
+		//AddEntry("rbxasset://other/SlingshotPellet.rbxm",			  "12221691");
+		//AddEntry("rbxasset://other/Rocket.rbxm",					  "12221636");
 		*/															
 		
 		AddEntry("rbxasset://sounds/bass.wav", "rbxasset://sounds/bass.mp3");

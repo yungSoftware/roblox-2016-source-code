@@ -26,7 +26,7 @@ void SDLGameController::initSDL()
 		return;
 	}
 
-	RBX::ContentId gameControllerDb = RBX::ContentId::fromAssets("fonts/gamecontrollerdb.txt");
+	RBX::ContentId gameControllerDb = RBX::ContentId::fromAssets("other/gamecontrollerdb.txt");
 	std::string filePath = RBX::ContentProvider::findAsset(gameControllerDb);
 
 	if (SDL_GameControllerAddMappingsFromFile(filePath.c_str()) == -1)

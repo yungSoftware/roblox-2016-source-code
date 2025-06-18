@@ -95,15 +95,18 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
 - [ ] Adding Cyrillic & Non-Latin Languages Support
+   - [ ] UTF/Unicode Support
+      - [ ] New Lua Version (since the newer ones has these) 
    - [ ] Improving Profanity/Swear Filter
 - [x] New Fonts 
-- [ ] Change the Location of unrelated files inside **content\fonts** folder.
+- [ ] Dark Theme for the Studio
+- [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
-- [ ] 64-bit Support
-- [ ] Upload the Qt to the Github as issue-free
-- Building all the projects with the latest Visual Studio Version **[24/51]** 
-  - **FYI:** Most of them are never tried 
+- [ ] 64-bit Support 
+- [ ] Uploading the Qt to the Github as issue-free
+- Building all the projects with the latest Visual Studio Version **[24/55]** 
+  - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
   - [ ] App.BulletPhysics
   - [ ] Base
@@ -117,15 +120,20 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [ ] RobloxStudio
   - [ ] sgCore
   - [ ] WindowsClient
-  #### 3rd Party
+  #### 3rd Party / Contribs
   - [ ] boost.static
+  - [ ] Boost
     - Needs a newer Boost version.
+  - [ ] cpp-netlib
   - [x] DSBaseClasses
-  - [ ] libcurl
-    - OpenSSL libraries gives unresolved external symbols so these should get updated too.
+  - [ ] Curl
+     - OpenSSL libraries spits unresolved external symbols so these should get updated too.
+  - [ ] Qt
+  - [ ] Openssl  
   - [ ] SDL2
     - Windows SDK throws "negative subscript" errors.
   - [x] zlib
+  - [ ] w3c-libwww
   #### gSOAP
   - [x] soapcpp2
   - [x] wsdl2h
@@ -162,7 +170,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [x] Roblox.System
   - [x] Roblox.WebsiteSettings
   - [x] Roblox.RccServiceArbiter
-- Be able to build on listed platforms/compilers **[1/7]**
+- Being able to build on listed platforms/compilers **[1/7]**
   - [x] Windows
   - [ ] Android
   - [ ] Linux

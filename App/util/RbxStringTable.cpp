@@ -16,7 +16,7 @@ static const char *stringsTable[] =
 		"rocky", //Rocky
 		"Game passes can only be queried by a Script running on a ROBLOX game server", //HasGamePassLuaWarning
 		"Teleporting while using ROBLOX Studio is not permitted.", //NoTeleportInStudio
-		"fonts/LoadingScript.lua" //LoadingScreenScriptPath
+		"other/LoadingScript.lua" //LoadingScreenScriptPath
     };
 
 const char* getStringById(int id)

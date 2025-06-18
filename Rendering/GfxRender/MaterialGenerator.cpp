@@ -266,25 +266,25 @@ static MeshId getExtraSlotMeshId(PartInstance* part, const HumanoidIdentifier& h
     int slotId = getExtraSlot(part, hi, accoutrements);
     RBXASSERT(slotId >= 0);
     
-    return MeshId(format("rbxasset://fonts/CompositExtraSlot%d.mesh", slotId));
+    return MeshId(format("rbxasset://other/CompositExtraSlot%d.mesh", slotId));
 }
 
 static void prepareHumanoidTextureCompositing(TextureCompositingDescription& desc, const HumanoidIdentifier& hi, const AccoutrementMeshes& accoutrements, CharacterMesh* mesh)
 {
     if (hi.torso)
-        desc.add(MeshId("rbxasset://fonts/CompositTorsoBase.mesh"), hi.torso->getColor());
+        desc.add(MeshId("rbxasset://other/CompositTorsoBase.mesh"), hi.torso->getColor());
         
     if (hi.leftArm)
-        desc.add(MeshId("rbxasset://fonts/CompositLeftArmBase.mesh"), hi.leftArm->getColor());
+        desc.add(MeshId("rbxasset://other/CompositLeftArmBase.mesh"), hi.leftArm->getColor());
         
     if (hi.rightArm)
-        desc.add(MeshId("rbxasset://fonts/CompositRightArmBase.mesh"), hi.rightArm->getColor());
+        desc.add(MeshId("rbxasset://other/CompositRightArmBase.mesh"), hi.rightArm->getColor());
         
     if (hi.leftLeg)
-        desc.add(MeshId("rbxasset://fonts/CompositLeftLegBase.mesh"), hi.leftLeg->getColor());
+        desc.add(MeshId("rbxasset://other/CompositLeftLegBase.mesh"), hi.leftLeg->getColor());
         
     if (hi.rightLeg)
-        desc.add(MeshId("rbxasset://fonts/CompositRightLegBase.mesh"), hi.rightLeg->getColor());
+        desc.add(MeshId("rbxasset://other/CompositRightLegBase.mesh"), hi.rightLeg->getColor());
         
     if (hi.head)
     {
@@ -308,19 +308,19 @@ static void prepareHumanoidTextureCompositing(TextureCompositingDescription& des
     }
     
     if (mesh && !mesh->getBaseTextureId().isNull())
-        desc.add(MeshId("rbxasset://fonts/CompositFullAtlasBaseTexture.mesh"), mesh->getBaseTextureId());
+        desc.add(MeshId("rbxasset://other/CompositFullAtlasBaseTexture.mesh"), mesh->getBaseTextureId());
         
     if (!hi.pants.isNull())
-        desc.add(MeshId("rbxasset://fonts/CompositPantsTemplate.mesh"), hi.pants);
+        desc.add(MeshId("rbxasset://other/CompositPantsTemplate.mesh"), hi.pants);
         
     if (!hi.shirt.isNull())
-        desc.add(MeshId("rbxasset://fonts/CompositShirtTemplate.mesh"), hi.shirt);
+        desc.add(MeshId("rbxasset://other/CompositShirtTemplate.mesh"), hi.shirt);
         
     if (!hi.shirtGraphic.isNull())
-        desc.add(MeshId("rbxasset://fonts/CompositTShirt.mesh"), hi.shirtGraphic);
+        desc.add(MeshId("rbxasset://other/CompositTShirt.mesh"), hi.shirtGraphic);
         
     if (mesh && !mesh->getOverlayTextureId().isNull())
-        desc.add(MeshId("rbxasset://fonts/CompositFullAtlasOverlayTexture.mesh"), mesh->getOverlayTextureId());
+        desc.add(MeshId("rbxasset://other/CompositFullAtlasOverlayTexture.mesh"), mesh->getOverlayTextureId());
         
     for (size_t i = 0; i < kTextureCompositAccoutrementCount; ++i)
     {

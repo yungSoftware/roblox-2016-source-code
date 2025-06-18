@@ -116,6 +116,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsdl2h", "RCCService\gSOAP\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sgCore", "CSG\sgCore\prj\ms\sgCore.vcxproj", "{49F6CA3D-F537-40FB-8138-E83F9BA19625}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other", "Other", "{D8C487B1-8BA9-4E0C-8AC4-6F16470F59CA}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		BUILDING.md = BUILDING.md
+		BUILDING_CONTRIBS.md = BUILDING_CONTRIBS.md
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
