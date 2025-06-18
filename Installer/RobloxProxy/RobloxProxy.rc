@@ -79,7 +79,7 @@ BEGIN
             VALUE "FileDescription", "Roblox"
             VALUE "FileVersion", "1, 2, 8, 25"
             VALUE "InternalName", "RobloxProxy.dll"
-            VALUE "LegalCopyright", "(c) 2012 ROBLOX Corporation.  All rights reserved."
+            VALUE "LegalCopyright", "(c) 2016 ROBLOX Corporation.  All rights reserved."
             VALUE "OriginalFilename", "RobloxProxy.dll"
             VALUE "ProductName", "RobloxProxy.dll"
             VALUE "ProductVersion", "1, 2, 8, 25"
