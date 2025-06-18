@@ -982,7 +982,6 @@ void BootstrapperClient::DeployComponents(bool isUpdating, bool commitData)
 	createDirectory((programDirectory() + _T("PlatformContent\\pc\\terrain")).c_str());
 	createDirectory((programDirectory() + _T("shaders")).c_str());
 
-	files.push_back(std::pair<std::wstring, std::wstring>(_T("redist.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("RobloxApp.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("Libraries.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-fonts.zip"), _T("content\\fonts\\")));
