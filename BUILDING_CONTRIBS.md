@@ -47,7 +47,7 @@ You should greeted with these lines after compilation finishes:
 
 ## SDL2
 Locate the SDL2 Project at **3rd Party > SDL2**<br>
-To build SDL2 as a .DLL file, Go into **Properties** and just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC** preprocessor from the properties and build it!<br>
+To build SDL2 as a .DLL file, Go into **Properties** and just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC;** from **C/C++ > Preprocessor > Preprocessor Definitions**  and build it!<br>
 However if you want to build as .LIB, then you dont have to change anything just build it.
 
 ## libcurl

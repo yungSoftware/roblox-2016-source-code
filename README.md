@@ -108,7 +108,8 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [ ] Making Bootstrappers functional as intended 
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support 
-- [ ] Uploading the Qt to the Github as issue-free
+- [x] Uploading the Qt to the Github as issue-free
+   - If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
 - Building all the projects within the latest Visual Studio Version **[27/61]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
