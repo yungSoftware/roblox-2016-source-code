@@ -109,7 +109,7 @@ Be a contributor by doing a helpful of changes/commits to the repository!
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support 
 - [ ] Uploading the Qt to the Github as issue-free
-- Building all the projects with the latest Visual Studio Version **[27/61]** 
+- Building all the projects within the latest Visual Studio Version **[27/61]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
   - [ ] App.BulletPhysics
