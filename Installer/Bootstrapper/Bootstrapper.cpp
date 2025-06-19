@@ -1188,7 +1188,7 @@ void Bootstrapper::RegisterUninstall(const TCHAR *productName)
 
 	std::wstring uninstallString = format_string(_T("\"%s%s\" -uninstall%s"), programDirectory().c_str(), GetBootstrapperFileName().c_str(), perUser ? _T("") : _T(" -alluser"));
 	throwHRESULT (keyProductCode.SetStringValue(_T("UninstallString"), uninstallString.c_str(), REG_EXPAND_SZ), "Failed to set UninstallString key");
-	throwHRESULT (keyProductCode.SetStringValue(_T("Publisher"), _T("ROBLOX SRC Corporation")), "Failed to set Publisher key");
+	throwHRESULT (keyProductCode.SetStringValue(_T("Publisher"), _T("ROBLOX Corporation")), "Failed to set Publisher key");
 	throwHRESULT (keyProductCode.SetStringValue(_T("URLInfoAbout"), _T("http://www.roblox.com")), "Failed to set URLInfoAbout key");
 	throwHRESULT (keyProductCode.SetStringValue(_T("Comments"), convert_s2w(installVersion).c_str()), "Failed to set Comments key");
 	throwHRESULT (keyProductCode.SetStringValue(_T("InstallLocation"), programDirectory().c_str()), "Failed to set InstallLocation key");

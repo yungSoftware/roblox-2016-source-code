@@ -144,7 +144,7 @@ BEGIN
             VALUE "CompanyName", "ROBLOX Corporation"
             VALUE "FileDescription", "Roblox"
             VALUE "FileVersion", "1, 6, 3, 172"
-            VALUE "LegalCopyright", "(C) 2016 ROBLOX Corporation.  All rights reserved."
+            VALUE "LegalCopyright", "(C) 2012 ROBLOX Corporation.  All rights reserved."
             VALUE "OriginalFilename", "Roblox.exe"
             VALUE "ProductName", "Roblox Bootstrapper"
             VALUE "ProductVersion", "1, 6, 0, 0"

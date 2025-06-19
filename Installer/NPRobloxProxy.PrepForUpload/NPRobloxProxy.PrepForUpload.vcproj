@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="NPRobloxProxy.PrepForUpload"
+	ProjectGUID="{843CF3F6-14EA-4D45-A660-DCC8348CD4B3}"
+	RootNamespace="NPRobloxProxyPrepForUpload"
+	SccProjectName="Perforce Project"
+	SccLocalPath=".."
+	SccProvider="MSSCCI:Perforce SCM"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+		<Platform
+			Name="x64"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;rmdir /s /q ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;mkdir ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\$(ConfigurationName)\*.* ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;rmdir /s /q ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;mkdir ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\$(ConfigurationName)\*.* ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;rmdir /s /q ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;mkdir ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\$(ConfigurationName)\*.* ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;mkdir ..\..\UploadBits\Win32-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\x64\$(ConfigurationName)\*.* ..\..\UploadBits\Win32-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="NoOpt|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;rmdir /s /q ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;mkdir ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\Release\*.* ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+		<Configuration
+			Name="NoOpt|x64"
+			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
+			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
+			ConfigurationType="10"
+			CharacterSet="2"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				TargetEnvironment="3"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+				Description="Copy bits needed to upload Roblox project to UploadBits directory"
+				CommandLine="@echo off&#x0D;&#x0A;mkdir ..\..\UploadBits&#x0D;&#x0A;rmdir /s /q ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;mkdir ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;xcopy /h /e /k /q /y ..\nproblox\bin\Release\*.* ..\..\UploadBits\$(PlatformName)-$(ConfigurationName)-NPRobloxProxy\&#x0D;&#x0A;"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath="..\BootstrapperClient.PrepForUpload\readme.txt"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
