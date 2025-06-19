@@ -98,7 +98,6 @@ Be a contributor by doing a helpful of changes/commits to the repository!
       - [ ] Chat Keybind
          - Works in Studio but not in the Client 
       - [ ] Windows Key on WindowsClient
-- [ ] Fixing Corescripts to make them work like it did back then 
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] UTF/Unicode Support
       - [ ] New Lua Version (since the newer ones has these) 
