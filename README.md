@@ -180,14 +180,10 @@ Be a contributor by doing a helpful of changes/commits to the repository!
   - [x] Roblox.System
   - [x] Roblox.WebsiteSettings
   - [x] Roblox.RccServiceArbiter
-- Being able to build on listed platforms/compilers **[1/7]**
+- Being able to build on listed platforms **[1/3]**
   - [x] Windows
   - [ ] Android
-  - [ ] Linux
   - [ ] MacOS / Unix
-  - [ ] iOS
-  - [ ] Xbox / Durango
-  - [ ] CMake
 
 ## ⚠️ Current Issues
 - The Roblox in-game Video Recorder is being awful, pixelated and no sound (just some cracking noises)
