@@ -47,12 +47,12 @@ You should greeted with these lines after compilation finishes:
 
 ## SDL2
 Locate the SDL2 Project at **3rd Party > SDL2**<br>
-To build SDL2 as a .DLL file, just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC** preprocessor from the properties and build it!<br>
+To build SDL2 as a .DLL file, Go into **Properties** and just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC** preprocessor from the properties and build it!<br>
 However if you want to build as .LIB, then you dont have to change anything just build it.
 
 ## libcurl
 Locate the SDL2 Project at **3rd Party > libcurl**<br>
-If you also need to build libcurl as a .LIB file, Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
+If you also need to build libcurl as a .LIB file, Go into **Properties** and Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 However if you want to build as .DLL, then also you dont have to change anything just build it.
 
 **That's it, you've compiled the libraries!**<br>
