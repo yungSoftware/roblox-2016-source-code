@@ -23,9 +23,9 @@ git config --system core.longpaths true && cd <your path> && git clone https://g
   - 3rd Party > **boost.static** 
   - 3rd Party > **zlib** 
   - 3rd Party > **libcurl** 
-     - Follow the **BUILDING_CONTRIBS.md**
+     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already did.
   - 3rd Party > **SDL2**
-     - Follow the **BUILDING_CONTRIBS.md**
+     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already did.
   - gSOAP > **soapcpp2**
   - gSOAP > **wsdl2h**
   - Shaders > **ShaderCompiler**
