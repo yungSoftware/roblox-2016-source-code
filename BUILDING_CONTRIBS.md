@@ -14,10 +14,8 @@
 ```sh
 configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
-
-**IMPORTANT:** You may have to type **nmake confclean** before the command at the bottom if ur source is on a different location rather than **C:\Trunk2016**.
-
-5. When the configuration completes, type **nmake** and take a long breath since it will take **a lot** of time.
+4. Type **nmake confclean** to make sure we're on the right track!
+5. When everything completes, type **nmake** and take a long breath since it will take **a lot** of time.
  
 ## Boost
 1. Go into **`<your path>\<your folder name>\Contribs\boost_1_56_0\`**
