@@ -43,7 +43,7 @@ You should greeted with these lines after compilation finishes:
 6. Create a new folder named **openssl** inside **<your folder name>**
 7. When the build process completes, go inside **`<your path>\<your folder name>\Contribs\openssl\out32dll`**, and copy these 2 files to **`<your path>\<your folder name>\openssl`**: **`ssleay32.dll, libeay32.dll`**.
 
-**IMPORTANT:** Now you have to be in Client_2016.sln for these 2 dependencies at the bottom.
+**IMPORTANT:** Now you have to be in **Client_2016.sln** for these 2 dependencies at the bottom.
 
 ## SDL2
 Locate the SDL2 Project at **3rd Party > SDL2**<br>
