@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qt3supportwidgets", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/widgets\qt3supportwidgets.vcxproj", "{3FABFC5D-1333-3AEC-917F-18EBDABC6D85}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qaxwidget", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/activeqt\qaxwidget.vcxproj", "{6A1D25FB-9BFC-3BFB-9B0B-1265ADC8B791}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qwebview", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/qwebview\qwebview.vcxproj", "{2BD056E2-2029-37C8-95A9-E66800B20A2E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phononwidgets", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/phononwidgets\phononwidgets.vcxproj", "{0ED471F6-4D2A-3EAE-AD6C-CD657351EE13}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qdeclarativeview", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/designer/src/plugins/qdeclarativeview\qdeclarativeview.vcxproj", "{652130DC-DA33-3858-A425-8DC35394869D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3FABFC5D-1333-3AEC-917F-18EBDABC6D85}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FABFC5D-1333-3AEC-917F-18EBDABC6D85}.Debug|Win32.Build.0 = Debug|Win32
+		{3FABFC5D-1333-3AEC-917F-18EBDABC6D85}.Release|Win32.ActiveCfg = Release|Win32
+		{3FABFC5D-1333-3AEC-917F-18EBDABC6D85}.Release|Win32.Build.0 = Release|Win32
+		{6A1D25FB-9BFC-3BFB-9B0B-1265ADC8B791}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A1D25FB-9BFC-3BFB-9B0B-1265ADC8B791}.Debug|Win32.Build.0 = Debug|Win32
+		{6A1D25FB-9BFC-3BFB-9B0B-1265ADC8B791}.Release|Win32.ActiveCfg = Release|Win32
+		{6A1D25FB-9BFC-3BFB-9B0B-1265ADC8B791}.Release|Win32.Build.0 = Release|Win32
+		{2BD056E2-2029-37C8-95A9-E66800B20A2E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2BD056E2-2029-37C8-95A9-E66800B20A2E}.Debug|Win32.Build.0 = Debug|Win32
+		{2BD056E2-2029-37C8-95A9-E66800B20A2E}.Release|Win32.ActiveCfg = Release|Win32
+		{2BD056E2-2029-37C8-95A9-E66800B20A2E}.Release|Win32.Build.0 = Release|Win32
+		{0ED471F6-4D2A-3EAE-AD6C-CD657351EE13}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0ED471F6-4D2A-3EAE-AD6C-CD657351EE13}.Debug|Win32.Build.0 = Debug|Win32
+		{0ED471F6-4D2A-3EAE-AD6C-CD657351EE13}.Release|Win32.ActiveCfg = Release|Win32
+		{0ED471F6-4D2A-3EAE-AD6C-CD657351EE13}.Release|Win32.Build.0 = Release|Win32
+		{652130DC-DA33-3858-A425-8DC35394869D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{652130DC-DA33-3858-A425-8DC35394869D}.Debug|Win32.Build.0 = Debug|Win32
+		{652130DC-DA33-3858-A425-8DC35394869D}.Release|Win32.ActiveCfg = Release|Win32
+		{652130DC-DA33-3858-A425-8DC35394869D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

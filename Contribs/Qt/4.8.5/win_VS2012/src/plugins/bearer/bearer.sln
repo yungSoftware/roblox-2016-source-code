@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qgenericbearer", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/bearer/generic\qgenericbearer.vcxproj", "{5BFA5959-8F84-34DE-9EA7-661EA8C804CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qnativewifibearer", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/plugins/bearer/nativewifi\qnativewifibearer.vcxproj", "{7CEF358E-B5B6-3037-9C31-C655DE736A33}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5BFA5959-8F84-34DE-9EA7-661EA8C804CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5BFA5959-8F84-34DE-9EA7-661EA8C804CD}.Debug|Win32.Build.0 = Debug|Win32
+		{5BFA5959-8F84-34DE-9EA7-661EA8C804CD}.Release|Win32.ActiveCfg = Release|Win32
+		{5BFA5959-8F84-34DE-9EA7-661EA8C804CD}.Release|Win32.Build.0 = Release|Win32
+		{7CEF358E-B5B6-3037-9C31-C655DE736A33}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7CEF358E-B5B6-3037-9C31-C655DE736A33}.Debug|Win32.Build.0 = Debug|Win32
+		{7CEF358E-B5B6-3037-9C31-C655DE736A33}.Release|Win32.ActiveCfg = Release|Win32
+		{7CEF358E-B5B6-3037-9C31-C655DE736A33}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

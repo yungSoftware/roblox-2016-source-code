@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{212D28B3-5B16-3102-82AD-CE3B701D967D}</ProjectGuid>
+    <RootNamespace>assistant</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+    <OutputDirectory>..\..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>tmp\obj\release_shared\</IntermediateDirectory>
+    <PrimaryOutput>assistant</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+    <OutputDirectory>..\..\..\..\bin\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>tmp\obj\debug_shared\</IntermediateDirectory>
+    <PrimaryOutput>assistant</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\..\..\bin\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\obj\release_shared\</IntDir>
+    <PlatformToolSet>v110</PlatformToolSet>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">assistant</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">false</LinkIncremental>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\..\..\bin\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\obj\debug_shared\</IntDir>
+    <PlatformToolSet>v110</PlatformToolSet>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">assistant</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include\QtNetwork&quot;;&quot;..\..\..\..\include\QtGui&quot;;&quot;..\..\..\..\include\QtSql&quot;;&quot;..\..\..\..\include\QtWebKit&quot;;&quot;..\..\..\..\include&quot;;&quot;..\..\..\..\include\QtHelp&quot;;&quot;..\..\..\shared\fontpanel&quot;;&quot;.&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;&quot;.&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\obj\release_shared\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\obj\release_shared\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;QT_WEBKIT_LIB;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmain.lib;shell32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtHelp4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKit4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtSql4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetwork4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\plugins\sqldrivers;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\assistant.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;QT_WEBKIT_LIB;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include\QtNetwork&quot;;&quot;..\..\..\..\include\QtGui&quot;;&quot;..\..\..\..\include\QtSql&quot;;&quot;..\..\..\..\include\QtWebKit&quot;;&quot;..\..\..\..\include&quot;;&quot;..\..\..\..\include\QtHelp&quot;;&quot;..\..\..\shared\fontpanel&quot;;&quot;.&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;&quot;.&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\obj\debug_shared\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\obj\debug_shared\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_WEBKIT_LIB;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\qtmaind.lib;shell32.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtHelpd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtWebKitd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtSqld4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtNetworkd4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\plugins\sqldrivers;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot; %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\assistant.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_WEBKIT_LIB;QT_SQL_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="aboutdialog.cpp" />
+    <ClCompile Include="bookmarkdialog.cpp" />
+    <ClCompile Include="bookmarkfiltermodel.cpp" />
+    <ClCompile Include="bookmarkitem.cpp" />
+    <ClCompile Include="bookmarkmanager.cpp" />
+    <ClCompile Include="bookmarkmanagerwidget.cpp" />
+    <ClCompile Include="bookmarkmodel.cpp" />
+    <ClCompile Include="centralwidget.cpp" />
+    <ClCompile Include="cmdlineparser.cpp" />
+    <ClCompile Include="..\shared\collectionconfiguration.cpp" />
+    <ClCompile Include="contentwindow.cpp" />
+    <ClCompile Include="filternamedialog.cpp" />
+    <ClCompile Include="findwidget.cpp" />
+    <ClCompile Include="..\..\..\shared\fontpanel\fontpanel.cpp" />
+    <ClCompile Include="globalactions.cpp" />
+    <ClCompile Include="helpenginewrapper.cpp" />
+    <ClCompile Include="helpviewer.cpp" />
+    <ClCompile Include="helpviewer_qwv.cpp" />
+    <ClCompile Include="indexwindow.cpp" />
+    <ClCompile Include="installdialog.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="openpagesmanager.cpp" />
+    <ClCompile Include="openpagesmodel.cpp" />
+    <ClCompile Include="openpagesswitcher.cpp" />
+    <ClCompile Include="openpageswidget.cpp" />
+    <ClCompile Include="preferencesdialog.cpp" />
+    <ClCompile Include="qtdocinstaller.cpp" />
+    <ClCompile Include="remotecontrol.cpp" />
+    <ClCompile Include="searchwidget.cpp" />
+    <ClCompile Include="topicchooser.cpp" />
+    <ClCompile Include="xbelsupport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="aboutdialog.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;aboutdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 aboutdialog.h -o tmp\moc\release_shared\moc_aboutdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC aboutdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;aboutdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 aboutdialog.h -o tmp\moc\debug_shared\moc_aboutdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC aboutdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_aboutdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkdialog.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkdialog.h -o tmp\moc\release_shared\moc_bookmarkdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC bookmarkdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_bookmarkdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkdialog.h -o tmp\moc\debug_shared\moc_bookmarkdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC bookmarkdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_bookmarkdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkfiltermodel.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkfiltermodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkfiltermodel.h -o tmp\moc\release_shared\moc_bookmarkfiltermodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC bookmarkfiltermodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_bookmarkfiltermodel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkfiltermodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkfiltermodel.h -o tmp\moc\debug_shared\moc_bookmarkfiltermodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC bookmarkfiltermodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_bookmarkfiltermodel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="bookmarkitem.h" />
+    <CustomBuild Include="bookmarkmanager.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmanager.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmanager.h -o tmp\moc\release_shared\moc_bookmarkmanager.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC bookmarkmanager.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_bookmarkmanager.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmanager.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmanager.h -o tmp\moc\debug_shared\moc_bookmarkmanager.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC bookmarkmanager.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_bookmarkmanager.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkmanagerwidget.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmanagerwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmanagerwidget.h -o tmp\moc\release_shared\moc_bookmarkmanagerwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC bookmarkmanagerwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_bookmarkmanagerwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmanagerwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmanagerwidget.h -o tmp\moc\debug_shared\moc_bookmarkmanagerwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC bookmarkmanagerwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_bookmarkmanagerwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkmodel.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmodel.h -o tmp\moc\release_shared\moc_bookmarkmodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC bookmarkmodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_bookmarkmodel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;bookmarkmodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 bookmarkmodel.h -o tmp\moc\debug_shared\moc_bookmarkmodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC bookmarkmodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_bookmarkmodel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="centralwidget.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;centralwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 centralwidget.h -o tmp\moc\release_shared\moc_centralwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC centralwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_centralwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;centralwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 centralwidget.h -o tmp\moc\debug_shared\moc_centralwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC centralwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_centralwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="cmdlineparser.h" />
+    <ClInclude Include="..\shared\collectionconfiguration.h" />
+    <CustomBuild Include="contentwindow.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;contentwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 contentwindow.h -o tmp\moc\release_shared\moc_contentwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC contentwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_contentwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;contentwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 contentwindow.h -o tmp\moc\debug_shared\moc_contentwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC contentwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_contentwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="filternamedialog.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;filternamedialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 filternamedialog.h -o tmp\moc\release_shared\moc_filternamedialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC filternamedialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_filternamedialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;filternamedialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 filternamedialog.h -o tmp\moc\debug_shared\moc_filternamedialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC filternamedialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_filternamedialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="findwidget.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;findwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 findwidget.h -o tmp\moc\release_shared\moc_findwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC findwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_findwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;findwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 findwidget.h -o tmp\moc\debug_shared\moc_findwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC findwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_findwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\shared\fontpanel\fontpanel.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\..\shared\fontpanel\fontpanel.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\..\shared\fontpanel\fontpanel.h -o tmp\moc\release_shared\moc_fontpanel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC ..\..\..\shared\fontpanel\fontpanel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_fontpanel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\..\shared\fontpanel\fontpanel.h;C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 ..\..\..\shared\fontpanel\fontpanel.h -o tmp\moc\debug_shared\moc_fontpanel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC ..\..\..\shared\fontpanel\fontpanel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_fontpanel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="globalactions.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;globalactions.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 globalactions.h -o tmp\moc\release_shared\moc_globalactions.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC globalactions.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_globalactions.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;globalactions.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 globalactions.h -o tmp\moc\debug_shared\moc_globalactions.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC globalactions.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_globalactions.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="helpenginewrapper.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpenginewrapper.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpenginewrapper.h -o tmp\moc\release_shared\moc_helpenginewrapper.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC helpenginewrapper.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_helpenginewrapper.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpenginewrapper.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpenginewrapper.h -o tmp\moc\debug_shared\moc_helpenginewrapper.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC helpenginewrapper.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_helpenginewrapper.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="helpviewer.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpviewer.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpviewer.h -o tmp\moc\release_shared\moc_helpviewer.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC helpviewer.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_helpviewer.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpviewer.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpviewer.h -o tmp\moc\debug_shared\moc_helpviewer.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC helpviewer.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_helpviewer.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="helpviewer_p.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpviewer_p.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpviewer_p.h -o tmp\moc\release_shared\moc_helpviewer_p.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC helpviewer_p.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_helpviewer_p.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpviewer_p.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpviewer_p.h -o tmp\moc\debug_shared\moc_helpviewer_p.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC helpviewer_p.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_helpviewer_p.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="indexwindow.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;indexwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 indexwindow.h -o tmp\moc\release_shared\moc_indexwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC indexwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_indexwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;indexwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 indexwindow.h -o tmp\moc\debug_shared\moc_indexwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC indexwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_indexwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="installdialog.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;installdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 installdialog.h -o tmp\moc\release_shared\moc_installdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC installdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_installdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;installdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 installdialog.h -o tmp\moc\debug_shared\moc_installdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC installdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_installdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 mainwindow.h -o tmp\moc\release_shared\moc_mainwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC mainwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_mainwindow.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;mainwindow.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 mainwindow.h -o tmp\moc\debug_shared\moc_mainwindow.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC mainwindow.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_mainwindow.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="openpagesmanager.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesmanager.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesmanager.h -o tmp\moc\release_shared\moc_openpagesmanager.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC openpagesmanager.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_openpagesmanager.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesmanager.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesmanager.h -o tmp\moc\debug_shared\moc_openpagesmanager.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC openpagesmanager.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_openpagesmanager.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="openpagesmodel.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesmodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesmodel.h -o tmp\moc\release_shared\moc_openpagesmodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC openpagesmodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_openpagesmodel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesmodel.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesmodel.h -o tmp\moc\debug_shared\moc_openpagesmodel.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC openpagesmodel.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_openpagesmodel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="openpagesswitcher.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesswitcher.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesswitcher.h -o tmp\moc\release_shared\moc_openpagesswitcher.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC openpagesswitcher.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_openpagesswitcher.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpagesswitcher.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpagesswitcher.h -o tmp\moc\debug_shared\moc_openpagesswitcher.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC openpagesswitcher.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_openpagesswitcher.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="openpageswidget.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpageswidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpageswidget.h -o tmp\moc\release_shared\moc_openpageswidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC openpageswidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_openpageswidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;openpageswidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 openpageswidget.h -o tmp\moc\debug_shared\moc_openpageswidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC openpageswidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_openpageswidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="preferencesdialog.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;preferencesdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 preferencesdialog.h -o tmp\moc\release_shared\moc_preferencesdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC preferencesdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_preferencesdialog.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;preferencesdialog.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 preferencesdialog.h -o tmp\moc\debug_shared\moc_preferencesdialog.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC preferencesdialog.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_preferencesdialog.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="qtdocinstaller.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtdocinstaller.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtdocinstaller.h -o tmp\moc\release_shared\moc_qtdocinstaller.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC qtdocinstaller.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_qtdocinstaller.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;qtdocinstaller.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 qtdocinstaller.h -o tmp\moc\debug_shared\moc_qtdocinstaller.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC qtdocinstaller.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_qtdocinstaller.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="remotecontrol.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;remotecontrol.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 remotecontrol.h -o tmp\moc\release_shared\moc_remotecontrol.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC remotecontrol.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_remotecontrol.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;remotecontrol.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 remotecontrol.h -o tmp\moc\debug_shared\moc_remotecontrol.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC remotecontrol.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_remotecontrol.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="remotecontrol_win.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;remotecontrol_win.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 remotecontrol_win.h -o tmp\moc\release_shared\moc_remotecontrol_win.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC remotecontrol_win.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_remotecontrol_win.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;remotecontrol_win.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 remotecontrol_win.h -o tmp\moc\debug_shared\moc_remotecontrol_win.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC remotecontrol_win.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_remotecontrol_win.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="searchwidget.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;searchwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 searchwidget.h -o tmp\moc\release_shared\moc_searchwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC searchwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_searchwidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;searchwidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 searchwidget.h -o tmp\moc\debug_shared\moc_searchwidget.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC searchwidget.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_searchwidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="topicchooser.h">
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;topicchooser.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 topicchooser.h -o tmp\moc\release_shared\moc_topicchooser.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC topicchooser.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\moc_topicchooser.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;topicchooser.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 topicchooser.h -o tmp\moc\debug_shared\moc_topicchooser.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC topicchooser.h</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\moc_topicchooser.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="tracer.h" />
+    <ClInclude Include="xbelsupport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="tmp\obj\debug_shared\assistant.res">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="tmp\obj\release_shared\assistant.res">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\debug_shared\helpenginewrapper.moc">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpenginewrapper.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\debug_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpenginewrapper.cpp -o tmp\moc\debug_shared\helpenginewrapper.moc</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">MOC helpenginewrapper.cpp</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\moc\debug_shared\helpenginewrapper.moc;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\helpenginewrapper.moc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe;helpenginewrapper.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\moc.exe  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DQT_WEBKIT_LIB -DQT_SQL_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_HAVE_MMX -DQT_HAVE_3DNOW -DQT_HAVE_SSE -DQT_HAVE_MMXEXT -DQT_HAVE_SSE2 -DQT_THREAD_SUPPORT -I&quot;..\..\..\..\include\QtCore&quot; -I&quot;..\..\..\..\include\QtNetwork&quot; -I&quot;..\..\..\..\include\QtGui&quot; -I&quot;..\..\..\..\include\QtSql&quot; -I&quot;..\..\..\..\include\QtWebKit&quot; -I&quot;..\..\..\..\include&quot; -I&quot;..\..\..\..\include\QtHelp&quot; -I&quot;..\..\..\shared\fontpanel&quot; -I&quot;.&quot; -I&quot;..\..\..\..\include\ActiveQt&quot; -I&quot;tmp\moc\release_shared&quot; -I&quot;.&quot; -I..\..\..\..\mkspecs\win32-msvc2012 -D_MSC_VER=1700 -DWIN32 helpenginewrapper.cpp -o tmp\moc\release_shared\helpenginewrapper.moc</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">MOC helpenginewrapper.cpp</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\moc\release_shared\helpenginewrapper.moc;%(Outputs)</Outputs>
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </CustomBuild>
+    <ClCompile Include="tmp\moc\debug_shared\moc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_aboutdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_bookmarkdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_bookmarkdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_bookmarkfiltermodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_bookmarkfiltermodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_bookmarkmanager.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_bookmarkmanager.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_bookmarkmanagerwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_bookmarkmanagerwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_bookmarkmodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_bookmarkmodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_centralwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_centralwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_contentwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_contentwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_filternamedialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_filternamedialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_findwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_findwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_fontpanel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_fontpanel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_globalactions.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_globalactions.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_helpenginewrapper.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_helpenginewrapper.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_helpviewer.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_helpviewer.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_helpviewer_p.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_helpviewer_p.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_indexwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_indexwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_installdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_installdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_openpagesmanager.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_openpagesmanager.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_openpagesmodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_openpagesmodel.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_openpagesswitcher.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_openpagesswitcher.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_openpageswidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_openpageswidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_preferencesdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_preferencesdialog.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qtdocinstaller.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qtdocinstaller.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_remotecontrol.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_remotecontrol.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_remotecontrol_win.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_remotecontrol_win.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_searchwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_searchwidget.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_topicchooser.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_topicchooser.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_assistant.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_assistant.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_assistant_images.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_assistant_images.cpp">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="ui_bookmarkdialog.h" />
+    <ClInclude Include="ui_bookmarkmanagerwidget.h" />
+    <ClInclude Include="ui_bookmarkwidget.h" />
+    <ClInclude Include="ui_filternamedialog.h" />
+    <ClInclude Include="ui_installdialog.h" />
+    <ClInclude Include="ui_preferencesdialog.h" />
+    <ClInclude Include="ui_topicchooser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="bookmarkdialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkdialog.ui -o ui_bookmarkdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC bookmarkdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_bookmarkdialog.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkdialog.ui -o ui_bookmarkdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC bookmarkdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_bookmarkdialog.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkmanagerwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkmanagerwidget.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkmanagerwidget.ui -o ui_bookmarkmanagerwidget.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC bookmarkmanagerwidget.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_bookmarkmanagerwidget.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkmanagerwidget.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkmanagerwidget.ui -o ui_bookmarkmanagerwidget.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC bookmarkmanagerwidget.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_bookmarkmanagerwidget.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="bookmarkwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkwidget.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkwidget.ui -o ui_bookmarkwidget.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC bookmarkwidget.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_bookmarkwidget.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;bookmarkwidget.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe bookmarkwidget.ui -o ui_bookmarkwidget.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC bookmarkwidget.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_bookmarkwidget.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="filternamedialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;filternamedialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe filternamedialog.ui -o ui_filternamedialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC filternamedialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_filternamedialog.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;filternamedialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe filternamedialog.ui -o ui_filternamedialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC filternamedialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_filternamedialog.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="installdialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;installdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe installdialog.ui -o ui_installdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC installdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_installdialog.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;installdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe installdialog.ui -o ui_installdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC installdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_installdialog.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="preferencesdialog.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;preferencesdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe preferencesdialog.ui -o ui_preferencesdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC preferencesdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_preferencesdialog.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;preferencesdialog.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe preferencesdialog.ui -o ui_preferencesdialog.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC preferencesdialog.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_preferencesdialog.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="topicchooser.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;topicchooser.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe topicchooser.ui -o ui_topicchooser.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">UIC topicchooser.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">ui_topicchooser.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe;topicchooser.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\uic.exe topicchooser.ui -o ui_topicchooser.h</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">UIC topicchooser.ui</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">ui_topicchooser.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\mac\addtab.png" />
+    <None Include="images\win\addtab.png" />
+    <None Include="images\assistant-128.png" />
+    <None Include="images\assistant.png" />
+    <None Include="assistant.qch" />
+    <CustomBuild Include="assistant.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;assistant.qch;assistant.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name assistant assistant.qrc -o tmp\rcc\release_shared\qrc_assistant.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC assistant.qrc</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_assistant.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;assistant.qch;assistant.qrc;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name assistant assistant.qrc -o tmp\rcc\debug_shared\qrc_assistant.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC assistant.qrc</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_assistant.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="assistant_images.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;assistant_images.qrc;images\assistant-128.png;images\assistant.png;images\bookmark.png;images\closebutton.png;images\darkclosebutton.png;images\mac\addtab.png;images\mac\book.png;images\mac\closetab.png;images\mac\editcopy.png;images\mac\find.png;images\mac\home.png;images\mac\next.png;images\mac\previous.png;images\mac\print.png;images\mac\resetzoom.png;images\mac\synctoc.png;images\mac\zoomin.png;images\mac\zoomout.png;images\trolltech-logo.png;images\win\addtab.png;images\win\book.png;images\win\closetab.png;images\win\editcopy.png;images\win\find.png;images\win\home.png;images\win\next.png;images\win\previous.png;images\win\print.png;images\win\resetzoom.png;images\win\synctoc.png;images\win\zoomin.png;images\win\zoomout.png;images\wrap.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name assistant_images assistant_images.qrc -o tmp\rcc\release_shared\qrc_assistant_images.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">RCC assistant_images.qrc</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\rcc\release_shared\qrc_assistant_images.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe;assistant_images.qrc;images\assistant-128.png;images\assistant.png;images\bookmark.png;images\closebutton.png;images\darkclosebutton.png;images\mac\addtab.png;images\mac\book.png;images\mac\closetab.png;images\mac\editcopy.png;images\mac\find.png;images\mac\home.png;images\mac\next.png;images\mac\previous.png;images\mac\print.png;images\mac\resetzoom.png;images\mac\synctoc.png;images\mac\zoomin.png;images\mac\zoomout.png;images\trolltech-logo.png;images\win\addtab.png;images\win\book.png;images\win\closetab.png;images\win\editcopy.png;images\win\find.png;images\win\home.png;images\win\next.png;images\win\previous.png;images\win\print.png;images\win\resetzoom.png;images\win\synctoc.png;images\win\zoomin.png;images\win\zoomout.png;images\wrap.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">C:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\bin\rcc.exe -name assistant_images assistant_images.qrc -o tmp\rcc\debug_shared\qrc_assistant_images.cpp</Command>
+      <Message Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">RCC assistant_images.qrc</Message>
+      <Outputs Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\rcc\debug_shared\qrc_assistant_images.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="images\mac\book.png" />
+    <None Include="images\win\book.png" />
+    <None Include="images\bookmark.png" />
+    <None Include="images\closebutton.png" />
+    <None Include="images\mac\closetab.png" />
+    <None Include="images\win\closetab.png" />
+    <None Include="images\darkclosebutton.png" />
+    <None Include="images\mac\editcopy.png" />
+    <None Include="images\win\editcopy.png" />
+    <None Include="images\mac\find.png" />
+    <None Include="images\win\find.png" />
+    <None Include="images\mac\home.png" />
+    <None Include="images\win\home.png" />
+    <None Include="images\mac\next.png" />
+    <None Include="images\win\next.png" />
+    <None Include="images\mac\previous.png" />
+    <None Include="images\win\previous.png" />
+    <None Include="images\mac\print.png" />
+    <None Include="images\win\print.png" />
+    <None Include="images\mac\resetzoom.png" />
+    <None Include="images\win\resetzoom.png" />
+    <None Include="images\mac\synctoc.png" />
+    <None Include="images\win\synctoc.png" />
+    <None Include="images\trolltech-logo.png" />
+    <None Include="images\wrap.png" />
+    <None Include="images\mac\zoomin.png" />
+    <None Include="images\win\zoomin.png" />
+    <None Include="images\mac\zoomout.png" />
+    <None Include="images\win\zoomout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="assistant.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,88 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebframe", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebframe\tst_qwebframe.vcxproj", "{1C4CA74C-96EE-3DA4-A77F-F204AB53EB32}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebpage", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebpage\tst_qwebpage.vcxproj", "{231C82B7-9A75-3F11-B690-EEBC03410BD1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebelement", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebelement\tst_qwebelement.vcxproj", "{2DECFB79-5DCE-35F3-B73C-C829E5126956}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qgraphicswebview", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qgraphicswebview\tst_qgraphicswebview.vcxproj", "{1F20531C-6757-3A41-A280-4A29674517F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebhistoryinterface", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebhistoryinterface\tst_qwebhistoryinterface.vcxproj", "{CC334543-CD33-3B37-804E-832C318F852B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebview", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebview\tst_qwebview.vcxproj", "{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebhistory", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebhistory\tst_qwebhistory.vcxproj", "{913D6001-B2D1-3461-B8A3-8700FA249E3A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qwebinspector", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qwebinspector\tst_qwebinspector.vcxproj", "{9E5BE3CF-4CED-342A-9483-69CC34442A0D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hybridPixmap", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/hybridPixmap\hybridPixmap.vcxproj", "{38F3DD03-AB55-3519-9CA3-17D8B230DDE5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_qdeclarativewebview", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/qdeclarativewebview\tst_qdeclarativewebview.vcxproj", "{24741439-DC8D-3F88-8AE3-86CF327835DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_painting", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/benchmarks/painting\tst_painting.vcxproj", "{36B26FD9-4A4C-3357-A64B-002FF3D24FFD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tst_loading", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/src/3rdparty/webkit/Source/WebKit/qt/tests/benchmarks/loading\tst_loading.vcxproj", "{0F54CCD5-197C-3413-A3DC-9408FDE43229}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1C4CA74C-96EE-3DA4-A77F-F204AB53EB32}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1C4CA74C-96EE-3DA4-A77F-F204AB53EB32}.Debug|Win32.Build.0 = Debug|Win32
+		{1C4CA74C-96EE-3DA4-A77F-F204AB53EB32}.Release|Win32.ActiveCfg = Release|Win32
+		{1C4CA74C-96EE-3DA4-A77F-F204AB53EB32}.Release|Win32.Build.0 = Release|Win32
+		{231C82B7-9A75-3F11-B690-EEBC03410BD1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{231C82B7-9A75-3F11-B690-EEBC03410BD1}.Debug|Win32.Build.0 = Debug|Win32
+		{231C82B7-9A75-3F11-B690-EEBC03410BD1}.Release|Win32.ActiveCfg = Release|Win32
+		{231C82B7-9A75-3F11-B690-EEBC03410BD1}.Release|Win32.Build.0 = Release|Win32
+		{2DECFB79-5DCE-35F3-B73C-C829E5126956}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2DECFB79-5DCE-35F3-B73C-C829E5126956}.Debug|Win32.Build.0 = Debug|Win32
+		{2DECFB79-5DCE-35F3-B73C-C829E5126956}.Release|Win32.ActiveCfg = Release|Win32
+		{2DECFB79-5DCE-35F3-B73C-C829E5126956}.Release|Win32.Build.0 = Release|Win32
+		{1F20531C-6757-3A41-A280-4A29674517F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F20531C-6757-3A41-A280-4A29674517F0}.Debug|Win32.Build.0 = Debug|Win32
+		{1F20531C-6757-3A41-A280-4A29674517F0}.Release|Win32.ActiveCfg = Release|Win32
+		{1F20531C-6757-3A41-A280-4A29674517F0}.Release|Win32.Build.0 = Release|Win32
+		{CC334543-CD33-3B37-804E-832C318F852B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CC334543-CD33-3B37-804E-832C318F852B}.Debug|Win32.Build.0 = Debug|Win32
+		{CC334543-CD33-3B37-804E-832C318F852B}.Release|Win32.ActiveCfg = Release|Win32
+		{CC334543-CD33-3B37-804E-832C318F852B}.Release|Win32.Build.0 = Release|Win32
+		{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}.Debug|Win32.Build.0 = Debug|Win32
+		{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}.Release|Win32.ActiveCfg = Release|Win32
+		{67AC6507-58B4-3EDB-B4F3-B39D98D8F90A}.Release|Win32.Build.0 = Release|Win32
+		{913D6001-B2D1-3461-B8A3-8700FA249E3A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{913D6001-B2D1-3461-B8A3-8700FA249E3A}.Debug|Win32.Build.0 = Debug|Win32
+		{913D6001-B2D1-3461-B8A3-8700FA249E3A}.Release|Win32.ActiveCfg = Release|Win32
+		{913D6001-B2D1-3461-B8A3-8700FA249E3A}.Release|Win32.Build.0 = Release|Win32
+		{9E5BE3CF-4CED-342A-9483-69CC34442A0D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E5BE3CF-4CED-342A-9483-69CC34442A0D}.Debug|Win32.Build.0 = Debug|Win32
+		{9E5BE3CF-4CED-342A-9483-69CC34442A0D}.Release|Win32.ActiveCfg = Release|Win32
+		{9E5BE3CF-4CED-342A-9483-69CC34442A0D}.Release|Win32.Build.0 = Release|Win32
+		{38F3DD03-AB55-3519-9CA3-17D8B230DDE5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38F3DD03-AB55-3519-9CA3-17D8B230DDE5}.Debug|Win32.Build.0 = Debug|Win32
+		{38F3DD03-AB55-3519-9CA3-17D8B230DDE5}.Release|Win32.ActiveCfg = Release|Win32
+		{38F3DD03-AB55-3519-9CA3-17D8B230DDE5}.Release|Win32.Build.0 = Release|Win32
+		{24741439-DC8D-3F88-8AE3-86CF327835DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{24741439-DC8D-3F88-8AE3-86CF327835DF}.Debug|Win32.Build.0 = Debug|Win32
+		{24741439-DC8D-3F88-8AE3-86CF327835DF}.Release|Win32.ActiveCfg = Release|Win32
+		{24741439-DC8D-3F88-8AE3-86CF327835DF}.Release|Win32.Build.0 = Release|Win32
+		{36B26FD9-4A4C-3357-A64B-002FF3D24FFD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{36B26FD9-4A4C-3357-A64B-002FF3D24FFD}.Debug|Win32.Build.0 = Debug|Win32
+		{36B26FD9-4A4C-3357-A64B-002FF3D24FFD}.Release|Win32.ActiveCfg = Release|Win32
+		{36B26FD9-4A4C-3357-A64B-002FF3D24FFD}.Release|Win32.Build.0 = Release|Win32
+		{0F54CCD5-197C-3413-A3DC-9408FDE43229}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0F54CCD5-197C-3413-A3DC-9408FDE43229}.Debug|Win32.Build.0 = Debug|Win32
+		{0F54CCD5-197C-3413-A3DC-9408FDE43229}.Release|Win32.ActiveCfg = Release|Win32
+		{0F54CCD5-197C-3413-A3DC-9408FDE43229}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

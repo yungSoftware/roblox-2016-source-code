@@ -1,0 +1,1878 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\shared\findwidget\abstractfindwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\brushmanagerproxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\brushpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\buddyeditor\buddyeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\buddyeditor\buddyeditor_instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\buddyeditor\buddyeditor_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\buddyeditor\buddyeditor_tool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\button_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\combobox_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\connectdialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\containerwidget_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\default_actionprovider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\default_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\default_layoutdecoration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\designerpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\deviceprofiledialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\dpi_chooser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\embeddedoptionspage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\fontpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formeditor_optionspage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindow_dnditem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindow_widgetstack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindowcursor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindowmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\formwindowsettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\groupbox_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\iconcache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\inplace_editor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\inplace_widget_helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\itemlisteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\itemview_propertysheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\findwidget\itemviewfindwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\label_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\layout_propertysheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\layouttaskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\line_propertysheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\lineedit_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\listwidget_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\listwidgeteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\menutaskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\newdynamicpropertydialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\objectinspector\objectinspector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\objectinspector\objectinspectormodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\paletteeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\paletteeditorbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\previewactiongroup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\previewframe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\previewwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\propertyeditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qdesigner_components.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qdesigner_resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qdesignerundostack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qlayoutwidget_propertysheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\qlonglongvalidator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qmainwindow_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qmdiarea_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qtbrushmanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtbuttonpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtgradienteditor\qtcolorbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qteditorfactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtgroupboxpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowserutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtpropertymanager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qttreepropertybrowser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\qtpropertybrowser\qtvariantproperty.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qwizard_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\qworkspace_container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalslot_utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalsloteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalsloteditor_instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalsloteditor_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalsloteditor_tool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\signalsloteditor\signalsloteditorwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\spacer_propertysheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\stringlisteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\propertyeditor\stringlisteditorbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\tablewidget_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\tablewidgeteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tabordereditor\tabordereditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tabordereditor\tabordereditor_instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tabordereditor\tabordereditor_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tabordereditor\tabordereditor_tool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\taskmenu_component.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\templateoptionspage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\textedit_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\shared\findwidget\texteditfindwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\tool_widgeteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\toolbar_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\treewidget_taskmenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\taskmenu\treewidgeteditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\widgetbox\widgetbox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\widgetbox\widgetbox_dnditem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\widgetbox\widgetboxcategorylistview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\widgetbox\widgetboxtreewidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\formeditor\widgetselection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\..\shared\findwidget\abstractfindwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\brushmanagerproxy.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\propertyeditor\brushpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\buddyeditor\buddyeditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\buddyeditor\buddyeditor_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\buddyeditor\buddyeditor_plugin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\buddyeditor\buddyeditor_tool.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\button_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\combobox_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\signalsloteditor\connectdialog_p.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\containerwidget_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\default_actionprovider.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\default_container.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\default_layoutdecoration.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\designerpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\deviceprofiledialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\dpi_chooser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\embeddedoptionspage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\propertyeditor\fontpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\formeditor\formeditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\formeditor\formeditor_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\formeditor\formeditor_optionspage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\formeditor\formwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\formeditor\formwindow_dnditem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\formeditor\formwindow_widgetstack.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\formwindowcursor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\formwindowmanager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\formwindowsettings.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\groupbox_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\iconcache.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\inplace_editor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\inplace_widget_helper.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\itemlisteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\itemview_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\findwidget\itemviewfindwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\label_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\layout_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\layouttaskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="lib_pch.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\line_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\lineedit_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\listwidget_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\listwidgeteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\menutaskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\newdynamicpropertydialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\objectinspector\objectinspector.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\objectinspector\objectinspector_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\objectinspector\objectinspectormodel_p.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\propertyeditor\paletteeditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\paletteeditorbutton.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\previewactiongroup.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\previewframe.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\previewwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\propertyeditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\propertyeditor\propertyeditor_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\formeditor\qdesigner_resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\formeditor\qdesignerundostack.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qlayoutwidget_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\qlonglongvalidator.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qmainwindow_container.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qmdiarea_container.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qtbrushmanager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtbuttonpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtgradienteditor\qtcolorbutton.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qteditorfactory.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtgroupboxpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowserutils_p.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtpropertymanager.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qttreepropertybrowser.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtvariantproperty.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qwizard_container.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\qworkspace_container.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\signalsloteditor\signalslot_utils_p.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\signalsloteditor\signalsloteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\signalsloteditor\signalsloteditor_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\signalsloteditor\signalsloteditor_p.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\signalsloteditor\signalsloteditor_plugin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\signalsloteditor\signalsloteditor_tool.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\signalsloteditor\signalsloteditorwindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\spacer_propertysheet.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\stringlisteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\stringlisteditorbutton.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\tablewidget_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\tablewidgeteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\tabordereditor\tabordereditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\tabordereditor\tabordereditor_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\tabordereditor\tabordereditor_plugin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\tabordereditor\tabordereditor_tool.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\taskmenu_component.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\templateoptionspage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\textedit_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\..\shared\findwidget\texteditfindwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\tool_widgeteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\toolbar_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\treewidget_taskmenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\treewidgeteditor.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\widgetbox\widgetbox.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\widgetbox\widgetbox_dnditem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\widgetbox\widgetbox_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\widgetbox\widgetboxcategorylistview.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\widgetbox\widgetboxtreewidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\widgetselection.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="tmp\obj\release_shared\QtDesignerComponents_resource.res">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\obj\debug_shared\QtDesignerComponentsd_resource.res">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\debug_shared\designerpropertymanager.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\designerpropertymanager.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <ClCompile Include="lib_pch.h.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_abstractfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_abstractfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_buddyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_buddyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_buddyeditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_buddyeditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_buddyeditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_buddyeditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_button_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_button_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_combobox_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_combobox_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_connectdialog_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_connectdialog_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_containerwidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_containerwidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_default_actionprovider.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_default_actionprovider.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_default_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_default_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_default_layoutdecoration.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_default_layoutdecoration.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_designerpropertymanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_designerpropertymanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_deviceprofiledialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_deviceprofiledialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_dpi_chooser.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_dpi_chooser.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_embeddedoptionspage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_embeddedoptionspage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formwindow_widgetstack.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formwindow_widgetstack.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formwindowcursor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formwindowcursor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formwindowmanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formwindowmanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_formwindowsettings.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_formwindowsettings.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_groupbox_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_groupbox_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_iconcache.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_iconcache.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_inplace_editor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_inplace_editor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_inplace_widget_helper.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_inplace_widget_helper.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_itemlisteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_itemlisteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_itemview_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_itemview_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_itemviewfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_itemviewfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_label_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_label_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_layout_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_layout_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_layouttaskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_layouttaskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_line_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_line_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_lineedit_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_lineedit_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_listwidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_listwidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_listwidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_listwidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_menutaskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_menutaskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_newdynamicpropertydialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_newdynamicpropertydialog.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_objectinspector.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_objectinspector.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_paletteeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_paletteeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_paletteeditorbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_paletteeditorbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_previewactiongroup.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_previewactiongroup.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_previewframe.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_previewframe.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_previewwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_previewwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_propertyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_propertyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qdesignerundostack.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qdesignerundostack.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qlayoutwidget_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qlayoutwidget_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qlonglongvalidator.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qlonglongvalidator.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qmainwindow_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qmainwindow_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qmdiarea_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qmdiarea_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qtbrushmanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qtbrushmanager.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qtpropertybrowserutils_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qtpropertybrowserutils_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qwizard_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qwizard_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_qworkspace_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_qworkspace_container.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_signalsloteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_signalsloteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_signalsloteditor_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_signalsloteditor_p.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_signalsloteditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_signalsloteditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_signalsloteditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_signalsloteditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_signalsloteditorwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_signalsloteditorwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_spacer_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_spacer_propertysheet.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_stringlisteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_stringlisteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_stringlisteditorbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_stringlisteditorbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tablewidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tablewidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tablewidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tablewidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tabordereditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tabordereditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tabordereditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tabordereditor_plugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tabordereditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tabordereditor_tool.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_taskmenu_component.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_taskmenu_component.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_templateoptionspage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_templateoptionspage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_textedit_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_textedit_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_texteditfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_texteditfindwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_tool_widgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_tool_widgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_toolbar_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_toolbar_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_treewidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_treewidget_taskmenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_treewidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_treewidgeteditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_widgetbox.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_widgetbox.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_widgetboxcategorylistview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_widgetboxcategorylistview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_widgetboxtreewidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_widgetboxtreewidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\debug_shared\moc_widgetselection.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\moc\release_shared\moc_widgetselection.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_findwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_findwidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_formeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_formeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_propertyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_propertyeditor.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_qtpropertybrowser.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_qtpropertybrowser.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\debug_shared\qrc_widgetbox.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp\rcc\release_shared\qrc_widgetbox.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <CustomBuild Include="tmp\moc\debug_shared\qteditorfactory.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\qteditorfactory.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\debug_shared\qtpropertymanager.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\qtpropertymanager.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\debug_shared\qttreepropertybrowser.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\qttreepropertybrowser.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\debug_shared\signalsloteditorwindow.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="tmp\moc\release_shared\signalsloteditorwindow.moc">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="ui_connectdialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_deviceprofiledialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_formwindowsettings.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_itemlisteditor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_newdynamicpropertydialog.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_paletteeditor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_previewwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_stringlisteditor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_tablewidgeteditor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_templateoptionspage.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_treewidgeteditor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\signalsloteditor\connectdialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\deviceprofiledialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\formwindowsettings.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\itemlisteditor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\newdynamicpropertydialog.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\paletteeditor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\previewwidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\propertyeditor\stringlisteditor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\tablewidgeteditor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\formeditor\templateoptionspage.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\taskmenu\treewidgeteditor.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\formeditor\images\mac\adjustsize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\adjustsize.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\back.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\buddytool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\buddytool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\busy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\calendarwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\checkbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cleartext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\closedhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\closetab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\color.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\columnview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\combobox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\commandlinkbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\configure.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-arrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-busy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-closedhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-cross.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-forbidden.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-ibeam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-openhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizef.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizeh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-sizev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-uparrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-vsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-wait.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\qtpropertybrowser\images\cursor-whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dateedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\datetimeedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\defaultbrushes.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dial.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dialogbuttonbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\dockwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\doublespinbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\downplus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\dropdownbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editbreaklayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editbreaklayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editcopy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editcut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\editdelete-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editdelete.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editform.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editform.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editgrid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editgrid.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\edithlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\edithlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\edithlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\edithlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editlower.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editlower.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editpaste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editraise.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editraise.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editvlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editvlayout.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\editvlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\editvlayoutsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\emptyicon.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\filenew-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\filenew.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\fileopen-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\fileopen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\filesave.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\..\..\..\shared\findwidget\findwidget.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\formeditor\images\widgets\fontcombobox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\propertyeditor\fontmapping.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\formeditor\formeditor.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\formeditor\images\mac\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\forward.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\frame.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\graphicsview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\groupbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\hand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hscrollbar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\hsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\ibeam.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\insertimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\insertimage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\label.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\lcdnumber.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\leveldown.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\levelup.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\line.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\lineedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\listbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\listview.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\mdiarea.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\minus-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\minus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\no.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\openhand.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\plaintextedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\plus-16.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\plus.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\prefix-add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\previous.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\progress.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\propertyeditor\propertyeditor.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\formeditor\images\widgets\pushbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\qt3logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\qtlogo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\..\..\..\shared\qtpropertybrowser\qtpropertybrowser.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\formeditor\images\widgets\radiobutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\reload.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\resetproperty.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\resourceeditortool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\resourceeditortool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\scrollarea.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\mac\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\win\searchfind.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\signalslottool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\signalslottool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\simplifyrichtext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\simplifyrichtext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeb.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizef.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizeh.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\sizev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\sort.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\spacer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\spinbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\submenu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\table.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\tabordertool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\tabordertool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\tabwidget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textanchor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textanchor.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textbold.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textcenter.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\textedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textitalic.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textjustify.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textleft.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textright.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textsubscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textsubscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textsuperscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textsuperscript.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\textunder.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\timeedit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\toolbox.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\toolbutton.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\uparrow.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vscrollbar.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vslider.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\vspacer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\vsplit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\wait.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\cursors\whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\widget.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\widgetbox\widgetbox.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\widgetbox\widgetbox.xml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\widgetstack.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\mac\widgettool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\win\widgettool.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\formeditor\images\widgets\wizard.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\shared\findwidget\images\wrap.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponents_resource.rc" />
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\tools\designer\src\components\lib\QtDesignerComponentsd_resource.rc" />
+  </ItemGroup>
+</Project>

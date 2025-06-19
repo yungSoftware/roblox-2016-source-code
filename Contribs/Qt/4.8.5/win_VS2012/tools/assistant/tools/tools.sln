@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assistant", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/assistant\assistant.vcxproj", "{212D28B3-5B16-3102-82AD-CE3B701D967D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qhelpgenerator", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qhelpgenerator\qhelpgenerator.vcxproj", "{39CEC382-3964-3047-80F5-55CB8CEF63EB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qcollectiongenerator", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qcollectiongenerator\qcollectiongenerator.vcxproj", "{86C6AEC0-0077-3566-BBE7-BCFAC6DB30AB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qhelpconverter", "C:/Trunk2016/Contribs/Qt/4.8.5/win_VS2012/tools/assistant/tools/qhelpconverter\qhelpconverter.vcxproj", "{82FB726B-AC11-34F6-9833-0AF1F8483609}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{212D28B3-5B16-3102-82AD-CE3B701D967D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{212D28B3-5B16-3102-82AD-CE3B701D967D}.Debug|Win32.Build.0 = Debug|Win32
+		{212D28B3-5B16-3102-82AD-CE3B701D967D}.Release|Win32.ActiveCfg = Release|Win32
+		{212D28B3-5B16-3102-82AD-CE3B701D967D}.Release|Win32.Build.0 = Release|Win32
+		{39CEC382-3964-3047-80F5-55CB8CEF63EB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{39CEC382-3964-3047-80F5-55CB8CEF63EB}.Debug|Win32.Build.0 = Debug|Win32
+		{39CEC382-3964-3047-80F5-55CB8CEF63EB}.Release|Win32.ActiveCfg = Release|Win32
+		{39CEC382-3964-3047-80F5-55CB8CEF63EB}.Release|Win32.Build.0 = Release|Win32
+		{86C6AEC0-0077-3566-BBE7-BCFAC6DB30AB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86C6AEC0-0077-3566-BBE7-BCFAC6DB30AB}.Debug|Win32.Build.0 = Debug|Win32
+		{86C6AEC0-0077-3566-BBE7-BCFAC6DB30AB}.Release|Win32.ActiveCfg = Release|Win32
+		{86C6AEC0-0077-3566-BBE7-BCFAC6DB30AB}.Release|Win32.Build.0 = Release|Win32
+		{82FB726B-AC11-34F6-9833-0AF1F8483609}.Debug|Win32.ActiveCfg = Debug|Win32
+		{82FB726B-AC11-34F6-9833-0AF1F8483609}.Debug|Win32.Build.0 = Debug|Win32
+		{82FB726B-AC11-34F6-9833-0AF1F8483609}.Release|Win32.ActiveCfg = Release|Win32
+		{82FB726B-AC11-34F6-9833-0AF1F8483609}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

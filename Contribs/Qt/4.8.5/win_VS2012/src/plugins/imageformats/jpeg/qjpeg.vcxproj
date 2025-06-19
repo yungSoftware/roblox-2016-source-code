@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{64FA04E6-A052-3796-9536-C9B84A9F87DC}</ProjectGuid>
+    <RootNamespace>qjpeg</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="Configuration">
+    <OutputDirectory>..\..\..\..\plugins\imageformats\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>tmp\obj\debug_shared\</IntermediateDirectory>
+    <PrimaryOutput>qjpegd4</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="Configuration">
+    <OutputDirectory>..\..\..\..\plugins\imageformats\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>tmp\obj\release_shared\</IntermediateDirectory>
+    <PrimaryOutput>qjpeg4</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <ImportGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists(&apos;$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props&apos;)" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">..\..\..\..\plugins\imageformats\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">tmp\obj\debug_shared\</IntDir>
+    <PlatformToolSet>v110</PlatformToolSet>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">qjpegd4</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</IgnoreImportLibrary>
+    <OutDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">..\..\..\..\plugins\imageformats\</OutDir>
+    <IntDir Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">tmp\obj\release_shared\</IntDir>
+    <PlatformToolSet>v110</PlatformToolSet>
+    <TargetName Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">qjpeg4</TargetName>
+    <IgnoreImportLibrary Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include\QtGui&quot;;&quot;..\..\..\..\include&quot;;&quot;..\..\..\gui\image&quot;;&quot;..\..\..\3rdparty\libjpeg&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\debug_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\obj\debug_shared\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\obj\debug_shared\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_PLUGIN;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGuid4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCored4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <OutputFile>$(OutDir)\qjpegd4.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>4.85</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_PLUGIN;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">
+    <ClCompile>
+      <AdditionalIncludeDirectories>&quot;..\..\..\..\include\QtCore&quot;;&quot;..\..\..\..\include\QtGui&quot;;&quot;..\..\..\..\include&quot;;&quot;..\..\..\gui\image&quot;;&quot;..\..\..\3rdparty\libjpeg&quot;;&quot;..\..\..\..\include\ActiveQt&quot;;&quot;tmp\moc\release_shared&quot;;..\..\..\..\mkspecs\win32-msvc2012;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>tmp\obj\release_shared\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>tmp\obj\release_shared\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;QT_PLUGIN;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>.\</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtGui4.lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib\QtCore4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\qjpeg4.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>4.85</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;QT_PLUGIN;QT_GUI_LIB;QT_CORE_LIB;QT_HAVE_MMX;QT_HAVE_3DNOW;QT_HAVE_SSE;QT_HAVE_MMXEXT;QT_HAVE_SSE2;QT_THREAD_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jaricom.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcapimin.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcapistd.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcarith.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jccoefct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jccolor.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcdctmgr.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jchuff.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcinit.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcmainct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcmarker.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcmaster.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcomapi.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcparam.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcprepct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jcsample.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jctrans.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdapimin.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdapistd.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdarith.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdatadst.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdatasrc.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdcoefct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdcolor.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jddctmgr.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdhuff.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdinput.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdmainct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdmarker.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdmaster.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdmerge.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdpostct.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdsample.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jdtrans.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jerror.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jfdctflt.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jfdctfst.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jfdctint.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jidctflt.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jidctfst.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jidctint.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jmemmgr.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jmemnobs.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jquant1.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jquant2.c" />
+    <ClCompile Include="..\..\..\3rdparty\libjpeg\jutils.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\..\gui\image\qjpeghandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\gui\image\qjpeghandler_p.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="tmp\obj\release_shared\qjpeg_resource.res">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="tmp\obj\debug_shared\qjpegd_resource.res">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\jpeg\qjpeg_resource.rc">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|Win32&apos;">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include="c:\Trunk2016\Contribs\Qt\4.8.5\win_VS2012\src\plugins\imageformats\jpeg\qjpegd_resource.rc">
+      <ExcludedFromBuild Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Release|Win32&apos;">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
