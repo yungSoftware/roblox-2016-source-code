@@ -106,7 +106,7 @@
     <Property name="Z" tooltip="Number Vector3int16.Z%1The z-coordinate" />
   </ItemStruct>
   <ItemStruct name="CFrame">
-    <StaticFunction name="new" tooltip="CFrame CFrame.new(number x, number y, number z)%1Creates a CFrame from position (x, y, z)"/>
+    <StaticFunction name="new" tooltip="CFrame CFrame.new(number x, number y, number z)%1Creates a CFrame from position (x, y, z) &lt;a href=&#34;http://wiki.idk16.com/index.php/CFrame&#34;&gt;More Info&lt;/a&gt;"/>
     <StaticFunction name="fromEulerAnglesXYZ" tooltip="CFrame CFrame.fromEulerAnglesXYZ(number rx, number ry, number rz)%1Creates a rotated CFrame using angles (rx, ry, rz) in radians"/>
     <StaticFunction name="Angles" tooltip="CFrame CFrame.Angles(number rx, number ry, number rz)%1Equivalent to fromEulerAnglesXYZ"/>
     <StaticFunction name="fromAxisAngle" tooltip="CFrame CFrame.fromAxisAngle(Vector3 v, number r)%1Creates a rotated CFrame from a Unit Vector3 and a rotation in radians"/>
@@ -135,7 +135,7 @@
     <StaticFunction name="new" tooltip="Region3int16 Region3int16.new(Vector3int16, Vector3int16)%1Creates a new Region3int16 out of two Vector3int16 structs"/>
   </ItemStruct>
   <ItemStruct name="BrickColor">
-    <StaticFunction name="new" tooltip="BrickColor BrickColor.new(r, g, b)%1Returns a BrickColor from the values r, g and b."/>
+    <StaticFunction name="new" tooltip="BrickColor BrickColor.new(r, g, b)%1Returns a BrickColor from the values r, g and b. &lt;a href=&#34;http://wiki.idk16.com/index.php/BrickColor&#34;&gt;More Info&lt;/a&gt;"/>
     <StaticFunction name="palette" tooltip="BrickColor BrickColor.palette(val)%1Returns a BrickColor from val"/>
     <StaticFunction name="Random" tooltip="BrickColor BrickColor.Random()%1Returns a random BrickColor"/>
     <StaticFunction name="White" tooltip="BrickColor BrickColor.White()%1Returns the BrickColor white"/>
@@ -172,13 +172,12 @@
     <Property name="Y" tooltip="The y dimension scale and offset" />
   </ItemStruct>
   <ItemStruct name="Color3">
-    <StaticFunction name="new" tooltip="Color3 Color3.new(r, g, b)%1Returns a Color3 from the values r, g and b."/>
-	<StaticFunction name="fromRGB" tooltip="Color3 Color3.fromRGB(r, g, b)%1Returns a Color3 from given components within the range of 0 to 255."/>
+    <StaticFunction name="new" tooltip="Color3 Color3.new(r, g, b)%1Returns a Color3 from the values r, g and b. &lt;a href=&#34;http://wiki.idk16.com/index.php/Color3&#34;&gt;More Info&lt;/a&gt;"/>
+    <StaticFunction name="fromRGB" tooltip="Color3 Color3.fromRGB(r, g, b)%1Creates a Color3 with the given red, green, and blue components. Unlike most other Color3 functions, the parameters for this function should be on the range [0, 255]."/>
     <Property name="r" tooltip="Number Color3.r%1The red value of the color"/>
     <Property name="g" tooltip="Number Color3.g%1The green value of the color"/>
     <Property name="b" tooltip="Number Color3.b%1The blue value of the color"/>
-	<StaticFunction name="fromHSV" tooltip="Color3 Color3.fromHSV(h, s, v)%1Creates a Color3 with the given hue, saturation, and value. The parameters should be within the range of 0 to 1."/>
-	<StaticFunction name="fromHex" tooltip="Color3 Color3.fromHex(#000000)%1Returns a new Color3 from a six- or three-character hexadecimal format, case insensitive."/>
+    <Function name="lerp" tooltip="Color3 Color3:lerp(Color3 color, number alpha)%1Returns a Color3 interpolated between two Color3 objects. Alpha is a number from 0 to 1."/>
   </ItemStruct>
   <ItemStruct name="ColorSequence">
     <StaticFunction name="new" tooltip="ColorSequence ColorSequence.new(Color3 c)%1Creates a sequence of two keypoints with `c` for each value"/>
