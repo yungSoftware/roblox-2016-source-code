@@ -66,7 +66,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
 ## 🎯 Current Goals
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
-   - [ ] Re-adding Mesa
    - [ ] Color3uint8
      - [ ] Color3.fromRGB()
    - [ ] R15
