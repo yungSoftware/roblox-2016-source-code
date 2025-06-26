@@ -67,7 +67,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 ## 🎯 Current Goals
 - Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
    - [ ] Re-adding Mesa
-   - [ ] Supporting Newer Mesh Versions
    - [ ] Color3uint8
      - [ ] Color3.fromRGB()
    - [ ] R15
@@ -81,7 +80,8 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - [ ] UTF/Unicode Support
       - [ ] New Lua Version (since the newer ones has these) 
    - [ ] Improving Profanity/Swear Filter
-- [x] New Fonts 
+- [x] New Fonts
+- [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended 
