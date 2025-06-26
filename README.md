@@ -59,7 +59,7 @@ After a long effort, this repository has been brought to you on github with lots
 
 ---
 
-## ❤️ Contributors
+## ❤️ Contributors / Credits
 See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
 ---
