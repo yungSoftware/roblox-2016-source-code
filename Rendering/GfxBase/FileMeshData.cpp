@@ -1,3 +1,9 @@
+/*
+FileMeshData.cpp
+Improved by t0int (hexadecimal)
+Thanks to krakow10 for the rbx_mesh repo (https://github.com/krakow10/rbx_mesh)
+*/
+
 #include "GfxBase/FileMeshData.h"
 
 #include "rbx/Debug.h"
@@ -248,22 +254,82 @@ namespace RBX
         FileMeshHeader header;
         readData(data, offset, &header, sizeof(header));
 
-        if (header.cbSize != sizeof(FileMeshHeader) || header.cbVerticesStride != sizeof(FileMeshVertexNormalTexture3d) || header.cbFaceStride != sizeof(FileMeshFace))
-            throw std::runtime_error("Error reading mesh data: incompatible stride");
+        size_t expectedVertexStride = sizeof(FileMeshVertexNormalTexture3d);
+        size_t expectedFaceStride = sizeof(FileMeshFace);
+        
+        if (header.cbVerticesStride == 36) {
+            expectedVertexStride = 36;
+        } else if (header.cbVerticesStride == 40) {
+            expectedVertexStride = 40;
+        } else if (header.cbVerticesStride != sizeof(FileMeshVertexNormalTexture3d)) {
+            throw std::runtime_error("Error reading mesh data: unsupported vertex stride");
+        }
+
+        if (header.cbSize < 12 || header.cbFaceStride != expectedFaceStride) {
+            throw std::runtime_error("Error reading mesh data: incompatible header or face stride");
+        }
 
         if (header.num_vertices == 0 || header.num_faces == 0)
             throw std::runtime_error("Error reading mesh data: empty mesh");
 
         mesh->vnts.resize(header.num_vertices);
-        readData(data, offset, &mesh->vnts[0], header.num_vertices * header.cbVerticesStride);
+        
+        if (expectedVertexStride == 36) {
+            for (size_t i = 0; i < header.num_vertices; ++i) {
+                struct TruncatedVertex {
+                    float vx, vy, vz;
+                    float nx, ny, nz;
+                    float tu, tv;
+                    int8_t tangent[4];
+                } truncVertex;
+                
+                readData(data, offset, &truncVertex, 36);
+                
+                FileMeshVertexNormalTexture3d& vtx = mesh->vnts[i];
+                vtx.vx = truncVertex.vx;
+                vtx.vy = truncVertex.vy;
+                vtx.vz = truncVertex.vz;
+                vtx.nx = truncVertex.nx;
+                vtx.ny = truncVertex.ny;
+                vtx.nz = truncVertex.nz;
+                vtx.tu = truncVertex.tu;
+                vtx.tv = truncVertex.tv;
+                vtx.tw = 0.0f;
+            }
+        } else if (expectedVertexStride == 40) {
+            for (size_t i = 0; i < header.num_vertices; ++i) {
+                struct FullVertex {
+                    float vx, vy, vz;
+                    float nx, ny, nz;
+                    float tu, tv;
+                    int8_t tangent[4];
+                    uint8_t color[4];
+                } fullVertex;
+                
+                readData(data, offset, &fullVertex, 40);
+                
+                FileMeshVertexNormalTexture3d& vtx = mesh->vnts[i];
+                vtx.vx = fullVertex.vx;
+                vtx.vy = fullVertex.vy;
+                vtx.vz = fullVertex.vz;
+                vtx.nx = fullVertex.nx;
+                vtx.ny = fullVertex.ny;
+                vtx.nz = fullVertex.nz;
+                vtx.tu = fullVertex.tu;
+                vtx.tv = fullVertex.tv;
+                vtx.tw = 0.0f; 
+            }
+        } else {
+            // Standard vertex format
+            readData(data, offset, &mesh->vnts[0], header.num_vertices * header.cbVerticesStride);
+        }
         
         mesh->faces.resize(header.num_faces);
         readData(data, offset, &mesh->faces[0], header.num_faces * header.cbFaceStride);
 
-        if (offset != data.size())
-            throw std::runtime_error("Error reading mesh data: unexpected data at end of file");
+        // skip any additional data for newer formats instead of requiring exact file size match
+        // this allows newer formats with LOD data, bones, etc. to be partially supported (ig)
 
-        // validate indices to avoid buffer overruns later
         for (auto& face: mesh->faces)
             if (face.a >= header.num_vertices || face.b >= header.num_vertices || face.c >= header.num_vertices)
                 throw std::runtime_error("Error reading mesh data: index value out of range");
@@ -306,6 +372,16 @@ namespace RBX
         else if (data.compare(0, 12, "version 1.01") == 0)
             result = readMeshFromV1(data, versionEnd + 1, 1.0f);
         else if (data.compare(0, 12, "version 2.00") == 0)
+            result = readMeshFromV2(data, versionEnd + 1);
+        else if (data.compare(0, 12, "version 3.00") == 0)
+            result = readMeshFromV2(data, versionEnd + 1); // good
+        else if (data.compare(0, 12, "version 3.01") == 0)
+            result = readMeshFromV2(data, versionEnd + 1);
+        else if (data.compare(0, 12, "version 4.00") == 0)
+            result = readMeshFromV2(data, versionEnd + 1);
+        else if (data.compare(0, 12, "version 4.01") == 0)
+            result = readMeshFromV2(data, versionEnd + 1);
+        else if (data.compare(0, 12, "version 5.00") == 0)
             result = readMeshFromV2(data, versionEnd + 1);
         else
             throw std::runtime_error("Error reading mesh data: unknown version");
