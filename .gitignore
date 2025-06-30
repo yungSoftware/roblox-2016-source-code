@@ -156,6 +156,6 @@ qrc_*.*
 /Client.LegacyAssemblies/Grid/Roblox.Grid.Client/bin/Release
 /Client.LegacyAssemblies/Grid/Roblox.Grid.Common/bin/Release
 /RobloxStudio/ui_*.h
-
+/RCCService/gSOAP/*.exe
 
 ## END OF GENERAL ##
