@@ -73,7 +73,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - [ ] Fix Keyboard Shortcuts
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
-         - Works in Studio but not in the Client 
       - [ ] Windows Key on WindowsClient
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] UTF/Unicode Support
