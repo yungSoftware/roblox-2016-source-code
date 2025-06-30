@@ -88,7 +88,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] 64-bit Support 
 - [x] Uploading the Qt to the Github as issue-free
    - If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
-- [ ] Upgrading RakNet to get rid of RCE exploits
+- [ ] Upgrading RakNet to get rid of RCE exploits (If there's any)
 - Building all the projects within the latest Visual Studio Version **[27/61]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
