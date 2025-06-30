@@ -1,17 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief Contains the NAT-type detection code for the client
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_NatTypeDetectionClient==1
@@ -42,7 +34,7 @@ struct Packet;
 	/// \sa NatPunchthroughClient
 	/// \sa NatTypeDetectionServer
 	/// \ingroup NAT_TYPE_DETECTION_GROUP
-	class RAK_DLL_EXPORT NatTypeDetectionClient : public PluginInterface2, public RNS2EventHandler
+	class RAK_DLL_EXPORT NatTypeDetectionClient : public PluginInterface2
 	{
 	public:
 
@@ -68,18 +60,10 @@ struct Packet;
 		virtual PluginReceiveResult OnReceive(Packet *packet);
 
 		virtual void OnClosedConnection(const SystemAddress &systemAddress, RakNetGUID rakNetGUID, PI2_LostConnectionReason lostConnectionReason );
-		virtual void OnRakPeerShutdown(void);
-		virtual void OnDetach(void);
 
-		virtual void OnRNS2Recv(RNS2RecvStruct *recvStruct);
-		virtual void DeallocRNS2RecvStruct(RNS2RecvStruct *s, const char *file, unsigned int line);
-		virtual RNS2RecvStruct *AllocRNS2RecvStruct(const char *file, unsigned int line);
 	protected:
-		DataStructures::Queue<RNS2RecvStruct*> bufferedPackets;
-		SimpleMutex bufferedPacketsMutex;
-		
-		RakNetSocket2* c2;
-		//unsigned short c2Port;
+		SOCKET c2;
+		unsigned short c2Port;
 		void Shutdown(void);
 		void OnCompletion(NATTypeDetectionResult result);
 		bool IsInProgress(void) const;

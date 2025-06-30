@@ -1,14 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
 
-#if defined(_WIN32) && !defined(__GNUC__)  &&!defined(__GCCXML__)
+
+
+
+#if defined(_WIN32) && !defined(RBX_PLATFORM_DURANGO) && !defined(__GNUC__)  &&!defined(__GCCXML__)
 
 #include "gettimeofday.h"
 
@@ -24,12 +18,6 @@
 
 int gettimeofday(struct timeval *tv, struct timezone *tz)
 {
-#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-	// _tzset not supported
-	(void) tv;
-	(void) tz;
-#else
-
   FILETIME ft;
   unsigned __int64 tmpres = 0;
   static int tzflag;
@@ -59,8 +47,6 @@ int gettimeofday(struct timeval *tv, struct timezone *tz)
     tz->tz_minuteswest = _timezone / 60;
     tz->tz_dsttime = _daylight;
   }
-
-#endif
 
   return 0;
 }

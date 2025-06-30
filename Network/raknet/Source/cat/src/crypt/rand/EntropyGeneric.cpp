@@ -35,7 +35,6 @@ using namespace cat;
 #if !defined(CAT_OS_WINDOWS) && !defined(CAT_OS_LINUX)
 
 #include <fcntl.h>
-#include <unistd.h>
 
 
 #if !defined(CAT_NO_ENTROPY_THREAD)

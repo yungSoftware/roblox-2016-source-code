@@ -1,21 +1,10 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_DynDNS==1 && _RAKNET_SUPPORT_TCPInterface==1
 
 #include "TCPInterface.h"
-#include "RakNetSocket2.h"
+#include "SocketLayer.h"
 #include "DynDNS.h"
 #include "GetTime.h"
-#include "Base64Encoder.h"
 
 using namespace RakNet;
 
@@ -41,7 +30,7 @@ DynDnsResult resultTable[13] =
 	{"Invalid hostname format", "notfqdn", RC_NOT_FQDN},
 	{"Serious error", "numhost", RC_NUM_HOST},
 	{"This host exists, but does not belong to you", "!yours", RC_NOT_YOURS},
-	{"911", "911", RC_911}
+	{"911", "911", RC_911},
 };
 DynDNS::DynDNS()
 {
@@ -63,7 +52,7 @@ void DynDNS::Stop(void)
 
 
 // newIPAddress is optional - if left out, DynDNS will use whatever it receives
-void DynDNS::UpdateHostIPAsynch(const char *dnsHost, const char *newIPAddress, const char *usernameAndPassword )
+void DynDNS::UpdateHostIP(const char *dnsHost, const char *newIPAddress, const char *usernameAndPassword )
 {
 	myIPStr[0]=0;
 
@@ -93,7 +82,7 @@ void DynDNS::UpdateHostIPAsynch(const char *dnsHost, const char *newIPAddress, c
 	getString+="Host: members.dyndns.org\n";
 	getString+="Authorization: Basic ";
 	char outputData[512];
-	Base64Encoding((const unsigned char*) usernameAndPassword, (int) strlen(usernameAndPassword), outputData);
+	TCPInterface::Base64Encoding(usernameAndPassword, (int) strlen(usernameAndPassword), outputData);
 	getString+=outputData;
 	getString+="User-Agent: Jenkins Software LLC - PC - 1.0\n\n";
 }
@@ -150,7 +139,7 @@ void DynDNS::Update(void)
 			if (result!=0)
 			{
 				result+=strlen("Connection: close");
-				while (*result && ((*result=='\r') || (*result=='\n') || (*result==' ')) )
+				while (*result && (*result=='\r') || (*result=='\n') || (*result==' ') )
 					result++;
 				for (i=0; i < 13; i++)
 				{
@@ -215,10 +204,8 @@ void DynDNS::Update(void)
 				myIp.FromString(result);
 				myIp.ToString(false, myIPStr);
 
-				char existingHost[65];
-				existingHost[0]=0;
 				// Resolve DNS we are setting. If equal to current then abort
-				RakNetSocket2::DomainNameToIP(host.C_String(), existingHost);
+				const char *existingHost = ( char* ) SocketLayer::DomainNameToIP( host.C_String() );
 				if (existingHost && strcmp(existingHost, myIPStr)==0)
 				{
 					// DynDNS considers setting the IP to what it is already set abuse

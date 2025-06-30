@@ -1,17 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief Contains the NAT-punchthrough plugin for the server.
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_NatPunchthroughServer==1
@@ -143,9 +135,6 @@ protected:
 	void StartPunchthroughForUser(User*user);
 	uint16_t sessionId;
 	NatPunchthroughServerDebugInterface *natPunchthroughServerDebugInterface;
-
-	SystemAddress boundAddresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS];
-	unsigned char boundAddressCount;
 
 };
 

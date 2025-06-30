@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_FileListTransfer==1 && _RAKNET_SUPPORT_FileOperations==1
 
@@ -74,10 +64,8 @@ STATIC_FACTORY_DEFINITIONS(FileListTransfer,FileListTransfer)
 
 void FileListTransfer::FileToPushRecipient::DeleteThis(void)
 {
-////	filesToPushMutex.Lock();
 	for (unsigned int j=0; j < filesToPush.Size(); j++)
 		RakNet::OP_DELETE(filesToPush[j],_FILE_AND_LINE_);
-////	filesToPushMutex.Unlock();
 	RakNet::OP_DELETE(this,_FILE_AND_LINE_);
 }
 void FileListTransfer::FileToPushRecipient::AddRef(void)
@@ -159,7 +147,7 @@ void FileListTransfer::Send(FileList *fileList, RakNet::RakPeerInterface *rakPee
 	for (i=0; i < fileList->fileList.Size(); i++)
 	{
 		const FileListNode &fileListNode = fileList->fileList[i];
-		totalLength+=fileListNode.dataLengthBytes;
+		totalLength+=fileListNode.fileLengthBytes;
 	}
 
 	// Write the chunk header, which contains the frequency table, the total number of files, and the total number of bytes
@@ -193,7 +181,7 @@ void FileListTransfer::Send(FileList *fileList, RakNet::RakPeerInterface *rakPee
 				fileToPush->fileListNode.fileLengthBytes=fileList->fileList[i].fileLengthBytes;
 				fileToPush->fileListNode.dataLengthBytes=fileList->fileList[i].dataLengthBytes;
 				//	fileToPush->systemAddress=recipient;
-				//fileToPush->setID=setID;
+				fileToPush->setID=setID;
 				fileToPush->packetPriority=priority;
 				fileToPush->orderingChannel=orderingChannel;
 				fileToPush->currentOffset=0;
@@ -225,38 +213,34 @@ void FileListTransfer::Send(FileList *fileList, RakNet::RakPeerInterface *rakPee
 
 		if (filesToPush.IsEmpty()==false)
 		{
-			FileToPushRecipient *ftpr;
+			FileToPushRecipient *ftpr=0;
 
 			fileToPushRecipientListMutex.Lock();
 			for (unsigned int i=0; i < fileToPushRecipientList.Size(); i++)
 			{
-				if (fileToPushRecipientList[i]->systemAddress==recipient && fileToPushRecipientList[i]->setId==setId)
+				if (fileToPushRecipientList[i]->systemAddress==recipient)
 				{
-// 					ftpr=fileToPushRecipientList[i];
-// 					ftpr->AddRef();
-// 					break;
-					RakAssert("setId already in use for this recipient" && 0);
+					ftpr=fileToPushRecipientList[i];
+					ftpr->AddRef();
+					break;
 				}
 			}
 			fileToPushRecipientListMutex.Unlock();
 
-			//if (ftpr==0)
-			//{
+			if (ftpr==0)
+			{
 				ftpr = RakNet::OP_NEW<FileToPushRecipient>(_FILE_AND_LINE_);
 				ftpr->systemAddress=recipient;
-				ftpr->setId=setID;
 				ftpr->refCount=2; // Allocated and in the list
 				fileToPushRecipientList.Push(ftpr, _FILE_AND_LINE_);
-			//}
+			}
 			while (filesToPush.IsEmpty()==false)
 			{
-				////ftpr->filesToPushMutex.Lock();
 				ftpr->filesToPush.Push(filesToPush.Pop(), _FILE_AND_LINE_);
-				////ftpr->filesToPushMutex.Unlock();
 			}
 			// ftpr out of scope
 			ftpr->Deref();
-			SendIRIToAddress(recipient, setID);
+			SendIRIToAddress(recipient);
 			return;
 		}
 		else
@@ -343,7 +327,7 @@ bool FileListTransfer::DecodeSetHeader(Packet *packet)
 	return false;
 }
 
-bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFullFile)
+bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFileAndIsNotDownloadProgress)
 {
 	FileListTransferCBInterface::OnFileStruct onFileStruct;
 	RakNet::BitStream inBitStream(packet->data, packet->length, false);
@@ -356,7 +340,7 @@ bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFullFile)
 	unsigned int partTotal=0;
 	unsigned int partLength=0;
 	onFileStruct.fileData=0;
-	if (isTheFullFile==false)
+	if (isTheFileAndIsNotDownloadProgress==false)
 	{
 		// Disable endian swapping on reading this, as it's generated locally in ReliabilityLayer.cpp
 		inBitStream.ReadBits( (unsigned char* ) &partCount, BYTES_TO_BITS(sizeof(partCount)), true );
@@ -396,28 +380,29 @@ bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFullFile)
 
 	inBitStream.ReadCompressed(onFileStruct.fileIndex);
 	inBitStream.ReadCompressed(onFileStruct.byteLengthOfThisFile);
+	onFileStruct.bytesDownloadedForThisFile=onFileStruct.byteLengthOfThisFile;
+
+	if (isTheFileAndIsNotDownloadProgress)
+	{
+		// Support SendLists
+		inBitStream.AlignReadToByteBoundary();
+
+		onFileStruct.fileData = (char*) rakMalloc_Ex( (size_t) onFileStruct.byteLengthOfThisFile, _FILE_AND_LINE_ );
+
+		inBitStream.Read((char*)onFileStruct.fileData, onFileStruct.byteLengthOfThisFile);
+
+		fileListReceiver->setTotalDownloadedLength+=onFileStruct.byteLengthOfThisFile;
+	}
+	
 
 	onFileStruct.numberOfFilesInThisSet=fileListReceiver->setCount;
+//	onFileStruct.setTotalCompressedTransmissionLength=fileListReceiver->setTotalCompressedTransmissionLength;
 	onFileStruct.byteLengthOfThisSet=fileListReceiver->setTotalFinalLength;
 
-	if (isTheFullFile)
-	{
-		onFileStruct.bytesDownloadedForThisFile=onFileStruct.byteLengthOfThisFile;
-		fileListReceiver->setTotalDownloadedLength+=onFileStruct.byteLengthOfThisFile;
-		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength;
-	}
-	else
-	{
-		onFileStruct.bytesDownloadedForThisFile=partLength*partCount;
-		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength+onFileStruct.bytesDownloadedForThisFile;
-	}
-
 	// User callback for this file.
-	if (isTheFullFile)
+	if (isTheFileAndIsNotDownloadProgress)
 	{
-		inBitStream.AlignReadToByteBoundary();
-		onFileStruct.fileData = (char*) rakMalloc_Ex( (size_t) onFileStruct.byteLengthOfThisFile, _FILE_AND_LINE_ );
-		inBitStream.Read((char*)onFileStruct.fileData, onFileStruct.byteLengthOfThisFile);
+		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength;
 
 		FileListTransferCBInterface::FileProgressStruct fps;
 		fps.onFileStruct=&onFileStruct;
@@ -469,6 +454,9 @@ bool FileListTransfer::DecodeFile(Packet *packet, bool isTheFullFile)
 		unsigned int unreadBits = inBitStream.GetNumberOfUnreadBits();
 		unsigned int unreadBytes = BITS_TO_BYTES(unreadBits);
 		firstDataChunk=(char*) inBitStream.GetData()+BITS_TO_BYTES(inBitStream.GetReadOffset());
+
+		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength+unreadBytes;
+		onFileStruct.bytesDownloadedForThisFile=onFileStruct.byteLengthOfThisFile;
 
 		FileListTransferCBInterface::FileProgressStruct fps;
 		fps.onFileStruct=&onFileStruct;
@@ -609,8 +597,7 @@ void FileListTransfer::RemoveReceiver(SystemAddress systemAddress)
 	}
 
 	fileToPushRecipientListMutex.Lock();
-	i=0;
-	while (i < fileToPushRecipientList.Size())
+	for (unsigned int i=0; i < fileToPushRecipientList.Size(); i++)
 	{
 		if (fileToPushRecipientList[i]->systemAddress==systemAddress)
 		{
@@ -623,10 +610,7 @@ void FileListTransfer::RemoveReceiver(SystemAddress systemAddress)
 			fileToPushRecipientList.RemoveAtIndex(i);
 			// Taken out of the list
 			ftpr->Deref();
-		}
-		else
-		{
-			i++;
+			break;
 		}
 	}
 	fileToPushRecipientListMutex.Unlock();
@@ -676,14 +660,19 @@ void FileListTransfer::Update(void)
 			i++;
 	}
 }
-void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
+void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFileAndIsNotDownloadProgress)
 {
 	RakNet::BitStream refPushAck;
-	if (isTheFullFile==false)
+	if (isTheFileAndIsNotDownloadProgress)
+	{
+		// This is not a progress notification, it is actually the entire packet
+		refPushAck.Write((MessageID)ID_FILE_LIST_REFERENCE_PUSH_ACK);
+		SendUnified(&refPushAck,HIGH_PRIORITY, RELIABLE, 0, packet->systemAddress, false);
+	}
+	else
 	{
 		// 12/23/09 Why do I care about ID_DOWNLOAD_PROGRESS for reference pushes?
-		// 2/16/2012 I care because a reference push is 16 megabytes by default. Also, if it is the last file "if (ftpr->filesToPush.Size()<2)" or total file size exceeds smallFileTotalSize it always sends a reference push.
-//		return;
+		return;
 	}
 
 	FileListTransferCBInterface::OnFileStruct onFileStruct;
@@ -694,8 +683,9 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	unsigned int partTotal=1;
 	unsigned int partLength=0;
 	onFileStruct.fileData=0;
-	if (isTheFullFile==false)
+	if (isTheFileAndIsNotDownloadProgress==false)
 	{
+		// UNREACHABLE CODE
 		// Disable endian swapping on reading this, as it's generated locally in ReliabilityLayer.cpp
 		inBitStream.ReadBits( (unsigned char* ) &partCount, BYTES_TO_BITS(sizeof(partCount)), true );
 		inBitStream.ReadBits( (unsigned char* ) &partTotal, BYTES_TO_BITS(sizeof(partTotal)), true );
@@ -705,17 +695,8 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	}
 
 	inBitStream >> onFileStruct.context;
-	inBitStream.Read(onFileStruct.setID);
-
-	// This is not a progress notification, it is actually the entire packet
-	if (isTheFullFile==true)
-	{
-		refPushAck.Write((MessageID)ID_FILE_LIST_REFERENCE_PUSH_ACK);
-		refPushAck.Write(onFileStruct.setID);
-		SendUnified(&refPushAck,HIGH_PRIORITY, RELIABLE, 0, packet->systemAddress, false);
-	}
-
 	// inBitStream.Read(onFileStruct.context);
+	inBitStream.Read(onFileStruct.setID);
 	FileListReceiver *fileListReceiver;
 	if (fileListReceivers.Has(onFileStruct.setID)==false)
 	{
@@ -751,9 +732,9 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 
 	bool lastChunk=false;
 	inBitStream.Read(lastChunk);
-	bool finished = lastChunk && isTheFullFile;
+	bool finished = lastChunk && isTheFileAndIsNotDownloadProgress;
 
-	if (isTheFullFile==false)
+	if (isTheFileAndIsNotDownloadProgress==false)
 		fileListReceiver->partLength=partLength;
 
 	FLR_MemoryBlock mb;
@@ -770,7 +751,7 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	unsigned int unreadBits = inBitStream.GetNumberOfUnreadBits();
 	unsigned int unreadBytes = BITS_TO_BYTES(unreadBits);
 	unsigned int amountToRead;
-	if (isTheFullFile)
+	if (isTheFileAndIsNotDownloadProgress)
 		amountToRead=chunkLength;
 	else
 		amountToRead=unreadBytes;
@@ -779,7 +760,7 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 
 	FileListTransferCBInterface::FileProgressStruct fps;
 
-	if (isTheFullFile)
+	if (isTheFileAndIsNotDownloadProgress)
 	{
 		if (mb.flrMemoryBlock)
 		{
@@ -794,16 +775,15 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 			fps.iriDataChunk=(char*) inBitStream.GetData()+BITS_TO_BYTES(inBitStream.GetReadOffset());
 		}
 
-		onFileStruct.bytesDownloadedForThisFile=offset+chunkLength;
-		fileListReceiver->setTotalDownloadedLength+=chunkLength;
-		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength;
+		onFileStruct.bytesDownloadedForThisFile=offset+amountToRead;
 	}
 	else
 	{
-		onFileStruct.bytesDownloadedForThisFile=offset+partLength*partCount;
-		onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength+partCount*partLength;
+		fileListReceiver->setTotalDownloadedLength+=partLength;
+		onFileStruct.bytesDownloadedForThisFile=partCount*partLength;		
 		fps.iriDataChunk=(char*) inBitStream.GetData()+BITS_TO_BYTES(inBitStream.GetReadOffset());
 	}
+	onFileStruct.bytesDownloadedForThisSet=fileListReceiver->setTotalDownloadedLength;
 
 	onFileStruct.numberOfFilesInThisSet=fileListReceiver->setCount;
 //	onFileStruct.setTotalCompressedTransmissionLength=fileListReceiver->setTotalCompressedTransmissionLength;
@@ -875,7 +855,7 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 	}
 	else
 	{
-		if (isTheFullFile)
+		if (isTheFileAndIsNotDownloadProgress)
 		{
 			// 12/23/09 Don't use OnReferencePush anymore, just use OnFileProgress
 			fileListReceiver->downloadHandler->OnFileProgress(&fps);
@@ -891,17 +871,15 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 			// This is a download progress notification for a file chunk using incremental read interface
 			// We don't have all the data for this chunk yet
 
+			// UNREACHABLE CODE
 			totalNotifications = onFileStruct.byteLengthOfThisFile / fileListReceiver->partLength + 1;
-			if (isTheFullFile==false)
+			if (isTheFileAndIsNotDownloadProgress==false)
 				currentNotificationIndex = (offset+partCount*fileListReceiver->partLength) / fileListReceiver->partLength ;
 			else
 				currentNotificationIndex = (offset+chunkLength) / fileListReceiver->partLength ;
 			unreadBytes = onFileStruct.byteLengthOfThisFile - ((currentNotificationIndex+1) * fileListReceiver->partLength);
-			fps.partCount=currentNotificationIndex;
-			fps.partTotal=totalNotifications;
 
-// 2/19/2013 Why was this check here? It prevent smaller progress notifications
-//			if (rakPeerInterface)
+			if (rakPeerInterface)
 			{
 				// Thus chunk is incomplete
 				fps.iriDataChunk=0;
@@ -915,31 +893,12 @@ void FileListTransfer::OnReferencePush(Packet *packet, bool isTheFullFile)
 }
 namespace RakNet
 {
-
-/*
-SendIRIToAddress - executes from Send(). =
-1, Find the recipient to send for
-2. Send ID_FILE_LIST_TRANSFER_FILE for each small file in the queue of ifles to be sent
-3. If the file we are working on is done, remove it from the list
-4. Send ID_FILE_LIST_REFERENCE_PUSH for the file we are working on
-
-File sender:
-ID_FILE_LIST_REFERENCE_PUSH sent from end of SendIRIToAddressCB
-
-Recipient:
-send ID_FILE_LIST_REFERENCE_PUSH_ACK sent from OnReferencePush() when 2nd parameter is true.
-
-File sender:
-Got ID_FILE_LIST_REFERENCE_PUSH_ACK. Calls OnReferencePushAck, calls SendIRIToAddress, calls SendIRIToAddressCB
-*/
-
 int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutput, void* perThreadData)
 {
 	(void) perThreadData;
 
 	FileListTransfer *fileListTransfer = threadData.fileListTransfer;
 	SystemAddress systemAddress = threadData.systemAddress;
-	unsigned short setId = threadData.setId;
 	*returnOutput=false;
 
 	// Was previously using GetStatistics to get outgoing buffer size, but TCP with UnifiedSend doesn't have this
@@ -959,21 +918,14 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 
 		fileListTransfer->fileToPushRecipientListMutex.Unlock();
 
-		if (ftpr->systemAddress==systemAddress && ftpr->setId==setId)
+		if (ftpr->systemAddress==systemAddress)
 		{
-			FileListTransfer::FileToPush *ftp;
-			////ftpr->filesToPushMutex.Lock();
-			ftp = ftpr->filesToPush.Pop();
-			////ftpr->filesToPushMutex.Unlock();
+			FileListTransfer::FileToPush *ftp = ftpr->filesToPush.Peek();
 
 			// Read and send chunk. If done, delete at this index
 			void *buff = rakMalloc_Ex(ftp->chunkSize, _FILE_AND_LINE_);
 			if (buff==0)
 			{
-				////ftpr->filesToPushMutex.Lock();
-				ftpr->filesToPush.PushAtHead(ftp,0,_FILE_AND_LINE_);
-				////ftpr->filesToPushMutex.Unlock();
-
 				ftpr->Deref();
 				notifyOutOfMemory(_FILE_AND_LINE_);
 				return 0;
@@ -983,23 +935,14 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 			bytesRead=ftp->incrementalReadInterface->GetFilePart(ftp->fileListNode.fullPathToFile, ftp->currentOffset, ftp->chunkSize, buff, ftp->fileListNode.context);
 
 			bool done = ftp->fileListNode.dataLengthBytes == ftp->currentOffset+bytesRead;
-			while (done && ftp->currentOffset==0 && smallFileTotalSize<ftp->chunkSize)
+			while (done && ftp->currentOffset==0 && ftpr->filesToPush.Size()>=2 && smallFileTotalSize<ftp->chunkSize)
 			{
-				////ftpr->filesToPushMutex.Lock();
-				// The reason for 2 is that ID_FILE_LIST_REFERENCE_PUSH gets ID_FILE_LIST_REFERENCE_PUSH_ACK. WIthout ID_FILE_LIST_REFERENCE_PUSH_ACK, SendIRIToAddressCB would not be called again
-				if (ftpr->filesToPush.Size()<2)
-				{
-					////ftpr->filesToPushMutex.Unlock();
-					break;
-				}
-				////ftpr->filesToPushMutex.Unlock();
-
 				// Send all small files at once, rather than wait for ID_FILE_LIST_REFERENCE_PUSH. But at least one ID_FILE_LIST_REFERENCE_PUSH must be sent
 				outBitstream.Reset();
 				outBitstream.Write((MessageID)ID_FILE_LIST_TRANSFER_FILE);
 				// outBitstream.Write(ftp->fileListNode.context);
 				outBitstream << ftp->fileListNode.context;
-				outBitstream.Write(setId);
+				outBitstream.Write(ftp->setID);
 				StringCompressor::Instance()->EncodeString(ftp->fileListNode.filename, 512, &outBitstream);
 				outBitstream.WriteCompressed(ftp->setIndex);
 				outBitstream.WriteCompressed(ftp->fileListNode.dataLengthBytes); // Original length in bytes
@@ -1014,11 +957,10 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 				// LWS : fixed freed pointer reference
 //				unsigned int chunkSize = ftp->chunkSize;
 				RakNet::OP_DELETE(ftp,_FILE_AND_LINE_);
+				ftpr->filesToPush.Pop();
 				smallFileTotalSize+=bytesRead;
 				//done = bytesRead!=ftp->chunkSize;
-				////ftpr->filesToPushMutex.Lock();
-				ftp = ftpr->filesToPush.Pop();
-				////ftpr->filesToPushMutex.Unlock();
+				ftp = ftpr->filesToPush.Peek();
 
 				bytesRead=ftp->incrementalReadInterface->GetFilePart(ftp->fileListNode.fullPathToFile, ftp->currentOffset, ftp->chunkSize, buff, ftp->fileListNode.context);
 				done = ftp->fileListNode.dataLengthBytes == ftp->currentOffset+bytesRead;
@@ -1029,7 +971,7 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 			outBitstream.Write((MessageID)ID_FILE_LIST_REFERENCE_PUSH);
 			// outBitstream.Write(ftp->fileListNode.context);
 			outBitstream << ftp->fileListNode.context;
-			outBitstream.Write(setId);
+			outBitstream.Write(ftp->setID);
 			StringCompressor::Instance()->EncodeString(ftp->fileListNode.filename, 512, &outBitstream);
 			outBitstream.WriteCompressed(ftp->setIndex);
 			outBitstream.WriteCompressed(ftp->fileListNode.dataLengthBytes); // Original length in bytes
@@ -1039,51 +981,35 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 			outBitstream.Write(done);
 
 			for (unsigned int flpcIndex=0; flpcIndex < fileListTransfer->fileListProgressCallbacks.Size(); flpcIndex++)
-				fileListTransfer->fileListProgressCallbacks[flpcIndex]->OnFilePush(ftp->fileListNode.filename, ftp->fileListNode.fileLengthBytes, ftp->currentOffset-bytesRead, bytesRead, done, systemAddress, setId);
+				fileListTransfer->fileListProgressCallbacks[flpcIndex]->OnFilePush(ftp->fileListNode.filename, ftp->fileListNode.fileLengthBytes, ftp->currentOffset-bytesRead, bytesRead, done, systemAddress, ftp->setID);
 
 			dataBlocks[0]=(char*) outBitstream.GetData();
 			lengths[0]=outBitstream.GetNumberOfBytesUsed();
 			dataBlocks[1]=(char*) buff;
 			lengths[1]=bytesRead;
 			//rakPeerInterface->SendList(dataBlocks,lengths,2,ftp->packetPriority, RELIABLE_ORDERED, ftp->orderingChannel, ftp->systemAddress, false);
-			char orderingChannel = ftp->orderingChannel;
-			PacketPriority packetPriority = ftp->packetPriority;
+			fileListTransfer->SendListUnified(dataBlocks,lengths,2,ftp->packetPriority, RELIABLE_ORDERED, ftp->orderingChannel, systemAddress, false);
 
 			// Mutex state: FileToPushRecipient (ftpr) has AddRef. fileToPushRecipientListMutex not locked.
 			if (done)
 			{
 				// Done
-				//unsigned short setId = ftp->setID;
+				unsigned short setId = ftp->setID;
 				RakNet::OP_DELETE(ftp,_FILE_AND_LINE_);
+				ftpr->filesToPush.Pop();
 
-				////ftpr->filesToPushMutex.Lock();
 				if (ftpr->filesToPush.Size()==0)
 				{
-					////ftpr->filesToPushMutex.Unlock();
-
 					for (unsigned int flpcIndex=0; flpcIndex < fileListTransfer->fileListProgressCallbacks.Size(); flpcIndex++)
 						fileListTransfer->fileListProgressCallbacks[flpcIndex]->OnFilePushesComplete(systemAddress, setId);
 
 					// Remove ftpr from fileToPushRecipientList
 					fileListTransfer->RemoveFromList(ftpr);
 				}
-				else
-				{
-					////ftpr->filesToPushMutex.Unlock();
-				}
 			}
-			else
-			{
-				////ftpr->filesToPushMutex.Lock();
-				ftpr->filesToPush.PushAtHead(ftp,0,_FILE_AND_LINE_);
-				////ftpr->filesToPushMutex.Unlock();
-			}
+
 			// ftpr out of scope
 			ftpr->Deref();
-
-			// 2/12/2012 Moved this line at after the if (done) block above.
-			// See http://www.jenkinssoftware.com/forum/index.php?topic=4768.msg19738#msg19738
-			fileListTransfer->SendListUnified(dataBlocks,lengths,2, packetPriority, RELIABLE_ORDERED, orderingChannel, systemAddress, false);
 
 			rakFree_Ex(buff, _FILE_AND_LINE_ );
 			return 0;
@@ -1100,12 +1026,11 @@ int SendIRIToAddressCB(FileListTransfer::ThreadData threadData, bool *returnOutp
 	return 0;
 }
 }
-void FileListTransfer::SendIRIToAddress(SystemAddress systemAddress, unsigned short setId)
+void FileListTransfer::SendIRIToAddress(SystemAddress systemAddress)
 {
 	ThreadData threadData;
 	threadData.fileListTransfer=this;
 	threadData.systemAddress=systemAddress;
-	threadData.setId=setId;
 
 	if (threadPool.WasStarted())
 	{
@@ -1119,11 +1044,7 @@ void FileListTransfer::SendIRIToAddress(SystemAddress systemAddress, unsigned sh
 }
 void FileListTransfer::OnReferencePushAck(Packet *packet)
 {
-	RakNet::BitStream inBitStream(packet->data, packet->length, false);
-	inBitStream.IgnoreBits(8);
-	unsigned short setId;
-	inBitStream.Read(setId);
-	SendIRIToAddress(packet->systemAddress, setId);
+	SendIRIToAddress(packet->systemAddress);
 }
 void FileListTransfer::RemoveFromList(FileToPushRecipient *ftpr)
 {

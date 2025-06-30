@@ -1,17 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_NatTypeDetectionClient==1
 
 #include "NatTypeDetectionClient.h"
+#include "RakNetSocket.h"
 #include "RakNetSmartPtr.h"
 #include "BitStream.h"
 #include "SocketIncludes.h"
@@ -27,13 +18,13 @@ STATIC_FACTORY_DEFINITIONS(NatTypeDetectionClient,NatTypeDetectionClient);
 
 NatTypeDetectionClient::NatTypeDetectionClient()
 {
-	c2=0;
+	c2=INVALID_SOCKET;
 }
 NatTypeDetectionClient::~NatTypeDetectionClient()
 {
-	if (c2!=0)
+	if (c2!=INVALID_SOCKET)
 	{
-		RakNet::OP_DELETE(c2,_FILE_AND_LINE_);
+		closesocket__(c2);
 	}
 }
 void NatTypeDetectionClient::DetectNATType(SystemAddress _serverAddress)
@@ -41,41 +32,31 @@ void NatTypeDetectionClient::DetectNATType(SystemAddress _serverAddress)
 	if (IsInProgress())
 		return;
 
-	if (c2==0)
+	if (c2==INVALID_SOCKET)
 	{
-		DataStructures::List<RakNetSocket2* > sockets;
+		DataStructures::List<RakNetSmartPtr<RakNetSocket> > sockets;
 		rakPeerInterface->GetSockets(sockets);
-		//SystemAddress sockAddr;
-		//SocketLayer::GetSystemAddress(sockets[0], &sockAddr);
+		SystemAddress sockAddr;
+		SocketLayer::GetSystemAddress(sockets[0]->s, &sockAddr);
 		char str[64];
-		//sockAddr.ToString(false,str);
-		sockets[0]->GetBoundAddress().ToString(false,str);
-		c2=CreateNonblockingBoundSocket(str
-#ifdef __native_client__
-			, sockets[0]->chromeInstance
-#endif
-			,this
-			);
-		//c2Port=SocketLayer::GetLocalPort(c2);
+		sockAddr.ToString(false,str);
+		c2=CreateNonblockingBoundSocket(str);
+		c2Port=SocketLayer::GetLocalPort(c2);
 	}
 
-#if !defined(__native_client__) && !defined(WINDOWS_STORE_RT)
-	if (c2->IsBerkleySocket())
-		((RNS2_Berkley*) c2)->CreateRecvPollingThread(0);
-#endif
 
 	serverAddress=_serverAddress;
 
 	RakNet::BitStream bs;
 	bs.Write((unsigned char)ID_NAT_TYPE_DETECTION_REQUEST);
 	bs.Write(true); // IsRequest
-	bs.Write(c2->GetBoundAddress().GetPort());
+	bs.Write(c2Port);
 	rakPeerInterface->Send(&bs,MEDIUM_PRIORITY,RELIABLE,0,serverAddress,false);
 }
 void NatTypeDetectionClient::OnCompletion(NATTypeDetectionResult result)
 {
 	Packet *p = AllocatePacketUnified(sizeof(MessageID)+sizeof(unsigned char)*2);
-	//printf("Returning nat detection result to the user\n");
+	printf("Returning nat detection result to the user\n");
 	p->data[0]=ID_NAT_TYPE_DETECTION_RESULT;
 	p->systemAddress=serverAddress;
 	p->systemAddress.systemIndex=(SystemIndex)-1;
@@ -104,28 +85,14 @@ void NatTypeDetectionClient::Update(void)
 {
 	if (IsInProgress())
 	{
-		RNS2RecvStruct *recvStruct;
-		bufferedPacketsMutex.Lock();
-		if (bufferedPackets.Size()>0)
-			recvStruct=bufferedPackets.Pop();
-		else
-			recvStruct=0;
-		bufferedPacketsMutex.Unlock();
-		while (recvStruct)
+		char data[ MAXIMUM_MTU_SIZE ];
+		int len;
+		SystemAddress sender;
+		len=NatTypeRecvFrom(data, c2, sender);
+		if (len==1 && data[0]==NAT_TYPE_NONE)
 		{
-			if (recvStruct->bytesRead==1 && recvStruct->data[0]==NAT_TYPE_NONE)
-			{
-				OnCompletion(NAT_TYPE_NONE);
-				RakAssert(IsInProgress()==false);
-			}
-			DeallocRNS2RecvStruct(recvStruct, _FILE_AND_LINE_);
-
-			bufferedPacketsMutex.Lock();
-			if (bufferedPackets.Size()>0)
-				recvStruct=bufferedPackets.Pop();
-			else
-				recvStruct=0;
-			bufferedPacketsMutex.Unlock();
+			OnCompletion(NAT_TYPE_NONE);
+			RakAssert(IsInProgress()==false);
 		}
 	}
 }
@@ -168,14 +135,6 @@ void NatTypeDetectionClient::OnClosedConnection(const SystemAddress &systemAddre
 	if (IsInProgress() && systemAddress==serverAddress)
 		Shutdown();
 }
-void NatTypeDetectionClient::OnRakPeerShutdown(void)
-{
-	Shutdown();
-}
-void NatTypeDetectionClient::OnDetach(void)
-{
-	Shutdown();
-}
 void NatTypeDetectionClient::OnTestPortRestricted(Packet *packet)
 {
 	RakNet::BitStream bsIn(packet->data,packet->length,false);
@@ -185,9 +144,9 @@ void NatTypeDetectionClient::OnTestPortRestricted(Packet *packet)
 	unsigned short s3p4Port;
 	bsIn.Read(s3p4Port);
 
-	DataStructures::List<RakNetSocket2* > sockets;
+	DataStructures::List<RakNetSmartPtr<RakNetSocket> > sockets;
 	rakPeerInterface->GetSockets(sockets);
-	SystemAddress s3p4Addr = sockets[0]->GetBoundAddress();
+	SystemAddress s3p4Addr = sockets[0]->boundAddress;
 	s3p4Addr.FromStringExplicitPort(s3p4StrAddress.C_String(), s3p4Port);
 
 	// Send off the RakNet socket to the specified address, message is unformatted
@@ -195,50 +154,17 @@ void NatTypeDetectionClient::OnTestPortRestricted(Packet *packet)
 	RakNet::BitStream bsOut;
 	bsOut.Write((MessageID) NAT_TYPE_PORT_RESTRICTED);
 	bsOut.Write(rakPeerInterface->GetGuidFromSystemAddress(UNASSIGNED_SYSTEM_ADDRESS));
-//	SocketLayer::SendTo_PC( sockets[0], (const char*) bsOut.GetData(), bsOut.GetNumberOfBytesUsed(), s3p4Addr, __FILE__, __LINE__ );
-
-	RNS2_SendParameters bsp;
-	bsp.data = (char*) bsOut.GetData();
-	bsp.length = bsOut.GetNumberOfBytesUsed();
-	bsp.systemAddress=s3p4Addr;
-	sockets[0]->Send(&bsp, _FILE_AND_LINE_);
-
+	SocketLayer::SendTo_PC( sockets[0]->s, (const char*) bsOut.GetData(), bsOut.GetNumberOfBytesUsed(), s3p4Addr, __FILE__, __LINE__ );
 }
 void NatTypeDetectionClient::Shutdown(void)
 {
 	serverAddress=UNASSIGNED_SYSTEM_ADDRESS;
-	if (c2!=0)
+	if (c2!=INVALID_SOCKET)
 	{
-#if !defined(__native_client__) && !defined(WINDOWS_STORE_RT)
-		if (c2->IsBerkleySocket())
-			((RNS2_Berkley *)c2)->BlockOnStopRecvPollingThread();
-#endif
-
-		RakNet::OP_DELETE(c2, _FILE_AND_LINE_);
-		c2=0;
+		closesocket__(c2);
+		c2=INVALID_SOCKET;
 	}
 
-	bufferedPacketsMutex.Lock();
-	while (bufferedPackets.Size())
-		RakNet::OP_DELETE(bufferedPackets.Pop(), _FILE_AND_LINE_);
-	bufferedPacketsMutex.Unlock();
-}
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-void NatTypeDetectionClient::DeallocRNS2RecvStruct(RNS2RecvStruct *s, const char *file, unsigned int line)
-{
-	RakNet::OP_DELETE(s, file, line);
-}
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-RNS2RecvStruct *NatTypeDetectionClient::AllocRNS2RecvStruct(const char *file, unsigned int line)
-{
-	return RakNet::OP_NEW<RNS2RecvStruct>(file,line);
-}
-void NatTypeDetectionClient::OnRNS2Recv(RNS2RecvStruct *recvStruct)
-{
-	bufferedPacketsMutex.Lock();
-	bufferedPackets.Push(recvStruct,_FILE_AND_LINE_);
-	bufferedPacketsMutex.Unlock();
 }
 
 #endif // _RAKNET_SUPPORT_*

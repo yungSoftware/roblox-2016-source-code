@@ -1,18 +1,10 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file FullyConnectedMesh2.h
 /// \brief Fully connected mesh plugin, revision 2.  
 /// \details This will connect RakPeer to all connecting peers, and all peers the connecting peer knows about.
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_FullyConnectedMesh2==1
@@ -25,7 +17,6 @@
 #include "NativeTypes.h"
 #include "DS_List.h"
 #include "RakString.h"
-#include "BitStream.h"
 
 typedef int64_t FCM2Guid;
 
@@ -92,28 +83,11 @@ public:
 	/// FullyConnectedMesh2 will track who is the who host among a fully connected mesh of participants
 	/// Each remote system that you want to check should be added as a participant, either through SetAutoparticipateConnections() or by calling this function
 	/// \param[in] participant The new participant
-	/// \param[in] userContext Static data to be passed around with each participant, which can be queried with GetParticipantData().
-	/// \sa StartVerifiedJoin()
 	void AddParticipant(RakNetGUID rakNetGuid);
 
 	/// Get the participants added with AddParticipant()
 	/// \param[out] participantList Participants added with AddParticipant();
 	void GetParticipantList(DataStructures::List<RakNetGUID> &participantList);
-
-	/// \brief Returns if a participant is in the participant list
-	/// \param[in] RakNetGUID of the participant to query
-	/// \return True if in the list
-	bool HasParticipant(RakNetGUID participantGuid);
-
-	/// \brief Reads userData written with SetMyContext()
-	/// \param[in] RakNetGUID of the participant to query
-	/// \param[out] userContext Pointer to BitStream to be written to
-	/// \return True if data was written
-	// bool GetParticipantContext(RakNetGUID participantGuid, BitStream *userContext);
-
-	/// Set data for other systems to read with GetParticipantContext
-	/// \param[in] userContext Pointer to BitStream to be read from
-	// void SetMyContext(BitStream *userContext);
 
 	/// Connect to all systems from ID_REMOTE_NEW_INCOMING_CONNECTION
 	/// You can call this if SetConnectOnNewRemoteConnection is false
@@ -127,99 +101,6 @@ public:
 
 	unsigned int GetParticipantCount(void) const;
 	void GetParticipantCount(unsigned int *participantListSize) const;
-
-	/// In the simple case of forming a peer to peer mesh:
-	///
-	/// 1. AddParticipant() is called on the host whenever you get a new connection
-	/// 2. The host sends all participants to the new client
-	/// 3. The client connects to the participant list
-	///
-	/// However, the above steps assumes connections to all systems in the mesh always complete.
-	/// When there is a risk of failure, such as if relying on NATPunchthroughClient, you may not want to call AddParticipant() until are connections have completed to all other particpants
-	/// StartVerifiedJoin() can manage the overhead of the negotiation involved so the programmer only has to deal with overall success or failure
-	///
-	/// Processing:
-	/// 1. Send the RakNetGUID and SystemAddress values of GetParticipantList() to the client with ID_FCM2_VERIFIED_JOIN_START
-	/// 2. The client, on ID_FCM2_VERIFIED_JOIN_START, can execute NatPunchthroughClient::OpenNAT() (optional), followed by RakPeerInterface::Connect() if punchthrough success, for each system returned from GetVerifiedJoinRequiredProcessingList()
-	/// 3. After all participants in step 2 have connected, failed to connect, or failed NatPunchthrough, the client automatically sends the results to the server.
-	/// 4. The server compares the results of the operations in step 2 with the values from GetParticpantList().
-	/// 4A. If the client failed to connect to a current participant, return ID_FCM2_VERIFIED_JOIN_FAILED to the client. CloseConnection() is automatically called on the client for the failed participants.
-	/// 4B. If AddParticipant() was called between steps 1 and 4, go back to step 1, transmitting new participants.
-	/// 4C. If the client successfully connected to all participants, the server gets ID_FCM2_VERIFIED_JOIN_CAPABLE. The server programmer, on the same frame, should execute RespondOnVerifiedJoinCapable() to either accept or reject the client.
-	/// 5. If the client got ID_FCM2_VERIFIED_JOIN_ACCEPTED, AddParticipant() is automatically called for each system in the mesh.
-	/// 6. If the client got ID_FCM2_VERIFIED_JOIN_REJECTED, CloseConnection() is automatically called for each system in the mesh. The connection is NOT automatically closed to the original host that sent StartVerifiedJoin().
-	/// 7. If the client's connection to the server was lost before getting ID_FCM2_VERIFIED_JOIN_ACCEPTED or ID_FCM2_VERIFIED_JOIN_REJECTED, return to the programmer ID_FCM2_VERIFIED_JOIN_FAILED and call RakPeerInterface::CloseConnection() 
-	///
-	/// \brief Notify the client of GetParticipantList() in order to connect to each of those systems until the mesh has been completed
-	/// \param[in] client The system to send ID_FCM2_VERIFIED_JOIN_START to
-	virtual void StartVerifiedJoin(RakNetGUID client);
-	
-	/// \brief On ID_FCM2_VERIFIED_JOIN_CAPABLE , accept or reject the new connection
-	/// \code
-	/// fullyConnectedMesh->RespondOnVerifiedJoinCapable(packet, true, 0);
-	/// \endcode
-	/// \param[in] packet The system that sent ID_FCM2_VERIFIED_JOIN_CAPABLE. Based on \accept, ID_FCM2_VERIFIED_JOIN_ACCEPTED or ID_FCM2_VERIFIED_JOIN_REJECTED will be sent in reply
-	/// \param[in] accept True to accept, and thereby automatically call AddParticipant() on all systems on the mesh. False to reject, and call CloseConnection() to all mesh systems on the target
-	/// \param[in] additionalData Any additional data you want to add to the ID_FCM2_VERIFIED_JOIN_ACCEPTED or ID_FCM2_VERIFIED_JOIN_REJECTED messages
-	/// \sa WriteVJCUserData()
-	virtual void RespondOnVerifiedJoinCapable(Packet *packet, bool accept, BitStream *additionalData);
-
-	/// \brief On ID_FCM2_VERIFIED_JOIN_START, read the SystemAddress and RakNetGUID values of each system to connect to
-	/// \code
-	/// DataStructures::List<SystemAddress> addresses;
-	/// DataStructures::List<RakNetGUID> guids;
-	/// fullyConnectedMesh->GetVerifiedJoinRequiredProcessingList(packet->guid, addresses, guids);
-	/// for (unsigned int i=0; i < addresses.Size(); i++)
-	///		rakPeer[i]->Connect(addresses[i].ToString(false), addresses[i].GetPort(), 0, 0);
-	/// \endcode
-	/// \param[in] host Which system sent ID_FCM2_VERIFIED_JOIN_START
-	/// \param[out] addresses SystemAddress values of systems to connect to. List has the same number and order as \a guids
-	/// \param[out] guids RakNetGUID values of systems to connect to. List has the same number and order as \a guids
-	/// \param[out] userData What was written with WriteVJSUserData
-	virtual void GetVerifiedJoinRequiredProcessingList(RakNetGUID host,
-		DataStructures::List<SystemAddress> &addresses,
-		DataStructures::List<RakNetGUID> &guids,
-		DataStructures::List<BitStream*> &userData);
-
-	/// \brief On ID_FCM2_VERIFIED_JOIN_ACCEPTED, read additional data passed to RespondOnVerifiedJoinCapable()
-	/// \code
-	/// bool thisSystemAccepted;
-	/// DataStructures::List<RakNetGUID> systemsAccepted;
-	/// RakNet::BitStream additionalData;
-	/// fullyConnectedMesh->GetVerifiedJoinAcceptedAdditionalData(packet, &thisSystemAccepted, systemsAccepted, &additionalData);
-	/// \endcode
-	/// \param[in] packet Packet containing the ID_FCM2_VERIFIED_JOIN_ACCEPTED message
-	/// \param[out] thisSystemAccepted If true, it was this instance of RakPeerInterface that was accepted. If false, this is notification for another system
-	/// \param[out] systemsAccepted Which system(s) were added with AddParticipant(). If \a thisSystemAccepted is false, this list will only have length 1
-	/// \param[out] additionalData \a additionalData parameter passed to RespondOnVerifiedJoinCapable()
-	virtual void GetVerifiedJoinAcceptedAdditionalData(Packet *packet, bool *thisSystemAccepted, DataStructures::List<RakNetGUID> &systemsAccepted, BitStream *additionalData);
-
-	/// \brief On ID_FCM2_VERIFIED_JOIN_REJECTED, read additional data passed to RespondOnVerifiedJoinCapable()
-	/// \details This does not automatically close the connection. The following code will do so:
-	/// \code
-	/// rakPeer[i]->CloseConnection(packet->guid, true);
-	/// \endcode
-	/// \param[in] packet Packet containing the ID_FCM2_VERIFIED_JOIN_REJECTED message
-	/// \param[out] additionalData \a additionalData parameter passed to RespondOnVerifiedJoinCapable().
-	virtual void GetVerifiedJoinRejectedAdditionalData(Packet *packet, BitStream *additionalData);
-
-	/// Override to write data when ID_FCM2_VERIFIED_JOIN_CAPABLE is sent
-	virtual void WriteVJCUserData(RakNet::BitStream *bsOut) {(void) bsOut;}
-
-	/// Use to read data written from WriteVJCUserData()
-	/// \code
-	/// RakNet::BitStream bsIn(packet->data,packet->length,false);
-	/// FullyConnectedMesh2::SkipToVJCUserData(&bsIn);
-	/// // Your code here
-	static void SkipToVJCUserData(RakNet::BitStream *bsIn);
-
-	/// Write custom user data to be sent with ID_FCM2_VERIFIED_JOIN_START, per user
-	/// \param[out] bsOut Write your data here, if any. Has to match what is read by ReadVJSUserData
-	/// \param[in] userGuid The RakNetGuid of the user you are writing for
-	/// \param[in] userContext The data set with SetMyContext() for that system. May be empty. To properly write userContext, you will need to first write userContext->GetNumberOfBitsUsed(), followed by bsOut->Write(userContext);
-	//virtual void WriteVJSUserData(RakNet::BitStream *bsOut, RakNetGUID userGuid, BitStream *userContext) {(void) bsOut; (void) userGuid; (void) userContext;}
-	virtual void WriteVJSUserData(RakNet::BitStream *bsOut, RakNetGUID userGuid) {(void) bsOut; (void) userGuid;}
-
 	/// \internal
 	RakNet::TimeUS GetElapsedRuntime(void);
 
@@ -235,8 +116,6 @@ public:
 	virtual void OnClosedConnection(const SystemAddress &systemAddress, RakNetGUID rakNetGUID, PI2_LostConnectionReason lostConnectionReason );
 	/// \internal
 	virtual void OnNewConnection(const SystemAddress &systemAddress, RakNetGUID rakNetGUID, bool isIncoming);
-	/// \internal
-	virtual void OnFailedConnectionAttempt(Packet *packet, PI2_FailedConnectionAttemptReason failedConnectionAttemptReason);
 
 	/// \internal
 	struct FCM2Participant
@@ -248,33 +127,6 @@ public:
 		// High half is the order we connected in (totalConnectionCount)
 		FCM2Guid fcm2Guid;
 		RakNetGUID rakNetGuid;
-		// BitStream userContext;
-	};
-
-	enum JoinInProgressState
-	{
-		JIPS_PROCESSING,
-		JIPS_FAILED,
-		JIPS_CONNECTED,
-		JIPS_UNNECESSARY,
-	};
-
-	struct VerifiedJoinInProgressMember
-	{
-		SystemAddress systemAddress;
-		RakNetGUID guid;
-		JoinInProgressState joinInProgressState;
-		BitStream *userData;
-
-		bool workingFlag;
-	};
-
-	/// \internal
-	struct VerifiedJoinInProgress
-	{
-		RakNetGUID requester;
-		DataStructures::List<VerifiedJoinInProgressMember> vjipMembers;
-		//bool sentResults;
 	};
 
 	/// \internal for debugging
@@ -286,35 +138,15 @@ protected:
 	void SendFCMGuidRequest(RakNetGUID rakNetGuid);
 	void SendConnectionCountResponse(SystemAddress addr, unsigned int responseTotalConnectionCount);
 	void OnRequestFCMGuid(Packet *packet);
-	//void OnUpdateUserContext(Packet *packet);
 	void OnRespondConnectionCount(Packet *packet);
 	void OnInformFCMGuid(Packet *packet);
 	void OnUpdateMinTotalConnectionCount(Packet *packet);
 	void AssignOurFCMGuid(void);
 	void CalculateHost(RakNetGUID *rakNetGuid, FCM2Guid *fcm2Guid);
-	// bool AddParticipantInternal( RakNetGUID rakNetGuid, FCM2Guid theirFCMGuid, BitStream *userContext );
 	bool AddParticipantInternal( RakNetGUID rakNetGuid, FCM2Guid theirFCMGuid );
 	void CalculateAndPushHost(void);
 	bool ParticipantListComplete(void);
 	void IncrementTotalConnectionCount(unsigned int i);
-	PluginReceiveResult OnVerifiedJoinStart(Packet *packet);
-	PluginReceiveResult OnVerifiedJoinCapable(Packet *packet);
-	virtual void OnVerifiedJoinFailed(RakNetGUID hostGuid, bool callCloseConnection);
-	virtual void OnVerifiedJoinAccepted(Packet *packet);
-	virtual void OnVerifiedJoinRejected(Packet *packet);
-	unsigned int GetJoinsInProgressIndex(RakNetGUID requester) const;
-	void UpdateVerifiedJoinInProgressMember(const AddressOrGUID systemIdentifier, RakNetGUID guidToAssign, JoinInProgressState newState);
-	bool ProcessVerifiedJoinInProgressIfCompleted(VerifiedJoinInProgress *vjip);
-	void ReadVerifiedJoinInProgressMember(RakNet::BitStream *bsIn, VerifiedJoinInProgressMember *vjipm);
-	unsigned int GetVerifiedJoinInProgressMemberIndex(const AddressOrGUID systemIdentifier, VerifiedJoinInProgress *vjip);
-	void DecomposeJoinCapable(Packet *packet, VerifiedJoinInProgress *vjip);
-	void WriteVerifiedJoinCapable(RakNet::BitStream *bsOut, VerifiedJoinInProgress *vjip);
-	void CategorizeVJIP(VerifiedJoinInProgress *vjip,
-		DataStructures::List<RakNetGUID> &participatingMembersOnClientSucceeded,
-		DataStructures::List<RakNetGUID> &participatingMembersOnClientFailed,
-		DataStructures::List<RakNetGUID> &participatingMembersNotOnClient,
-		DataStructures::List<RakNetGUID> &clientMembersNotParticipatingSucceeded,
-		DataStructures::List<RakNetGUID> &clientMembersNotParticipatingFailed);
 
 	// Used to track how long RakNet has been running. This is so we know who has been running longest
 	RakNet::TimeUS startupTime;
@@ -331,7 +163,7 @@ protected:
 	FCM2Guid ourFCMGuid;
 
 	/// List of systems we know the FCM2Guid for
-	DataStructures::List<FCM2Participant*> fcm2ParticipantList;
+	DataStructures::List<FCM2Participant> fcm2ParticipantList;
 
 	RakNetGUID lastPushedHost;
 
@@ -341,9 +173,6 @@ protected:
 
 	RakNet::RakString connectionPassword;
 	bool connectOnNewRemoteConnections;
-
-	DataStructures::List<VerifiedJoinInProgress*> joinsInProgress;
-	BitStream myContext;
 };
 
 } // namespace RakNet

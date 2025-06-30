@@ -1,16 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief A structure that holds all statistical data returned by RakNet.
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 
@@ -36,7 +29,7 @@ enum RNSPerSecondMetrics
 	/// How many user message bytes were resent. A message is resent if it is marked as reliable, and either the message didn't arrive or the message ack didn't arrive.
 	USER_MESSAGE_BYTES_RESENT,
 
-	/// How many user message bytes were received, and returned to the user successfully.
+	/// How many user message bytes were received, and processed successfully.
 	USER_MESSAGE_BYTES_RECEIVED_PROCESSED,
 
 	/// How many user message bytes were received, but ignored due to data format errors. This will usually be 0.
@@ -126,7 +119,7 @@ struct RAK_DLL_EXPORT RakNetStatistics
 /// 1 medium 
 /// 2 high 
 /// 3 debugging congestion control
-void RAK_DLL_EXPORT StatisticsToString( RakNetStatistics *s, char *buffer, int verbosityLevel );
+void RAK_DLL_EXPORT StatisticsToString(const RakNetStatistics *s, char *buffer, int verbosityLevel );
 
 } // namespace RakNet
 

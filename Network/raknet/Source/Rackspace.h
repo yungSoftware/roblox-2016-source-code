@@ -1,17 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file Rackspace.h
 /// \brief Helper to class to manage Rackspace servers
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 
@@ -88,11 +80,11 @@ namespace RakNet
 	};
 
 	/// \brief Callback interface to receive the results of operations
-	class RAK_DLL_EXPORT Rackspace2EventCallback
+	class RAK_DLL_EXPORT RackspaceEventCallback
 	{
 	public:
-		Rackspace2EventCallback() {}
-		virtual ~Rackspace2EventCallback() {}
+		RackspaceEventCallback() {}
+		virtual ~RackspaceEventCallback() {}
 		virtual void OnAuthenticationResult(RackspaceEventType eventType, const char *htmlAdditionalInfo)=0;
 		virtual void OnListServersResult(RackspaceEventType eventType, const char *htmlAdditionalInfo)=0;
 		virtual void OnListServersWithDetailsResult(RackspaceEventType eventType, const char *htmlAdditionalInfo)=0;
@@ -124,7 +116,7 @@ namespace RakNet
 	};
 
 	/// \brief Callback interface to receive the results of operations, with a default result
-	class RAK_DLL_EXPORT RackspaceEventCallback_Default : public Rackspace2EventCallback
+	class RAK_DLL_EXPORT RackspaceEventCallback_Default : public RackspaceEventCallback
 	{
 	public:
 		virtual void ExecuteDefault(const char *callbackName, RackspaceEventType eventType, const char *htmlAdditionalInfo) {(void) callbackName; (void) eventType; (void) htmlAdditionalInfo;}
@@ -340,10 +332,10 @@ namespace RakNet
 
 		/// \brief Adds a callback to the list of callbacks to be called when any of the above functions finish executing
 		/// The callbacks are called in the order they are added
-		void AddEventCallback(Rackspace2EventCallback *callback);
+		void AddEventCallback(RackspaceEventCallback *callback);
 		/// \brief Removes a callback from the list of callbacks to be called when any of the above functions finish executing
 		/// The callbacks are called in the order they are added
-		void RemoveEventCallback(Rackspace2EventCallback *callback);
+		void RemoveEventCallback(RackspaceEventCallback *callback);
 		/// \brief Removes all callbacks
 		void ClearEventCallbacks(void);
 
@@ -361,7 +353,7 @@ namespace RakNet
 		void AddOperation(RackspaceOperationType type, RakNet::RakString httpCommand, RakNet::RakString operation, RakNet::RakString xml);
 	protected:
 
-		DataStructures::List<Rackspace2EventCallback*> eventCallbacks;
+		DataStructures::List<RackspaceEventCallback*> eventCallbacks;
 
 		struct RackspaceOperation
 		{

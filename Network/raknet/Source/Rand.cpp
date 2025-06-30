@@ -229,7 +229,6 @@ RakNetRandom::~RakNetRandom()
 }
 void RakNetRandom::SeedMT( unsigned int seed )
 {
-	printf("%i\n",seed);
 	seedMT(seed, state, next, left);
 }
 

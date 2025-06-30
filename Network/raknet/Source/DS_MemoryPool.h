@@ -1,16 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file DS_MemoryPool.h
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #ifndef __MEMORY_POOL_H
 #define __MEMORY_POOL_H
@@ -300,57 +292,3 @@ namespace DataStructures
 }
 
 #endif
-
-/*
-#include "DS_MemoryPool.h"
-#include "DS_List.h"
-
-struct TestMemoryPool
-{
-	int allocationId;
-};
-
-int main(void)
-{
-	DataStructures::MemoryPool<TestMemoryPool> memoryPool;
-	DataStructures::List<TestMemoryPool*> returnList;
-
-	for (int i=0; i < 100000; i++)
-		returnList.Push(memoryPool.Allocate(_FILE_AND_LINE_), _FILE_AND_LINE_);
-	for (int i=0; i < returnList.Size(); i+=2)
-	{
-		memoryPool.Release(returnList[i], _FILE_AND_LINE_);
-		returnList.RemoveAtIndexFast(i);
-	}
-	for (int i=0; i < 100000; i++)
-		returnList.Push(memoryPool.Allocate(_FILE_AND_LINE_), _FILE_AND_LINE_);
-	while (returnList.Size())
-	{
-		memoryPool.Release(returnList[returnList.Size()-1], _FILE_AND_LINE_);
-		returnList.RemoveAtIndex(returnList.Size()-1);
-	}
-	for (int i=0; i < 100000; i++)
-		returnList.Push(memoryPool.Allocate(_FILE_AND_LINE_), _FILE_AND_LINE_);
-	while (returnList.Size())
-	{
-		memoryPool.Release(returnList[returnList.Size()-1], _FILE_AND_LINE_);
-		returnList.RemoveAtIndex(returnList.Size()-1);
-	}
-	for (int i=0; i < 100000; i++)
-		returnList.Push(memoryPool.Allocate(_FILE_AND_LINE_), _FILE_AND_LINE_);
-	for (int i=100000-1; i <= 0; i-=2)
-	{
-		memoryPool.Release(returnList[i], _FILE_AND_LINE_);
-		returnList.RemoveAtIndexFast(i);
-	}
-	for (int i=0; i < 100000; i++)
-		returnList.Push(memoryPool.Allocate(_FILE_AND_LINE_), _FILE_AND_LINE_);
-	while (returnList.Size())
-	{
-		memoryPool.Release(returnList[returnList.Size()-1], _FILE_AND_LINE_);
-		returnList.RemoveAtIndex(returnList.Size()-1);
-	}
-
-	return 0;
-}
-*/

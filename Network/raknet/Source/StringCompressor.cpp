@@ -1,16 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #include "StringCompressor.h"
@@ -21,8 +13,6 @@
 #include <string.h>
 
 #include <memory.h>
-
-
 
 
 
@@ -442,7 +432,7 @@ bool StringCompressor::DecodeString( CString &output, int maxCharsToWrite, RakNe
 #ifdef _STD_STRING_COMPRESSOR
 void StringCompressor::EncodeString( const std::string &input, int maxCharsToWrite, RakNet::BitStream *output, uint8_t languageId )
 {
-	EncodeString(input.c_str(), maxCharsToWrite, output, languageId);
+	EncodeString(input.c_str(), maxCharsToWrite, output, languageID);
 }
 bool StringCompressor::DecodeString( std::string *output, int maxCharsToWrite, RakNet::BitStream *input, uint8_t languageId )
 {
@@ -455,15 +445,15 @@ bool StringCompressor::DecodeString( std::string *output, int maxCharsToWrite, R
 	char *destinationBlock;
 	bool out;
 
-#if USE_ALLOCA==1
+
 	if (maxCharsToWrite < MAX_ALLOCA_STACK_ALLOCATION)
 	{
 		destinationBlock = (char*) alloca(maxCharsToWrite);
-		out=DecodeString(destinationBlock, maxCharsToWrite, input, languageId);
+		out=DecodeString(destinationBlock, maxCharsToWrite, input, languageID);
 		*output=destinationBlock;
 	}
 	else
-#endif
+
 	{
 		destinationBlock = (char*) rakMalloc_Ex( maxCharsToWrite, _FILE_AND_LINE_ );
 		out=DecodeString(destinationBlock, maxCharsToWrite, input, languageId);
@@ -489,7 +479,7 @@ bool StringCompressor::DecodeString( RakString *output, int maxCharsToWrite, Rak
 	char *destinationBlock;
 	bool out;
 
-#if USE_ALLOCA==1
+
 	if (maxCharsToWrite < MAX_ALLOCA_STACK_ALLOCATION)
 	{
 		destinationBlock = (char*) alloca(maxCharsToWrite);
@@ -497,7 +487,7 @@ bool StringCompressor::DecodeString( RakString *output, int maxCharsToWrite, Rak
 		*output=destinationBlock;
 	}
 	else
-#endif
+
 	{
 		destinationBlock = (char*) rakMalloc_Ex( maxCharsToWrite, _FILE_AND_LINE_ );
 		out=DecodeString(destinationBlock, maxCharsToWrite, input, languageId);

@@ -1,16 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief \b RakNet's plugin functionality system, version 2.  You can derive from this to create your own plugins.
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #ifndef __PLUGIN_INTERFACE_2_H
@@ -25,7 +18,7 @@ namespace RakNet {
 
 /// Forward declarations
 class RakPeerInterface;
-class TCPInterface;
+class PacketizedTCP;
 struct Packet;
 struct InternalPacket;
 
@@ -45,7 +38,7 @@ enum PluginReceiveResult
 	RR_CONTINUE_PROCESSING,
 
 	/// The plugin is going to hold on to this message.  Do not deallocate it but do not pass it to other plugins either.
-	RR_STOP_PROCESSING
+	RR_STOP_PROCESSING,
 };
 
 /// Reasons why a connection was lost
@@ -76,7 +69,7 @@ enum PI2_FailedConnectionAttemptReason
 	FCAR_IP_RECENTLY_CONNECTED,
 	FCAR_REMOTE_SYSTEM_REQUIRES_PUBLIC_KEY,
 	FCAR_OUR_SYSTEM_REQUIRES_SECURITY,
-	FCAR_PUBLIC_KEY_MISMATCH
+	FCAR_PUBLIC_KEY_MISMATCH,
 };
 
 /// RakNet's plugin system. Each plugin processes the following events:
@@ -130,7 +123,7 @@ public:
 	virtual void OnFailedConnectionAttempt(Packet *packet, PI2_FailedConnectionAttemptReason failedConnectionAttemptReason) {(void) packet; (void) failedConnectionAttemptReason;}
 
 	/// Queried when attached to RakPeer
-	/// Return true to call OnDirectSocketSend(), OnDirectSocketReceive(), OnReliabilityLayerNotification(), OnInternalPacket(), and OnAck()
+	/// Return true to call OnDirectSocketSend(), OnDirectSocketReceive(), OnReliabilityLayerPacketError(), OnInternalPacket(), and OnAck()
 	/// If true, then you cannot call RakPeer::AttachPlugin() or RakPeer::DetachPlugin() for this plugin, while RakPeer is active
 	virtual bool UsesReliabilityLayer(void) const {return false;}
 
@@ -152,7 +145,7 @@ public:
 	/// \pre To be called, UsesReliabilityLayer() must return true
 	/// \param[in] bitsUsed How many bits long \a data is
 	/// \param[in] remoteSystemAddress Which system this message is being sent to
-	virtual void OnReliabilityLayerNotification(const char *errorMessage, const BitSize_t bitsUsed, SystemAddress remoteSystemAddress, bool isError)  {(void) errorMessage; (void) bitsUsed; (void) remoteSystemAddress; (void) isError;}
+	virtual void OnReliabilityLayerPacketError(const char *errorMessage, const BitSize_t bitsUsed, SystemAddress remoteSystemAddress)  {(void) errorMessage; (void) bitsUsed; (void) remoteSystemAddress;}
 	
 	/// Called on a send or receive of a message within the reliability layer
 	/// \pre To be called, UsesReliabilityLayer() must return true
@@ -178,20 +171,16 @@ public:
 
 	RakPeerInterface *GetRakPeerInterface(void) const {return rakPeerInterface;}
 
-	RakNetGUID GetMyGUIDUnified(void) const;
-
 	/// \internal
 	void SetRakPeerInterface( RakPeerInterface *ptr );
 
-#if _RAKNET_SUPPORT_TCPInterface==1
+#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
 	/// \internal
-	void SetTCPInterface( TCPInterface *ptr );
+	void SetPacketizedTCP( PacketizedTCP *ptr );
 #endif
-
 protected:
-	// Send through either rakPeerInterface or tcpInterface, whichever is available
+	// Send through either rakPeerInterface or packetizedTCP, whichever is available
 	void SendUnified( const RakNet::BitStream * bitStream, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier, bool broadcast );
-	void SendUnified( const char * data, const int length, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier, bool broadcast );
 	bool SendListUnified( const char **data, const int *lengths, const int numParameters, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier, bool broadcast );
 
 	Packet *AllocatePacketUnified(unsigned dataSize);
@@ -200,8 +189,8 @@ protected:
 
 	// Filled automatically in when attached
 	RakPeerInterface *rakPeerInterface;
-#if _RAKNET_SUPPORT_TCPInterface==1
-	TCPInterface *tcpInterface;
+#if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
+	PacketizedTCP *packetizedTCP;
 #endif
 };
 

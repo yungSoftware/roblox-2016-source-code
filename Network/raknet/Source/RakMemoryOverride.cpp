@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "RakMemoryOverride.h"
 #include "RakAssert.h"
 #include <stdlib.h>
@@ -15,8 +5,6 @@
 #ifdef _RAKNET_SUPPORT_DL_MALLOC
 #include "rdlmalloc.h"
 #endif
-
-
 
 
 
@@ -289,18 +277,18 @@ void FreeRakNetFixedHeap(void) {}
 #endif
 
 #if _USE_RAK_MEMORY_OVERRIDE==1
-	#if defined(RMO_MALLOC_UNDEF)
+
 	#pragma pop_macro("malloc")
 	#undef RMO_MALLOC_UNDEF
-	#endif
 
-	#if defined(RMO_REALLOC_UNDEF)
+
+
 	#pragma pop_macro("realloc")
 	#undef RMO_REALLOC_UNDEF
-	#endif
 
-	#if defined(RMO_FREE_UNDEF)
+
+
 	#pragma pop_macro("free")
 	#undef RMO_FREE_UNDEF
-	#endif
+
 #endif

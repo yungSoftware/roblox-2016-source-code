@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_UDPProxyClient==1
 
@@ -19,7 +9,7 @@
 #include "GetTime.h"
 
 using namespace RakNet;
-static const int DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR=1000;
+static const int DEFAULT_UNRESPONSIVE_PING_TIME=1000;
 
 // bool operator<( const DataStructures::MLKeyRef<UDPProxyClient::ServerWithPing> &inputKey, const UDPProxyClient::ServerWithPing &cls ) {return inputKey.Get().serverAddress < cls.serverAddress;}
 // bool operator>( const DataStructures::MLKeyRef<UDPProxyClient::ServerWithPing> &inputKey, const UDPProxyClient::ServerWithPing &cls ) {return inputKey.Get().serverAddress > cls.serverAddress;}
@@ -111,9 +101,9 @@ void UDPProxyClient::Update(void)
 		PingServerGroup *psg = pingServerGroups[idx1];
 
 		if (psg->serversToPing.Size() > 0 && 
-			RakNet::GetTimeMS() > psg->startPingTime+DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR)
+			RakNet::GetTimeMS() > psg->startPingTime+DEFAULT_UNRESPONSIVE_PING_TIME)
 		{
-			// If they didn't reply within DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR, just give up on them
+			// If they didn't reply within DEFAULT_UNRESPONSIVE_PING_TIME, just give up on them
 			psg->SendPingedServersToCoordinator(rakPeerInterface);
 
 			RakNet::OP_DELETE(psg,_FILE_AND_LINE_);
@@ -191,7 +181,6 @@ PluginReceiveResult UDPProxyClient::OnReceive(Packet *packet)
 				{
 				case ID_UDP_PROXY_FORWARDING_NOTIFICATION:
 				case ID_UDP_PROXY_FORWARDING_SUCCEEDED:
-				case ID_UDP_PROXY_IN_PROGRESS:
 					{
 						unsigned short forwardingPort;
 						RakNet::RakString serverIP;
@@ -201,11 +190,6 @@ PluginReceiveResult UDPProxyClient::OnReceive(Packet *packet)
 						{
 							if (resultHandler)
 								resultHandler->OnForwardingSuccess(serverIP.C_String(), forwardingPort, packet->systemAddress, senderAddress, targetAddress, targetGuid, this);
-						}
-						else if (packet->data[1]==ID_UDP_PROXY_IN_PROGRESS)
-						{
-							if (resultHandler)
-								resultHandler->OnForwardingInProgress(serverIP.C_String(), forwardingPort, packet->systemAddress, senderAddress, targetAddress, targetGuid, this);
 						}
 						else
 						{
@@ -222,6 +206,10 @@ PluginReceiveResult UDPProxyClient::OnReceive(Packet *packet)
 				case ID_UDP_PROXY_ALL_SERVERS_BUSY:
 					if (resultHandler)
 						resultHandler->OnAllServersBusy(packet->systemAddress, senderAddress, targetAddress, targetGuid, this);
+					break;
+				case ID_UDP_PROXY_IN_PROGRESS:
+					if (resultHandler)
+						resultHandler->OnForwardingInProgress(packet->systemAddress, senderAddress, targetAddress, targetGuid, this);
 					break;
 				case ID_UDP_PROXY_NO_SERVERS_ONLINE:
 					if (resultHandler)
@@ -265,7 +253,7 @@ void UDPProxyClient::OnPingServers(Packet *packet)
 	for (serverListIndex=0; serverListIndex<serverListSize; serverListIndex++)
 	{
 		incomingBs.Read(swp.serverAddress);
-		swp.ping=DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR;
+		swp.ping=DEFAULT_UNRESPONSIVE_PING_TIME;
 		psg->serversToPing.Push(swp, _FILE_AND_LINE_ );
 		swp.serverAddress.ToString(false,ipStr);
 		rakPeerInterface->Ping(ipStr,swp.serverAddress.GetPort(),false,0);
@@ -278,7 +266,7 @@ bool UDPProxyClient::PingServerGroup::AreAllServersPinged(void) const
 	unsigned int serversToPingIndex;
 	for (serversToPingIndex=0; serversToPingIndex < serversToPing.Size(); serversToPingIndex++)
 	{
-		if (serversToPing[serversToPingIndex].ping==DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR)
+		if (serversToPing[serversToPingIndex].ping==DEFAULT_UNRESPONSIVE_PING_TIME)
 			return false;
 	}
 	return true;

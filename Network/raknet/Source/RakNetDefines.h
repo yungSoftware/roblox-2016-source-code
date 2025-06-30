@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #ifndef __RAKNET_DEFINES_H
 #define __RAKNET_DEFINES_H
 
@@ -54,7 +44,7 @@
 /// If defined, OpenSSL is enabled for the class TCPInterface
 /// This is necessary to use the SendEmail class with Google POP servers
 /// Note that OpenSSL carries its own license restrictions that you should be aware of. If you don't agree, don't enable this define
-/// This also requires that you enable header search paths to DependentExtensions\openssl-1.0.0d
+/// This also requires that you enable header search paths to DependentExtensions\openssl-0.9.8g
 // #define OPEN_SSL_CLIENT_SUPPORT
 #ifndef OPEN_SSL_CLIENT_SUPPORT
 #define OPEN_SSL_CLIENT_SUPPORT 0
@@ -80,15 +70,13 @@
 
 
 
-#if   defined(__native_client__)
-#define RakAssert(x)
-#else
+
 #if defined(_DEBUG)
 #define RakAssert(x) assert(x);
 #else
 #define RakAssert(x) 
 #endif
-#endif
+
 #endif
 
 /// This controls the amount of memory used per connection.
@@ -153,11 +141,11 @@
 #endif
 
 #ifndef RPC4_GLOBAL_REGISTRATION_MAX_FUNCTIONS
-#define RPC4_GLOBAL_REGISTRATION_MAX_FUNCTIONS 48
+#define RPC4_GLOBAL_REGISTRATION_MAX_FUNCTIONS 32
 #endif
 
 #ifndef RPC4_GLOBAL_REGISTRATION_MAX_FUNCTION_NAME_LENGTH
-#define RPC4_GLOBAL_REGISTRATION_MAX_FUNCTION_NAME_LENGTH 48
+#define RPC4_GLOBAL_REGISTRATION_MAX_FUNCTION_NAME_LENGTH 32
 #endif
 
 #ifndef XBOX_BYPASS_SECURITY
@@ -175,20 +163,6 @@
 #ifndef INTERNAL_PACKET_PAGE_SIZE
 #define INTERNAL_PACKET_PAGE_SIZE 8
 #endif
-
-// If defined to 1, the user is responsible for calling RakPeer::RunUpdateCycle and RakPeer::RunRecvfrom
-#ifndef RAKPEER_USER_THREADED
-#define RAKPEER_USER_THREADED 0
-#endif
-
-#ifndef USE_ALLOCA
-#define USE_ALLOCA 1
-#endif
-
-
-
-
-
 
 //#define USE_THREADED_SEND
 

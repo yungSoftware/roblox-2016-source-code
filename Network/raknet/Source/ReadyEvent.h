@@ -1,17 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief Ready event plugin.  This enables a set of systems to create a signal event, set this signal as ready or unready, and to trigger the event when all systems are ready
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_ReadyEvent==1
@@ -83,7 +75,7 @@ public:
 	/// For both ID_READY_EVENT_SET and ID_READY_EVENT_UNSET, eventId is encoded in bytes 1 through 1+sizeof(int)
 	/// \param[in] eventId A user-defined identifier to wait on. This can be a sequence counter, an event identifier, or anything else you want.
 	/// \param[in] isReady True to signal we are ready to proceed with this event, false to unsignal
-	/// \return False if event status is ID_READY_EVENT_FORCE_ALL_SET, or if we are setting to a status we are already in (no change). Otherwise true
+	/// \return True on success. False (failure) on unknown eventId
 	bool SetEvent(int eventId, bool isReady);
 
 	/// When systems can call SetEvent() with isReady==false, it is possible for one system to return true from IsEventCompleted() while the other systems return false
@@ -91,7 +83,7 @@ public:
 	/// If your game has the situation where some action should be taken on all systems when IsEventCompleted() is true for any system, then call ForceCompletion() when the action begins.
 	/// This will force all systems to return true from IsEventCompleted().
 	/// \param[in] eventId A user-defined identifier to immediately set as completed
-	void ForceCompletion(int eventId);
+	bool ForceCompletion(int eventId);
 
 	/// Deletes an event.  We will no longer wait for this event, and any systems that we know have set the event will be forgotten.
 	/// Call this to clear memory when events are completed and you know you will never need them again.
@@ -137,21 +129,21 @@ public:
 	/// As these systems disconnect (directly or indirectly through the router) they are removed.
 	/// \note If the event completion process has already started, you cannot add more systems, as this would cause the completion process to fail
 	/// \param[in] eventId A user-defined number previously passed to SetEvent that has not yet completed
-	/// \param[in] guid An address to wait for event replies from.  Pass UNASSIGNED_SYSTEM_ADDRESS for all currently connected systems. Until all systems in this list have called SetEvent with this ID and true, and have this system in the list, we won't get ID_READY_EVENT_COMPLETE
-	/// \return True on success, false on unknown eventId (this should be considered an error)
-	bool AddToWaitList(int eventId, RakNetGUID guid);
+	/// \param[in] addressArray An address to wait for event replies from.  Pass UNASSIGNED_SYSTEM_ADDRESS for all currently connected systems. Until all systems in this list have called SetEvent with this ID and true, and have this system in the list, we won't get ID_READY_EVENT_COMPLETE
+	/// \return True on success, false on unknown eventId (this should be considered an error), or if the completion process has already started.
+	bool AddToWaitList(int eventId, SystemAddress address);
 	
 	/// Removes systems from the wait list, which should have been previously added with AddToWaitList
 	/// \note Systems that directly or indirectly disconnect from us are automatically removed from the wait list
-	/// \param[in] guid The system to remove from the wait list. Pass UNASSIGNED_RAKNET_GUID for all currently connected systems.
+	/// \param[in] address The system to remove from the wait list. Pass UNASSIGNED_SYSTEM_ADDRESS for all currently connected systems.
 	/// \return True on success, false on unknown eventId (this should be considered an error)
-	bool RemoveFromWaitList(int eventId, RakNetGUID guid);
+	bool RemoveFromWaitList(int eventId, SystemAddress address);
 
 	/// Returns if a particular system is waiting on a particular event.
 	/// \param[in] eventId A user-defined identifier
-	/// \param[in] guid The system we are checking up on
+	/// \param[in] The address of the system we are checking up on
 	/// \return True if this system is waiting on this event, false otherwise.
-	bool IsInWaitList(int eventId, RakNetGUID guid);
+	bool IsInWaitList(int eventId, SystemAddress address);
 	
 	/// Returns the total number of systems we are waiting on for this event.
 	/// Does not include yourself
@@ -163,13 +155,13 @@ public:
 	/// \param[in] eventId A user-defined identifier
 	/// \param[in] index Index into the array, from 0 to GetWaitListSize()
 	/// \return The system address of a system at a particular index, for this event.
-	RakNetGUID GetFromWaitListAtIndex(int eventId, unsigned index) const;
+	SystemAddress GetFromWaitListAtIndex(int eventId, unsigned index) const;
 		
 	/// For a remote system, find out what their ready status is (waiting, signaled, complete).
 	/// \param[in] eventId A user-defined identifier
-	/// \param[in] guid Which system we are checking up on
+	/// \param[in] address Which system we are checking up on
 	/// \return The status of this system, for this particular event. \sa ReadyEventSystemStatus
-	ReadyEventSystemStatus GetReadyStatus(int eventId, RakNetGUID guid);
+	ReadyEventSystemStatus GetReadyStatus(int eventId, SystemAddress address);
 
 	/// This channel will be used for all RakPeer::Send calls
 	/// \param[in] newChannel The channel to use for internal RakPeer::Send calls from this system.  Defaults to 0.
@@ -181,16 +173,16 @@ public:
 	struct RemoteSystem
 	{
 		MessageID lastSentStatus, lastReceivedStatus;
-		RakNetGUID rakNetGuid;
+		SystemAddress systemAddress;
 	};
-	static int RemoteSystemCompByGuid( const RakNetGUID &key, const RemoteSystem &data );
+	static int RemoteSystemCompBySystemAddress( const SystemAddress &key, const RemoteSystem &data );
 	/// \internal
 	/// An event, with a set of systems we are waiting for, a set of systems that are signaled, and a set of systems with completed events
 	struct ReadyEventNode
 	{
 		int eventId; // Sorted on this
 		MessageID eventStatus;
-		DataStructures::OrderedList<RakNetGUID,RemoteSystem,ReadyEvent::RemoteSystemCompByGuid> systemList;
+		DataStructures::OrderedList<SystemAddress,RemoteSystem,ReadyEvent::RemoteSystemCompBySystemAddress> systemList;
 	};
 	static int ReadyEventNodeComp( const int &key, ReadyEvent::ReadyEventNode * const &data );
 
@@ -208,22 +200,22 @@ protected:
 	bool AnyWaitersCompleted(unsigned eventIndex) const;
 	bool AllWaitersCompleted(unsigned eventIndex) const;
 	bool AllWaitersReady(unsigned eventIndex) const;
-	void SendAllReady(unsigned eventId, RakNetGUID guid);
+	void SendAllReady(unsigned eventId, SystemAddress address);
 	void BroadcastAllReady(unsigned eventIndex);
-	void SendReadyStateQuery(unsigned eventId, RakNetGUID guid);
+	void SendReadyStateQuery(unsigned eventId, SystemAddress address);
 	void BroadcastReadyUpdate(unsigned eventIndex);
-	bool AddToWaitListInternal(unsigned eventIndex, RakNetGUID guid);
+	bool AddToWaitListInternal(unsigned eventIndex, SystemAddress address);
 	bool IsLocked(unsigned eventIndex) const;
 	bool IsAllReadyByIndex(unsigned eventIndex) const;
 	*/
 
-	void SendReadyStateQuery(unsigned eventId, RakNetGUID guid);
+	void SendReadyStateQuery(unsigned eventId, SystemAddress address);
 	void SendReadyUpdate(unsigned eventIndex, unsigned systemIndex, bool forceIfNotDefault);
 	void BroadcastReadyUpdate(unsigned eventIndex, bool forceIfNotDefault);
-	void RemoveFromAllLists(RakNetGUID guid);
+	void RemoveFromAllLists(SystemAddress address);
 	void OnReadyEventQuery(Packet *packet);
 	void PushCompletionPacket(unsigned eventId);
-	bool AddToWaitListInternal(unsigned eventIndex, RakNetGUID guid);
+	bool AddToWaitListInternal(unsigned eventIndex, SystemAddress address);
 	void OnReadyEventForceAllSet(Packet *packet);
 	void OnReadyEventPacketUpdate(Packet *packet);
 	void UpdateReadyStatus(unsigned eventIndex);

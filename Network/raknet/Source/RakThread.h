@@ -1,23 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #ifndef __RAK_THREAD_H
 #define __RAK_THREAD_H
 
 #if defined(_WIN32_WCE)
 #include "WindowsIncludes.h"
 #endif
-
-
-
-
 
 #include "Export.h"
 
@@ -26,15 +12,11 @@
 
 
 
-#if defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
-#include "../DependentExtensions/WinPhone8/ThreadEmulation.h"
-using namespace ThreadEmulation;
-#endif
-
 namespace RakNet
 {
+
 /// To define a thread, use RAK_THREAD_DECLARATION(functionName);
-#if defined(_WIN32_WCE) || defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
+#if defined(_WIN32_WCE)
 #define RAK_THREAD_DECLARATION(functionName) DWORD WINAPI functionName(LPVOID arguments)
 
 
@@ -67,7 +49,7 @@ public:
 	+5 to +14 	THREAD_PRIORITY_BELOW_NORMAL
 	+15 to +19 	THREAD_PRIORITY_LOWEST
 	*/
-#if defined(_WIN32_WCE) || defined(WINDOWS_PHONE_8) || defined(WINDOWS_STORE_RT)
+#if defined(_WIN32_WCE)
 	static int Create( LPTHREAD_START_ROUTINE start_address, void *arglist, int priority=0);
 
 

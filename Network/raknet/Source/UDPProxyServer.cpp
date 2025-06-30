@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_UDPProxyServer==1 && _RAKNET_SUPPORT_UDPForwarder==1
 
@@ -56,12 +46,9 @@ bool UDPProxyServer::LoginToCoordinator(RakNet::RakString password, SystemAddres
 	loggingInCoordinators.InsertAtIndex(coordinatorAddress, insertionIndex, _FILE_AND_LINE_ );
 	return true;
 }
-void UDPProxyServer::SetServerPublicIP(RakString ip)
-{
-	serverPublicIp = ip;
-}
 void UDPProxyServer::Update(void)
 {
+	udpForwarder.Update();
 }
 PluginReceiveResult UDPProxyServer::OnReceive(Packet *packet)
 {
@@ -162,16 +149,18 @@ void UDPProxyServer::OnForwardingRequestFromCoordinatorToServer(Packet *packet)
 	incomingBs.Read(timeoutOnNoDataMS);
 	RakAssert(timeoutOnNoDataMS > 0 && timeoutOnNoDataMS <= UDP_FORWARDER_MAXIMUM_TIMEOUT);
 
-	unsigned short forwardingPort=0;
+	unsigned short forwardingPort;
 	UDPForwarderResult success = udpForwarder.StartForwarding(sourceAddress, targetAddress, timeoutOnNoDataMS, 0, socketFamily, &forwardingPort, 0);
 	RakNet::BitStream outgoingBs;
 	outgoingBs.Write((MessageID)ID_UDP_PROXY_GENERAL);
 	outgoingBs.Write((MessageID)ID_UDP_PROXY_FORWARDING_REPLY_FROM_SERVER_TO_COORDINATOR);
 	outgoingBs.Write(sourceAddress);
 	outgoingBs.Write(targetAddress);
-	outgoingBs.Write(serverPublicIp);
 	outgoingBs.Write((unsigned char) success);
-	outgoingBs.Write(forwardingPort);
+	if (success==UDPFORWARDER_SUCCESS)
+	{
+		outgoingBs.Write(forwardingPort);
+	}
 	rakPeerInterface->Send(&outgoingBs, MEDIUM_PRIORITY, RELIABLE_ORDERED, 0, packet->systemAddress, false);
 }
 

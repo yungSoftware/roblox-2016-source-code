@@ -1,14 +1,4 @@
 /*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
-/*
 http://www.ssfnet.org/Exchange/tcp/tcpTutorialNotes.html
 
 cwnd=max bytes allowed on wire at once
@@ -64,11 +54,11 @@ else use congestion avoidance
 /// Set to 4 if you are using the iPod Touch TG. See http://www.jenkinssoftware.com/forum/index.php?topic=2717.0
 #define CC_TIME_TYPE_BYTES 8
 
-#if CC_TIME_TYPE_BYTES==8
+
 typedef RakNet::TimeUS CCTimeType;
-#else
-typedef RakNet::TimeMS CCTimeType;
-#endif
+
+
+
 
 typedef RakNet::uint24_t DatagramSequenceNumberType;
 typedef double BytesPerMicrosecond;
@@ -122,19 +112,19 @@ class CCRakNetSlidingWindow
 
 	/// Call when you get a NAK, with the sequence number of the lost message
 	/// Affects the congestion control
-	void OnResend(CCTimeType curTime, RakNet::TimeUS nextActionTime);
+	void OnResend(CCTimeType curTime);
 	void OnNAK(CCTimeType curTime, DatagramSequenceNumberType nakSequenceNumber);
 
 	/// Call this when an ACK arrives.
 	/// hasBAndAS are possibly written with the ack, see OnSendAck()
 	/// B and AS are used in the calculations in UpdateWindowSizeAndAckOnAckPerSyn
 	/// B and AS are updated at most once per SYN 
-	void OnAck(CCTimeType curTime, CCTimeType rtt, bool hasBAndAS, BytesPerMicrosecond _B, BytesPerMicrosecond _AS, double totalUserDataBytesAcked, bool isContinuousSend, DatagramSequenceNumberType sequenceNumber );
+    void OnAck(CCTimeType curTime, CCTimeType rtt, bool hasBAndAS, BytesPerMicrosecond B, BytesPerMicrosecond AS, double totalUserDataBytesAcked, bool isContinuousSend, DatagramSequenceNumberType sequenceNumber );
 	void OnDuplicateAck( CCTimeType curTime, DatagramSequenceNumberType sequenceNumber );
 	
 	/// Call when you send an ack, to see if the ack should have the B and AS parameters transmitted
 	/// Call before calling OnSendAck()
-	void OnSendAckGetBAndAS(CCTimeType curTime, bool *hasBAndAS, BytesPerMicrosecond *_B, BytesPerMicrosecond *_AS);
+    void OnSendAckGetBAndAS(CCTimeType curTime, bool *hasBAndAS, BytesPerMicrosecond *B, BytesPerMicrosecond *AS);
 
 	/// Call when we send an ack, to write B and AS if needed
 	/// B and AS are only written once per SYN, to prevent slow calculations
@@ -152,7 +142,7 @@ class CCRakNetSlidingWindow
 	/// If we have been continuously sending for the last RTO, and no ACK or NAK at all, SND*=2;
 	/// This is per message, which is different from UDT, but RakNet supports packetloss with continuing data where UDT is only RELIABLE_ORDERED
 	/// Minimum value is 100 milliseconds
-	CCTimeType GetRTOForRetransmission(unsigned char timesSent) const;
+	CCTimeType GetRTOForRetransmission(void) const;
 
 	/// Set the maximum amount of data that can be sent in one datagram
 	/// Default to MAXIMUM_MTU_SIZE-UDP_HEADER_SIZE
@@ -188,6 +178,8 @@ class CCRakNetSlidingWindow
 	// Maximum amount of bytes that the user can send, e.g. the size of one full datagram
 	uint32_t MAXIMUM_MTU_INCLUDING_UDP_HEADER;
 
+	double RTT;
+
 	double cwnd; // max bytes on wire
 	double ssThresh; // Threshhold between slow start and congestion avoidance
 
@@ -208,9 +200,6 @@ class CCRakNetSlidingWindow
 	bool _isContinuousSend;
 
 	bool IsInSlowStart(void) const;
-
-	double lastRtt, estimatedRTT, deviationRtt;
-
 };
 
 }

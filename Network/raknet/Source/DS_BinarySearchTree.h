@@ -1,17 +1,10 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file DS_BinarySearchTree.h
 /// \internal
 /// \brief A binary search tree, and an AVL balanced BST derivation.
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #ifndef __BINARY_SEARCH_TREE_H
@@ -173,12 +166,12 @@ namespace DataStructures
 			if ( current->left == 0 )
 				left_height = 0;
 			else
-				left_height = Height( current->left );
+				left_height = this->Height( current->left );
 				
 			if ( current->right == 0 )
 				right_height = 0;
 			else
-				right_height = Height( current->right );
+				right_height = this->Height( current->right );
 				
 			if ( right_height - left_height == 2 )
 			{
@@ -206,7 +199,7 @@ namespace DataStructures
 			if ( current == this->root )
 				break;
 				
-			current = FindParent( *( current->item ) );
+			current = this->FindParent( *( current->item ) );
 			
 		}
 	}
@@ -233,7 +226,7 @@ namespace DataStructures
 		if ( A == 0 )
 			return false;
 			
-		return Height( A->right ) > Height( A->left );
+		return this->Height( A->right ) > Height( A->left );
 	}
 	
 	template <class BinarySearchTreeType>
@@ -242,7 +235,7 @@ namespace DataStructures
 		if ( A == 0 )
 			return false;
 			
-		return Height( A->left ) > Height( A->right );
+		return this->Height( A->left ) > Height( A->right );
 	}
 	
 	template <class BinarySearchTreeType>
@@ -343,8 +336,8 @@ namespace DataStructures
 		
 		*/
 		
-		B = FindParent( *( C->item ) );
-		A = FindParent( *( B->item ) );
+		B = this->FindParent( *( C->item ) );
+		A = this->FindParent( *( B->item ) );
 		D = C->left;
 		
 		if ( A )

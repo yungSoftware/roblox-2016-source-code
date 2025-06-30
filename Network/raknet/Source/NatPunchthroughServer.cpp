@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_NatPunchthroughServer==1
 
@@ -119,9 +109,6 @@ NatPunchthroughServer::NatPunchthroughServer()
 	lastUpdate=0;
 	sessionId=0;
 	natPunchthroughServerDebugInterface=0;
-	for (int i=0; i < MAXIMUM_NUMBER_OF_INTERNAL_IDS; i++)
-		boundAddresses[i]=UNASSIGNED_SYSTEM_ADDRESS;
-	boundAddressCount=0;
 }
 NatPunchthroughServer::~NatPunchthroughServer()
 {
@@ -234,52 +221,6 @@ PluginReceiveResult NatPunchthroughServer::OnReceive(Packet *packet)
 	case ID_NAT_CLIENT_READY:
 		OnClientReady(packet);
 		return RR_STOP_PROCESSING_AND_DEALLOCATE;
-	case ID_NAT_REQUEST_BOUND_ADDRESSES:
-		{
-			RakNet::BitStream outgoingBs;
-			outgoingBs.Write((MessageID)ID_NAT_RESPOND_BOUND_ADDRESSES);
-			
-			if (boundAddresses[0]==UNASSIGNED_SYSTEM_ADDRESS)
-			{
-				DataStructures::List<RakNetSocket2* > sockets;
-				rakPeerInterface->GetSockets(sockets);
-				for (int i=0; i < sockets.Size() && i < MAXIMUM_NUMBER_OF_INTERNAL_IDS; i++)
-				{
-					boundAddresses[i]=sockets[i]->GetBoundAddress();
-					boundAddressCount++;
-				}
-			}
-
-			outgoingBs.Write(boundAddressCount);
-			for (int i=0; i < boundAddressCount; i++)
-			{
-				outgoingBs.Write(boundAddresses[i]);
-			}
-
-			rakPeerInterface->Send(&outgoingBs,HIGH_PRIORITY,RELIABLE_ORDERED,0,packet->systemAddress,false);
-		}
-		return RR_STOP_PROCESSING_AND_DEALLOCATE;
-	case ID_NAT_PING:
-		{
-		}
-		return RR_STOP_PROCESSING_AND_DEALLOCATE;
-	case ID_OUT_OF_BAND_INTERNAL:
-		if (packet->length>=2 && packet->data[1]==ID_NAT_PING)
-		{
-			RakNet::BitStream bs(packet->data,packet->length,false);
-			bs.IgnoreBytes(sizeof(MessageID)*2);
-			uint16_t externalPort;
-			bs.Read(externalPort);
-
-			RakNet::BitStream outgoingBs;
-			outgoingBs.Write((MessageID)ID_NAT_PONG);
-			outgoingBs.Write(externalPort);
-			uint16_t externalPort2 = packet->systemAddress.GetPort();
-			outgoingBs.Write(externalPort2);
-			rakPeerInterface->SendOutOfBand((const char*) packet->systemAddress.ToString(false),packet->systemAddress.GetPort(),(const char*) outgoingBs.GetData(),outgoingBs.GetNumberOfBytesUsed());
-
-			return RR_STOP_PROCESSING_AND_DEALLOCATE;
-		}
 	}
 	return RR_CONTINUE_PROCESSING;
 }
@@ -339,7 +280,6 @@ void NatPunchthroughServer::OnClosedConnection(const SystemAddress &systemAddres
 		}
 	}
 
-	/*
 	// Also remove from groupPunchthroughRequests
 	for (i=0; i < users.Size(); i++)
 	{
@@ -358,7 +298,6 @@ void NatPunchthroughServer::OnClosedConnection(const SystemAddress &systemAddres
 			users[i]->groupPunchthroughRequests.RemoveAtIndex(gprIndex);
 		}
 	}
-	*/
 }
 
 void NatPunchthroughServer::OnNewConnection(const SystemAddress &systemAddress, RakNetGUID rakNetGUID, bool isIncoming)
@@ -393,7 +332,7 @@ void NatPunchthroughServer::OnNATPunchthroughRequest(Packet *packet)
 	ca->sender=users[i];
 	ca->sessionId=sessionId++;
 	i = users.GetIndexFromKey(recipientGuid, &objectExists);
-	if (objectExists==false || ca->sender == ca->recipient)
+	if (objectExists==false)
 	{
 // 		printf("DEBUG %i\n", __LINE__);
 // 		printf("DEBUG recipientGuid=%s\n", recipientGuid.ToString());
@@ -475,8 +414,8 @@ void NatPunchthroughServer::OnGetMostRecentPort(Packet *packet)
 				SystemAddress recipientSystemAddress = connectionAttempt->recipient->systemAddress;
 				SystemAddress recipientTargetAddress = recipientSystemAddress;
 				SystemAddress senderTargetAddress = senderSystemAddress;
-				recipientTargetAddress.SetPortHostOrder(connectionAttempt->recipient->mostRecentPort);
-				senderTargetAddress.SetPortHostOrder(connectionAttempt->sender->mostRecentPort);
+				recipientTargetAddress.SetPort(connectionAttempt->recipient->mostRecentPort);
+				senderTargetAddress.SetPort(connectionAttempt->sender->mostRecentPort);
 
 				// Pick a time far enough in the future that both systems will have gotten the message
 				int targetPing = rakPeerInterface->GetAveragePing(recipientTargetAddress);

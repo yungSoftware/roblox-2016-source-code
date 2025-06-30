@@ -1,16 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief Contains the NAT-type detection code for the server
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_NatTypeDetectionServer==1
@@ -52,7 +45,7 @@ struct Packet;
 /// \sa NatPunchthroughServer
 /// \sa NatTypeDetectionClient
 /// \ingroup NAT_TYPE_DETECTION_GROUP
-class RAK_DLL_EXPORT NatTypeDetectionServer : public PluginInterface2, public RNS2EventHandler
+class RAK_DLL_EXPORT NatTypeDetectionServer : public PluginInterface2
 {
 public:
 
@@ -72,11 +65,7 @@ public:
 	void Startup(
 		const char *nonRakNetIP2,
 		const char *nonRakNetIP3,
-		const char *nonRakNetIP4
-#ifdef __native_client__
-		,_PP_Instance_ chromeInstance
-#endif
-		);
+		const char *nonRakNetIP4);
 
 	// Releases the sockets created in Startup();
 	void Shutdown(void);
@@ -112,21 +101,15 @@ public:
 		RakNetGUID guid;
 	};
 
-	virtual void OnRNS2Recv(RNS2RecvStruct *recvStruct);
-	virtual void DeallocRNS2RecvStruct(RNS2RecvStruct *s, const char *file, unsigned int line);
-	virtual RNS2RecvStruct *AllocRNS2RecvStruct(const char *file, unsigned int line);
 protected:
-	DataStructures::Queue<RNS2RecvStruct*> bufferedPackets;
-	SimpleMutex bufferedPacketsMutex;
-
 	void OnDetectionRequest(Packet *packet);
 	DataStructures::List<NATDetectionAttempt> natDetectionAttempts;
 	unsigned int GetDetectionAttemptIndex(const SystemAddress &sa);
 	unsigned int GetDetectionAttemptIndex(RakNetGUID guid);
 
 	// s1p1 is rakpeer itself
-	RakNetSocket2 *s1p2,*s2p3,*s3p4,*s4p5;
-	//unsigned short s1p2Port, s2p3Port, s3p4Port, s4p5Port;
+	SOCKET s1p2,s2p3,s3p4,s4p5;
+	unsigned short s1p2Port, s2p3Port, s3p4Port, s4p5Port;
 	char s3p4Address[64];
 };
 }

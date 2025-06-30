@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_TelnetTransport==1 && _RAKNET_SUPPORT_TCPInterface==1
 
@@ -177,16 +167,16 @@ Packet* TelnetTransport::Receive( void )
 
 
 	// Echo
-#ifdef ECHO_INPUT
+
 	tcpInterface->Send((const char *)p->data, p->length, p->systemAddress, false);
-#endif
+
 
 	bool gotLine;
 	// Process each character in turn
 	for (i=0; i < p->length; i++)
 	{
 
-#ifdef ECHO_INPUT
+
 		if (p->data[i]==8)
 		{
 			char spaceThenBack[2];
@@ -194,7 +184,7 @@ Packet* TelnetTransport::Receive( void )
 			spaceThenBack[1]=8;
 			tcpInterface->Send((const char *)spaceThenBack, 2, p->systemAddress, false);
 		}
-#endif
+
 
 		gotLine=ReassembleLine(remoteClient, p->data[i]);
 		if (gotLine && remoteClient->textInput[0])

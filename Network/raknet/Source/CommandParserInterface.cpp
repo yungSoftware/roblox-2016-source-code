@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "CommandParserInterface.h"
 #include "TransportInterface.h"
 #include <string.h>
@@ -15,8 +5,7 @@
 #include <stdio.h>
 
 
-#if   defined(WINDOWS_STORE_RT)
-#elif defined(_WIN32)
+#if   defined(_WIN32)
 // IP_DONTFRAGMENT is different between winsock 1 and winsock 2.  Therefore, Winsock2.h must be linked againt Ws2_32.lib
 // winsock.h must be linked against WSock32.lib.  If these two are mixed up the flag won't work correctly
 #include <winsock2.h>

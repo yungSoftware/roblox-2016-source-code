@@ -1,16 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NetworkIDManager.h"
 #include "NetworkIDObject.h"
@@ -27,15 +19,11 @@ STATIC_FACTORY_DEFINITIONS(NetworkIDManager,NetworkIDManager)
 NetworkIDManager::NetworkIDManager()
 {
 	startingOffset = RakPeerInterface::Get64BitUniqueRandomNumber();
-	Clear();
+	memset(networkIdHash,0,sizeof(networkIdHash));
 }
 NetworkIDManager::~NetworkIDManager(void)
 {
 
-}
-void NetworkIDManager::Clear(void)
-{
-	memset(networkIdHash,0,sizeof(networkIdHash));
 }
 NetworkIDObject *NetworkIDManager::GET_BASE_OBJECT_FROM_ID(NetworkID x)
 {
@@ -53,11 +41,6 @@ NetworkID NetworkIDManager::GetNewNetworkID(void)
 {
     while (GET_BASE_OBJECT_FROM_ID(++startingOffset))
         ;
-	if (startingOffset==UNASSIGNED_NETWORK_ID)
-	{
-		while (GET_BASE_OBJECT_FROM_ID(++startingOffset))
-			;
-	}
     return startingOffset;
 }
 unsigned int NetworkIDManager::NetworkIDToHashIndex(NetworkID networkId)
@@ -67,13 +50,8 @@ unsigned int NetworkIDManager::NetworkIDToHashIndex(NetworkID networkId)
 }
 void NetworkIDManager::TrackNetworkIDObject(NetworkIDObject *networkIdObject)
 {
-	RakAssert(networkIdObject->GetNetworkIDManager()==this);
-	NetworkID rawId = networkIdObject->GetNetworkID();
-	RakAssert(rawId!=UNASSIGNED_NETWORK_ID);
-
-	networkIdObject->nextInstanceForNetworkIDManager=0;
-
-	unsigned int hashIndex=NetworkIDToHashIndex(rawId);
+	RakAssert(networkIdObject->GetNetworkID()!=UNASSIGNED_NETWORK_ID);
+	unsigned int hashIndex=NetworkIDToHashIndex(networkIdObject->GetNetworkID());
 //	printf("TrackNetworkIDObject hashIndex=%i guid=%s\n",hashIndex, networkIdObject->GetNetworkID().guid.ToString()); // removeme
 	if (networkIdHash[hashIndex]==0)
 	{
@@ -84,7 +62,7 @@ void NetworkIDManager::TrackNetworkIDObject(NetworkIDObject *networkIdObject)
 	// Duplicate insertion?
 	RakAssert(nio!=networkIdObject);
 	// Random GUID conflict?
-	RakAssert(nio->GetNetworkID()!=rawId);
+	RakAssert(nio->GetNetworkID()!=networkIdObject->GetNetworkID());
 
 	while (nio->nextInstanceForNetworkIDManager!=0)
 	{		
@@ -93,19 +71,16 @@ void NetworkIDManager::TrackNetworkIDObject(NetworkIDObject *networkIdObject)
 		// Duplicate insertion?
 		RakAssert(nio!=networkIdObject);
 		// Random GUID conflict?
-		RakAssert(nio->GetNetworkID()!=rawId);
+		RakAssert(nio->GetNetworkID()!=networkIdObject->GetNetworkID());
 	}
 
+	networkIdObject->nextInstanceForNetworkIDManager=0;
 	nio->nextInstanceForNetworkIDManager=networkIdObject;
 }
 void NetworkIDManager::StopTrackingNetworkIDObject(NetworkIDObject *networkIdObject)
 {
-	RakAssert(networkIdObject->GetNetworkIDManager()==this);
-	NetworkID rawId = networkIdObject->GetNetworkID();
-	RakAssert(rawId!=UNASSIGNED_NETWORK_ID);
-
-	// RakAssert(networkIdObject->GetNetworkID()!=UNASSIGNED_NETWORK_ID);
-	unsigned int hashIndex=NetworkIDToHashIndex(rawId);
+	RakAssert(networkIdObject->GetNetworkID()!=UNASSIGNED_NETWORK_ID);
+	unsigned int hashIndex=NetworkIDToHashIndex(networkIdObject->GetNetworkID());
 //	printf("hashIndex=%i\n",hashIndex); // removeme
 	NetworkIDObject *nio=networkIdHash[hashIndex];
 	if (nio==0)

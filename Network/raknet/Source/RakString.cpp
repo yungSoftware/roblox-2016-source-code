@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "RakString.h"
 #include "RakAssert.h"
 #include "RakMemoryOverride.h"
@@ -17,8 +7,6 @@
 #include "LinuxStrings.h"
 #include "StringCompressor.h"
 #include "SimpleMutex.h"
-#include <stdlib.h>
-#include "Itoa.h"
 
 using namespace RakNet;
 
@@ -154,7 +142,6 @@ void RakString::Realloc(SharedString *sharedString, size_t bytes)
 {
 	if (bytes<=sharedString->bytesUsed)
 		return;
-
 	RakAssert(bytes>0);
 	size_t oldBytes = sharedString->bytesUsed;
 	size_t newBytes;
@@ -430,7 +417,6 @@ void RakString::Replace(unsigned index, unsigned count, unsigned char c)
 		index++;
 		countIndex++;
 	}
-
 }
 void RakString::SetChar( unsigned index, unsigned char c )
 {
@@ -510,33 +496,8 @@ void RakString::DeallocWideChar(WCHAR * w)
 {
 	RakNet::OP_DELETE_ARRAY(w,__FILE__,__LINE__);
 }
-void RakString::FromWideChar(const wchar_t *source)
-{
-	Clear();
-	int bufSize = wcslen(source)*4;
-	Allocate(bufSize);
-	WideCharToMultiByte ( CP_ACP,                // ANSI code page
-
-
-
-                          WC_COMPOSITECHECK,     // Check for accented characters
-
-                          source,         // Source Unicode string
-                          -1,                    // -1 means string is zero-terminated
-                          sharedString->c_str,          // Destination char string
-                          bufSize,  // Size of buffer
-                          NULL,                  // No default character
-                          NULL );                // Don't care about this flag
-
-
-}
-RakNet::RakString RakString::FromWideChar_S(const wchar_t *source)
-{
-	RakNet::RakString rs;
-	rs.FromWideChar(source);
-	return rs;
-}
 #endif
+
 size_t RakString::Find(const char *stringToFind,size_t pos)
 {
 	size_t len=GetLength();
@@ -652,22 +613,6 @@ void RakString::TerminateAtLastCharacter(char c)
 		}
 	}
 }
-void RakString::StartAfterLastCharacter(char c)
-{
-	int i, len=(int) GetLength();
-	for (i=len-1; i >= 0; i--)
-	{
-		if (sharedString->c_str[i]==c)
-		{
-			++i;
-			if (i < len)
-			{
-				*this = SubStr(i,GetLength()-i);
-			}
-			return;
-		}
-	}
-}
 void RakString::TerminateAtFirstCharacter(char c)
 {
 	unsigned int i, len=(unsigned int) GetLength();
@@ -675,42 +620,11 @@ void RakString::TerminateAtFirstCharacter(char c)
 	{
 		if (sharedString->c_str[i]==c)
 		{
-			if (i > 0)
-			{
-				Clone();
-				sharedString->c_str[i]=0;
-			}
-		}
-	}
-}
-void RakString::StartAfterFirstCharacter(char c)
-{
-	unsigned int i, len=(unsigned int) GetLength();
-	for (i=0; i < len; i++)
-	{
-		if (sharedString->c_str[i]==c)
-		{
-			++i;
-			if (i < len)
-			{
-				*this = SubStr(i,GetLength()-i);
-			}
+			Clone();
+			sharedString->c_str[i]=0;
 			return;
 		}
 	}
-}
-int RakString::GetCharacterCount(char c)
-{
-	int count=0;
-	unsigned int i, len=(unsigned int) GetLength();
-	for (i=0; i < len; i++)
-	{
-		if (sharedString->c_str[i]==c)
-		{
-			++count;
-		}
-	}
-	return count;
 }
 void RakString::RemoveCharacter(char c)
 {
@@ -726,20 +640,14 @@ void RakString::RemoveCharacter(char c)
 			Clone();
 	}
 	sharedString->c_str[writeIndex]=0;
-	if (writeIndex==0)
-		Clear();
 }
 int RakString::StrCmp(const RakString &rhs) const
 {
-	return strcmp(sharedString->c_str, rhs.C_String());
-}
-int RakString::StrNCmp(const RakString &rhs, size_t num) const
-{
-	return strncmp(sharedString->c_str, rhs.C_String(), num);
+	return strcmp(sharedString->c_str, rhs);
 }
 int RakString::StrICmp(const RakString &rhs) const
 {
-	return _stricmp(sharedString->c_str, rhs.C_String());
+	return _stricmp(sharedString->c_str, rhs);
 }
 void RakString::Printf(void)
 {
@@ -859,7 +767,7 @@ RakNet::RakString& RakString::URLEncode(void)
 	char *output=result.sharedString->c_str;
 	unsigned int outputIndex=0;
 	unsigned i;
-	unsigned char c;
+	char c;
 	for (i=0; i < strLen; i++)
 	{
 		c=sharedString->c_str[i];
@@ -870,11 +778,10 @@ RakNet::RakString& RakString::URLEncode(void)
 			(c>=123)
 			)
 		{
-			char buff[3];
-			Itoa(c, buff, 16);
+			RakNet::RakString tmp("%2X", c);
 			output[outputIndex++]='%';
-			output[outputIndex++]=buff[0];
-			output[outputIndex++]=buff[1];
+			output[outputIndex++]=tmp.sharedString->c_str[0];
+			output[outputIndex++]=tmp.sharedString->c_str[1];
 		}
 		else
 		{
@@ -905,24 +812,16 @@ RakNet::RakString& RakString::URLDecode(void)
 		{
 			hexDigits[0]=sharedString->c_str[++i];
 			hexDigits[1]=sharedString->c_str[++i];
-			
 			if (hexDigits[0]==' ')
 				hexValues[0]=0;
-			
-			if (hexDigits[0]>='A' && hexDigits[0]<='F')
+			else if (hexDigits[0]>='A')
 				hexValues[0]=hexDigits[0]-'A'+10;
-			if (hexDigits[0]>='a' && hexDigits[0]<='f')
-				hexValues[0]=hexDigits[0]-'a'+10;
 			else
 				hexValues[0]=hexDigits[0]-'0';
-
-			if (hexDigits[1]>='A' && hexDigits[1]<='F')
+			if (hexDigits[1]>='A')
 				hexValues[1]=hexDigits[1]-'A'+10;
-			if (hexDigits[1]>='a' && hexDigits[1]<='f')
-				hexValues[1]=hexDigits[1]-'a'+10;
 			else
 				hexValues[1]=hexDigits[1]-'0';
-
 			output[outputIndex++]=hexValues[0]*16+hexValues[1];
 		}
 		else
@@ -1024,143 +923,6 @@ RakNet::RakString& RakString::SQLEscape(void)
 		}
 	}
 	return *this;
-}
-RakNet::RakString RakString::FormatForPUTOrPost(const char* type, const char* uri, const char* contentType, const char* body, const char* extraHeaders)
-{
-	RakString out;
-	RakString host;
-	RakString remotePath;
-	RakNet::RakString header;
-	RakString uriRs;
-	uriRs = uri;
-	uriRs.SplitURI(header, host, remotePath);
-
-	if (host.IsEmpty() || remotePath.IsEmpty())
-		return out;
-
-//	RakString bodyEncoded = body;
-//	bodyEncoded.URLEncode();
-
-	if (extraHeaders!=0 && extraHeaders[0])
-	{
-		out.Set("%s %s HTTP/1.1\r\n"
-			"%s\r\n"
-			"Host: %s\r\n"
-			"Content-Type: %s\r\n"
-			"Content-Length: %u\r\n"
-			"\r\n"
-			"%s",
-			type,
-			remotePath.C_String(),
-			extraHeaders,
-			host.C_String(),
-			contentType,
-			//bodyEncoded.GetLength(),
-			//bodyEncoded.C_String());
-			strlen(body),
-			body);
-	}
-	else
-	{
-		out.Set("%s %s HTTP/1.1\r\n"
-			"Host: %s\r\n"
-			"Content-Type: %s\r\n"
-			"Content-Length: %u\r\n"
-			"\r\n"
-			"%s",
-			type,
-			remotePath.C_String(),
-			host.C_String(),
-			contentType,
-			//bodyEncoded.GetLength(),
-			//bodyEncoded.C_String());
-			strlen(body),
-			body);
-	}
-
-	return out;
-}
-RakString RakString::FormatForPOST(const char* uri, const char* contentType, const char* body, const char* extraHeaders)
-{
-	return FormatForPUTOrPost("POST", uri, contentType, body, extraHeaders);
-}
-RakString RakString::FormatForPUT(const char* uri, const char* contentType, const char* body, const char* extraHeaders)
-{
-	return FormatForPUTOrPost("PUT", uri, contentType, body, extraHeaders);
-}
-RakString RakString::FormatForGET(const char* uri, const char* extraHeaders)
-{
-	RakString out;
-	RakString host;
-	RakString remotePath;
-	RakNet::RakString header;
-	RakNet::RakString uriRs;
-	uriRs = uri;
-
-	uriRs.SplitURI(header, host, remotePath);
-	if (host.IsEmpty() || remotePath.IsEmpty())
-		return out;
-
-	if (extraHeaders && extraHeaders[0])
-	{
-		out.Set("GET %s HTTP/1.1\r\n"
-			"%s\r\n"
-			"Host: %s\r\n"
-			"\r\n",
-			remotePath.C_String(),
-			extraHeaders,
-			host.C_String());
-	}
-	else
-	{
-		out.Set("GET %s HTTP/1.1\r\n"
-			"Host: %s\r\n"
-			"\r\n",
-			remotePath.C_String(),
-			host.C_String());
-
-	}
-
-
-	return out;
-}
-RakString RakString::FormatForDELETE(const char* uri, const char* extraHeaders)
-{
-	RakString out;
-	RakString host;
-	RakString remotePath;
-	RakNet::RakString header;
-	RakNet::RakString uriRs;
-	uriRs = uri;
-
-	uriRs.SplitURI(header, host, remotePath);
-	if (host.IsEmpty() || remotePath.IsEmpty())
-		return out;
-
-	if (extraHeaders && extraHeaders[0])
-	{
-		out.Set("DELETE %s HTTP/1.1\r\n"
-			"%s\r\n"
-			"Content-Length: 0\r\n"
-			"Host: %s\r\n"
-			"Connection: close\r\n"
-			"\r\n",
-			remotePath.C_String(),
-			extraHeaders,
-			host.C_String());
-	}
-	else
-	{
-		out.Set("DELETE %s HTTP/1.1\r\n"
-			"Content-Length: 0\r\n"
-			"Host: %s\r\n"
-			"Connection: close\r\n"
-			"\r\n",
-			remotePath.C_String(),
-			host.C_String());
-	}
-
-	return out;
 }
 RakNet::RakString& RakString::MakeFilePath(void)
 {
@@ -1367,12 +1129,6 @@ void RakString::Assign(const char *str)
 }
 void RakString::Assign(const char *str, va_list ap)
 {
-	if (str==0 || str[0]==0)
-	{
-		sharedString=&emptyString;
-		return;
-	}
-
 	char stackBuff[512];
 	if (_vsnprintf(stackBuff, 512, str, ap)!=-1
 #ifndef _WIN32
@@ -1460,37 +1216,16 @@ unsigned long RakString::ToInteger(const RakString &rs)
 {
 	return RakString::ToInteger(rs.C_String());
 }
-int RakString::ReadIntFromSubstring(const char *str, size_t pos, size_t n)
-{
-	char tmp[32];
-	if (n >= 32)
-		return 0;
-	for (size_t i=0; i < n; i++)
-		tmp[i]=str[i+pos];
-	return atoi(tmp);
-}
 void RakString::AppendBytes(const char *bytes, unsigned int count)
 {
-	if (IsEmpty())
-	{
-		Allocate(count);
-		memcpy(sharedString->c_str, bytes, count+1);
-		sharedString->c_str[count]=0;
-	}
-	else
-	{
-		Clone();
-		unsigned int length=(unsigned int) GetLength();
-		Realloc(sharedString, count+length+1);
-		memcpy(sharedString->c_str+length, bytes, count);
-		sharedString->c_str[length+count]=0;
-	}
-
-	
+	Clone();
+	Realloc(sharedString, count);
+	unsigned int length=(unsigned int) GetLength();
+	memcpy(sharedString->c_str+length, bytes, count);
+	sharedString->c_str[length+count]=0;
 }
 void RakString::Clone(void)
 {
-	RakAssert(sharedString!=&emptyString);
 	if (sharedString==&emptyString)
 	{
 		return;

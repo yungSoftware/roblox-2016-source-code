@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_Router2==1 && _RAKNET_SUPPORT_UDPForwarder==1
 
@@ -19,13 +9,8 @@
 #include "DS_OrderedList.h"
 #include "SocketLayer.h"
 #include "FormatString.h"
-#include "SocketDefines.h"
 
 using namespace RakNet;
-
-#ifndef INVALID_SOCKET
-#define INVALID_SOCKET -1
-#endif
 
 /*
 Algorithm:
@@ -311,7 +296,7 @@ PluginReceiveResult Router2::OnReceive(Packet *packet)
 					sa=packet->systemAddress;
 					unsigned short port;
 					bs.Read(port);
-					sa.SetPortHostOrder(port);
+					sa.SetPort(port);
 					RakAssert(sa.GetPort()!=0);
 					SendOOBFromRakNetPort(ID_ROUTER_2_MINI_PUNCH_REPLY, &bsOut, sa);
 
@@ -919,36 +904,12 @@ void Router2::SendOOBFromRakNetPort(OutOfBandIdentifiers oob, BitStream *extraDa
 	sa.ToString(false, ipAddressString);
 	rakPeerInterface->SendOutOfBand((const char*) ipAddressString,sa.GetPort(),(const char*) oobBs.GetData(),oobBs.GetNumberOfBytesUsed());
 }
-void Router2::SendOOBFromSpecifiedSocket(OutOfBandIdentifiers oob, SystemAddress sa, __UDPSOCKET__ socket)
+void Router2::SendOOBFromSpecifiedSocket(OutOfBandIdentifiers oob, SystemAddress sa, SOCKET socket)
 {
 	RakNet::BitStream bs;
 	rakPeerInterface->WriteOutOfBandHeader(&bs);
 	bs.Write((unsigned char) oob);
-	// SocketLayer::SendTo_PC( socket, (const char*) bs.GetData(), bs.GetNumberOfBytesUsed(), sa, __FILE__, __LINE__  );
-
-
-	if (sa.address.addr4.sin_family==AF_INET)
-	{
-		sendto__( socket, (const char*) bs.GetData(), bs.GetNumberOfBytesUsed(), 0, ( const sockaddr* ) & sa.address.addr4, sizeof( sockaddr_in ) );
-	}
-	else
-	{
-		#if RAKNET_SUPPORT_IPV6==1
-		sendto__( socket, (const char*) bs.GetData(), bs.GetNumberOfBytesUsed(), 0, ( const sockaddr* ) & sa.address.addr6, sizeof( sockaddr_in6 ) );
-		#endif
-	}
-
-
-
-
-
-
-
-
-
-
-
-
+	SocketLayer::SendTo_PC( socket, (const char*) bs.GetData(), bs.GetNumberOfBytesUsed(), sa, __FILE__, __LINE__  );
 }
 void Router2::SendOOBMessages(Router2::MiniPunchRequest *mpr)
 {
@@ -1003,7 +964,7 @@ void Router2::OnRequestForwarding(Packet *packet)
 	}
 
 	unsigned short forwardingPort=0;
-	__UDPSOCKET__ forwardingSocket=INVALID_SOCKET;
+	SOCKET forwardingSocket=0;
 	SystemAddress endpointSystemAddress = rakPeerInterface->GetSystemAddressFromGuid(endpointGuid);
 	UDPForwarderResult result = udpForwarder->StartForwarding(
 		packet->systemAddress, endpointSystemAddress, 30000, 0, socketFamily,
@@ -1169,7 +1130,7 @@ void Router2::OnRerouted(Packet *packet)
 
 	// Return rerouted notice
 	SystemAddress intermediaryAddress=packet->systemAddress;
-	intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+	intermediaryAddress.SetPort(sourceToDestPort);
 	rakPeerInterface->ChangeSystemAddress(endpointGuid, intermediaryAddress);
 
     unsigned int forwardingIndex;
@@ -1186,7 +1147,7 @@ void Router2::OnRerouted(Packet *packet)
 		forwardedConnectionListMutex.Unlock();
 
     	ref_fc.intermediaryAddress      = packet->systemAddress;
-		ref_fc.intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+		ref_fc.intermediaryAddress.SetPort(sourceToDestPort);
 		ref_fc.intermediaryGuid         = packet->guid;
 
         rakPeerInterface->ChangeSystemAddress(endpointGuid, intermediaryAddress);
@@ -1203,7 +1164,7 @@ void Router2::OnRerouted(Packet *packet)
         ForwardedConnection fc;
         fc.endpointGuid=endpointGuid;
         fc.intermediaryAddress=packet->systemAddress;
-        fc.intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+        fc.intermediaryAddress.SetPort(sourceToDestPort);
         fc.intermediaryGuid=packet->guid;
         fc.weInitiatedForwarding=false;
         // add to forwarding list. This is only here to avoid reporting direct connections in Router2::ReturnFailureOnCannotForward
@@ -1241,13 +1202,13 @@ bool Router2::OnForwardingSuccess(Packet *packet)
 	{
 		// Return rerouted notice
 		SystemAddress intermediaryAddress=packet->systemAddress;
-		intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+		intermediaryAddress.SetPort(sourceToDestPort);
 		rakPeerInterface->ChangeSystemAddress(endpointGuid, intermediaryAddress);
 
         ////////////////////////////////////////////////////////////////////////////
         ForwardedConnection& ref_fc     = forwardedConnectionList[forwardingIndex];
     	ref_fc.intermediaryAddress      = packet->systemAddress;
-		ref_fc.intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+		ref_fc.intermediaryAddress.SetPort(sourceToDestPort);
 		ref_fc.intermediaryGuid         = packet->guid;
         ////////////////////////////////////////////////////////////////////////////
 
@@ -1275,7 +1236,7 @@ bool Router2::OnForwardingSuccess(Packet *packet)
 		connectionRequestsMutex.Unlock();
 		fc.endpointGuid=endpointGuid;
 		fc.intermediaryAddress=packet->systemAddress;
-		fc.intermediaryAddress.SetPortHostOrder(sourceToDestPort);
+		fc.intermediaryAddress.SetPort(sourceToDestPort);
 		fc.intermediaryGuid=packet->guid;
 		fc.weInitiatedForwarding=true;
 
@@ -1297,10 +1258,10 @@ int Router2::GetLargestPingAmongConnectedSystems(void) const
 {
 	int avePing;
 	int largestPing=-1;
-	unsigned int maxPeers = rakPeerInterface->GetMaximumNumberOfPeers();
+	unsigned short maxPeers = rakPeerInterface->GetMaximumNumberOfPeers();
 	if (maxPeers==0)
 		return 9999;
-	unsigned int index;
+	unsigned short index;
 	for (index=0; index < rakPeerInterface->GetMaximumNumberOfPeers(); index++)
 	{
 		RakNetGUID g = rakPeerInterface->GetGUIDFromIndex(index);

@@ -1,38 +1,25 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief Types used by RakNet, most of which involve user code.
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #ifndef __NETWORK_TYPES_H
 #define __NETWORK_TYPES_H
 
-
-
-
-
 #include "RakNetDefines.h"
 #include "NativeTypes.h"
 #include "RakNetTime.h"
 #include "Export.h"
+#include "SocketIncludes.h"
 #include "WindowsIncludes.h"
 #include "XBox360Includes.h"
-#include "SocketIncludes.h"
-
 
 // roblox
 #include <string>
 #include <boost/functional/hash.hpp>
-
 
 namespace RakNet {
 /// Forward declarations
@@ -52,8 +39,7 @@ enum StartupResult
 	SOCKET_FAILED_TEST_SEND,
 	PORT_CANNOT_BE_ZERO,
 	FAILED_TO_CREATE_NETWORK_THREAD,
-	COULD_NOT_GENERATE_GUID,
-	STARTUP_OTHER_FAILURE
+	STARTUP_OTHER_FAILURE,
 };
 
 
@@ -83,7 +69,7 @@ enum ConnectionState
 	/// No longer connected
 	IS_DISCONNECTED,
 	/// Was never connected, or else was disconnected long enough ago that the entry has been discarded
-	IS_NOT_CONNECTED
+	IS_NOT_CONNECTED,
 };
 
 /// Given a number of bits, return how many bytes are needed to represent that.
@@ -159,7 +145,7 @@ struct RAK_DLL_EXPORT SocketDescriptor
 	char hostAddress[32];
 
 	/// IP version: For IPV4, use AF_INET (default). For IPV6, use AF_INET6. To autoselect, use AF_UNSPEC.
-	/// IPV6 is the newer internet protocol. Instead of addresses such as natpunch.jenkinssoftware.com, you may have an address such as fe80::7c:31f7:fec4:27de%14.
+	/// IPV6 is the newer internet protocol. Instead of addresses such as 94.198.81.195, you may have an address such as fe80::7c:31f7:fec4:27de%14.
 	/// Encoding takes 16 bytes instead of 4, so IPV6 is less efficient for bandwidth.
 	/// On the positive side, NAT Punchthrough is not needed and should not be used with IPV6 because there are enough addresses that routers do not need to create address mappings.
 	/// RakPeer::Startup() will fail if this IP version is not supported.
@@ -175,12 +161,6 @@ struct RAK_DLL_EXPORT SocketDescriptor
 
 
 	unsigned short remotePortRakNetWasStartedOn_PS3_PSP2;
-
-	// Required for Google chrome
-	_PP_Instance_ chromeInstance;
-
-	// Set to true to use a blocking socket (default, do not change unless you have a reason to)
-	bool blockingSocket;
 
 	/// XBOX only: set IPPROTO_VDP if you want to use VDP. If enabled, this socket does not support broadcast to 255.255.255.255
 	unsigned int extraSocketOptions;
@@ -206,18 +186,14 @@ struct RAK_DLL_EXPORT SystemAddress
 
 
 
-
-
-
 	/// SystemAddress, with RAKNET_SUPPORT_IPV6 defined, holds both an sockaddr_in6 and a sockaddr_in
 	union// In6OrIn4
 	{
 #if RAKNET_SUPPORT_IPV6==1
-		struct sockaddr_storage sa_stor;
-		sockaddr_in6 addr6;
+		struct sockaddr_in6 addr6;
 #endif
 
-		sockaddr_in addr4;
+		struct sockaddr_in addr4;
 	} address;
 
 	/// This is not used internally, but holds a copy of the port held in the address union, so for debugging it's easier to check what port is being held
@@ -288,21 +264,18 @@ struct RAK_DLL_EXPORT SystemAddress
 	unsigned short GetPortNetworkOrder(void) const;
 
 	/// Sets the port. The port value should be in host order (this is what you normally use)
-	/// Renamed from SetPort because of winspool.h http://edn.embarcadero.com/article/21494
-	void SetPortHostOrder(unsigned short s);
+	void SetPort(unsigned short s);
 
 	/// \internal Sets the port. The port value should already be in network order.
 	void SetPortNetworkOrder(unsigned short s);
 
 	/// Old version, for crap platforms that don't support newer socket functions
-	bool SetBinaryAddress(const char *str, char portDelineator=':');
+	void SetBinaryAddress(const char *str, char portDelineator=':');
 	/// Old version, for crap platforms that don't support newer socket functions
 	void ToString_Old(bool writePort, char *dest, char portDelineator=':') const;
 
 	/// \internal sockaddr_in6 requires extra data beyond just the IP and port. Copy that extra data from an existing SystemAddress that already has it
 	void FixForIPVersion(const SystemAddress &boundAddressToSocket);
-
-	bool IsLANAddress(void);
 
 	SystemAddress& operator = ( const SystemAddress& input );
 	bool operator==( const SystemAddress& right ) const;

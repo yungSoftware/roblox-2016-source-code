@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_MessageFilter==1
 
@@ -279,7 +269,7 @@ void MessageFilter::OnInvalidMessage(FilterSet *filterSet, AddressOrGUID systemA
 			rakPeerInterface->CloseConnection(systemAddress, true, 0);
 #if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
 		else
-			tcpInterface->CloseConnection(systemAddress.systemAddress);
+			packetizedTCP->CloseConnection(systemAddress.systemAddress);
 #endif
 	}
 }
@@ -313,7 +303,7 @@ void MessageFilter::Update(void)
 					rakPeerInterface->CloseConnection(keyList[index], true, 0);
 #if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
 				else
-					tcpInterface->CloseConnection(keyList[index].systemAddress);
+					packetizedTCP->CloseConnection(keyList[index].systemAddress);
 #endif
 
 				systemList.Remove(keyList[index], _FILE_AND_LINE_);

@@ -1,20 +1,7 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "NativeTypes.h"
 #include "DS_List.h"
 #include "RakMemoryOverride.h"
 #include "BitStream.h"
-
-#ifndef __VARIABLE_LIST_DELTA_TRACKER
-#define __VARIABLE_LIST_DELTA_TRACKER
 
 namespace RakNet
 {
@@ -105,7 +92,7 @@ public:
 
 	/// Paired with a call to WriteVarToBitstream(), will read a variable if it had changed. Otherwise the values remains the same.
 	template <class VarType>
-	static bool ReadVarFromBitstream(VarType &varData, RakNet::BitStream *bitStream)
+	static bool ReadVarFromBitstream(const VarType &varData, RakNet::BitStream *bitStream)
 	{
 		bool wasWritten;
 		if (bitStream->Read(wasWritten)==false)
@@ -142,5 +129,3 @@ protected:
 
 
 }
-
-#endif

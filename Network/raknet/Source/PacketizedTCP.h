@@ -1,17 +1,9 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 /// \brief A simple TCP based server allowing sends and receives.  Can be connected by any TCP client, including telnet.
 ///
-
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
@@ -21,6 +13,7 @@
 
 #include "TCPInterface.h"
 #include "DS_ByteQueue.h"
+#include "PluginInterface2.h"
 #include "DS_Map.h"
 
 namespace RakNet
@@ -35,6 +28,14 @@ public:
 	PacketizedTCP();
 	virtual ~PacketizedTCP();
 
+	/// Starts the TCP server on the indicated port
+	/// \param[in] port Which port to listen on.
+	/// \param[in] maxIncomingConnections Max incoming connections we will accept
+	/// \param[in] maxConnections Max total connections, which should be >= maxIncomingConnections
+	/// \param[in] threadPriority Passed to the thread creation routine. Use THREAD_PRIORITY_NORMAL for Windows. For Linux based systems, you MUST pass something reasonable based on the thread priorities for your application.
+	/// \param[in] socketFamily IP version: For IPV4, use AF_INET (default). For IPV6, use AF_INET6. To autoselect, use AF_UNSPEC.
+	bool Start(unsigned short port, unsigned short maxIncomingConnections, int threadPriority=-99999, unsigned short socketFamily=AF_INET);
+
 	/// Stops the TCP server
 	void Stop(void);
 
@@ -42,7 +43,7 @@ public:
 	void Send( const char *data, unsigned length, const SystemAddress &systemAddress, bool broadcast );
 
 	// Sends a concatenated list of byte streams
-	bool SendList( const char **data, const unsigned int *lengths, const int numParameters, const SystemAddress &systemAddress, bool broadcast );
+	bool SendList( const char **data, const int *lengths, const int numParameters, const SystemAddress &systemAddress, bool broadcast );
 
 	/// Returns data received
 	Packet* Receive( void );
@@ -64,6 +65,10 @@ public:
 	/// Queued events of lost connections
 	SystemAddress HasLostConnection(void);
 
+	// Only currently tested with FileListTransfer!
+	void AttachPlugin( PluginInterface2 *plugin );
+	void DetachPlugin( PluginInterface2 *plugin );
+
 protected:
 	void ClearAllConnections(void);
 	void RemoveFromConnectionList(const SystemAddress &sa);
@@ -71,6 +76,8 @@ protected:
 	void PushNotificationsToQueues(void);
 	Packet *ReturnOutgoingPacket(void);
 
+	// Plugins
+	DataStructures::List<PluginInterface2*> messageHandlerList;
 	// A single TCP recieve may generate multiple split packets. They are stored in the waitingPackets list until Receive is called
 	DataStructures::Queue<Packet*> waitingPackets;
 	DataStructures::Map<SystemAddress, DataStructures::ByteQueue *> connections;

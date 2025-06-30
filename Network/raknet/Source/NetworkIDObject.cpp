@@ -1,15 +1,8 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 /// \file
 ///
+/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
+///
+/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #include "NetworkIDObject.h"
@@ -28,58 +21,36 @@ NetworkIDObject::NetworkIDObject()
 }
 NetworkIDObject::~NetworkIDObject()
 {
-	if (networkIDManager)
+	if (networkID!=UNASSIGNED_NETWORK_ID)
 		networkIDManager->StopTrackingNetworkIDObject(this);
 }
 void NetworkIDObject::SetNetworkIDManager( NetworkIDManager *manager)
 {
-	if (manager==networkIDManager)
-		return;
-
-	if (networkIDManager)
-		networkIDManager->StopTrackingNetworkIDObject(this);
-
 	networkIDManager=manager;
-	if (networkIDManager==0)
-	{
-		networkID = UNASSIGNED_NETWORK_ID;
-		return;
-	}
-	
-	if (networkID == UNASSIGNED_NETWORK_ID)
-	{
-		// Prior ID not set
-		networkID = networkIDManager->GetNewNetworkID();
-	}
-
-	networkIDManager->TrackNetworkIDObject(this);
 }
-NetworkIDManager * NetworkIDObject::GetNetworkIDManager( void ) const
+NetworkIDManager * NetworkIDObject::GetNetworkIDManager( void )
 {
 	return networkIDManager;
 }
 NetworkID NetworkIDObject::GetNetworkID( void )
 {
+	if (networkID==UNASSIGNED_NETWORK_ID)
+	{
+		RakAssert(networkIDManager);
+		networkID = networkIDManager->GetNewNetworkID();
+		networkIDManager->TrackNetworkIDObject(this);
+	}
 	return networkID;
 }
 void NetworkIDObject::SetNetworkID( NetworkID id )
 {
-	if (networkID==id)
+	if (id==networkID)
 		return;
 
-	if ( id == UNASSIGNED_NETWORK_ID )
-	{
-		SetNetworkIDManager(0);
-		return;
-	}
-
-	if ( networkIDManager )
+	if (networkID!=UNASSIGNED_NETWORK_ID)
 		networkIDManager->StopTrackingNetworkIDObject(this);
-
 	networkID = id;
-
-	if (networkIDManager)
-		networkIDManager->TrackNetworkIDObject(this);
+	networkIDManager->TrackNetworkIDObject(this);
 }
 void NetworkIDObject::SetParent( void *_parent )
 {

@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "RakNetDefines.h"
 
 #if USE_SLIDING_WINDOW_CONGESTION_CONTROL!=1
@@ -26,11 +16,11 @@
 namespace RakNet
 {
 
-#if CC_TIME_TYPE_BYTES==8
+
 typedef uint64_t CCTimeType;
-#else
-typedef uint32_t CCTimeType;
-#endif
+
+
+
 
 typedef uint24_t DatagramSequenceNumberType;
 typedef double BytesPerMicrosecond;
@@ -127,7 +117,7 @@ class CCRakNetUDT
 
 	/// Call when you get a NAK, with the sequence number of the lost message
 	/// Affects the congestion control
-	void OnResend(CCTimeType curTime, RakNet::TimeUS nextActionTime);
+	void OnResend(CCTimeType curTime);
 	void OnNAK(CCTimeType curTime, DatagramSequenceNumberType nakSequenceNumber);
 
 	/// Call this when an ACK arrives.
@@ -157,7 +147,7 @@ class CCRakNetUDT
 	/// If we have been continuously sending for the last RTO, and no ACK or NAK at all, SND*=2;
 	/// This is per message, which is different from UDT, but RakNet supports packetloss with continuing data where UDT is only RELIABLE_ORDERED
 	/// Minimum value is 100 milliseconds
-	CCTimeType GetRTOForRetransmission(unsigned char timesSent) const;
+	CCTimeType GetRTOForRetransmission(void) const;
 
 	/// Set the maximum amount of data that can be sent in one datagram
 	/// Default to MAXIMUM_MTU_SIZE-UDP_HEADER_SIZE

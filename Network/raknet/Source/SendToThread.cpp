@@ -1,13 +1,3 @@
-/*
- *  Copyright (c) 2014, Oculus VR, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant 
- *  of patent rights can be found in the PATENTS file in the same directory.
- *
- */
-
 #include "SendToThread.h"
 #ifdef USE_THREADED_SEND
 #include "RakThread.h"
@@ -32,7 +22,7 @@ SendToThread::SendToThreadBlock* SendToWorkerThread(SendToThread::SendToThreadBl
 	*returnOutput=false;
 //	RakNet::TimeUS *mostRecentTime=(RakNet::TimeUS *)input->data;
 //	*mostRecentTime=RakNet::GetTimeUS();
-	SocketLayer::SendTo(input->s, input->data, input->dataWriteOffset, input->systemAddress, _FILE_AND_LINE_);
+	SocketLayer::SendTo(input->s, input->data, input->dataWriteOffset, input->systemAddress, input->remotePortRakNetWasStartedOn_PS3, input->extraSocketOptions, _FILE_AND_LINE_);
 	SendToThread::objectQueue.Push(input);
 	return 0;
 }
