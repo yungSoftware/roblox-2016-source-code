@@ -40,7 +40,7 @@ std::string RBX::Network::versionB;
 std::string RBX::Network::securityKey;
 unsigned int RBX::initialProgramHash = 0;
 
-#if RAKNET_PROTOCOL_VERSION!=6
+#if RAKNET_PROTOCOL_VERSION!=5
 #error
 #endif
 
