@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_RPC4Plugin==1
 
@@ -8,6 +18,7 @@
 #include "RakSleep.h"
 #include "RakNetDefines.h"
 #include "DS_Queue.h"
+//#include "GetTime.h"
 
 using namespace RakNet;
 
@@ -49,7 +60,7 @@ RPC4GlobalRegistration::RPC4GlobalRegistration(const char* uniqueID, void ( *fun
 	}
 	globalRegistrationBuffer[globalRegistrationIndex].registerFunctionPointer=functionPointer;
 	globalRegistrationBuffer[globalRegistrationIndex].registerBlockingFunctionPointer=0;
-	RakAssert(callPriority!=0xFFFFFFFF);
+	RakAssert(callPriority!=(int) 0xFFFFFFFF);
 	globalRegistrationBuffer[globalRegistrationIndex].callPriority=callPriority;
 	globalRegistrationIndex++;
 }
@@ -252,7 +263,7 @@ void RPC4::CallLoopback( const char* uniqueID, RakNet::BitStream * bitStream )
 			p=AllocatePacketUnified(sizeof(MessageID)+sizeof(unsigned char)+(unsigned int) strlen(uniqueID)+1);
 #if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
 		else
-			p=packetizedTCP->AllocatePacket(sizeof(MessageID)+sizeof(unsigned char)+(unsigned int) strlen(uniqueID)+1);
+			p=tcpInterface->AllocatePacket(sizeof(MessageID)+sizeof(unsigned char)+(unsigned int) strlen(uniqueID)+1);
 #endif
 
 		if (rakPeerInterface)
@@ -288,7 +299,7 @@ void RPC4::CallLoopback( const char* uniqueID, RakNet::BitStream * bitStream )
 		p=AllocatePacketUnified(out.GetNumberOfBytesUsed());
 #if _RAKNET_SUPPORT_PacketizedTCP==1 && _RAKNET_SUPPORT_TCPInterface==1
 	else
-		p=packetizedTCP->AllocatePacket(out.GetNumberOfBytesUsed());
+		p=tcpInterface->AllocatePacket(out.GetNumberOfBytesUsed());
 #endif
 
 	if (rakPeerInterface)
@@ -392,7 +403,8 @@ bool RPC4::CallBlocking( const char* uniqueID, RakNet::BitStream * bitStream, Pa
 		}
 	}
 
-	returnData->Read(blockingReturnValue);
+	returnData->Write(blockingReturnValue);
+	returnData->ResetReadPointer();
 	return true;
 }
 void RPC4::Signal(const char *sharedIdentifier, RakNet::BitStream *bitStream, PacketPriority priority, PacketReliability reliability, char orderingChannel, const AddressOrGUID systemIdentifier, bool broadcast, bool invokeLocal)
@@ -411,14 +423,17 @@ void RPC4::Signal(const char *sharedIdentifier, RakNet::BitStream *bitStream, Pa
 
 	if (invokeLocal)
 	{
+		//TimeUS t1 = GetTimeUS();
+
 		DataStructures::HashIndex functionIndex;
 		functionIndex = localSlots.GetIndexOf(sharedIdentifier);
+		//TimeUS t2 = GetTimeUS();
 		if (functionIndex.IsInvalid())
 			return;
 		
 		Packet p;
 		p.guid=rakPeerInterface->GetMyGUID();
-		p.systemAddress=rakPeerInterface->GetMyBoundAddress(0);
+		p.systemAddress=rakPeerInterface->GetInternalID(UNASSIGNED_SYSTEM_ADDRESS);
 		p.wasGeneratedLocally=true;
 		RakNet::BitStream *bsptr, bstemp;
 		if (bitStream)
@@ -434,7 +449,13 @@ void RPC4::Signal(const char *sharedIdentifier, RakNet::BitStream *bitStream, Pa
 			p.bitSize=0;
 			bsptr=&bstemp;
 		}
+
+		//TimeUS t3 = GetTimeUS();
 		InvokeSignal(functionIndex, bsptr, &p);
+		//TimeUS t4 = GetTimeUS();
+		//printf("b1: %I64d\n", t2-t1);
+		//printf("b2: %I64d\n", t3-t2);
+		//printf("b3: %I64d\n", t4-t3);
 	}
 }
 void RPC4::InvokeSignal(DataStructures::HashIndex functionIndex, RakNet::BitStream *serializedParameters, Packet *packet)
@@ -442,13 +463,21 @@ void RPC4::InvokeSignal(DataStructures::HashIndex functionIndex, RakNet::BitStre
 	if (functionIndex.IsInvalid())
 		return;
 
+	//TimeUS t1 = GetTimeUS();
+	//TimeUS t2=0;
+	//TimeUS t3=0;
+
 	interruptSignal=false;
 	LocalSlot *localSlot = localSlots.ItemAtIndex(functionIndex);
 	unsigned int i;
 	i=0;
 	while (i < localSlot->slotObjects.Size())
 	{
+		//t2 = GetTimeUS();
+
 		localSlot->slotObjects[i].functionPointer(serializedParameters, packet);
+
+		//t3 = GetTimeUS();
 
 		// Not threadsafe
 		if (interruptSignal==true)
@@ -458,6 +487,12 @@ void RPC4::InvokeSignal(DataStructures::HashIndex functionIndex, RakNet::BitStre
 
 		i++;
 	}
+
+	//TimeUS t4 = GetTimeUS();
+
+	//printf("b1: %I64d\n", t2-t1);
+	//printf("b2: %I64d\n", t3-t2);
+	//printf("b3: %I64d\n", t4-t3);
 }
 void RPC4::InterruptSignal(void)
 {
@@ -555,7 +590,7 @@ PluginReceiveResult RPC4::OnReceive(Packet *packet)
 		{
 			RakAssert(packet->data[1]==ID_RPC4_RETURN);
 			blockingReturnValue.Reset();
-			blockingReturnValue.Read(bsIn);
+			blockingReturnValue.Write(bsIn);
 			gotBlockingReturnValue=true;
 		}
 		

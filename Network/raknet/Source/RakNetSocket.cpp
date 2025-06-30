@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "RakNetSocket.h"
 #include "SocketIncludes.h"
 #include "SocketDefines.h"
@@ -7,24 +17,25 @@ using namespace RakNet;
 RakNetSocket::RakNetSocket() {
 	s = (unsigned int)-1;
 #if defined (_WIN32) && defined(USE_WAIT_FOR_MULTIPLE_EVENTS)
-	recvEvent=INVALID_HANDLE_VALUE;
+	recvEvent = INVALID_HANDLE_VALUE;
 #endif
 }
-RakNetSocket::~RakNetSocket() 
+RakNetSocket::~RakNetSocket()
 {
 	if ((SOCKET)s != (SOCKET)-1)
 		closesocket__(s);
 
 #if defined (_WIN32) && defined(USE_WAIT_FOR_MULTIPLE_EVENTS)
-	if (recvEvent!=INVALID_HANDLE_VALUE)
+	if (recvEvent != INVALID_HANDLE_VALUE)
 	{
-		CloseHandle( recvEvent );
+		CloseHandle(recvEvent);
 		recvEvent = INVALID_HANDLE_VALUE;
 	}
 #endif
 
-    // BEGIN ROBLOX CHANGES
-    // If this fixes an issue, then there may be a multiple-deletion bug.
-    s = static_cast<SOCKET>(-1);
-    // END ROBLOX CHANGES
+	// BEGIN ROBLOX CHANGES
+	// If this fixes an issue, then there may be a multiple-deletion bug.
+	s = static_cast<SOCKET>(-1);
+	// END ROBLOX CHANGES
 }
+

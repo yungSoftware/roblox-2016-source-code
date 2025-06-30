@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "CCRakNetUDT.h"
 
 #if USE_SLIDING_WINDOW_CONGESTION_CONTROL!=1
@@ -358,7 +368,7 @@ CCTimeType CCRakNetUDT::GetSenderRTOForACK(void) const
 	return (CCTimeType)(RTT + RTTVarMultiple * RTTVar + SYN);
 }
 // ----------------------------------------------------------------------------------------------------------------------------
-CCTimeType CCRakNetUDT::GetRTOForRetransmission(void) const
+CCTimeType CCRakNetUDT::GetRTOForRetransmission(unsigned char timesSent) const
 {
 #if CC_TIME_TYPE_BYTES==4
 	const CCTimeType maxThreshold=10000;
@@ -382,7 +392,7 @@ CCTimeType CCRakNetUDT::GetRTOForRetransmission(void) const
 	return ret;
 }
 // ----------------------------------------------------------------------------------------------------------------------------
-void CCRakNetUDT::OnResend(CCTimeType curTime)
+void CCRakNetUDT::OnResend(CCTimeType curTime, RakNet::TimeUS nextActionTime)
 {
 	(void) curTime;
 
@@ -720,7 +730,7 @@ void CCRakNetUDT::PrintLowBandwidthWarning(void)
 	printf("Pipe from packet pair = %f megabytes per second\n", B);
 	printf("RTT=%f milliseconds\n", RTT/1000.0);
 	printf("RTT Variance=%f milliseconds\n", RTTVar/1000.0);
-	printf("Retransmission=%i milliseconds\n", GetRTOForRetransmission()/1000);
+	printf("Retransmission=%i milliseconds\n", GetRTOForRetransmission(1)/1000);
 	printf("Packet arrival rate on the remote system=%f megabytes per second\n", AS);
 	printf("Packet arrival rate on our system=%f megabytes per second\n", ReceiverCalculateDataArrivalRate());
 	printf("isInSlowStart=%i\n", isInSlowStart);

@@ -63,6 +63,7 @@ public:
 	static Aligned ii;
 };
 
+#if 0
 // Use STLAlignedAllocator in place of the standard STL allocator
 // to make use of the Aligned in STL types.
 template<typename T>
@@ -145,6 +146,7 @@ public:
 		return false;
 	}
 };
+#endif
 
 
 // Large-size aligned heap allocator
@@ -158,6 +160,7 @@ public:
     static void Release(void *ptr);
 };
 
+#if 0
 // Use STLAlignedAllocator in place of the standard STL allocator
 // to make use of the Aligned in STL types.
 template<typename T>
@@ -240,6 +243,7 @@ public:
 		return false;
 	}
 };
+#endif
 
 
 u32 GetCacheLineBytes();

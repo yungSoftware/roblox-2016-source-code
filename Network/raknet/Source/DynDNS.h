@@ -1,21 +1,31 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file DynDNS.h
 /// \brief Helper to class to update DynDNS
 /// This can be used to determine what permissions are should be allowed to the other system
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_DynDNS==1 && _RAKNET_SUPPORT_TCPInterface==1
 
-class TCPInterface;
-
 #ifndef __DYN_DNS_H
 #define __DYN_DNS_H
 
+#include "RakString.h"
+
 namespace RakNet
 {
+
+class TCPInterface;
 
 enum DynDnsResultCode
 {
@@ -45,7 +55,7 @@ enum DynDnsResultCode
 	RC_NOT_FQDN, // ???
 	RC_NUM_HOST, // ???
 	RC_911, // ???
-	RC_DYNDNS_TIMEOUT, // DynDNS did not respond
+	RC_DYNDNS_TIMEOUT // DynDNS did not respond
 };
 
 // Can only process one at a time with the current implementation
@@ -57,7 +67,7 @@ public:
 
 	// Pass 0 for newIPAddress to autodetect whatever you are uploading from
 	// usernameAndPassword should be in the format username:password
-	void UpdateHostIP(const char *dnsHost, const char *newIPAddress, const char *usernameAndPassword );
+	void UpdateHostIPAsynch(const char *dnsHost, const char *newIPAddress, const char *usernameAndPassword );
 	void Update(void);
 
 	// Output
@@ -78,7 +88,7 @@ protected:
 		CP_WAITING_FOR_CHECKIP_RESPONSE,
 		CP_CONNECTING_TO_DYNDNS,
 		CP_WAITING_FOR_DYNDNS_RESPONSE,
-		CP_IDLE,
+		CP_IDLE
 	};
 
 	TCPInterface *tcp;

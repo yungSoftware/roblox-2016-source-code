@@ -1,10 +1,19 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file TeamBalancer.h
 /// \brief Set and network team selection (supports peer to peer or client/server)
 /// \details Automatically handles transmission and resolution of team selection, including team switching and balancing
+/// \deprecated Use TeamManager intead
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_TeamBalancer==1
@@ -26,9 +35,11 @@ class RakPeerInterface;
 /// \defgroup TEAM_BALANCER_GROUP TeamBalancer
 /// \brief Set and network team selection (supports peer to peer or client/server)
 /// \details Automatically handles transmission and resolution of team selection, including team switching and balancing
+/// \deprecated Use TeamManager intead
 /// \ingroup PLUGINS_GROUP
 
 /// 0...254 for your team number identifiers. 255 is reserved as undefined.
+/// \deprecated Use TeamManager intead
 /// \ingroup TEAM_BALANCER_GROUP
 typedef unsigned char TeamId;
 
@@ -37,6 +48,7 @@ typedef unsigned char TeamId;
 /// \brief Set and network team selection (supports peer to peer or client/server)
 /// \details Automatically handles transmission and resolution of team selection, including team switching and balancing.<BR>
 /// Usage: TODO
+/// \deprecated Use TeamManager intead
 /// \ingroup TEAM_BALANCER_GROUP
 class RAK_DLL_EXPORT TeamBalancer : public PluginInterface2
 {
@@ -90,34 +102,34 @@ public:
 	/// In the case of ID_TEAM_BALANCER_REQUESTED_TEAM_CHANGE_PENDING the request will stay in memory. ID_TEAM_BALANCER_SET_TEAM will be returned when someone on the desired team leaves or wants to switch to your team.
 	/// If SetLockTeams(true) is called while you have a request pending, you will get ID_TEAM_BALANCER_TEAMS_LOCKED
 	/// \pre Call SetTeamSizeLimits() on the host and call SetHostGuid() on this system. If the host is not running the TeamBalancer plugin or did not have SetTeamSizeLimits() called, then you will not get any response.
-	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSINGED_NETWORK_ID if there is only one player.
+	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSIGNED_NETWORK_ID if there is only one player.
 	/// \param[in] desiredTeam An index representing your team number. The index should range from 0 to one less than the size of the list passed to SetTeamSizeLimits() on the host. You can also pass UNASSIGNED_TEAM_ID to not be on any team (such as if spectating)
 	void RequestSpecificTeam(NetworkID memberId, TeamId desiredTeam);
 
 	/// If ID_TEAM_BALANCER_REQUESTED_TEAM_CHANGE_PENDING is returned after a call to RequestSpecificTeam(), the request will stay in memory on the host and execute when available, or until the teams become locked.
 	/// You can cancel the request by calling CancelRequestSpecificTeam(), in which case you will stay on your existing team.
 	/// \note Due to latency, even after calling CancelRequestSpecificTeam() you may still get ID_TEAM_BALANCER_SET_TEAM if the packet was already in transmission.
-	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSINGED_NETWORK_ID if there is only one player.
+	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSIGNED_NETWORK_ID if there is only one player.
 	void CancelRequestSpecificTeam(NetworkID memberId);
 
 	/// Allow host to pick your team, based on whatever algorithm it uses for default team assignments.
 	/// This only has an effect if you are not currently on a team (GetMyTeam() returns UNASSIGNED_TEAM_ID)
 	/// \pre Call SetTeamSizeLimits() on the host and call SetHostGuid() on this system
-	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSINGED_NETWORK_ID if there is only one player.
+	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSIGNED_NETWORK_ID if there is only one player.
 	void RequestAnyTeam(NetworkID memberId);
 
 	/// Returns your team.
 	/// As your team changes, you are notified through the ID_TEAM_BALANCER_TEAM_ASSIGNED packet in byte 1.
 	/// Returns UNASSIGNED_TEAM_ID initially
 	/// \pre For this to return anything other than UNASSIGNED_TEAM_ID, connect to a properly initialized host and RequestSpecificTeam() or RequestAnyTeam() first
-	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSINGED_NETWORK_ID if there is only one player.
+	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSIGNED_NETWORK_ID if there is only one player.
 	/// \return UNASSIGNED_TEAM_ID for no team. Otherwise, the index should range from 0 to one less than the size of the list passed to SetTeamSizeLimits() on the host
 	TeamId GetMyTeam(NetworkID memberId) const;
 
 	/// If you called RequestSpecificTeam() or RequestAnyTeam() with a value for \a memberId that
 	/// Has since been deleted, call DeleteMember(). to notify this plugin of that event.
 	/// Not necessary with only one team member per system
-	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSINGED_NETWORK_ID if there is only one player.
+	/// \param[in] memberId If there is more than one player per computer, this number identifies that player. Use any consistent value, such as UNASSIGNED_NETWORK_ID if there is only one player.
 	void DeleteMember(NetworkID memberId);
 
 	struct TeamMember

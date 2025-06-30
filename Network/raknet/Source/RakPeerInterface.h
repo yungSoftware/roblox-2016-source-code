@@ -1,9 +1,17 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file
 /// \brief An interface for RakPeer.  Simply contains all user functions as pure virtuals.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 
 #ifndef __RAK_PEER_INTERFACE_H
@@ -15,7 +23,7 @@
 #include "Export.h"
 #include "DS_List.h"
 #include "RakNetSmartPtr.h"
-#include "RakNetSocket.h"
+#include "RakNetSocket2.h"
 
 namespace RakNet
 {
@@ -53,7 +61,7 @@ public:
 	/// \param[in] socketDescriptorCount The size of the \a socketDescriptors array.  Pass 1 if you are not sure what to pass.
 	/// \param[in] threadPriority Passed to the thread creation routine. Use THREAD_PRIORITY_NORMAL for Windows. For Linux based systems, you MUST pass something reasonable based on the thread priorities for your application.
 	/// \return RAKNET_STARTED on success, otherwise appropriate failure enumeration.
-	virtual StartupResult Startup( unsigned short maxConnections, SocketDescriptor *socketDescriptors, unsigned socketDescriptorCount, int threadPriority=-99999 )=0;
+	virtual StartupResult Startup( unsigned int maxConnections, SocketDescriptor *socketDescriptors, unsigned socketDescriptorCount, int threadPriority=-99999 )=0;
 
 	/// If you accept connections, you must call this or else security will not be enabled for incoming connections.
 	/// This feature requires more round trips, bandwidth, and CPU time for the connection handshake
@@ -93,7 +101,7 @@ public:
 
 	/// Returns the value passed to SetMaximumIncomingConnections()
 	/// \return the maximum number of incoming connections, which is always <= maxConnections
-	virtual unsigned short GetMaximumIncomingConnections( void ) const=0;
+	virtual unsigned int GetMaximumIncomingConnections( void ) const=0;
 
 	/// Returns how many open connections there are at this time
 	/// \return the number of open connections
@@ -115,7 +123,7 @@ public:
 	/// Calling both acts as a true peer. This is a non-blocking connection.
 	/// You know the connection is successful when GetConnectionState() returns IS_CONNECTED or Receive() gets a message with the type identifier ID_CONNECTION_REQUEST_ACCEPTED.
 	/// If the connection is not successful, such as a rejected connection or no response then neither of these things will happen.
-	/// \pre Requires that you first call Initialize
+	/// \pre Requires that you first call Startup()
 	/// \param[in] host Either a dotted IP address or a domain name
 	/// \param[in] remotePort Which port to connect to on the remote machine.
 	/// \param[in] passwordData A data block that must match the data block on the server passed to SetIncomingPassword.  This can be a string or can be a stream of data.  Use 0 for no password.
@@ -141,7 +149,7 @@ public:
 	/// \param[in] timeoutTime How long to keep the connection alive before dropping it on unable to send a reliable message. 0 to use the default from SetTimeoutTime(UNASSIGNED_SYSTEM_ADDRESS);
 	/// \return CONNECTION_ATTEMPT_STARTED on successful initiation. Otherwise, an appropriate enumeration indicating failure.
 	/// \note CONNECTION_ATTEMPT_STARTED does not mean you are already connected!
-	virtual ConnectionAttemptResult ConnectWithSocket(const char* host, unsigned short remotePort, const char *passwordData, int passwordDataLength, RakNetSmartPtr<RakNetSocket> socket, PublicKey *publicKey=0, unsigned sendConnectionAttemptCount=12, unsigned timeBetweenSendConnectionAttemptsMS=500, RakNet::TimeMS timeoutTime=0)=0;
+	virtual ConnectionAttemptResult ConnectWithSocket(const char* host, unsigned short remotePort, const char *passwordData, int passwordDataLength, RakNetSocket2* socket, PublicKey *publicKey=0, unsigned sendConnectionAttemptCount=12, unsigned timeBetweenSendConnectionAttemptsMS=500, RakNet::TimeMS timeoutTime=0)=0;
 
 	/// \brief Connect to the specified network ID (Platform specific console function)
 	/// \details Does built-in NAt traversal
@@ -176,7 +184,7 @@ public:
 	virtual uint32_t IncrementNextSendReceipt(void)=0;
 
 	/// Sends a block of data to the specified system that you are connected to.
-	/// This function only works while the connected
+	/// This function only works while connected
 	/// The first byte should be a message identifier starting at ID_USER_PACKET_ENUM
 	/// \param[in] data The block of data to send
 	/// \param[in] length The size in bytes of the data to send
@@ -217,7 +225,7 @@ public:
 	/// bs.WriteAlignedBytes(block3, blockLength3);
 	/// Send(&bs, ...)
 	///
-	/// This function only works while the connected
+	/// This function only works while connected
 	/// \param[in] data An array of pointers to blocks of data
 	/// \param[in] lengths An array of integers indicating the length of each block of data
 	/// \param[in] numParameters Length of the arrays data and lengths
@@ -243,7 +251,7 @@ public:
 	virtual void DeallocatePacket( Packet *packet )=0;
 
 	/// Return the total number of connections we are allowed
-	virtual unsigned short GetMaximumNumberOfPeers( void ) const=0;
+	virtual unsigned int GetMaximumNumberOfPeers( void ) const=0;
 
 	// -------------------------------------------------------------------------------------------- Connection Management Functions--------------------------------------------------------------------------------------------
 	/// Close the connection to another host (if we initiated the connection it will disconnect, if they did it will kick them out).
@@ -273,12 +281,12 @@ public:
 	/// Given an index, will return a SystemAddress.
 	/// \param[in] index Index should range between 0 and the maximum number of players allowed - 1.
 	/// \return The SystemAddress
-	virtual SystemAddress GetSystemAddressFromIndex( int index )=0;
+	virtual SystemAddress GetSystemAddressFromIndex( unsigned int index )=0;
 
 	/// Same as GetSystemAddressFromIndex but returns RakNetGUID
 	/// \param[in] index Index should range between 0 and the maximum number of players allowed - 1.
 	/// \return The RakNetGUID
-	virtual RakNetGUID GetGUIDFromIndex( int index )=0;
+	virtual RakNetGUID GetGUIDFromIndex( unsigned int index )=0;
 
 	/// Same as calling GetSystemAddressFromIndex and GetGUIDFromIndex for all systems, but more efficient
 	/// Indices match each other, so \a addresses[0] and \a guids[0] refer to the same system
@@ -344,6 +352,12 @@ public:
 	/// \param[in] doPing True to start occasional pings.  False to stop them.
 	virtual void SetOccasionalPing( bool doPing )=0;
 
+	/// Return the clock difference between your system and the specified system
+	/// Subtract GetClockDifferential() from a time returned by the remote system to get that time relative to your own system
+	/// Returns 0 if the system is unknown
+	/// \param[in] systemIdentifier Which system we are referring to
+	virtual RakNet::Time GetClockDifferential( const AddressOrGUID systemIdentifier )=0;
+
 	// --------------------------------------------------------------------------------------------Static Data Functions - Functions dealing with API defined synchronized memory--------------------------------------------------------------------------------------------
 	/// Sets the data to send along with a LAN server discovery or offline ping reply.
 	/// \a length should be under 400 bytes, as a security measure against flood attacks
@@ -365,6 +379,11 @@ public:
 	/// \param[in] index When you have multiple internal IDs, which index to return? Currently limited to MAXIMUM_NUMBER_OF_INTERNAL_IDS (so the maximum value of this variable is MAXIMUM_NUMBER_OF_INTERNAL_IDS-1)
 	/// \return the identifier of your system internally, which may not be how other systems see if you if you are behind a NAT or proxy
 	virtual SystemAddress GetInternalID( const SystemAddress systemAddress=UNASSIGNED_SYSTEM_ADDRESS, const int index=0 ) const=0;
+
+	/// \brief Sets your internal IP address, for platforms that do not support reading it, or to override a value
+	/// \param[in] systemAddress. The address to set. Use SystemAddress::FromString() if you want to use a dotted string
+	/// \param[in] index When you have multiple internal IDs, which index to set?
+	virtual void SetInternalID(SystemAddress systemAddress, int index=0)=0;
 
 	/// Return the unique address identifier that represents you on the the network and is based on your externalIP / port
 	/// (the IP / port the specified player uses to communicate with you)
@@ -500,17 +519,17 @@ public:
 	virtual Packet* AllocatePacket(unsigned dataSize)=0;
 
 	/// Get the socket used with a particular active connection
-	/// The smart pointer reference counts the RakNetSocket object, so the socket will remain active as long as the smart pointer does, even if RakNet were to shutdown or close the connection.
+	/// The smart pointer reference counts the RakNetSocket2 object, so the socket will remain active as long as the smart pointer does, even if RakNet were to shutdown or close the connection.
 	/// \note This sends a query to the thread and blocks on the return value for up to one second. In practice it should only take a millisecond or so.
 	/// \param[in] target Which system
 	/// \return A smart pointer object containing the socket information about the socket. Be sure to check IsNull() which is returned if the update thread is unresponsive, shutting down, or if this system is not connected
-	virtual RakNetSmartPtr<RakNetSocket> GetSocket( const SystemAddress target )=0;
+	virtual RakNetSocket2* GetSocket( const SystemAddress target )=0;
 
 	/// Get all sockets in use
 	/// \note This sends a query to the thread and blocks on the return value for up to one second. In practice it should only take a millisecond or so.
-	/// \param[out] sockets List of RakNetSocket structures in use. Sockets will not be closed until \a sockets goes out of scope
-	virtual void GetSockets( DataStructures::List<RakNetSmartPtr<RakNetSocket> > &sockets )=0;
-	virtual void ReleaseSockets( DataStructures::List<RakNetSmartPtr<RakNetSocket> > &sockets )=0;
+	/// \param[out] sockets List of RakNetSocket2 structures in use. Sockets will not be closed until \a sockets goes out of scope
+	virtual void GetSockets( DataStructures::List<RakNetSocket2* > &sockets )=0;
+	virtual void ReleaseSockets( DataStructures::List<RakNetSocket2* > &sockets )=0;
 
 	virtual void WriteOutOfBandHeader(RakNet::BitStream *bitStream)=0;
 
@@ -518,6 +537,15 @@ public:
 	/// \param[in] _userUpdateThreadPtr C callback function
 	/// \param[in] _userUpdateThreadData Passed to C callback function
 	virtual void SetUserUpdateThread(void (*_userUpdateThreadPtr)(RakPeerInterface *, void *), void *_userUpdateThreadData)=0;
+
+	/// Set a C callback to be called whenever a datagram arrives
+	/// Return true from the callback to have RakPeer handle the datagram. Return false and RakPeer will ignore the datagram.
+	/// This can be used to filter incoming datagrams by system, or to share a recvfrom socket with RakPeer
+	/// RNS2RecvStruct will only remain valid for the duration of the call
+	/// If the incoming datagram is not from your game at all, it is a RakNet packet.
+	/// If the incoming datagram has an IP address that matches a known address from your game, then check the first byte of data.
+	/// For RakNet connected systems, the first bit is always 1. So for your own game packets, make sure the first bit is always 0.
+	virtual void SetIncomingDatagramEventHandler( bool (*_incomingDatagramEventHandler)(RNS2RecvStruct *) )=0;
 
 	// --------------------------------------------------------------------------------------------Network Simulator Functions--------------------------------------------------------------------------------------------
 	/// Adds simulated ping and packet loss to the outgoing data flow.
@@ -549,13 +577,31 @@ public:
 	/// \return 0 on can't find the specified system.  A pointer to a set of data otherwise.
 	/// \sa RakNetStatistics.h
 	virtual RakNetStatistics * GetStatistics( const SystemAddress systemAddress, RakNetStatistics *rns=0 )=0;
-	virtual bool GetStatistics( const int index, RakNetStatistics *rns )=0;
+	/// \brief Returns the network statistics of the system at the given index in the remoteSystemList.
+	///	\return True if the index is less than the maximum number of peers allowed and the system is active. False otherwise.
+	virtual bool GetStatistics( const unsigned int index, RakNetStatistics *rns )=0;
+	/// \brief Returns the list of systems, and statistics for each of those systems
+	/// Each system has one entry in each of the lists, in the same order
+	/// \param[out] addresses SystemAddress for each connected system
+	/// \param[out] guids RakNetGUID for each connected system
+	/// \param[out] statistics Calculated RakNetStatistics for each connected system
+	virtual void GetStatisticsList(DataStructures::List<SystemAddress> &addresses, DataStructures::List<RakNetGUID> &guids, DataStructures::List<RakNetStatistics> &statistics)=0;
 
 	/// \Returns how many messages are waiting when you call Receive()
 	virtual unsigned int GetReceiveBufferSize(void)=0;
 
 	// --------------------------------------------------------------------------------------------EVERYTHING AFTER THIS COMMENT IS FOR INTERNAL USE ONLY--------------------------------------------------------------------------------------------
 	
+	/// \internal
+	// Call manually if RAKPEER_USER_THREADED==1 at least every 30 milliseconds.
+	// updateBitStream should be:
+	// 	BitStream updateBitStream( MAXIMUM_MTU_SIZE
+	// #if LIBCAT_SECURITY==1
+	//	+ cat::AuthenticatedEncryption::OVERHEAD_BYTES
+	// #endif
+	// );
+	virtual bool RunUpdateCycle( BitStream &updateBitStream )=0;
+
 	/// \internal
 	virtual bool SendOutOfBand(const char *host, unsigned short remotePort, const char *data, BitSize_t dataLength, unsigned connectionSocketIndex=0 )=0;
 

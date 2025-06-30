@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_CloudClient==1 || _RAKNET_SUPPORT_CloudServer==1
 
@@ -119,7 +129,6 @@ struct RAK_DLL_EXPORT CloudQueryResult
 	/// For example, if CloudQuery::keys had 4 keys, returning 3 rows, 0, rows, 5 rows, and 12 rows then
 	/// resultKeyIndices would be 0, 3, 3, 8
 	DataStructures::List<uint32_t> resultKeyIndices;
-
 
 	/// Whatever was passed to CloudClient::Get() as CloudQuery::subscribeToResults
 	bool subscribeToResults;

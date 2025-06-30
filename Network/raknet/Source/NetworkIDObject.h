@@ -1,9 +1,16 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file
 /// \brief A class you can derive from to make it easier to represent every networked object with an integer.  This way you can refer to objects over the network.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
 
 
 #if !defined(__NETWORK_ID_GENERATOR)
@@ -41,7 +48,7 @@ public:
 	virtual void SetNetworkIDManager( NetworkIDManager *manager);
 
 	/// Returns what was passed to SetNetworkIDManager
-	virtual NetworkIDManager * GetNetworkIDManager( void );
+	virtual NetworkIDManager * GetNetworkIDManager( void ) const;
 	
 	/// Returns the NetworkID that you can use to refer to this object over the network.
 	/// \pre You must first call SetNetworkIDManager before using this function
@@ -63,9 +70,10 @@ public:
 	virtual void* GetParent( void ) const;
 	
 protected:
+
 	/// The  network ID of this object
-	NetworkID networkID;
-	
+	// networkID is assigned when networkIDManager is set.
+	NetworkID networkID;	
 	NetworkIDManager *networkIDManager;
 
 	/// The parent set by SetParent()

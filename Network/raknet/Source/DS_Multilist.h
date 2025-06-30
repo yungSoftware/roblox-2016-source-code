@@ -1,11 +1,17 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file DS_Multilist.h
 /// \internal
 /// \brief ADT that can represent an unordered list, ordered list, stack, or queue with a common interface
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
-
 
 #ifndef __MULTILIST_H
 #define __MULTILIST_H 
@@ -63,9 +69,9 @@ namespace DataStructures
 	public:
 		MLKeyRef(const templateType& input) : val(input) {}
 		const templateType &Get(void) const {return val;}
-		bool operator<( const templateType &right ) const {return val < right;}
-		bool operator>( const templateType &right ) const {return val > right;}
-		bool operator==( const templateType &right ) const {return val == right;}
+		bool operator<( const templateType &right ) {return val < right;}
+		bool operator>( const templateType &right ) {return val > right;}
+		bool operator==( const templateType &right ) {return val == right;}
 	protected:
 		const templateType &val;
 	};
@@ -1010,8 +1016,6 @@ namespace DataStructures
 			case ML_ORDERED_LIST:
 				Sort(false);
 				break;
-            default:
-                break;
 			}
 			break;
 		case ML_STACK:
@@ -1030,8 +1034,6 @@ namespace DataStructures
 			case ML_ORDERED_LIST:
 				Sort(false);
 				break;
-            default:
-                break;
 			}
 			break;
 		case ML_QUEUE:
@@ -1058,8 +1060,6 @@ namespace DataStructures
 			case ML_QUEUE:
 				// No change
 				break;
-            default:
-                break;
 			}
 			break;
 		case ML_ORDERED_LIST:
@@ -1083,8 +1083,6 @@ namespace DataStructures
 			case ML_ORDERED_LIST:
 				// No change
 				break;
-            default:
-                break;
 			}
 			break;
 		}

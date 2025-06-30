@@ -1,9 +1,17 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file
 /// \brief Forwards UDP datagrams. Independent of RakNet's protocol.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 
 #include "NativeFeatureIncludes.h"
@@ -21,8 +29,8 @@
 #include "RakThread.h"
 #include "DS_Queue.h"
 #include "DS_OrderedList.h"
-
-#define UDP_FORWARDER_EXECUTE_THREADED
+#include "LocklessTypes.h"
+#include "DS_ThreadsafeAllocatingQueue.h"
 
 namespace RakNet
 {
@@ -33,8 +41,9 @@ enum UDPForwarderResult
 	UDPFORWARDER_NO_SOCKETS,
 	UDPFORWARDER_BIND_FAILED,
 	UDPFORWARDER_INVALID_PARAMETERS,
+	UDPFORWARDER_NOT_RUNNING,
 	UDPFORWARDER_SUCCESS,
-
+	UDPFORWARDER_RESULT_COUNT
 };
 
 /// \brief Forwards UDP datagrams. Independent of RakNet's protocol.
@@ -43,7 +52,7 @@ class RAK_DLL_EXPORT UDPForwarder
 {
 public:
 	UDPForwarder();
-	~UDPForwarder();
+	virtual ~UDPForwarder();
 
 	/// Starts the system.
 	/// Required to call before StartForwarding
@@ -52,20 +61,14 @@ public:
 	/// Stops the system, and frees all sockets
 	void Shutdown(void);
 
-	/// Call on a regular basis, unless using UDP_FORWARDER_EXECUTE_THREADED.
-	/// Will call select__() on all sockets and forward messages.
-	void Update(void);
-
 	/// Sets the maximum number of forwarding entries allowed
 	/// Set according to your available bandwidth and the estimated average bandwidth per forwarded address.
-	/// A single connection requires 2 entries, as connections are bi-directional.
 	/// \param[in] maxEntries The maximum number of simultaneous forwarding entries. Defaults to 64 (32 connections)
 	void SetMaxForwardEntries(unsigned short maxEntries);
 
 	/// \return The \a maxEntries parameter passed to SetMaxForwardEntries(), or the default if it was never called
 	int GetMaxForwardEntries(void) const;
 
-	/// \note Each call to StartForwarding uses up two forwarding entries, since communications are bidirectional
 	/// \return How many entries have been used
 	int GetUsedForwardEntries(void) const;
 
@@ -75,98 +78,77 @@ public:
 	/// \note RakNet's protocol will ensure a message is sent at least every 15 seconds, so if routing RakNet messages, it is a reasonable value for timeoutOnNoDataMS, plus an some extra seconds for latency
 	/// \param[in] source The source IP and port
 	/// \param[in] destination Where to forward to (and vice-versa)
-	/// \param[in] timeoutOnNoDataMS If no messages are forwarded for this many MS, then automatically remove this entry. Currently hardcoded to UDP_FORWARDER_MAXIMUM_TIMEOUT (else the call fails)
+	/// \param[in] timeoutOnNoDataMS If no messages are forwarded for this many MS, then automatically remove this entry.
 	/// \param[in] forceHostAddress Force binding on a particular address. 0 to use any.
 	/// \param[in] socketFamily IP version: For IPV4, use AF_INET (default). For IPV6, use AF_INET6. To autoselect, use AF_UNSPEC.
-	short socketFamily;
 	/// \param[out] forwardingPort New opened port for forwarding
 	/// \param[out] forwardingSocket New opened socket for forwarding
 	/// \return UDPForwarderResult
-	UDPForwarderResult StartForwarding(SystemAddress source, SystemAddress destination, RakNet::TimeMS timeoutOnNoDataMS, const char *forceHostAddress, unsigned short socketFamily,
-		unsigned short *forwardingPort, SOCKET *forwardingSocket);
+	UDPForwarderResult StartForwarding(
+		SystemAddress source, SystemAddress destination, RakNet::TimeMS timeoutOnNoDataMS,
+		const char *forceHostAddress, unsigned short socketFamily,
+		unsigned short *forwardingPort, __UDPSOCKET__ *forwardingSocket);
 
 	/// No longer forward datagrams from source to destination
 	/// \param[in] source The source IP and port
 	/// \param[in] destination Where to forward to
 	void StopForwarding(SystemAddress source, SystemAddress destination);
 
-	struct SrcAndDest
-	{
-		SrcAndDest() {}
-		SrcAndDest(SystemAddress sa1, SystemAddress sa2)
-		{
-			if (sa1 < sa2)
-			{
-				source=sa1;
-				dest=sa2;
-			}
-			else
-			{
-				source=sa2;
-				dest=sa1;
-			}
-		}
-		SystemAddress source;
-		SystemAddress dest;
-	};
 
 	struct ForwardEntry
 	{
 		ForwardEntry();
 		~ForwardEntry();
-		SrcAndDest srcAndDest;
+		SystemAddress addr1Unconfirmed, addr2Unconfirmed, addr1Confirmed, addr2Confirmed;
 		RakNet::TimeMS timeLastDatagramForwarded;
-		SOCKET socket;
+		__UDPSOCKET__ socket;
 		RakNet::TimeMS timeoutOnNoDataMS;
-		bool updatedSourcePort, updatedDestPort;
 		short socketFamily;
 	};
 
 
 protected:
+	friend RAK_THREAD_DECLARATION(UpdateUDPForwarderGlobal);
 
-	static int SrcAndDestForwardEntryComp( const SrcAndDest &inputKey, ForwardEntry * const &cls );
+	void UpdateUDPForwarder(void);
+	void RecvFrom(RakNet::TimeMS curTime, ForwardEntry *forwardEntry);
 
-
-	friend RAK_THREAD_DECLARATION(UpdateUDPForwarder);
-	struct ThreadOperation
+	struct StartForwardingInputStruct
 	{
-		enum {
-		TO_NONE,
-		TO_START_FORWARDING,
-		TO_STOP_FORWARDING,
-		} operation;
-
 		SystemAddress source;
 		SystemAddress destination;
 		RakNet::TimeMS timeoutOnNoDataMS;
-		RakNet::RakString forceHostAddress;
-		unsigned short forwardingPort;
-		SOCKET forwardingSocket;
-		UDPForwarderResult result;
+		RakString forceHostAddress;
 		unsigned short socketFamily;
+		unsigned int inputId;
 	};
-	SimpleMutex threadOperationIncomingMutex,threadOperationOutgoingMutex;
-	DataStructures::Queue<ThreadOperation> threadOperationIncomingQueue;
-	DataStructures::Queue<ThreadOperation> threadOperationOutgoingQueue;
 
-#if RAKNET_SUPPORT_IPV6==1
-	void UpdateThreaded(void);
-#endif
-	void UpdateThreaded_Old(void);
-	UDPForwarderResult StartForwardingThreaded(SystemAddress source, SystemAddress destination, RakNet::TimeMS timeoutOnNoDataMS, const char *forceHostAddress, unsigned short socketFamily,
-		unsigned short *forwardingPort, SOCKET *forwardingSocket);
-	void StopForwardingThreaded(SystemAddress source, SystemAddress destination);
+	DataStructures::ThreadsafeAllocatingQueue<StartForwardingInputStruct> startForwardingInput;
 
-	DataStructures::OrderedList<SrcAndDest, ForwardEntry*, SrcAndDestForwardEntryComp> forwardList;
+	struct StartForwardingOutputStruct
+	{
+		unsigned short forwardingPort;
+		__UDPSOCKET__ forwardingSocket;
+		UDPForwarderResult result;
+		unsigned int inputId;
+	};
+	DataStructures::Queue<StartForwardingOutputStruct> startForwardingOutput;
+	SimpleMutex startForwardingOutputMutex;
+
+	struct StopForwardingStruct
+	{
+		SystemAddress source;
+		SystemAddress destination;
+	};
+	DataStructures::ThreadsafeAllocatingQueue<StopForwardingStruct> stopForwardingCommands;
+	unsigned int nextInputId;
+
+	// New entries are added to forwardListNotUpdated
+	DataStructures::List<ForwardEntry*> forwardListNotUpdated;
+//	SimpleMutex forwardListNotUpdatedMutex;
+
 	unsigned short maxForwardEntries;
-
-	UDPForwarderResult AddForwardingEntry(SrcAndDest srcAndDest, RakNet::TimeMS timeoutOnNoDataMS, unsigned short *port, const char *forceHostAddress, short socketFamily);
-
-
-	bool isRunning, threadRunning;
-
-
+	RakNet::LocklessUint32_t isRunning, threadRunning;
 
 };
 

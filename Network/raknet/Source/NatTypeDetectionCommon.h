@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \defgroup NAT_TYPE_DETECTION_GROUP NatTypeDetection
 /// \brief Use a remote server with multiple IP addresses to determine what type of NAT your router is using
 /// \details
@@ -6,11 +16,17 @@
 #ifndef __NAT_TYPE_DETECTION_COMMON_H
 #define __NAT_TYPE_DETECTION_COMMON_H
 
+#include "NativeFeatureIncludes.h"
+
+#if _RAKNET_SUPPORT_NatTypeDetectionServer==1 || _RAKNET_SUPPORT_NatTypeDetectionClient==1
+
 #include "SocketIncludes.h"
 #include "RakNetTypes.h"
+#include "RakNetSocket2.h"
 
 namespace RakNet
 {
+
 	/// All possible types of NATs (except NAT_TYPE_COUNT, which is an internal value) 
 	enum NATTypeDetectionResult
 	{
@@ -47,10 +63,17 @@ namespace RakNet
 	RAK_DLL_EXPORT const char * NATTypeDetectionResultToStringFriendly(NATTypeDetectionResult type);
 
 	/// \internal
-	SOCKET RAK_DLL_EXPORT CreateNonblockingBoundSocket(const char *bindAddr);
+	RAK_DLL_EXPORT RakNetSocket2* CreateNonblockingBoundSocket(const char *bindAddr
+#ifdef __native_client__
+		,_PP_Instance_ chromeInstance
+#endif
+		, RNS2EventHandler *eventHandler
+		);
 
 	/// \internal
-	int NatTypeRecvFrom(char *data, SOCKET socket, SystemAddress &sender);
+	//int NatTypeRecvFrom(char *data, RakNetSocket2* socket, SystemAddress &sender, RNS2EventHandler *eventHandler);
 }
+
+#endif // #if _RAKNET_SUPPORT_NatTypeDetectionServer==1 || _RAKNET_SUPPORT_NatTypeDetectionClient==1
 
 #endif

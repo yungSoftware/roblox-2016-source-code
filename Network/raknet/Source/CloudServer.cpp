@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_CloudServer==1
 
@@ -327,16 +337,18 @@ void CloudServer::OnPostRequest(Packet *packet)
 		if (forceAddress!=UNASSIGNED_SYSTEM_ADDRESS)
 		{
 			cloudData->serverSystemAddress=forceAddress;
-			cloudData->serverSystemAddress.SetPort(rakPeerInterface->GetExternalID(packet->systemAddress).GetPort());
+			cloudData->serverSystemAddress.SetPortHostOrder(rakPeerInterface->GetExternalID(packet->systemAddress).GetPort());
 		}
 		else
 		{
 			cloudData->serverSystemAddress=rakPeerInterface->GetExternalID(packet->systemAddress);
+			if (cloudData->serverSystemAddress.IsLoopback())
+				cloudData->serverSystemAddress.FromString(rakPeerInterface->GetLocalIP(0));
 		}
 		if (cloudData->serverSystemAddress.GetPort()==0)
 		{
 			// Fix localhost port
-			cloudData->serverSystemAddress.SetPort(rakPeerInterface->GetSocket(UNASSIGNED_SYSTEM_ADDRESS)->boundAddress.GetPort());
+			cloudData->serverSystemAddress.SetPortHostOrder(rakPeerInterface->GetSocket(UNASSIGNED_SYSTEM_ADDRESS)->GetBoundAddress().GetPort());
 		}
 		cloudData->clientSystemAddress=packet->systemAddress;
 		cloudData->serverGUID=rakPeerInterface->GetMyGUID();
@@ -352,7 +364,7 @@ void CloudServer::OnPostRequest(Packet *packet)
 			if (forceAddress!=UNASSIGNED_SYSTEM_ADDRESS)
 			{
 				cloudData->serverSystemAddress=forceAddress;
-				cloudData->serverSystemAddress.SetPort(rakPeerInterface->GetExternalID(packet->systemAddress).GetPort());
+				cloudData->serverSystemAddress.SetPortHostOrder(rakPeerInterface->GetExternalID(packet->systemAddress).GetPort());
 			}
 			else
 			{
@@ -361,7 +373,7 @@ void CloudServer::OnPostRequest(Packet *packet)
 			if (cloudData->serverSystemAddress.GetPort()==0)
 			{
 				// Fix localhost port
-				cloudData->serverSystemAddress.SetPort(rakPeerInterface->GetSocket(UNASSIGNED_SYSTEM_ADDRESS)->boundAddress.GetPort());
+				cloudData->serverSystemAddress.SetPortHostOrder(rakPeerInterface->GetSocket(UNASSIGNED_SYSTEM_ADDRESS)->GetBoundAddress().GetPort());
 			}
 
 			cloudData->clientSystemAddress=packet->systemAddress;
@@ -451,7 +463,7 @@ void CloudServer::OnReleaseRequest(Packet *packet)
 
 	for (unsigned int filterIndex=0; filterIndex < queryFilters.Size(); filterIndex++)
 	{
-		if (queryFilters[filterIndex]->OnReleaseRequest(packet->guid, packet->systemAddress, cloudKeys))
+		if (queryFilters[filterIndex]->OnReleaseRequest(packet->guid, packet->systemAddress, cloudKeys)==false)
 			return;
 	}
 

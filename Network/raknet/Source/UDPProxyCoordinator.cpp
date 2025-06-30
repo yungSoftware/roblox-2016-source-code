@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_UDPProxyCoordinator==1 && _RAKNET_SUPPORT_UDPForwarder==1
 
@@ -12,7 +22,7 @@
 
 // Larger than the client version
 static const int DEFAULT_CLIENT_UNRESPONSIVE_PING_TIME=2000;
-static const int DEFAULT_UNRESPONSIVE_PING_TIME=DEFAULT_CLIENT_UNRESPONSIVE_PING_TIME+1000;
+static const int DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR=DEFAULT_CLIENT_UNRESPONSIVE_PING_TIME+1000;
 
 using namespace RakNet;
 
@@ -81,7 +91,7 @@ void UDPProxyCoordinator::Update(void)
 	{
 		fw=forwardingRequestList[idx];
 		if (fw->timeRequestedPings!=0 &&
-			curTime > fw->timeRequestedPings + DEFAULT_UNRESPONSIVE_PING_TIME)
+			curTime > fw->timeRequestedPings + DEFAULT_UNRESPONSIVE_PING_TIME_COORDINATOR)
 		{
 			fw->OrderRemainingServersToTry();
 			fw->timeRequestedPings=0;
@@ -214,6 +224,11 @@ void UDPProxyCoordinator::OnForwardingRequestFromClientToCoordinator(Packet *pac
 		outgoingBs.Write(sata.senderClientAddress);
 		outgoingBs.Write(targetAddress);
 		outgoingBs.Write(targetGuid);
+		// Request in progress, not completed
+		unsigned short forwardingPort=0;
+		RakString serverPublicIp;
+		outgoingBs.Write(serverPublicIp);
+		outgoingBs.Write(forwardingPort);
 		rakPeerInterface->Send(&outgoingBs, MEDIUM_PRIORITY, RELIABLE_ORDERED, 0, packet->systemAddress, false);
 		RakNet::OP_DELETE(fw, _FILE_AND_LINE_);
 		return;
@@ -346,25 +361,33 @@ void UDPProxyCoordinator::OnForwardingReplyFromServerToCoordinator(Packet *packe
 	sata.senderClientGuid = fw->sata.senderClientGuid;
 	sata.targetClientGuid = fw->sata.targetClientGuid;
 
+	RakString serverPublicIp;
+	incomingBs.Read(serverPublicIp);
+
+	if (serverPublicIp.IsEmpty())
+	{
+		char serverIP[64];
+		packet->systemAddress.ToString(false,serverIP);
+		serverPublicIp=serverIP;
+	}
+
 	UDPForwarderResult success;
 	unsigned char c;
 	incomingBs.Read(c);
 	success=(UDPForwarderResult)c;
 
+	unsigned short forwardingPort;
+	incomingBs.Read(forwardingPort);
+
 	RakNet::BitStream outgoingBs;
 	if (success==UDPFORWARDER_SUCCESS)
 	{
-		char serverIP[64];
-		packet->systemAddress.ToString(false,serverIP);
-		unsigned short forwardingPort;
-		incomingBs.Read(forwardingPort);
-
 		outgoingBs.Write((MessageID)ID_UDP_PROXY_GENERAL);
 		outgoingBs.Write((MessageID)ID_UDP_PROXY_FORWARDING_SUCCEEDED);
 		outgoingBs.Write(sata.senderClientAddress);
 		outgoingBs.Write(sata.targetClientAddress);
 		outgoingBs.Write(sata.targetClientGuid);
-		outgoingBs.Write(RakNet::RakString(serverIP));
+		outgoingBs.Write(serverPublicIp);
 		outgoingBs.Write(forwardingPort);
 		rakPeerInterface->Send(&outgoingBs, MEDIUM_PRIORITY, RELIABLE_ORDERED, 0, fw->requestingAddress, false);
 
@@ -374,7 +397,7 @@ void UDPProxyCoordinator::OnForwardingReplyFromServerToCoordinator(Packet *packe
 		outgoingBs.Write(sata.senderClientAddress);
 		outgoingBs.Write(sata.targetClientAddress);
 		outgoingBs.Write(sata.targetClientGuid);
-		outgoingBs.Write(RakNet::RakString(serverIP));
+		outgoingBs.Write(serverPublicIp);
 		outgoingBs.Write(forwardingPort);
 		rakPeerInterface->Send(&outgoingBs, MEDIUM_PRIORITY, RELIABLE_ORDERED, 0, sata.targetClientAddress, false);
 
@@ -400,6 +423,8 @@ void UDPProxyCoordinator::OnForwardingReplyFromServerToCoordinator(Packet *packe
 		outgoingBs.Write(sata.senderClientAddress);
 		outgoingBs.Write(sata.targetClientAddress);
 		outgoingBs.Write(sata.targetClientGuid);
+		outgoingBs.Write(serverPublicIp);
+		outgoingBs.Write(forwardingPort);
 		rakPeerInterface->Send(&outgoingBs, MEDIUM_PRIORITY, RELIABLE_ORDERED, 0, fw->requestingAddress, false);
 		forwardingRequestList.RemoveAtIndex(index);
 		RakNet::OP_DELETE(fw,_FILE_AND_LINE_);

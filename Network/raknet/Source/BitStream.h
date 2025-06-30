@@ -1,11 +1,18 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file BitStream.h
 /// \brief This class allows you to write and read native types as a string of bits.  
 /// \details BitStream is used extensively throughout RakNet and is designed to be used by users as well.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
-///
+
 
 #if defined(_MSC_VER) && _MSC_VER < 1299 // VC6 doesn't support template specialization
 #include "BitStream_NoTemplate.h"
@@ -23,7 +30,6 @@
 #include "RakAssert.h"
 #include <math.h>
 #include <float.h>
-#include "FastLog.h"
 
 #ifdef _MSC_VER
 #pragma warning( push )
@@ -534,7 +540,7 @@ namespace RakNet
 		void WriteBits( const unsigned char* inByteArray, BitSize_t numberOfBitsToWrite, const bool rightAlignedBits = true );
 
 		// Roblox
-		void WriteBits( const unsigned char* inByteArray, BitSize_t startBitPos, BitSize_t numberOfBitsToWrite);
+		void WriteBits(const unsigned char* inByteArray, BitSize_t startBitPos, BitSize_t numberOfBitsToWrite);
 
 		/// \brief Align the bitstream to the byte boundary and then write the
 		/// specified number of bits.  
@@ -889,7 +895,7 @@ namespace RakNet
 		{
 			return IsNetworkOrder();
 		}
-		inline static bool IsNetworkOrder(void) {static const bool r = IsNetworkOrderInternal(); return r;}
+		inline static bool IsNetworkOrder(void) {bool r = IsNetworkOrderInternal(); return r;}
 		// Not inline, won't compile on PC due to winsock include errors
 		static bool IsNetworkOrderInternal(void);
 		static void ReverseBytes(unsigned char *inByteArray, unsigned char *inOutByteArray, const unsigned int length);
@@ -900,6 +906,13 @@ namespace RakNet
 		BitStream( const BitStream &invalid) {
 			(void) invalid;
 			RakAssert(0);
+		}
+
+		BitStream& operator = ( const BitStream& invalid ) {
+			(void) invalid;
+			RakAssert(0);
+			static BitStream i;
+			return i;
 		}
 
 		/// \brief Assume the input source points to a native type, compress and write it.
@@ -1159,15 +1172,15 @@ namespace RakNet
 
 		if (IsBigEndian()==false)
 		{
-			data[( numberOfBitsUsed >> 3 ) + 0] = ((char *)&inTemplateVar.val)[0];
-			data[( numberOfBitsUsed >> 3 ) + 1] = ((char *)&inTemplateVar.val)[1];
-			data[( numberOfBitsUsed >> 3 ) + 2] = ((char *)&inTemplateVar.val)[2];
+			data[( numberOfBitsUsed >> 3 ) + 0] = ((unsigned char *)&inTemplateVar.val)[0];
+			data[( numberOfBitsUsed >> 3 ) + 1] = ((unsigned char *)&inTemplateVar.val)[1];
+			data[( numberOfBitsUsed >> 3 ) + 2] = ((unsigned char *)&inTemplateVar.val)[2];
 		}
 		else
 		{
-			data[( numberOfBitsUsed >> 3 ) + 0] = ((char *)&inTemplateVar.val)[3];
-			data[( numberOfBitsUsed >> 3 ) + 1] = ((char *)&inTemplateVar.val)[2];
-			data[( numberOfBitsUsed >> 3 ) + 2] = ((char *)&inTemplateVar.val)[1];
+			data[( numberOfBitsUsed >> 3 ) + 0] = ((unsigned char *)&inTemplateVar.val)[3];
+			data[( numberOfBitsUsed >> 3 ) + 1] = ((unsigned char *)&inTemplateVar.val)[2];
+			data[( numberOfBitsUsed >> 3 ) + 2] = ((unsigned char *)&inTemplateVar.val)[1];
 		}
 
 		numberOfBitsUsed+=3*8;
@@ -1519,18 +1532,18 @@ namespace RakNet
 
 		if (IsBigEndian()==false)
 		{
-			((char *)&outTemplateVar.val)[0]=data[ (readOffset >> 3) + 0];
-			((char *)&outTemplateVar.val)[1]=data[ (readOffset >> 3) + 1];
-			((char *)&outTemplateVar.val)[2]=data[ (readOffset >> 3) + 2];
-			((char *)&outTemplateVar.val)[3]=0;
+			((unsigned char *)&outTemplateVar.val)[0]=data[ (readOffset >> 3) + 0];
+			((unsigned char *)&outTemplateVar.val)[1]=data[ (readOffset >> 3) + 1];
+			((unsigned char *)&outTemplateVar.val)[2]=data[ (readOffset >> 3) + 2];
+			((unsigned char *)&outTemplateVar.val)[3]=0;
 		}
 		else
 		{
 
-			((char *)&outTemplateVar.val)[3]=data[ (readOffset >> 3) + 0];
-			((char *)&outTemplateVar.val)[2]=data[ (readOffset >> 3) + 1];
-			((char *)&outTemplateVar.val)[1]=data[ (readOffset >> 3) + 2];
-			((char *)&outTemplateVar.val)[0]=0;
+			((unsigned char *)&outTemplateVar.val)[3]=data[ (readOffset >> 3) + 0];
+			((unsigned char *)&outTemplateVar.val)[2]=data[ (readOffset >> 3) + 1];
+			((unsigned char *)&outTemplateVar.val)[1]=data[ (readOffset >> 3) + 2];
+			((unsigned char *)&outTemplateVar.val)[0]=0;
 		}
 
 		readOffset+=3*8;
@@ -1922,7 +1935,7 @@ namespace RakNet
 			//	x=((float)sx / 32767.5f - 1.0f) * magnitude;
 			//	y=((float)sy / 32767.5f - 1.0f) * magnitude;
 			//	z=((float)sz / 32767.5f - 1.0f) * magnitude;
-			float cx,cy,cz;
+			float cx=0.0f,cy=0.0f,cz=0.0f;
 			ReadCompressed(cx);
 			ReadCompressed(cy);
 			if (!ReadCompressed(cz))
@@ -2012,19 +2025,19 @@ namespace RakNet
 	}
 // Roblox
 #if 0
-	template <class templateType>
-	BitStream& operator<<(BitStream& out, templateType& c)
-	{
-		out.Write(c);
-		return out;
-	}
-	template <class templateType>
-	BitStream& operator>>(BitStream& in, templateType& c)
-	{
-		bool success = in.Read(c);
-		RakAssert(success);
-		return in;
-	}
+		template <class templateType>
+		BitStream& operator<<(BitStream& out, templateType& c)
+		{
+			out.Write(c);
+			return out;
+		}
+		template <class templateType>
+		BitStream& operator>>(BitStream& in, templateType& c)
+		{
+			bool success = in.Read(c);
+			RakAssert(success);
+			return in;
+		}
 #endif
 }
 

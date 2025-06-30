@@ -1,11 +1,19 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file TwoWayAuthentication.h
 /// \brief Implements two way authentication
 /// \details Given two systems, each of whom known a common password, verify the password without transmitting it
 /// This can be used to determine what permissions are should be allowed to the other system
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 #include "NativeFeatureIncludes.h"
 #if _RAKNET_SUPPORT_TwoWayAuthentication==1
@@ -26,7 +34,7 @@
 #define TWO_WAY_AUTHENTICATION_NONCE_LENGTH 32
 #define HASHED_NONCE_AND_PW_LENGTH 32
 #else
-#include "SHA1.h"
+#include "DR_SHA1.h"
 #define TWO_WAY_AUTHENTICATION_NONCE_LENGTH 20
 #define HASHED_NONCE_AND_PW_LENGTH SHA1_LENGTH
 #endif

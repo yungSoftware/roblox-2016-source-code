@@ -1,8 +1,16 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file DS_BPlusTree.h
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
+
 
 #ifndef __B_PLUS_TREE_CPP
 #define __B_PLUS_TREE_CPP
@@ -594,8 +602,8 @@ namespace DataStructures
 					// the first key is the middle key.  Remove it from the page and push it to the parent
 					returnAction->action=ReturnAction::PUSH_KEY_TO_PARENT;
 					returnAction->key1=newPage->keys[0];
-					for (int i=0; i < destIndex-1; i++)
-						newPage->keys[i]=newPage->keys[i+1];
+					for (int j=0; j < destIndex-1; j++)
+						newPage->keys[j]=newPage->keys[j+1];
 					
 				}
 				cur->size=order/2;
@@ -622,8 +630,8 @@ namespace DataStructures
 					// the first key is the middle key.  Remove it from the page and push it to the parent
 					returnAction->action=ReturnAction::PUSH_KEY_TO_PARENT;
 					returnAction->key1=newPage->keys[0];
-					for (int i=0; i < destIndex-1; i++)
-						newPage->keys[i]=newPage->keys[i+1];
+					for (int j=0; j < destIndex-1; j++)
+						newPage->keys[j]=newPage->keys[j+1];
 				}
 				cur->size=(order+1)/2-1;
 				if (cur->size)
@@ -887,7 +895,7 @@ namespace DataStructures
 	template<class KeyType, class DataType, int order>
 		unsigned BPlusTree<KeyType, DataType, order>::Size(void) const
 	{
-		int count=0;
+		unsigned int count=0;
 		DataStructures::Page<KeyType, DataType, order> *cur = GetListHead();
 		while (cur)
 		{

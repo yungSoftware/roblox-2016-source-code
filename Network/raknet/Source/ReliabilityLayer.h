@@ -1,19 +1,17 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file
 /// \brief \b [Internal] Datagram reliable, ordered, unordered and sequenced sends.  Flow control.  Message splitting, reassembly, and coalescence.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
-/// Creative Commons Licensees are subject to the
-/// license found at
-/// http://creativecommons.org/licenses/by-nc/2.5/
-/// Single application licensees are subject to the license found at
-/// http://www.jenkinssoftware.com/SingleApplicationLicense.html
-/// Custom license users are subject to the terms therein.
-/// GPL license users are subject to the GNU General Public
-/// License as published by the Free
-/// Software Foundation; either version 2 of the License, or (at your
-/// option) any later version.
+
 
 #ifndef __RELIABILITY_LAYER_H
 #define __RELIABILITY_LAYER_H
@@ -28,7 +26,7 @@
 #include "BitStream.h"
 #include "InternalPacket.h"
 #include "RakNetStatistics.h"
-#include "SHA1.h"
+#include "DR_SHA1.h"
 #include "DS_OrderedList.h"
 #include "DS_RangeList.h"
 #include "DS_BPlusTree.h"
@@ -40,6 +38,7 @@
 #include "SecureHandshake.h"
 #include "PluginInterface2.h"
 #include "Rand.h"
+#include "RakNetSocket2.h"
 
 #if USE_SLIDING_WINDOW_CONGESTION_CONTROL!=1
 #include "CCRakNetUDT.h"
@@ -148,7 +147,7 @@ public:
 	/// \retval false Modified packet
 	bool HandleSocketReceiveFromConnectedPlayer(
 		const char *buffer, unsigned int length, SystemAddress &systemAddress, DataStructures::List<PluginInterface2*> &messageHandlerList, int MTUSize,
-		SOCKET s, RakNetRandom *rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, CCTimeType timeRead, BitStream &updateBitStream);
+		RakNetSocket2 *s, RakNetRandom *rnr, CCTimeType timeRead, BitStream &updateBitStream);
 
 	/// This allocates bytes and writes a user-level message to those bytes.
 	/// \param[out] data The message
@@ -176,10 +175,10 @@ public:
 	/// \param[in] maxBitsPerSecond if non-zero, enforces that outgoing bandwidth does not exceed this amount
 	/// \param[in] messageHandlerList A list of registered plugins
 	/// Roblox: return bool indicating if we send everything from our bufffer
-	bool Update( SOCKET s, SystemAddress &systemAddress, int MTUSize, CCTimeType time,
+	bool Update(SOCKET s, SystemAddress& systemAddress, int MTUSize, CCTimeType time,
 		unsigned bitsPerSecondLimit,
-		DataStructures::List<PluginInterface2*> &messageHandlerList,
-		RakNetRandom *rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, BitStream &updateBitStream);
+		DataStructures::List<PluginInterface2*>& messageHandlerList,
+		RakNetRandom* rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, BitStream& updateBitStream);
 	
 	/// Were you ever unable to deliver a packet despite retries?
 	/// \return true means the connection has been lost.  Otherwise not.
@@ -209,9 +208,9 @@ public:
 	bool AckTimeout(RakNet::Time curTime);
 	CCTimeType GetNextSendTime(void) const;
 	CCTimeType GetTimeBetweenPackets(void) const;
-
-
-
+#if INCLUDE_TIMESTAMP_WITH_DATAGRAMS==1
+	CCTimeType GetAckPing(void) const;
+#endif
 	RakNet::TimeMS GetTimeLastDatagramArrived(void) const {return timeLastDatagramArrived;}
 
 	// If true, will update time between packets quickly based on ping calculations
@@ -225,7 +224,7 @@ private:
 	/// \param[in] s The socket used for sending data
 	/// \param[in] systemAddress The address and port to send to
 	/// \param[in] bitStream The data to send.
-	void SendBitStream( SOCKET s, SystemAddress &systemAddress, RakNet::BitStream *bitStream, RakNetRandom *rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, CCTimeType currentTime);
+	void SendBitStream( RakNetSocket2 *s, SystemAddress &systemAddress, RakNet::BitStream *bitStream, RakNetRandom *rnr, CCTimeType currentTime);
 
 	///Parse an internalPacket and create a bitstream to represent this data
 	/// \return Returns number of bits used
@@ -261,10 +260,10 @@ private:
 	bool CheckSHA1( char code[ SHA1_LENGTH ], unsigned char * const buffer, unsigned int nbytes );
 
 	/// Search the specified list for sequenced packets on the specified ordering channel, optionally skipping those with splitPacketId, and delete them
-	void DeleteSequencedPacketsInList( unsigned char orderingChannel, DataStructures::List<InternalPacket*>&theList, int splitPacketId = -1 );
+//	void DeleteSequencedPacketsInList( unsigned char orderingChannel, DataStructures::List<InternalPacket*>&theList, int splitPacketId = -1 );
 
 	/// Search the specified list for sequenced packets with a value less than orderingIndex and delete them
-	void DeleteSequencedPacketsInList( unsigned char orderingChannel, DataStructures::Queue<InternalPacket*>&theList );
+//	void DeleteSequencedPacketsInList( unsigned char orderingChannel, DataStructures::Queue<InternalPacket*>&theList );
 
 	/// Returns true if newPacketOrderingIndex is older than the waitingForPacketOrderingIndex
 	bool IsOlderOrderedPacket( OrderingIndexType newPacketOrderingIndex, OrderingIndexType waitingForPacketOrderingIndex );
@@ -277,7 +276,7 @@ private:
 
 	/// Take all split chunks with the specified splitPacketId and try to reconstruct a packet. If we can, allocate and return it.  Otherwise return 0
 	InternalPacket * BuildPacketFromSplitPacketList( SplitPacketIdType splitPacketId, CCTimeType time,
-		SOCKET s, SystemAddress &systemAddress, RakNetRandom *rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, BitStream &updateBitStream);
+		RakNetSocket2 *s, SystemAddress &systemAddress, RakNetRandom *rnr, BitStream &updateBitStream);
 	InternalPacket * BuildPacketFromSplitPacketList( SplitPacketChannel *splitPacketChannel, CCTimeType time );
 
 	/// Delete any unreliable split packets that have long since expired
@@ -476,9 +475,9 @@ private:
 
 	CCTimeType lastUpdateTime;
 	CCTimeType timeBetweenPackets, nextSendTime;
-
-
-
+#if INCLUDE_TIMESTAMP_WITH_DATAGRAMS==1
+	CCTimeType ackPing;
+#endif
 //	CCTimeType ackPingSamples[ACK_PING_SAMPLES_SIZE]; // Must be range of unsigned char to wrap ackPingIndex properly
 	CCTimeType ackPingSum;
 	unsigned char ackPingIndex;
@@ -500,7 +499,7 @@ private:
 #ifdef _DEBUG
 	struct DataAndTime//<InternalPacket>
 	{
-		SOCKET s;
+		RakNetSocket2 *s;
 		char data[ MAXIMUM_MTU_SIZE ];
 		unsigned int length;
 		RakNet::TimeMS sendTime;
@@ -542,7 +541,7 @@ private:
 	void PopListHead(bool modifyUnacknowledgedBytes);
 	bool IsResendQueueEmpty(void) const;
 	void SortSplitPacketList(DataStructures::List<InternalPacket*> &data, unsigned int leftEdge, unsigned int rightEdge) const;
-	void SendACKs(SOCKET s, SystemAddress &systemAddress, CCTimeType time, RakNetRandom *rnr, unsigned short remotePortRakNetWasStartedOn_PS3, unsigned int extraSocketOptions, BitStream &updateBitStream);
+	void SendACKs(RakNetSocket2 *s, SystemAddress &systemAddress, CCTimeType time, RakNetRandom *rnr, BitStream &updateBitStream);
 
 	DataStructures::List<InternalPacket*> packetsToSendThisUpdate;
 	DataStructures::List<bool> packetsToDeallocThisUpdate;

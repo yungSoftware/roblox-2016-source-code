@@ -1,3 +1,13 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 #ifndef __VARIABLE_DELTA_SERIALIZER_H
 #define __VARIABLE_DELTA_SERIALIZER_H
 
@@ -19,15 +29,15 @@ namespace RakNet
 /// 1. Call BeginUnreliableAckedSerialize(), BeginUniqueSerialize(), or BeginIdenticalSerialize(). In the case of Replica3, this would be in the Serialize() call<BR>
 /// 2. For each variable of the type in step 1, call Serialize(). The same variables must be serialized every tick()<BR>
 /// 3. Call EndSerialize()<BR>
-/// 4. Repeat step 1 for each of the other categories of how to send varaibles
-///
-/// On the receiver:
-///
-/// 1. Call BeginDeserialize(). In the case of Replica3, this would be in the Deserialize() call
-/// 2. Call DeserializeVariable() for each variable, in the same order as was Serialized()
-/// 3. Call EndSerialize()
+/// 4. Repeat step 1 for each of the other categories of how to send varaibles<BR>
+///<BR>
+/// On the receiver:<BR>
+///<BR>
+/// 1. Call BeginDeserialize(). In the case of Replica3, this would be in the Deserialize() call<BR>
+/// 2. Call DeserializeVariable() for each variable, in the same order as was Serialized()<BR>
+/// 3. Call EndSerialize()<BR>
 /// \sa The ReplicaManager3 sample
-class VariableDeltaSerializer
+class RAK_DLL_EXPORT VariableDeltaSerializer
 {
 protected:
 	struct RemoteSystemVariableHistory;

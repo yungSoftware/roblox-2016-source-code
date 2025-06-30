@@ -296,9 +296,6 @@
     <ClCompile Include="raknet\Source\Rand.cpp">
       <Filter>Raknet</Filter>
     </ClCompile>
-    <ClCompile Include="raknet\Source\rdlmalloc.cpp">
-      <Filter>Raknet</Filter>
-    </ClCompile>
     <ClCompile Include="raknet\Source\ReadyEvent.cpp">
       <Filter>Raknet</Filter>
     </ClCompile>
@@ -315,9 +312,6 @@
       <Filter>Raknet</Filter>
     </ClCompile>
     <ClCompile Include="raknet\Source\SendToThread.cpp">
-      <Filter>Raknet</Filter>
-    </ClCompile>
-    <ClCompile Include="raknet\Source\SHA1.cpp">
       <Filter>Raknet</Filter>
     </ClCompile>
     <ClCompile Include="raknet\Source\SignaledEvent.cpp">
@@ -420,12 +414,6 @@
       <Filter>Raknet</Filter>
     </ClCompile>
     <ClCompile Include="raknet\Source\SQLite3Plugin\SQLite3PluginCommon.cpp">
-      <Filter>Raknet</Filter>
-    </ClCompile>
-    <ClCompile Include="raknet\Source\SQLite3Plugin\SQLiteClientLoggerPlugin.cpp">
-      <Filter>Raknet</Filter>
-    </ClCompile>
-    <ClCompile Include="raknet\Source\SQLite3Plugin\SQLiteLoggerCommon.cpp">
       <Filter>Raknet</Filter>
     </ClCompile>
     <ClCompile Include="Replicator.ReferencePropertyChangedItem.cpp">
@@ -874,12 +862,6 @@
     <ClInclude Include="raknet\Source\Rand.h">
       <Filter>Raknet</Filter>
     </ClInclude>
-    <ClInclude Include="raknet\Source\rdlmalloc-options.h">
-      <Filter>Raknet</Filter>
-    </ClInclude>
-    <ClInclude Include="raknet\Source\rdlmalloc.h">
-      <Filter>Raknet</Filter>
-    </ClInclude>
     <ClInclude Include="raknet\Source\ReadyEvent.h">
       <Filter>Raknet</Filter>
     </ClInclude>
@@ -902,9 +884,6 @@
       <Filter>Raknet</Filter>
     </ClInclude>
     <ClInclude Include="raknet\Source\SendToThread.h">
-      <Filter>Raknet</Filter>
-    </ClInclude>
-    <ClInclude Include="raknet\Source\SHA1.h">
       <Filter>Raknet</Filter>
     </ClInclude>
     <ClInclude Include="raknet\Source\SignaledEvent.h">
@@ -1051,12 +1030,6 @@
     <ClInclude Include="raknet\Source\SQLite3Plugin\SQLite3PluginCommon.h">
       <Filter>Raknet</Filter>
     </ClInclude>
-    <ClInclude Include="raknet\Source\SQLite3Plugin\SQLiteClientLoggerPlugin.h">
-      <Filter>Raknet</Filter>
-    </ClInclude>
-    <ClInclude Include="raknet\Source\SQLite3Plugin\SQLiteLoggerCommon.h">
-      <Filter>Raknet</Filter>
-    </ClInclude>
     <ClInclude Include="Replicator.ReferencePropertyChangedItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -1096,10 +1069,5 @@
     <ClInclude Include="include\network\NetPmc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="raknet\Source\CMakeLists.txt">
-      <Filter>Raknet</Filter>
-    </Text>
   </ItemGroup>
 </Project>

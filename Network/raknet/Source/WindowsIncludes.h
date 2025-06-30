@@ -1,4 +1,16 @@
-#if defined(X360__) 
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+#if   defined (WINDOWS_STORE_RT)
+#include <windows.h>
+#include <winsock.h>
 #elif defined (_WIN32)
 #include <WinSock2.h>
 #include <windows.h>

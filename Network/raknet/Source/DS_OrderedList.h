@@ -1,11 +1,17 @@
+/*
+ *  Copyright (c) 2014, Oculus VR, Inc.
+ *  All rights reserved.
+ *
+ *  This source code is licensed under the BSD-style license found in the
+ *  LICENSE file in the root directory of this source tree. An additional grant 
+ *  of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
 /// \file DS_OrderedList.h
 /// \internal
 /// \brief Quicksort ordered list.
 ///
-/// This file is part of RakNet Copyright 2003 Jenkins Software LLC
-///
-/// Usage of RakNet is subject to the appropriate license agreement.
-
 
 #include "DS_List.h"
 #include "RakMemoryOverride.h"
@@ -134,7 +140,7 @@ namespace DataStructures
 			if (res==0)
 			{
 				*objectExists=true;
-				return index;
+				return (unsigned)index;
 			}
 			else if (res<0)
 			{
@@ -142,6 +148,7 @@ namespace DataStructures
 			}
 			else// if (res>0)
 			{
+
 				lowerBound=index+1;
 			}
 
@@ -150,7 +157,15 @@ namespace DataStructures
 			if (lowerBound>upperBound)
 			{
 				*objectExists=false;
-				return lowerBound; // No match
+				return (unsigned)lowerBound; // No match
+			}
+
+			if (index < 0 || index >= (int) orderedList.Size())
+			{
+				// This should never hit unless the comparison function was inconsistent
+				RakAssert(index && 0);
+				*objectExists=false;
+				return 0;
 			}
 		}
 	}
