@@ -65,7 +65,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 ---
 
 ## 🎯 Current Goals
-- Backporting/Implementing **Hitius**, **Graphictoria** and **Economy Simulator** Features
+- Backporting/Implementing **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
    - [ ] Color3uint8
      - [ ] Color3.fromRGB()
    - [ ] R15
