@@ -10,11 +10,11 @@ Please remember that you must have technical knowledge, we cannot help you with 
 git config --system core.longpaths true && cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
 ```
   - Do this if you dont want to download the source code over and over again. **(Recommended)**
-2. You need to use **[Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)**, **[Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)** and **[Visual Studio 2022 (OPTIONAL)](https://visualstudio.microsoft.com/tr/vs/)** for viewing the solution
+2. You need to use (download if needed) **[Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)**, **[Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)** for compiling and maybe **[Visual Studio 2022 (OPTIONAL)](https://visualstudio.microsoft.com/tr/vs/)** for viewing the solution (You can also use VS2012 to view the solution it doesn't matter)
     - Uncheck all optional components in the Visual Studio 2012 installer except **"Microsoft Foundation Classes for C++"** to save space due to none of them are needed.
 3. Create an environment variable as system variable called **CONTRIB_PATH** and set the path to: **`<your path>\<your folder name>\Contribs`**
 4. Now you need to build libraries, to do so head over to: **[BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)**
-5. When you all set, Enter the **Client_2016.sln** Solution inside **<your folder name>** Folder with **Visual Studio 2022**
+5. When you all set, Enter the **Client_2016.sln** Solution inside **<your folder name>** Folder with **Visual Studio 2022** or with **Visual Studio 2012**
    - Press **Cancel** if you've prompted with **Review Solution Actions** window.
 6. Change the Solution Configuration from the top to **ReleaseStudio**
   - **ReleaseRCC** if you want to build **RCCService** to build **RobloxStudio**
@@ -24,9 +24,9 @@ git config --system core.longpaths true && cd <your path> && git clone https://g
   - 3rd Party > **boost.static** 
   - 3rd Party > **zlib** 
   - 3rd Party > **libcurl** 
-     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already did.
+     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already compiled.
   - 3rd Party > **SDL2**
-     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already did.
+     - Follow the **BUILDING_CONTRIBS.md**, You can skip if you already compiled.
   - gSOAP > **soapcpp2**
   - gSOAP > **wsdl2h**
   - Shaders > **ShaderCompiler**

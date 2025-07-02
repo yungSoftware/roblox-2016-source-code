@@ -3,6 +3,7 @@
 ## Read This Before Reading the Cookbook
 ``<your path>`` is where your source is, ex. C:\Trunk2016<br>
 ``<your folder name>`` is your source folder name, ex. Trunk2016<br>
+Please remember that you must have technical knowledge, we cannot help you with every problem you have.
 
 ## Qt
 
@@ -39,6 +40,7 @@ You should greeted with these lines after compilation finishes:
 2. Open **Developer Command Prompt for VS2012**
 3. Change Directory to: **`<your path>\<your folder name>\Contribs\openssl`**
 4. Type **`perl Configure VC-WIN32`**
+   * If you having error like this: ``'perl' is not recognized as an internal or external command`` then make sure you installed the Strawberry Perl correctly.
 5. And then type this to the command prompt: **`ms\32all.bat`**
 6. Create a new folder named **openssl** inside **<your folder name>**
 7. When the build process completes, go inside **`<your path>\<your folder name>\Contribs\openssl\out32dll`**, and copy these 2 files to **`<your path>\<your folder name>\openssl`**: **`ssleay32.dll, libeay32.dll`**.
@@ -46,14 +48,14 @@ You should greeted with these lines after compilation finishes:
 **IMPORTANT:** Now you have to be in **Client_2016.sln** for these 2 dependencies at the bottom.
 
 ## SDL2
-Locate the SDL2 Project at **3rd Party > SDL2**<br>
+Locate the SDL2 Project at **3rd Party > SDL2**, **Right Click** and press **Build**<br>
 To build SDL2 as a .DLL file, Go into **Properties** and just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC;** from **C/C++ > Preprocessor > Preprocessor Definitions**  and build it!<br>
 However if you want to build as .LIB, then you dont have to change anything just build it.
 
 ## libcurl
-Locate the SDL2 Project at **3rd Party > libcurl**<br>
+Locate the SDL2 Project at **3rd Party > libcurl**, **Right Click** and press **Build**<br>
 If you also need to build libcurl as a .LIB file, Go into **Properties** and Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 However if you want to build as .DLL, then also you dont have to change anything just build it.
 
 **That's it, you've compiled the libraries!**<br>
-**Also, you may want to change the library files in the source with yours.**
+**Also, you may want to change the Library or DLL files in the source with yours.**

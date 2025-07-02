@@ -8,6 +8,9 @@
 * fromHSV and fromHex
 * Trustcheck Fixes
 
+[@gdadnh](https://github.com/gdadnh) and [tabby0x](https://github.com/tabby0x)
+* Working on **pixel-lighting** branch
+
 [@t0int1337](https://github.com/t0int1337)
 * Fixed New Version Meshes [#21]
 

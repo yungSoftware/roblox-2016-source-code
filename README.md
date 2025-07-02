@@ -72,21 +72,21 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
      - [ ] Color3.fromRGB()
    - [ ] R15
    - [x] :Connect() and :Wait()
-   - [ ] Fix Keyboard Shortcuts
+- [ ] Fix Keyboard Shortcuts
       - [ ] Reset Character Keybind
       - [ ] Chat Keybind
       - [ ] Windows Key on WindowsClient
-- [ ] Adding Cyrillic & Non-Latin Languages Support
+- [x] New Fonts
+- [ ] - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] UTF/Unicode Support
       - [ ] New Lua Version (since the newer ones has these) 
    - [ ] Improving Profanity/Swear Filter
-- [x] New Fonts
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
-- [ ] Making Bootstrappers functional as intended 
+- [ ] Making Bootstrappers functional as intended
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
-- [ ] 64-bit Support 
+- [ ] 64-bit Support for all the projects that listed at the bottom.
 - [x] Uploading the Qt to the Github as issue-free
    - If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
 - Building all the projects within the latest Visual Studio Version **[27/61]** 
