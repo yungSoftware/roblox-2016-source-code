@@ -89,6 +89,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Making Bootstrappers functional as intended
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
 - [ ] Fixing RakNet RCE's(Remote Code Executions) [memcpy]
+   - Normally we shouldn't have this exploit, but we suspecting a lot.. So chances are 50/50
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
