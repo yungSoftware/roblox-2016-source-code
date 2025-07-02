@@ -19,8 +19,6 @@ configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder 
 ```
 4. Type **nmake confclean** to make sure we're on the right track!
 5. When everything completes, type **nmake** and take a long breath since it will take **a lot** of time.
-
-**IMPORTANT:** If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
  
 ## Boost
 1. Go into **`<your path>\<your folder name>\Contribs\boost_1_56_0\`**
