@@ -16,7 +16,7 @@ After a long effort, this repository has been brought to you on github with lots
 **Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp) or at the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues)**<br>
 
 **Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**<br>
-**NOTE:** You may need [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main) to launch the game.
+**NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
 
 The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be older than the **master(main)** branch.
 
@@ -35,7 +35,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - Cleaned up the whole source to make things easier and not complicated.
 - Changed Splash Screen and Copyright Date(s) just for the sake of it.
 - Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make their source accessible.
-- Introducing You [Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)! A server made for this particular source.
+- Introducing You **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)!** A server made for this particular source.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
