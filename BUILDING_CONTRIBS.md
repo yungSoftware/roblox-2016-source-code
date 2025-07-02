@@ -1,9 +1,11 @@
 # Cookbook for the Contribs
 
-## Read This Before Reading the Cookbook
+### Read This Before Reading the Cookbook
 ``<your path>`` is where your source is, ex. C:\Trunk2016<br>
 ``<your folder name>`` is your source folder name, ex. Trunk2016<br>
 Please remember that you must have technical knowledge, we cannot help you with every problem you have.
+
+---
 
 ## Qt
 
