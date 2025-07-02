@@ -26,7 +26,6 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 3. [🔨 Tools Used](#-tools-used)
 4. [❤️ Contributors / Credits](#%EF%B8%8F-contributors--credits)
 5. [🎯 Current Goals](#-current-goals)
-6. [⚠️ Current Issues](#%EF%B8%8F-current-issues)
 
 ---
 
@@ -88,7 +87,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended
-- [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
 - [ ] 64-bit Support for all the projects that listed at the bottom.   
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
@@ -171,9 +169,5 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Windows
   - [ ] Android
   - [ ] MacOS / Unix
-
-## ⚠️ Current Issues
-- The Roblox in-game Video Recorder is being awful, pixelated and no sounds; just some cracking noises
-   - The audio can be fixed by Turning on the Compatibility Mode to Windows 8 or 7. <br>(for now. it'll be fixed soon.)
 
 ---

@@ -262,32 +262,6 @@
     <PublishDLLDependency Include="..\openssl\ssleay32.dll" />
     <PublishDLLDependency Include="..\VMProtect\VMProtectSDK32.dll" />
   </ItemGroup>
-    <ItemGroup>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\GLU32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseTest|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OPENGL32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseTest|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Debug\OSMESA32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseTest|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\GLU32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OPENGL32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-    <PublishDLLDependency Include="Mesa-7.8.1\lib\Release\OSMESA32.lib">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </PublishDLLDependency>
-  </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="AppSettings.xml">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Copying %(Filename)%(Extension)</Message>
