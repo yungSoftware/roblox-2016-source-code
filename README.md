@@ -73,11 +73,11 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - [ ] R15
    - [x] :Connect() and :Wait()
 - [ ] Fix Keyboard Shortcuts
-      - [ ] Reset Character Keybind
-      - [ ] Chat Keybind
-      - [ ] Windows Key on WindowsClient
+   - [ ] Reset Character Keybind
+   - [ ] Chat Keybind
+   - [ ] Windows Key on WindowsClient
 - [x] New Fonts
-- [ ] - [ ] Adding Cyrillic & Non-Latin Languages Support
+- [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] UTF/Unicode Support
       - [ ] New Lua Version (since the newer ones has these) 
    - [ ] Improving Profanity/Swear Filter
