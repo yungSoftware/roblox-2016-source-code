@@ -54,6 +54,9 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
+- [RakNet](/Network/raknet) = 5
+- [Mesa](/RCCService/Mesa-7.8.1) = 7.8.1
+- [TBB](/TBB_4_1) = 4.1
 
 ## 🔨 Tools Used
 - [HxD](/Tools/HxD) = 2.5.0.0
@@ -86,10 +89,8 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended
 - [ ] [Fixing in-game Recorder behaving goofy](https://github.com/P0L3NARUBA/roblox-2016-source-code/blob/db5a53d3a156f30cbde469b801b84b55d65412c6/README.md?plain=1#L154)
-- [ ] 64-bit Support for all the projects that listed at the bottom.
-- [x] Uploading the Qt to the Github as issue-free
-   - If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
-- Building all the projects within the latest Visual Studio Version **[27/61]** 
+- [ ] 64-bit Support for all the projects that listed at the bottom.   
+- Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
   - [ ] App.BulletPhysics
@@ -118,6 +119,13 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
     - Windows SDK throws "negative subscript" errors.
   - [x] zlib
   - [ ] w3c-libwww
+  - [x] mesa
+     - [x] osmesa 
+     - [x] gdi
+     - [x] glu
+     - [x] glut
+     - [x] glsl_apps_compile 
+     - [x] gears
   #### gSOAP
   - [x] soapcpp2
   - [x] wsdl2h

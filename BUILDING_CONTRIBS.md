@@ -19,6 +19,8 @@ configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder 
 ```
 4. Type **nmake confclean** to make sure we're on the right track!
 5. When everything completes, type **nmake** and take a long breath since it will take **a lot** of time.
+
+**IMPORTANT:** If you getting `api\qscriptextensionplugin.h(43): Error: Undefined interface` then find a way to fix it for yourself. 
  
 ## Boost
 1. Go into **`<your path>\<your folder name>\Contribs\boost_1_56_0\`**
@@ -58,6 +60,10 @@ However if you want to build as .LIB, then you dont have to change anything just
 Locate the SDL2 Project at **3rd Party > libcurl**, **Right Click** and press **Build**<br>
 If you also need to build libcurl as a .LIB file, Go into **Properties** and Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
 However if you want to build as .DLL, then also you dont have to change anything just build it.
+
+## Mesa (Optional)
+**W.I.P**
+
 
 **That's it, you've compiled the libraries!**<br>
 **Also, you may want to change the Library or DLL files in the source with yours.**
