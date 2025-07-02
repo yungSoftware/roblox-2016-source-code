@@ -53,7 +53,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [hlsl2glslfork](/Rendering/ShaderCompiler/hlsl2glslfork) = *unknown*
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
-- [RakNet](/Network/raknet) = 5
+- [RakNet](/Network/raknet) = 5 
 - [Mesa](/RCCService/Mesa-7.8.1) = 7.8.1
 - [TBB](/TBB_4_1) = 4.1
 
@@ -87,7 +87,8 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers functional as intended
-- [ ] 64-bit Support for all the projects that listed at the bottom.   
+- [ ] 64-bit Support for all the projects that listed at the bottom. 
+- [ ] Fixing RakNet RCE's(Remote Code Executions) [memcpy]
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
