@@ -157,7 +157,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/D "_SECURE_SCL=0" %(AdditionalOptions)</AdditionalOptions>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
@@ -180,7 +180,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <AdditionalOptions>/D "_SECURE_SCL=0" %(AdditionalOptions)</AdditionalOptions>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
@@ -230,7 +230,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
@@ -255,7 +255,7 @@
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWarningAsError>true</TreatWarningAsError>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <PostBuildEvent>
@@ -301,6 +301,8 @@
     <ClCompile Include="raknet\Source\SQLite3Plugin\sqlite3.c" />
     <ClCompile Include="raknet\Source\SQLite3Plugin\SQLite3ClientPlugin.cpp" />
     <ClCompile Include="raknet\Source\SQLite3Plugin\SQLite3PluginCommon.cpp" />
+    <ClCompile Include="raknet\Source\SQLite3Plugin\SQLiteClientLoggerPlugin.cpp" />
+    <ClCompile Include="raknet\Source\SQLite3Plugin\SQLiteLoggerCommon.cpp" />
     <ClCompile Include="Replicator.ChangePropertyItem.cpp" />
     <ClCompile Include="Replicator.cpp" />
     <ClCompile Include="Replicator.DeleteInstanceItem.cpp" />
@@ -391,12 +393,14 @@
     <ClCompile Include="raknet\Source\RakString.cpp" />
     <ClCompile Include="raknet\Source\RakThread.cpp" />
     <ClCompile Include="raknet\Source\Rand.cpp" />
+    <ClCompile Include="raknet\Source\rdlmalloc.cpp" />
     <ClCompile Include="raknet\Source\ReadyEvent.cpp" />
     <ClCompile Include="raknet\Source\ReliabilityLayer.cpp" />
     <ClCompile Include="raknet\Source\ReplicaManager3.cpp" />
     <ClCompile Include="raknet\Source\Router2.cpp" />
     <ClCompile Include="raknet\Source\RPC4Plugin.cpp" />
     <ClCompile Include="raknet\Source\SendToThread.cpp" />
+    <ClCompile Include="raknet\Source\SHA1.cpp" />
     <ClCompile Include="raknet\Source\SignaledEvent.cpp" />
     <ClCompile Include="raknet\Source\SimpleMutex.cpp" />
     <ClCompile Include="raknet\Source\SocketLayer.cpp" />
@@ -456,6 +460,8 @@
     <ClInclude Include="raknet\Source\SQLite3Plugin\SQLite3ClientPlugin.h" />
     <ClInclude Include="raknet\Source\SQLite3Plugin\sqlite3ext.h" />
     <ClInclude Include="raknet\Source\SQLite3Plugin\SQLite3PluginCommon.h" />
+    <ClInclude Include="raknet\Source\SQLite3Plugin\SQLiteClientLoggerPlugin.h" />
+    <ClInclude Include="raknet\Source\SQLite3Plugin\SQLiteLoggerCommon.h" />
     <ClInclude Include="Replicator.ChangePropertyItem.h" />
     <ClInclude Include="Replicator.DeleteInstanceItem.h" />
     <ClInclude Include="Replicator.EventInvocationItem.h" />
@@ -582,6 +588,8 @@
     <ClInclude Include="raknet\Source\RakString.h" />
     <ClInclude Include="raknet\Source\RakThread.h" />
     <ClInclude Include="raknet\Source\Rand.h" />
+    <ClInclude Include="raknet\Source\rdlmalloc-options.h" />
+    <ClInclude Include="raknet\Source\rdlmalloc.h" />
     <ClInclude Include="raknet\Source\ReadyEvent.h" />
     <ClInclude Include="raknet\Source\RefCountedObj.h" />
     <ClInclude Include="raknet\Source\ReliabilityLayer.h" />
@@ -590,6 +598,7 @@
     <ClInclude Include="raknet\Source\Router2.h" />
     <ClInclude Include="raknet\Source\RPC4Plugin.h" />
     <ClInclude Include="raknet\Source\SendToThread.h" />
+    <ClInclude Include="raknet\Source\SHA1.h" />
     <ClInclude Include="raknet\Source\SignaledEvent.h" />
     <ClInclude Include="raknet\Source\SimpleMutex.h" />
     <ClInclude Include="raknet\Source\SimpleTCPServer.h" />
@@ -623,6 +632,9 @@
     <ClInclude Include="include\network\NetworkPacketCache.h" />
     <ClInclude Include="include\network\Player.h" />
     <ClInclude Include="include\network\Players.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="raknet\Source\CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
