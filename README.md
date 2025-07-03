@@ -18,7 +18,7 @@ After a long effort, this repository has been brought to you on github with lots
 **Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**<br>
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
 
-The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be older than the **master(main)** branch.
+The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be older than the **master** branch.
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
@@ -70,8 +70,8 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
 ## 🎯 Current Goals
 - Backporting/Implementing **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
-   - [ ] Color3uint8
-     - [ ] Color3.fromRGB()
+   - [x] Color3uint8
+     - [x] Color3.fromRGB()
    - [ ] R15
    - [x] :Connect() and :Wait()
 - [ ] Fix Keyboard Shortcuts
@@ -86,9 +86,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
-- [ ] Making Bootstrappers functional as intended
-- [ ] Fixing RakNet RCE's(Remote Code Executions) [memcpy]
-   - Normally we should not have this exploit, but we suspecting a lot.. So chances are 50/50
+- [ ] Making Bootstrappers don't override our original Roblox files and registries.
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 

@@ -27,18 +27,18 @@ namespace RBX {
 	};
 
 
-	class FillToolColor 
+	class FillToolColor
 	{
-		BrickColor color;
+		Color3 color;
 	public:
-		rbx::signal<void(RBX::BrickColor)> brickColorSignal;
+		rbx::signal<void(RBX::Color3)> colorSignal;
 
 		FillToolColor();
-		RBX::BrickColor get() const {return color;}
-		void set(const RBX::BrickColor& newColor)			{
-			if (color!=newColor) {
+		RBX::Color3 get() const { return color; }
+		void set(const RBX::Color3& newColor) {
+			if (color != newColor) {
 				color = newColor;
-				brickColorSignal(color);
+				colorSignal(color);
 			}
 		}
 	};
@@ -51,12 +51,13 @@ namespace RBX {
 		static FillToolColor color;
 	protected:
 		/*override*/ virtual shared_ptr<MouseCommand> onMouseDown(const shared_ptr<InputObject>& inputObject);
-		/*override*/ const std::string getCursorName() const	{return "FillCursor";}
+		/*override*/ const std::string getCursorName() const { return "FillCursor"; }
 	public:
-		FillTool(Workspace* workspace) : 
-		  Named<PartTool, sFillTool>(workspace)
-		  {}
-		/*override*/ shared_ptr<MouseCommand> isSticky() const {return Creatable<MouseCommand>::create<FillTool>(workspace);}
+		FillTool(Workspace* workspace) :
+			Named<PartTool, sFillTool>(workspace)
+		{
+		}
+		/*override*/ shared_ptr<MouseCommand> isSticky() const { return Creatable<MouseCommand>::create<FillTool>(workspace); }
 	};
 
 
@@ -65,7 +66,7 @@ namespace RBX {
 	{
 	protected:
 		/*override*/ virtual shared_ptr<MouseCommand> onMouseDown(const shared_ptr<InputObject>& inputObject);
-		/*override*/ const std::string getCursorName() const	{return "DropperCursor";}
+		/*override*/ const std::string getCursorName() const { return "DropperCursor"; }
 	public:
 		DropperTool(Workspace* workspace) : Named<PartTool, sDropperTool>(workspace) {}
 	};
@@ -79,12 +80,13 @@ namespace RBX {
 		static PartMaterial material;
 	protected:
 		/*override*/ virtual shared_ptr<MouseCommand> onMouseDown(const shared_ptr<InputObject>& inputObject);
-		/*override*/ const std::string getCursorName() const	{return "MaterialCursor";}
+		/*override*/ const std::string getCursorName() const { return "MaterialCursor"; }
 	public:
-		MaterialTool(Workspace* workspace) : 
-		  Named<PartTool, sMaterialTool>(workspace)
-		  {}
-		/*override*/ shared_ptr<MouseCommand> isSticky() const {return Creatable<MouseCommand>::create<MaterialTool>(workspace);}
+		MaterialTool(Workspace* workspace) :
+			Named<PartTool, sMaterialTool>(workspace)
+		{
+		}
+		/*override*/ shared_ptr<MouseCommand> isSticky() const { return Creatable<MouseCommand>::create<MaterialTool>(workspace); }
 	};
 
 

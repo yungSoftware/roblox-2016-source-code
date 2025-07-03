@@ -6,7 +6,7 @@
 #include "stdafx.h"
 #include "RobloxStudioVerbs.h"
 
-// Qt Headers
+ // Qt Headers
 #include <QByteArray>
 #include <QDataStream>
 #include <QClipboard>
@@ -99,8 +99,8 @@
 
 //Video record related includes
 #ifdef _WIN32
-    #include "VideoControl.h"
-    #include "DSVideoCaptureEngine.h"
+#include "VideoControl.h"
+#include "DSVideoCaptureEngine.h"
 #endif
 #include "ManageEmulationDeviceDialog.h"
 
@@ -141,7 +141,9 @@ using namespace RBX;
 
 GroupSelectionVerb::GroupSelectionVerb(DataModel* dataModel) :
 	EditSelectionVerb("Group", dataModel)
-{;}
+{
+	;
+}
 
 bool GroupSelectionVerb::isEnabled() const
 {
@@ -177,14 +179,14 @@ void GroupSelectionVerb::doIt(IDataState* dataState)
 
 namespace
 {
-static void operationFailed(const char* title, const char* msg)
-{
-    QMetaObject::invokeMethod(&UpdateUIManager::Instance(),
-                              "showErrorMessage",
-                              FFlag::StudioOperationFailureHangFix ? Qt::QueuedConnection : Qt::BlockingQueuedConnection,
-                              Q_ARG(QString, title),
-                              Q_ARG(QString, msg));
-}
+	static void operationFailed(const char* title, const char* msg)
+	{
+		QMetaObject::invokeMethod(&UpdateUIManager::Instance(),
+			"showErrorMessage",
+			FFlag::StudioOperationFailureHangFix ? Qt::QueuedConnection : Qt::BlockingQueuedConnection,
+			Q_ARG(QString, title),
+			Q_ARG(QString, msg));
+	}
 } // anonymous namespace
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
@@ -224,7 +226,7 @@ public:
 	bool& didSomething;
 	Ungroup(std::vector<Instance*>& ungroupedItems, bool& didSomething)
 		:ungroupedItems(ungroupedItems)
-		,didSomething(didSomething)
+		, didSomething(didSomething)
 	{
 	}
 
@@ -281,17 +283,18 @@ void UngroupSelectionVerb::doIt(IDataState* dataState)
 
 UnionSelectionVerb::UnionSelectionVerb(DataModel* dataModel)
 	: EditSelectionVerb("UnionSelection", dataModel)
-{}
+{
+}
 
 bool UnionSelectionVerb::isEnabled() const
 {
-    if (!Super::isEnabled())
+	if (!Super::isEnabled())
 		return false;
 	else
 	{
 		Selection* sel = ServiceProvider::find<Selection>(dataModel);
 		return sel && ((sel->size() > 0 && !(sel->size() == 1 && RBX::Instance::fastSharedDynamicCast<RBX::PartOperation>(*sel->begin()))) ||
-            (sel->size() == 1 && RBX::Instance::fastSharedDynamicCast<RBX::BasicPartInstance>(*sel->begin())));
+			(sel->size() == 1 && RBX::Instance::fastSharedDynamicCast<RBX::BasicPartInstance>(*sel->begin())));
 	}
 }
 
@@ -300,24 +303,25 @@ void UnionSelectionVerb::performUnion(IDataState* dataState)
 	DataModel::LegacyLock lock(dataModel, RBX::DataModelJob::Write);
 	FASTLOG(FLog::Verbs, "Gui:UnionSelection");
 
-    CSGOperations csgOps(dataModel, operationFailed);
-    Selection* selection = ServiceProvider::create< Selection >(dataModel);
-    shared_ptr<RBX::PartOperation> partOperation;
-    if ( csgOps.doUnion( selection->begin(), selection->end(), partOperation ) )
-        ChangeHistoryService::requestWaypoint(getName().c_str(), workspace.get());
-    if ( partOperation )
-        selection->setSelection(partOperation.get());
+	CSGOperations csgOps(dataModel, operationFailed);
+	Selection* selection = ServiceProvider::create< Selection >(dataModel);
+	shared_ptr<RBX::PartOperation> partOperation;
+	if (csgOps.doUnion(selection->begin(), selection->end(), partOperation))
+		ChangeHistoryService::requestWaypoint(getName().c_str(), workspace.get());
+	if (partOperation)
+		selection->setSelection(partOperation.get());
 	dataState->setDirty(true);
 }
 
 void UnionSelectionVerb::doIt(IDataState* dataState)
 {
-    UpdateUIManager::Instance().waitForLongProcess("Union", boost::bind(&UnionSelectionVerb::performUnion, this, dataState) );
+	UpdateUIManager::Instance().waitForLongProcess("Union", boost::bind(&UnionSelectionVerb::performUnion, this, dataState));
 }
 
 NegateSelectionVerb::NegateSelectionVerb(DataModel* dataModel)
 	: EditSelectionVerb("NegateSelection", dataModel)
-{}
+{
+}
 
 bool NegateSelectionVerb::isEnabled() const
 {
@@ -332,23 +336,24 @@ bool NegateSelectionVerb::isEnabled() const
 
 void NegateSelectionVerb::doIt(IDataState* dataState)
 {
-    FASTLOG(FLog::Verbs, "Gui:NegateSelection");
+	FASTLOG(FLog::Verbs, "Gui:NegateSelection");
 
-    CSGOperations csgOps(dataModel, operationFailed);
-    Selection* selection = ServiceProvider::create< Selection >(dataModel);
-    std::vector<shared_ptr<RBX::Instance> > toSelect;
-    if ( csgOps.doNegate(selection->begin(), selection->end(), toSelect) )
-    {
+	CSGOperations csgOps(dataModel, operationFailed);
+	Selection* selection = ServiceProvider::create< Selection >(dataModel);
+	std::vector<shared_ptr<RBX::Instance> > toSelect;
+	if (csgOps.doNegate(selection->begin(), selection->end(), toSelect))
+	{
 		DataModel::LegacyLock lock(dataModel, DataModelJob::Write);
 		ChangeHistoryService::requestWaypoint(getName().c_str(), workspace.get());
 	}
-    selection->setSelection(toSelect.begin(), toSelect.end());
+	selection->setSelection(toSelect.begin(), toSelect.end());
 	dataState->setDirty(true);
 }
 
 SeparateSelectionVerb::SeparateSelectionVerb(DataModel* dataModel)
 	: EditSelectionVerb("SeparateSelection", dataModel)
-{}
+{
+}
 
 bool SeparateSelectionVerb::isEnabled() const
 {
@@ -367,7 +372,7 @@ bool SeparateSelectionVerb::isEnabled() const
 
 void SeparateSelectionVerb::doIt(IDataState* dataState)
 {
-    UpdateUIManager::Instance().waitForLongProcess("Separate", boost::bind(&SeparateSelectionVerb::performSeparate, this, dataState));
+	UpdateUIManager::Instance().waitForLongProcess("Separate", boost::bind(&SeparateSelectionVerb::performSeparate, this, dataState));
 }
 
 void SeparateSelectionVerb::performSeparate(IDataState* dataState)
@@ -375,25 +380,26 @@ void SeparateSelectionVerb::performSeparate(IDataState* dataState)
 	DataModel::LegacyLock lock(dataModel, RBX::DataModelJob::Write);
 	FASTLOG(FLog::Verbs, "Gui:SeparateSelection");
 
-    CSGOperations csgOps( dataModel, operationFailed );
-    Selection* selection = ServiceProvider::create< Selection >(dataModel);
-    std::vector<shared_ptr<Instance> > ungroupedItems;
+	CSGOperations csgOps(dataModel, operationFailed);
+	Selection* selection = ServiceProvider::create< Selection >(dataModel);
+	std::vector<shared_ptr<Instance> > ungroupedItems;
 
-    if (csgOps.doSeparate(selection->begin(), selection->end(), ungroupedItems))
-        RBX::ChangeHistoryService::requestWaypoint(getName().c_str(), workspace.get());
+	if (csgOps.doSeparate(selection->begin(), selection->end(), ungroupedItems))
+		RBX::ChangeHistoryService::requestWaypoint(getName().c_str(), workspace.get());
 
-    selection->setSelection(ungroupedItems.begin(), ungroupedItems.end());
-    dataState->setDirty(true);
+	selection->setSelection(ungroupedItems.begin(), ungroupedItems.end());
+	dataState->setDirty(true);
 }
 
 CutVerb::CutVerb(RBX::DataModel* dataModel)
-: DeleteSelectionVerb(dataModel, dataModel, "Cut")
-{}
+	: DeleteSelectionVerb(dataModel, dataModel, "Cut")
+{
+}
 
 void CutVerb::doIt(RBX::IDataState* dataState)
 {
 	// First copy selection to clipboard
-	RBX::Verb *pCopyVerb = getContainer()->getVerb("Copy");
+	RBX::Verb* pCopyVerb = getContainer()->getVerb("Copy");
 	if (!pCopyVerb)
 		return;
 
@@ -404,15 +410,16 @@ void CutVerb::doIt(RBX::IDataState* dataState)
 }
 
 CopyVerb::CopyVerb(RBX::DataModel* dataModel)
-: EditSelectionVerb("Copy", dataModel)
-{}
+	: EditSelectionVerb("Copy", dataModel)
+{
+}
 
 void CopyVerb::doIt(RBX::IDataState*)
 {
-	QClipboard *pClipboard = QApplication::clipboard();
+	QClipboard* pClipboard = QApplication::clipboard();
 	pClipboard->clear();
 
-	RBX::Selection  *pSelection = RBX::ServiceProvider::create<RBX::Selection>(dataModel);
+	RBX::Selection* pSelection = RBX::ServiceProvider::create<RBX::Selection>(dataModel);
 
 	RBX::CSGDictionaryService* dictionaryService = RBX::ServiceProvider::create< RBX::CSGDictionaryService >(dataModel);
 	RBX::NonReplicatedCSGDictionaryService* nrDictionaryService = RBX::ServiceProvider::create<RBX::NonReplicatedCSGDictionaryService>(dataModel);
@@ -422,15 +429,15 @@ void CopyVerb::doIt(RBX::IDataState*)
 		nrDictionaryService->retrieveAllDescendants(*iter);
 	}
 
-    std::ostringstream selectionStream;
+	std::ostringstream selectionStream;
 
-    RBX::Instances instances(pSelection->begin(), pSelection->end());
-    RBX::SerializerBinary::serialize(selectionStream, instances);
+	RBX::Instances instances(pSelection->begin(), pSelection->end());
+	RBX::SerializerBinary::serialize(selectionStream, instances);
 
-    std::string contents = selectionStream.str();
+	std::string contents = selectionStream.str();
 
-    QMimeData* pMimeDataForClipboard = new QMimeData;
-	pMimeDataForClipboard->setData(sRobloxMimeType,QByteArray(contents.data(), contents.length()));
+	QMimeData* pMimeDataForClipboard = new QMimeData;
+	pMimeDataForClipboard->setData(sRobloxMimeType, QByteArray(contents.data(), contents.length()));
 
 
 	for (std::vector<shared_ptr<RBX::Instance> >::const_iterator iter = pSelection->begin(); iter != pSelection->end(); ++iter)
@@ -439,7 +446,7 @@ void CopyVerb::doIt(RBX::IDataState*)
 		nrDictionaryService->storeAllDescendants(*iter);
 	}
 
-    // enable following code for debugging
+	// enable following code for debugging
 	if (FFlag::StudioMimeDataContainsInstancePath && pSelection->size() == 1)
 		pMimeDataForClipboard->setText(("Game." + (*pSelection->begin())->getFullName()).c_str());
 
@@ -448,14 +455,15 @@ void CopyVerb::doIt(RBX::IDataState*)
 }
 
 PasteVerb::PasteVerb(RBX::DataModel* dataModel, bool pasteInto)
-: RBX::Verb(dataModel, pasteInto ? "PasteInto" : "Paste")
-, m_pDataModel(dataModel)
-, m_bPasteInto(pasteInto)
-{}
+	: RBX::Verb(dataModel, pasteInto ? "PasteInto" : "Paste")
+	, m_pDataModel(dataModel)
+	, m_bPasteInto(pasteInto)
+{
+}
 
 bool PasteVerb::isEnabled() const
 {
-    if (!isPasteInfoAvailable())
+	if (!isPasteInfoAvailable())
 		return false;
 
 	if (!m_bPasteInto)
@@ -463,18 +471,20 @@ bool PasteVerb::isEnabled() const
 
 	//for paste into (used in tree view contextual menu)
 	RBX::Selection* pSelection = RBX::ServiceProvider::create<RBX::Selection>(m_pDataModel);
-	return (pSelection && pSelection->size()==1);
+	return (pSelection && pSelection->size() == 1);
 }
 
 void PasteVerb::onClipboardModified()
-{	m_bIsPasteInfoAvailable = isPasteInfoAvailable(); }
+{
+	m_bIsPasteInfoAvailable = isPasteInfoAvailable();
+}
 
 bool PasteVerb::isPasteInfoAvailable() const
 {
-	QClipboard      *pClipboard = QApplication::clipboard();
+	QClipboard* pClipboard = QApplication::clipboard();
 	if (pClipboard)
 	{
-		const QMimeData *pMimeData  = pClipboard->mimeData();
+		const QMimeData* pMimeData = pClipboard->mimeData();
 		if (pMimeData && pMimeData->hasFormat(sRobloxMimeType))
 			return true;
 	}
@@ -502,8 +512,8 @@ void PasteVerb::doIt(RBX::IDataState* dataState)
 
 void PasteVerb::createInstancesFromClipboard(shared_ptr<RBX::Instances> itemsToPaste)
 {
-	QClipboard      *pClipboard = QApplication::clipboard();
-	const QMimeData *pMimeData  = pClipboard->mimeData();
+	QClipboard* pClipboard = QApplication::clipboard();
+	const QMimeData* pMimeData = pClipboard->mimeData();
 	if (!pMimeData || !pMimeData->hasFormat(sRobloxMimeType))
 		return;
 
@@ -534,7 +544,7 @@ void PasteVerb::insertInstancesIntoParent(shared_ptr<RBX::Instances> itemsToPast
 
 	isDecal = itemsToPaste->size() == 1 && RBX::Instance::fastSharedDynamicCast<RBX::Decal>(*itemsToPaste->begin());
 
-	if (pSelection->size()!=1 || (isDecal && !m_bPasteInto))
+	if (pSelection->size() != 1 || (isDecal && !m_bPasteInto))
 		pParentInstance = m_pDataModel->getWorkspace();
 	else
 		pParentInstance = m_bPasteInto || !sel->getParent() || !sel->getParent()->getParent() ? sel.get() : sel->getParent();
@@ -553,8 +563,8 @@ void PasteVerb::insertInstancesIntoParent(shared_ptr<RBX::Instances> itemsToPast
 
 void PasteVerb::createInstancesFromClipboardDep(RBX::Instances& itemsToPaste)
 {
-	QClipboard      *pClipboard = QApplication::clipboard();
-	const QMimeData *pMimeData  = pClipboard->mimeData();
+	QClipboard* pClipboard = QApplication::clipboard();
+	const QMimeData* pMimeData = pClipboard->mimeData();
 	if (!pMimeData || !pMimeData->hasFormat(sRobloxMimeType))
 		return;
 
@@ -585,7 +595,7 @@ void PasteVerb::insertInstancesIntoParentDep(RBX::Instances& itemsToPaste)
 
 	isDecal = itemsToPaste.size() == 1 && RBX::Instance::fastSharedDynamicCast<RBX::Decal>(*itemsToPaste.begin());
 
-	if (pSelection->size()!=1 || (isDecal && !m_bPasteInto))
+	if (pSelection->size() != 1 || (isDecal && !m_bPasteInto))
 		pParentInstance = m_pDataModel->getWorkspace();
 	else
 		pParentInstance = m_bPasteInto || !sel->getParent() || !sel->getParent()->getParent() ? sel.get() : sel->getParent();
@@ -604,7 +614,8 @@ void PasteVerb::insertInstancesIntoParentDep(RBX::Instances& itemsToPaste)
 
 DuplicateSelectionVerb::DuplicateSelectionVerb(RBX::DataModel* dataModel)
 	: EditSelectionVerb("Duplicate", dataModel)
-{}
+{
+}
 
 void DuplicateSelectionVerb::doIt(RBX::IDataState*)
 {
@@ -675,8 +686,8 @@ void DuplicateSelectionVerb::doIt(RBX::IDataState*)
 }
 
 UndoVerb::UndoVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "UndoVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	: Verb(pVerbContainer, "UndoVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
 {
 	m_pChangeHistory = RBX::shared_from(m_pDataModel->create<RBX::ChangeHistoryService>());
 	RBXASSERT(m_pChangeHistory);
@@ -684,13 +695,15 @@ UndoVerb::UndoVerb(RBX::VerbContainer* pVerbContainer)
 
 void UndoVerb::doIt(RBX::IDataState*)
 {
-    UpdateUIManager::Instance().waitForLongProcess(
-        "Undo",
-		boost::bind(&RBX::ChangeHistoryService::unplay,m_pChangeHistory.get()) );
+	UpdateUIManager::Instance().waitForLongProcess(
+		"Undo",
+		boost::bind(&RBX::ChangeHistoryService::unplay, m_pChangeHistory.get()));
 }
 
 bool UndoVerb::isEnabled() const
-{	return m_pChangeHistory->canUnplay(); }
+{
+	return m_pChangeHistory->canUnplay();
+}
 
 std::string UndoVerb::getText() const
 {
@@ -701,8 +714,8 @@ std::string UndoVerb::getText() const
 }
 
 RedoVerb::RedoVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "RedoVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	: Verb(pVerbContainer, "RedoVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
 {
 	m_pChangeHistory = RBX::shared_from(m_pDataModel->create<RBX::ChangeHistoryService>());
 	RBXASSERT(m_pChangeHistory);
@@ -710,13 +723,15 @@ RedoVerb::RedoVerb(RBX::VerbContainer* pVerbContainer)
 
 void RedoVerb::doIt(RBX::IDataState*)
 {
-    UpdateUIManager::Instance().waitForLongProcess(
-        "Redo",
-		boost::bind(&RBX::ChangeHistoryService::play,m_pChangeHistory.get()) );
+	UpdateUIManager::Instance().waitForLongProcess(
+		"Redo",
+		boost::bind(&RBX::ChangeHistoryService::play, m_pChangeHistory.get()));
 }
 
 bool RedoVerb::isEnabled() const
-{	return m_pChangeHistory->canPlay(); }
+{
+	return m_pChangeHistory->canPlay();
+}
 
 std::string RedoVerb::getText() const
 {
@@ -727,10 +742,11 @@ std::string RedoVerb::getText() const
 }
 
 InsertModelVerb::InsertModelVerb(RBX::VerbContainer* pVerbContainer, bool insertInto)
-: Verb(pVerbContainer, insertInto ? "InsertIntoFromFileVerb" :"InsertModelVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-, m_bInsertInto(insertInto)
-{}
+	: Verb(pVerbContainer, insertInto ? "InsertIntoFromFileVerb" : "InsertModelVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	, m_bInsertInto(insertInto)
+{
+}
 
 void InsertModelVerb::doIt(RBX::IDataState*)
 {
@@ -742,8 +758,8 @@ void InsertModelVerb::insertModel()
 	RobloxSettings settings;
 
 	QString rbxmLastDir = settings.value("rbxm_last_directory").toString();
-	if ( rbxmLastDir.isEmpty() )
-        rbxmLastDir = RobloxMainWindow::getDefaultSavePath();
+	if (rbxmLastDir.isEmpty())
+		rbxmLastDir = RobloxMainWindow::getDefaultSavePath();
 
 	QString dlgTitle = m_bInsertInto ? QObject::tr("Open file to Insert") : QObject::tr("Open Roblox Model");
 	QString fileExtn = m_bInsertInto ? QObject::tr("Roblox Model Files (*.rbxm *.rbxmx);;Scripts (*.rbxs *.lua *.txt)") : QObject::tr("Roblox Model Files (*.rbxm *.rbxmx)");
@@ -760,7 +776,7 @@ void InsertModelVerb::insertModel()
 		return;
 
 	if (fileName.endsWith(".rbxm", Qt::CaseInsensitive) || fileName.endsWith(".rbxmx", Qt::CaseInsensitive))
-	    StudioUtilities::insertModel(RBX::shared_from(m_pDataModel), fileName, m_bInsertInto);
+		StudioUtilities::insertModel(RBX::shared_from(m_pDataModel), fileName, m_bInsertInto);
 	else
 		StudioUtilities::insertScript(RBX::shared_from(m_pDataModel), fileName);
 
@@ -768,9 +784,10 @@ void InsertModelVerb::insertModel()
 }
 
 SelectionSaveToFileVerb::SelectionSaveToFileVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "SelectionSaveToFile")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-{}
+	: Verb(pVerbContainer, "SelectionSaveToFile")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+{
+}
 
 void SelectionSaveToFileVerb::doIt(RBX::IDataState*)
 {
@@ -782,11 +799,11 @@ void SelectionSaveToFileVerb::saveToFile()
 	RobloxSettings settings;
 
 	QString rbxmLastDir = settings.value("rbxm_last_directory").toString();
-	if ( rbxmLastDir.isEmpty() )
-        rbxmLastDir = RobloxMainWindow::getDefaultSavePath();
+	if (rbxmLastDir.isEmpty())
+		rbxmLastDir = RobloxMainWindow::getDefaultSavePath();
 
-    QString fileExtnModels("Roblox XML Model Files (*.rbxmx);;Roblox Model Files (*.rbxm)");
-    QString fileExtnScripts("Roblox Lua Scripts (*.lua)");
+	QString fileExtnModels("Roblox XML Model Files (*.rbxmx);;Roblox Model Files (*.rbxm)");
+	QString fileExtnScripts("Roblox Lua Scripts (*.lua)");
 
 	QString fileExtn = fileExtnModels;
 
@@ -801,12 +818,12 @@ void SelectionSaveToFileVerb::saveToFile()
 		//if script doesn't have any children then default to lua
 		if (!pSelection->front()->numChildren())
 		{
-            fileExtn = fileExtnScripts + ";;" + fileExtnModels;
-            rbxmLastDir.append(".lua");
-        }
+			fileExtn = fileExtnScripts + ";;" + fileExtnModels;
+			rbxmLastDir.append(".lua");
+		}
 		else
 		{
-            fileExtn = fileExtnModels + ";;" + fileExtnScripts;
+			fileExtn = fileExtnModels + ";;" + fileExtnScripts;
 			rbxmLastDir.append(".rbxm");
 		}
 	}
@@ -833,39 +850,39 @@ void SelectionSaveToFileVerb::saveToFile()
 
 	if (fileName.endsWith(".rbxm", Qt::CaseInsensitive) || fileName.endsWith(".rbxmx", Qt::CaseInsensitive))
 	{
-	    QByteArray ba = fileName.toAscii();
-	    const char *c_str = ba.constData();
+		QByteArray ba = fileName.toAscii();
+		const char* c_str = ba.constData();
 
-	    // Stream the XML data
-	    std::ofstream stream;
-	    stream.open(c_str, std::ios_base::out | std::ios::binary);
+		// Stream the XML data
+		std::ofstream stream;
+		stream.open(c_str, std::ios_base::out | std::ios::binary);
 
-        const bool useBinaryFormat = !(fileName.endsWith(".rbxmx", Qt::CaseInsensitive));
+		const bool useBinaryFormat = !(fileName.endsWith(".rbxmx", Qt::CaseInsensitive));
 
-        if (useBinaryFormat)
-        {
-            RBX::Selection* pSelection = RBX::ServiceProvider::create< RBX::Selection >(m_pDataModel->getWorkspace());
+		if (useBinaryFormat)
+		{
+			RBX::Selection* pSelection = RBX::ServiceProvider::create< RBX::Selection >(m_pDataModel->getWorkspace());
 
-            RBX::Instances instances(pSelection->begin(), pSelection->end());
-            RBX::SerializerBinary::serialize(stream, instances);
-        }
-        else
-        {
-            TextXmlWriter machine(stream);
+			RBX::Instances instances(pSelection->begin(), pSelection->end());
+			RBX::SerializerBinary::serialize(stream, instances);
+		}
+		else
+		{
+			TextXmlWriter machine(stream);
 
-            UpdateUIManager::Instance().waitForLongProcess(
-                "Saving",
-                boost::bind(&TextXmlWriter::serialize,&machine,writeSelection().get()) );
-        }
+			UpdateUIManager::Instance().waitForLongProcess(
+				"Saving",
+				boost::bind(&TextXmlWriter::serialize, &machine, writeSelection().get()));
+		}
 	}
 	else
 	{
 		QString scriptText;
 		{
 			shared_ptr<RBX::Script> spScriptInstance = RBX::Instance::fastSharedDynamicCast<RBX::Script>(pSelection->front());
-			if(spScriptInstance)
+			if (spScriptInstance)
 			{
-				if(spScriptInstance->isCodeEmbedded())
+				if (spScriptInstance->isCodeEmbedded())
 				{
 					scriptText = spScriptInstance->getEmbeddedCodeSafe().getSource().c_str();
 				}
@@ -918,17 +935,17 @@ std::auto_ptr<XmlElement> SelectionSaveToFileVerb::writeSelection()
 }
 
 PublishToRobloxAsVerb::PublishToRobloxAsVerb(RBX::VerbContainer* pVerbContainer, RobloxMainWindow* mainWnd)
-: Verb(pVerbContainer, "PublishToRobloxAsVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-, m_pMainWindow(mainWnd)
-, m_dlg(NULL)
+	: Verb(pVerbContainer, "PublishToRobloxAsVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	, m_pMainWindow(mainWnd)
+	, m_dlg(NULL)
 {
 }
 
 PublishToRobloxAsVerb::~PublishToRobloxAsVerb()
 {
 	if (m_dlg)
-        delete m_dlg;
+		delete m_dlg;
 }
 
 bool PublishToRobloxAsVerb::isEnabled() const
@@ -946,14 +963,14 @@ void PublishToRobloxAsVerb::initDialog()
 		QString initialUrl = QString("%1/IDE/publishas").arg(RobloxSettings::getBaseURL());
 
 		if (!m_dlg)
-        {
+		{
 			m_dlg = new WebDialog(m_pMainWindow, initialUrl, m_pDataModel);
-            m_dlg->setMinimumSize(FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
-        }
+			m_dlg->setMinimumSize(FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
+		}
 		else
 			m_dlg->load(initialUrl);
 	}
-	catch(std::exception& e)
+	catch (std::exception& e)
 	{
 		RBX::Log::current()->writeEntry(RBX::Log::Error, e.what());
 	}
@@ -963,7 +980,7 @@ void PublishToRobloxAsVerb::initDialog()
 void PublishToRobloxAsVerb::doIt(RBX::IDataState*)
 {
 	// autosave before we publish just in case
-    RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
+	RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
 
 	RobloxMainWindow::sendCounterEvent("QTStudio_IntendPublish");
 
@@ -980,10 +997,10 @@ void PublishToRobloxAsVerb::doIt(RBX::IDataState*)
 		QString initialUrl = QString("%1/IDE/Upload.aspx").arg(RobloxSettings::getBaseURL());
 
 		if (!m_dlg)
-        {
+		{
 			m_dlg = new WebDialog(m_pMainWindow, initialUrl, m_pDataModel);
-            m_dlg->setMinimumSize( FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
-        }
+			m_dlg->setMinimumSize(FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
+		}
 		else
 			m_dlg->load(initialUrl);
 	}
@@ -994,15 +1011,15 @@ void PublishToRobloxAsVerb::doIt(RBX::IDataState*)
 }
 
 QDialog* PublishToRobloxAsVerb::getPublishDialog()
-{ 
-	return qobject_cast<QDialog*>(m_dlg); 
+{
+	return qobject_cast<QDialog*>(m_dlg);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // Bind fn for Publish Selection to Roblox
 static void AnimationResponse(std::string* response, std::exception*, shared_ptr<RBX::Animation> animation)
 {
-	if(response){
+	if (response) {
 		RBX::DataModel::LegacyLock lock(RBX::DataModel::get(animation.get()), RBX::DataModelJob::Write);
 		int newAssetId;
 		std::stringstream istream(*response);
@@ -1034,12 +1051,12 @@ static void PostSaveHelper(boost::function<void(std::string)> saveFunction, std:
 }
 
 static void PostFromContentProvider(RBX::AsyncHttpQueue::RequestResult result, std::istream* stream,
-									int type, std::string name, weak_ptr<RBX::DataModel> weakDataModel, boost::function<void(std::string)> saveFunction)
+	int type, std::string name, weak_ptr<RBX::DataModel> weakDataModel, boost::function<void(std::string)> saveFunction)
 {
 	QString baseUrl = RobloxSettings::getBaseURL();
-	if(result == RBX::AsyncHttpQueue::Succeeded){
+	if (result == RBX::AsyncHttpQueue::Succeeded) {
 		RBX::Http http(RBX::format("%s/Data/NewAsset.ashx?type=%d&Name=%s&Description=%s", qPrintable(baseUrl), type, name.c_str(), name.c_str()));
-		try{
+		try {
 			std::string response;
 			http.post(*stream, RBX::Http::kContentTypeDefaultUnspecified, true, response);
 
@@ -1047,11 +1064,11 @@ static void PostFromContentProvider(RBX::AsyncHttpQueue::RequestResult result, s
 			std::stringstream istream(response);
 			istream >> newAssetId;
 
-			if(shared_ptr<RBX::DataModel> dataModel = weakDataModel.lock()){
+			if (shared_ptr<RBX::DataModel> dataModel = weakDataModel.lock()) {
 				dataModel->submitTask(boost::bind(&PostSaveHelper, saveFunction, RBX::format("%s/Asset?ID=%d", qPrintable(baseUrl), newAssetId)), RBX::DataModelJob::Write);
 			}
 		}
-		catch(std::exception&){
+		catch (std::exception&) {
 
 		}
 	}
@@ -1061,16 +1078,16 @@ static void PostFromContentProvider(RBX::AsyncHttpQueue::RequestResult result, s
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 PublishSelectionToRobloxVerb::PublishSelectionToRobloxVerb(RBX::VerbContainer* pVerbContainer, RobloxMainWindow* mainWnd)
-: Verb(pVerbContainer, "PublishSelectionToRobloxVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-, m_pMainWindow(mainWnd)
-, m_dlg(NULL)
+	: Verb(pVerbContainer, "PublishSelectionToRobloxVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	, m_pMainWindow(mainWnd)
+	, m_dlg(NULL)
 {
 }
 
 PublishSelectionToRobloxVerb::~PublishSelectionToRobloxVerb()
 {
-    if (m_dlg)
+	if (m_dlg)
 		delete m_dlg;
 }
 
@@ -1083,7 +1100,7 @@ bool PublishSelectionToRobloxVerb::isEnabled() const
 void PublishSelectionToRobloxVerb::doIt(RBX::IDataState*)
 {
 	// autosave before we publish just in case
-    RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
+	RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
 
 	RobloxMainWindow::sendCounterEvent("QTStudio_IntendPublishSelection");
 
@@ -1097,38 +1114,38 @@ void PublishSelectionToRobloxVerb::doIt(RBX::IDataState*)
 	{
 
 		RBX::Selection* sel = RBX::ServiceProvider::find<RBX::Selection>(m_pDataModel);
-		if (sel && sel->size()==1)
+		if (sel && sel->size() == 1)
 			if (dynamic_cast<RBX::BaseScript*>(sel->front().get()))
 				isScript = true;
 	}
 	if (RbxWorkspace::isImageModelAssetUploadEnabled)
 	{
 		RBX::Selection* sel = RBX::ServiceProvider::find<RBX::Selection>(m_pDataModel);
-		if (sel && sel->size()==1){
-			if (RBX::Decal* decal = dynamic_cast<RBX::Decal*>(sel->front().get())){
-				if(!decal->getTexture().isHttp()){
+		if (sel && sel->size() == 1) {
+			if (RBX::Decal* decal = dynamic_cast<RBX::Decal*>(sel->front().get())) {
+				if (!decal->getTexture().isHttp()) {
 					boost::function<void(std::string)> foo = boost::bind(&SaveDecalAssetId, shared_from(decal), _1);
 					RBX::ServiceProvider::create<RBX::ContentProvider>(m_pDataModel)->getContent(decal->getTexture(), RBX::ContentProvider::PRIORITY_MFC,
-																													boost::bind(&PostFromContentProvider, _1, _2, 1, decal->getName(), weak_from(RBX::DataModel::get(decal)),foo));
+						boost::bind(&PostFromContentProvider, _1, _2, 1, decal->getName(), weak_from(RBX::DataModel::get(decal)), foo));
 
 					return;
 				}
 			}
-			if (RBX::SpecialShape* mesh = dynamic_cast<RBX::SpecialShape*>(sel->front().get())){
+			if (RBX::SpecialShape* mesh = dynamic_cast<RBX::SpecialShape*>(sel->front().get())) {
 				bool uploadedSomething = false;
-				if(!mesh->getMeshId().isHttp()){
+				if (!mesh->getMeshId().isHttp()) {
 					boost::function<void(std::string)> foo = boost::bind(&SaveMeshMeshId, shared_from(mesh), _1);
 					RBX::ServiceProvider::create<RBX::ContentProvider>(m_pDataModel)->getContent(mesh->getMeshId(), RBX::ContentProvider::PRIORITY_MFC,
-																													boost::bind(&PostFromContentProvider, _1, _2, 4, mesh->getName(), weak_from(RBX::DataModel::get(mesh)),foo));
+						boost::bind(&PostFromContentProvider, _1, _2, 4, mesh->getName(), weak_from(RBX::DataModel::get(mesh)), foo));
 					uploadedSomething = true;
 				}
-				if(!mesh->getTextureId().isHttp()){
+				if (!mesh->getTextureId().isHttp()) {
 					boost::function<void(std::string)> foo = boost::bind(&SaveMeshTextureId, shared_from(mesh), _1);
 					RBX::ServiceProvider::create<RBX::ContentProvider>(m_pDataModel)->getContent(mesh->getTextureId(), RBX::ContentProvider::PRIORITY_MFC,
-																													boost::bind(&PostFromContentProvider, _1, _2, 1, mesh->getName(), weak_from(RBX::DataModel::get(mesh)),foo));
+						boost::bind(&PostFromContentProvider, _1, _2, 1, mesh->getName(), weak_from(RBX::DataModel::get(mesh)), foo));
 					uploadedSomething = true;
 				}
-				if(uploadedSomething){
+				if (uploadedSomething) {
 					return;
 				}
 			}
@@ -1137,7 +1154,7 @@ void PublishSelectionToRobloxVerb::doIt(RBX::IDataState*)
 
 	bool isAnimation = false;
 	RBX::Selection* sel = RBX::ServiceProvider::find<RBX::Selection>(m_pDataModel);
-	if (sel && sel->size()==1) {
+	if (sel && sel->size() == 1) {
 		if (dynamic_cast<RBX::KeyframeSequence*>(sel->front().get())) {
 			isAnimation = true;
 		}
@@ -1145,7 +1162,7 @@ void PublishSelectionToRobloxVerb::doIt(RBX::IDataState*)
 
 	// "http://www.roblox.com/UI/Save.aspx"
 	QString initialUrl;
-	if(isScript)
+	if (isScript)
 		initialUrl = QString("%1/UI/Save.aspx?type=Lua").arg(RobloxSettings::getBaseURL());
 	else if (isAnimation)
 	{
@@ -1161,10 +1178,10 @@ void PublishSelectionToRobloxVerb::doIt(RBX::IDataState*)
 		initialUrl = QString("%1/UI/Save.aspx?type=Model").arg(RobloxSettings::getBaseURL());
 
 	if (!m_dlg)
-    {
+	{
 		m_dlg = new WebDialog(m_pMainWindow, initialUrl, m_pDataModel);
-        m_dlg->setMinimumSize( FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
-    }
+		m_dlg->setMinimumSize(FInt::StudioWebDialogMinimumWidth, FInt::StudioWebDialogMinimumHeight);
+	}
 	else
 		m_dlg->load(initialUrl);
 
@@ -1185,7 +1202,7 @@ bool CreateNewLinkedSourceVerb::isEnabled() const
 {
 	DataModel::LegacyLock lock(m_pDataModel, DataModelJob::Read);
 	shared_ptr<LuaSourceContainer> lsc = getLuaSourceContainer();
-	
+
 	return (UpdateUIManager::Instance().getViewWidget<RobloxGameExplorer>(eDW_GAME_EXPLORER)
 		.getCurrentGameId() > 0) && lsc && lsc->getScriptId().isNull() &&
 		(RobloxUser::singleton().getUserId() > 0);
@@ -1225,7 +1242,7 @@ void CreateNewLinkedSourceVerb::doIt(IDataState*)
 		try
 		{
 			DataModel::LegacyLock lock(m_pDataModel, DataModelJob::Write);
-	
+
 			shared_ptr<LuaSourceContainer> lsc = getLuaSourceContainer();
 			LuaSourceBuffer lsb = LuaSourceBuffer::fromInstance(lsc);
 			ContentId scriptName = ContentId::fromGameAssetName(newName.toStdString());
@@ -1262,7 +1279,7 @@ void CreateNewLinkedSourceVerb::doItThread(std::string source, int currentGameId
 			boost::optional<int>(), groupId));
 
 		int assetId = createScriptAssetResponse.get<int>("AssetId").get();
-	
+
 		EntityProperties createNameRequest;
 		createNameRequest.set("Name", newName.toStdString());
 		if (FFlag::GameExplorerUseV2AliasEndpoint)
@@ -1277,7 +1294,7 @@ void CreateNewLinkedSourceVerb::doItThread(std::string source, int currentGameId
 
 		QString postUrl;
 		postUrl = QString(FFlag::GameExplorerUseV2AliasEndpoint ?
-				"%1/universes/create-alias-v2?universeId=%2" : "%1/universes/create-alias?universeId=%2")
+			"%1/universes/create-alias-v2?universeId=%2" : "%1/universes/create-alias?universeId=%2")
 			.arg(QString::fromStdString(ContentProvider::getApiBaseUrl(RobloxSettings::getBaseURL().toStdString())))
 			.arg(currentGameId);
 
@@ -1287,7 +1304,7 @@ void CreateNewLinkedSourceVerb::doItThread(std::string source, int currentGameId
 		std::string postResponse;
 		// perform synchronous post
 		http.post(propertiesStream, Http::kContentTypeApplicationJson, false, postResponse);
-	
+
 		*success = true;
 		RBX::StandardOut::singleton()->print(MESSAGE_INFO, "Successfully created new LinkedSource");
 
@@ -1328,10 +1345,10 @@ bool PublishAsPluginVerb::isEnabled() const
 void PublishAsPluginVerb::doIt(RBX::IDataState*)
 {
 	// autosave before we publish just in case
-    RobloxDocManager::Instance().getPlayDoc()->autoSave(false /*do not force autosave*/);
+	RobloxDocManager::Instance().getPlayDoc()->autoSave(false /*do not force autosave*/);
 
 	if (!StudioUtilities::checkNetworkAndUserAuthentication())
-			return;
+		return;
 
 	RBX::DataModel::LegacyLock lock(m_pDataModel, RBX::DataModelJob::Write);
 
@@ -1349,13 +1366,13 @@ void PublishAsPluginVerb::doIt(RBX::IDataState*)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-LaunchInstancesVerb::LaunchInstancesVerb( RBX::VerbContainer* pVerbContainer )
-: Verb(pVerbContainer, "LaunchInstancesVerb")
-, m_pVerbContainer(pVerbContainer)
+LaunchInstancesVerb::LaunchInstancesVerb(RBX::VerbContainer* pVerbContainer)
+	: Verb(pVerbContainer, "LaunchInstancesVerb")
+	, m_pVerbContainer(pVerbContainer)
 {
 }
 
-void LaunchInstancesVerb::doIt( RBX::IDataState* dataState )
+void LaunchInstancesVerb::doIt(RBX::IDataState* dataState)
 {
 	RBX::Verb* pVerb;
 	switch (NameValueStoreManager::singleton().getValue("clientsAndServersOptions", "user_value").toInt())
@@ -1387,15 +1404,15 @@ void LaunchInstancesVerb::doIt( RBX::IDataState* dataState )
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 StartServerAndPlayerVerb::StartServerAndPlayerVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "StartServerAndPlayerVerb")
-, m_pVerbContainer(pVerbContainer)
+	: Verb(pVerbContainer, "StartServerAndPlayerVerb")
+	, m_pVerbContainer(pVerbContainer)
 {
 }
 
 void StartServerAndPlayerVerb::doIt(RBX::IDataState* dataState)
 {
 	bool startServer = NameValueStoreManager::singleton().getValue("startServerCB", "checked").toBool();
-	int  numPlayers  = NameValueStoreManager::singleton().getValue("playersMode", "user_value").toInt();
+	int  numPlayers = NameValueStoreManager::singleton().getValue("playersMode", "user_value").toInt();
 
 	// save values in settings (so it can be used for launching players from launched server)
 	RobloxSettings settings;
@@ -1424,11 +1441,11 @@ void StartServerAndPlayerVerb::doIt(RBX::IDataState* dataState)
 void StartServerAndPlayerVerb::launchPlayers(int numPlayers)
 {
 	UpdateUIManager::Instance().waitForLongProcess(
-        "Starting players",
-		boost::bind(&StartServerAndPlayerVerb::launchStudioInstances, m_pVerbContainer, numPlayers) );
+		"Starting players",
+		boost::bind(&StartServerAndPlayerVerb::launchStudioInstances, m_pVerbContainer, numPlayers));
 }
 
-void StartServerAndPlayerVerb::launchStudioInstances(RBX::VerbContainer *pVerbContainer, int numPlayers)
+void StartServerAndPlayerVerb::launchStudioInstances(RBX::VerbContainer* pVerbContainer, int numPlayers)
 {
 	// this function will be called from a new thread
 	if (numPlayers > 0)
@@ -1449,7 +1466,7 @@ void StartServerAndPlayerVerb::launchStudioInstances(RBX::VerbContainer *pVerbCo
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ServerPlayersStateInitVerb::ServerPlayersStateInitVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "ServerPlayersStateInitVerb")
+	: Verb(pVerbContainer, "ServerPlayersStateInitVerb")
 {
 	RobloxSettings settings;
 	//initialize start server mode
@@ -1462,26 +1479,30 @@ ServerPlayersStateInitVerb::ServerPlayersStateInitVerb(RBX::VerbContainer* pVerb
 		pComboBox->setCurrentIndex(index);
 }
 
-void ServerPlayersStateInitVerb::doIt(RBX::IDataState* )
-{	RobloxSettings().setValue(sRibbonStartServerSetting, NameValueStoreManager::singleton().getValue("startServerCB", "checked").toBool()); }
+void ServerPlayersStateInitVerb::doIt(RBX::IDataState*)
+{
+	RobloxSettings().setValue(sRibbonStartServerSetting, NameValueStoreManager::singleton().getValue("startServerCB", "checked").toBool());
+}
 
 bool ServerPlayersStateInitVerb::isChecked() const
-{  return RobloxSettings().value(sRibbonStartServerSetting, true).toBool(); }
+{
+	return RobloxSettings().value(sRibbonStartServerSetting, true).toBool();
+}
 
-CreatePluginVerb::CreatePluginVerb( RBX::VerbContainer* pVerbContainer )
-: Verb(pVerbContainer, "CreatePluginVerb")
-, m_pVerbContainer(pVerbContainer)
+CreatePluginVerb::CreatePluginVerb(RBX::VerbContainer* pVerbContainer)
+	: Verb(pVerbContainer, "CreatePluginVerb")
+	, m_pVerbContainer(pVerbContainer)
 {
 }
 
-void CreatePluginVerb::doIt( RBX::IDataState* dataState )
+void CreatePluginVerb::doIt(RBX::IDataState* dataState)
 {
 	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/wiki/index.php/How_To_Make_Plugins"));
 }
 
 PlaySoloVerb::PlaySoloVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "PlaySoloVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	: Verb(pVerbContainer, "PlaySoloVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
 {
 }
 
@@ -1495,14 +1516,14 @@ void PlaySoloVerb::doIt(RBX::IDataState*)
 	if (FFlag::LuaDebugger)
 		QFile::remove(StudioUtilities::getDebugInfoFile(fileSaveLocation));
 
-    if ( !StudioSerializerHelper::saveAs(fileSaveLocation,"Play Solo",false,true,m_pDataModel,errorMessage,true) )
-    {
-        QMessageBox::critical(
-            &UpdateUIManager::Instance().getMainWindow(),
-            "Play Solo - Save Failure",
-            errorMessage );
-        return;
-    }
+	if (!StudioSerializerHelper::saveAs(fileSaveLocation, "Play Solo", false, true, m_pDataModel, errorMessage, true))
+	{
+		QMessageBox::critical(
+			&UpdateUIManager::Instance().getMainWindow(),
+			"Play Solo - Save Failure",
+			errorMessage);
+		return;
+	}
 
 	// loadfile('http://www.roblox.com/game/visit.ashx')()
 	QString script;
@@ -1521,22 +1542,23 @@ PairRbxDevVerb::PairRbxDevVerb(RBX::VerbContainer* pVerbContainer, QWidget* newP
 
 void PairRbxDevVerb::doIt(RBX::IDataState* dataState)
 {
-    if (!dialog)
-    {
-        shared_ptr<PairRbxDeviceDialog> newDialog( new PairRbxDeviceDialog(NULL) );
-        dialog = newDialog;
-    }
+	if (!dialog)
+	{
+		shared_ptr<PairRbxDeviceDialog> newDialog(new PairRbxDeviceDialog(NULL));
+		dialog = newDialog;
+	}
 
-    dialog->updatePairCode();
+	dialog->updatePairCode();
 	dialog->exec();
 
-    dialog.reset();
+	dialog.reset();
 }
 
 ManageEmulationDevVerb::ManageEmulationDevVerb(RBX::VerbContainer* pVerbContainer, QWidget* newParent)
 	: Verb(pVerbContainer, "ManageEmulationDevVerb")
 	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-{}
+{
+}
 
 void ManageEmulationDevVerb::doIt(RBX::IDataState* dataState)
 {
@@ -1547,7 +1569,8 @@ void ManageEmulationDevVerb::doIt(RBX::IDataState* dataState)
 AudioToggleVerb::AudioToggleVerb(RBX::VerbContainer* pVerbContainer)
 	: Verb(pVerbContainer, "AudioEnableVerb")
 	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-{}
+{
+}
 
 void AudioToggleVerb::doIt(RBX::IDataState* dataState)
 {
@@ -1574,39 +1597,39 @@ bool AudioToggleVerb::isChecked() const
 }
 
 AnalyzePhysicsToggleVerb::AnalyzePhysicsToggleVerb(RBX::DataModel* pDataModel)
-    : RBX::Verb(pDataModel, "AnalyzeEnableVerb")
-    , m_pDataModel(pDataModel)
+	: RBX::Verb(pDataModel, "AnalyzeEnableVerb")
+	, m_pDataModel(pDataModel)
 {
 }
 
 bool AnalyzePhysicsToggleVerb::isEnabled() const
 {
-    return FFlag::PhysicsAnalyzerEnabled;
+	return FFlag::PhysicsAnalyzerEnabled;
 }
 
 bool AnalyzePhysicsToggleVerb::isChecked() const
 {
-    return PhysicsSettings::singleton().getPhysicsAnalyzerState();
+	return PhysicsSettings::singleton().getPhysicsAnalyzerState();
 }
 
 void AnalyzePhysicsToggleVerb::startAnalyze()
 {
-    PhysicsSettings::singleton().setPhysicsAnalyzerState(true);
+	PhysicsSettings::singleton().setPhysicsAnalyzerState(true);
 }
 
 void AnalyzePhysicsToggleVerb::stopAnalyze()
 {
-    PhysicsSettings::singleton().setPhysicsAnalyzerState(false);
+	PhysicsSettings::singleton().setPhysicsAnalyzerState(false);
 }
 
 void AnalyzePhysicsToggleVerb::doIt(RBX::IDataState*)
 {
-    PhysicsSettings::singleton().getPhysicsAnalyzerState() ? stopAnalyze() : startAnalyze();
+	PhysicsSettings::singleton().getPhysicsAnalyzerState() ? stopAnalyze() : startAnalyze();
 }
 
 StartServerVerb::StartServerVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "StartServerVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	: Verb(pVerbContainer, "StartServerVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
 {
 }
 
@@ -1616,14 +1639,14 @@ void StartServerVerb::doIt(RBX::IDataState*)
 	QString fileSaveLocation = QString("%1/server.rbxl").arg(RobloxSettings::getTempLocation());
 	QString errorMessage;
 
-    if ( !StudioSerializerHelper::saveAs(fileSaveLocation,"Start Server",false,true,m_pDataModel,errorMessage,true) )
-    {
-        QMessageBox::critical(
-            &UpdateUIManager::Instance().getMainWindow(),
-            "Start Server Failure",
-            errorMessage );
-        return;
-    }
+	if (!StudioSerializerHelper::saveAs(fileSaveLocation, "Start Server", false, true, m_pDataModel, errorMessage, true))
+	{
+		QMessageBox::critical(
+			&UpdateUIManager::Instance().getMainWindow(),
+			"Start Server Failure",
+			errorMessage);
+		return;
+	}
 
 	// loadfile('http://www.roblox.com/game/gameserver.ashx')(<placeid>, 53640)
 	QString script;
@@ -1643,26 +1666,26 @@ void StartServerVerb::doIt(RBX::IDataState*)
 
 
 StartPlayerVerb::StartPlayerVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "StartPlayerVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	: Verb(pVerbContainer, "StartPlayerVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
 {
 }
 
 void StartPlayerVerb::doIt(RBX::IDataState*)
 {
-    // loadfile('http://www.roblox.com//game/join.ashx?UserID=0&serverPort=53640')()
+	// loadfile('http://www.roblox.com//game/join.ashx?UserID=0&serverPort=53640')()
 	QString script;
 	script = QString("loadfile(\"%1/game/join.ashx?UserID=0&serverPort=53640&universeId=%2\")()\n")
 		.arg(RobloxSettings::getBaseURL())
 		.arg(m_pDataModel->getUniverseId());
-	
+
 	if (RobloxIDEDoc::getIsCloudEditSession() || (!RBX::Network::Players::clientIsPresent(m_pDataModel) && !RBX::Network::Players::findConstLocalPlayer(m_pDataModel)))
-		RobloxApplicationManager::instance().createNewStudioInstance(script,QString::null,true,true,NewInstanceMode_Player);
+		RobloxApplicationManager::instance().createNewStudioInstance(script, QString::null, true, true, NewInstanceMode_Player);
 }
 
 
 ToggleFullscreenVerb::ToggleFullscreenVerb(RBX::VerbContainer* container) :
-Verb(container, "ToggleFullScreen")
+	Verb(container, "ToggleFullScreen")
 {
 }
 
@@ -1672,10 +1695,10 @@ void ToggleFullscreenVerb::doIt(RBX::IDataState*)
 	bool checkedState = action.isChecked();
 
 	QMetaObject::invokeMethod(
-        &action,
-        "setChecked",
-        Qt::QueuedConnection,
-        Q_ARG(bool,!checkedState) );
+		&action,
+		"setChecked",
+		Qt::QueuedConnection,
+		Q_ARG(bool, !checkedState));
 }
 
 bool ToggleFullscreenVerb::isEnabled() const
@@ -1683,61 +1706,61 @@ bool ToggleFullscreenVerb::isEnabled() const
 	return true;
 }
 
-ShutdownClientVerb::ShutdownClientVerb(RBX::VerbContainer* container, IRobloxDoc *pDoc)
-: Verb(container, "ShutdownClient")
-, m_pIDEDoc(pDoc)
+ShutdownClientVerb::ShutdownClientVerb(RBX::VerbContainer* container, IRobloxDoc* pDoc)
+	: Verb(container, "ShutdownClient")
+	, m_pIDEDoc(pDoc)
 {
 }
 
 void ShutdownClientVerb::doIt(RBX::IDataState*)
 {
-	RobloxMainWindow *pMainWindow = &UpdateUIManager::Instance().getMainWindow();
-	if ( pMainWindow )
+	RobloxMainWindow* pMainWindow = &UpdateUIManager::Instance().getMainWindow();
+	if (pMainWindow)
 	{
 		QMetaObject::invokeMethod(
-            pMainWindow,
-            "forceClose",
-            Qt::QueuedConnection );
+			pMainWindow,
+			"forceClose",
+			Qt::QueuedConnection);
 	}
 }
 
-ShutdownClientAndSaveVerb::ShutdownClientAndSaveVerb(RBX::VerbContainer* container, IRobloxDoc *pDoc)
-    : Verb(container,"ShutdownClientAndSave"),
-      m_pIDEDoc(pDoc)
+ShutdownClientAndSaveVerb::ShutdownClientAndSaveVerb(RBX::VerbContainer* container, IRobloxDoc* pDoc)
+	: Verb(container, "ShutdownClientAndSave"),
+	m_pIDEDoc(pDoc)
 {
 }
 
 void ShutdownClientAndSaveVerb::doIt(RBX::IDataState*)
 {
 	RobloxMainWindow* pMainWindow = &UpdateUIManager::Instance().getMainWindow();
-	if ( pMainWindow )
+	if (pMainWindow)
 	{
 		QMetaObject::invokeMethod(
-            pMainWindow,
-            "saveAndClose",
-            Qt::QueuedConnection );
+			pMainWindow,
+			"saveAndClose",
+			Qt::QueuedConnection);
 	}
 }
 
-LeaveGameVerb::LeaveGameVerb(RBX::VerbContainer* container, IRobloxDoc *pDoc)
-: Verb(container, "Exit")
-, m_pIDEDoc(pDoc)
+LeaveGameVerb::LeaveGameVerb(RBX::VerbContainer* container, IRobloxDoc* pDoc)
+	: Verb(container, "Exit")
+	, m_pIDEDoc(pDoc)
 {
 }
 
 void LeaveGameVerb::doIt(RBX::IDataState*)
 {
-	if ( RobloxDocManager::Instance().getPlayDoc() )
+	if (RobloxDocManager::Instance().getPlayDoc())
 	{
 		RobloxMainWindow& mainWindow = UpdateUIManager::Instance().getMainWindow();
-		QMetaObject::invokeMethod(&mainWindow,"closePlayDoc",Qt::QueuedConnection);
+		QMetaObject::invokeMethod(&mainWindow, "closePlayDoc", Qt::QueuedConnection);
 	}
 }
 
 
 ToggleAxisWidgetVerb::ToggleAxisWidgetVerb(RBX::DataModel* dataModel)
-: RBX::Verb(dataModel,"ToggleAxisWidget")
-, m_pDataModel(dataModel)
+	: RBX::Verb(dataModel, "ToggleAxisWidget")
+	, m_pDataModel(dataModel)
 {
 	RBX::Workspace* pWorkspace = m_pDataModel->getWorkspace();
 	if (pWorkspace)
@@ -1764,11 +1787,11 @@ bool ToggleAxisWidgetVerb::isChecked() const
 }
 
 Toggle3DGridVerb::Toggle3DGridVerb(RBX::DataModel* dataModel)
-: RBX::Verb(dataModel,"Toggle3DGrid")
-, m_pDataModel(dataModel)
+	: RBX::Verb(dataModel, "Toggle3DGrid")
+	, m_pDataModel(dataModel)
 {
 	RBX::Workspace* workspace = m_pDataModel->getWorkspace();
-	if(workspace)
+	if (workspace)
 		workspace->setShow3DGrid(UpdateUIManager::Instance().get3DGridEnabled());
 }
 
@@ -1801,7 +1824,7 @@ bool Toggle3DGridVerb::isChecked() const
 }
 
 ToggleCollisionCheckVerb::ToggleCollisionCheckVerb(RBX::DataModel* dataModel)
-: RBX::Verb(dataModel,"ToggleCollisionCheckVerb")
+	: RBX::Verb(dataModel, "ToggleCollisionCheckVerb")
 {
 	RobloxSettings settings;
 	RBX::AdvArrowTool::advCollisionCheckMode = settings.value(sCollisionToggleModeSetting, true).toBool();
@@ -1812,28 +1835,30 @@ void ToggleCollisionCheckVerb::doIt(RBX::IDataState* dataState)
 	RBX::AdvArrowTool::advCollisionCheckMode = !RBX::AdvArrowTool::advCollisionCheckMode;
 
 	RobloxSettings settings;
-	settings.setValue(sCollisionToggleModeSetting,RBX::AdvArrowTool::advCollisionCheckMode);
+	settings.setValue(sCollisionToggleModeSetting, RBX::AdvArrowTool::advCollisionCheckMode);
 }
 
 bool ToggleCollisionCheckVerb::isChecked() const
-{ return RBX::AdvArrowTool::advCollisionCheckMode; }
+{
+	return RBX::AdvArrowTool::advCollisionCheckMode;
+}
 
 
 ToggleLocalSpaceVerb::ToggleLocalSpaceVerb(RBX::DataModel* dataModel)
-: RBX::Verb(dataModel,"ToggleLocalSpaceVerb")
-, m_pDataModel(dataModel)
+	: RBX::Verb(dataModel, "ToggleLocalSpaceVerb")
+	, m_pDataModel(dataModel)
 {
 	RobloxSettings settings;
 	RBX::AdvArrowTool::advLocalTranslationMode = settings.value(sLocalTranslationModeSetting, false).toBool();
-    RBX::AdvArrowTool::advLocalRotationMode = settings.value(sLocalRotationModeSetting, true).toBool();
+	RBX::AdvArrowTool::advLocalRotationMode = settings.value(sLocalRotationModeSetting, true).toBool();
 }
 
 void ToggleLocalSpaceVerb::doIt(RBX::IDataState* dataState)
 {
-    RBX::MouseCommand* mouseCommand = m_pDataModel->getWorkspace()->getCurrentMouseCommand();
+	RBX::MouseCommand* mouseCommand = m_pDataModel->getWorkspace()->getCurrentMouseCommand();
 
-    if (!mouseCommand)
-        return;
+	if (!mouseCommand)
+		return;
 
 	if (DFFlag::UseRemoveTypeIDTricks)
 	{
@@ -1875,27 +1900,27 @@ void ToggleLocalSpaceVerb::doIt(RBX::IDataState* dataState)
 
 bool ToggleLocalSpaceVerb::isChecked() const
 {
-    RBX::MouseCommand* mouseCommand = m_pDataModel->getWorkspace()->getCurrentMouseCommand();
+	RBX::MouseCommand* mouseCommand = m_pDataModel->getWorkspace()->getCurrentMouseCommand();
 
-    if (!mouseCommand)
-        return false;
+	if (!mouseCommand)
+		return false;
 
-    if (typeid(RBX::AdvMoveTool) == typeid(*mouseCommand))
-    {
-        return RBX::AdvArrowTool::advLocalRotationMode;
-    }
-    else if (typeid(RBX::AdvRotateTool) == typeid(*mouseCommand))
-    {
-        return RBX::AdvArrowTool::advLocalTranslationMode;
-    }
+	if (typeid(RBX::AdvMoveTool) == typeid(*mouseCommand))
+	{
+		return RBX::AdvArrowTool::advLocalRotationMode;
+	}
+	else if (typeid(RBX::AdvRotateTool) == typeid(*mouseCommand))
+	{
+		return RBX::AdvArrowTool::advLocalTranslationMode;
+	}
 
-    return false;
+	return false;
 }
 
 
 ScreenshotVerb::ScreenshotVerb(RBX::DataModel* dataModel)
-: RBX::Verb(dataModel,"Screenshot")
-, m_spDataModel(shared_from(dataModel))
+	: RBX::Verb(dataModel, "Screenshot")
+	, m_spDataModel(shared_from(dataModel))
 {
 	reconnectScreenshotSignal();
 	m_spDataModel->screenshotUploadSignal.connect(boost::bind(&ScreenshotVerb::onUploadSignal, this, _1));
@@ -1905,18 +1930,20 @@ void ScreenshotVerb::doIt(RBX::IDataState* dataState)
 {
 	if (m_spDataModel)
 	{
-		m_spDataModel->submitTask( boost::bind(&RBX::DataModel::TakeScreenshotTask, weak_ptr<RBX::DataModel>(m_spDataModel)),
-								  RBX::DataModelJob::Write );
+		m_spDataModel->submitTask(boost::bind(&RBX::DataModel::TakeScreenshotTask, weak_ptr<RBX::DataModel>(m_spDataModel)),
+			RBX::DataModelJob::Write);
 	}
 }
 
 bool ScreenshotVerb::isEnabled() const
-{	return !StudioUtilities::isScreenShotUploading(); }
-
-void ScreenshotVerb::onScreenshotFinished(const std::string &fileName)
 {
-    if (!m_spDataModel)
-        return;
+	return !StudioUtilities::isScreenShotUploading();
+}
+
+void ScreenshotVerb::onScreenshotFinished(const std::string& fileName)
+{
+	if (!m_spDataModel)
+		return;
 
 	RBXASSERT(!fileName.empty());
 
@@ -1928,14 +1955,14 @@ void ScreenshotVerb::onScreenshotFinished(const std::string &fileName)
 
 	switch (RBX::GameSettings::singleton().getPostImageSetting())
 	{
-		case RBX::GameSettings::ASK:
-			QTimer::singleShot(0, this, SLOT(showPostImageWebDialog()));
-			break;
-		case RBX::GameSettings::ALWAYS:
-			ScreenshotVerb::DoPostImage(m_spDataModel, m_fileToUpload, getSEOStr());
-			break;
-		case RBX::GameSettings::NEVER:
-			break;
+	case RBX::GameSettings::ASK:
+		QTimer::singleShot(0, this, SLOT(showPostImageWebDialog()));
+		break;
+	case RBX::GameSettings::ALWAYS:
+		ScreenshotVerb::DoPostImage(m_spDataModel, m_fileToUpload, getSEOStr());
+		break;
+	case RBX::GameSettings::NEVER:
+		break;
 	}
 }
 
@@ -1947,7 +1974,7 @@ void ScreenshotVerb::copyImageToClipboard()
 	QImage imageForClipboard(m_fileToUpload);
 	if (!imageForClipboard.isNull() && QApplication::clipboard())
 	{
-		QMimeData *pMimeData = new QMimeData;
+		QMimeData* pMimeData = new QMimeData;
 		pMimeData->setImageData(imageForClipboard);
 		QApplication::clipboard()->setMimeData(pMimeData);
 	}
@@ -1955,27 +1982,27 @@ void ScreenshotVerb::copyImageToClipboard()
 
 void ScreenshotVerb::showPostImageWebDialog()
 {
-    if (!m_spDataModel)
-        return;
+	if (!m_spDataModel)
+		return;
 
 	QString url = QString("%1/UploadMedia/PostImage.aspx?from=client&rand=%2&seostr=%3&filename=%4").arg(RobloxSettings::getBaseURL())
-																									.arg(rand())
-																									.arg(getSEOStr())
-																									.arg(m_fileToUpload);
+		.arg(rand())
+		.arg(getSEOStr())
+		.arg(m_fileToUpload);
 
-	WebDialog *pWebDialog = new WebDialog(&UpdateUIManager::Instance().getMainWindow(), url, m_spDataModel.get());
+	WebDialog* pWebDialog = new WebDialog(&UpdateUIManager::Instance().getMainWindow(), url, m_spDataModel.get());
 	pWebDialog->exec();
 	pWebDialog->deleteLater();
 
 	UpdateUIManager::Instance().updateToolBars();
 }
 
-void ScreenshotVerb::DoPostImage(shared_ptr<RBX::DataModel> spDataModel, const QString &fileName, const QString &seoStr)
+void ScreenshotVerb::DoPostImage(shared_ptr<RBX::DataModel> spDataModel, const QString& fileName, const QString& seoStr)
 {
-    RBXASSERT(spDataModel);
+	RBXASSERT(spDataModel);
 
 	if (!spDataModel)
-        return;
+		return;
 
 	RBXASSERT(!fileName.isEmpty());
 
@@ -1996,8 +2023,8 @@ void ScreenshotVerb::DoPostImage(shared_ptr<RBX::DataModel> spDataModel, const Q
 		if (!fileStream->fail())
 		{
 			showMessage(spDataModel, "Uploading image ...");
-			spDataModel->submitTask( boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), false),
-				                     RBX::DataModelJob::Write);
+			spDataModel->submitTask(boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), false),
+				RBX::DataModelJob::Write);
 
 			http.post(fileStream, RBX::Http::kContentTypeDefaultUnspecified, false,
 				boost::bind(&ScreenshotVerb::PostImageFinished, _1, _2, weak_ptr<RBX::DataModel>(spDataModel)));
@@ -2007,17 +2034,17 @@ void ScreenshotVerb::DoPostImage(shared_ptr<RBX::DataModel> spDataModel, const Q
 	catch (...)
 	{
 		// convey users uploading is finished (required even if there's a failure)
-		spDataModel->submitTask( boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), true),
-			                     RBX::DataModelJob::Write );
+		spDataModel->submitTask(boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), true),
+			RBX::DataModelJob::Write);
 	}
 
 	if (!isUploadStarted)
 		showMessage(spDataModel, "Failed to upload image.");
 }
 
-void ScreenshotVerb::PostImageFinished(std::string *pResponse, std::exception *pException, weak_ptr<RBX::DataModel> pWeakDataModel)
+void ScreenshotVerb::PostImageFinished(std::string* pResponse, std::exception* pException, weak_ptr<RBX::DataModel> pWeakDataModel)
 {
-	if(shared_ptr<RBX::DataModel> spDataModel = pWeakDataModel.lock())
+	if (shared_ptr<RBX::DataModel> spDataModel = pWeakDataModel.lock())
 	{
 		if ((pException == NULL) && (pResponse->compare("ok") == 0))
 		{
@@ -2030,8 +2057,8 @@ void ScreenshotVerb::PostImageFinished(std::string *pResponse, std::exception *p
 		}
 
 		//uploading finished
-		spDataModel->submitTask( boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), true),
-			RBX::DataModelJob::Write );
+		spDataModel->submitTask(boost::bind(&RBX::DataModel::ScreenshotUploadTask, weak_ptr<RBX::DataModel>(spDataModel), true),
+			RBX::DataModelJob::Write);
 	}
 }
 
@@ -2053,14 +2080,14 @@ QString ScreenshotVerb::getSEOStr()
 void ScreenshotVerb::showMessage(shared_ptr<RBX::DataModel> spDataModel, const char* message)
 {
 	if (spDataModel)
-		spDataModel->submitTask( boost::bind(&RBX::DataModel::ShowMessage, weak_ptr<RBX::DataModel>(spDataModel), 1, message, 6), RBX::DataModelJob::Write );
+		spDataModel->submitTask(boost::bind(&RBX::DataModel::ShowMessage, weak_ptr<RBX::DataModel>(spDataModel), 1, message, 6), RBX::DataModelJob::Write);
 	RBX::StandardOut::singleton()->print(RBX::MESSAGE_INFO, message);
 }
 
 void ScreenshotVerb::reconnectScreenshotSignal()
 {
-    if (!m_spDataModel)
-        return;
+	if (!m_spDataModel)
+		return;
 
 	m_spDataModel->screenshotReadySignal.connect(boost::bind(&ScreenshotVerb::onScreenshotFinished, this, _1));
 }
@@ -2069,17 +2096,17 @@ void ScreenshotVerb::reconnectScreenshotSignal()
 #ifdef _WIN32
 
 RecordToggleVerb::RecordToggleVerb(RBX::DataModel* pDataModel, RBX::ViewBase* pViewGfx)
-: RBX::Verb(pDataModel, "RecordToggle")
-, m_pDataModel(pDataModel)
-, m_jobWait(false)
-, m_jobDone(false)
-, m_threadDone(false)
-, m_bStop(false)
-, m_bIsBusy(false)
+	: RBX::Verb(pDataModel, "RecordToggle")
+	, m_pDataModel(pDataModel)
+	, m_jobWait(false)
+	, m_jobDone(false)
+	, m_threadDone(false)
+	, m_bStop(false)
+	, m_bIsBusy(false)
 {
-    m_pVideoControl.reset(new RBX::VideoControl(new RBX::DSVideoCaptureEngine(), pViewGfx,
-                                                pViewGfx->getFrameRateManager(),
-                                                this));
+	m_pVideoControl.reset(new RBX::VideoControl(new RBX::DSVideoCaptureEngine(), pViewGfx,
+		pViewGfx->getFrameRateManager(),
+		this));
 
 	m_helperThread.reset(new boost::thread(boost::bind(&RecordToggleVerb::action, this)));
 }
@@ -2092,13 +2119,19 @@ RecordToggleVerb::~RecordToggleVerb()
 }
 
 bool RecordToggleVerb::isEnabled() const
-{	return (RBX::GameSettings::singleton().videoCaptureEnabled && !StudioUtilities::isVideoUploading() && !m_bIsBusy); }
+{
+	return (RBX::GameSettings::singleton().videoCaptureEnabled && !StudioUtilities::isVideoUploading() && !m_bIsBusy);
+}
 
 bool RecordToggleVerb::isChecked() const
-{	return isRecording(); }
+{
+	return isRecording();
+}
 
 bool RecordToggleVerb::isSelected() const
-{	return isRecording(); }
+{
+	return isRecording();
+}
 
 void RecordToggleVerb::startRecording()
 {
@@ -2130,7 +2163,9 @@ void RecordToggleVerb::stopRecording(bool showUploadDialog)
 }
 
 bool RecordToggleVerb::isRecording() const
-{ return m_pVideoControl->isVideoRecording(); }
+{
+	return m_pVideoControl->isVideoRecording();
+}
 
 void RecordToggleVerb::doIt(RBX::IDataState*)
 {
@@ -2146,10 +2181,10 @@ void RecordToggleVerb::doIt(RBX::IDataState*)
 	}
 	else
 	{
-        m_job = boost::bind(&RecordToggleVerb::startRecording, this);
-        m_jobWait.Set();
-        m_jobDone.Wait();
-    }
+		m_job = boost::bind(&RecordToggleVerb::startRecording, this);
+		m_jobWait.Set();
+		m_jobDone.Wait();
+	}
 }
 
 void RecordToggleVerb::uploadVideo()
@@ -2159,7 +2194,7 @@ void RecordToggleVerb::uploadVideo()
 	QString url = QString("%1/UploadMedia/UploadVideo.aspx?from=client&rand=").arg(RobloxSettings::getBaseURL());
 	url.append(n);
 
-	WebDialog *pWebDialog = new WebDialog(&UpdateUIManager::Instance().getMainWindow(), url, m_pDataModel);
+	WebDialog* pWebDialog = new WebDialog(&UpdateUIManager::Instance().getMainWindow(), url, m_pDataModel);
 	pWebDialog->exec();
 	pWebDialog->deleteLater();
 
@@ -2171,7 +2206,7 @@ void RecordToggleVerb::action()
 {
 	//RBX::StandardOut::singleton()->printf(RBX::MESSAGE_INFO,  "Starting vid. rec. helper thread");
 	CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
-	while(!m_bStop)
+	while (!m_bStop)
 	{
 		m_jobWait.Wait();
 		if (!m_bStop)
@@ -2188,9 +2223,10 @@ void RecordToggleVerb::action()
 #endif
 
 ExportSelectionVerb::ExportSelectionVerb(RBX::DataModel* pDataModel)
-: RBX::Verb(pDataModel, "ExportSelectionVerb")
-, m_pDataModel(pDataModel)
-{}
+	: RBX::Verb(pDataModel, "ExportSelectionVerb")
+	, m_pDataModel(pDataModel)
+{
+}
 
 void ExportSelectionVerb::doIt(RBX::IDataState*)
 {
@@ -2201,9 +2237,10 @@ void ExportSelectionVerb::doIt(RBX::IDataState*)
 }
 
 ExportPlaceVerb::ExportPlaceVerb(RBX::DataModel* pDataModel)
-: RBX::Verb(pDataModel, "ExportPlaceVerb")
-, m_pDataModel(pDataModel)
-{}
+	: RBX::Verb(pDataModel, "ExportPlaceVerb")
+	, m_pDataModel(pDataModel)
+{
+}
 
 void ExportPlaceVerb::doIt(RBX::IDataState*)
 {
@@ -2215,10 +2252,10 @@ void ExportPlaceVerb::doIt(RBX::IDataState*)
 
 
 PublishToRobloxVerb::PublishToRobloxVerb(RBX::VerbContainer* pVerbContainer, RobloxMainWindow* pMainWindow)
-: Verb(pVerbContainer, "PublishToRobloxVerb")
-, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
-, m_pMainWindow(pMainWindow)
-, m_bIsPublishInProcess(false)
+	: Verb(pVerbContainer, "PublishToRobloxVerb")
+	, m_pDataModel(dynamic_cast<RBX::DataModel*>(pVerbContainer))
+	, m_pMainWindow(pMainWindow)
+	, m_bIsPublishInProcess(false)
 {
 	// Hook up our signal from the datamodel
 	m_pDataModel->saveFinishedSignal.connect(boost::bind(&PublishToRobloxVerb::onEventPublishingFinished, this));
@@ -2229,18 +2266,18 @@ void PublishToRobloxVerb::onEventPublishingFinished()
 	m_bIsPublishInProcess = false;
 }
 
-void PublishToRobloxVerb::doIt(RBX::IDataState* dataState )
+void PublishToRobloxVerb::doIt(RBX::IDataState* dataState)
 {
 	// autosave before publish just in case
-    RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
-    const char *failedToPublishErrorMsg = "Failed to Publish";
+	RobloxDocManager::Instance().getPlayDoc()->autoSave(true);
+	const char* failedToPublishErrorMsg = "Failed to Publish";
 
 	if (!StudioUtilities::checkNetworkAndUserAuthentication())
 		return;
 
-    //check if mac banned
-    if (!AuthenticationHelper::validateMachine())
-        throw std::runtime_error(qPrintable(failedToPublishErrorMsg));
+	//check if mac banned
+	if (!AuthenticationHelper::validateMachine())
+		throw std::runtime_error(qPrintable(failedToPublishErrorMsg));
 
 	std::string uploadUrl;
 	if (RobloxIDEDoc::getIsCloudEditSession())
@@ -2254,15 +2291,15 @@ void PublishToRobloxVerb::doIt(RBX::IDataState* dataState )
 		if (RBX::Visit* visit = RBX::ServiceProvider::find<RBX::Visit>(m_pDataModel))
 			uploadUrl = visit->getUploadUrl();
 	}
-	
-	if(!uploadUrl.empty())
+
+	if (!uploadUrl.empty())
 	{
 		{ // Concurrency guard
 			publishingMutex.lock();
 			if (m_bIsPublishInProcess)
 			{
 				publishingMutex.unlock();
-                throw std::runtime_error(qPrintable(failedToPublishErrorMsg));
+				throw std::runtime_error(qPrintable(failedToPublishErrorMsg));
 			}
 
 			m_bIsPublishInProcess = true;
@@ -2270,25 +2307,25 @@ void PublishToRobloxVerb::doIt(RBX::IDataState* dataState )
 		}
 
 
-        bool error;
-        QString errorTitle;
-        QString errorText;
+		bool error;
+		QString errorTitle;
+		QString errorText;
 
 		UpdateUIManager::Instance().waitForLongProcess(
 			"Publishing",
-            boost::bind(
-                &PublishToRobloxVerb::save,
-                this,
-                RBX::ContentId(uploadUrl),
-                &error,
-                &errorTitle,
-                &errorText ) );
+			boost::bind(
+				&PublishToRobloxVerb::save,
+				this,
+				RBX::ContentId(uploadUrl),
+				&error,
+				&errorTitle,
+				&errorText));
 
-        if ( error )
-        {
-            QMessageBox::critical(m_pMainWindow, errorTitle, errorText);
-        }
-		else 
+		if (error)
+		{
+			QMessageBox::critical(m_pMainWindow, errorTitle, errorText);
+		}
+		else
 		{
 			if (!RobloxDocManager::Instance().getPlayDoc()->isLocalDoc())
 			{
@@ -2307,20 +2344,20 @@ bool PublishToRobloxVerb::isEnabled() const
 		(!m_bIsPublishInProcess && m_pDataModel && RBX::ServiceProvider::find<RBX::Visit>(m_pDataModel) && RBX::DataModel::canSave(m_pDataModel));
 }
 
-void PublishToRobloxVerb::save(RBX::ContentId contentID,bool* outError,QString* outErrorTitle,QString* outErrorText)
+void PublishToRobloxVerb::save(RBX::ContentId contentID, bool* outError, QString* outErrorTitle, QString* outErrorText)
 {
-    RBXASSERT(outError);
-    RBXASSERT(outErrorTitle);
-    RBXASSERT(outErrorText);
+	RBXASSERT(outError);
+	RBXASSERT(outErrorTitle);
+	RBXASSERT(outErrorText);
 
-    *outError = true;
-    *outErrorTitle = "Failed to Publish";
-    *outErrorText = "Failed to publish place!";
+	*outError = true;
+	*outErrorTitle = "Failed to Publish";
+	*outErrorText = "Failed to publish place!";
 
-    try
-    {
-        if (FFlag::StudioCSGAssets)
-            PartOperationAsset::publishAll(m_pDataModel);
+	try
+	{
+		if (FFlag::StudioCSGAssets)
+			PartOperationAsset::publishAll(m_pDataModel);
 
 		// it is possible to publish from build mode, where game explorer isn't initialized
 		RobloxGameExplorer& rge = UpdateUIManager::Instance().getViewWidget<RobloxGameExplorer>(eDW_GAME_EXPLORER);
@@ -2342,16 +2379,16 @@ void PublishToRobloxVerb::save(RBX::ContentId contentID,bool* outError,QString* 
 
 		RobloxMainWindow::get(RobloxDocManager::Instance().getPlayDoc())->getStudioAnalytics()->reportPublishStats(m_pDataModel);
 
-        *outError = false;
-    }
-    catch (RBX::DataModel::SerializationException e)
-    {
-        m_bIsPublishInProcess = false;
+		*outError = false;
+	}
+	catch (RBX::DataModel::SerializationException e)
+	{
+		m_bIsPublishInProcess = false;
 
-        shared_ptr<const RBX::Reflection::ValueTable> values(new RBX::Reflection::ValueTable);
+		shared_ptr<const RBX::Reflection::ValueTable> values(new RBX::Reflection::ValueTable);
 
-        std::stringstream jsonStream(e.what());
-        bool parsed = RBX::WebParser::parseJSONTable(e.what(), values);
+		std::stringstream jsonStream(e.what());
+		bool parsed = RBX::WebParser::parseJSONTable(e.what(), values);
 
 		if (parsed)
 		{
@@ -2374,7 +2411,7 @@ void PublishToRobloxVerb::save(RBX::ContentId contentID,bool* outError,QString* 
 		{
 			*outErrorText = e.what();
 		}
-    }
+	}
 	catch (const RBX::base_exception& e)
 	{
 		m_bIsPublishInProcess = false;
@@ -2383,16 +2420,16 @@ void PublishToRobloxVerb::save(RBX::ContentId contentID,bool* outError,QString* 
 		RBX::StandardOut::singleton()->printf(RBX::MESSAGE_ERROR,
 			"Error while publishing: %s", e.what());
 	}
-    catch(...)
-    {
-        m_bIsPublishInProcess = false;
+	catch (...)
+	{
+		m_bIsPublishInProcess = false;
 		// NOTE: because this function is called in waitForLong process, all exceptions are swallowed
 		// without notifying user.
-        throw;
-    }
+		throw;
+	}
 }
 InsertAdvancedObjectViewVerb::InsertAdvancedObjectViewVerb(RBX::VerbContainer* pVerbContainer)
-: Verb(pVerbContainer, "InsertAdvancedObjectDialogVerb")
+	: Verb(pVerbContainer, "InsertAdvancedObjectDialogVerb")
 {
 	// make sure we remain in sync with dockwidget's toggled state
 	UpdateUIManager& uiManager = UpdateUIManager::Instance();
@@ -2405,7 +2442,7 @@ InsertAdvancedObjectViewVerb::~InsertAdvancedObjectViewVerb()
 	QObject::disconnect(uiManager.getDockAction(eDW_BASIC_OBJECTS), SIGNAL(toggled(bool)), uiManager.getAction("actionInsertAdvancedObject"), SLOT(toggle()));
 }
 
-void InsertAdvancedObjectViewVerb::doIt( RBX::IDataState* dataState )
+void InsertAdvancedObjectViewVerb::doIt(RBX::IDataState* dataState)
 {
 	if (UpdateUIManager::Instance().getDockAction(eDW_BASIC_OBJECTS))
 		UpdateUIManager::Instance().getDockAction(eDW_BASIC_OBJECTS)->trigger();
@@ -2421,24 +2458,24 @@ bool InsertAdvancedObjectViewVerb::isChecked() const
 	return UpdateUIManager::Instance().getDockWidget(eDW_BASIC_OBJECTS)->isVisible();
 }
 
-JointToolHelpDialogVerb::JointToolHelpDialogVerb( RBX::VerbContainer* pVerbContainer )
-: Verb(pVerbContainer, "JointToolHelpDialogVerb")
+JointToolHelpDialogVerb::JointToolHelpDialogVerb(RBX::VerbContainer* pVerbContainer)
+	: Verb(pVerbContainer, "JointToolHelpDialogVerb")
 {
 }
 
-void JointToolHelpDialogVerb::doIt( RBX::IDataState* dataState )
+void JointToolHelpDialogVerb::doIt(RBX::IDataState* dataState)
 {
 	QDesktopServices::openUrl(QUrl("http://wiki.roblox.com/wiki/index.php/Joint#Automatic_creation"));
 }
 
 StudioMaterialVerb::StudioMaterialVerb(RBX::DataModel* dataModel)
-: MaterialVerb(dataModel, "StudioMaterialVerb")
+	: MaterialVerb(dataModel, "StudioMaterialVerb")
 {
 	// initialize default value
 	StudioMaterialVerb::sMaterialActionActAsTool = RobloxSettings().value("rbxMaterialActionActAsTool", false).toBool();;
 }
 
-void StudioMaterialVerb::doIt( RBX::IDataState* dataState )
+void StudioMaterialVerb::doIt(RBX::IDataState* dataState)
 {
 	//set material
 	QString currentMaterial = NameValueStoreManager::singleton().getValue("actionMaterialSelector", "user_value").toString();
@@ -2476,23 +2513,23 @@ bool StudioMaterialVerb::isChecked() const
 }
 
 StudioColorVerb::StudioColorVerb(RBX::DataModel* dataModel)
-: ColorVerb(dataModel, "StudioColorVerb")
+	: ColorVerb(dataModel, "StudioColorVerb")
 {
 	addColorToIcon();
 	// initialize default value
 	StudioColorVerb::sColorActionActAsTool = RobloxSettings().value("rbxColorActionActAsTool", false).toBool();
 }
 
-void StudioColorVerb::doIt( RBX::IDataState* dataState )
+void StudioColorVerb::doIt(RBX::IDataState* dataState)
 {
 	//set color
-    RBX::BrickColor selectedBrickColor(NameValueStoreManager::singleton().getValue("actionColorSelector", "user_value").toInt());
-	RBX::ColorVerb::setCurrentColor(selectedBrickColor);
+	RBX::BrickColor selectedBrickColor(NameValueStoreManager::singleton().getValue("actionColorSelector", "user_value").toInt());
+	RBX::ColorVerb::setCurrentColor(selectedBrickColor.color3());
 
 	if (StudioColorVerb::sColorActionActAsTool)
 	{
 		// color for fill tool
-		RBX::FillTool::color.set(selectedBrickColor);
+		RBX::FillTool::color.set(selectedBrickColor.color3());
 		// execute fill tool
 		RBX::Verb* fillToolVerb = dataModel->getVerb("FillTool");
 		if (fillToolVerb)
@@ -2523,27 +2560,27 @@ bool StudioColorVerb::isChecked() const
 void StudioColorVerb::addColorToIcon()
 {
 	//update icon
-    QList<QAction*> colorActions = UpdateUIManager::Instance().getMainWindow().findChildren<QAction*>("actionColorSelector");
-    for (int i = 0; i < colorActions.count(); i++)
-    {
-        QAction* pColorAction = colorActions[i];
+	QList<QAction*> colorActions = UpdateUIManager::Instance().getMainWindow().findChildren<QAction*>("actionColorSelector");
+	for (int i = 0; i < colorActions.count(); i++)
+	{
+		QAction* pColorAction = colorActions[i];
 
-        QColor selectedQColor = QtUtilities::toQColor(RBX::ColorVerb::getCurrentColor().color3());
+		QColor selectedQColor = QtUtilities::toQColor(RBX::ColorVerb::getCurrentColor());
 
-        // Draw the color inside of a filled rectangle on the bottom of the icon
-        QPixmap pix = pColorAction->icon().pixmap(pColorAction->icon().availableSizes()[0]);
-        QPainter p;
-        p.begin(&pix);
-        QRect rect = pix.rect();
-        p.fillRect(rect, selectedQColor);
-        p.end();
+		// Draw the color inside of a filled rectangle on the bottom of the icon
+		QPixmap pix = pColorAction->icon().pixmap(pColorAction->icon().availableSizes()[0]);
+		QPainter p;
+		p.begin(&pix);
+		QRect rect = pix.rect();
+		p.fillRect(rect, selectedQColor);
+		p.end();
 
-        pColorAction->setIcon(QIcon(pix));
-    }
+		pColorAction->setIcon(QIcon(pix));
+	}
 }
 
-OpenToolBoxWithOptionsVerb::OpenToolBoxWithOptionsVerb( RBX::VerbContainer* pVerbContainer )
-: Verb(pVerbContainer, "OpenToolBoxWithOptionsVerb")
+OpenToolBoxWithOptionsVerb::OpenToolBoxWithOptionsVerb(RBX::VerbContainer* pVerbContainer)
+	: Verb(pVerbContainer, "OpenToolBoxWithOptionsVerb")
 {
 	connect(UpdateUIManager::Instance().getDockWidget(eDW_TOOLBOX), SIGNAL(visibilityChanged(bool)), this, SLOT(handleDockVisibilityChanged(bool)));
 }
@@ -2600,8 +2637,8 @@ void OpenToolBoxWithOptionsVerb::handleDockVisibilityChanged(bool isVisible)
 }
 
 InsertBasicObjectVerb::InsertBasicObjectVerb(RBX::DataModel* dataModel)
-: Verb(dataModel, "InsertBasicObjectVerb")
-, m_pDataModel(dataModel)
+	: Verb(dataModel, "InsertBasicObjectVerb")
+	, m_pDataModel(dataModel)
 {
 }
 
@@ -2646,10 +2683,10 @@ bool InsertBasicObjectVerb::isEnabled()
 }
 
 JointCreationModeVerb::JointCreationModeVerb(RBX::DataModel* dataModel)
-: Verb(dataModel, "JointCreationModeVerb")
+	: Verb(dataModel, "JointCreationModeVerb")
 {
 	RobloxSettings settings;
-	int jointCreationMode  = settings.value(sRibbonJointCreationMode, 0).toInt();
+	int jointCreationMode = settings.value(sRibbonJointCreationMode, 0).toInt();
 
 	if (jointCreationMode == 2)
 	{
@@ -2727,8 +2764,8 @@ void JointCreationModeVerb::updateMenuActions()
 }
 
 LaunchHelpForSelectionVerb::LaunchHelpForSelectionVerb(RBX::DataModel* pDataModel)
-: RBX::Verb(pDataModel, "LaunchHelpForSelectionVerb")
-, m_pDataModel(pDataModel)
+	: RBX::Verb(pDataModel, "LaunchHelpForSelectionVerb")
+	, m_pDataModel(pDataModel)
 {
 }
 
@@ -2746,7 +2783,7 @@ void LaunchHelpForSelectionVerb::doIt(RBX::IDataState* dataState)
 	{
 		boost::shared_ptr<RBX::Instance> instance = *(selection->begin());
 		QString className = instance->getClassName().c_str();
-		if(FFlag::StudioNewWiki)
+		if (FFlag::StudioNewWiki)
 			className.prepend("API:Class/");
 
 		if (!className.isEmpty())
