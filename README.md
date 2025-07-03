@@ -168,6 +168,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - Being able to build on listed platforms **[1/3]**
   - [x] Windows
   - [ ] Android
-  - [ ] MacOS / Unix
+  - [ ] MacOS / Unix 
+  - [ ] Linux
 
 ---
