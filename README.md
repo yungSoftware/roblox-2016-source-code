@@ -169,6 +169,5 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Windows
   - [ ] Android
   - [ ] MacOS / Unix 
-  - [ ] Linux
 
 ---
