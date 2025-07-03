@@ -170,6 +170,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [ ] Android
   - [ ] MacOS / Unix 
   - [ ] Linux
-  - These are not important and will not be in our priorites.
+  - These are not important and will not be in our priorities.
 
 ---
