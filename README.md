@@ -165,9 +165,11 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Roblox.System
   - [x] Roblox.WebsiteSettings
   - [x] Roblox.RccServiceArbiter
-- Being able to build on listed platforms **[1/3]**
+- Being able to build on listed platforms **[1/4]**
   - [x] Windows
   - [ ] Android
   - [ ] MacOS / Unix 
+  - [ ] Linux
+  - These are not important and will not be in our priorites.
 
 ---
