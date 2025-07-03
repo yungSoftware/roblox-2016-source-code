@@ -87,6 +87,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
+   - When this got sorted out, we will release our new versions will include only the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
