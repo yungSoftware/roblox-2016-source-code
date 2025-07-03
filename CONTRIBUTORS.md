@@ -13,14 +13,14 @@
 * Color3uint8
 
 [@t0int1337](https://github.com/t0int1337)
-* Fixed New Version Meshes #21
+* Fixed New Version Meshes
 
 [@VTILServer](https://github.com/VTILServer)
 * Added Missing Bootstrapper Files
-* Fixed Boost Directories #18
+* Fixed Boost Directories
 
 [@watrabi](https://github.com/watrabi)
-* Proper Sysstats Patch #11
+* Proper Sysstats Patch
 
 [@cetcat](https://github.com/cetcat)
 * Helped Compilation of Bootstrappers
