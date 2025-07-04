@@ -7,7 +7,7 @@
 </p>
 
 # Roblox 2016 Source Code
-This source originates from **robloxsrc.zip** that was spinning around but its hard to find these days.<br>
+This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5YmV1iPUPZCfiI6IDWkT3eDq9k3-yA7rl_hURked8Y)** that was spinning around but its hard to find these days.<br>
 After a long effort, this repository has been brought to you on github with lots of changes!<br>
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
@@ -26,6 +26,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 3. [🔨 Tools Used](#-tools-used)
 4. [❤️ Contributors / Credits](#%EF%B8%8F-contributors--credits)
 5. [🎯 Current Goals](#-current-goals)
+6. [⚠️ Current Issues](#-current-issues)
 
 ---
 
@@ -172,5 +173,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [ ] MacOS / Unix 
   - [ ] Linux
   - These are not important and will not be in our priorities.
+
+## ⚠️ Current Issues
+
+- Undo and Redo does not respect proper Color3 values on instances and will instead snap to the nearest BrickColor value.
 
 ---
