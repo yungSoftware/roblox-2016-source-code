@@ -26,7 +26,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 3. [🔨 Tools Used](#-tools-used)
 4. [❤️ Contributors / Credits](#%EF%B8%8F-contributors--credits)
 5. [🎯 Current Goals](#-current-goals)
-6. [⚠️ Current Issues](#-current-issues)
+6. [⚠️ Current Issues](#%EF%B8%8F-current-issues)
 
 ---
 
