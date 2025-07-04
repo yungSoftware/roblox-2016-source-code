@@ -2769,10 +2769,7 @@ namespace RBX {
 	void PartInstance::setColor(Color3 value)
 	{
 		color = value;
-		brickColor = BrickColor::closest(value);
-
 		raisePropertyChanged(prop_Color);
-		raisePropertyChanged(prop_BrickColor);
 	}
 
 	void PartInstance::setBrickColor(BrickColor value)
