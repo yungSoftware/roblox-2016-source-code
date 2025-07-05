@@ -90,8 +90,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
    - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
 - [ ] Able to compile the source in MacOS(XCode)
-   - Needs some work and configuration.
+   - Needs some configuration, but its actually possible.
 - [ ] Able to compile the Android Client
+   - We need proper SDK's for this to happen, also needs some work.
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
