@@ -174,6 +174,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 ## ⚠️ Current Issues
 
 - Undo and Redo does not respect proper Color3 values on instances and will instead snap to the nearest BrickColor value.
-- Sometimes Color3 properties could be inaccurate, espicially with BodyColors.
+   - Sometimes Color3 properties could be inaccurate, espicially with BodyColors.
 
 ---
