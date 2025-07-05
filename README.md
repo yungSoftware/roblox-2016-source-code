@@ -83,7 +83,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Adding Cyrillic & Non-Latin Languages Support
    - [ ] UTF/Unicode Support
    - [ ] Improving Profanity/Swear Filter
-- [ ] Adding or Porting New Lua Versions
+- [ ] Adding or Porting New Lua Version
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
