@@ -89,6 +89,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
    - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
+- [ ] Able to compile the source in MacOS(XCode)
+   - Needs some work and configuration.
+- [ ] Able to compile the Android Client
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
@@ -167,12 +170,6 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Roblox.System
   - [x] Roblox.WebsiteSettings
   - [x] Roblox.RccServiceArbiter
-- Being able to build on listed platforms **[1/4]**
-  - [x] Windows
-  - [ ] Android
-  - [ ] MacOS / Unix 
-  - [ ] Linux
-  - These are not important and will not be in our priorities.
 
 ## ⚠️ Current Issues
 
