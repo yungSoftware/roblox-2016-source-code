@@ -59,8 +59,8 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [TBB](/TBB_4_1) = 4.1
 
 ## 🔨 Tools Used
-- [HxD](/Tools/HxD) = 2.5.0.0
-- [ILSpy](/Tools/ILSpy) = 9.1
+- [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
+- [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
 
 ---
 
