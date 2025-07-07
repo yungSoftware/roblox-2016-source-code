@@ -86,6 +86,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Adding or Porting New Lua Version
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
+- [ ] Fixing the In-game Recording
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
    - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
