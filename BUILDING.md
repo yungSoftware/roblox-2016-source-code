@@ -35,7 +35,7 @@ git config --system core.longpaths true && cd <your path> && git clone https://g
   - Rendering > **LibOVR**
   - **qtnribbon** 
   - **sgCore**
-  - **CoreScriptConverter2** (Only if you're in Release/Debug Configuration and building WindowsClient)
+  - **CoreScriptConverter2** (Only if you're in **Release/Debug** Configuration and building **WindowsClient**)
 8. Right click to the project u want to build **(RCCService, RobloxStudio or either WindowsClient)** and press **Build**
  
 **Thats it, you successfully built from the source!**

@@ -9,7 +9,7 @@ Please remember that you must have technical knowledge, we cannot help you with 
 
 ## Qt
 
-**TIP:** You can install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link) and extract it into your `<your path>\<your folder name>\Contribs` folder if you dont want to compile it.
+**TIP:** You can install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Remove your **Qt** folder and extract it into your `<your path>\<your folder name>\Contribs` folder if you dont want to compile it.
 
 1. 2012 x86 Native Tools Command Prompt**
 2. Change Directory (cd) to: `<your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012` 
