@@ -18,8 +18,8 @@ git config --system core.longpaths true && cd <your path> && git clone https://g
 4. Now you need to build libraries, to do so head over to: **[BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)**
 5. When you all set, Enter the **Client_2016.sln** Solution inside **<your folder name>** Folder with **Visual Studio 2022** or with **Visual Studio 2012**
    - Press **Cancel** if you've prompted with **Review Solution Actions** window.
-6. Change the Solution Configuration from the top to **ReleaseStudio**
-  - **ReleaseRCC** if you want to build **RCCService** to build **RobloxStudio**
+6. Change the Solution Configuration from the top to **ReleaseStudio** to build **RobloxStudio**
+  - **ReleaseRCC** if you want to build **RCCService** 
   - **Release** if you want to build **WindowsClient**
   - You can use Other Configurations like: **Debug**, **DebugRCC** or **DebugStudio**
 7. Before building the **RCCService**, **RobloxStudio** and **WindowsClient** you should build these projects first:
