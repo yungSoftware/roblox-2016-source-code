@@ -67,6 +67,8 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 ## ❤️ Contributors / Credits
 See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
+**Every contribution you make will help the project move forward, and if you'd like to help us, we're always open to it!**
+
 ---
 
 ## 🎯 Current Goals
@@ -90,7 +92,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
    - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
-- [ ] Able to compile the source in MacOS(XCode)
+- [ ] Able to compile the source with CMake (This will allow us to build on Linux)
+   - [ ] Needs a proper build scripts(CMakeLists.txt) for this to happen.
+- [ ] Able to compile the source for both MacOS and maybe iOS
    - Needs some configuration, but its actually possible.
 - [ ] Able to compile the Android Client
    - We need proper SDK's for this to happen, also needs some work.
