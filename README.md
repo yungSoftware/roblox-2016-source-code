@@ -94,8 +94,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
 - [ ] Able to compile the source with CMake (This will allow us to build on Linux)
    - [ ] Needs a proper build scripts(CMakeLists.txt) for this to happen.
-- [ ] Able to compile the source for both MacOS and maybe iOS
+- [ ] Able to compile the source for both MacOS and iOS
    - Needs some configuration, but its actually possible.
+   - Can't say anything about the iOS.
 - [ ] Able to compile the Android Client
    - We need proper SDK's for this to happen, also needs some work.
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
