@@ -1,35 +1,41 @@
-# Cookbook for the Contribs
+﻿# 🍳 Cookbook for the Contribs
 
-### Read This Before Reading the Cookbook
-``<your path>`` is where your source is, ex. C:\Trunk2016<br>
-``<your folder name>`` is your source folder name, ex. Trunk2016<br>
-Please remember that you must have technical knowledge, we cannot help you with every problem you have.
+### 📌 Read This Before You Start
+
+- `"<your path>"` is where your source is located (e.g., `C:\Trunk2016`)  
+- `"<your folder name>"` is the name of your source folder (e.g., `Trunk2016`)  
+- ⚠️ *Please note:* Technical knowledge is required. We cannot assist with every individual problem you encounter.
 
 ---
 
-## Qt
+## 🧱 Qt
 
-**TIP:** You can install [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Remove your **Qt** folder and extract it into your `<your path>\<your folder name>\Contribs` folder if you dont want to compile it.
+**TIP:** You can install the precompiled version [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link). Simply remove your existing **Qt** folder and extract it into `<your path>\<your folder name>\Contribs` to skip compilation.
 
-1. 2012 x86 Native Tools Command Prompt**
-2. Change Directory (cd) to: `<your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012` 
+1. Open **2012 x86 Native Tools Command Prompt**
+2. Navigate (`cd`) to:  
+   `<your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012`
 3. Run the following command:
-```sh
-configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
-```
-4. Type **nmake confclean** to make sure we're on the right track!
-5. When everything completes, type **nmake** and take a long breath since it will take **a lot** of time.
- 
-## Boost
-1. Go into **`<your path>\<your folder name>\Contribs\boost_1_56_0\`**
-2. Run the **bootstrap.bat**
-3. After the command is done, run **build_boost.bat** and it will start compiling.
+   ```sh
+   configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
+   ```
+4. Type `nmake confclean` to make sure we're starting clean.
+5. When everything completes, run `nmake` and take a deep breath — this step takes **a lot** of time.
 
-**IMPORTANT:** You may have to change the paths inside **build_boost.bat**.
+---
 
-- If you get any errors about Python, **do not worry** because its normal and they will not affect the compilation.
+## 🚀 Boost
 
-You should greeted with these lines after compilation finishes:
+1. Go to:  
+   `<your path>\<your folder name>\Contribs\boost_1_56_0\`
+2. Run:  
+   `bootstrap.bat`
+3. When it's done, run:  
+   `build_boost.bat` — this will start compiling the Boost library.
+
+- If you get errors related to Python, **don’t worry** — they’re harmless and won’t affect compilation.
+
+Once it finishes, you should see something like:
 
 ```
 ...failed updating 56 targets...
@@ -37,31 +43,71 @@ You should greeted with these lines after compilation finishes:
 ...updated 1095 targets...
 ```
 
-## OpenSSL
-1. Install [Strawberry Perl](https://strawberryperl.com/) to continue for the process
+---
+
+## 🔐 OpenSSL
+
+1. Install [Strawberry Perl](https://strawberryperl.com/) to proceed with the build.
 2. Open **Developer Command Prompt for VS2012**
-3. Change Directory to: **`<your path>\<your folder name>\Contribs\openssl`**
-4. Type **`perl Configure VC-WIN32`**
-   * If you having error like this: ``'perl' is not recognized as an internal or external command`` then make sure you installed the Strawberry Perl correctly.
-5. And then type this to the command prompt: **`ms\32all.bat`**
-6. Create a new folder named **openssl** inside **<your folder name>**
-7. When the build process completes, go inside **`<your path>\<your folder name>\Contribs\openssl\out32dll`**, and copy these 2 files to **`<your path>\<your folder name>\openssl`**: **`ssleay32.dll, libeay32.dll`**.
+3. Navigate (`cd`) to:  
+   `<your path>\<your folder name>\Contribs\openssl`
+4. Run:  
+   `perl Configure VC-WIN32`
+   - If you get an error like `'perl' is not recognized...`, make sure Strawberry Perl was installed correctly.
+5. Next, run:
+   ```
+   ms\32all.bat
+   ```
+6. Create a folder named `openssl` inside `<your folder name>`
+7. When the build completes, go to:  
+   `<your path>\<your folder name>\Contribs\openssl\out32dll`  
+   and copy these two files(`ssleay32.dll` `libeay32.dll`) to:  
+   `<your path>\<your folder name>\openssl`
 
-**IMPORTANT:** Now you have to be in **Client_2016.sln** for these 2 dependencies at the bottom.
+---
 
-## SDL2
-Locate the SDL2 Project at **3rd Party > SDL2**, **Right Click** and press **Build**<br>
-To build SDL2 as a .DLL file, Go into **Properties** and just change the **Target Extension** to **.dll** and **Configuration Type** to **Dynamic Library (.dll)**, remove the **HAVE_LIBC;** from **C/C++ > Preprocessor > Preprocessor Definitions**  and build it!<br>
-However if you want to build as .LIB, then you dont have to change anything just build it.
+## 🎮 SDL2
 
-## libcurl
-Locate the SDL2 Project at **3rd Party > libcurl**, **Right Click** and press **Build**<br>
-If you also need to build libcurl as a .LIB file, Go into **Properties** and Just change the **Target Extention** to **.lib** and **Configuration Type** to **Static Library (.lib)** and Build it!
-However if you want to build as .DLL, then also you dont have to change anything just build it.
+1. Locate the SDL2 project under:  
+   `3rd Party > SDL2`
+2. Right-click the project and select **Build**
 
-## Mesa (Optional)
-**W.I.P**
+To build SDL2 as a `.DLL`:
+- Go to **Properties**
+- Change:
+  - **Target Extension** → `.dll`
+  - **Configuration Type** → `Dynamic Library (.dll)`
+- Remove `HAVE_LIBC;` from:  
+  `C/C++ > Preprocessor > Preprocessor Definitions`
+- Build the project.
 
+To build as a `.LIB`, you don’t need to change anything — just build it as is.
 
-**That's it, you've compiled the libraries!**<br>
-**Also, you may want to change the Library or DLL files in the source with yours.**
+---
+
+## 🌐 libcurl
+
+1. Locate the libcurl project under:  
+   `3rd Party > libcurl`
+2. Right-click the project and select **Build**
+
+To build libcurl as a `.LIB`:
+- Go to **Properties**
+- Change:
+  - **Target Extension** → `.lib`
+  - **Configuration Type** → `Static Library (.lib)`
+- Build the project.
+
+To build as a `.DLL`, no changes are needed — just build it.
+
+---
+
+## 🌄 Mesa (Optional)
+
+**W.I.P.** *(Work In Progress)*
+
+---
+
+✅ **That's it — you've compiled the contrib libraries!**  
+
+💡 You might also want to replace the library or DLL files in your source directory with the versions you’ve just built.

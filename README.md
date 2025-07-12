@@ -7,18 +7,19 @@
 </p>
 
 # Roblox 2016 Source Code
-This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5YmV1iPUPZCfiI6IDWkT3eDq9k3-yA7rl_hURked8Y)** that was spinning around but its hard to find these days.<br>
-After a long effort, this repository has been brought to you on github with lots of changes!<br>
+
+This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5YmV1iPUPZCfiI6IDWkT3eDq9k3-yA7rl_hURked8Y)**, which was circulating some time ago but has become hard to find.<br>
+After a long effort, this repository has been brought to GitHub with many improvements!<br>
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-   - Make sure to read them properly so you wont face with any issues.
+- Make sure to read it thoroughly to avoid any issues.
 
-**Having any problems? you can get help at [our discord server](https://www.discord.gg/rVrYHdrbsp) or at the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues)**<br>
+**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**<br>
 
-**Want to play the game in no time? Check out [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases/)**<br>
+**Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
 
-The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be older than the current branch.
+The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be outdated compared to the current branch.
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
@@ -31,12 +32,12 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 ---
 
 ## 🪨 Features / Additions
-- Added a lot of new features, we're continuing to improve it!
-- Fixed issues that breaks the compilation to make every project works like intended.
-- Cleaned up the whole source to make things easier and not complicated.
-- Changed Splash Screen and Copyright Date(s) just for the sake of it.
-- Reverse Engineered some C# libraries and executables using **[ILSpy](/Tools/ILSpy)** to make their source accessible.
-- Introducing You **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)!** A server made for this particular source.
+- Numerous new features have been added and we're still improving!
+- Compilation-breaking issues have been fixed to ensure all projects work as intended.
+- The entire source has been cleaned up for clarity and ease of use.
+- Splash Screen and Copyright Dates updated.
+- Reverse-engineered several C# libraries and executables using **[ILSpy](https://github.com/icsharpcode/ILSpy/releases)** to make the source accessible.
+- Introducing **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** — a server built specifically for this source.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
@@ -62,14 +63,10 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
 - [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
 
----
-
 ## ❤️ Contributors / Credits
 See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
-**Every contribution you make will help the project move forward, and if you'd like to help us, we're always open to it!**
-
----
+**Every contribution moves the project forward — we're always open to new helpers!**
 
 ## 🎯 Current Goals
 - Backporting/Implementing **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
@@ -91,12 +88,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Fixing the In-game Recording
 - [x] Change the Location of unrelated files inside **content\fonts** folder.
 - [ ] Making Bootstrappers don't override our original Roblox files and registries.
-   - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade! 
-- [ ] Able to compile the source with CMake (This will allow us to build on Linux)
-   - [ ] Needs a proper build scripts(CMakeLists.txt) for this to happen.
-- [ ] Able to compile the source for both MacOS and iOS
-   - Needs some configuration, but its actually possible.
-   - Can't say anything about the iOS.
+   - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade!
 - [ ] Able to compile the Android Client
    - We need proper SDK's for this to happen, also needs some work.
 - [ ] 64-bit Support for all the projects that listed at the bottom. 
@@ -179,8 +171,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Roblox.RccServiceArbiter
 
 ## ⚠️ Current Issues
-
-- Undo and Redo does not respect proper Color3 values on instances and will instead snap to the nearest BrickColor value.
-   - Sometimes Color3 properties could be inaccurate, espicially with BodyColors.
+- Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
+  - This can lead to inconsistencies, especially with `BodyColors`.
 
 ---
