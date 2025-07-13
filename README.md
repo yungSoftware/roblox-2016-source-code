@@ -71,30 +71,29 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 
 ## 🎯 Current Goals
 - Backporting/Implementing **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
-   - [x] Color3uint8
-     - [x] Color3.fromRGB()
-   - [ ] R15
-   - [x] :Connect() and :Wait()
-- [ ] Fix Keyboard Shortcuts
-   - [ ] Reset Character Keybind
-   - [ ] Chat Keybind
-   - [ ] Windows Key on WindowsClient
-- [x] New Fonts
-- [ ] Adding Cyrillic & Non-Latin Languages Support
-   - [ ] UTF/Unicode Support
-   - [ ] Improving Profanity/Swear Filter
-- [ ] Adding or Porting New Lua Version
-- [ ] Sysstats not working properly, needs to be fixed.
-   - I just dont want to patch it insecurely, I want to make it work as intended. 
-- [x] Supporting Newer Mesh Versions
-- [ ] Dark Theme for the Studio
-- [ ] Fixing the In-game Recording
-- [x] Change the Location of unrelated files inside **content\fonts** folder.
-- [ ] Making Bootstrappers don't override our original Roblox files and registries.
-   - When this got sorted out, new versions will only include the bootstrappers, so you just have to update the Rocknet in order to upgrade!
-- [ ] Able to compile the Android Client
-   - We need proper SDK's for this to happen, also needs some work.
-- [ ] 64-bit Support for all the projects that listed at the bottom. 
+- [x] Color3uint8  
+  - [x] Color3.fromRGB()  
+  - [ ] R15 character support  
+- [x] :Connect() and :Wait()  
+- [ ] Fix keyboard shortcuts 
+  - [ ] Reset character keybind  
+  - [ ] Chat keybind  
+  - [ ] Windows key on WindowsClient
+- [x] New fonts
+- [ ] Add Cyrillic and non-Latin language support  
+  - [ ] UTF/Unicode compatibility  
+  - [ ] Improve profanity and swear word filter  
+- [ ] Add or port new Lua version  
+- [ ] Fix Sysstats (needs proper implementation, not insecure patching)  
+- [x] Support newer mesh formats  
+- [ ] Add dark theme for Studio  
+- [ ] Fix in-game recording issues  
+- [x] Move unrelated files out of the **content\fonts** folder  
+- [ ] Prevent bootstrappers from overwriting original Roblox files and registries  
+  - When this is resolved, future versions will only require bootstrappers; updating Rocknet will be enough to upgrade  
+- [ ] Compile Android client  
+  - Requires correct SDKs and additional setup  
+- [ ] Add 64-bit support for all listed projects at the bottom
 - Building all the projects within the latest Visual Studio Version **[34/68]** 
   - **FYI:** Most of them are never tried so expect some misinformations. 
   - [ ] App
