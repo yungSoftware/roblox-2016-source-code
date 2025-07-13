@@ -10,7 +10,7 @@
 
 ## 🧱 Qt
 
-**TIP:** You can install the precompiled version [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link). Simply remove your existing **Qt** folder and extract it into `<your path>\<your folder name>\Contribs` to skip compilation.
+**TIP:** You can install the precompiled version [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link). Simply remove your existing **Qt** folder and extract it into `<your path>\<your folder name>\Contribs` to skip compilation process.
 
 1. Open **2012 x86 Native Tools Command Prompt**
 2. Navigate (`cd`) to:  
