@@ -85,6 +85,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - [ ] Improving Profanity/Swear Filter
 - [ ] Adding or Porting New Lua Version
 - [ ] Sysstats not working properly, needs to be fixed.
+   - I just dont want to patch it insecurely, I want to make it work as intended. 
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [ ] Fixing the In-game Recording
