@@ -84,6 +84,7 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
    - [ ] UTF/Unicode Support
    - [ ] Improving Profanity/Swear Filter
 - [ ] Adding or Porting New Lua Version
+- [ ] Sysstats not working properly, needs to be fixed.
 - [x] Supporting Newer Mesh Versions
 - [ ] Dark Theme for the Studio
 - [ ] Fixing the In-game Recording
