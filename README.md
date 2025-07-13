@@ -62,6 +62,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 ## 🔨 Tools Used
 - [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
 - [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
+- [rbxsigner](/Tools/rbxsigner) = *unknown*
 
 ## ❤️ Contributors / Credits
 See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
