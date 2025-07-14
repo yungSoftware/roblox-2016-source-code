@@ -27,7 +27,7 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 3. [🔨 Tools Used](#-tools-used)
 4. [❤️ Contributors / Credits](#%EF%B8%8F-contributors--credits)
 5. [🎯 Current Goals](#-current-goals)
-6. [⚠️ Current Issues](#%EF%B8%8F-current-issues)
+6. [⚠️ Current Problems](#%EF%B8%8F-current-problems)
 
 ---
 
@@ -70,9 +70,9 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 **Every contribution moves the project forward — we're always open to new helpers!**
 
 ## 🎯 Current Goals
-- Backporting/Implementing **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
-- [x] Color3uint8  
-  - [x] Color3.fromRGB()  
+- Backport/Implement **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
+  - [x] Color3uint8  
+     - [x] Color3.fromRGB()  
   - [ ] R15 character support  
 - [x] :Connect() and :Wait()  
 - [ ] Fix keyboard shortcuts 
@@ -86,94 +86,22 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 - [ ] Add or port new Lua version  
 - [ ] Fix Sysstats (needs proper implementation, not insecure patching)  
 - [x] Support newer mesh formats  
+- [ ] Support for newer place versions 
 - [ ] Add dark theme for Studio  
 - [ ] Fix in-game recording issues  
 - [x] Move unrelated files out of the **content\fonts** folder  
 - [ ] Prevent bootstrappers from overwriting original Roblox files and registries  
-  - When this is resolved, future versions will only require bootstrappers; updating Rocknet will be enough to upgrade  
-- [ ] Compile Android client  
-  - Requires correct SDKs and additional setup  
-- [ ] Add 64-bit support for all listed projects at the bottom
-- Building all the projects within the latest Visual Studio Version **[34/68]** 
-  - **FYI:** Most of them are never tried so expect some misinformations. 
-  - [ ] App
-  - [ ] App.BulletPhysics
-  - [ ] Base
-  - [ ] CoreScriptConverter2
-  - [ ] CSG
-  - [ ] Log
-  - [ ] Network
-  - [ ] qtnribbon
-    - It gives "Designtime build failed for project" error, seems like it has an easy fix though.
-  - [ ] RCCService
-  - [ ] RobloxStudio
-  - [ ] sgCore
-  - [ ] WindowsClient
-  #### 3rd Party / Contribs
-  - [ ] boost.static
-  - [ ] Boost
-    - Needs a newer Boost version.
-  - [ ] cpp-netlib
-  - [x] DSBaseClasses
-  - [ ] Curl
-     - OpenSSL libraries spits unresolved external symbols so these should get updated too.
-  - [ ] Qt
-  - [ ] Openssl  
-  - [ ] SDL2
-    - Windows SDK throws "negative subscript" errors.
-  - [x] zlib
-  - [ ] w3c-libwww
-  - [x] mesa
-     - [x] osmesa 
-     - [x] gdi
-     - [x] glu
-     - [x] glut
-     - [x] glsl_apps_compile 
-     - [x] gears
-  #### gSOAP
-  - [x] soapcpp2
-  - [x] wsdl2h
-  #### Rendering
-  - [ ] AppDraw
-  - [ ] GfxBase
-  - [ ] GfxCore
-  - [ ] GfxRender
-  - [ ] graphics3D
-  - [ ] LibOVR
-  - [ ] RbxG3D
-  #### Shaders
-  - [ ] ShaderCompiler
-  #### Installer
-  - [ ] Bootstrapper
-  - [ ] BootstrapperClient
-  - [ ] BootstrapperQTStudio
-  - [ ] RobloxProxy
-  - [x] PrepAllForUpload
-  - [x] BootstrapperClient.PrepForUpload
-  - [x] BootstrapperRccService.PrepForUpload
-  - [x] BootstrapperQTStudio.PrepForUpload
-  - [x] RobloxProxy.PrepForUpload
-  #### Other
-  - [x] IncludeChecker
-  - [x] RbxTestHooks
-  - [x] ScriptSigner
-  - [x] Emcaster
-  - [x] EmcasterTest
-  - [x] EmReciever
-  - [x] Roblox.Common
-  - [x] Roblox.Common.Web
-  - [x] Roblox.Configuration
-  - [x] Roblox.Diagnostics
-  - [x] Roblox.Grid.Arbiter.Common
-  - [x] Roblox.Grid.Client
-  - [x] Roblox.Grid.Common
-  - [x] Roblox.Ssh
-  - [x] Roblox.System
-  - [x] Roblox.WebsiteSettings
-  - [x] Roblox.RccServiceArbiter
+  - When this is resolved, future versions will only require bootstrappers; updating Rocknet will be enough to upgrade
+- [ ] Build all projects in the source using the latest Visual Studio version  
+  - [ ] Ensure support for the latest C/C++ standards (C++17 or later)  
+  - [ ] Enable 64-bit support across all applicable projects 
 
-## ⚠️ Current Issues
+## ⚠️ Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
   - This can lead to inconsistencies, especially with `BodyColors`.
+- This source code is currently available only for Windows and MacOS, building on Linux is not possible as of right now.
+  - We also lacking CMake support, so building on Linux is not possible at the moment.
+  - Also MacOS support is not guaranteed, You need to test it yourself.
+- To Compile Android Client we need WSL or Linux and some additional SDK's, which are not included in the source code. 
 
 ---

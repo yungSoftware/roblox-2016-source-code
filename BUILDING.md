@@ -1,6 +1,6 @@
 ﻿# 🍳 Cookbook for the Source
 
-### 📌 Read This Before You Start
+## 📌 Read This Before You Start
 
 - `"<your path>"` refers to the location where your source code resides (e.g., `C:\Trunk2016`)
 - `"<your folder name>"` refers to the name of the folder containing the source code (e.g., `Trunk2016`)
@@ -8,7 +8,7 @@
 
 ---
 
-### 🛠️ Setup Instructions
+### 🛠️ Setup Instructions for Windows
 
 1. **Open a Command Prompt with Administrator privileges** and clone the repository using [Git](https://git-scm.com/) like this:
    ```bash

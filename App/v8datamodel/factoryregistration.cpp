@@ -426,11 +426,6 @@ RBX_REGISTER_CLASS(CSGDictionaryService);
 RBX_REGISTER_CLASS(NonReplicatedCSGDictionaryService);
 RBX_REGISTER_CLASS(TouchInputService);
 
-// Post FX
-RBX_REGISTER_CLASS(PostEffect);
-RBX_REGISTER_CLASS(BlurEffect);
-RBX_REGISTER_CLASS(ColorCorrectionEffect);
-
 // network
 RBX_REGISTER_CLASS(Network::PhysicsPacketCache);
 RBX_REGISTER_CLASS(Network::InstancePacketCache);
@@ -522,6 +517,12 @@ RBX_REGISTER_CLASS(SphereHandleAdornment);
 RBX_REGISTER_CLASS(LineHandleAdornment);
 RBX_REGISTER_CLASS(ImageHandleAdornment);
 RBX_REGISTER_CLASS(SurfaceSelection);
+
+// Post FX
+RBX_REGISTER_CLASS(PostEffect);
+RBX_REGISTER_CLASS(BlurEffect);
+RBX_REGISTER_CLASS(ColorCorrectionEffect);
+
 RBX_REGISTER_CLASS(CollectionService);
 RBX_REGISTER_CLASS(Configuration);
 RBX_REGISTER_CLASS(Folder);
