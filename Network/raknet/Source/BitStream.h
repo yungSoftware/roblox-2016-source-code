@@ -23,7 +23,6 @@
 #include "RakAssert.h"
 #include <math.h>
 #include <float.h>
-#include "FastLog.h"
 
 #ifdef _MSC_VER
 #pragma warning( push )

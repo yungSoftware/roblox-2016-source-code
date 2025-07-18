@@ -19,7 +19,7 @@
 
 // roblox
 #include <string>
-#include <boost/functional/hash.hpp>
+#include "hash_combine.h"
 
 namespace RakNet {
 /// Forward declarations
@@ -290,8 +290,8 @@ struct RAK_DLL_EXPORT SystemAddress
 	friend std::size_t hash_value(SystemAddress const& systemAddress)
 	{
 		std::size_t seed = 0;
-		boost::hash_combine(seed, inet_addr(systemAddress.ToString(false)));
-		boost::hash_combine(seed, systemAddress.GetPort());
+		hash_combine(seed, inet_addr(systemAddress.ToString(false)));
+		hash_combine(seed, systemAddress.GetPort());
 
 		return seed;
 	}
