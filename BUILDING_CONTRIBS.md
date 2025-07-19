@@ -102,7 +102,7 @@ To build as a `.DLL`, no changes are needed — just build it.
 
 ---
 
-### 🌄 Mesa (Optional)
+### 🌄 Mesa
 
 1. Go into ``<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\windows\VC\mesa``
 3. Open **mesa.sln** and build all the projects.
