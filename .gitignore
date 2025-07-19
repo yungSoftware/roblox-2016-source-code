@@ -160,7 +160,6 @@ qrc_*.*
 /RobloxStudio/ui_*.h
 wsdl2h.exe
 soapcpp2.exe
-hlslang_tab.h
 /Contribs/DSBaseClasses/Lib/
 
 ## END OF GENERAL ##
