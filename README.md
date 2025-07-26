@@ -15,6 +15,7 @@ After a long effort, this repository has been brought to GitHub with many improv
 - Make sure to read it thoroughly to avoid any issues.
 
 **Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**<br>
+(Do not create issues if your problem is already listed)
 
 **Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
