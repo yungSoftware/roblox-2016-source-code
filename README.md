@@ -75,17 +75,12 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
   - [x] Color3uint8  
      - [x] Color3.fromRGB()  
   - [ ] R15 character support  
-- [x] :Connect() and :Wait()  
-- [ ] Fix keyboard shortcuts 
-  - [ ] Reset character keybind  
-  - [ ] Chat keybind  
-  - [ ] Windows key on WindowsClient
+- [x] :Connect() and :Wait()
 - [x] New fonts
 - [ ] Add Cyrillic and non-Latin language support  
   - [ ] UTF/Unicode compatibility  
   - [ ] Improve profanity and swear word filter  
-- [ ] Add or port new Lua version  
-- [ ] Fix Sysstats (needs proper implementation, not insecure patching)  
+- [ ] Add or port new Lua version
 - [x] Support newer mesh formats  
 - [ ] Support for newer place versions 
 - [ ] Add dark theme for Studio  
