@@ -14,8 +14,7 @@ After a long effort, this repository has been brought to GitHub with many improv
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
 - Make sure to read it thoroughly to avoid any issues.
 
-**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**<br>
-(Do not create issues if your problem is already listed)
+**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
 **Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
@@ -95,9 +94,5 @@ See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
 ## ⚠️ Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
   - This can lead to inconsistencies, especially with `BodyColors`.
-- This source code is currently available only for Windows and MacOS, building on Linux is not possible as of right now.
-  - We also lacking CMake support, so building on Linux is not possible at the moment.
-  - Also MacOS support is not guaranteed, You need to test it yourself.
-- To Compile Android Client we need WSL or Linux and some additional SDK's, which are not included in the source code. 
 
 ---
