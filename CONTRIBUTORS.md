@@ -17,7 +17,6 @@
 
 [@VTILServer](https://github.com/VTILServer)
 * Added Missing Bootstrapper Files
-* Fixed Boost Directories
 
 [@watrabi](https://github.com/watrabi)
 * Proper Sysstats Patch
