@@ -15,9 +15,6 @@
 [@t0int1337](https://github.com/t0int1337)
 * Fixed New Version Meshes
 
-[@VTILServer](https://github.com/VTILServer)
-* Added Missing Bootstrapper Files
-
 [@watrabi](https://github.com/watrabi)
 * Proper Sysstats Patch
 
