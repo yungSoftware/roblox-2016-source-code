@@ -19,15 +19,16 @@ After a long effort, this repository has been brought to GitHub with many improv
 **Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** to launch the game.
 
+**Every contribution moves the project forward — we're always open to new helpers!**
+
 The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be outdated compared to the current branch.
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
 2. [📚 Libraries Used](#-libraries-used)
 3. [🔨 Tools Used](#-tools-used)
-4. [❤️ Contributors / Credits](#%EF%B8%8F-contributors--credits)
-5. [🎯 Current Goals](#-current-goals)
-6. [⚠️ Current Problems](#%EF%B8%8F-current-problems)
+4. [🎯 Current Goals](#-current-goals)
+5. [⚠️ Current Problems](#%EF%B8%8F-current-problems)
 
 ---
 
@@ -63,11 +64,6 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
 - [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
 - [rbxsigner](/Tools/rbxsigner) = *unknown*
-
-## ❤️ Contributors / Credits
-See **[CONTRIBUTORS.md](/CONTRIBUTORS.md)**
-
-**Every contribution moves the project forward — we're always open to new helpers!**
 
 ## 🎯 Current Goals
 - Backport/Implement **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
