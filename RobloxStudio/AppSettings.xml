@@ -2,5 +2,5 @@
 <!--  DO NOT CHANGE THIS FILE, AS IT GETS DEPLOYED -->
 <Settings>
   <BaseUrl>http://www.roblox.com</BaseUrl>
-  <ContentFolder>..\content</ContentFolder>
+  <ContentFolder>..\..\..\content</ContentFolder>
 </Settings>
