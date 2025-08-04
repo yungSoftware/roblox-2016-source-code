@@ -111,8 +111,6 @@ To build as a `.DLL`, no changes are needed — just build it as is.
 6. Copy all the files from ``<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\windows\VC\mesa\Release`` to ``<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\release``
 7. Copy everything inside ``<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\windows\VC\progs\Release`` to ``<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\release``
 
-(**IMPORTANT:** You may need to add your DLL's and LIB's to `<your path>\<your folder name>\RCCService\Mesa-7.8.1\lib\lib`)
-
 ---
 
 ✅ **That's it — you've compiled the contrib libraries!**  

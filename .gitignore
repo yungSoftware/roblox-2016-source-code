@@ -161,6 +161,5 @@ qrc_*.*
 wsdl2h.exe
 soapcpp2.exe
 /Contribs/DSBaseClasses/Lib/
-/RCCService/Mesa-7.8.1/lib/lib/
 
 ## END OF GENERAL ##
