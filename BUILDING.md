@@ -2,7 +2,7 @@
 
 ## 📌 Read This Before You Start
 
-- `"<your path>"` refers to the location where your source code resides (e.g., `C:\Trunk2016`)
+- `"<your path>"` refers to the location where your source code resides (e.g., `C:\`)
 - `"<your folder name>"` refers to the name of the folder containing the source code (e.g., `Trunk2016`)
 - ⚠️ *Please note:* Technical knowledge is required. We cannot assist with every individual problem you encounter.
 
