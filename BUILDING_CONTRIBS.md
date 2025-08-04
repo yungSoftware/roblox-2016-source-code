@@ -98,7 +98,7 @@ To build libcurl as a `.LIB`:
   - **Configuration Type** → `Static Library (.lib)`
 - Build the project.
 
-To build as a `.DLL`, no changes are needed — just build it.
+To build as a `.DLL`, no changes are needed — just build it as is.
 
 ---
 
