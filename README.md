@@ -59,7 +59,6 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - [mojoshader](/Rendering/ShaderCompiler/mojoshader) = *unknown*
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
 - [RakNet](/Network/raknet) = 5 
-- [Mesa](/RCCService/Mesa-7.8.1) = 7.8.1
 
 ## 🔨 Tools Used
 - [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
