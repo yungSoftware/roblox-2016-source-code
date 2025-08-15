@@ -9,7 +9,7 @@
 # Roblox 2016 Source Code
 
 This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5YmV1iPUPZCfiI6IDWkT3eDq9k3-yA7rl_hURked8Y)**, which was circulating some time ago but has become hard to find.<br>
-After a long effort, this repository has been brought to GitHub with many improvements!<br>
+After a long effort, this repository has been brought to GitHub with many improvements!
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
 - Make sure to read it thoroughly to avoid any issues.
@@ -17,8 +17,6 @@ After a long effort, this repository has been brought to GitHub with many improv
 **Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
 **Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
-(Although they might not be the latest build.)
-
 **NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** in order to launch the game.
 
 **Every contribution moves the project forward — we're always open to new helpers!**
