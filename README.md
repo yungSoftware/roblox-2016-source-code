@@ -69,24 +69,22 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
      - [x] Color3.fromRGB()  
   - [ ] R15 character support  
 - [x] :Connect() and :Wait()
-- [x] New fonts
+- [x] New Fonts
+- [x] Rename Registry Folder & Game Folder so it wont mess any of your original game files. 
+  - Game folder is located in `C:\Users\<username>\AppData\Local\Roblox 2016\`
+  - Registry folder is located in `HKEY_CURRENT_USER\Software\ROBLOX Corporation 2016\`
+- [x] Move unrelated files out of the **content\fonts** folder
+- [x] Support for newer mesh formats
 - [ ] Add Cyrillic and non-Latin language support  
   - [ ] UTF/Unicode compatibility  
   - [ ] Improve profanity and swear word filter  
 - [ ] Add or port new Lua version
-- [x] Support newer mesh formats  
 - [ ] Support for newer place versions 
 - [ ] Add dark theme for Studio  
-- [ ] Fix in-game recording issues  
-- [x] Move unrelated files out of the **content\fonts** folder  
-- [ ] Prevent bootstrappers from overwriting original Roblox files and registries  
-  - When this is resolved, future versions will only require bootstrappers; updating Rocknet will be enough to upgrade
+- [ ] Fix in-game recording issues
 - [ ] Build all projects in the source using the latest Visual Studio version  
   - [ ] Ensure support for the latest C/C++ standards (C++17 or later)  
   - [ ] Enable 64-bit support across all applicable projects
-- [x] Rename Registry Folder & Game Folder so it wont mess any of your original game files. 
-  - Game folder is located in `C:\Users\<username>\AppData\Local\Roblox 2016\`
-  - Registry folder is located in `HKEY_CURRENT_USER\Software\ROBLOX Corporation 2016\`
 
 ## ⚠️ Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
