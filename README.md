@@ -12,7 +12,7 @@ This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5Ym
 After a long effort, this repository has been brought to GitHub with many improvements!
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-- Make sure to read it thoroughly to avoid any issues.
+   - Make sure to read it thoroughly to avoid any issues.
 
 **Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
