@@ -83,7 +83,8 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
   - When this is resolved, future versions will only require bootstrappers; updating Rocknet will be enough to upgrade
 - [ ] Build all projects in the source using the latest Visual Studio version  
   - [ ] Ensure support for the latest C/C++ standards (C++17 or later)  
-  - [ ] Enable 64-bit support across all applicable projects 
+  - [ ] Enable 64-bit support across all applicable projects
+- [ ] Rename Registry Folder & Game Folder so it wont mess any of your original game files. 
 
 ## ⚠️ Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
