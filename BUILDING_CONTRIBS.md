@@ -1,41 +1,41 @@
-﻿# 🍳 Книга взносов [contribs]
+﻿# 🍳 Cookbook for the Contribs
 
-## 📌 Прочитайте это до того как вы начнёте
+## 📌 Read This Before You Start
 
-- `"<твой путь>"` местоположение исходного кода (e.g., `C:\`)  
-- `"<твое имя папки>"` имя твоей папки с исходным кодом (e.g., `Trunk2016`)  
-- ⚠️ *Замечание:* Требуются технические знания. Мы не можем помочь в решении каждой отдельной проблемы, с которой вы сталкиваетесь.
-- ⚠️ *Замечание:* Перевод может отличать некоторые слова, или кнопки в текстовых редакторах, или, чем нибудь ещё, удостоверьте информацию с оригинального BUILDING_CONTRIBS.MD
+- `"<your path>"` is where your source is located (e.g., `C:\`)  
+- `"<your folder name>"` is the name of your source folder (e.g., `Trunk2016`)  
+- ⚠️ *Please note:* Technical knowledge is required. We cannot assist with every individual problem you encounter.
+
 ---
 
 ### 🧱 Qt
 
-**TIP:** Вы можете установить предварительно скомпилированную версию [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link). просто удалите существующий **Qt** папку и извлеките ее в `<твой путь>\<твое имя папки>\Contribs` чтобы пропустить процесс компиляции.
+**TIP:** You can install the precompiled version [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link). Simply remove your existing **Qt** folder and extract it into `<your path>\<your folder name>\Contribs` to skip compilation process.
 
-1. Откройте **2012 x86 Native Tools Command Prompt**
-2. направьте (`cd`) в:  
-   `<твой путь>\<твое имя папки>\Contribs\Qt\4.8.5\win_VS2012`
-3. Запустите следующую команду:
+1. Open **2012 x86 Native Tools Command Prompt**
+2. Navigate (`cd`) to:  
+   `<your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012`
+3. Run the following command:
    ```sh
    configure -make nmake -platform win32-msvc2012 -prefix <your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012 -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
    ```
-4. Напишите `nmake confclean` чтобы убедиться, что мы начинаем с чистого листа.
-5. Когда все завершится, запустите`nmake` и сделайте глубокий вдох — этот шаг требует **МНОГО** времени
+4. Type `nmake confclean` to make sure we're starting clean.
+5. When everything completes, run `nmake` and take a deep breath — this step takes **a lot** of time.
 
 ---
 
 ### 🚀 Boost
 
-1. Направьтесь к:  
-   `<твой путь>\<твоё имя папки>\Contribs\boost_1_56_0\`
-2. Запустите:  
+1. Go to:  
+   `<your path>\<your folder name>\Contribs\boost_1_56_0\`
+2. Run:  
    `bootstrap.bat`
-3. Когда закончилось, запусти:  
-   `build_boost.bat` — после этого начнется компиляция библиотеки Boost.
+3. When it's done, run:  
+   `build_boost.bat` — this will start compiling the Boost library.
 
-- Если вы получаете ошибки, связанные с Python, **не волнуйтесь** — они безвредны и не повлияют на компиляцию.
+- If you get errors related to Python, **don’t worry** — they’re harmless and won’t affect compilation.
 
-Как только он завершится, вы должны увидеть что-то вроде:
+Once it finishes, you should see something like:
 
 ```
 ...failed updating 56 targets...
@@ -47,60 +47,61 @@
 
 ### 🔐 OpenSSL
 
-1. Установи [Strawberry Perl](https://strawberryperl.com/) чтобы продолжить с билдом.
-2. Открой **Developer Command Prompt for VS2012**
-3. Направь (`cd`) к:  
-   `<твой путь>\<твоё имя папки>\Contribs\openssl`
-4. Запусти:  
+1. Install [Strawberry Perl](https://strawberryperl.com/) to proceed with the build.
+2. Open **Developer Command Prompt for VS2012**
+3. Navigate (`cd`) to:  
+   `<your path>\<your folder name>\Contribs\openssl`
+4. Run:  
    `perl Configure VC-WIN32`
-   - Если вы получите сообщение об ошибке типа `'perl' не распознается...`, убедитесь, что Strawberry Perl был установлен правильно.
-5. Дальше, Запустите:
+   - If you get an error like `'perl' is not recognized...`, make sure Strawberry Perl was installed correctly.
+5. Next, run:
    ```
    ms\32all.bat
    ```
-6. Создайте папку с именем "openssl" внутри "<имя вашей папки>`
-7. Когда билд завершится. направьтесь к:  
-   `<ваш путь>\<имя вашей папки>\Contribs\openssl\out32dll`  
+6. Create a folder named `openssl` inside `<your folder name>`
+7. When the build completes, go to:  
+   `<your path>\<your folder name>\Contribs\openssl\out32dll`  
    and copy these two files(`ssleay32.dll` `libeay32.dll`) to:  
-   `<ваш путь>\<имя вашей папки>\openssl`
+   `<your path>\<your folder name>\openssl`
 
 ---
 
 ### 🎮 SDL2
 
-1. Найдите проект SDL2 в разделе:  
+1. Locate the SDL2 project under:  
    `3rd Party > SDL2`
-2. Щелкните правой кнопкой мыши на проекте и выберите **Build**
+2. Right-click the project and select **Build**
 
-Чтобы забилдить СДЛ2 Как `.DLL`:
-- Нажмите  **Свойства или Properties**
-- Измените:
+To build SDL2 as a `.DLL`:
+- Go to **Properties**
+- Change:
   - **Target Extension** → `.dll`
   - **Configuration Type** → `Dynamic Library (.dll)`
-- Уберите `HAVE_LIBC;` С:  
+- Remove `HAVE_LIBC;` from:  
   `C/C++ > Preprocessor > Preprocessor Definitions`
-- Забилдь проект.
+- Build the project.
 
-Чтобы создать файл с расширением ".LIB", вам не нужно ничего менять — просто создайте его как есть.
+To build as a `.LIB`, you don’t need to change anything — just build it as is.
+
 ---
 
 ### 🌐 libcurl
 
-1. Найдите проект libcurl в разделе:  
+1. Locate the libcurl project under:  
    `3rd Party > libcurl`
-2. Щелкните правой кнопкой мыши на проекте и выберите **Build**
+2. Right-click the project and select **Build**
 
-Чтобы создать libcurl в виде`.LIB`:
-- Нажмите **Свойства или Properties**
-- Измените:
+To build libcurl as a `.LIB`:
+- Go to **Properties**
+- Change:
   - **Target Extension** → `.lib`
   - **Configuration Type** → `Static Library (.lib)`
-- Забилдь проект.
+- Build the project.
 
-Чтобы создать файл в формате ".DLL", никаких изменений не требуется — просто создайте его как есть.
+To build as a `.DLL`, no changes are needed — just build it as is.
 
 ---
 
-✅ ** Вот и все — вы скомпилировали дополнительные библиотеки!** 
+✅ **That's it — you've compiled the contrib libraries!**  
 
-💡 Возможно, вы также захотите заменить библиотеку или DLL-файлы в вашем исходном каталоге на только что созданные версии.
+💡 You might also want to replace the library or DLL files in your source directory with the versions you’ve just built.
