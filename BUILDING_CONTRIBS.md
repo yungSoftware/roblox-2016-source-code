@@ -1,4 +1,4 @@
-﻿# 🍳 Cookbook for the Contribs
+﻿# 🍳 Кулинарная книга для Contribs
 
 ## 📌 Read This Before You Start
 
