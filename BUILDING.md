@@ -17,7 +17,7 @@
    - This method ensures you won’t need to redownload the source code repeatedly. **(Recommended)**
 
 2. **Download and install these tools:**
-   - [Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)
+   - [Visual Studio 2012](http://download.microsoft.com/download/D/B/0/DB03922C-FF91-4845-B7F2-FC68595AB730/VS2012_ULT_enu.iso)
    - [Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)
    - *(Optional)* [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for a more modern IDE experience.
      > You can use either VS2012 or VS2022 to view the solution — both work fine.
