@@ -18,7 +18,7 @@
    - Этот метод гарантирует, что вам не потребуется повторно загружать исходный код. ** (Рекомендуется)**
 
 2. **Скачайте и установите эти инструменты:**
-   - [Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)
+   - [Visual Studio 2012](http://download.microsoft.com/download/D/B/0/DB03922C-FF91-4845-B7F2-FC68595AB730/VS2012_ULT_enu.iso)
    - [Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)
    - *(опционально)* [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) для более современной работы с IDE.
      > Вы можете использовать либо VS2012, либо VS2022 для просмотра решения — оба работают нормально.
