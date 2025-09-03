@@ -1,0 +1,2 @@
+-keep class android.support.v4.app.CoreComponentFactory { <init>(); }
+-keep class com.roblox.client.RobloxApplication { <init>(); }

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="EnvironmentArray">
+    <item>www.roblox.com/</item>
+    <item>www.gametest1.robloxlabs.com/</item>
+    <item>www.gametest2.robloxlabs.com/</item>
+    <item>www.gametest3.robloxlabs.com/</item>
+    <item>www.gametest4.robloxlabs.com/</item>
+    <item>www.gametest5.robloxlabs.com/</item>
+    <item>www.sitetest1.robloxlabs.com/</item>
+    <item>www.sitetest2.robloxlabs.com/</item>
+    <item>www.sitetest3.robloxlabs.com/</item>
+    <item>www.sitetest4.robloxlabs.com/</item>
+    <item>allen.sitetest3.robloxlabs.com/</item>
+    <item>anthony.sitetest3.robloxlabs.com/</item>
+    <item>alex.sitetest3.robloxlabs.com/</item>
+    <item>baker.sitetest3.robloxlabs.com/</item>
+    <item>ernie.sitetest3.robloxlabs.com/</item>
+    <item>guru.sitetest3.robloxlabs.com/</item>
+    <item>rosemary.sitetest3.robloxlabs.com/</item>
+    <item>antoni.sitetest3.robloxlabs.com/</item>
+    <item>isaiah.sitetest3.robloxlabs.com/</item>
+    <item>akshay.sitetest3.robloxlabs.com/</item>
+    <item>ying.sitetest3.robloxlabs.com/</item>
+    <item>wooldridge.sitetest3.robloxlabs.com/</item>
+    <item>je.sitetest3.robloxlabs.com/</item>
+    <item>jeremy.sitetest3.robloxlabs.com/</item>
+    <item>manika.sitetest3.robloxlabs.com/</item>
+    <item>linjun.sitetest3.robloxlabs.com/</item>
+    <item>shailendra.sitetest3.robloxlabs.com/</item>
+
+
+</string-array>
+    <string-array name="EnvironmentArrayMobile">
+    <item>m.roblox.com/</item>
+    <item>m.gametest1.robloxlabs.com/</item>
+    <item>m.gametest2.robloxlabs.com/</item>
+    <item>m.gametest3.robloxlabs.com/</item>
+    <item>m.gametest4.robloxlabs.com/</item>
+    <item>m.gametest5.robloxlabs.com/</item>
+    <item>m.sitetest1.robloxlabs.com/</item>
+    <item>m.sitetest2.robloxlabs.com/</item>
+    <item>m.sitetest3.robloxlabs.com/</item>
+    <item>m.sitetest4.robloxlabs.com/</item>
+    <item>allen.sitetest3.robloxlabs.com/</item>
+    <item>anthony.sitetest3.robloxlabs.com/</item>
+    <item>alex.sitetest3.robloxlabs.com/</item>
+    <item>baker.sitetest3.robloxlabs.com/</item>
+    <item>ernie.sitetest3.robloxlabs.com/</item>
+    <item>guru.sitetest3.robloxlabs.com/</item>
+    <item>rosemary.sitetest3.robloxlabs.com/</item>
+    <item>antoni.sitetest3.robloxlabs.com/</item>
+    <item>isaiah.sitetest3.robloxlabs.com/</item>
+    <item>akshay.sitetest3.robloxlabs.com/</item>
+    <item>ying.sitetest3.robloxlabs.com/</item>
+    <item>wooldridge.sitetest3.robloxlabs.com/</item>
+    <item>je.sitetest3.robloxlabs.com/</item>
+    <item>jeremy.sitetest3.robloxlabs.com/</item>
+    <item>manika.sitetest3.robloxlabs.com/</item>
+    <item>linjun.sitetest3.robloxlabs.com/</item>
+    <item>shailendra.sitetest3.robloxlabs.com/</item>
+</string-array>
+    <string-array name="GenderArray">
+	<item>Choose one</item>
+	<item>Male</item>
+	<item>Female</item>
+</string-array>
+    <string-array name="MonthArray">
+    <item>Jan.</item>
+    <item>Feb.</item>
+    <item>Mar.</item>
+    <item>Apr.</item>
+    <item>May</item>
+    <item>June</item>
+    <item>July</item>
+    <item>Aug.</item>
+    <item>Sept.</item>
+    <item>Oct.</item>
+    <item>Nov.</item>
+    <item>Dec.</item>
+</string-array>
+    <bool name="sw500dp">false</bool>
+    <color name="FBBlue">#3B5998</color>
+    <color name="RbxBlue1">#00A2FF</color>
+    <color name="RbxBlue2">#32B5FF</color>
+    <color name="RbxBlue3">#0074BD</color>
+    <color name="RbxBlue4">#99DAFF</color>
+    <color name="RbxBlueLight">#45BCFF</color>
+    <color name="RbxGray2">#757575</color>
+    <color name="RbxGray3">#B8B8B8</color>
+    <color name="RbxGray4">#CCC</color>
+    <color name="RbxGray5">#F2F2F2</color>
+    <color name="RbxGray6">#FAFAFA</color>
+    <color name="RbxGreen1">#02B757</color>
+    <color name="RbxGreen2">#3FC679</color>
+    <color name="RbxGreen3">#A3E2BD</color>
+    <color name="RbxGreenLight">#46db77</color>
+    <color name="RbxOrange">#f68802</color>
+    <color name="RbxRed1">#E2231A</color>
+    <color name="RbxRed2">#FD2843</color>
+    <color name="RbxRed3">#D86868</color>
+    <color name="RbxShadow">#28757575</color>
+    <color name="RbxTextLight">#7F757575</color>
+    <color name="RbxTransparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="blue">#0000ff</color>
+    <color name="games_page_item_background">#ffffff</color>
+    <color name="games_page_item_description">#707070</color>
+    <color name="games_page_item_link">#202020</color>
+    <color name="login_button_green">#00b058</color>
+    <color name="native_sidebar_background">#202020</color>
+    <color name="native_sidebar_page_background">#dadcda</color>
+    <color name="native_sidebar_page_heading">#202020</color>
+    <color name="native_sidebar_top_row">#343434</color>
+    <color name="red">#ff0000</color>
+    <color name="shell_dialog_background">#d0d0d0</color>
+    <color name="shell_dialog_background_dark">#a8a8a8</color>
+    <color name="shell_dialog_bar">#ffffff</color>
+    <color name="shell_text_hint_visible">#505050</color>
+    <color name="shell_text_link">#5050ff</color>
+    <color name="shell_text_normal">#000000</color>
+    <color name="webview_background">#b0b0b0</color>
+    <color name="webview_header">#cccccc</color>
+    <color name="webview_text">#202020</color>
+    <color name="webview_url">#eeeeee</color>
+    <color name="white">#ffffff</color>
+    <dimen name="btnFlatStdCornerRadius">5dp</dimen>
+    <dimen name="btnFlatStdPaddingLeftRight">10dp</dimen>
+    <dimen name="btnFlatStdPaddingTopBtm">7dp</dimen>
+    <dimen name="emailAlert">16sp</dimen>
+    <dimen name="rbxEditTextHint">14sp</dimen>
+    <dimen name="rbxEditTextInternal">22sp</dimen>
+    <dimen name="settingsAlertIconLeftMargin">30dp</dimen>
+    <dimen name="splashFacebookTextSize">25sp</dimen>
+    <dimen name="splashLoadingTextSize">30sp</dimen>
+    <dimen name="startFacebookLogInTextSize">20sp</dimen>
+    <dimen name="stdHintLeftIndent">12dp</dimen>
+    <dimen name="textSizeBtnCancel">20sp</dimen>
+    <dimen name="textSizeLoginFinePrint">14sp</dimen>
+    <dimen name="thumbnailCellHeight">230dp</dimen>
+    <dimen name="thumbnailCellWidth">420dp</dimen>
+    <integer name="signupCardBottomWeight">1</integer>
+    <integer name="signupCardWeightTop">1</integer>
+    <integer name="stdSlideDuration">300</integer>
+    <string name="AboutWord"><![CDATA[About]]></string>
+    <string name="AccountCreationFloodcheck"><![CDATA[You have made too many accounts. Please wait before making more.]]></string>
+    <string name="AdColonyAppId">appe0b7456ae2e249ed91</string>
+    <string name="AdColonyZoneId">vz80b7495faabe44d4b2</string>
+    <string name="AndWord"><![CDATA[And]]></string>
+    <string name="AnyUserNeedsToSignIn"><![CDATA[Please login to complete the pending transaction. If this problem persists contact info@roblox.com]]></string>
+    <string name="AppPurchasingDisabledTitle"><![CDATA[In-App Purchasing disabled]]></string>
+    <string name="Banned14Day">Banned for 14 Days</string>
+    <string name="Banned1Day">Banned for 1 Day</string>
+    <string name="Banned3Day">Banned for 3 Days</string>
+    <string name="Banned7Day">Banned for 7 Days</string>
+    <string name="BannedAppeals"><![CDATA[If you wish to appeal, please send an email to <a href=\"mailto:appeals@roblox.com?Subject=Ban%20Appeal\">appeals@roblox.com</a>.]]></string>
+    <string name="BannedDefault">Account Unavailable</string>
+    <string name="BannedDelete">Account Deleted</string>
+    <string name="BannedDeletedFirstLine">Our content monitors have determined that your behavior at ROBLOX has been in violation of our Terms of Service.</string>
+    <string name="BannedDeletedMessage">Your account has been terminated.</string>
+    <string name="BannedFirstLine">Our content monitors have determined that your behavior at ROBLOX has been in violation of our Terms of Service. We will terminate your account if you do not abide by the rules.</string>
+    <string name="BannedGuidelines"><![CDATA[Please abide by the <a href=\"https://en.help.roblox.com/hc/en-us/articles/203313410-ROBLOX-Rules-of-Conduct\">ROBLOX Community Guidelines</a> so that ROBLOX can be fun for users of all ages.]]></string>
+    <string name="BannedLengthAndEndDate">Your account has been banned for %1$d days. You may reactive it after %2$s.</string>
+    <string name="BannedMessagePermanent">You have been banned from ROBLOX permanently. Please login via a browser for more information.</string>
+    <string name="BannedMessageTemporary">You have been temporarily banned from ROBLOX. Please login via a browser for more information.</string>
+    <string name="BannedModeratorNote">Moderator Note: %s</string>
+    <string name="BannedReviewed">Reviewed: %s</string>
+    <string name="BannedTitle">Account Unavailable</string>
+    <string name="BannedWarning">Warning</string>
+    <string name="BannedWarningInstructions"><![CDATA[You must login at <a href=\"http://www.roblox.com\">www.roblox.com</a> to re-activate your account.]]></string>
+    <string name="BirthdayInvalid"><![CDATA[Your birthday appears to be incorrect.]]></string>
+    <string name="BirthdayRequirements"><![CDATA[Select Your Birthday]]></string>
+    <string name="BirthdayWord"><![CDATA[Birthday]]></string>
+    <string name="BuildWord"><![CDATA[Build]]></string>
+    <string name="BuildersClubWord"><![CDATA[Builders Club]]></string>
+    <string name="CancelWord"><![CDATA[Cancel]]></string>
+    <string name="CannotMakePurchase"><![CDATA[We are sorry, you cannot make purchases at this time. If this problem persists contact info@roblox.com]]></string>
+    <string name="CannotPurchaseBecauseParentalControl"><![CDATA[You are not able to make purchases.  Check your parental control settings and try again later.]]></string>
+    <string name="CatalogWord"><![CDATA[Catalog]]></string>
+    <string name="ChangeEmailAddTitle">ADD EMAIL</string>
+    <string name="ChangeEmailAddTitleUnder13">ADD PARENT\'S EMAIL</string>
+    <string name="ChangeEmailCurrentPassword">Current Password</string>
+    <string name="ChangeEmailNewEmail">New Email</string>
+    <string name="ChangeEmailNewEmailUnder13">New Parent\'s Email</string>
+    <string name="ChangeEmailNoNewEmail">You must enter a new email address!</string>
+    <string name="ChangeEmailNoPassword">You must enter your current password!</string>
+    <string name="ChangeEmailSameAsCurrent">This is your current email!</string>
+    <string name="ChangeEmailShort">Change Email</string>
+    <string name="ChangeEmailShortUnder13">Change Parent\'s Email</string>
+    <string name="ChangeEmailTitle">CHANGE EMAIL</string>
+    <string name="ChangeEmailTitleUnder13">CHANGE PARENT\'S EMAIL</string>
+    <string name="ChangeEmailValue">You should add an email address to your account to prevent it from being lost or stolen!</string>
+    <string name="ChangePasswordAddTitle">ADD PASSWORD</string>
+    <string name="ChangePasswordConfirmPassword">Confirm New Password</string>
+    <string name="ChangePasswordNewPassword">New Password</string>
+    <string name="ChangePasswordNoConfirmPassword">You must re-enter your new password!</string>
+    <string name="ChangePasswordNoMatch">Your new passwords must match!</string>
+    <string name="ChangePasswordNoNewPassword">You must enter a new password!</string>
+    <string name="ChangePasswordNoOldPassword">You must enter your current password!</string>
+    <string name="ChangePasswordOldPassword">Old Password</string>
+    <string name="ChangePasswordTitle">CHANGE PASSWORD</string>
+    <string name="ChangePasswordValue">If your linked account stops working you can log in using this password. It provides an extra layer of account security.</string>
+    <string name="ChooseOne"><![CDATA[Choose one]]></string>
+    <string name="ClearCookiesWord"><![CDATA[Clear Cookies]]></string>
+    <string name="CloseWord"><![CDATA[Close]]></string>
+    <string name="CommunityWord"><![CDATA[Community]]></string>
+    <string name="ConnectionError"><![CDATA[Unable to contact server. Please check your internet connection!]]></string>
+    <string name="ConnectionErrorGameEnded"><![CDATA[Cannot join this game because it has ended.]]></string>
+    <string name="ConnectionErrorGameFull"><![CDATA[Cannot join this game because it is full.]]></string>
+    <string name="CookiesClearedMessage"><![CDATA[Roblox Cookies are cleared]]></string>
+    <string name="CrashFound">The game did not end correctly.  You may need a Software Update.  See the Settings section About Device.</string>
+    <string name="CreateUsernameChooseHint">Choose your ROBLOX username:</string>
+    <string name="CreateUsernameEmpty">You must enter a username!</string>
+    <string name="CreateUsernameExistingRbx"><![CDATA[To link to an existing ROBLOX account, log in and go to Settings -> More.]]></string>
+    <string name="CreateUsernameTooLong">Username must be fewer than 20 characters!</string>
+    <string name="CreateUsernameTooShort">Username must be longer than 3 characters!</string>
+    <string name="CreatingUsernameProgress">"Creating..."</string>
+    <string name="DefaultDeviceBlacklist"><![CDATA[XT1080,Nexus 7,SMÃ‚Â¬?-T210R,SM-T320]]></string>
+    <string name="DismissButtonText"><![CDATA[Dismiss]]></string>
+    <string name="DoneWord"><![CDATA[Done]]></string>
+    <string name="EmailInvalid"><![CDATA[Your email address appears to be invalid.]]></string>
+    <string name="EmailRequirements"><![CDATA[(optional)]]></string>
+    <string name="EmailRequirementsUnder13">Parent\'s Email</string>
+    <string name="EmailWord"><![CDATA[Email]]></string>
+    <string name="EndingGame"><![CDATA[Game Closing]]></string>
+    <string name="EnterHerePhrase"><![CDATA[Enter Here]]></string>
+    <string name="EntryIncorrectBody"><![CDATA[One or more of the fields are incorrect or empty.]]></string>
+    <string name="EntryIncorrectTitle"><![CDATA[Please Check Entries]]></string>
+    <string name="FacebookConnectSuccess">Connection succeeded!</string>
+    <string name="FacebookDisconnectFailedNoPassword">Your account needs a password before you can disconnect from Facebook!</string>
+    <string name="FacebookDisconnectSuccess">You have successfully disconnected your Facebook account.</string>
+    <string name="FailedContactCS">Fatal error! Please try again later, and contact customer support if problem persists.</string>
+    <string name="FieldsIncomplete"><![CDATA[Not all required fields are filled]]></string>
+    <string name="FriendsWord">Friends</string>
+    <string name="GameStartFailureDisabled">Sorry! This game is disabled. Please join another game.</string>
+    <string name="GameStartFailureError">Sorry! This game failed to start. Please try joining another game.</string>
+    <string name="GameStartFailureGameEnded">Sorry! This game has already ended.</string>
+    <string name="GameStartFailureGameFull">Sorry! This game is already full.</string>
+    <string name="GameStartFailureRestricted">Sorry! This game is unavailable on this platform.</string>
+    <string name="GameStartFailureUnknown">Sorry! The game failed to start for an unexpected reason.</string>
+    <string name="GameStartFailureUserLeft">Sorry! The user you were following has left the game.</string>
+    <string name="GameWord"><![CDATA[Games]]></string>
+    <string name="GenderBoy"><![CDATA[Boy]]></string>
+    <string name="GenderGirl"><![CDATA[Girl]]></string>
+    <string name="GenderWord"><![CDATA[Gender]]></string>
+    <string name="GeneralGameStartError"><![CDATA[There was an error starting this game.]]></string>
+    <string name="GigyaApiKey">3_OsvmtBbTg6S_EUbwTPtbbmoihFY5ON6v6hbVrTbuqpBs7SyF_LQaJwtwKJ60sY1p</string>
+    <string name="GigyaConnectDuplicateGeneric">An account has been connected elsewhere. Your settings have been updated.</string>
+    <string name="GigyaConnectFailedGeneric">Connection failed! Please contact customer support if issue persists.</string>
+    <string name="GigyaDisconnectFailedGeneric">Disconnect failed! Please contact customer support if issue persists.</string>
+    <string name="GigyaDisconnectedDuplicateGeneric">An account has been disconnected elsewhere. Your settings have been updated.</string>
+    <string name="GoogleAdTagUrl"><![CDATA[http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fhanna_MA_group%2Fvideo_comp_app&ciu_szs=&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&m_ast=vast&url=[referrer_url]&correlator=[timestamp]]]></string>
+    <string name="GroupsWord">Groups</string>
+    <string name="HavePendingTransactionError"><![CDATA[You already have pending transactions, please try again after some time. You may need to restart your device. If this problem persists contact info@roblox.com]]></string>
+    <string name="HomeWord"><![CDATA[Home]]></string>
+    <string name="IgnoreButtonText"><![CDATA[Ignore]]></string>
+    <string name="InvalidCharactersUsed">Username contains invalid characters.</string>
+    <string name="InvalidUsernameOrPw"><![CDATA[Invalid username or password]]></string>
+    <string name="InventoryWord"><![CDATA[Inventory]]></string>
+    <string name="LaunchGame"><![CDATA[Launching Game]]></string>
+    <string name="LeaderboardsWord">Leaderboards</string>
+    <string name="LegalText"><![CDATA[ROBLOX, \'Online Building Toy\', characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation ©2015. US Patents 7,874,921. Patents pending. Contact us at info@roblox.com]]></string>
+    <string name="LicensingAgreement"><![CDATA[Licensing Agreement]]></string>
+    <string name="LoggedOut">You have been logged out.</string>
+    <string name="LoggingIn"><![CDATA[Logging in]]></string>
+    <string name="LoggingInSpinnerText">Logging in...</string>
+    <string name="LoginButton"><![CDATA[Login]]></string>
+    <string name="LoginFailedTitle"><![CDATA[Login Failed - %s]]></string>
+    <string name="LoginInvalidPassword">Wrong password!</string>
+    <string name="LoginInvalidUsername">Username does not exist!</string>
+    <string name="LoginMissingField">Login missing a required field!</string>
+    <string name="LoginWord"><![CDATA[LOGIN]]></string>
+    <string name="LoginWordLower"><![CDATA[Login]]></string>
+    <string name="LogoutConfirmation"><![CDATA[Do you want to log out?]]></string>
+    <string name="LogoutWord"><![CDATA[Log Out]]></string>
+    <string name="MemoryError"><![CDATA[We\'re sorry, this place uses too many parts for your device]]></string>
+    <string name="MessagesWord"><![CDATA[Messages]]></string>
+    <string name="MessagesWordPhone">MSGs</string>
+    <string name="MoreWord">More</string>
+    <string name="NeedsExternalLogin"><![CDATA[Your user account has issues, please try logging in using Chrome or any other browser.]]></string>
+    <string name="NextWord"><![CDATA[Next]]></string>
+    <string name="NoSignupBirthdayError"><![CDATA[No birthday specified, please select a birthday.]]></string>
+    <string name="NoSignupGenderError"><![CDATA[No gender specified, please select a gender.]]></string>
+    <string name="NoSignupPasswordError"><![CDATA[No password specified, please enter a password.]]></string>
+    <string name="NoSignupUsernameError"><![CDATA[No username was entered, please enter a username.]]></string>
+    <string name="NoSignupVerifyPasswordError"><![CDATA[Password was not verified, please enter password in \'Verify\' field.]]></string>
+    <string name="OkWord"><![CDATA[Ok]]></string>
+    <string name="PairWord"><![CDATA[Pair]]></string>
+    <string name="PasswordNoMatch"><![CDATA[Passwords do not match.  Please retype your password.]]></string>
+    <string name="PasswordRequirements"><![CDATA[6-20 characters with at least 2 numbers]]></string>
+    <string name="PasswordRequirementsShort"><![CDATA[6-20 characters]]></string>
+    <string name="PasswordTooLong">Password is too long. Please use a password that is less than 20.</string>
+    <string name="PasswordTooShort">Password is too short. Please use a password that is longer than 4 characters.</string>
+    <string name="PasswordWord"><![CDATA[Password]]></string>
+    <string name="PasswordWrongAndroid"><![CDATA[Password must contain 6-20 characters with at least 2 numbers.]]></string>
+    <string name="PlayNowButtonLabel"><![CDATA[Play Now]]></string>
+    <string name="PrivacyPolicy"><![CDATA[Privacy Policy]]></string>
+    <string name="ProfileWord"><![CDATA[Profile]]></string>
+    <string name="PurchaseSuccessful"><![CDATA[Purchase successful, it may take up to 5 minutes to be reflected in your account]]></string>
+    <string name="PurchaseValidateError">Sorry, your transaction cannot be completed.</string>
+    <string name="PurchaseValidateLimit">Sorry, your transaction cannot be completed at this time, as you have reached a transaction limit.</string>
+    <string name="PurchaseValidateRetry">Billing service is currently unavailable. Please try again later.</string>
+    <string name="PurchasedFailed"><![CDATA[Purchase failed, please try again]]></string>
+    <string name="RateMeDialogMessage">We would really appreciate you rating ROBLOX on the Play store.</string>
+    <string name="RateMeDialogTitle">Please rate this app</string>
+    <string name="RateMeNever">Never</string>
+    <string name="RateMeNotNow">Not now</string>
+    <string name="RateMeRateIt">Rate it</string>
+    <string name="RatingNoThanksButton"><![CDATA[No, Thanks]]></string>
+    <string name="RatingRemindMeLaterButton"><![CDATA[Remind me later]]></string>
+    <string name="RatingString"><![CDATA[If you enjoy using ROBLOX, would you please rate it? It wont take more than a minute. If you are having issues or problems, please email support at support@roblox.com.]]></string>
+    <string name="RatingTitle"><![CDATA[Rate ROBLOX]]></string>
+    <string name="RatingYesButton"><![CDATA[Rate ROBLOX]]></string>
+    <string name="RbxDevConnectionCreated"><![CDATA[ROBLOX Studio connection created, waiting for setup...]]></string>
+    <string name="RbxDevFinalizing"><![CDATA[Finalizing some things...]]></string>
+    <string name="RbxDevPairingInstructions"><![CDATA[Type your Rbx Dev Code (should be 4 numbers) from ROBLOX Studio to pair this device.]]></string>
+    <string name="RbxDevPressConnect"><![CDATA[Please press connect button when you have a server running on ROBLOX Studio.]]></string>
+    <string name="RbxDevStudioFound"><![CDATA[ROBLOX Studio found, creating connection...]]></string>
+    <string name="RbxDevWaiting"><![CDATA[Waiting for ROBLOX Studio Connection...]]></string>
+    <string name="RecommendUpgradeBody"><![CDATA[A new version of %s is available in the App Store. We recommend installing it before continuing.]]></string>
+    <string name="RecommendUpgradeTitle"><![CDATA[Upgrade available!]]></string>
+    <string name="RegisteringWord">Registering</string>
+    <string name="RememberPassword"><![CDATA[Remember Password]]></string>
+    <string name="RequireUpgradeBody"><![CDATA[Your version of %s is out of date and will not work properly. Please upgrade immediately.]]></string>
+    <string name="RequireUpgradeTitle"><![CDATA[Please Upgrade!]]></string>
+    <string name="RobloxDevPairFailure"><![CDATA[Did not pair with Studio, did you put in the right code?]]></string>
+    <string name="RobloxDevPairFailureTimeout"><![CDATA[Could not find ROBLOX Studio. Please make sure you are on the same network as ROBLOX studio.]]></string>
+    <string name="RobloxDevSuccessfulPair"><![CDATA[Successfuly Paired with %s]]></string>
+    <string name="RobloxWord"><![CDATA[ROBLOX]]></string>
+    <string name="RobuxWord"><![CDATA[Robux]]></string>
+    <string name="SearchCatalogWord">Search catalog...</string>
+    <string name="SearchGamesWord">Search games...</string>
+    <string name="SearchUsersWord">Search users...</string>
+    <string name="SearchWord">Search</string>
+    <string name="SelectBirthday"><![CDATA[Select Birthday]]></string>
+    <string name="SelectGender"><![CDATA[Select Gender]]></string>
+    <string name="SelectWord"><![CDATA[Select]]></string>
+    <string name="SessionExpired"><![CDATA[Session Expired, Please logout and log back in to do the purchase]]></string>
+    <string name="SettingsAddEmail">Email</string>
+    <string name="SettingsChangeEmail">Email</string>
+    <string name="SettingsChangePassword">Password</string>
+    <string name="SettingsSaveWord">Save</string>
+    <string name="SettingsTitle">Settings</string>
+    <string name="SettingsUnder13Email">Users under the age of 13 cannot change their email.</string>
+    <string name="SigningUp"><![CDATA[Signing Up...]]></string>
+    <string name="SignupButton"><![CDATA[Sign up]]></string>
+    <string name="SignupCreateUsername">Create</string>
+    <string name="SignupEmailSuggestion">Enter an email address to protect your account!</string>
+    <string name="SignupFinePrint"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our &lt;a href=\'http://www.roblox.com/info/terms-of-service\'&gt;Terms of Service&lt;/a&gt;, &lt;a href=\'http://www.roblox.com/info/EULA.htm\'&gt;Licensing Agreement&lt;/a&gt;, and &lt;a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'&gt;Privacy Policy&lt;/a&gt;.  We will not share your information with third parties.]]></string>
+    <string name="SignupFinePrintAndroid"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our <a href=\'http://www.roblox.com/info/terms-of-service\'>Terms of Service</a>, <a href=\'http://www.roblox.com/info/EULA.htm\'>Licensing Agreement</a>, and <a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>.]]></string>
+    <string name="SignupLower">Sign Up</string>
+    <string name="SignupNoPassword">You must enter a password!</string>
+    <string name="SignupNoUsername">Please enter a username.</string>
+    <string name="SignupNoVerifyPassword">You must re-enter your password.</string>
+    <string name="SignupPasswordNoNumbers">Password must contain at least 2 numbers!</string>
+    <string name="SignupPasswordTooLong">Password must be shorter than 20 characters!</string>
+    <string name="SignupPasswordTooShort">Password must be longer than 3 characters!</string>
+    <string name="SignupPasswordsMatch">Your passwords don\'t match!</string>
+    <string name="SignupUnder13Warning">Please confirm your parent\'s email address.</string>
+    <string name="SignupUsernameTakenSuggestion">That username was already taken! Try this one instead.</string>
+    <string name="SignupUsernameTooLong">Username must be shorter than 20 characters!</string>
+    <string name="SignupUsernameTooShort">Username must be longer than 3 characters!</string>
+    <string name="SignupValidating">Validating</string>
+    <string name="SignupWord"><![CDATA[SIGNUP]]></string>
+    <string name="SignupWordSpace">SIGN UP</string>
+    <string name="SignupXBOXPasswordIsUsername">Password must not be your username.</string>
+    <string name="SignupXBOXPasswordTooShort">Must be at least 8 characters long.</string>
+    <string name="SignupXBOXUsernameInvalidCharacters">Only a-z, A-Z, 0-9, and _ are allowed.</string>
+    <string name="SignupXBOXUsernameInvalidDoubleUnderscore">Usernames can have at most one _.</string>
+    <string name="SignupXBOXUsernameInvalidFirstOrLastCharacter">Username can’t start or end with _.</string>
+    <string name="SignupXBOXUsernameTooLong">Names can be 3 to 20 characters long.</string>
+    <string name="SignupXBOXUsernameTooShort">Names can be 3 to 20 characters long.</string>
+    <string name="TermsLicensingPrivacy"><![CDATA[<a href=\'http://www.roblox.com/info/terms-of-service\'>Terms of Service</a> - <a href=\'http://www.roblox.com/info/EULA.htm\'>Licensing Agreement</a> - <a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>]]></string>
+    <string name="TermsOfService"><![CDATA[Terms of Service]]></string>
+    <string name="TicketsWord"><![CDATA[Tickets]]></string>
+    <string name="TooManyAttempts"><![CDATA[Too many attempts - please try after 5 minutes]]></string>
+    <string name="TransactionDelayedBody"><![CDATA[Your transaction is delayed. We are still processing your transaction, it may take some more time.]]></string>
+    <string name="TransactionDelayedTitle"><![CDATA[Transaction delayed]]></string>
+    <string name="TransactionFailedBody"><![CDATA[Purchase failed, please contact info@roblox.com with your Apple receipt]]></string>
+    <string name="TransactionFailedTitle"><![CDATA[Purchase failed]]></string>
+    <string name="UnexpectedError"><![CDATA[Sorry! An unexpected error occured: %s.]]></string>
+    <string name="UnknownLoginFailure"><![CDATA[Login Failure - Unknown error!]]></string>
+    <string name="UnsupportedDevice"><![CDATA[Sorry, your device does not meet the minimum requirements to play games.]]></string>
+    <string name="UnsupportedDeviceSkippable"><![CDATA[Warning: Your device may not be powerful enough to play games smoothly.]]></string>
+    <string name="UpgradeBodyString">Your version of ROBLOX is out of date and will not work properly. Taking you to the Google Play Store for an upgrade.</string>
+    <string name="UpgradeButtonText"><![CDATA[Upgrade]]></string>
+    <string name="UserNeedsToSignIn"><![CDATA[Roblox User %s needs to login to complete the pending transaction before you can buy. You may need to restart your device. If this problem persists contact info@roblox.com]]></string>
+    <string name="UsernameCannotContainSpaces">Username cannot contain spaces</string>
+    <string name="UsernameExplicit"><![CDATA[This username is not allowed, please try another.]]></string>
+    <string name="UsernameInvalid">Username invalid, please try another.</string>
+    <string name="UsernameRequirements"><![CDATA[3-20 alphanumeric characters, no spaces]]></string>
+    <string name="UsernameRequirementsShort"><![CDATA[3-20 characters]]></string>
+    <string name="UsernameTaken"><![CDATA[This username is already taken!]]></string>
+    <string name="UsernameTakenSuggestion"><![CDATA[This username is already taken! Try \"%s\" instead!]]></string>
+    <string name="UsernameTooLong"><![CDATA[Username is too long. Please select a name that is 3-20 alphanumeric characters.]]></string>
+    <string name="UsernameTooShort"><![CDATA[Username is too short. Please select a name that is 3-20 alphanumeric characters.]]></string>
+    <string name="UsernameWord"><![CDATA[Username]]></string>
+    <string name="ValuePageCatalog">Choose from thousands of different hats, shirts, and gear that will make your Roblox character truly unique!</string>
+    <string name="ValuePageFriends">Find your friends, send them messages (just kidding), and view their profiles. Sign up to make new friends!</string>
+    <string name="ValuePageHome">Get the latest updates from your friends and groups, see who\'s online, and quickly access your favorite games.</string>
+    <string name="ValuePageMessages">Talk to your friends and view your message history. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="ValuePageMore">Access your profile, manage your groups, and trade with your friends. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="VerifyError"><![CDATA[This password does not match the original password you entered.]]></string>
+    <string name="VerifyPasswordWrong"><![CDATA[The verify password does not match the password.]]></string>
+    <string name="VerifyRequirements"><![CDATA[Retype Password]]></string>
+    <string name="VerifyWord"><![CDATA[Verify]]></string>
+    <string name="WaitForAnotherBCPurchase"><![CDATA[Please wait for some time before making Builder\'s Club purchase]]></string>
+    <string name="WaitForAnotherCatalogPurchase"><![CDATA[Please wait for some time before making Catalog purchase]]></string>
+    <string name="WaitForAnotherRobuxPurchase"><![CDATA[Please wait for some time before making Robux purchase]]></string>
+    <string name="WarnPlaceIsNotIdeal"><![CDATA[We\'re sorry, this place may not play well on your device because:]]></string>
+    <string formatted="false" name="WarnTooManyParts"><![CDATA[This place has %d parts (%d is recommended)]]></string>
+    <string name="WelcomeToRoblox"><![CDATA[Welcome to ROBLOX!]]></string>
+    <string name="WiFiOnlyError"><![CDATA[Cannot start game because you are not connected via WiFi (you can change this setting in the Settings App)]]></string>
+    <string name="Working">Working...</string>
+    <string name="YouAreCurrentlyLoggedInAs"><![CDATA[You are currently signed in as a guest]]></string>
+    <string name="YouMustLogin"><![CDATA[Create an account or sign in to access this feature.]]></string>
+    <string name="app_id">190191627665278</string>
+    <string name="captchaFailed">Captcha Failed</string>
+    <string name="captchaGuidance">Before you continue, we need to verify you are human. Please fill out form below.</string>
+    <string name="captchaInputHint">Type the text</string>
+    <string name="captchaReload">Reload</string>
+    <string name="captchaSubmit">Submit</string>
+    <string name="captchaTitle">Please Complete Captcha Challenge</string>
+    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
+    <string name="empty"/>
+    <string name="lorem_ipsum">Lorem ipsum dolor</string>
+    <string name="lorem_ipsum_xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="more">More</string>
+    <string name="not_implemented">Not implemented</string>
+    <string name="placeholder_number">: 12</string>
+    <string name="sessionExpiredLoginAgain">Your session has expired.\nPlease login again.</string>
+    <string name="url">URL</string>
+    <string name="url_go">Go</string>
+    <style name="LoginButtonTheme" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:textSize">20sp</item>
+		<item name="android:background">@drawable/white_button_drawable</item>
+	</style>
+    <style name="LoginCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:textSize">20sp</item>
+	</style>
+    <style name="LoginEditTextTheme" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">20sp</item>
+        
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:background">@drawable/textfield_searchview_holo_light</item>
+	</style>
+    <style name="RobloxCompatTheme.Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Theme.Roblox" parent="Theme.AppCompat.Light.NoActionBar">
+        
+        <item name="android:editTextStyle">@style/LoginEditTextTheme</item>
+        <item name="android:buttonStyle">@style/LoginButtonTheme</item>
+        <item name="android:spinnerStyle">@style/Theme.Roblox.DefaultSpinner</item>
+        
+        
+        
+    </style>
+    <style name="Theme.Roblox.AppCompat.Light.Dialog.NoActionBar" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Roblox.Button.Flat.Blue" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontName">SourceSansPro-Regular.ttf</item>
+        <item name="startingColor">@color/RbxBlue3</item>
+        <item name="endAlpha">30</item>
+        <item name="android:background">@drawable/rbx_drawable_flat_button_blue</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="Theme.Roblox.Button.Flat.Blue.Settings" parent="Theme.Roblox.Button.Flat.Blue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/textSizeSignupHeader</item>
+        <item name="android:background">@drawable/rbx_bg_flat_button_blue_dark</item>
+
+    </style>
+    <style name="Theme.Roblox.Button.Flat.Transparent" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontName">SourceSansPro-Regular.ttf</item>
+        <item name="startingColor">@color/RbxBlue3</item>
+        <item name="endAlpha">30</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="Theme.Roblox.Button.Flat.White" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/RbxGray2</item>
+        <item name="fontName">SourceSansPro-Regular.ttf</item>
+        <item name="android:background">@drawable/rbx_drawable_flat_button_white</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    <style name="Theme.Roblox.Button.Flat.White.Settings" parent="Theme.Roblox.Button.Flat.White">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/textSizeSignupHeader</item>
+    </style>
+    <style name="Theme.Roblox.Button.Gender.Female" parent="Theme.Roblox.Button.Flat.White">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="startingColor">@color/RbxRed2</item>
+    </style>
+    <style name="Theme.Roblox.Button.Gender.Male" parent="Theme.Roblox.Button.Flat.White">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="startingColor">@color/RbxBlueLight</item>
+    </style>
+    <style name="Theme.Roblox.Dark.Fullscreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Roblox.DefaultSpinner" parent="@android:style/Widget.Spinner">
+        <item name="android:background">@drawable/rbx_bg_solid_white</item>
+    </style>
+    <style name="Theme.Roblox.DefaultSpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/Theme.Roblox.DefaultSpinnerItem.TextAppearance</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Theme.Roblox.DefaultSpinnerItem.TextAppearance" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/textSizeButton</item>
+    </style>
+    <style name="Theme.Roblox.DialogCenteredTitle" parent="@android:style/TextAppearance.DialogWindowTitle">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Theme.Roblox.EditText" parent="@android:style/Widget.EditText">
+        <item name="fontName">SourceSansPro-Light.ttf</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="Theme.Roblox.Fullscreen" parent="Theme.Roblox">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="Theme.Roblox.Progress.Button" parent="@android:style/Widget.TextView">
+        <item name="fontName">SourceSansPro-Regular.ttf</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/RbxRed1</item>
+        <item name="buttonTextSize">25sp</item>
+        <item name="buttonTextColor">@color/white</item>
+        <item name="progressTextSize">25sp</item>
+        <item name="progressTextColor">@color/white</item>
+    </style>
+    <style name="Theme.Roblox.Progress.Button.Blue" parent="Theme.Roblox.Progress.Button">
+        <item name="backgroundResource">@drawable/rbx_drawable_flat_button_progress_blue</item>
+    </style>
+    <style name="Theme.Roblox.Progress.Button.Green" parent="Theme.Roblox.Progress.Button">
+        <item name="backgroundResource">@drawable/rbx_drawable_flat_button_progress_green</item>
+        <item name="startingColor">@color/RbxBlue3</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontBold">
+        <item name="fontName">SourceSansPro-Bold.ttf</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontItalic">
+        <item name="fontName">SourceSansPro-Italic.ttf</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontLight">
+        <item name="fontName">SourceSansPro-Light.ttf</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontRegular">
+        <item name="fontName">SourceSansPro-Regular.ttf</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontSemibold">
+        <item name="fontName">SourceSansPro-Semibold.ttf</item>
+    </style>
+    <style name="Theme.Roblox.StandardFontThick">
+        <item name="fontName">SourceSansPro-Black.ttf</item>
+    </style>
+    <style name="Theme.Roblox.TabTextIndicator">
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/tabBarTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:maxWidth">200dip</item>
+    </style>
+    <style name="Theme.Roblox.TabTheme" parent="android:Theme">
+        <item name="android:tabStripEnabled">false</item>
+    </style>
+    <style name="Theme.Roblox.WebDialogCenteredTitle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowTitleStyle">@style/Theme.Roblox.DialogCenteredTitle</item>
+    </style>
+    <declare-styleable name="RbxButton">
+    </declare-styleable>
+    <declare-styleable name="RbxEditText">
+        <attr format="string" name="hintText"/>
+        <attr format="string" name="errorText"/>
+        <attr format="string" name="hintTextLong"/>
+        <attr format="string" name="successText"/>
+        <attr format="string" name="inputType"/>
+    </declare-styleable>
+    <declare-styleable name="RbxFont">
+        <attr format="string" name="fontName"/>
+    </declare-styleable>
+    <declare-styleable name="RbxLinearLayout">
+
+    </declare-styleable>
+    <declare-styleable name="RbxProgressButton">
+        <attr format="string" name="defButtonText"/>
+        <attr format="string" name="defProgressText"/>
+        <attr format="color" name="progressTextColor"/>
+        <attr format="dimension" name="progressTextSize"/>
+        <attr format="color" name="buttonTextColor"/>
+        <attr format="dimension" name="buttonTextSize"/>
+        <attr format="reference" name="backgroundResource"/>
+        <attr format="color" name="rippleStartColor"/>
+    </declare-styleable>
+    <declare-styleable name="RbxRelativeLayout">
+
+    </declare-styleable>
+    <declare-styleable name="RbxRipple">
+        <attr format="integer" name="expandDuration"/>
+        <attr format="integer" name="fadeDuration"/>
+        <attr format="integer" name="startAlpha"/>
+        <attr format="integer" name="endAlpha"/>
+        <attr format="color" name="endColor"/>
+        <attr format="color" name="startingColor"/>
+        <attr format="float" name="startingRadius"/>
+    </declare-styleable>
+    <declare-styleable name="RbxTextView">
+
+    </declare-styleable>
+</resources>

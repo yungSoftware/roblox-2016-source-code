@@ -62,6 +62,19 @@
    - Right-click on **RCCService**, **RobloxStudio**, or **WindowsClient** in Solution Explorer
    - Select **Build**
 
+### 🛠️ Setup Instructions for Android
+
+1. You need to install [Android Studio](https://developer.android.com/studio), do so.
+2. Install Android 28 NDK, Android 15 and 28 SDK from the Android Studio
+3. Find the local.properties file, Open in notepad and set the correct path to the SDK folder.
+
+* Build the libroblox.so for your platform, use the Legacy mode.
+
+4. Pack the OBB Assets
+5. Install Java JDK 21
+6. Build the RobloxHybrid and after that build the APK!
+
+
 ---
 
 ✅ **You did it! You've successfully built from the source!**

@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.roblox.hybridlib.Hybrid-release-5:/values-en-rAU/values-en-rAU.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Intel\\.gradle\\caches\\transforms-4\\9827aea9d44b85d0487fbcca7e361204\\transformed\\core-1.3.2\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.roblox.hybridlib.Hybrid-mergeReleaseResources-3:/values-en-rAU/values-en-rAU.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Intel\\.gradle\\caches\\transforms-4\\9827aea9d44b85d0487fbcca7e361204\\transformed\\core-1.3.2\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

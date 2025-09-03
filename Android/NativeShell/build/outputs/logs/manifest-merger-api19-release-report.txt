@@ -1,0 +1,558 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:1:39-196:12
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:1:39-196:12
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:1:39-196:12
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:1:39-196:12
+MERGED from [:Hybrid] E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cd32aab35792bc5ac59e204fdf2d6079\transformed\jetified-play-services-ads-identifier-16.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\4d74cfb8b03952e02da0cb614380a2c1\transformed\jetified-play-services-tasks-16.0.1\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\ededfc17cc3d0e8daf7b936e2627168d\transformed\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\adaba205e0aeefade60fa07733d0c276\transformed\material-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\46a0bc1e5cf7b45c378ea8bfb5c1008c\transformed\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\fe73dbec15063d39a14dc5ddb73845b9\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\361e8a40b92c640dc50cdfdee6e319c9\transformed\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\db75845db389bbdcad6ed095911591cc\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\94d929f4a1e30eccea92fc8b3d3c7396\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\04d99424a54e6b1829cedaa4dfa59ed7\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\9e7a30bd17ef763fbae69b397e0c2b76\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3f1025fd928314bdf5906293d171631b\transformed\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\63a9c11ecad710d1dd8edbe9941e3d68\transformed\transition-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0f1bb38cf32a26881ab6dcdb43c5210a\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0c8e22e12a6542b0fcf043d2935d0873\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\dc22c4a060e9f9c1a0789cbb0d9f9f18\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e93332b1c8f65dca6252853626e5518e\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\826b1162c28e5da366cd23c6739de981\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\2a9b85b1118ce0e8c181b0075148a83c\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cb26859f0a7f016eddb027f21c287368\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3d6d69e388c3c04ca5fbd677f492239b\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e312abff6139efae747db48988f87b48\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7af29192ab9fa9eeb34e001adfa69452\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Intel\.gradle\caches\transforms-4\d2e806ca26b84d869321cbb5a58da8ef\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\d15e80fc43c12aa98e97f96e6733e237\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7249d598aeb7d342c3938bd21bf9c07d\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\58acaba0ba1c56c7b450ed38b40c8fc0\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\659b5539ce493e4f3804d6fdc61565c8\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\51b15a7acf615af613d906e64a0d7edc\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3feebf2e6bc2aa295778c5491fa23751\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\201c213a6fc731097cd80fc24c1aed18\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0bebe79fc9001f59ba97d7c254a4890e\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\444cd1c6f23dee857413cf300502dd29\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\4ccf969cc296fe17691d537acc9e93ee\transformed\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [:circleimageview] E:\roblox-2016-source-code\Android\circleimageview\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\72fe3bd979bf114849f5458f0c6f60f1\transformed\jetified-play-services-tagmanager-v4-impl-16.0.8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\b469b6a6d8fd6daac8bb7e004d13e3dd\transformed\jetified-play-services-stats-16.0.1\AndroidManifest.xml:2:1-9:12
+	package
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:3:5-38
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:1:49-107
+	android:versionCode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:2:5-28
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+supports-screens
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:5:2-9:63
+	android:largeScreens
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:7:23-50
+	android:smallScreens
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:5:20-48
+	android:requiresSmallestWidthDp
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:9:23-60
+	android:normalScreens
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:6:23-51
+	android:xlargeScreens
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:8:23-51
+uses-sdk
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:11:5-13:41
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:11:5-13:41
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:11:5-13:41
+MERGED from [:Hybrid] E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:Hybrid] E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cd32aab35792bc5ac59e204fdf2d6079\transformed\jetified-play-services-ads-identifier-16.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cd32aab35792bc5ac59e204fdf2d6079\transformed\jetified-play-services-ads-identifier-16.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\4d74cfb8b03952e02da0cb614380a2c1\transformed\jetified-play-services-tasks-16.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\4d74cfb8b03952e02da0cb614380a2c1\transformed\jetified-play-services-tasks-16.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\ededfc17cc3d0e8daf7b936e2627168d\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\ededfc17cc3d0e8daf7b936e2627168d\transformed\multidex-2.0.0\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\adaba205e0aeefade60fa07733d0c276\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\adaba205e0aeefade60fa07733d0c276\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\46a0bc1e5cf7b45c378ea8bfb5c1008c\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\46a0bc1e5cf7b45c378ea8bfb5c1008c\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\fe73dbec15063d39a14dc5ddb73845b9\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\fe73dbec15063d39a14dc5ddb73845b9\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\361e8a40b92c640dc50cdfdee6e319c9\transformed\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\361e8a40b92c640dc50cdfdee6e319c9\transformed\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\db75845db389bbdcad6ed095911591cc\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\db75845db389bbdcad6ed095911591cc\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\94d929f4a1e30eccea92fc8b3d3c7396\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\94d929f4a1e30eccea92fc8b3d3c7396\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\04d99424a54e6b1829cedaa4dfa59ed7\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\04d99424a54e6b1829cedaa4dfa59ed7\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\9e7a30bd17ef763fbae69b397e0c2b76\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\9e7a30bd17ef763fbae69b397e0c2b76\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3f1025fd928314bdf5906293d171631b\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3f1025fd928314bdf5906293d171631b\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\63a9c11ecad710d1dd8edbe9941e3d68\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\63a9c11ecad710d1dd8edbe9941e3d68\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0f1bb38cf32a26881ab6dcdb43c5210a\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0f1bb38cf32a26881ab6dcdb43c5210a\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0c8e22e12a6542b0fcf043d2935d0873\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0c8e22e12a6542b0fcf043d2935d0873\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\dc22c4a060e9f9c1a0789cbb0d9f9f18\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\dc22c4a060e9f9c1a0789cbb0d9f9f18\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e93332b1c8f65dca6252853626e5518e\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e93332b1c8f65dca6252853626e5518e\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\826b1162c28e5da366cd23c6739de981\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\826b1162c28e5da366cd23c6739de981\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\2a9b85b1118ce0e8c181b0075148a83c\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\2a9b85b1118ce0e8c181b0075148a83c\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cb26859f0a7f016eddb027f21c287368\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cb26859f0a7f016eddb027f21c287368\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3d6d69e388c3c04ca5fbd677f492239b\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3d6d69e388c3c04ca5fbd677f492239b\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e312abff6139efae747db48988f87b48\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\e312abff6139efae747db48988f87b48\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7af29192ab9fa9eeb34e001adfa69452\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7af29192ab9fa9eeb34e001adfa69452\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Intel\.gradle\caches\transforms-4\d2e806ca26b84d869321cbb5a58da8ef\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Intel\.gradle\caches\transforms-4\d2e806ca26b84d869321cbb5a58da8ef\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\d15e80fc43c12aa98e97f96e6733e237\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\d15e80fc43c12aa98e97f96e6733e237\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7249d598aeb7d342c3938bd21bf9c07d\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\7249d598aeb7d342c3938bd21bf9c07d\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\58acaba0ba1c56c7b450ed38b40c8fc0\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\58acaba0ba1c56c7b450ed38b40c8fc0\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\659b5539ce493e4f3804d6fdc61565c8\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\659b5539ce493e4f3804d6fdc61565c8\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\51b15a7acf615af613d906e64a0d7edc\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\51b15a7acf615af613d906e64a0d7edc\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3feebf2e6bc2aa295778c5491fa23751\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\3feebf2e6bc2aa295778c5491fa23751\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\201c213a6fc731097cd80fc24c1aed18\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\201c213a6fc731097cd80fc24c1aed18\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0bebe79fc9001f59ba97d7c254a4890e\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\0bebe79fc9001f59ba97d7c254a4890e\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\444cd1c6f23dee857413cf300502dd29\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\444cd1c6f23dee857413cf300502dd29\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\4ccf969cc296fe17691d537acc9e93ee\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Intel\.gradle\caches\transforms-4\4ccf969cc296fe17691d537acc9e93ee\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [:circleimageview] E:\roblox-2016-source-code\Android\circleimageview\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [:circleimageview] E:\roblox-2016-source-code\Android\circleimageview\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\72fe3bd979bf114849f5458f0c6f60f1\transformed\jetified-play-services-tagmanager-v4-impl-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\72fe3bd979bf114849f5458f0c6f60f1\transformed\jetified-play-services-tagmanager-v4-impl-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\b469b6a6d8fd6daac8bb7e004d13e3dd\transformed\jetified-play-services-stats-16.0.1\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\b469b6a6d8fd6daac8bb7e004d13e3dd\transformed\jetified-play-services-stats-16.0.1\AndroidManifest.xml:5:5-44
+	android:targetSdkVersion
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:13:9-38
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:12:9-35
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+uses-permission#com.android.vending.BILLING
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:15:3-65
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:15:20-62
+uses-permission#android.permission.INTERNET
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:16:3-65
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:16:20-62
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:17:3-76
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:17:20-74
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:18:3-65
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:18:20-63
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:19:3-78
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:19:20-75
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:20:3-79
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:20:20-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:21:3-74
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:21:20-71
+uses-permission#android.permission.BLUETOOTH
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:22:3-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:22:20-63
+uses-permission#android.permission.KILL_BACKGROUND_PROCESSES
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:23:3-82
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:23:20-79
+uses-feature#0x00020000
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:3-76
+	android:glEsVersion
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:17-49
+	android:required
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:50-73
+uses-feature#android.hardware.bluetooth
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:3-86
+	android:required
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:59-83
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:17-58
+application
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:28:3-195:17
+INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:28:3-195:17
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:29:5-45:19
+MERGED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:29:5-45:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cd32aab35792bc5ac59e204fdf2d6079\transformed\jetified-play-services-ads-identifier-16.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:16.0.0] C:\Users\Intel\.gradle\caches\transforms-4\cd32aab35792bc5ac59e204fdf2d6079\transformed\jetified-play-services-ads-identifier-16.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\4d74cfb8b03952e02da0cb614380a2c1\transformed\jetified-play-services-tasks-16.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\4d74cfb8b03952e02da0cb614380a2c1\transformed\jetified-play-services-tasks-16.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\adaba205e0aeefade60fa07733d0c276\transformed\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Intel\.gradle\caches\transforms-4\adaba205e0aeefade60fa07733d0c276\transformed\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Intel\.gradle\caches\transforms-4\d2e806ca26b84d869321cbb5a58da8ef\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Intel\.gradle\caches\transforms-4\d2e806ca26b84d869321cbb5a58da8ef\transformed\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [:circleimageview] E:\roblox-2016-source-code\Android\circleimageview\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-20
+MERGED from [:circleimageview] E:\roblox-2016-source-code\Android\circleimageview\build\intermediates\merged_manifest\release\processReleaseManifest\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\72fe3bd979bf114849f5458f0c6f60f1\transformed\jetified-play-services-tagmanager-v4-impl-16.0.8\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\72fe3bd979bf114849f5458f0c6f60f1\transformed\jetified-play-services-tagmanager-v4-impl-16.0.8\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:29:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\b469b6a6d8fd6daac8bb7e004d13e3dd\transformed\jetified-play-services-stats-16.0.1\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\b469b6a6d8fd6daac8bb7e004d13e3dd\transformed\jetified-play-services-stats-16.0.1\AndroidManifest.xml:7:5-20
+	android:extractNativeLibs
+		INJECTED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:34:9-43
+	android:hardwareAccelerated
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:32:9-43
+	android:largeHeap
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:30:3-27
+	android:icon
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:33:9-45
+	android:allowBackup
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:31:9-35
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:35:9-55
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:29:3-53
+meta-data#com.crashlytics.ApiKey
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:37:5-39:67
+	android:value
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:39:9-65
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:38:9-46
+service#com.roblox.client.RobloxService
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:41:5-44:36
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:44:9-33
+	android:stopWithTask
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:43:9-37
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:42:9-55
+activity#com.roblox.client.ActivityStart
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:47:5-58:16
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:51:9-43
+	android:windowSoftInputMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:50:9-48
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:49:9-32
+	android:alwaysRetainTaskState
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:53:9-45
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:52:9-44
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:48:9-38
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+action#android.intent.action.MAIN
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+category#android.intent.category.DEFAULT
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+activity#com.roblox.client.ActivitySplash
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:59:7-75:18
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:62:11-45
+	android:windowSoftInputMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:61:11-50
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:60:11-34
+	android:alwaysRetainTaskState
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:64:11-47
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:63:11-46
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:59:17-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:65:11-68:27
+category#android.intent.category.LAUNCHER
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:66:15-75
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:66:25-72
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:robloxmobile
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:69:11-74:27
+action#android.intent.action.VIEW
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:15-67
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:23-64
+category#android.intent.category.BROWSABLE
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:15-76
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:25-73
+data
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:15-53
+	android:host
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:161:52-72
+	android:scheme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:21-50
+activity#com.roblox.client.ActivityNativeMain
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:76:5-88:16
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:80:9-43
+	android:launchMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:83:9-40
+	android:windowSoftInputMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:79:9-48
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:78:9-32
+	android:alwaysRetainTaskState
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:81:9-45
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:82:9-44
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:77:9-43
+activity#com.roblox.client.ActivityAdColony
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:89:5-104:16
+	android:screenOrientation
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:93:9-52
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:92:9-43
+	android:launchMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:94:9-39
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:91:9-32
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:95:9-55
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:90:9-41
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:97:9-99:64
+	android:value
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:99:9-61
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:98:9-55
+activity#com.roblox.client.ActivityGlView
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:105:5-119:13
+	android:screenOrientation
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:108:9-52
+	android:process
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:111:9-34
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:109:9-43
+	android:launchMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:112:9-40
+	android:windowSoftInputMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:110:9-51
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:107:9-32
+	android:configChanges
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:113:3-49
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:114:9-60
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:106:9-39
+activity#com.roblox.client.ActivityCurlTest
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:120:5-131:16
+	android:screenOrientation
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:123:9-52
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:124:9-43
+	android:launchMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:125:9-39
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:122:9-32
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:126:9-55
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:121:9-58
+activity#com.jirbo.adcolony.AdColonyOverlay
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:134:2-136:75
+	android:configChanges
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:135:2-63
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:136:2-72
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:134:12-61
+activity#com.jirbo.adcolony.AdColonyFullscreen
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:138:2-140:69
+	android:configChanges
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:139:2-63
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:140:2-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:138:12-64
+activity#com.jirbo.adcolony.AdColonyBrowser
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:142:2-144:69
+	android:configChanges
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:143:2-63
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:144:2-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:142:12-61
+activity#com.gigya.socialize.android.ui.HostActivity
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:146:3-148:69
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:148:7-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:147:7-65
+activity#com.gigya.socialize.android.login.providers.WebLoginActivity
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:150:3-163:14
+	android:launchMode
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:154:7-38
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:152:7-30
+	android:allowTaskReparenting
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:153:7-42
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:155:7-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:151:7-82
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:gsapi+data:scheme:com.roblox.client
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:156:7-162:23
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:165:3-167:40
+	android:value
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:167:7-37
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:166:7-52
+activity#com.facebook.FacebookActivity
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:169:3-173:44
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:173:7-41
+	android:configChanges
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:170:7-101
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:172:7-66
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:169:13-57
+activity#com.roblox.client.test.TestHelperActivity
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:175:3-65
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:175:13-52
+receiver#com.mobileapptracker.Tracker
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:5-182:16
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:59-82
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:15-58
+intent-filter#action:name:com.android.vending.INSTALL_REFERRER
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:179:9-181:25
+action#com.android.vending.INSTALL_REFERRER
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:180:13-75
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:180:21-72
+receiver#com.amazon.device.iap.ResponseReceiver
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:5-190:13
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:71-94
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:15-70
+intent-filter#action:name:com.amazon.inapp.purchasing.NOTIFY
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:186:5-189:21
+action#com.amazon.inapp.purchasing.NOTIFY
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:187:7-188:82
+	android:permission
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:188:11-79
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:187:15-66
+activity#com.roblox.client.ReCaptchaActivity
+ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:192:7-194:115
+	android:label
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:193:9-45
+	android:exported
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:194:80-103
+	android:theme
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:194:9-79
+	android:name
+		ADDED from E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:192:17-50
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:27:5-68
+MERGED from [com.google.android.gms:play-services-analytics-impl:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\22fb69b420c9e62196bc41ff93921e39\transformed\jetified-play-services-analytics-impl-16.0.8\AndroidManifest.xml:27:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:27:22-65
+receiver#com.google.android.gms.analytics.AnalyticsReceiver
+ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:30:9-34:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:32:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:33:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:31:13-78
+service#com.google.android.gms.analytics.AnalyticsService
+ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:36:9-39:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:38:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:37:13-77
+service#com.google.android.gms.analytics.AnalyticsJobService
+ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:40:9-44:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:42:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:43:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:44:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:41:13-80
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58

@@ -1,6 +1,7 @@
 package com.roblox.client;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -8,8 +9,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -121,6 +125,18 @@ public class RobloxActivity extends AppCompatActivity {
 
         if(BuildConfig.DEBUG){
             ViewServer.get(this).setFocusedWindow(this);
+        }
+
+        // Ensure modern Android shows the proper logo in Recents/task UI
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            try {
+                Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.roblox_logo);
+                if (logo != null) {
+                    setTaskDescription(new ActivityManager.TaskDescription(getString(R.string.RobloxWord), logo));
+                }
+            } catch (Throwable t) {
+                // Best-effort; ignore if resource missing or on OEMs with quirks
+            }
         }
     }
 

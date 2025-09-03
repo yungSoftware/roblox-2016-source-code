@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.5.2" type="configured_issues">
+    <config id="DisableBaselineAlignment" severity="ignore"/>
+    <config id="UseCompoundDrawables" severity="ignore"/>
+    <config id="InefficientWeight" severity="ignore"/>
+    <config id="NestedWeights" severity="ignore"/>
+    <config id="SetJavaScriptEnabled" severity="ignore"/>
+
+</incidents>

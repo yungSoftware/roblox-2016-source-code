@@ -5,7 +5,16 @@
 #include <fstream>
 #include <utility>
 
-#include <client/linux/handler/exception_handler.h> // google breakpad
+#if defined(__has_include)
+#  if __has_include(<client/linux/handler/exception_handler.h>)
+#    define RBX_HAVE_BREAKPAD 1
+#    include <client/linux/handler/exception_handler.h> // google breakpad
+#  else
+#    define RBX_HAVE_BREAKPAD 0
+#  endif
+#else
+#  define RBX_HAVE_BREAKPAD 0
+#endif
 
 #include <boost/unordered_map.hpp>
 #include <boost/shared_ptr.hpp>
@@ -54,9 +63,7 @@ namespace JNI
 
 namespace
 {
-static boost::shared_ptr<google_breakpad::ExceptionHandler> breakpadExceptionHandler;
-static bool cleanupCrashDumps;
-
+// Always available helper
 std::string getFastLogGuid()
 {
     std::string logGuid;
@@ -64,6 +71,11 @@ std::string getFastLogGuid()
     logGuid = logGuid.substr(1, 6);
     return logGuid;
 }
+
+// Breakpad support can be disabled if headers are not available
+#if RBX_HAVE_BREAKPAD
+static boost::shared_ptr<google_breakpad::ExceptionHandler> breakpadExceptionHandler;
+static bool cleanupCrashDumps;
 
     static void ResponseFunc(std::string* response, std::exception* exception) { }
 
@@ -156,26 +168,28 @@ std::string getFastLogGuid()
     return true;
 }
 
-static void standardOutCallback(const StandardOutMessage &msg)
-{
-    switch (msg.type)
+#endif // RBX_HAVE_BREAKPAD
+
+    static void standardOutCallback(const StandardOutMessage &msg)
     {
-    case MESSAGE_OUTPUT:
-    case MESSAGE_INFO:
-        LOG_INFO("%s", msg.message.c_str());
-        break;
-    case MESSAGE_SENSITIVE:
-    case MESSAGE_WARNING:
-        LOG_WARNING("%s", msg.message.c_str());
-        break;
-    case MESSAGE_ERROR:
-        LOG_ERROR("%s", msg.message.c_str());
-        break;
-    default:
-        LOG_ERROR("Standard Message Out set with incorrect Message Type");
-        break;
+        switch (msg.type)
+        {
+        case MESSAGE_OUTPUT:
+        case MESSAGE_INFO:
+            LOG_INFO("%s", msg.message.c_str());
+            break;
+        case MESSAGE_SENSITIVE:
+        case MESSAGE_WARNING:
+            LOG_WARNING("%s", msg.message.c_str());
+            break;
+        case MESSAGE_ERROR:
+            LOG_ERROR("%s", msg.message.c_str());
+            break;
+        default:
+            LOG_ERROR("Standard Message Out set with incorrect Message Type");
+            break;
+        }
     }
-}
 
 static bool assertionHook(const char *expr, const char *filename, int lineNumber)
 {
@@ -245,7 +259,7 @@ public:
             {
                 std::stringstream ss;
                 ss << "Could not open file: " << path.c_str();
-                throw RBX::runtime_error(ss.str().c_str());
+                throw RBX::runtime_error("%s", ss.str().c_str());
             }
             else
             {
@@ -306,6 +320,7 @@ void tearDownFastLog()
 
 void setupBreakpad(bool cleanup)
 {
+#if RBX_HAVE_BREAKPAD
     StandardOut::singleton()->printf(MESSAGE_INFO, "Initializing breakpad.");
     cleanupCrashDumps = cleanup;
     google_breakpad::MinidumpDescriptor descriptor(FileSystem::getCacheDirectory(true, "breakpad").string());
@@ -316,6 +331,10 @@ void setupBreakpad(bool cleanup)
             NULL,
             true,
             -1));
+#else
+    (void)cleanup; // unused
+    StandardOut::singleton()->printf(MESSAGE_INFO, "Breakpad not available; skipping crash handler initialization.");
+#endif
 }
 } // namespace LogManager
 } // namespace JNI

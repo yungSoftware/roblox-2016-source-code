@@ -264,7 +264,7 @@ void callMessage( RBX::FunctionMarshaller::Closure* closure )
     }
     catch (RBX::base_exception& e)
     {
-        StandardOut::singleton()->printf(MESSAGE_ERROR, e.what());
+        StandardOut::singleton()->printf(MESSAGE_ERROR, "%s", e.what());
         closure->errorMessage = e.what();
     }
 

@@ -3,11 +3,11 @@
     android:versionCode="3"
     android:versionName="2.168.11115" >
     
-	<supports-screens android:smallScreens="false"
+	<supports-screens android:smallScreens="true"
                       android:normalScreens="true"
                       android:largeScreens="true"
                       android:xlargeScreens="true"
-                      android:requiresSmallestWidthDp="300" />
+                      android:requiresSmallestWidthDp="240" />
     
     <uses-sdk
         android:minSdkVersion="15"
@@ -31,14 +31,12 @@
 		android:largeHeap="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/roblox_logo"
         android:label="@string/RobloxWord"
         android:theme="@style/Theme.Roblox.Fullscreen">
+        <!-- Request legacy Apache HttpClient classes when available on the device -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
         
-	<meta-data
-	    android:name="com.google.android.gms.version"
-    	android:value="@integer/google_play_services_version" />
-	
     <meta-data
         android:name="com.crashlytics.ApiKey"
         android:value="7991889011d53be5ccf9f6f42d9a1ea05a702eb7"/>
@@ -51,6 +49,7 @@
 
     <activity
         android:name=".ActivityStart"
+        android:exported="true"
         android:windowSoftInputMode="adjustPan"
         android:label="@string/RobloxWord"
         android:theme="@style/Theme.Roblox"
@@ -61,14 +60,11 @@
         </intent-filter>
     </activity>
       <activity android:name=".ActivitySplash"
+          android:exported="true"
           android:windowSoftInputMode="adjustPan"
           android:label="@string/RobloxWord"
           android:theme="@style/Theme.Roblox"
           android:alwaysRetainTaskState="true" >
-          <intent-filter>
-              <category android:name="android.intent.category.LAUNCHER" />
-              <action android:name="android.intent.action.MAIN" />
-          </intent-filter>
           <intent-filter>
               <action android:name="android.intent.action.VIEW" />
               <category android:name="android.intent.category.DEFAULT" />
@@ -76,9 +72,23 @@
               <data android:scheme="robloxmobile" />
           </intent-filter>
       </activity>
+      <!-- Launcher alias provides the home screen icon only -->
+      <activity-alias
+          android:name=".Launcher"
+          android:exported="true"
+          android:label="@string/RobloxWord"
+          android:icon="@drawable/roblox_icon"
+          android:roundIcon="@drawable/roblox_icon"
+          android:targetActivity=".ActivitySplash">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN" />
+              <category android:name="android.intent.category.LAUNCHER" />
+          </intent-filter>
+      </activity-alias>
     <activity
         android:name=".ActivityNativeMain"
-        android:windowSoftInputMode="adjustPan"
+        android:exported="true"
+        android:windowSoftInputMode="stateHidden|adjustResize"
         android:label="@string/RobloxWord"
         android:alwaysRetainTaskState="true"
         android:theme="@style/Theme.Roblox"
@@ -90,6 +100,7 @@
     </activity>
     <activity
         android:name=".ActivityAdColony"
+        android:exported="true"
         android:label="@string/RobloxWord"
         android:screenOrientation="sensorLandscape"
         android:launchMode="singleTop"
@@ -105,6 +116,7 @@
     </activity>
     <activity
         android:name=".ActivityGlView"
+        android:exported="true"
         android:screenOrientation="sensorLandscape"
         android:label="@string/RobloxWord"
         android:windowSoftInputMode="adjustResize"
@@ -119,6 +131,7 @@
 	</activity>
     <activity
         android:name="com.roblox.client.ActivityCurlTest"
+        android:exported="true"
         android:screenOrientation="sensorLandscape"
         android:label="@string/RobloxWord"
         android:launchMode="singleTop"
@@ -148,6 +161,7 @@
 
   <activity
       android:name="com.gigya.socialize.android.login.providers.WebLoginActivity"
+      android:exported="true"
       android:allowTaskReparenting="true"
       android:launchMode="singleTask"
       android:theme="@android:style/Theme.Translucent.NoTitleBar" >
@@ -155,8 +169,8 @@
           <action android:name="android.intent.action.VIEW" />
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
-          <!-- must be the all lowercase version of the package and without underscores -->
-          <data android:scheme="com.roblox.client" android:host="gsapi" />
+          <!-- must be the all lowercase version of the INSTALLED package and without underscores -->
+          <data android:scheme="com.roblox2016.client" android:host="gsapi" />
       </intent-filter>
   </activity>
 
@@ -180,7 +194,7 @@
     </receiver>
     
     <!-- Amazon IAB integration -->
-    <receiver android:name = "com.amazon.device.iap.ResponseReceiver" >
+    <receiver android:name = "com.amazon.device.iap.ResponseReceiver" android:exported="true" >
   		<intent-filter>
     		<action android:name = "com.amazon.inapp.purchasing.NOTIFY"
       				android:permission = "com.amazon.inapp.purchasing.Permission.NOTIFY" />
@@ -189,6 +203,6 @@
 
       <activity android:name=".ReCaptchaActivity"
         android:label="@string/captchaTitle"
-        android:theme="@style/Theme.Roblox.AppCompat.Light.Dialog.NoActionBar"></activity>
+        android:theme="@style/Theme.Roblox.AppCompat.Light.Dialog.NoActionBar" android:exported="true"></activity>
   </application>
 </manifest>

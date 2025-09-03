@@ -1,0 +1,469 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.roblox.client"
+4    android:versionCode="100"
+5    android:versionName="2.99.99" >
+6
+7    <uses-sdk
+7-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:11:5-13:41
+8        android:minSdkVersion="19"
+8-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:12:9-35
+9        android:targetSdkVersion="28" />
+9-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:13:9-38
+10
+11    <supports-screens
+11-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:5:2-9:63
+12        android:largeScreens="true"
+12-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:7:23-50
+13        android:normalScreens="true"
+13-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:6:23-51
+14        android:requiresSmallestWidthDp="300"
+14-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:9:23-60
+15        android:smallScreens="false"
+15-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:5:20-48
+16        android:xlargeScreens="true" />
+16-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:8:23-51
+17
+18    <uses-permission android:name="com.android.vending.BILLING" />
+18-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:15:3-65
+18-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:15:20-62
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:16:3-65
+19-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:16:20-62
+20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+20-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:17:3-76
+20-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:17:20-74
+21    <uses-permission android:name="android.permission.GET_TASKS" />
+21-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:18:3-65
+21-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:18:20-63
+22    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+22-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:19:3-78
+22-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:19:20-75
+23    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+23-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:20:3-79
+23-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:20:20-76
+24    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+24-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:21:3-74
+24-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:21:20-71
+25    <uses-permission android:name="android.permission.BLUETOOTH" />
+25-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:22:3-66
+25-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:22:20-63
+26    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+26-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:23:3-82
+26-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:23:20-79
+27
+28    <uses-feature
+28-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:3-76
+29        android:glEsVersion="0x00020000"
+29-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:17-49
+30        android:required="true" />
+30-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:25:50-73
+31    <uses-feature
+31-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:3-86
+32        android:name="android.hardware.bluetooth"
+32-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:17-58
+33        android:required="false" />
+33-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:26:59-83
+34    <!-- Optional permission for Analytics to run. -->
+35    <uses-permission android:name="android.permission.WAKE_LOCK" />
+35-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:27:5-68
+35-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:27:22-65
+36
+37    <application
+37-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:28:3-195:17
+38        android:name="com.roblox.client.RobloxApplication"
+38-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:29:3-53
+39        android:allowBackup="true"
+39-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:31:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.3.2] C:\Users\Intel\.gradle\caches\transforms-4\19b91ba75f18d0b547a6e761190dfca1\transformed\core-1.3.2\AndroidManifest.xml:24:18-86
+41        android:extractNativeLibs="true"
+42        android:hardwareAccelerated="true"
+42-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:32:9-43
+43        android:icon="@drawable/roblox_logo"
+43-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:33:9-45
+44        android:label="@string/RobloxWord"
+44-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:34:9-43
+45        android:largeHeap="true"
+45-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:30:3-27
+46        android:theme="@style/Theme.Roblox.Fullscreen" >
+46-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:35:9-55
+47        <meta-data
+47-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:37:5-39:67
+48            android:name="com.crashlytics.ApiKey"
+48-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:38:9-46
+49            android:value="7991889011d53be5ccf9f6f42d9a1ea05a702eb7" />
+49-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:39:9-65
+50
+51        <service
+51-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:41:5-44:36
+52            android:name="com.roblox.client.RobloxService"
+52-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:42:9-55
+53            android:exported="false"
+53-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:44:9-33
+54            android:stopWithTask="false" />
+54-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:43:9-37
+55        <!-- android:process=":service" /> -->
+56
+57        <activity
+57-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:47:5-58:16
+58            android:name="com.roblox.client.ActivityStart"
+58-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:48:9-38
+59            android:alwaysRetainTaskState="true"
+59-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:53:9-45
+60            android:exported="true"
+60-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:49:9-32
+61            android:label="@string/RobloxWord"
+61-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:51:9-43
+62            android:theme="@style/Theme.Roblox"
+62-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:52:9-44
+63            android:windowSoftInputMode="adjustPan" >
+63-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:50:9-48
+64            <intent-filter>
+64-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+65                <action android:name="android.intent.action.MAIN" />
+65-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+65-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+66
+67                <category android:name="android.intent.category.DEFAULT" />
+67-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+67-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+68            </intent-filter>
+69        </activity>
+70        <activity
+70-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:59:7-75:18
+71            android:name="com.roblox.client.ActivitySplash"
+71-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:59:17-47
+72            android:alwaysRetainTaskState="true"
+72-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:64:11-47
+73            android:exported="true"
+73-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:60:11-34
+74            android:label="@string/RobloxWord"
+74-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:62:11-45
+75            android:theme="@style/Theme.Roblox"
+75-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:63:11-46
+76            android:windowSoftInputMode="adjustPan" >
+76-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:61:11-50
+77            <intent-filter>
+77-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:65:11-68:27
+78                <category android:name="android.intent.category.LAUNCHER" />
+78-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:66:15-75
+78-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:66:25-72
+79
+80                <action android:name="android.intent.action.MAIN" />
+80-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+80-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+81            </intent-filter>
+82            <intent-filter>
+82-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:69:11-74:27
+83                <action android:name="android.intent.action.VIEW" />
+83-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:15-67
+83-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:23-64
+84
+85                <category android:name="android.intent.category.DEFAULT" />
+85-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+85-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+86                <category android:name="android.intent.category.BROWSABLE" />
+86-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:15-76
+86-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:25-73
+87
+88                <data android:scheme="robloxmobile" />
+88-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:15-53
+88-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:21-50
+89            </intent-filter>
+90        </activity>
+91        <activity
+91-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:76:5-88:16
+92            android:name="com.roblox.client.ActivityNativeMain"
+92-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:77:9-43
+93            android:alwaysRetainTaskState="true"
+93-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:81:9-45
+94            android:exported="true"
+94-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:78:9-32
+95            android:label="@string/RobloxWord"
+95-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:80:9-43
+96            android:launchMode="singleTask"
+96-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:83:9-40
+97            android:theme="@style/Theme.Roblox"
+97-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:82:9-44
+98            android:windowSoftInputMode="adjustPan" >
+98-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:79:9-48
+99            <intent-filter>
+99-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+100                <action android:name="android.intent.action.MAIN" />
+100-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+100-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+101
+102                <category android:name="android.intent.category.DEFAULT" />
+102-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+102-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+103            </intent-filter>
+104        </activity>
+105        <activity
+105-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:89:5-104:16
+106            android:name="com.roblox.client.ActivityAdColony"
+106-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:90:9-41
+107            android:exported="true"
+107-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:91:9-32
+108            android:label="@string/RobloxWord"
+108-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:92:9-43
+109            android:launchMode="singleTop"
+109-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:94:9-39
+110            android:screenOrientation="sensorLandscape"
+110-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:93:9-52
+111            android:theme="@style/Theme.Roblox.Fullscreen" >
+111-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:95:9-55
+112
+113            <!-- Parent activity meta-data to support API level 4+ -->
+114            <meta-data
+114-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:97:9-99:64
+115                android:name="android.support.PARENT_ACTIVITY"
+115-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:98:9-55
+116                android:value="com.roblox.client.ActivityNativeMain" />
+116-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:99:9-61
+117
+118            <intent-filter>
+118-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+119                <action android:name="android.intent.action.MAIN" />
+119-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+119-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+120
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+121-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+122            </intent-filter>
+123        </activity>
+124        <activity
+124-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:105:5-119:13
+125            android:name="com.roblox.client.ActivityGlView"
+125-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:106:9-39
+126            android:configChanges="orientation|screenSize"
+126-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:113:3-49
+127            android:exported="true"
+127-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:107:9-32
+128            android:label="@string/RobloxWord"
+128-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:109:9-43
+129            android:launchMode="singleTask"
+129-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:112:9-40
+130            android:process=":glview"
+130-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:111:9-34
+131            android:screenOrientation="sensorLandscape"
+131-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:108:9-52
+132            android:theme="@style/Theme.Roblox.Dark.Fullscreen"
+132-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:114:9-60
+133            android:windowSoftInputMode="adjustResize" >
+133-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:110:9-51
+134            <intent-filter>
+134-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+135                <action android:name="android.intent.action.MAIN" />
+135-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+135-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+136
+137                <category android:name="android.intent.category.DEFAULT" />
+137-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+137-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+138            </intent-filter>
+139        </activity>
+140        <activity
+140-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:120:5-131:16
+141            android:name="com.roblox.client.ActivityCurlTest"
+141-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:121:9-58
+142            android:exported="true"
+142-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:122:9-32
+143            android:label="@string/RobloxWord"
+143-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:124:9-43
+144            android:launchMode="singleTop"
+144-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:125:9-39
+145            android:screenOrientation="sensorLandscape"
+145-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:123:9-52
+146            android:theme="@style/Theme.Roblox.Fullscreen" >
+146-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:126:9-55
+147            <intent-filter>
+147-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:54:9-57:25
+148                <action android:name="android.intent.action.MAIN" />
+148-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:13-65
+148-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:55:21-62
+149
+150                <category android:name="android.intent.category.DEFAULT" />
+150-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+150-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+151            </intent-filter>
+152        </activity>
+153
+154        <!-- AdColony integration -->
+155        <activity
+155-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:134:2-136:75
+156            android:name="com.jirbo.adcolony.AdColonyOverlay"
+156-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:134:12-61
+157            android:configChanges="keyboardHidden|orientation|screenSize"
+157-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:135:2-63
+158            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+158-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:136:2-72
+159        <activity
+159-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:138:2-140:69
+160            android:name="com.jirbo.adcolony.AdColonyFullscreen"
+160-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:138:12-64
+161            android:configChanges="keyboardHidden|orientation|screenSize"
+161-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:139:2-63
+162            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+162-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:140:2-66
+163        <activity
+163-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:142:2-144:69
+164            android:name="com.jirbo.adcolony.AdColonyBrowser"
+164-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:142:12-61
+165            android:configChanges="keyboardHidden|orientation|screenSize"
+165-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:143:2-63
+166            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+166-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:144:2-66
+167        <activity
+167-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:146:3-148:69
+168            android:name="com.gigya.socialize.android.ui.HostActivity"
+168-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:147:7-65
+169            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+169-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:148:7-66
+170        <activity
+170-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:150:3-163:14
+171            android:name="com.gigya.socialize.android.login.providers.WebLoginActivity"
+171-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:151:7-82
+172            android:allowTaskReparenting="true"
+172-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:153:7-42
+173            android:exported="true"
+173-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:152:7-30
+174            android:launchMode="singleTask"
+174-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:154:7-38
+175            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+175-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:155:7-66
+176            <intent-filter>
+176-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:156:7-162:23
+177                <action android:name="android.intent.action.VIEW" />
+177-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:15-67
+177-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:70:23-64
+178
+179                <category android:name="android.intent.category.DEFAULT" />
+179-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:13-72
+179-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:56:23-69
+180                <category android:name="android.intent.category.BROWSABLE" />
+180-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:15-76
+180-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:72:25-73
+181                <!-- must be the all lowercase version of the package and without underscores -->
+182                <data
+182-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:15-53
+183                    android:host="gsapi"
+183-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:161:52-72
+184                    android:scheme="com.roblox.client" />
+184-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:73:21-50
+185            </intent-filter>
+186        </activity>
+187
+188        <meta-data
+188-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:165:3-167:40
+189            android:name="com.facebook.sdk.ApplicationId"
+189-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:166:7-52
+190            android:value="@string/app_id" />
+190-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:167:7-37
+191
+192        <activity
+192-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:169:3-173:44
+193            android:name="com.facebook.FacebookActivity"
+193-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:169:13-57
+194            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+194-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:170:7-101
+195            android:label="@string/RobloxWord"
+195-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:173:7-41
+196            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+196-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:172:7-66
+197        <activity android:name="com.roblox.client.test.TestHelperActivity" />
+197-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:175:3-65
+197-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:175:13-52
+198
+199        <!-- MobileAppTracker integration -->
+200        <receiver
+200-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:5-182:16
+201            android:name="com.mobileapptracker.Tracker"
+201-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:15-58
+202            android:exported="true" >
+202-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:178:59-82
+203            <intent-filter>
+203-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:179:9-181:25
+204                <action android:name="com.android.vending.INSTALL_REFERRER" />
+204-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:180:13-75
+204-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:180:21-72
+205            </intent-filter>
+206        </receiver>
+207
+208        <!-- Amazon IAB integration -->
+209        <receiver
+209-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:5-190:13
+210            android:name="com.amazon.device.iap.ResponseReceiver"
+210-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:15-70
+211            android:exported="true" >
+211-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:185:71-94
+212            <intent-filter>
+212-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:186:5-189:21
+213                <action
+213-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:187:7-188:82
+214                    android:name="com.amazon.inapp.purchasing.NOTIFY"
+214-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:187:15-66
+215                    android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY" />
+215-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:188:11-79
+216            </intent-filter>
+217        </receiver>
+218
+219        <activity
+219-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:192:7-194:115
+220            android:name="com.roblox.client.ReCaptchaActivity"
+220-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:192:17-50
+221            android:exported="true"
+221-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:194:80-103
+222            android:label="@string/captchaTitle"
+222-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:193:9-45
+223            android:theme="@style/Theme.Roblox.AppCompat.Light.Dialog.NoActionBar" />
+223-->E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:194:9-79
+224
+225        <receiver
+225-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:30:9-34:20
+226            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+226-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:31:13-78
+227            android:enabled="true"
+227-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:32:13-35
+228            android:exported="false" >
+228-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:33:13-37
+229        </receiver>
+230
+231        <service
+231-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:36:9-39:40
+232            android:name="com.google.android.gms.analytics.AnalyticsService"
+232-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:37:13-77
+233            android:enabled="true"
+233-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:38:13-35
+234            android:exported="false" />
+234-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:39:13-37
+235        <service
+235-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:40:9-44:72
+236            android:name="com.google.android.gms.analytics.AnalyticsJobService"
+236-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:41:13-80
+237            android:enabled="true"
+237-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:42:13-35
+238            android:exported="false"
+238-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:43:13-37
+239            android:permission="android.permission.BIND_JOB_SERVICE" />
+239-->[com.google.android.gms:play-services-analytics:16.0.8] C:\Users\Intel\.gradle\caches\transforms-4\a7e3b4fb0a70082cd60b03bf5d453333\transformed\jetified-play-services-analytics-16.0.8\AndroidManifest.xml:44:13-69
+240
+241        <activity
+241-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+242            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+242-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+243            android:exported="false"
+243-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+244            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+244-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\5153f55012f33046842fdb44a2420309\transformed\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+245
+246        <meta-data
+246-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+247            android:name="com.google.android.gms.version"
+247-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+248            android:value="@integer/google_play_services_version" />
+248-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\Intel\.gradle\caches\transforms-4\00dff5f05b99c7c318cef3d35db3eaf9\transformed\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+249    </application>
+250
+251</manifest>

@@ -17,6 +17,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -117,14 +118,15 @@ public class FragmentSignUp extends DialogFragment implements NotificationManage
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        this.setStyle(DialogFragment.STYLE_NO_TITLE, this.getTheme());
+        Log.d("SignupDebug", "FragmentSignUp.onCreate");
+        this.setStyle(DialogFragment.STYLE_NO_TITLE, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
     }
 
     // -----------------------------------------------------------------------
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		//View cardContainer = new View(getActivity().getApplicationContext());
+        Log.d("SignupDebug", "FragmentSignUp.onCreateView");
+        //View cardContainer = new View(getActivity().getApplicationContext());
         View view, cardContainer, cardContents = null;
         LinearLayout swapContainer, innerContainer;
 
@@ -166,9 +168,9 @@ public class FragmentSignUp extends DialogFragment implements NotificationManage
 
         mViewRef = view;
 
-        // Should cause the username box to get focus and open the keyboard
-        mUsernameEditText.requestFocus();
-        Utils.showKeyboard(mViewRef, mUsernameEditText);
+        // Do not trigger the keyboard yet; wait until onResume so the dialog is fully visible first.
+        // Remove initial focus to avoid automatic keyboard/panning issues on small screens.
+        // mUsernameEditText.requestFocus();
 
         mUsernameEditText.setImeOptions(EditorInfo.IME_ACTION_NEXT);
         mUsernameEditText.setOnEditorActionListener(new OnEditorActionListener() {

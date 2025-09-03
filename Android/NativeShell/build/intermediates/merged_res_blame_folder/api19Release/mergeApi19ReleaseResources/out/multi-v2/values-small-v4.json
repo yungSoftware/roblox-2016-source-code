@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.roblox.client.NativeShell-mergeApi19ReleaseResources-14:/values-small-v4/values-small-v4.xml",
+            "map": [
+                {
+                    "source": "E:\\roblox-2016-source-code\\Android\\NativeShell\\res\\values-small\\dimens.xml",
+                    "from": {
+                        "startLines": "2,4,5,3,8,6,7",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "57,148,195,103,356,251,304",
+                        "endColumns": "44,45,54,43,54,51,50",
+                        "endOffsets": "97,189,245,142,406,298,350"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,100,146,201,245,300,352",
+                        "endColumns": "44,45,54,43,54,51,50",
+                        "endOffsets": "95,141,196,240,295,347,398"
+                    }
+                }
+            ]
+        }
+    ]
+}

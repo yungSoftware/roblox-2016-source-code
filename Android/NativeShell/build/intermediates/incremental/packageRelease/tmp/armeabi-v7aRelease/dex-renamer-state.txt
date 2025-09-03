@@ -1,0 +1,4 @@
+#Sun Aug 31 18:05:06 EEST 2025
+base.0=F\:\\roblox-2016-source-code\\Android\\NativeShell\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="E:\roblox-2016-source-code\Android\NativeShell"
+    name=":NativeShell"
+    type="APP"
+    maven="AndroidRoot:NativeShell:unspecified"
+    agpVersion="8.5.2"
+    buildFolder="build"
+    bootClassPath="E:\SDK\platforms\android-28\android.jar;E:\SDK\platforms\android-28\optional\org.apache.http.legacy.jar;E:\SDK\build-tools\34.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-28"
+    neverShrinking="true">
+  <lintOptions
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="api15Release"/>
+</lint-module>

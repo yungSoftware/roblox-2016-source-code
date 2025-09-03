@@ -115,7 +115,7 @@ public class AndroidAppSettings {
     private static boolean enableLoginWriteOnSuccessOnly = true;
     private static boolean enableXBOXSignupRules = true;
     private static boolean enableInputListenerActivePointerNullFix = true;
-    private static boolean enableWelcomeAnimation = false;
+    private static boolean enableWelcomeAnimation = true;
     private static boolean enableShellLogoutOnWebViewLogout = true;
     private static boolean enableSetWebViewBlankOnLogout = true;
     private static boolean enableLoginLogoutSignupWithApi = false;

@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib"
+    name=":Hybrid"
+    type="LIBRARY"
+    maven="AndroidRoot:Hybrid:unspecified"
+    agpVersion="8.5.2"
+    buildFolder="build"
+    bootClassPath="E:\SDK\platforms\android-34\android.jar;E:\SDK\build-tools\34.0.0\core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

@@ -1,4 +1,28 @@
-include ':google_play_services:libproject:google-play-services_lib'
-include ':NativeShell'
-include ':Hybrid'
-project(':Hybrid').projectDir = new File('../RobloxHybrid/platforms/android/Hybrid', 'hybridlib')
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "AndroidRoot"
+
+// Include all active modules (legacy GPS module removed in favor of Maven artifacts)
+include(":Hybrid")
+project(":Hybrid").projectDir = new File('../RobloxHybrid/platforms/android/Hybrid', 'hybridlib')
+
+include(":NativeShell")
+include(":circleimageview")
+
+// Legacy modules (require significant migration before inclusion under AGP 8.x):
+// include ':google_play_services:libproject:google-play-services_lib'
+// include ':NativeShell'

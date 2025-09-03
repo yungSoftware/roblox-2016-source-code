@@ -1,6 +1,6 @@
 
-APP_STL := gnustl_static 
-APP_GNUSTL_FORCE_CPP_FEATURES := exceptions rtti
+APP_STL := c++_static
+# Using libc++ with exceptions and RTTI (default supported by c++)
 
 APP_MODULES := roblox fmod
-APP_PLATFORM := android-15
+APP_PLATFORM := android-21

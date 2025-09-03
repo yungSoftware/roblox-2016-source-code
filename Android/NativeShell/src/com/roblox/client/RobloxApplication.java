@@ -73,7 +73,17 @@ public class RobloxApplication extends Application {
 	
     public void onCreate() {
         super.onCreate();
-        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
+        // Guard against missing legacy Fabric/Crashlytics at runtime
+        try {
+            Class.forName("com.crashlytics.android.Crashlytics");
+            Class.forName("io.fabric.sdk.android.Fabric");
+            Class.forName("com.crashlytics.android.ndk.CrashlyticsNdk");
+            Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
+        } catch (ClassNotFoundException e) {
+            Log.w(TAG, "Crashlytics init skipped: " + e.toString());
+        } catch (Throwable t) {
+            Log.w(TAG, "Crashlytics init skipped: " + t.toString());
+        }
 
         try {
 			RobloxSettings.initConfig( getApplicationContext() );
@@ -81,11 +91,19 @@ public class RobloxApplication extends Application {
 			setCriticalErrorOccured( e.getMessage() );
 		}
 
-        int res = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this);
-        if (res != ConnectionResult.SUCCESS) {
-            Log.w(TAG, "isGooglePlayServicesAvailable: No");
-        } else {
-            mGooglePlayServicesAvailable = true;
+        // Check Google Play Services availability without hard dependency
+        try {
+            Class<?> util = Class.forName("com.google.android.gms.common.GooglePlayServicesUtil");
+            java.lang.reflect.Method method = util.getMethod("isGooglePlayServicesAvailable", Context.class);
+            Object resObj = method.invoke(null, this);
+            int res = (resObj instanceof Integer) ? (Integer) resObj : -1;
+            if (res == 0 /* ConnectionResult.SUCCESS */) {
+                mGooglePlayServicesAvailable = true;
+            } else {
+                Log.w(TAG, "isGooglePlayServicesAvailable: No (" + res + ")");
+            }
+        } catch (Throwable t) {
+            Log.w(TAG, "Google Play Services not present; skipping check: " + t.toString());
         }
 
         String ua = RobloxSettings.userAgent();

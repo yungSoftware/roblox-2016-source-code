@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "PROCESSED_RES",
+    "kind": "Directory"
+  },
+  "applicationId": "com.roblox.client",
+  "variantName": "api19Release",
+  "elements": [
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-api19Armeabi-v7aRelease.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-api19X86Release.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-api19Arm64-v8aRelease.ap_"
+    }
+  ],
+  "elementType": "File"
+}

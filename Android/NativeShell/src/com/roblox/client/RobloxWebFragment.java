@@ -37,12 +37,12 @@ import java.text.NumberFormat;
 
 public class RobloxWebFragment extends DialogFragment implements NotificationManager.Observer, SwipeRefreshLayout.OnRefreshListener {
 
-	private static final String TAG = "RobloxWebFragment";
+    private static final String TAG = "RobloxWebFragment";
 
-	private TextView mUrlBar = null;
-	private WebView mWebView = null;
-	private String mPlaceId = null;
-	private WebViewClientEmbedded mWebViewClientEmbedded = null;
+    private TextView mUrlBar = null;
+    private WebView mWebView = null;
+    private String mPlaceId = null;
+    private WebViewClientEmbedded mWebViewClientEmbedded = null;
     private SwipeRefreshLayout mRefreshLayout = null;
     private String mURLToLoad = null;
     float m_downX, m_downY = 0;
@@ -65,20 +65,24 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
         @Override
         public void onPageFinished(android.webkit.WebView view, java.lang.String url) {
             mRefreshLayout.setRefreshing(false);
+            // Inject RobloxHybrid JS from assets on each navigation
+            try {
+                view.loadUrl("javascript:(function(){var d=document;var h=d.getElementsByTagName('head')[0]||d.documentElement;var s=d.createElement('script');s.type='text/javascript';s.src='file:///android_asset/html/RobloxHybrid.js';h.appendChild(s);})();");
+            } catch (Throwable t) {
+                Log.w(TAG, "Failed to inject RobloxHybrid.js", t);
+            }
         }
 
-    	// Mirrors iOS: -(BOOL) checkForGameLaunch:(NSURLRequest *)request
-    	@Override
+        // Mirrors iOS: -(BOOL) checkForGameLaunch:(NSURLRequest *)request
+        @Override
         public boolean shouldOverrideUrlLoading(WebView view, String urlString) {
-        	Log.i(TAG, "-> "+urlString);
+            Log.i(TAG, "-> " + urlString);
 
-    		if( Utils.alertIfNetworkNotConnected() )
-    		{
-    			return true;
-    		}
+            if (Utils.alertIfNetworkNotConnected()) {
+                return true;
+            }
 
-            if (urlString != null && (urlString.contains("more.html") || urlString.contains("more_phone.html")))
-            {
+            if (urlString != null && (urlString.contains("more.html") || urlString.contains("more_phone.html"))) {
                 mWebView.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -96,19 +100,16 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
                         return (event.getAction() == MotionEvent.ACTION_MOVE);
                     }
                 });
-            }
-            else if (urlString.equals(RobloxSettings.captchaSolvedUrl()))
-            {
+            } else if (urlString.equals(RobloxSettings.captchaSolvedUrl())) {
                 if (isSocialCaptcha)
                     NotificationManager.getInstance().postNotification(NotificationManager.EVENT_USER_CAPTCHA_SOCIAL_SOLVED);
                 else
                     NotificationManager.getInstance().postNotification(NotificationManager.EVENT_USER_CAPTCHA_SOLVED);
                 return true;
-            }
-            else if (AndroidAppSettings.EnableShellLogoutOnWebViewLogout() && RobloxSettings.isLoginRequiredWebUrl(urlString)) {
+            } else if (AndroidAppSettings.EnableShellLogoutOnWebViewLogout() && RobloxSettings.isLoginRequiredWebUrl(urlString)) {
                 // in case we somehow get logged out while in a webview
                 Context context = getActivity();
-                if(context != null) {
+                if (context != null) {
                     int duration = Toast.LENGTH_SHORT;
                     Toast toast = Toast.makeText(context, R.string.sessionExpiredLoginAgain, duration);
                     toast.show();
@@ -116,35 +117,28 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
 
                 SessionManager.getInstance().doLogout();
                 return true;
-            }
-            else
-            {
+            } else {
                 mWebView.setOnTouchListener(null);
             }
 
             shouldEnableZoom(urlString, true);
 
             RobloxApplication app = RobloxApplication.getInstance();
-			if( app.checkShowCriticalError() )
-			{
-	        	Log.i(TAG, "Trying to use WebView after critical error.");
-	        	return true;
-			}
+            if (app.checkShowCriticalError()) {
+                Log.i(TAG, "Trying to use WebView after critical error.");
+                return true;
+            }
 
-			Utils.sendAnalytics( "WebView", urlString );
+            Utils.sendAnalytics("WebView", urlString);
 
-        	if( urlString.indexOf( "/games/start?" ) > -1 )
-           	{
-        		String reason = RobloxSettings.deviceNotSupportedString();
-        		if( reason != null && AndroidAppSettings.EnableNeonBlocker() )
-        		{
-            		if( !RobloxSettings.deviceNotSupportedSkippable() )
-            		{
-            			Utils.alertExclusivelyFormatted( R.string.UnsupportedDevice, reason );
-            			return true;
-            		}
-        		}
-
+            if (urlString.indexOf("/games/start?") > -1) {
+                String reason = RobloxSettings.deviceNotSupportedString();
+                if (reason != null && AndroidAppSettings.EnableNeonBlocker()) {
+                    if (!RobloxSettings.deviceNotSupportedSkippable()) {
+                        Utils.alertExclusivelyFormatted(R.string.UnsupportedDevice, reason);
+                        return true;
+                    }
+                }
 
                 String accessId = null;
                 String gameInstanceId = null;
@@ -157,56 +151,47 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
 
                 Uri uriObject = Uri.parse(urlString);
                 mPlaceId = uriObject.getQueryParameter("placeid");
-        		if( mPlaceId == null )
-        		{
-            		userId = uriObject.getQueryParameter("userID");
-            		if( mPlaceId == null && userId == null)
-            		{
-            			Utils.alertUnexpectedError( "Missing placeid and userID." );
-            			return true;
-            		}
+                if (mPlaceId == null) {
+                    userId = uriObject.getQueryParameter("userID");
+                    if (mPlaceId == null && userId == null) {
+                        Utils.alertUnexpectedError("Missing placeid and userID.");
+                        return true;
+                    }
                     requestType = 1; // user follow
-        		}
-                else  if (mPlaceId != null && userId == null ) { // if we have a userId, we won't get either of these params
+                } else if (mPlaceId != null && userId == null) { // if we have a userId, we won't get either of these params
                     // if we have a placeId we don't /need/ anything else,
                     // but we might have a second parameter for the Private Server ID or Game Instance Id.
                     // Of these parameters, we may only use 1.
 
                     accessId = uriObject.getQueryParameter("accessCode");
-                    if (accessId == null)
-                    {
+                    if (accessId == null) {
                         gameInstanceId = uriObject.getQueryParameter("gameInstanceId");
                         if (gameInstanceId == null)
                             requestType = 0; // simple game join
                         else
                             requestType = 3; // game instance join
-                    }
-                    else
-                    {
+                    } else {
                         requestType = 2; // private server join
                     }
                 }
 
-                if (requestType == -1)
-                {
+                if (requestType == -1) {
                     Log.e(TAG, "Game join request type not set.");
                     Utils.alert("Error joining game - could not determine join type.");
                     return false;
                 }
 
-        		Log.i(TAG, Utils.format( "Signalling Service PlaceId:%s", mPlaceId ) );
+                Log.i(TAG, Utils.format("Signalling Service PlaceId:%s", mPlaceId));
 
                 RobloxActivity robloxActivity = (RobloxActivity) getActivity();
                 UpgradeCheckHelper.UpgradeStatus status = UpgradeCheckHelper.showUpdateDialogIfRequired(robloxActivity);
 
-        		if( status != UpgradeCheckHelper.UpgradeStatus.Recommended
-        			&& status != UpgradeCheckHelper.UpgradeStatus.Required)
-        		{
+                if (status != UpgradeCheckHelper.UpgradeStatus.Recommended
+                        && status != UpgradeCheckHelper.UpgradeStatus.Required) {
                     Bundle userParams = new Bundle();
                     if (mPlaceId != null)
                         userParams.putInt("placeId", Integer.parseInt(mPlaceId));
-                    else
-                    {
+                    else {
                         userParams.putInt("placeId", 0);
 
                         if (userId != null)
@@ -222,22 +207,16 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
                     // All this data ends up in JNIGLActivity.cpp:nativeStartGame
 
                     NotificationManager.getInstance().postNotification(NotificationManager.REQUEST_START_PLACEID, userParams);
-        		}
-
+                }
 
                 return true;
-        	}
-        	else if( urlString.indexOf( "mobile-app-upgrades/buy?" ) > -1 )
-        	{
+            } else if (urlString.indexOf("mobile-app-upgrades/buy?") > -1) {
                 RobloxActivity activity = (RobloxActivity) getActivity();
                 StoreManager storeManager = activity.getStoreManager();
-        		if(storeManager == null)
-        		{
-        			Utils.alertExclusively("Please upgrade your Android Version to allow Purchasing");
-    				Utils.sendAnalytics("WebView", urlString + "/PurchaseFailedDueToOldAndroidVersion" );
-        		}
-        		else
-        		{
+                if (storeManager == null) {
+                    Utils.alertExclusively("Please upgrade your Android Version to allow Purchasing");
+                    Utils.sendAnalytics("WebView", urlString + "/PurchaseFailedDueToOldAndroidVersion");
+                } else {
                     Uri uriObject = Uri.parse(urlString);
                     String productId = uriObject.getQueryParameter("id");
                     RbxAnalytics.fireButtonClick(getDialogContext(), "purchaseStart" + productId);
@@ -245,17 +224,16 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
                     RobloxSettings.getKeyValues().edit().putBoolean("isReturningFromPurchase", true).apply();
 
                     String username = SessionManager.getInstance().getUsername();
-        			if(!storeManager.doInAppPurchaseForUrl(activity, urlString, username))
-        			{
-        				Utils.alertExclusively("Please setup Google Play Store to make purchases.");
-        				Utils.sendAnalytics( "StoreManager", "PurchaseFailedDueToGooglePlayStoreNotSetup" );
-        			}
-        		}
-        		return true;
-        	}
+                    if (!storeManager.doInAppPurchaseForUrl(activity, urlString, username)) {
+                        Utils.alertExclusively("Please setup Google Play Store to make purchases.");
+                        Utils.sendAnalytics("StoreManager", "PurchaseFailedDueToGooglePlayStoreNotSetup");
+                    }
+                }
+                return true;
+            }
 
-        	mUrlBar.setText( urlString );
-            view.loadUrl( urlString );
+            mUrlBar.setText(urlString);
+            view.loadUrl(urlString);
 
             return true;
         }
@@ -263,7 +241,7 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
 
     private void shouldEnableZoom(String urlString, boolean enableOrDisable) {
         if (!AndroidAppSettings.EnableSponsoredZoom()) return;
-         
+
         if (urlString.contains("sponsored"))
             mWebView.getSettings().setBuiltInZoomControls(enableOrDisable); // if this suddenly stops working, check webView.setSupportZoom
         else
@@ -276,16 +254,23 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_webview, container, false);
 
-		mUrlBar = (TextView)view.findViewById(R.id.webview_urlbar);
+        mUrlBar = (TextView) view.findViewById(R.id.webview_urlbar);
 
         mWebViewClientEmbedded = new WebViewClientEmbedded();
-        mWebView = (WebView)view.findViewById(R.id.web_view);
+        mWebView = (WebView) view.findViewById(R.id.web_view);
         mWebView.setWebViewClient(mWebViewClientEmbedded);
         mWebView.getSettings().setJavaScriptEnabled(true);
-		mWebView.getSettings().setUserAgentString(RobloxSettings.userAgent());
-		mWebView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT); // LOAD_CACHE_ONLY
+        mWebView.getSettings().setUserAgentString(RobloxSettings.userAgent());
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT); // LOAD_CACHE_ONLY
         mWebView.setHorizontalScrollBarEnabled(false);
         mWebView.setVerticalScrollBarEnabled(false);
+
+        // Expose Android bridge used by RobloxHybrid JS
+        try {
+            mWebView.addJavascriptInterface(new RobloxAndroidBridge(getActivity(), mWebView), "__globalRobloxAndroidBridge__");
+        } catch (Throwable t) {
+            Log.w(TAG, "Failed to register RobloxAndroidBridge", t);
+        }
 
         // To find the device's default user agent, we can set it to null - just make sure to reset it afterwards
         String tempUA = mWebView.getSettings().getUserAgentString();
@@ -296,10 +281,10 @@ public class RobloxWebFragment extends DialogFragment implements NotificationMan
         if (!defaultUA.contains("Chrome/"))
             useCompat = true;
 
-        if(mURLToLoad != null) {
+        if (mURLToLoad != null) {
             mWebView.loadUrl(mURLToLoad);
             // For performance, only initialize the JS interface when it's absolutely needed
-            if ( mURLToLoad.contains("more_phone.html") || mURLToLoad.contains("more.html") ) {
+            if (mURLToLoad.contains("more_phone.html") || mURLToLoad.contains("more.html")) {
                 mWebviewInterface = new WebviewInterface(getActivity(), useCompat, mWebView);
                 mWebView.addJavascriptInterface(mWebviewInterface, "interface");
             }

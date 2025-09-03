@@ -492,12 +492,28 @@ public class ActivityNativeMain extends RobloxActivity implements NotificationMa
     private void showSignupDialog() {
         Bundle args = new Bundle();
         args.putBoolean("isActivityMain", true);
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.setCustomAnimations(R.animator.slide_in_from_bottom, R.animator.slide_out_to_bottom);
         FragmentSignUp fragment = new FragmentSignUp();
         fragment.setArguments(args);
-        ft.add(Utils.getCurrentActivityId(this), fragment, FragmentSignUp.FRAGMENT_TAG);
-        ft.commit();
+        android.util.Log.d("SignupDebug", "Activity: launching signup in overlay (pre-commit)");
+        // Render as a normal full-screen fragment to avoid dialog window quirks on small screens
+        fragment.setCancelable(true);
+        fragment.setShowsDialog(false);
+        runOnUiThread(new Runnable() {
+            @Override public void run() {
+                View overlay = findViewById(R.id.activity_main_overlay);
+                if (overlay != null) {
+                    overlay.setVisibility(View.VISIBLE);
+                    overlay.bringToFront();
+                }
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.setCustomAnimations(R.animator.slide_in_from_bottom, R.animator.slide_out_to_bottom);
+                ft.add(R.id.activity_main_overlay, fragment, FragmentSignUp.FRAGMENT_TAG);
+                ft.addToBackStack(FragmentSignUp.FRAGMENT_TAG);
+                ft.commitAllowingStateLoss();
+                getFragmentManager().executePendingTransactions();
+                android.util.Log.d("SignupDebug", "Activity: signup fragment committed to overlay");
+            }
+        });
     }
 
     // -----------------------------------------------------------------------

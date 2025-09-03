@@ -79,10 +79,12 @@
 
     </LinearLayout>
     <!--<com.roblox.client.components.RbxLinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/activity_main_overlay"-->
-            <!--android:background="@color/RbxGreen1">-->
 
-    <!--</com.roblox.client.components.RbxLinearLayout>-->
+    <FrameLayout
+            android:id="@+id/activity_main_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true" />
+
 </FrameLayout>

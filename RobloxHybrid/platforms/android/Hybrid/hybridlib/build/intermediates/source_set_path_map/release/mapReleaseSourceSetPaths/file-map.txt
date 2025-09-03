@@ -1,0 +1,9 @@
+com.roblox.hybridlib.Hybrid-localbroadcastmanager-1.1.0-0 C:\Users\Intel\.gradle\caches\transforms-4\7c6514299880fbcfbb1fb4a07148363f\transformed\localbroadcastmanager-1.1.0\res
+com.roblox.hybridlib.Hybrid-core-1.3.2-1 C:\Users\Intel\.gradle\caches\transforms-4\9827aea9d44b85d0487fbcca7e361204\transformed\core-1.3.2\res
+com.roblox.hybridlib.Hybrid-pngs-2 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\generated\res\pngs\release
+com.roblox.hybridlib.Hybrid-resValues-3 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\generated\res\resValues\release
+com.roblox.hybridlib.Hybrid-mergeReleaseResources-4 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.roblox.hybridlib.Hybrid-mergeReleaseResources-5 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.roblox.hybridlib.Hybrid-release-6 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\build\intermediates\merged_res\release\mergeReleaseResources
+com.roblox.hybridlib.Hybrid-main-7 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\src\main\res
+com.roblox.hybridlib.Hybrid-release-8 E:\roblox-2016-source-code\RobloxHybrid\platforms\android\Hybrid\hybridlib\src\release\res

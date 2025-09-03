@@ -203,7 +203,7 @@ public class RbxBirthdayPicker extends LinearLayout {
         //Log.v(TAG, "RBP onDaySelected() " + selectedDay);
 
         // remove the neutral view if applicable
-        if(mDaySpinner.getItemAtPosition(0) == NEUTRAL && selectedDay != NEUTRAL){
+        if(((Integer)mDaySpinner.getItemAtPosition(0)) == NEUTRAL && selectedDay != NEUTRAL){
             updateDaySpinner();
         }
 
@@ -221,7 +221,7 @@ public class RbxBirthdayPicker extends LinearLayout {
         updateDaySpinner();
 
         // remove the neutral view if applicable
-        if(mMonthSpinner.getItemAtPosition(0) == NEUTRAL && selectedMonth != NEUTRAL){
+        if(((Integer)mMonthSpinner.getItemAtPosition(0)) == NEUTRAL && selectedMonth != NEUTRAL){
             updateMonthSpinner();
         }
 
@@ -239,7 +239,7 @@ public class RbxBirthdayPicker extends LinearLayout {
         updateMonthSpinner();
 
         // remove the neutral view if applicable
-        if(mYearSpinner.getItemAtPosition(0) == NEUTRAL && selectedYear != NEUTRAL){
+        if(((Integer)mYearSpinner.getItemAtPosition(0)) == NEUTRAL && selectedYear != NEUTRAL){
             updateYearSpinner();
         }
 

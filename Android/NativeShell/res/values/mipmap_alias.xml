@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Alias kept to avoid build errors; now points to the normal logo since roblox_icon was moved/removed -->
+    <item name="roblox_icon" type="mipmap">@drawable/roblox_logo</item>
+    <!-- If you no longer need this alias, you can delete this file entirely. -->
+</resources>

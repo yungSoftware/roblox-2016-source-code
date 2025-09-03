@@ -1,0 +1,31 @@
+<variant
+    name="api15Release"
+    package="com.roblox.client"
+    minSdkVersion="15"
+    targetSdkVersion="19"
+    mergedManifest="build\intermediates\merged_manifest\api15Release\processApi15ReleaseMainManifest\AndroidManifest.xml"
+    manifestMergeReport="build\outputs\logs\manifest-merger-api15-release-report.txt"
+    proguardFiles="build\intermediates\default_proguard_files\global\proguard-android.txt-8.5.2"
+    partialResultsDir="build\intermediates\lint_vital_partial_results\api15Release\lintVitalAnalyzeApi15Release\out">
+  <buildFeatures
+      namespacing="REQUIRED"/>
+  <sourceProviders>
+    <sourceProvider
+        manifests="AndroidManifest.xml"
+        javaDirectories="src;src\api15\java;build-types\release\java;src\api15Release\java;src\main\java;src\main\kotlin;src\api15\kotlin;build-types\release\kotlin;src\api15Release\kotlin"
+        resDirectories="res;src\api15\res;build-types\release\res;src\api15Release\res"
+        assetsDirectories="assets;src\api15\assets;build-types\release\assets;src\api15Release\assets"/>
+  </sourceProviders>
+  <testSourceProviders>
+  </testSourceProviders>
+  <testFixturesSourceProviders>
+  </testFixturesSourceProviders>
+  <artifact
+      classOutputs="build\intermediates\javac\api15Release\compileApi15ReleaseJavaWithJavac\classes;build\intermediates\compile_and_runtime_not_namespaced_r_class_jar\api15Release\processApi15ReleaseResources\R.jar"
+      type="MAIN"
+      applicationId="com.roblox.client"
+      generatedSourceFolders="build\generated\ap_generated_sources\api15Release\out;build\generated\source\buildConfig\api15\release"
+      generatedResourceFolders="build\generated\crashlytics\res\api15\release;build\generated\res\resValues\api15\release"
+      desugaredMethodsFiles="C:\Users\Intel\.gradle\caches\transforms-4\9086a030e10236f715ac217f4cb5304c\transformed\D8BackportedDesugaredMethods.txt">
+  </artifact>
+</variant>

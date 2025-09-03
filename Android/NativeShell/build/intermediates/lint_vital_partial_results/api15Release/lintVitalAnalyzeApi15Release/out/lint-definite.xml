@@ -1,0 +1,1625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.5.2" type="incidents">
+
+    <incident
+        id="ExpiredTargetSdkVersion"
+        severity="fatal"
+        message="Google Play requires that apps target API level 33 or higher.">
+        <fix-attribute
+            description="Update targetSdkVersion to 33"
+            namespace="http://schemas.android.com/apk/res/android"
+            attribute="targetSdkVersion"
+            value="33"/>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*manifest*0}"
+            line="13"
+            column="9"
+            startOffset="505"
+            endLine="13"
+            endColumn="38"
+            endOffset="534"/>
+    </incident>
+
+    <incident
+        id="ExpiredTargetSdkVersion"
+        severity="fatal"
+        message="Google Play requires that apps target API level 33 or higher.">
+        <location
+            file="${:NativeShell*projectDir}/build.gradle"
+            line="145"
+            column="9"
+            startOffset="5024"
+            endLine="145"
+            endColumn="28"
+            endOffset="5043"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;home_bkg&quot; in drawable-sw320dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw320dp/home_bkg.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;pattern_bg_red&quot; in drawable-sw320dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw320dp/pattern_bg_red.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;pattern_bg_red&quot; in drawable-sw400dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw400dp/pattern_bg_red.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;home_bkg&quot; in drawable-sw500dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw500dp/home_bkg.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;pattern_bg_red&quot; in drawable-sw500dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw500dp/pattern_bg_red.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The drawable &quot;pattern_bg_red&quot; in drawable-sw700dp has no declaration in the base `drawable` folder or in a `drawable-`*density*`dpi` folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/drawable-sw700dp/pattern_bg_red.png"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_email_card_phone&quot; in layout-sw320dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw320dp/fragment_change_email_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_password_card_phone&quot; in layout-sw320dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw320dp/fragment_change_password_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_create_username_card_phone&quot; in layout-sw320dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw320dp/fragment_create_username_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_settings_card_phone&quot; in layout-sw320dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw320dp/fragment_settings_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_email_card_phone&quot; in layout-sw400dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw400dp/fragment_change_email_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_password_card_phone&quot; in layout-sw400dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw400dp/fragment_change_password_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_create_username_card_phone&quot; in layout-sw400dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw400dp/fragment_create_username_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_settings_card_phone&quot; in layout-sw400dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw400dp/fragment_settings_card_phone.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_email_card_tablet&quot; in layout-sw500dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw500dp/fragment_change_email_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_password_card_tablet&quot; in layout-sw500dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw500dp/fragment_change_password_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_create_username_card_tablet&quot; in layout-sw500dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw500dp/fragment_create_username_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_settings_card_tablet&quot; in layout-sw500dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw500dp/fragment_settings_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_sign_up_card_tablet&quot; in layout-sw500dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw500dp/fragment_sign_up_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_email_card_tablet&quot; in layout-sw700dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw700dp/fragment_change_email_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_change_password_card_tablet&quot; in layout-sw700dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw700dp/fragment_change_password_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_create_username_card_tablet&quot; in layout-sw700dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw700dp/fragment_create_username_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_settings_card_tablet&quot; in layout-sw700dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw700dp/fragment_settings_card_tablet.xml"
+            line="2"
+            column="2"
+            startOffset="41"
+            endLine="2"
+            endColumn="14"
+            endOffset="53"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The layout &quot;fragment_sign_up_card_tablet&quot; in layout-sw700dp has no declaration in the base `layout` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/layout-sw700dp/fragment_sign_up_card_tablet.xml"
+            line="3"
+            column="2"
+            startOffset="109"
+            endLine="3"
+            endColumn="14"
+            endOffset="121"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;tabBarTextSize&quot; in values-large has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+                startOffset="57"
+                endOffset="98"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+            line="3"
+            column="12"
+            startOffset="64"
+            endLine="3"
+            endColumn="33"
+            endOffset="85"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeLabel&quot; in values-large has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+                startOffset="104"
+                endOffset="144"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+            line="4"
+            column="12"
+            startOffset="111"
+            endLine="4"
+            endColumn="32"
+            endOffset="131"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButton&quot; in values-large has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+                startOffset="150"
+                endOffset="191"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+            line="5"
+            column="12"
+            startOffset="157"
+            endLine="5"
+            endColumn="33"
+            endOffset="178"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButtonImportant&quot; in values-large has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+                startOffset="197"
+                endOffset="247"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-large/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="204"
+            endLine="6"
+            endColumn="42"
+            endOffset="234"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;tabBarTextSize&quot; in values-normal has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+                startOffset="57"
+                endOffset="97"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+            line="3"
+            column="12"
+            startOffset="64"
+            endLine="3"
+            endColumn="33"
+            endOffset="85"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeLabel&quot; in values-normal has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+                startOffset="103"
+                endOffset="143"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+            line="4"
+            column="12"
+            startOffset="110"
+            endLine="4"
+            endColumn="32"
+            endOffset="130"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButton&quot; in values-normal has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+                startOffset="149"
+                endOffset="190"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+            line="5"
+            column="12"
+            startOffset="156"
+            endLine="5"
+            endColumn="33"
+            endOffset="177"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButtonImportant&quot; in values-normal has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+                startOffset="196"
+                endOffset="246"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-normal/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="203"
+            endLine="6"
+            endColumn="42"
+            endOffset="233"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;tabBarTextSize&quot; in values-small has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+                startOffset="57"
+                endOffset="97"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+            line="3"
+            column="12"
+            startOffset="64"
+            endLine="3"
+            endColumn="33"
+            endOffset="85"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeLabel&quot; in values-small has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+                startOffset="103"
+                endOffset="142"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+            line="4"
+            column="12"
+            startOffset="110"
+            endLine="4"
+            endColumn="32"
+            endOffset="130"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButton&quot; in values-small has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+                startOffset="148"
+                endOffset="189"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+            line="5"
+            column="12"
+            startOffset="155"
+            endLine="5"
+            endColumn="33"
+            endOffset="176"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButtonImportant&quot; in values-small has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+                startOffset="195"
+                endOffset="245"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-small/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="202"
+            endLine="6"
+            endColumn="42"
+            endOffset="232"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmit&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="322"
+                endOffset="366"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="8"
+            column="12"
+            startOffset="329"
+            endLine="8"
+            endColumn="36"
+            endOffset="353"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmitProgress&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="372"
+                endOffset="424"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="9"
+            column="12"
+            startOffset="379"
+            endLine="9"
+            endColumn="44"
+            endOffset="411"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameChoose&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="628"
+                endOffset="683"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="14"
+            column="12"
+            startOffset="635"
+            endLine="14"
+            endColumn="47"
+            endOffset="670"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameHeader&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="689"
+                endOffset="744"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="15"
+            column="12"
+            startOffset="696"
+            endLine="15"
+            endColumn="47"
+            endOffset="731"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;settingsIconHeight&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="750"
+                endOffset="795"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="16"
+            column="12"
+            startOffset="757"
+            endLine="16"
+            endColumn="37"
+            endOffset="782"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;alertIconHeight&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="801"
+                endOffset="843"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="17"
+            column="12"
+            startOffset="808"
+            endLine="17"
+            endColumn="34"
+            endOffset="830"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;landingButtonHeight&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="849"
+                endOffset="895"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="18"
+            column="12"
+            startOffset="856"
+            endLine="18"
+            endColumn="38"
+            endOffset="882"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;facebookIconMargin&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="901"
+                endOffset="946"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="19"
+            column="12"
+            startOffset="908"
+            endLine="19"
+            endColumn="37"
+            endOffset="933"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;welcomeTextSize&quot; in values-sw320dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+                startOffset="1180"
+                endOffset="1222"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/dimens.xml"
+            line="24"
+            column="12"
+            startOffset="1187"
+            endLine="24"
+            endColumn="34"
+            endOffset="1209"/>
+    </incident>
+
+    <incident
+        id="ExtraTranslation"
+        severity="fatal"
+        message="&quot;FacebookLandingLong&quot; is translated here but not found in default locale">
+        <fix-replace
+            description="Remove translation"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/strings.xml"
+                startOffset="59"
+                endOffset="122"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw320dp/strings.xml"
+            line="4"
+            column="13"
+            startOffset="67"
+            endLine="4"
+            endColumn="39"
+            endOffset="93"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmit&quot; in values-sw360dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+                startOffset="322"
+                endOffset="366"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+            line="8"
+            column="12"
+            startOffset="329"
+            endLine="8"
+            endColumn="36"
+            endOffset="353"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmitProgress&quot; in values-sw360dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+                startOffset="372"
+                endOffset="424"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+            line="9"
+            column="12"
+            startOffset="379"
+            endLine="9"
+            endColumn="44"
+            endOffset="411"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameChoose&quot; in values-sw360dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+                startOffset="628"
+                endOffset="683"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+            line="14"
+            column="12"
+            startOffset="635"
+            endLine="14"
+            endColumn="47"
+            endOffset="670"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameHeader&quot; in values-sw360dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+                startOffset="689"
+                endOffset="744"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+            line="15"
+            column="12"
+            startOffset="696"
+            endLine="15"
+            endColumn="47"
+            endOffset="731"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;facebookIconMargin&quot; in values-sw360dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+                startOffset="750"
+                endOffset="795"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw360dp/dimens.xml"
+            line="16"
+            column="12"
+            startOffset="757"
+            endLine="16"
+            endColumn="37"
+            endOffset="782"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmitProgress&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="218"
+                endOffset="270"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="225"
+            endLine="6"
+            endColumn="44"
+            endOffset="257"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameChoose&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="474"
+                endOffset="529"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="11"
+            column="12"
+            startOffset="481"
+            endLine="11"
+            endColumn="47"
+            endOffset="516"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameHeader&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="535"
+                endOffset="590"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="12"
+            column="12"
+            startOffset="542"
+            endLine="12"
+            endColumn="47"
+            endOffset="577"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;settingsIconHeight&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="596"
+                endOffset="641"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="13"
+            column="12"
+            startOffset="603"
+            endLine="13"
+            endColumn="37"
+            endOffset="628"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;alertIconHeight&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="647"
+                endOffset="689"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="14"
+            column="12"
+            startOffset="654"
+            endLine="14"
+            endColumn="34"
+            endOffset="676"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;landingButtonHeight&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="695"
+                endOffset="741"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="15"
+            column="12"
+            startOffset="702"
+            endLine="15"
+            endColumn="38"
+            endOffset="728"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;facebookIconMargin&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="747"
+                endOffset="791"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="16"
+            column="12"
+            startOffset="754"
+            endLine="16"
+            endColumn="37"
+            endOffset="779"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;welcomeTextSize&quot; in values-sw400dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+                startOffset="1025"
+                endOffset="1067"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/dimens.xml"
+            line="21"
+            column="12"
+            startOffset="1032"
+            endLine="21"
+            endColumn="34"
+            endOffset="1054"/>
+    </incident>
+
+    <incident
+        id="ExtraTranslation"
+        severity="fatal"
+        message="&quot;FacebookLandingLong&quot; is translated here but not found in default locale">
+        <fix-replace
+            description="Remove translation"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/strings.xml"
+                startOffset="57"
+                endOffset="122"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw400dp/strings.xml"
+            line="3"
+            column="13"
+            startOffset="65"
+            endLine="3"
+            endColumn="39"
+            endOffset="91"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmitProgress&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="218"
+                endOffset="270"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="225"
+            endLine="6"
+            endColumn="44"
+            endOffset="257"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameChoose&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="474"
+                endOffset="529"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="11"
+            column="12"
+            startOffset="481"
+            endLine="11"
+            endColumn="47"
+            endOffset="516"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameHeader&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="535"
+                endOffset="590"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="12"
+            column="12"
+            startOffset="542"
+            endLine="12"
+            endColumn="47"
+            endOffset="577"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;settingsIconHeight&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="596"
+                endOffset="641"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="13"
+            column="12"
+            startOffset="603"
+            endLine="13"
+            endColumn="37"
+            endOffset="628"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;alertIconHeight&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="647"
+                endOffset="689"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="14"
+            column="12"
+            startOffset="654"
+            endLine="14"
+            endColumn="34"
+            endOffset="676"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;landingButtonHeight&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="695"
+                endOffset="741"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="15"
+            column="12"
+            startOffset="702"
+            endLine="15"
+            endColumn="38"
+            endOffset="728"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;facebookIconMargin&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="747"
+                endOffset="792"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="16"
+            column="12"
+            startOffset="754"
+            endLine="16"
+            endColumn="37"
+            endOffset="779"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;welcomeTextSize&quot; in values-sw500dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+                startOffset="1025"
+                endOffset="1067"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw500dp/dimens.xml"
+            line="21"
+            column="12"
+            startOffset="1032"
+            endLine="21"
+            endColumn="34"
+            endOffset="1054"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeBtnSubmitProgress&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="218"
+                endOffset="270"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="225"
+            endLine="6"
+            endColumn="44"
+            endOffset="257"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameChoose&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="474"
+                endOffset="529"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="11"
+            column="12"
+            startOffset="481"
+            endLine="11"
+            endColumn="47"
+            endOffset="516"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeCreateUsernameHeader&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="535"
+                endOffset="590"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="12"
+            column="12"
+            startOffset="542"
+            endLine="12"
+            endColumn="47"
+            endOffset="577"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;settingsIconHeight&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="596"
+                endOffset="641"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="13"
+            column="12"
+            startOffset="603"
+            endLine="13"
+            endColumn="37"
+            endOffset="628"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;alertIconHeight&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="647"
+                endOffset="689"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="14"
+            column="12"
+            startOffset="654"
+            endLine="14"
+            endColumn="34"
+            endOffset="676"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;landingButtonHeight&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="695"
+                endOffset="741"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="15"
+            column="12"
+            startOffset="702"
+            endLine="15"
+            endColumn="38"
+            endOffset="728"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;facebookIconMargin&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="747"
+                endOffset="792"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="16"
+            column="12"
+            startOffset="754"
+            endLine="16"
+            endColumn="37"
+            endOffset="779"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;welcomeTextSize&quot; in values-sw700dp has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+                startOffset="1025"
+                endOffset="1067"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-sw700dp/dimens.xml"
+            line="21"
+            column="12"
+            startOffset="1032"
+            endLine="21"
+            endColumn="34"
+            endOffset="1054"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;tabBarTextSize&quot; in values-xlarge has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+                startOffset="57"
+                endOffset="98"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+            line="3"
+            column="12"
+            startOffset="64"
+            endLine="3"
+            endColumn="33"
+            endOffset="85"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeLabel&quot; in values-xlarge has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+                startOffset="104"
+                endOffset="144"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+            line="4"
+            column="12"
+            startOffset="111"
+            endLine="4"
+            endColumn="32"
+            endOffset="131"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButton&quot; in values-xlarge has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+                startOffset="150"
+                endOffset="191"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+            line="5"
+            column="12"
+            startOffset="157"
+            endLine="5"
+            endColumn="33"
+            endOffset="178"/>
+    </incident>
+
+    <incident
+        id="MissingDefaultResource"
+        severity="fatal"
+        message="The dimen &quot;textSizeButtonImportant&quot; in values-xlarge has no declaration in the base `values` folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier">
+        <fix-replace
+            description="Remove resource override"
+            replacement=""
+            priority="0">
+            <range
+                file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+                startOffset="197"
+                endOffset="247"/>
+        </fix-replace>
+        <location
+            file="${:NativeShell*api15Release*MAIN*sourceProvider*0*resDir*0}/values-xlarge/dimens.xml"
+            line="6"
+            column="12"
+            startOffset="204"
+            endLine="6"
+            endColumn="42"
+            endOffset="234"/>
+    </incident>
+
+</incidents>

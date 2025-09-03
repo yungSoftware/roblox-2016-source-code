@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "PROCESSED_RES",
+    "kind": "Directory"
+  },
+  "applicationId": "com.roblox2016.client",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "UNIVERSAL",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-universalRelease.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-armeabi-v7aRelease.ap_"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "attributes": [],
+      "versionCode": 100,
+      "versionName": "2.99.99",
+      "outputFile": "resources-x86Release.ap_"
+    }
+  ],
+  "elementType": "File"
+}

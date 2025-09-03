@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/custom_dialog.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/notification_action.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/notification_action.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/notification_template_icon_group.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/notification_action_tombstone.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/notification_template_part_time.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/layout/notification_template_part_chronometer.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/layout/notification_template_part_chronometer.xml"
+    }
+]

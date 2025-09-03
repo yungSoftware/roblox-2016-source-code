@@ -1,0 +1,288 @@
+E:\roblox-2016-source-code\Android\NativeShell\res\values-large\dimens.xml:3: Error: The dimen "tabBarTextSize" in values-large has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="tabBarTextSize">11sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-normal\dimens.xml:3: Error: The dimen "tabBarTextSize" in values-normal has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="tabBarTextSize">8sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-small\dimens.xml:3: Error: The dimen "tabBarTextSize" in values-small has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="tabBarTextSize">6sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-xlarge\dimens.xml:3: Error: The dimen "tabBarTextSize" in values-xlarge has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="tabBarTextSize">14sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-large\dimens.xml:4: Error: The dimen "textSizeLabel" in values-large has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeLabel">15sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-normal\dimens.xml:4: Error: The dimen "textSizeLabel" in values-normal has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeLabel">18sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-small\dimens.xml:4: Error: The dimen "textSizeLabel" in values-small has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeLabel">7sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-xlarge\dimens.xml:4: Error: The dimen "textSizeLabel" in values-xlarge has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeLabel">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-large\dimens.xml:5: Error: The dimen "textSizeButton" in values-large has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButton">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-normal\dimens.xml:5: Error: The dimen "textSizeButton" in values-normal has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButton">18sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-small\dimens.xml:5: Error: The dimen "textSizeButton" in values-small has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButton">10sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-xlarge\dimens.xml:5: Error: The dimen "textSizeButton" in values-xlarge has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButton">22sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:6: Error: The dimen "textSizeBtnSubmitProgress" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmitProgress">17sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:6: Error: The dimen "textSizeBtnSubmitProgress" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmitProgress">17sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:6: Error: The dimen "textSizeBtnSubmitProgress" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmitProgress">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-large\dimens.xml:6: Error: The dimen "textSizeButtonImportant" in values-large has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButtonImportant">22sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-normal\dimens.xml:6: Error: The dimen "textSizeButtonImportant" in values-normal has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButtonImportant">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-small\dimens.xml:6: Error: The dimen "textSizeButtonImportant" in values-small has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButtonImportant">12sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-xlarge\dimens.xml:6: Error: The dimen "textSizeButtonImportant" in values-xlarge has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeButtonImportant">25sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:8: Error: The dimen "textSizeBtnSubmit" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmit">20sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw360dp\dimens.xml:8: Error: The dimen "textSizeBtnSubmit" in values-sw360dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmit">22sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:9: Error: The dimen "textSizeBtnSubmitProgress" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmitProgress">13sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw360dp\dimens.xml:9: Error: The dimen "textSizeBtnSubmitProgress" in values-sw360dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeBtnSubmitProgress">13sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:11: Error: The dimen "textSizeCreateUsernameChoose" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameChoose">25sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:11: Error: The dimen "textSizeCreateUsernameChoose" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameChoose">22sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:11: Error: The dimen "textSizeCreateUsernameChoose" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameChoose">29sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:12: Error: The dimen "textSizeCreateUsernameHeader" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameHeader">28sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:12: Error: The dimen "textSizeCreateUsernameHeader" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameHeader">25sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:12: Error: The dimen "textSizeCreateUsernameHeader" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameHeader">32sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:13: Error: The dimen "settingsIconHeight" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="settingsIconHeight">25dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:13: Error: The dimen "settingsIconHeight" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="settingsIconHeight">25dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:13: Error: The dimen "settingsIconHeight" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="settingsIconHeight">28dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:14: Error: The dimen "alertIconHeight" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="alertIconHeight">33dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:14: Error: The dimen "alertIconHeight" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="alertIconHeight">35dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:14: Error: The dimen "alertIconHeight" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="alertIconHeight">35dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:14: Error: The dimen "textSizeCreateUsernameChoose" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameChoose">19sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw360dp\dimens.xml:14: Error: The dimen "textSizeCreateUsernameChoose" in values-sw360dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameChoose">23sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:15: Error: The dimen "landingButtonHeight" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="landingButtonHeight">50dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:15: Error: The dimen "landingButtonHeight" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="landingButtonHeight">50dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:15: Error: The dimen "landingButtonHeight" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="landingButtonHeight">60dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:15: Error: The dimen "textSizeCreateUsernameHeader" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameHeader">22sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw360dp\dimens.xml:15: Error: The dimen "textSizeCreateUsernameHeader" in values-sw360dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="textSizeCreateUsernameHeader">26sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw360dp\dimens.xml:16: Error: The dimen "facebookIconMargin" in values-sw360dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="facebookIconMargin">-8dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:16: Error: The dimen "facebookIconMargin" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="facebookIconMargin">0dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:16: Error: The dimen "facebookIconMargin" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="facebookIconMargin">-3dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:16: Error: The dimen "facebookIconMargin" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="facebookIconMargin">-3dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:16: Error: The dimen "settingsIconHeight" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="settingsIconHeight">24dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:17: Error: The dimen "alertIconHeight" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="alertIconHeight">30dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:18: Error: The dimen "landingButtonHeight" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="landingButtonHeight">50dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:19: Error: The dimen "facebookIconMargin" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="facebookIconMargin">-1dp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\dimens.xml:21: Error: The dimen "welcomeTextSize" in values-sw400dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="welcomeTextSize">40sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw500dp\dimens.xml:21: Error: The dimen "welcomeTextSize" in values-sw500dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="welcomeTextSize">45sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw700dp\dimens.xml:21: Error: The dimen "welcomeTextSize" in values-sw700dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="welcomeTextSize">50sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\dimens.xml:24: Error: The dimen "welcomeTextSize" in values-sw320dp has no declaration in the base values folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+    <dimen name="welcomeTextSize">35sp</dimen>
+           ~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw320dp\fragment_change_email_card_phone.xml:2: Error: The layout "fragment_change_email_card_phone" in layout-sw320dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw400dp\fragment_change_email_card_phone.xml:2: Error: The layout "fragment_change_email_card_phone" in layout-sw400dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw500dp\fragment_change_email_card_tablet.xml:2: Error: The layout "fragment_change_email_card_tablet" in layout-sw500dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw700dp\fragment_change_email_card_tablet.xml:2: Error: The layout "fragment_change_email_card_tablet" in layout-sw700dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw320dp\fragment_change_password_card_phone.xml:2: Error: The layout "fragment_change_password_card_phone" in layout-sw320dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw400dp\fragment_change_password_card_phone.xml:2: Error: The layout "fragment_change_password_card_phone" in layout-sw400dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw500dp\fragment_change_password_card_tablet.xml:2: Error: The layout "fragment_change_password_card_tablet" in layout-sw500dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw700dp\fragment_change_password_card_tablet.xml:2: Error: The layout "fragment_change_password_card_tablet" in layout-sw700dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw320dp\fragment_create_username_card_phone.xml:2: Error: The layout "fragment_create_username_card_phone" in layout-sw320dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw400dp\fragment_create_username_card_phone.xml:2: Error: The layout "fragment_create_username_card_phone" in layout-sw400dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw500dp\fragment_create_username_card_tablet.xml:2: Error: The layout "fragment_create_username_card_tablet" in layout-sw500dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw700dp\fragment_create_username_card_tablet.xml:2: Error: The layout "fragment_create_username_card_tablet" in layout-sw700dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw320dp\fragment_settings_card_phone.xml:2: Error: The layout "fragment_settings_card_phone" in layout-sw320dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw400dp\fragment_settings_card_phone.xml:2: Error: The layout "fragment_settings_card_phone" in layout-sw400dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw500dp\fragment_settings_card_tablet.xml:2: Error: The layout "fragment_settings_card_tablet" in layout-sw500dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw700dp\fragment_settings_card_tablet.xml:2: Error: The layout "fragment_settings_card_tablet" in layout-sw700dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw500dp\fragment_sign_up_card_tablet.xml:2: Error: The layout "fragment_sign_up_card_tablet" in layout-sw500dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\layout-sw700dp\fragment_sign_up_card_tablet.xml:3: Error: The layout "fragment_sign_up_card_tablet" in layout-sw700dp has no declaration in the base layout folder; this can lead to crashes when the resource is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ ~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw320dp\home_bkg.png: Error: The drawable "home_bkg" in drawable-sw320dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw500dp\home_bkg.png: Error: The drawable "home_bkg" in drawable-sw500dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw320dp\pattern_bg_red.png: Error: The drawable "pattern_bg_red" in drawable-sw320dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw400dp\pattern_bg_red.png: Error: The drawable "pattern_bg_red" in drawable-sw400dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw500dp\pattern_bg_red.png: Error: The drawable "pattern_bg_red" in drawable-sw500dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+E:\roblox-2016-source-code\Android\NativeShell\res\drawable-sw700dp\pattern_bg_red.png: Error: The drawable "pattern_bg_red" in drawable-sw700dp has no declaration in the base drawable folder or in a drawable-densitydpi folder; this can lead to crashes when the drawable is queried in a configuration that does not match this qualifier [MissingDefaultResource]
+
+   Explanation for issues of type "MissingDefaultResource":
+   If a resource is only defined in folders with qualifiers like -land or -en,
+   and there is no default declaration in the base folder (layout or values
+   etc), then the app will crash if that resource is accessed on a device
+   where the device is in a configuration missing the given qualifier.
+
+   As a special case, drawables do not have to be specified in the base
+   folder; if there is a match in a density folder (such as drawable-mdpi)
+   that image will be used and scaled. Note however that if you  only specify
+   a drawable in a folder like drawable-en-hdpi, the app will crash in
+   non-English locales.
+
+   There may be scenarios where you have a resource, such as a -fr drawable,
+   which is only referenced from some other resource with the same qualifiers
+   (such as a -fr style), which itself has safe fallbacks. However, this still
+   makes it possible for somebody to accidentally reference the drawable and
+   crash, so it is safer to create a default fallback in the base folder.
+   Alternatively, you can suppress the issue by adding
+   tools:ignore="MissingDefaultResource" on the element.
+
+   (This scenario frequently happens with string translations, where you might
+   delete code and the corresponding resources, but forget to delete a
+   translation. There is a dedicated issue id for that scenario, with the id
+   ExtraTranslation.)
+
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw400dp\strings.xml:3: Error: "FacebookLandingLong" is translated here but not found in default locale [ExtraTranslation]
+    <string name="FacebookLandingLong">Sign in with Facebook</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\res\values-sw320dp\strings.xml:4: Error: "FacebookLandingLong" is translated here but not found in default locale [ExtraTranslation]
+    <string name="FacebookLandingLong">Sign in w/ Facebook</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ExtraTranslation":
+   If a string appears in a specific language translation file, but there is
+   no corresponding string in the default locale, then this string is probably
+   unused. (It's technically possible that your application is only intended
+   to run in a specific locale, but it's still a good idea to provide a
+   fallback.)
+
+   Note that these strings can lead to crashes if the string is looked up on
+   any locale not providing a translation, so it's important to clean them
+   up.
+
+E:\roblox-2016-source-code\Android\NativeShell\AndroidManifest.xml:13: Error: Google Play requires that apps target API level 33 or higher. [ExpiredTargetSdkVersion]
+        android:targetSdkVersion="19" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\roblox-2016-source-code\Android\NativeShell\build.gradle:145: Error: Google Play requires that apps target API level 33 or higher. [ExpiredTargetSdkVersion]
+        targetSdkVersion 28
+        ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ExpiredTargetSdkVersion":
+   Configuring your app to target a recent API level ensures that users
+   benefit from significant security and performance improvements, while still
+   allowing your app to run on older Android versions (down to the
+   minSdkVersion).
+
+   To update your targetSdkVersion, follow the steps from "Meeting Google Play
+   requirements for target API level",
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://support.google.com/googleplay/android-developer/answer/113469#targetsdk
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+82 errors, 0 warnings

@@ -1,0 +1,906 @@
+[
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_gender_full.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_gender_full.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_gender_picker.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_gender_picker.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_indicator_black.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_indicator_black.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_curltest.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_curltest.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_edittext_success.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_edittext_success.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_card_shadow_blue.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_card_shadow_blue.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_email_new.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_email_new.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_facebook_blue.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_facebook_blue.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_about_icon.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/about_icon.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_welcome_animation.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/welcome_animation.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_more2.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_more2.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_progress_blue_up.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_progress_blue_up.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login_new.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login_new.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_catalog_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_catalog_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_spinner_item.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_spinner_item.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_white_up.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_white_up.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_recaptcha.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_recaptcha.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/color_shell_text_hint.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/color/shell_text_hint.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_home.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_home.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_settings.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_drawable_flat_button_blue.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_drawable_flat_button_blue.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/raw_more.html.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/raw/more.html"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw320dp_fragment_change_email_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw320dp/fragment_change_email_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_catalog.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_catalog.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_settings_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_settings_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw320dp_fragment_settings_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw320dp/fragment_settings_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xxxhdpi_ic_launcher_transparent.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xxxhdpi/ic_launcher_transparent.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-mdpi_roblox_logo.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-mdpi/roblox_logo.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_out_to_top.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_out_to_top.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_settings_new2.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_settings_new2.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_change_email_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_change_email_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_change_password_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_change_password_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_in_from_top.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_in_from_top.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_password_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_password_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_in_from_right.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_in_from_right.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_password_new.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_password_new.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_game.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_game.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_white_button_down.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/white_button_down.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_create_username_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_create_username_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_sign_up_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_sign_up_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_progress_green_up.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_progress_green_up.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/anim_in_from_right.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/anim/in_from_right.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_progress_blue_down.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_progress_blue_down.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-mdpi_ic_launcher_transparent.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-mdpi/ic_launcher_transparent.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw320dp_fragment_create_username_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw320dp/fragment_create_username_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_facebook_white.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_facebook_white.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_messages.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_messages.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw400dp_pattern_bg_red.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw400dp/pattern_bg_red.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_robux_symbol2x.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/robux_symbol2x.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_logout.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_logout.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-mdpi_textfield_search_selected_holo_light.9.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-mdpi/textfield_search_selected_holo_light.9.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_logo_black.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_logo_black.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/anim_out_to_right.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/anim/out_to_right.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_about_icon_2.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/about_icon_2.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_sign_up.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_sign_up.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_button_progress.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_button_progress.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_spinner_top.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_spinner_top.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_indicator_green.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_indicator_green.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_card_shadow_red.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_card_shadow_red.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_friends_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_friends_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_edittext.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_edittext.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xxhdpi_ic_launcher_transparent.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xxhdpi/ic_launcher_transparent.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_ic_launcher_transparent.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/ic_launcher_transparent.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_container.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_container.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_2.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_2.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_email.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_email.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_main.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw400dp_fragment_create_username_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw400dp/fragment_create_username_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_bc_32x32.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_bc_32x32.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_circle.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_circle.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_blue_up.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_blue_up.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_gender_full_error.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_gender_full_error.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw320dp_pattern_bg_red.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw320dp/pattern_bg_red.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/menu_menu_button_robux.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/menu/menu_button_robux.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_messages.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_messages.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_out_to_bottom.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_out_to_bottom.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_error.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_error.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_messages.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_messages.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_more.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_more.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_1.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_1.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_warning.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_warning.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_in_from_left.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_in_from_left.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_login_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_login_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_out_to_left.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_out_to_left.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_more2_on_notification.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_more2_on_notification.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_search_black.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_search_black.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_catalog.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_catalog.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_more2_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_more2_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_robux.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_robux.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_logo_black_2x.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_logo_black_2x.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_sign_up_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_sign_up_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_inventory.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_inventory.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_indicator_blue.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_indicator_blue.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_create_username.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_create_username.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_settings_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_settings_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_signup_new.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_signup_new.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/menu_menu_button_bc.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/menu/menu_button_bc.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_edittext.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_edittext.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_glview.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_glview.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_robux_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_robux_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_6.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_6.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_logo.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_logo.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xxxhdpi_ic_action_search.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xxxhdpi/ic_action_search.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_logo_red.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_logo_red.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_email_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_email_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_bc.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_bc.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_sign_up_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_sign_up_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw400dp_fragment_change_password_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw400dp/fragment_change_password_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw320dp_home_bkg.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw320dp/home_bkg.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_textfield_searchview_holo_light.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/textfield_searchview_holo_light.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_white_down.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_white_down.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_groups.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_groups.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_video.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_video.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_red.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_red.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_start.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_start.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_profile.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_profile.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_games.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_games.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_5.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_5.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_inventory.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_inventory.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_messages_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_messages_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_ic_action_search.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/ic_action_search.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/anim_in_from_left.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/anim/in_from_left.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_search_32x32.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_search_32x32.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_settings_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_settings_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/xml_android_tracker.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/xml/android_tracker.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_groups.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_groups.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_catalog.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_catalog.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_tab_icon_profile.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/tab_icon_profile.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_blue_dark.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_blue_dark.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_game_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_game_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw700dp_pattern_bg_red.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw700dp/pattern_bg_red.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_main_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_main_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_light_gradient.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/light_gradient.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_spinner_splash.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_spinner_splash.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_search_white.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_search_white.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_drawable_flat_button_white.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_drawable_flat_button_white.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_icon.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_icon.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_female.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_female.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_email_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_email_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_spinner_outline.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_spinner_outline.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_progress_green_down.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_progress_green_down.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_background_row_button.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/background_row_button.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_drawable_flat_button_progress_green.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_drawable_flat_button_progress_green.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_indicator_blue_dark.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_indicator_blue_dark.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_sign_up_xmark.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/sign_up_xmark.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_white_button_down.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/white_button_down.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_card_shadow_blue_light.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_card_shadow_blue_light.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_change_email_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_change_email_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_male.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_male.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_rbx_birthday_picker.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/rbx_birthday_picker.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_male_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_male_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_actionbar_centered_title.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/actionbar_centered_title.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_home_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_home_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_catalog.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_catalog.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_close_14x14.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_close_14x14.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_home.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_home.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/raw_roblox_settings.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/raw/roblox_settings"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_white_button.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/white_button.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_female_on.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_female_on.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_right_arrow.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/right_arrow.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_blue_down.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_blue_down.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_about.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_about.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_out_to_right.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_out_to_right.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_card_shadow.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_card_shadow.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_3.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_3.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_password_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_password_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_textfield_search_default_holo_light.9.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/textfield_search_default_holo_light.9.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_password_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_password_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_tab_button_layout.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/tab_button_layout.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_banned_account.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_banned_account.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw320dp_fragment_change_password_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw320dp/fragment_change_password_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_robux_32x32.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_robux_32x32.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-hdpi_ic_launcher_transparent.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-hdpi/ic_launcher_transparent.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_sign_up_checkmark.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/sign_up_checkmark.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_gender_full_success.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_gender_full_success.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_close_black.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_close_black.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_home.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_home.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_drawable_flat_button_progress_blue.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_drawable_flat_button_progress_blue.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_create_username_card_common.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_create_username_card_common.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_button_robux_layout.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/button_robux_layout.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tix_symbol2x.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tix_symbol2x.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_button_bc_layout.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/button_bc_layout.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_about_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_about_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_login_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_login_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/menu_menu_button_logout.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/menu/menu_button_logout.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_button_animated.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_button_animated.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw500dp_fragment_change_password_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw500dp/fragment_change_password_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw500dp_pattern_bg_red.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw500dp/pattern_bg_red.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_settings_new.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_settings_new.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_games.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_games.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_friends.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_friends.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw400dp_fragment_settings_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw400dp/fragment_settings_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_gender.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_gender.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/anim_out_to_left.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/anim/out_to_left.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-hdpi_ic_action_search.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-hdpi/ic_action_search.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_progress_btn_spinner.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_progress_btn_spinner.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_solid_white.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_solid_white.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_home.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_home.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_white_button_drawable.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/white_button_drawable.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/animator_slide_in_from_bottom.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/animator/slide_in_from_bottom.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_sign_up_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_sign_up_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw400dp_fragment_change_email_card_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw400dp/fragment_change_email_card_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout-sw700dp_fragment_create_username_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout-sw700dp/fragment_create_username_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/xml_searchable.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/xml/searchable.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_icon_more2_notification.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/icon_more2_notification.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/menu_menu_button_search.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/menu/menu_button_search.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_sign_up_phone.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_sign_up_phone.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_value_friends.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_value_friends.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_change_password.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_change_password.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_activity_splash.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_login_card_tablet.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_login_card_tablet.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-sw500dp_home_bkg.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-sw500dp/home_bkg.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/menu_main_menu_actions.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/menu/main_menu_actions.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_home_bg_4.jpg.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/home_bg_4.jpg"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_roblox_logo_red_2x.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/roblox_logo_red_2x.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_rbx_bg_flat_edittext_error.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/rbx_bg_flat_edittext_error.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_white_button.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/white_button.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-mdpi_ic_action_search.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-mdpi/ic_action_search.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable_tab_icon_messages.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable/tab_icon_messages.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_button_logout_layout.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/button_logout_layout.xml"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/drawable-xhdpi_roblox_logo.png.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/drawable-xhdpi/roblox_logo.png"
+    },
+    {
+        "merged": "com.roblox.client.NativeShell-release-12:/layout_fragment_webview.xml.flat",
+        "source": "com.roblox.client.NativeShell-NativeShell-13:/layout/fragment_webview.xml"
+    }
+]

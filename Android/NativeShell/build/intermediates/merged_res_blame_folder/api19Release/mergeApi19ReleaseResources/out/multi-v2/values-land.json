@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.roblox.client.NativeShell-mergeApi19ReleaseResources-14:/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Intel\\.gradle\\caches\\transforms-4\\46a0bc1e5cf7b45c378ea8bfb5c1008c\\transformed\\appcompat-1.0.0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Intel\\.gradle\\caches\\transforms-4\\adaba205e0aeefade60fa07733d0c276\\transformed\\material-1.0.0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "10",
+                        "endOffsets": "222"
+                    },
+                    "to": {
+                        "startLines": "5",
+                        "startColumns": "4",
+                        "startOffsets": "264",
+                        "endLines": "8",
+                        "endColumns": "10",
+                        "endOffsets": "431"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -58,6 +58,7 @@ public class ActivityStart extends RobloxActivity implements NotificationManager
 
     // Analytics
     private static String ctx = "landing";
+    private boolean mMatAvailable = false;
     // -----------------------------------------------------------------------
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -93,8 +94,16 @@ public class ActivityStart extends RobloxActivity implements NotificationManager
         mProgressSpinner.setMessage(getString(R.string.LoggingInSpinnerText));
 
         // Facebook integration for Ads attribution
-        //com.facebook.AppEventsLogger.activateApp(this);
-        AppEventsLogger.activateApp(this); // FBSDK 4.x
+        try {
+            // Use reflection to avoid hard dependency when the Facebook SDK is missing at runtime
+            Class<?> logger = Class.forName("com.facebook.appevents.AppEventsLogger");
+            java.lang.reflect.Method m = logger.getMethod("activateApp", android.content.Context.class);
+            m.invoke(null, this);
+        } catch (ClassNotFoundException e) {
+            Log.w(TAG, "Facebook SDK not present; skipping AppEventsLogger.activateApp: " + e);
+        } catch (Throwable t) {
+            Log.w(TAG, "Facebook SDK init error; skipping AppEventsLogger.activateApp", t);
+        }
 
         // Mobile App Tracking
         this.initializeMAT();
@@ -146,11 +155,19 @@ public class ActivityStart extends RobloxActivity implements NotificationManager
         if (sm.getUsername().isEmpty() || sm.getPassword().isEmpty())
             UpgradeCheckHelper.checkForUpdate(this);
 
-        // Mobile App Tracking
-        // Get source of open for app re-engagement
-        mobileAppTracker.setReferralSources(this);
-        // MAT will not function unless the measureSession call is included
-        mobileAppTracker.measureSession();
+        // Mobile App Tracking (guarded: some devices lack Apache HttpClient classes)
+        if (mMatAvailable && mobileAppTracker != null) {
+            try {
+                // Get source of open for app re-engagement
+                mobileAppTracker.setReferralSources(this);
+                // MAT will not function unless the measureSession call is included
+                mobileAppTracker.measureSession();
+            } catch (Throwable t) {
+                Log.w(TAG, "MAT calls failed; disabling MAT", t);
+                mMatAvailable = false;
+                mobileAppTracker = null;
+            }
+        }
 
         // AdColony
         AdColony.resume(this);
@@ -219,47 +236,66 @@ public class ActivityStart extends RobloxActivity implements NotificationManager
 
     // -----------------------------------------------------------------------
     private void initializeMAT() {
-        MobileAppTracker.init(getApplicationContext(), "18714", "4316dbf38e776530b30b954d3786bd41");
-        mobileAppTracker = MobileAppTracker.getInstance();
+        try {
+            MobileAppTracker.init(getApplicationContext(), "18714", "4316dbf38e776530b30b954d3786bd41");
+            mobileAppTracker = MobileAppTracker.getInstance();
 
-        // Only enable for testing purposes
-        //mobileAppTracker.setDebugMode(true);
-        //mobileAppTracker.setAllowDuplicates(true);
+            // Only enable for testing purposes
+            //mobileAppTracker.setDebugMode(true);
+            //mobileAppTracker.setAllowDuplicates(true);
 
-        // Check if the user ever was logged in.
-        // HACK: Since there is no other trace to check,
-        //       use a GoogleAnalytics to see if this is the first time the user opens the app.
-        File googleAnalyticsTrace = new File(this.getApplicationContext().getFilesDir() + "/gaClientId");
-        int lastVersionCode = RobloxSettings.getKeyValues().getInt(LAST_APP_VERSION_KEY, 0);
-        boolean isExistingUser = googleAnalyticsTrace.exists() || lastVersionCode != 0;
-        if (isExistingUser) {
-            mobileAppTracker.setExistingUser(true);
-        }
-
-        // Collect Google Play Advertising ID
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // See sample code at http://developer.android.com/google/play-services/id.html
-                try {
-                    Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
-                    mobileAppTracker.setGoogleAdvertisingId(adInfo.getId(), adInfo.isLimitAdTrackingEnabled());
-                } catch (IOException e) {
-                    // Unrecoverable error connecting to Google Play services (e.g.,
-                    // the old version of the service doesn't support getting AdvertisingId).
-                    mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // Google Play services is not available entirely.
-                    mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
-                } catch (GooglePlayServicesRepairableException e) {
-                    // Encountered a recoverable error connecting to Google Play services.
-                    mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
-                } catch (NullPointerException e) {
-                    // getId() is sometimes null
-                    mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
-                }
+            // Check if the user ever was logged in.
+            // HACK: Since there is no other trace to check,
+            //       use a GoogleAnalytics to see if this is the first time the user opens the app.
+            File googleAnalyticsTrace = new File(this.getApplicationContext().getFilesDir() + "/gaClientId");
+            int lastVersionCode = RobloxSettings.getKeyValues().getInt(LAST_APP_VERSION_KEY, 0);
+            boolean isExistingUser = googleAnalyticsTrace.exists() || lastVersionCode != 0;
+            if (isExistingUser) {
+                mobileAppTracker.setExistingUser(true);
             }
-        }).start();
+
+            // Collect Google Play Advertising ID
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // See sample code at http://developer.android.com/google/play-services/id.html
+                    try {
+                        Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                        if (mobileAppTracker != null) {
+                            mobileAppTracker.setGoogleAdvertisingId(adInfo.getId(), adInfo.isLimitAdTrackingEnabled());
+                        }
+                    } catch (IOException e) {
+                        // Unrecoverable error connecting to Google Play services (e.g.,
+                        // the old version of the service doesn't support getting AdvertisingId).
+                        if (mobileAppTracker != null)
+                            mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    } catch (GooglePlayServicesNotAvailableException e) {
+                        // Google Play services is not available entirely.
+                        if (mobileAppTracker != null)
+                            mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    } catch (GooglePlayServicesRepairableException e) {
+                        // Encountered a recoverable error connecting to Google Play services.
+                        if (mobileAppTracker != null)
+                            mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    } catch (NullPointerException e) {
+                        // getId() is sometimes null
+                        if (mobileAppTracker != null)
+                            mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    } catch (Throwable t) {
+                        // Handle NoClassDefFoundError or any other unexpected issue if Play Services lib is absent
+                        Log.w(TAG, "Google Advertising ID unavailable; falling back to ANDROID_ID", t);
+                        if (mobileAppTracker != null)
+                            mobileAppTracker.setAndroidId(Secure.getString(getContentResolver(), Secure.ANDROID_ID));
+                    }
+                }
+            }).start();
+
+            mMatAvailable = true;
+        } catch (Throwable t) {
+            Log.w(TAG, "MobileAppTracker unavailable; disabling MAT", t);
+            mMatAvailable = false;
+            mobileAppTracker = null;
+        }
     }
 
 

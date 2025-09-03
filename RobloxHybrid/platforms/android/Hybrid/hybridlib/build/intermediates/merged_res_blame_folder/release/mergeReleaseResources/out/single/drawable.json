@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/drawable/notification_bg.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/drawable/notification_tile_bg.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/drawable/notification_bg_low.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "com.roblox.hybridlib.Hybrid-release-5:/drawable/notification_icon_background.xml",
+        "source": "com.roblox.hybridlib.Hybrid-core-1.3.2-1:/drawable/notification_icon_background.xml"
+    }
+]

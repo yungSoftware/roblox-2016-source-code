@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.roblox2016.client"
+    android:versionCode="100"
+    android:versionName="2.99.99" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="28" />
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:requiresSmallestWidthDp="240"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+
+    <application
+        android:name="com.roblox.client.RobloxApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/roblox_logo"
+        android:label="@string/RobloxWord"
+        android:largeHeap="true"
+        android:theme="@style/Theme.Roblox.Fullscreen" >
+
+        <!-- Request legacy Apache HttpClient classes when available on the device -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="7991889011d53be5ccf9f6f42d9a1ea05a702eb7" />
+
+        <service
+            android:name="com.roblox.client.RobloxService"
+            android:exported="false"
+            android:stopWithTask="false" />
+        <!-- android:process=":service" /> -->
+
+        <activity
+            android:name="com.roblox.client.ActivityStart"
+            android:alwaysRetainTaskState="true"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:theme="@style/Theme.Roblox"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.roblox.client.ActivitySplash"
+            android:alwaysRetainTaskState="true"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:theme="@style/Theme.Roblox"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="robloxmobile" />
+            </intent-filter>
+        </activity> <!-- Launcher alias provides the home screen icon only -->
+        <activity-alias
+            android:name="com.roblox.client.Launcher"
+            android:exported="true"
+            android:icon="@drawable/roblox_icon"
+            android:label="@string/RobloxWord"
+            android:roundIcon="@drawable/roblox_icon"
+            android:targetActivity="com.roblox.client.ActivitySplash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name="com.roblox.client.ActivityNativeMain"
+            android:alwaysRetainTaskState="true"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.Roblox"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.roblox.client.ActivityAdColony"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.Roblox.Fullscreen" >
+
+            <!-- Parent activity meta-data to support API level 4+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.roblox.client.ActivityNativeMain" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.roblox.client.ActivityGlView"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:launchMode="singleTask"
+            android:process=":glview"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.Roblox.Dark.Fullscreen"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.roblox.client.ActivityCurlTest"
+            android:exported="true"
+            android:label="@string/RobloxWord"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.Roblox.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- AdColony integration -->
+        <activity
+            android:name="com.jirbo.adcolony.AdColonyOverlay"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.jirbo.adcolony.AdColonyFullscreen"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.jirbo.adcolony.AdColonyBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.gigya.socialize.android.ui.HostActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.gigya.socialize.android.login.providers.WebLoginActivity"
+            android:allowTaskReparenting="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- must be the all lowercase version of the INSTALLED package and without underscores -->
+                <data
+                    android:host="gsapi"
+                    android:scheme="com.roblox2016.client" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/RobloxWord"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name="com.roblox.client.test.TestHelperActivity" />
+
+        <!-- MobileAppTracker integration -->
+        <receiver
+            android:name="com.mobileapptracker.Tracker"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Amazon IAB integration -->
+        <receiver
+            android:name="com.amazon.device.iap.ResponseReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action
+                    android:name="com.amazon.inapp.purchasing.NOTIFY"
+                    android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.roblox.client.ReCaptchaActivity"
+            android:exported="true"
+            android:label="@string/captchaTitle"
+            android:theme="@style/Theme.Roblox.AppCompat.Light.Dialog.NoActionBar" />
+    </application>
+
+</manifest>

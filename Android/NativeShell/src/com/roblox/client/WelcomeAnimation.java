@@ -39,14 +39,17 @@ public class WelcomeAnimation {
 
         final ViewGroup vg = (ViewGroup) (activity.getWindow().getDecorView().getRootView());
         LayoutInflater inflater = LayoutInflater.from(activity);
-        inflater.inflate(R.layout.welcome_animation, vg);
+        // Inflate overlay separately so we can animate just it, not the entire root
+        final View overlay = inflater.inflate(R.layout.welcome_animation, vg, false);
+        overlay.setAlpha(0f);
+        vg.addView(overlay);
 
         ValueAnimator anim = ValueAnimator.ofFloat(0f, 1.0f);
         anim.setDuration(600);
         anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                vg.setAlpha((Float) animation.getAnimatedValue());
+                overlay.setAlpha((Float) animation.getAnimatedValue());
             }
         });
         anim.addListener(new Animator.AnimatorListener() {

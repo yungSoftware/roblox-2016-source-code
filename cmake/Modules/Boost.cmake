@@ -1,2 +1,10 @@
-file(TO_CMAKE_PATH "${CONTRIB_PATH}/boost_1_55_0" boost_ROOT)
+if(EXISTS "${CONTRIB_PATH}/boost_1_56_0")
+  set(boost_ROOT "${CONTRIB_PATH}/boost_1_56_0")
+elseif(EXISTS "${CONTRIB_PATH}/boost_1_55_0")
+  set(boost_ROOT "${CONTRIB_PATH}/boost_1_55_0")
+else()
+  message(FATAL_ERROR "No supported Boost version found in ${CONTRIB_PATH} (expected boost_1_56_0 or boost_1_55_0)")
+endif()
+
+file(TO_CMAKE_PATH "${boost_ROOT}" boost_ROOT)
 include_directories("${boost_ROOT}/include")

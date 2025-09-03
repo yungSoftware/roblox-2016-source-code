@@ -16,13 +16,13 @@ endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := roblox
-LOCAL_SRC_FILES := ../../../../build/$(RBX_LIB_DIR)/libs/armeabi-v7a/libroblox.so
+LOCAL_SRC_FILES := ../../../../build/$(RBX_LIB_DIR)/libs/$(TARGET_ARCH_ABI)/libroblox.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := fmod
-LOCAL_SRC_FILES := ../../../fmod/Android/armeabi-v7a/libfmod${FMOD_SUFFIX}.so
+LOCAL_SRC_FILES := ../../../fmod/Android/$(TARGET_ARCH_ABI)/libfmod${FMOD_SUFFIX}.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 

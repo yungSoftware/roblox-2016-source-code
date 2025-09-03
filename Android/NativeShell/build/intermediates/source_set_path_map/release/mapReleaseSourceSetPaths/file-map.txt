@@ -1,0 +1,15 @@
+com.roblox.client.NativeShell-cardview-v7-28.0.0-0 C:\Users\Intel\.gradle\caches\transforms-4\0ad257b5ad970871a3ed2029b4a163f0\transformed\cardview-v7-28.0.0\res
+com.roblox.client.NativeShell-design-28.0.0-1 C:\Users\Intel\.gradle\caches\transforms-4\201b72dd50f6f68941481665d363030b\transformed\design-28.0.0\res
+com.roblox.client.NativeShell-support-compat-28.0.0-2 C:\Users\Intel\.gradle\caches\transforms-4\66f976ac3b1254264be978919a388f04\transformed\support-compat-28.0.0\res
+com.roblox.client.NativeShell-appcompat-v7-28.0.0-3 C:\Users\Intel\.gradle\caches\transforms-4\7e003f9f7bf60aab7670cfab7a056338\transformed\appcompat-v7-28.0.0\res
+com.roblox.client.NativeShell-coordinatorlayout-28.0.0-4 C:\Users\Intel\.gradle\caches\transforms-4\962f40c1a02c208a9160069997d07fd2\transformed\coordinatorlayout-28.0.0\res
+com.roblox.client.NativeShell-recyclerview-v7-28.0.0-5 C:\Users\Intel\.gradle\caches\transforms-4\c6ffdd1578771a642bdb882106b0d79e\transformed\recyclerview-v7-28.0.0\res
+com.roblox.client.NativeShell-transition-28.0.0-6 C:\Users\Intel\.gradle\caches\transforms-4\d07cd128b41e132d38ccfebbff67b414\transformed\transition-28.0.0\res
+com.roblox.client.NativeShell-release-7 F:\roblox-2016-source-code\Android\NativeShell\build-types\release\res
+com.roblox.client.NativeShell-pngs-8 F:\roblox-2016-source-code\Android\NativeShell\build\generated\res\pngs\release
+com.roblox.client.NativeShell-resValues-9 F:\roblox-2016-source-code\Android\NativeShell\build\generated\res\resValues\release
+com.roblox.client.NativeShell-mergeReleaseResources-10 F:\roblox-2016-source-code\Android\NativeShell\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.roblox.client.NativeShell-mergeReleaseResources-11 F:\roblox-2016-source-code\Android\NativeShell\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.roblox.client.NativeShell-release-12 F:\roblox-2016-source-code\Android\NativeShell\build\intermediates\merged_res\release\mergeReleaseResources
+com.roblox.client.NativeShell-NativeShell-13 F:\roblox-2016-source-code\Android\NativeShell\res
+com.roblox.client.NativeShell-release-14 F:\roblox-2016-source-code\Android\circleimageview\build\intermediates\packaged_res\release\packageReleaseResources

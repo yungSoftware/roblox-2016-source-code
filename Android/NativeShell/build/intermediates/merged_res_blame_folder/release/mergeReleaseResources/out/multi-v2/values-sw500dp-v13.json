@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.roblox.client.NativeShell-mergeReleaseResources-10:/values-sw500dp-v13/values-sw500dp-v13.xml",
+            "map": [
+                {
+                    "source": "F:\\roblox-2016-source-code\\Android\\NativeShell\\res\\values-sw500dp\\dimens.xml",
+                    "from": {
+                        "startLines": "13,7,15,14,9,8,19,12,17,16,18,5,10,11,6,4,2,3,20",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "647,331,747,695,426,374,966,596,852,798,907,218,474,535,276,162,57,110,1025",
+                        "endColumns": "46,41,49,50,46,50,57,49,53,52,57,56,59,59,53,54,51,50,46",
+                        "endOffsets": "689,368,792,741,468,420,1019,641,901,846,960,270,529,590,325,212,104,156,1067"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "92,139,181,231,282,329,380,438,488,542,595,653,710,770,830,884,939,991,1042",
+                        "endColumns": "46,41,49,50,46,50,57,49,53,52,57,56,59,59,53,54,51,50,46",
+                        "endOffsets": "134,176,226,277,324,375,433,483,537,590,648,705,765,825,879,934,986,1037,1084"
+                    }
+                },
+                {
+                    "source": "F:\\roblox-2016-source-code\\Android\\NativeShell\\res\\values-sw500dp\\values.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "36",
+                        "endOffsets": "89"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "36",
+                        "endOffsets": "87"
+                    }
+                }
+            ]
+        }
+    ]
+}
