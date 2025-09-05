@@ -294,7 +294,7 @@ RobloxMainWindow::RobloxMainWindow(const QMap<QString, QString> argMap)
 		RBX::Http robloxRequest(AuthenticationHelper::getLoggedInUserUrl().toStdString());
 		RBX::Http externalRequest("http://www.google.com");
 
-		QSettings retentionData("Roblox", "Retention");
+		QSettings retentionData("Roblox 2016", "Retention");
 
 		static const char* const kRetentionInstallDateKey = "InstallDate";
 		static const char* const kRetentionLastRunDateKey = "LastRunDate";

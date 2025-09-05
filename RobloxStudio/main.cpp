@@ -221,7 +221,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(RobloxStudio);
 	
 	// Platform independent settings
-	QApplication::setOrganizationName("Roblox");
+	QApplication::setOrganizationName("Roblox 2016");
     QApplication::setOrganizationDomain("roblox.com");
     QApplication::setApplicationName("RobloxStudio");  
     QApplication::setApplicationVersion(RobloxSettings::getVersionString());

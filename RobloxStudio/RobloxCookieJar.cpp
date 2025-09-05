@@ -44,7 +44,7 @@ RobloxCookieJar::~RobloxCookieJar()
 void RobloxCookieJar::saveCookiesToDisk()
 {
 	// Do Not mix the RobloxStudio Settings with Cookies, create a separate plist file for StudioBrowser
-	QSettings settings("Roblox", "RobloxStudioBrowser");
+	QSettings settings("Roblox 2016", "RobloxStudioBrowser");
 
 	for (CookieMapIterator outerIter = m_cookieMap.constBegin(); outerIter != m_cookieMap.constEnd(); ++outerIter) 
 	{
@@ -121,7 +121,7 @@ bool RobloxCookieJar::setCookiesFromUrl(const NetworkCookieList& cookieList, con
 				nameToCookieMap.erase(nameToCookieMap.find((*iter).name()));
 
 				// Also delete immedietly from persistence for cookies that have expired
-				QSettings settings("Roblox", "RobloxStudioBrowser");
+				QSettings settings("Roblox 2016", "RobloxStudioBrowser");
 				settings.beginGroup(hostName);
 				settings.remove((*iter).name());
 				settings.endGroup();
@@ -186,7 +186,7 @@ void RobloxCookieJar::loadCookiesFromDisk(const QString &url, bool authenticate)
 	if(m_cookieReadMap[url] != true)
 	{
 		// Do Not mix the RobloxStudio Settings with Cookies, create a separate plist file for StudioBrowser
-		QSettings settings("Roblox", "RobloxStudioBrowser");
+		QSettings settings("Roblox 2016", "RobloxStudioBrowser");
 		QString cookieName, valueStr, cookieStr, expDateStr;
 
 		settings.beginGroup(url);
@@ -274,7 +274,7 @@ QString RobloxCookieJar::getCookieValue(const QString &hostURL, const QString& c
 	QString result;
 	QString hostName = url.host().mid(url.host().indexOf(QString(".")) + 1);
 
-	QSettings settings("Roblox", "RobloxStudioBrowser");
+	QSettings settings("Roblox 2016", "RobloxStudioBrowser");
 	settings.beginGroup(hostName);
 	QStringList childKeys = settings.childKeys();
 
