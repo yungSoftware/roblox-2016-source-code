@@ -10,7 +10,7 @@
 
 ### 🧱 Qt (Compilation process is skippable)
 
-1. Download [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Wxtract it into **Contribs** Folder
+1. Download [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Extract it into **Contribs** Folder
    * You can skip the other steps if you dont want to build it, its already prebuilt.
 2. Open **2012 x86 Native Tools Command Prompt**
 3. Navigate (`cd`) to:  
