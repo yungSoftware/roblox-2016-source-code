@@ -132,5 +132,6 @@ UpgradeLog*.htm
 wsdl2h.exe
 soapcpp2.exe
 /Contribs/DSBaseClasses/Lib/
+/Contribs/Qt/
 
 ## END OF GENERAL ##
