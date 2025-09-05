@@ -8,7 +8,7 @@
 
 ---
 
-### 🧱 Qt (Compilation process is skippable)
+### 🧱 Qt
 
 1. Download [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Extract it into **Contribs** Folder
    * You can skip the other steps if you dont want to build it, its already prebuilt.
