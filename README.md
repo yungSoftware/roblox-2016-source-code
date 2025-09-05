@@ -16,8 +16,7 @@ After a long effort, this repository has been brought to GitHub with many improv
 
 **Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
-**Want to play the game immediately? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
-**NOTE:** You may need **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** in order to launch the game.
+**Want to experience the game in no time? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 
 **Every contribution moves the project forward — we're always open to new helpers!**
 
@@ -38,7 +37,6 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
 - The entire source has been cleaned up for clarity and ease of use.
 - Splash Screen and Copyright Dates updated.
 - Reverse-engineered several C# libraries and executables using **[ILSpy](https://github.com/icsharpcode/ILSpy/releases)** to make the source accessible.
-- Introducing **[Rocknet](https://github.com/P0L3NARUBA/Rocknet/tree/main)** — a server built specifically for this source.
 
 ## 📚 Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
@@ -70,9 +68,6 @@ The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tre
   - [ ] R15 character support  
 - [x] :Connect() and :Wait()
 - [x] New Fonts
-- [x] Rename Registry Folder & Game Folder so it wont mess any of your original game files. 
-  - Game folder is located in `C:\Users\<username>\AppData\Local\Roblox 2016\`
-  - Registry folder is located in `HKEY_CURRENT_USER\Software\ROBLOX Corporation 2016\`
 - [x] Move unrelated files out of the **content\fonts** folder
 - [x] Support for newer mesh formats
 - [ ] Add Cyrillic and non-Latin language support  
