@@ -14,7 +14,7 @@ After a long effort, this repository has been brought to GitHub with many improv
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
    - Make sure to read it thoroughly to avoid any issues.
 
-**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/rVrYHdrbsp) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
+**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/nyKyWqQjvn) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
 **Want to experience the game in no time? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 
