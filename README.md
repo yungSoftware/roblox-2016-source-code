@@ -14,13 +14,11 @@ After a long effort, this repository has been brought to GitHub with many improv
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
    - Make sure to read it thoroughly to avoid any issues.
 
-**Experiencing problems? You can get help via [our Discord server](https://www.discord.gg/nyKyWqQjvn) or the [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
+**Experiencing problems? You can get help via [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
 **Want to experience the game in no time? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
 
 **Every contribution moves the project forward — we're always open to new helpers!**
-
-The **[pixel-lighting](https://github.com/P0L3NARUBA/roblox-2016-source-code/tree/pixel-lighting)** branch is not maintained by me and may be outdated compared to the current branch.
 
 # Table of Contents
 1. [🪨 Features / Additions](#-features--additions)
