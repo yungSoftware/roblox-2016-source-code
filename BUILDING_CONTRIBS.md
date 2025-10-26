@@ -84,7 +84,7 @@ To build as a `.LIB`, you don’t need to change anything — just build it as i
 
 ---
 
-## libcurl
+## Curl
 
 1. Locate the libcurl project under:  
    `3rd Party > libcurl`
