@@ -2,7 +2,6 @@
 
 <p align="center">
 <img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/yungSoftware/roblox-2016-source-code">
-<img alt="GitHub Release" src="https://img.shields.io/github/v/release/yungSoftware/roblox-2016-source-code?color=violet">
 <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/yungSoftware/roblox-2016-source-code/master">
 </p>
 
