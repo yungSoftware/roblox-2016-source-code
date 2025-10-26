@@ -1,4 +1,4 @@
-# 📌 Read This Before You Start
+# Read This Before You Start
 
 - `"<your path>"` is where your source is located (e.g., `C:\`)  
 - `"<your folder name>"` is the name of your source folder (e.g., `Trunk2016`)  
