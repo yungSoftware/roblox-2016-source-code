@@ -40,8 +40,8 @@
    - 3rd Party:
      - `boost.static`
      - `zlib`
-     - `libcurl` — follow **BUILDING_CONTRIBS.md** (skip if already compiled)
-     - `SDL2` — follow **BUILDING_CONTRIBS.md** (skip if already compiled)
+     - `libcurl` — Follow **[BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)** (skip if already compiled)
+     - `SDL2` — Follow **[BUILDING_CONTRIBS.md](/BUILDING_CONTRIBS.md)** (skip if already compiled)
    - gSOAP:
      - `soapcpp2`
      - `wsdl2h`
