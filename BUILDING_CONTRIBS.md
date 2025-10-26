@@ -2,7 +2,8 @@
 
 - `"<your path>"` is where your source is located (e.g., `C:\`)  
 - `"<your folder name>"` is the name of your source folder (e.g., `Trunk2016`)  
-- ⚠️ *Please note:* Technical knowledge is required. We cannot assist with every individual problem you encounter.
+
+⚠️ *Please note:* Technical knowledge is required. We cannot assist with every individual problem you encounter.
 
 ---
 
