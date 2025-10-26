@@ -14,11 +14,6 @@ After a long effort, this repository has been brought to GitHub with many improv
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
 **Experiencing problems? You can get help via [Issues](https://github.com/yungSoftware/roblox-2016-source-code/issues) section.**
 
-**Want to experience the game in no time? Check out the [Releases](https://github.com/yungSoftware/roblox-2016-source-code/releases)**<br>
-**You may also want a backend to make the game work, you can download our own backend called [Rocknet](https://cdn.discordapp.com/attachments/1254131141850566846/1432068104371965952/htdocs.zip?ex=68ffb4da&is=68fe635a&hm=5d4f85d3fa249a36ccb8da01523c1700179f8dcf54147c0e4e13c981f91f4e82&)**
-
-**Every contribution moves the project forward — we're always open to new helpers!**
-
 # Table of Contents
 1. [Features / Additions](#features--additions)
 2. [Libraries Used](#libraries-used)
