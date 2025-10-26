@@ -1,6 +1,4 @@
-﻿# 🍳 Cookbook for the Source
-
-## 📌 Read This Before You Start
+# Read This Before You Start
 
 - `"<your path>"` refers to the location where your source code resides (e.g., `C:\`)
 - `"<your folder name>"` refers to the name of the folder containing the source code (e.g., `Trunk2016`)
@@ -8,7 +6,7 @@
 
 ---
 
-### 🛠️ Setup Instructions for Windows
+## Setup Instructions for Windows
 
 1. **Open a Command Prompt with Administrator privileges** and clone the repository using [Git](https://git-scm.com/) like this:
    ```bash
@@ -61,20 +59,3 @@
 8. **Build your desired project:**
    - Right-click on **RCCService**, **RobloxStudio**, or **WindowsClient** in Solution Explorer
    - Select **Build**
-
-### 🛠️ Setup Instructions for Android
-
-1. You need to install [Android Studio](https://developer.android.com/studio), do so.
-2. Install Android 28 NDK, Android 15 and 28 SDK from the Android Studio
-3. Find the local.properties file, Open in notepad and set the correct path to the SDK folder.
-
-* Build the libroblox.so for your platform, use the Legacy mode.
-
-4. Pack the OBB Assets
-5. Install Java JDK 21
-6. Build the RobloxHybrid and after that build the APK!
-
-
----
-
-✅ **You did it! You've successfully built from the source!**
