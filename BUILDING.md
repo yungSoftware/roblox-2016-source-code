@@ -12,7 +12,7 @@
 
 1. **Open a Command Prompt with Administrator privileges** and clone the repository using [Git](https://git-scm.com/) like this:
    ```bash
-   git config --system core.longpaths true && cd <your path> && git clone https://github.com/P0L3NARUBA/roblox-2016-source-code
+   git config --system core.longpaths true && cd <your path> && git clone https://github.com/yungSoftware/roblox-2016-source-code
    ```
    - This method ensures you won’t need to redownload the source code repeatedly. **(Recommended)**
 
