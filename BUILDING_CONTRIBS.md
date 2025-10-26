@@ -21,8 +21,6 @@
 5. Type `nmake confclean` to make sure we're starting clean.
 6. When everything completes, run `nmake` and take a deep breath — this step takes **a lot** of time.
 
----
-
 ## Boost
 
 1. Go to:  
@@ -41,8 +39,6 @@ Once it finishes, you should see something like:
 ...skipped 8 targets...
 ...updated 1095 targets...
 ```
-
----
 
 ## OpenSSL
 
@@ -63,8 +59,6 @@ Once it finishes, you should see something like:
    and copy these two files(`ssleay32.dll` `libeay32.dll`) to:  
    `<your path>\<your folder name>\openssl`
 
----
-
 ## SDL2
 
 1. Locate the SDL2 project under:  
@@ -81,8 +75,6 @@ To build SDL2 as a `.DLL`:
 - Build the project.
 
 To build as a `.LIB`, you don’t need to change anything — just build it as is.
-
----
 
 ## Curl
 
