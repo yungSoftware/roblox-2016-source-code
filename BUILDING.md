@@ -18,9 +18,6 @@
 2. **Download and install these tools:**
    - [Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)
    - [Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)
-   - *(Optional)* [Visual Studio 2022](https://visualstudio.microsoft.com/tr/vs/) for a more modern IDE experience.
-     > You can use either VS2012 or VS2022 to view the solution — both work fine.
-   - During installation, uncheck all optional components **except** _“Microsoft Foundation Classes for C++”_ to save disk space.
 
 3. **Set up an environment variable:**
    - Name: `CONTRIB_PATH`
