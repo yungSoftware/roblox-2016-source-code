@@ -22,9 +22,8 @@ After a long effort, this repository has been brought to GitHub with many improv
 # Table of Contents
 1. [Features / Additions](#features--additions)
 2. [Libraries Used](#libraries-used)
-3. [Tools Used](#tools-used)
-4. [Current Goals](#current-goals)
-5. [Current Problems](#current-problems)
+3. [Current Goals](#current-goals)
+4. [Current Problems](#current-problems)
 
 ---
 
@@ -53,11 +52,6 @@ After a long effort, this repository has been brought to GitHub with many improv
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
 - [RakNet](/Network/raknet) = 5 
 
-## Tools Used
-- [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
-- [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
-- [rbxsigner](/Tools/rbxsigner) = *unknown*
-
 ## Current Goals
 - Backport/Implement **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
   - [x] Color3uint8  
@@ -81,5 +75,3 @@ After a long effort, this repository has been brought to GitHub with many improv
 ## Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
   - This can lead to inconsistencies, especially with `BodyColors`.
-
----
