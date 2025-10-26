@@ -1,5 +1,3 @@
-# Roblox 2016 Source Code
-
 This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5YmV1iPUPZCfiI6IDWkT3eDq9k3-yA7rl_hURked8Y)**, which was circulating some time ago but has become hard to find.<br>
 After a long effort, this repository has been brought to GitHub with many improvements!
 
