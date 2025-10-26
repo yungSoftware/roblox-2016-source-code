@@ -1,9 +1,9 @@
 ![My *handmade* Roblox Logo](https://github.com/user-attachments/assets/ced623cd-6692-4759-8e46-e9453f5454fc)
 
 <p align="center">
-<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/P0L3NARUBA/roblox-2016-source-code">
-<img alt="GitHub Release" src="https://img.shields.io/github/v/release/P0L3NARUBA/roblox-2016-source-code?color=violet">
-<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/P0L3NARUBA/roblox-2016-source-code/master">
+<img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/yungSoftware/roblox-2016-source-code">
+<img alt="GitHub Release" src="https://img.shields.io/github/v/release/yungSoftware/roblox-2016-source-code?color=violet">
+<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/yungSoftware/roblox-2016-source-code/master">
 </p>
 
 # Roblox 2016 Source Code
@@ -12,9 +12,9 @@ This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5Ym
 After a long effort, this repository has been brought to GitHub with many improvements!
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-**Experiencing problems? You can get help via [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
+**Experiencing problems? You can get help via [Issues](https://github.com/yungSoftware/roblox-2016-source-code/issues) section.**
 
-**Want to experience the game in no time? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
+**Want to experience the game in no time? Check out the [Releases](https://github.com/yungSoftware/roblox-2016-source-code/releases)**<br>
 **You may also want a backend to make the game work, you can download our own backend called [Rocknet](https://cdn.discordapp.com/attachments/1414254813700554753/1426866169457148025/htdocs.zip?ex=68ff3d2c&is=68fdebac&hm=f640ea26fe4b713305ebbc8a088387b21113cdb2e9f8c9a8c1c302de6b43c78a&)**
 
 **Every contribution moves the project forward — we're always open to new helpers!**
