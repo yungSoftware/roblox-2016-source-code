@@ -20,22 +20,22 @@ After a long effort, this repository has been brought to GitHub with many improv
 **Every contribution moves the project forward — we're always open to new helpers!**
 
 # Table of Contents
-1. [🪨 Features / Additions](#-features--additions)
-2. [📚 Libraries Used](#-libraries-used)
-3. [🔨 Tools Used](#-tools-used)
-4. [🎯 Current Goals](#-current-goals)
-5. [⚠️ Current Problems](#%EF%B8%8F-current-problems)
+1. [Features / Additions](#features--additions)
+2. [Libraries Used](#libraries-used)
+3. [Tools Used](#tools-used)
+4. [Current Goals](#current-goals)
+5. [Current Problems](#current-problems)
 
 ---
 
-## 🪨 Features / Additions
+## Features / Additions
 - Numerous new features have been added and we're still improving!
 - Compilation-breaking issues have been fixed to ensure all projects work as intended.
 - The entire source has been cleaned up for clarity and ease of use.
 - Splash Screen and Copyright Dates updated.
 - Reverse-engineered several C# libraries and executables using **[ILSpy](https://github.com/icsharpcode/ILSpy/releases)** to make the source accessible.
 
-## 📚 Libraries Used
+## Libraries Used
 - [Boost](/Contribs/boost_1_56_0) = 1.56.0
 - [cpp-netlib](/Contribs/cpp-netlib-0.11.0-final) = 0.11.0-final
 - [DSBaseClasses](/Contribs/DSBaseClasses) = *unknown*
@@ -53,12 +53,12 @@ After a long effort, this repository has been brought to GitHub with many improv
 - [gSOAP](/RCCService/gSOAP/gsoap-2.7) = 2.7.10
 - [RakNet](/Network/raknet) = 5 
 
-## 🔨 Tools Used
+## Tools Used
 - [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
 - [ILSpy](https://github.com/icsharpcode/ILSpy/releases)
 - [rbxsigner](/Tools/rbxsigner) = *unknown*
 
-## 🎯 Current Goals
+## Current Goals
 - Backport/Implement **[Hitius](https://mega.nz/file/DnxUTAgI#52pYMEJyRFMMXVMAU71GboVWYxaTCv25eWB4QHFma6M)**, **[Graphictoria](https://mega.nz/file/e2RU0YbT#tGVrpYqR4fv6z7a4QQcdqT0nbmgdssGm3wGFd9jCiHA)** and **[Economy Simulator](https://mega.nz/file/76AyxJzC#fuKcKHTK6YI5S8zLyelsB7PIt0fVVTsWu9KTrgvXk2E)** Features
   - [x] Color3uint8  
      - [x] Color3.fromRGB()  
@@ -78,7 +78,7 @@ After a long effort, this repository has been brought to GitHub with many improv
   - [ ] Ensure support for the latest C/C++ standards (C++17 or later)  
   - [ ] Enable 64-bit support across all applicable projects
 
-## ⚠️ Current Problems
+## Current Problems
 - Undo/Redo does not handle `Color3` properties accurately; they often revert to the nearest `BrickColor` value.
   - This can lead to inconsistencies, especially with `BodyColors`.
 
