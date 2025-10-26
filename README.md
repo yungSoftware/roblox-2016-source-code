@@ -12,11 +12,10 @@ This source originates from **[robloxsrc.zip](https://mega.nz/file/mrxkSRRK#n5Ym
 After a long effort, this repository has been brought to GitHub with many improvements!
 
 **To build from the source, refer to [BUILDING.md](/BUILDING.md)**<br>
-   - Make sure to read it thoroughly to avoid any issues.
-
 **Experiencing problems? You can get help via [Issues](https://github.com/P0L3NARUBA/roblox-2016-source-code/issues) section.**
 
 **Want to experience the game in no time? Check out the [Releases](https://github.com/P0L3NARUBA/roblox-2016-source-code/releases)**<br>
+**You may also want a backend to make the game work, you can download our own backend called [Rocknet](https://cdn.discordapp.com/attachments/1414254813700554753/1426866169457148025/htdocs.zip?ex=68ff3d2c&is=68fdebac&hm=f640ea26fe4b713305ebbc8a088387b21113cdb2e9f8c9a8c1c302de6b43c78a&)**
 
 **Every contribution moves the project forward — we're always open to new helpers!**
 
