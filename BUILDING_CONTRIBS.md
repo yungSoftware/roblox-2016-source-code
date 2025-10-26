@@ -10,7 +10,8 @@
 ## Qt
 
 1. Download [Qt.7z](https://drive.google.com/file/d/10zhRv421d2DUdF7eV-dqR4cIDTZAhiDL/view?usp=drive_link), Extract it into **Contribs** Folder
-   * You can skip the other steps if you dont want to build it, its already prebuilt.
+   * You can skip the other steps since its already prebuilt.
+   * But if you want to build yourself then continue watching the steps.
 2. Open **2012 x86 Native Tools Command Prompt**
 3. Navigate (`cd`) to:  
    `<your path>\<your folder name>\Contribs\Qt\4.8.5\win_VS2012`
