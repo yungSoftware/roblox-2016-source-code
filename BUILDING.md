@@ -16,8 +16,8 @@
    - This method ensures you won’t need to redownload the source code repeatedly. **(Recommended)**
 
 2. **Download and install these tools:**
-   - [Visual Studio 2012](https://drive.google.com/file/d/1XoA5Av_6OedTwGi_ebTb_XsQ7-RmEKSd/view?usp=sharing)
-   - [Visual Studio 2012 Update 5](https://drive.google.com/file/d/1_rrwnITjCl-kcqEKTQWUDJgEegAcKAM6/view?usp=sharing)
+   - [Visual Studio 2012](https://drive.google.com/file/d/1X53FfLQivtJoNx2R1c3NfCwmroYv6TjK/view?usp=drive_link)
+   - [Visual Studio 2012 Update 5](https://drive.google.com/file/d/14yufMHkGHtWeitP_lWNCmKYwBC5CU-yp/view?usp=drive_link)
 
 3. **Set up an environment variable:**
    - Name: `CONTRIB_PATH`
